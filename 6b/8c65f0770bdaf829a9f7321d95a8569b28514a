@@ -1,0 +1,34 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_5bb330563080d6::t_f62d2c72b23022 15
+  s_5bb330563080d6::t_cdd83634e05f6b 115-122
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/AddSvcServiceProxyInput.java
+  s_5bb330563080d6::t_43d7e3373387a3 283-290
+  s_5bb330563080d6::t_c6bbbe5dd85523 78-79
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_5bb330563080d6::t_d8a9494cf14aa5 128-135
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_5bb330563080d6::t_3f3f6a3d7656c0 1158-1165
+  s_5bb330563080d6::t_9b8b87680505c1 29
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_service/PcCreateAppointmentOrderInput.java
+  s_5bb330563080d6::t_a40b88d50b1f07 530-537
+  s_5bb330563080d6::t_5e4024d8a037d4 26-27
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/ConfirmSvcServiceProxyInput.java
+  s_5bb330563080d6::t_9b3f075fb86e2b 86-93
+  s_5bb330563080d6::t_40ed61731a92f7 29-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6b8c65f0770bdaf829a9f7321d95a8569b28514a",
+  "prompts": {},
+  "sessions": {
+    "s_5bb330563080d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a09eec90-0d12-4260-a549-2844ef177a18",
+        "model": "glm-5.2"
+      },
+      "human_author": "CoderStory <qianyf2015@gmail.com>"
+    }
+  }
+}
