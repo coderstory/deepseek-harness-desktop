@@ -1,0 +1,73 @@
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/ServiceOrderContactDTO.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-32
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/AppointmentDetailOutput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-203
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/AppointmentPageOutput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-158
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_f874f4e9c6023f::t_2cd6b7a202f121 21-40
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/FavoriteStoreInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-21
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/ServiceProxyDetailOutput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-153
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/AppointmentStatusSyncInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-75
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentAssembler.java
+  s_f874f4e9c6023f::t_2cd6b7a202f121 5-8
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/CancelAppointmentInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-21
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/StoreOutput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-364
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/AppConsumerAppointmentService.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-77
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/GetAppointmentDetailV2Input.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-32
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/AfterSalesProjectDTO.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-43
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/GetAppointmentDetailInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-21
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/GetServiceProxyDetailInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-21
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/PageAppointmentInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-23
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/SubmitAppointmentInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-165
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/UpdateContactInfoInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-81
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/ServiceOrderVehicleDTO.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-43
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/RepairConfirmInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-21
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentQueryAssembler.java
+  s_f874f4e9c6023f::t_2cd6b7a202f121 6-12
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/UpdateAppointmentOrderAssembler.java
+  s_f874f4e9c6023f::t_2cd6b7a202f121 5-9
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/StoreResourceInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-48
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/GetOnGoingAppointmentInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-21
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/OnGoingAppointmentOutput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-59
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/SubmitValidator.java
+  s_f874f4e9c6023f::t_2cd6b7a202f121 4
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/StoreResourceOutput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-117
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/ListStoreInput.java
+  s_f874f4e9c6023f::t_84d9c7a70eed20 1-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "008b48353f7894c50ae6ff7566b141886cc3a06c",
+  "prompts": {},
+  "sessions": {
+    "s_f874f4e9c6023f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3d728694-86db-484a-a065-7d54a9aa98fa",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
