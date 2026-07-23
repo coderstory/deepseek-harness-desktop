@@ -1,0 +1,71 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/MolitOperateInput.java
+  s_8c4a4b6cf8f48c::t_eed6aef56a4b38 1-36
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/MolitPayloadBuilder.java
+  s_8c4a4b6cf8f48c::t_0755ab6167ae7a 5-10,12,14
+  s_8c4a4b6cf8f48c::t_1f7ed10c26b0db 1-4,11,13,15-46,93
+  s_8c4a4b6cf8f48c::t_6e07a9e4aa8bc3 47-92
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitSendResult.java
+  s_8c4a4b6cf8f48c::t_e911b7d74b1955 1-27
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitWithdrawReq.java
+  s_8c4a4b6cf8f48c::t_bcfea2bb7121f9 1-22
+C00-svc-base/svc-core-base/src/main/java/svc/core/operationLog/enums/UserOperationActionEnum.java
+  s_8c4a4b6cf8f48c::t_fa276db1019599 26-30
+C00-svc-base/svc-core-base/src/main/java/svc/core/operationLog/enums/BizTypeEnum.java
+  s_8c4a4b6cf8f48c::t_08ca12451be6c5 13-15
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/util/MolitClient.java
+  s_8c4a4b6cf8f48c::t_cbb5238eea64b5 101,104,112-115
+  s_8c4a4b6cf8f48c::t_feb961d76c54b2 1-100,102-103,105-111,116-118
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitWithdrawResult.java
+  s_8c4a4b6cf8f48c::t_3bffcd86c31cb8 1-24
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitSendJsonData.java
+  s_8c4a4b6cf8f48c::t_1b823cb4e1f92c 1-14
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/cache/MolitAuthCache.java
+  s_8c4a4b6cf8f48c::t_d2166a73f40ee9 1-77
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitVehicleImprmnHistDtls.java
+  s_8c4a4b6cf8f48c::t_c136fbef80ce7b 1-19
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_8c4a4b6cf8f48c::t_edcde0cd1c6dff 374
+  s_8c4a4b6cf8f48c::t_0d8fd0262cec07 93-94,96-100,102,111-112,114-115,117-118
+  s_8c4a4b6cf8f48c::t_c9a7c498a6f7c1 120-125
+  s_4487e369d47717::t_27441933b1fc91 273
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitLoginReq.java
+  s_8c4a4b6cf8f48c::t_a02e6042ff46f7 1-19
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitLoginResult.java
+  s_8c4a4b6cf8f48c::t_3bfcc8ee3c6237 1-30
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitSendReq.java
+  s_8c4a4b6cf8f48c::t_385e7ad73a4305 1-16
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_8c4a4b6cf8f48c::t_7dd602dbe51c96 114-117
+  s_8c4a4b6cf8f48c::t_4b64fe39a8125c 366-372
+  s_8c4a4b6cf8f48c::t_3a0c908ca56bdf 1-113,118-365,373
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/MolitOperateOutput.java
+  s_8c4a4b6cf8f48c::t_643e4a7e21d1e3 1-23
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitVehicleImprmnHist.java
+  s_8c4a4b6cf8f48c::t_ce613d3e8d7990 1-46
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/MolitOperateValidator.java
+  s_8c4a4b6cf8f48c::t_794961463cf93e 1-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "be593f5d35a9c8ef2e15cc42be3118e0b2c9d645",
+  "prompts": {},
+  "sessions": {
+    "s_4487e369d47717": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-afc1ce4ed79748da6",
+        "model": "unknown"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_8c4a4b6cf8f48c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "26019594-8732-43ba-a699-f094659c5bc0",
+        "model": "qwen3.7-plus"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
