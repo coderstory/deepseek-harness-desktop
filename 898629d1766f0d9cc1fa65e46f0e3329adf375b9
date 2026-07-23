@@ -1,0 +1,19 @@
+doc/sql/feature/20260710-pipa-drop-pushcount.sql
+  s_419f899e1503be::t_63cffce013f1bf 1-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "898629d1766f0d9cc1fa65e46f0e3329adf375b9",
+  "prompts": {},
+  "sessions": {
+    "s_419f899e1503be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "918cdc07-be7e-4ed8-8bf3-913a1b56263b",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

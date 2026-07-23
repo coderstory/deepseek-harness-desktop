@@ -1,0 +1,19 @@
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/sms/SmsParamBuilder.java
+  s_4a3503f49294c8::t_22e2b36dd841b0 32-34,37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0086f2a33f5530d8c93b78c0c1100e99d588ace7",
+  "prompts": {},
+  "sessions": {
+    "s_4a3503f49294c8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "735af880-880e-4429-9241-cb3beafac45e",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

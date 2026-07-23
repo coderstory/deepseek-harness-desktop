@@ -1,0 +1,21 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_4a3503f49294c8::t_52d83e0f690765 493-495
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_4a3503f49294c8::t_e4737a200510a7 327,330,333-334
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "786152731a7c6c9f998b288dabf24368d8f6a201",
+  "prompts": {},
+  "sessions": {
+    "s_4a3503f49294c8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "735af880-880e-4429-9241-cb3beafac45e",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
