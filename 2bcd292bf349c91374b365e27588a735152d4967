@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceRepairItemServiceImpl.java
+  s_d1a747b9e8d9c5::t_cc896a8a1d1ff7 50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2bcd292bf349c91374b365e27588a735152d4967",
+  "prompts": {},
+  "sessions": {
+    "s_d1a747b9e8d9c5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1cf65917-9d12-4469-bd70-c725b33bc479",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}
