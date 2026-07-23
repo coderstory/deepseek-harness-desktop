@@ -1,0 +1,59 @@
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/ListFavoriteStoreInput.java
+  s_0e03d946dda0de::t_bf9c19eb1e01ee 1-16
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_0e03d946dda0de::t_c7b13b25c85fd7 589,619,632,653,913,924,938,945,1018
+  s_0e03d946dda0de::t_09fb7058f26471 22
+  s_0e03d946dda0de::t_e4c1b822d62243 952
+  s_0e03d946dda0de::t_782d3caa08e323 570-572
+  s_0e03d946dda0de::t_ad5164a93efb27 31
+  s_0e03d946dda0de::t_bf413a5eeef33b 145-146
+  s_0e03d946dda0de::t_08f77370c8cdee 192-203
+  s_0e03d946dda0de::t_20787f5bf6dee9 60
+  s_0e03d946dda0de::t_2606c1b434882e 63
+  s_0e03d946dda0de::t_3ecb28ab3fa81c 763,765-766,772-775
+  s_0e03d946dda0de::t_68adc64cef5e3e 162-166
+  s_0e03d946dda0de::t_df664a6ccf074a 189
+  s_0e03d946dda0de::t_bcc1c9d08f5f2d 607-609
+  s_0e03d946dda0de::t_a273ef6662adf2 153-157
+  s_0e03d946dda0de::t_0f401df59313cc 41
+  s_0e03d946dda0de::t_b1e61e35e758fc 103,110,114
+  s_0e03d946dda0de::t_c06efaf2767a64 149-150
+  s_0e03d946dda0de::t_49a61df2b49420 190-191
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/SubmitAppointmentInput.java
+  s_0e03d946dda0de::t_c8ffbf6dae4a3f 87,91
+  s_0e03d946dda0de::t_5036f95a5c33bd 16-19,33-34
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/UpdateAppointmentOrderAssembler.java
+  s_0e03d946dda0de::t_ab8ea99465f464 63-64
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/AppointmentDetailV2Output.java
+  s_0e03d946dda0de::t_76a71bfeb734d5 1-18
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/SubmitAppointmentOutput.java
+  s_0e03d946dda0de::t_eb0c4448fde3b5 1-32
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/SubmitValidator.java
+  s_0e03d946dda0de::t_64ab827ea022de 8-9,19-20,37,48-66
+  s_0e03d946dda0de::t_0fa3a6b7137991 67-68
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentAssembler.java
+  s_0e03d946dda0de::t_60cf9c4731588e 52-53
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/AppConsumerAppointmentService.java
+  s_0e03d946dda0de::t_6f510a591cfeb1 13
+  s_0e03d946dda0de::t_ad93e2460798bb 70
+  s_0e03d946dda0de::t_6f4367ca75aebd 4
+  s_0e03d946dda0de::t_4b2fd2bd93fbc7 44,46
+  s_0e03d946dda0de::t_b3a9553cc1096a 23
+  s_0e03d946dda0de::t_b1c0a4a00c26c4 60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1e2d0ef39f7126bbe36ad2b1158308616b844252",
+  "prompts": {},
+  "sessions": {
+    "s_0e03d946dda0de": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cd9c7f9b-2e77-490e-a9b9-68823fac3b48",
+        "model": "qwen3.7-plus"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
