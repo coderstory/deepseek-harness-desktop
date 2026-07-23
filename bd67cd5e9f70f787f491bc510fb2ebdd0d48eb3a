@@ -1,0 +1,25 @@
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcInvoiceInfoCloudServiceImplTest.java
+  s_3f607c04540e2a::t_8c516d1cfca42d 120,197,234,259
+C06-svc-delivery/svc-cloud-delivery/src/main/java/svc/cloud/delivery/service/data/svc_invoice_info/GetInvoiceInfoByDealerCodeOutput.java
+  s_3f607c04540e2a::t_99eb407d83e501 37
+  s_3f607c04540e2a::t_ae6f321c5bcd76 10
+  s_3f607c04540e2a::t_dfc49c7999d565 79-80,83-84
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcInvoiceInfoCloudServiceImpl.java
+  s_3f607c04540e2a::t_dc1c3b0cb52406 71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "bd67cd5e9f70f787f491bc510fb2ebdd0d48eb3a",
+  "prompts": {},
+  "sessions": {
+    "s_3f607c04540e2a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "516ea0fe-9441-43dd-aee5-6f716877db73",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "CoderStory <qianyf2015@gmail.com>"
+    }
+  }
+}

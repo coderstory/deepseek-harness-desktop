@@ -1,0 +1,38 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/ItemCodeServiceImpl.java
+  s_875a22db9c3745::t_aee5edccd40b34 38-39,41
+  s_875a22db9c3745::t_93481495a17a24 102-181
+  s_875a22db9c3745::t_121fb287f816b5 10,16-17
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/item_code/GetRepairClassificationTreeOutput.java
+  s_875a22db9c3745::t_46a78e74462402 1-44
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/constant/ColumnItemConfig.java
+  s_875a22db9c3745::t_7e9ac58c7e514a 57-60
+  s_875a22db9c3745::t_f55ef1b25011de 56
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsOutput.java
+  s_875a22db9c3745::t_ae2a3fb02133fe 65-88
+  s_875a22db9c3745::t_e47aa24341a98d 19-25
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_875a22db9c3745::t_f6dd4788669df9 40
+  s_875a22db9c3745::t_981049693f7a8c 19
+  s_875a22db9c3745::t_6a27b1b8e4c84c 997,999-1005
+  s_875a22db9c3745::t_01a4405cf8041b 47
+  s_875a22db9c3745::t_5c09ea50795260 998,1009-1080,1082-1148
+  s_875a22db9c3745::t_478bc001ad06a3 1081
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/item_code/GetRepairClassificationTreeInput.java
+  s_875a22db9c3745::t_442b729648776d 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "96536ddf49bb8f2744b03653a039e7abcdbcf159",
+  "prompts": {},
+  "sessions": {
+    "s_875a22db9c3745": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f1e92a86-6c52-4037-b5f8-66d9c37d7a41",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-Bing.Deng@geely.com>"
+    }
+  }
+}
