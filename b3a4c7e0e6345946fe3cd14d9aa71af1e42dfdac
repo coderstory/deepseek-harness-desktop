@@ -1,0 +1,19 @@
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_59c7913ed23b22::t_262c7b6272773b 2764-2778
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b3a4c7e0e6345946fe3cd14d9aa71af1e42dfdac",
+  "prompts": {},
+  "sessions": {
+    "s_59c7913ed23b22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c11d2c20-18b0-4433-b7cd-42892055a3ce",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
