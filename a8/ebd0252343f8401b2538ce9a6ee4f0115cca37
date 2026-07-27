@@ -1,0 +1,71 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_ea54c81b9be8c9::t_84e16065daee09 372-373
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyOutput.java
+  s_ea54c81b9be8c9::t_875c6fe3200cf2 66-71
+  s_ea54c81b9be8c9::t_5dc59a6245eb23 124-139
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_ea54c81b9be8c9::t_a688cc5d2bf2e3 164-165
+  s_ea54c81b9be8c9::t_37c2e18c4a5edd 1-163,166-354
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelper.java
+  s_ea54c81b9be8c9::t_32f928ea753a94 1-96,98-100,106-107,109-110,112-130,132-146,148-195
+  s_ea54c81b9be8c9::t_9c98e553fb6cfa 97,101-105,108,111,131,147
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetSvcServiceProxyDetailOutput.java
+  s_ea54c81b9be8c9::t_b80667f5151ae1 108-113
+  s_ea54c81b9be8c9::t_6a3dcf6f9a4fbb 196-211
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcOrderStoreInfoViewMapper.xml
+  s_ea54c81b9be8c9::t_fb37e18f86870c 310-312
+  s_ea54c81b9be8c9::t_1dfd9c137ffb43 175
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyHelperTest.java
+  s_ea54c81b9be8c9::t_b5803258ba5de1 1-33
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/mapper/SvcServiceOperationViewMapper.java
+  s_ea54c81b9be8c9::t_3ccec5223ed751 26-34
+  s_ea54c81b9be8c9::t_056d7025fe603c 3,10
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_ea54c81b9be8c9::t_bf5946726a4b48 103-113
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_ea54c81b9be8c9::t_2d790374b3e3fa 77
+  s_ea54c81b9be8c9::t_f40f1f98441479 714-715,720
+  s_ea54c81b9be8c9::t_af0a2465d321c0 216
+  s_ea54c81b9be8c9::t_0c2c0b07dbb85a 66-69
+  s_ea54c81b9be8c9::t_cf1953e2f40d0e 580
+  s_ea54c81b9be8c9::t_bcc60d0961c967 76
+  s_ea54c81b9be8c9::t_88415c036fc9c8 566-579,581-713,716-719,721-742,744-749,751-752,755-785
+  s_ea54c81b9be8c9::t_559f629270ff8c 743,750,753-754
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_ea54c81b9be8c9::t_1d3f8b84c45e16 2792-2847
+  s_ea54c81b9be8c9::t_25f58746911e1d 2791
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyInput.java
+  s_ea54c81b9be8c9::t_32eff78a40862e 66-73
+  s_ea54c81b9be8c9::t_3b0b7ba00dd606 18-19
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcOrderStoreInfoEnt.java
+  s_ea54c81b9be8c9::t_f8fa41289e9a7b 144-147
+  s_ea54c81b9be8c9::t_804d7736723943 455-462
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_ea54c81b9be8c9::t_cf3e4640daafae 804-865
+doc/sql/feature/20260727-repeat-repair.sql
+  s_ea54c81b9be8c9::t_403d582515dfdd 1-5
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportDetailSvcServiceProxyOutput.java
+  s_ea54c81b9be8c9::t_683ee88cc80aff 1-8,10-11,13-14,17-20,22-34,43-46,48-52,54-152,154-202,211-452
+  s_ea54c81b9be8c9::t_7b92ebb3adcb45 9,12,15-16,21,35-42,47,53,153,203-210
+C04-svc-maintain/svc-core-maintain/src/main/resources/mybatis/mapper/svc/core/maintain/SvcServiceOperationViewMapper.xml
+  s_ea54c81b9be8c9::t_36cbd50bd9d4a1 194-240
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/CustomerRequestInput.java
+  s_ea54c81b9be8c9::t_8691c74d31bf31 31-33
+  s_ea54c81b9be8c9::t_6333adf05c0c90 82-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a8ebd0252343f8401b2538ce9a6ee4f0115cca37",
+  "prompts": {},
+  "sessions": {
+    "s_ea54c81b9be8c9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a364cf5a-e70f-4caa-8191-aa0d34d8eebb",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
