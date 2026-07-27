@@ -1,0 +1,37 @@
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item/QuerySvcServiceRepairItemInput.java
+  s_5748d523819fc8::t_9efca5e3bb27a3 14-17
+  s_5748d523819fc8::t_615f30b32e72e6 18
+  s_5748d523819fc8::t_b3c65b89c19d4b 40-49,52-53
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_5748d523819fc8::t_c14c1fa18860cb 38-39
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item/QuerySvcServiceRepairItemOutput.java
+  s_d1a747b9e8d9c5::t_8222b969841801 31-33,93-100
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceRepairItemServiceImpl.java
+  s_d1a747b9e8d9c5::t_9322987ae79b20 48,50-53
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceRepairItemViewMapper.xml
+  s_d1a747b9e8d9c5::t_af9d0fe5a7a104 68-69,74-80,84-85,170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3edd92be2d85a5390fb997a78bc95e7c678ef2cc",
+  "prompts": {},
+  "sessions": {
+    "s_5748d523819fc8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0a4361bc-6e09-4c5c-80c9-fc71edbe4a1b",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_d1a747b9e8d9c5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1cf65917-9d12-4469-bd70-c725b33bc479",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}
