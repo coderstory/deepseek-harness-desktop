@@ -1,0 +1,24 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_58070d47744a41::t_d825be09c5da85 276-278,281-301,305,311,316,318,325,327-328,331,333-336
+  s_58070d47744a41::t_568e067f0b1a50 149-150,152-158
+  s_58070d47744a41::t_f817b15b45b340 52
+  s_58070d47744a41::t_e0909fb9fe4549 151,159
+  s_58070d47744a41::t_77f1ffcc9027de 21
+  s_58070d47744a41::t_4ac54ab21b37ef 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0fc687ab184bb70cdbf003066987bf32bf633e74",
+  "prompts": {},
+  "sessions": {
+    "s_58070d47744a41": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "feb5080f-5ccc-4548-8aef-8cadc8e7aaa6",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
