@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_af5fa319b95ee9::t_1a6e06168ad5f9 567-568
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f5b98cd99f8910b866363402eda76c0ff7726c9a",
+  "prompts": {},
+  "sessions": {
+    "s_af5fa319b95ee9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f4d67368-c20a-4321-9547-b13bd2e339f1",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
