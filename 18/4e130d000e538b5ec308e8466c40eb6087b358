@@ -1,0 +1,19 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_d7de0ccb6b7bca::t_1d5e3debd1f767 822-831,839-840
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "184e130d000e538b5ec308e8466c40eb6087b358",
+  "prompts": {},
+  "sessions": {
+    "s_d7de0ccb6b7bca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "addff4d1-5991-455a-b591-853b7d232390",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
