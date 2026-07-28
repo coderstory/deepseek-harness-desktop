@@ -1,0 +1,21 @@
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/helper/RepairTaskDetailExportHelper.java
+  s_59c7913ed23b22::t_71fa842480c58e 194-237
+  s_59c7913ed23b22::t_acac3d537bdeb9 15,21
+  s_59c7913ed23b22::t_116ed8164b9598 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c848e7b6ec0d8fd58f2fbcc9702ae477df6eea89",
+  "prompts": {},
+  "sessions": {
+    "s_59c7913ed23b22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c11d2c20-18b0-4433-b7cd-42892055a3ce",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
