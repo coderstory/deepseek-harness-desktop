@@ -1,0 +1,22 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/GetMolitWorkOrderDetailOutput.java
+  s_58b183559e2e1c::t_1bd9db68dcf3a7 24-26
+  s_58b183559e2e1c::t_0c1b5e1c7e442e 88-95
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_58b183559e2e1c::t_80904034b2aa76 145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cd554ca4beff6a42ca7f088d3cad5d8036ff8fa5",
+  "prompts": {},
+  "sessions": {
+    "s_58b183559e2e1c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "417fe2f1-f9b8-4bb4-96a2-0b628cfd30f3",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
