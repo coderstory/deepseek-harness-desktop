@@ -1,0 +1,19 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_87c0e79b4f608c::t_390b20590aa5f7 398-401,404
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0f287f0d8292db7fd98ffe5080c38eb74cdcca40",
+  "prompts": {},
+  "sessions": {
+    "s_87c0e79b4f608c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8d610467-c4d0-43df-b7b4-5c0a6f8aee93",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
