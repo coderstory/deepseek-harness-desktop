@@ -1,0 +1,32 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/InfomediaVehicleInfoDataUploadService.java
+  s_4754d54c682641::t_75d3e9403608cc 500-507,509
+  s_4754d54c682641::t_37a8b3021bb90e 274-279,282,285
+  s_4754d54c682641::t_bdba8415c0f0e9 421
+  s_4754d54c682641::t_453ed986885b72 427-428
+  s_0976e551471da3::t_ae0b3b32234021 281,283
+  s_4754d54c682641::t_6205f57701861e 280
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ee7ce3cf87e28fe6b350ef746acae268202e3f49",
+  "prompts": {},
+  "sessions": {
+    "s_0976e551471da3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61737cf6-cd5f-45b1-a089-2fc092bb6720",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_4754d54c682641": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "62ae8479-bc52-4491-abb5-05c0ff1630d4",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
