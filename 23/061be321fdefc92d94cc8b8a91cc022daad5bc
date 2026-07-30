@@ -1,0 +1,29 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_6f9b99aa57244a::t_c8351b9e9a05cc 329-348,352,354-359,361,366,389,405,407,1206-1207
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_6f9b99aa57244a::t_5cf9c29222535d 1234
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_6f9b99aa57244a::t_48cc20f72c6833 1204
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/sms/SmsParamBuilder.java
+  s_6f9b99aa57244a::t_32c441ad3bc7e5 24-25,30,33-41
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/job/SvcAppointmentMessageSaveJob.java
+  s_6f9b99aa57244a::t_d18235bb768743 232
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/data/sms/SmsParamBuilderTest.java
+  s_6f9b99aa57244a::t_963ae654534aa6 23,32-34,39,42-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "23061be321fdefc92d94cc8b8a91cc022daad5bc",
+  "prompts": {},
+  "sessions": {
+    "s_6f9b99aa57244a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1fcdfaed-6886-4f6a-9d4e-b25af3947a41",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+C02-svc-appointment/svc-cloud-appointment/classpath.txt
+  s_6f34f75d6fd4dc::t_9fab0808667b4c 1
+C03-svc-reception/svc-cloud-reception/classpath.txt
+  s_6f34f75d6fd4dc::t_a45fccb179f9ca 1
+C04-svc-maintain/svc-cloud-maintain/classpath.txt
+  s_6f34f75d6fd4dc::t_3e31def6b59865 1
+C10-svc-inc/svc-cloud-inc/classpath.txt
+  s_6f34f75d6fd4dc::t_b28e84329d03a4 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e673874a681130947b372960ff5421efe04329d1",
+  "prompts": {},
+  "sessions": {
+    "s_6f34f75d6fd4dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-aa444ca5e05ea69c9",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

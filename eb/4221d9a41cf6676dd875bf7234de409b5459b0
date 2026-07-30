@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_58070d47744a41::t_71f015226dc442 388
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "eb4221d9a41cf6676dd875bf7234de409b5459b0",
+  "prompts": {},
+  "sessions": {
+    "s_58070d47744a41": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "feb5080f-5ccc-4548-8aef-8cadc8e7aaa6",
+        "model": "unknown"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

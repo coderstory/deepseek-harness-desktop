@@ -1,0 +1,24 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/AppointmentUtil.java
+  s_313f231a587377::t_f552f91085865d 8,10
+  s_313f231a587377::t_e3f21a02955d3c 38-45
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_313f231a587377::t_be69879d87c108 434
+  s_313f231a587377::t_f9f887de92dcb6 435
+  s_313f231a587377::t_9d20d713a11bbf 362-367
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0ad6eb9e0d6ac3e125d47b7e9cfaadb185b62266",
+  "prompts": {},
+  "sessions": {
+    "s_313f231a587377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14da707f-ef8f-410f-b73b-aa666d83a029",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

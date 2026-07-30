@@ -1,0 +1,23 @@
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/data/sms/SmsParamBuilderTest.java
+  s_313f231a587377::t_6b282533ab5853 15-17,30-31
+  s_313f231a587377::t_5de1d416d7b08d 46-47,51
+  s_313f231a587377::t_3db43d319af3f7 63-64
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/sms/SmsParamBuilder.java
+  s_313f231a587377::t_9ad7b2e65168d1 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b725570307da8293f1b13b8b861d4dec2f7bf3da",
+  "prompts": {},
+  "sessions": {
+    "s_313f231a587377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14da707f-ef8f-410f-b73b-aa666d83a029",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
