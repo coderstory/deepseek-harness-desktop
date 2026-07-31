@@ -1,0 +1,108 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentQueryAssembler.java
+  s_2e9d7d038a6241::t_08eb0975858bec 110,113
+  s_2e9d7d038a6241::t_64f67189b04180 51-52
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/GetServiceProxyDetailInput.java
+  s_2e9d7d038a6241::t_e7231bcd5a9ac2 1-21
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/GetAppointmentDetailV2Input.java
+  s_2e9d7d038a6241::t_b65c88f0b57d99 1-32
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/AppConsumerAppointmentServiceImpl.java
+  s_2e9d7d038a6241::t_268b90373da489 20,22-25,29
+  s_2e9d7d038a6241::t_cc8a61b07ef59d 748
+  s_2e9d7d038a6241::t_4588a582a96225 563
+  s_2e9d7d038a6241::t_00f96ef22a63cc 530
+  s_2e9d7d038a6241::t_bbebcd37b3c6b2 677,679
+  s_2e9d7d038a6241::t_4d5fac4381f53a 36
+  s_2e9d7d038a6241::t_8d076ba35f919d 928
+  s_c3e0a3d39617f5::t_67717aa7bd2c62 393-395
+  s_2e9d7d038a6241::t_34b3525d55af38 702,704
+  s_2e9d7d038a6241::t_4626b634cb3641 873
+  s_2e9d7d038a6241::t_f837aa01a05bf7 718,720
+  s_2e9d7d038a6241::t_378cc07157a1c8 937
+  s_2e9d7d038a6241::t_9d6b8c49a24ccc 591
+  s_2e9d7d038a6241::t_a674ef967d88ea 661,663
+  s_2e9d7d038a6241::t_64325ad5716632 826
+  s_2e9d7d038a6241::t_d429f0a063e939 592,594
+  s_2e9d7d038a6241::t_ed53c335f18e5d 531,533
+  s_2e9d7d038a6241::t_79521ca6061b1c 87
+  s_2e9d7d038a6241::t_d3d7a82e89c09f 852
+  s_2e9d7d038a6241::t_14a870cfc6d2ca 717
+  s_2e9d7d038a6241::t_84f8a7dc957284 105
+  s_2e9d7d038a6241::t_31ca37b62e77ec 94
+  s_2e9d7d038a6241::t_dd588edcd1d5f6 920
+  s_2e9d7d038a6241::t_54015809786334 548-552
+  s_2e9d7d038a6241::t_f2ecfc36747aaf 564,566
+  s_2e9d7d038a6241::t_78b33d0dc90e5c 676
+  s_2e9d7d038a6241::t_b1d89a7d80457f 627
+  s_2e9d7d038a6241::t_70f42064479e68 701
+  s_2e9d7d038a6241::t_a2e034de7db4d7 660
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/AppUserFavoriteStoreEnt.java
+  s_2e9d7d038a6241::t_77e3a1b13aaa57 15
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/AppointmentPageOutput.java
+  s_2e9d7d038a6241::t_c79a7bb6f7dcf5 5
+  s_2e9d7d038a6241::t_2ce8dd454f7aff 32,41,95,99,119,123
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/AppointmentDetailOutput.java
+  s_2e9d7d038a6241::t_6d54fc235a1f6a 30,33,100,104,108,112
+  s_2e9d7d038a6241::t_643fc3bfacff1c 5
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/UpdateContactInfoInput.java
+  s_2e9d7d038a6241::t_62d24ba4da0d72 16-18
+  s_2e9d7d038a6241::t_6d4cedbb69a8df 73-80
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/RepairConfirmInput.java
+  s_2e9d7d038a6241::t_d6a4fafac68c74 1-21
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/AppAfterSalesServiceOrderEnt.java
+  s_2e9d7d038a6241::t_60327edc0634c5 17
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/GetOnGoingAppointmentInput.java
+  s_2e9d7d038a6241::t_9bcffac6631b07 1-21
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/AppAfterSalesServiceOrderStateEnt.java
+  s_2e9d7d038a6241::t_552a7d723093d9 22
+  s_2e9d7d038a6241::t_1b024b3860e341 15
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/GetAppointmentDetailInput.java
+  s_2e9d7d038a6241::t_eed17d4d38d9aa 1-21
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/CancelAppointmentInput.java
+  s_2e9d7d038a6241::t_6b57ef6bb8a7f3 1-21
+doc/sql/feature/20260720-app-appointment-consumer/02-test-data.sql
+  s_2e9d7d038a6241::t_1def3a450a75d4 15,17
+  s_2e9d7d038a6241::t_d61cb7a1eb442c 156,158
+  s_2e9d7d038a6241::t_3992d383d36925 127,129
+  s_2e9d7d038a6241::t_e22fd79859aba0 1-5,8,10,12-14,16,23-126,128,132-155,157,160-180
+  s_2e9d7d038a6241::t_b4855e59d0d0b7 6-7,9,11,18-22,130-131,159
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/app_consumer/AppointmentStatusSyncInput.java
+  s_2e9d7d038a6241::t_bd9b5cd09cd9db 6
+  s_2e9d7d038a6241::t_3f609d33b19809 27,31,52,56,60,64
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppOrderNoGenerator.java
+  s_2e9d7d038a6241::t_7914233363dd8d 9
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/AppConsumerAppointmentService.java
+  s_2e9d7d038a6241::t_de341b88597698 6,8-11,15
+  s_2e9d7d038a6241::t_0b1467e9baf7ee 1-5,7,12-14,16-47,49,51,53-55,57,59,61,63-77
+  s_2e9d7d038a6241::t_460bdfe9a959d7 48,50,52,56,58,60,62
+doc/sql/feature/20260720-app-appointment-consumer/01-ddl.sql
+  s_2e9d7d038a6241::t_c67d53e4c38f79 9-11,19-49,51-56,65-74,76-77,85-89,91-92
+  s_2e9d7d038a6241::t_a3d17dc6c8539c 17
+  s_2e9d7d038a6241::t_f27221b7509e15 62,64
+  s_2e9d7d038a6241::t_473013fac77a86 83
+doc/sql/feature/20260720-app-appointment-consumer/02-rollback.sql
+  s_2e9d7d038a6241::t_a63aa658361a7a 8-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6e1bc9b6e4299ff62f808949175c8aeba6dcd74b",
+  "prompts": {},
+  "sessions": {
+    "s_2e9d7d038a6241": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "84545db3-2488-4342-92cd-0e964955d58b",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_c3e0a3d39617f5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b33467fc-04b1-4763-bbb8-0ef9d4853e58",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
