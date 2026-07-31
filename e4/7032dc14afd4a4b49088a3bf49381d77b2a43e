@@ -1,0 +1,28 @@
+C03-svc-reception/svc-core-reception/pom.xml
+  s_6e8940aa2a2e0c::t_f6fb0fbc96dcb9 12-14
+  s_6e8940aa2a2e0c::t_bf29d7b88ce09e 107-112,136-143
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyHelperSendSmsTest.java
+  s_6e8940aa2a2e0c::t_0b15e866ffd803 1-137
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_6e8940aa2a2e0c::t_10918f82126afe 58-61,1500-1546
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_6e8940aa2a2e0c::t_7220d48cfc1740 1171
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_6e8940aa2a2e0c::t_e8b3d84fea56b0 115-122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e47032dc14afd4a4b49088a3bf49381d77b2a43e",
+  "prompts": {},
+  "sessions": {
+    "s_6e8940aa2a2e0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "379751f7-799a-454c-a840-6ad9e99984c8",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

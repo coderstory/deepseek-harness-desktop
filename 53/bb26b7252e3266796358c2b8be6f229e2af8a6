@@ -1,0 +1,19 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/report/config/ReportProxyServlet.java
+  s_b591a5f9736d82::t_12ef1434771077 60-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "53bb26b7252e3266796358c2b8be6f229e2af8a6",
+  "prompts": {},
+  "sessions": {
+    "s_b591a5f9736d82": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aa2a591a-96b9-4c15-b647-f006c1797359",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

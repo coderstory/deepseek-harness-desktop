@@ -1,0 +1,25 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/SmsNotifyServiceImpl.java
+  s_ad9e0cb8aa9103::t_8e21d7967a92a9 113-115
+  s_ad9e0cb8aa9103::t_c8f2feb3d2006e 5-7,10-13,16-18,34
+  s_ad9e0cb8aa9103::t_9812c33553ab04 43-55,128
+  s_ad9e0cb8aa9103::t_d74c76da275a1c 116,125-127
+  s_ad9e0cb8aa9103::t_2225d0c4d8acf8 129
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/SmsNotifyServiceImplTest.java
+  s_ad9e0cb8aa9103::t_21d3014a1ebfe6 3,5-6,15,31,35-53,59,62-65,70-71,75,77,83-84,86,92,94-97,102-103,109,111-113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f3494fdf39d5e936da5b7335c92a00d0694280ad",
+  "prompts": {},
+  "sessions": {
+    "s_ad9e0cb8aa9103": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "229f40d6-cf8b-496e-8fe7-926fcc34637e",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

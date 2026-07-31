@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_58b183559e2e1c::t_90f59c5ae19a6d 57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "dc6d55fe28d529749234a051bd4a6f0a9ebdf74b",
+  "prompts": {},
+  "sessions": {
+    "s_58b183559e2e1c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "417fe2f1-f9b8-4bb4-96a2-0b628cfd30f3",
+        "model": "unknown"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
