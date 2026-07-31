@@ -1,0 +1,20 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/SmsNotifyServiceImpl.java
+  s_313f231a587377::t_6022504514f75d 46-47
+  s_313f231a587377::t_c86be2924573ca 3,37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "aa2be7d52ce134dd28db12724f78f4cfc49b872e",
+  "prompts": {},
+  "sessions": {
+    "s_313f231a587377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14da707f-ef8f-410f-b73b-aa666d83a029",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
