@@ -1,0 +1,35 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/config-common-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 2
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-reception-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 13,17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/error/appointment-common-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 5
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/maintain-common-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 6,17-18
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 2,10,12,17,21
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/pdi/error/svc-base-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 11,23
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/delivery/error/delivery-common-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 3
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 5,14-15
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.nl-NL.properties
+  s_d65a5cf5bd1e72::t_db9bd6b21081cd 2,8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c32a16c09d94db876b17bc4afb3da642eb1094a3",
+  "prompts": {},
+  "sessions": {
+    "s_d65a5cf5bd1e72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61332b88-0e42-4c78-9096-ef123deb8290",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
