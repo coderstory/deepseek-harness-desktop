@@ -1,0 +1,32 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/ndr/NdrHandler.java
+  s_2286b7e52d4bfc::t_60235dc3ff01a2 28,32
+  s_2286b7e52d4bfc::t_ec93dfa0fad289 33
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/ndr/impl/TestNdrHandler.java
+  s_2286b7e52d4bfc::t_0e97c39f830d1c 153,164-169
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/NdrHelper.java
+  s_2286b7e52d4bfc::t_ea9afd56ae2b49 146,153-158
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/NdrService.java
+  s_2286b7e52d4bfc::t_0471cf25ccd25f 22,96-105
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/ndr/NdrZonesOutput.java
+  s_2286b7e52d4bfc::t_3cd2a60522ea86 1-18
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/ndr/impl/DefaultNdrHandler.java
+  s_2286b7e52d4bfc::t_452db2b4bd3878 694-716
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/report/config/ReportProxyServlet.java
+  s_2286b7e52d4bfc::t_f282c94f967a6b 3,6-7,9-10,12-14,16,18-19,23-26,30-31,33-34,38-39,45-46,50,61-85,88-113,117-132,137,140-155,158-175,179-183,186,197,199-200,202-210,215-231,234-241,243-267,269-478,481-489
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "726d9af4b7ba03eff1169ee99e18d3ee9db05c9e",
+  "prompts": {},
+  "sessions": {
+    "s_2286b7e52d4bfc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c78bd14a-be46-49f9-8081-0fcb9843dbd4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

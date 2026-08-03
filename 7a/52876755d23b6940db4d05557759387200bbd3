@@ -1,0 +1,21 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/job/SvcAppointmentMessageSaveJob.java
+  s_4a3503f49294c8::t_218753a151a52d 195-225,228-235
+  s_4a3503f49294c8::t_c8c09e5b915a39 28-29
+  s_4a3503f49294c8::t_864c8c72ae4ead 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7a52876755d23b6940db4d05557759387200bbd3",
+  "prompts": {},
+  "sessions": {
+    "s_4a3503f49294c8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "735af880-880e-4429-9241-cb3beafac45e",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

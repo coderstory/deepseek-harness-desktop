@@ -1,0 +1,69 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/BenefitPageDispatchHelper.java
+  s_45acd6f6c81a36::t_82587062320ce5 1-41
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_277ada6e5875fd::t_5704543fa324cb 83,552-556
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyInput.java
+  s_277ada6e5875fd::t_09849d76f87132 31-34,152-167
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/PageBenefitInput.java
+  s_45acd6f6c81a36::t_fdf904480e2097 15-16,57-64
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcOrderStoreInfoViewMapper.xml
+  s_277ada6e5875fd::t_eafb5f43e0778d 297-302
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/BenefitPageDispatchHelperTest.java
+  s_45acd6f6c81a36::t_cab8dbb524fbbc 1-77
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_277ada6e5875fd::t_ee852af81fe24b 2581-2582,2633-2634,2839-2853,2858-2881
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/ExportSvcServiceOperationOutput.java
+  s_45acd6f6c81a36::t_6b2c0ad881bb4d 44-51,198-213
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/QuerySvcServiceOperationInput.java
+  s_45acd6f6c81a36::t_75b23b43348c44 34-39,128-143
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/QuerySvcServiceOperationOutput.java
+  s_277ada6e5875fd::t_c30737839fe298 46-48,231-238
+C04-svc-maintain/svc-core-maintain/src/main/resources/mybatis/mapper/svc/core/maintain/SvcServiceOperationViewMapper.xml
+  s_277ada6e5875fd::t_98a4d08511e23e 145,279-281
+C04-svc-maintain/svc-core-maintain/src/test/java/svc/core/maintain/helper/RepairTaskDetailExportHelperTest.java
+  s_45acd6f6c81a36::t_41a39babd29856 25-28,90-91,112,133-134,149-150,164-165,183-184,187-415
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_45acd6f6c81a36::t_b4dfae71e58691 1-148
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/StatementExportCalcHelper.java
+  s_45acd6f6c81a36::t_e87e44d32d4fa9 1-62
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/mapper/SvcStatementExportMapper.java
+  s_45acd6f6c81a36::t_438744039de9bd 1-36
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_277ada6e5875fd::t_69a8f22a742a62 5,49,529,531-533,535-536,583,585-587,589-590,640,647-648,651
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/DynamicQuerySvcStatementOutput.java
+  s_277ada6e5875fd::t_e3ebf84b6e19ba 25-27,97-112
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_45acd6f6c81a36::t_2f05a3cffb29cb 6-7,36-38,51-73,75-91,93,95,97-105,163-170,195-267,271,275,279,283,287,290-305
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/SvcStatementExportAggRow.java
+  s_45acd6f6c81a36::t_69943c031f1b1f 1-86
+C06-svc-delivery/svc-core-delivery/src/main/resources/mybatis/mapper/svc/core/delivery/SvcStatementExportMapper.xml
+  s_45acd6f6c81a36::t_11584805a9329e 1-129
+C06-svc-delivery/svc-core-delivery/src/main/resources/mybatis/mapper/svc/core/delivery/SvcStatementViewMapper.xml
+  s_277ada6e5875fd::t_8856bac746ac4a 127
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/helper/StatementExportCalcHelperTest.java
+  s_45acd6f6c81a36::t_9195e0543ff4e6 1-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8491450d3dba9461a480ebf73c3046a751a30b3c",
+  "prompts": {},
+  "sessions": {
+    "s_277ada6e5875fd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "113fc1fb-55dd-4c75-945d-c01c216b95b6",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_45acd6f6c81a36": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "51a9be10-a7a4-481d-8bcb-381769456efa",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

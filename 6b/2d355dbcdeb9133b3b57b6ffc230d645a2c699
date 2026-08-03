@@ -1,0 +1,78 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/LoginByPhoneRequest.java
+  s_45acd6f6c81a36::t_641dfadb18c68c 1-27
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/CEndAuthFilter.java
+  s_45acd6f6c81a36::t_4bc5f007df567b 1-126
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/LoginByEmailInput.java
+  s_45acd6f6c81a36::t_08ed35c06ae8ef 1-21
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/LoginResponse.java
+  s_45acd6f6c81a36::t_3fe931e7e5d2b5 1-35
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/UserInfoApiResponse.java
+  s_45acd6f6c81a36::t_8a1bef6c5b92f6 1-29
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/AppConsumerLoginOutput.java
+  s_45acd6f6c81a36::t_9662055e8e14f2 1-46
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/RegisterByEmailInput.java
+  s_45acd6f6c81a36::t_cecfc1a659f3a4 1-41
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/AppConsumerUserContext.java
+  s_45acd6f6c81a36::t_99abef83bbfd8b 1-82
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/RegisterByPhoneInput.java
+  s_45acd6f6c81a36::t_24a531283642a0 1-37
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/CEndUserCenterClient.java
+  s_45acd6f6c81a36::t_73795bd7123d47 1-160,162-163,165-201
+  s_45acd6f6c81a36::t_10d23f111e7677 161,164
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/LoginByPhoneInput.java
+  s_45acd6f6c81a36::t_3c638bd99f78be 1-33
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/CEndUserInfoCache.java
+  s_45acd6f6c81a36::t_9afdcb6fdaba15 1-57
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/RegisterByEmailRequest.java
+  s_45acd6f6c81a36::t_2b6d78a828ba7b 1-33
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/LoginByEmailRequest.java
+  s_45acd6f6c81a36::t_457419bbb68b0f 1-16
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/SilentRegisterByEmailRequest.java
+  s_45acd6f6c81a36::t_a093488b095394 1-19
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/UcResult.java
+  s_45acd6f6c81a36::t_c11d02200ea50e 1-79
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/SilentRegisterByEmailInput.java
+  s_45acd6f6c81a36::t_f74bac51df259e 1-25
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_45acd6f6c81a36::t_8598d80f384dc3 32-58
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_45acd6f6c81a36::t_68a8da4a16bb24 66-67
+  s_45acd6f6c81a36::t_75a735adf9c301 710-711
+  s_45acd6f6c81a36::t_e7ef4f75e85070 1044-1045
+  s_45acd6f6c81a36::t_f978d24fcb0267 239,627-632,638-640,643-649
+  s_45acd6f6c81a36::t_afaf2ea4fbefec 1083-1084
+  s_45acd6f6c81a36::t_c4cf9893243915 217-222,233-238
+  s_45acd6f6c81a36::t_833c9e06f7c2d9 746-747
+  s_45acd6f6c81a36::t_84d9149be98766 109-110
+  s_45acd6f6c81a36::t_e99d923fd54976 777-778
+  s_45acd6f6c81a36::t_c893df41265ec9 240-241
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/CEndAuthFilterConfig.java
+  s_45acd6f6c81a36::t_df7d162068f7d3 1-30
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerLoginServiceImpl.java
+  s_45acd6f6c81a36::t_7f373b79365b98 1-181
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/AppConsumerUserContextHolder.java
+  s_45acd6f6c81a36::t_c06b116a337e27 1-41
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/CEndTokenConf.java
+  s_45acd6f6c81a36::t_80fcf6a9b0dcfd 21-23
+  s_45acd6f6c81a36::t_f166192d54e02e 1-20,24-142
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/RegisterByPhoneRequest.java
+  s_45acd6f6c81a36::t_0273f651ca9b0f 1-30
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/AppConsumerLoginService.java
+  s_45acd6f6c81a36::t_75511414090e50 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6b2d355dbcdeb9133b3b57b6ffc230d645a2c699",
+  "prompts": {},
+  "sessions": {
+    "s_45acd6f6c81a36": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "51a9be10-a7a4-481d-8bcb-381769456efa",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

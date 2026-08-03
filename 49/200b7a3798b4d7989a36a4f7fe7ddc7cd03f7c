@@ -1,0 +1,21 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/NdrHelper.java
+  s_2286b7e52d4bfc::t_2428c74c8bd0d7 146
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/ndr/NdrHandler.java
+  s_2286b7e52d4bfc::t_2428c74c8bd0d7 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "49200b7a3798b4d7989a36a4f7fe7ddc7cd03f7c",
+  "prompts": {},
+  "sessions": {
+    "s_2286b7e52d4bfc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c78bd14a-be46-49f9-8081-0fcb9843dbd4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
