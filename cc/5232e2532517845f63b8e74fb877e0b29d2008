@@ -1,0 +1,25 @@
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/SmsNotifyServiceImplTest.java
+  s_ad9e0cb8aa9103::t_83152846320308 3,14
+  s_ad9e0cb8aa9103::t_881de9c2cda66e 62-98
+  s_ad9e0cb8aa9103::t_05fd689ef6f50c 15
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/config/McsFeignEncoderConfigTest.java
+  s_ad9e0cb8aa9103::t_f471870c112d0e 1-57
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/config/McsFeignEncoderConfig.java
+  s_ad9e0cb8aa9103::t_315924d4fdf7ef 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cc5232e2532517845f63b8e74fb877e0b29d2008",
+  "prompts": {},
+  "sessions": {
+    "s_ad9e0cb8aa9103": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "229f40d6-cf8b-496e-8fe7-926fcc34637e",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/StandardHourServiceImpl.java
+  s_663097a95c4058::t_76db3c9174adb7 226
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "40c4642ce871b55f7e761ff73639acb8ee161987",
+  "prompts": {},
+  "sessions": {
+    "s_663097a95c4058": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "83ee1ce7-7075-4f89-a84e-e9707b82c8ee",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}
