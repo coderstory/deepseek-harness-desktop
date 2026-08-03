@@ -3,11 +3,13 @@ C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMa
   s_6ccabc612e4926::t_04b563b7a1a1d8 1187
   s_6ccabc612e4926::t_a48acce0cf919d 1200-1201
   s_6ccabc612e4926::t_c7886cd8dab0b6 1203
+  s_87bcdf1143463e::t_bef048ca745e3d 1204
 C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
   s_6ccabc612e4926::t_19585398fc8732 1183-1194
   s_6ccabc612e4926::t_e9de6a4c157fd7 1182
   s_6ccabc612e4926::t_13c326ba2f4e5c 1195-1196
   s_6ccabc612e4926::t_6e20934209f33f 1198
+  s_87bcdf1143463e::t_bef048ca745e3d 1199
 ---
 {
   "schema_version": "authorship/3.0.0",
@@ -22,6 +24,14 @@ C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/Sv
         "model": "glm-5.2"
       },
       "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    },
+    "s_87bcdf1143463e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9f2e5b61-4c70-4a81-afc8-60f6af273b72",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
     }
   }
 }
