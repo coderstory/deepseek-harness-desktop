@@ -1,0 +1,26 @@
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcPipaReplaceBindIdTest.java
+  s_5bb330563080d6::t_eabb60862e30e5 14
+  s_5bb330563080d6::t_5547cb7efd69aa 59
+  s_5bb330563080d6::t_4c5352814fb7d4 63
+  s_5bb330563080d6::t_5aad355775cc38 78
+  s_5bb330563080d6::t_31a623e059f1e2 67
+  s_5bb330563080d6::t_e109ed3947bc50 74
+  s_5bb330563080d6::t_3ac0d963c9c1b2 91,102
+  s_5bb330563080d6::t_6dcc37bdcd6785 82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "212661aeeb43312a79b63bd3b07536d2f9ac0860",
+  "prompts": {},
+  "sessions": {
+    "s_5bb330563080d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a09eec90-0d12-4260-a549-2844ef177a18",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "CoderStory <qianyf2015@gmail.com>"
+    }
+  }
+}
