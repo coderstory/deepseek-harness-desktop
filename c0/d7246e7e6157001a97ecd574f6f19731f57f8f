@@ -1,0 +1,19 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/ESignatureHelper.java
+  s_87bcdf1143463e::t_3730b478d8b6be 8,10,16-17,34,54-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c0d7246e7e6157001a97ecd574f6f19731f57f8f",
+  "prompts": {},
+  "sessions": {
+    "s_87bcdf1143463e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9f2e5b61-4c70-4a81-afc8-60f6af273b72",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
