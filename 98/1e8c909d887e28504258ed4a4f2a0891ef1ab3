@@ -1,0 +1,39 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/UcdCarService.java
+  s_5b175dbb67293b::t_eb92540e2e99bc 62
+  s_5b175dbb67293b::t_b5c53f3471b718 58-61,63-65
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/UcdCarVinOrPlateHelperTest.java
+  s_5b175dbb67293b::t_9846caabae7400 1-181,218
+  s_5b175dbb67293b::t_2eccfee029dee4 182-217
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarHelper.java
+  s_5b175dbb67293b::t_6381f0e91aa712 331-332
+  s_5b175dbb67293b::t_ca8081273a6810 335,337-340
+  s_5b175dbb67293b::t_16a96c1e2a540b 321-330,333-334,336,341-368,370-376
+  s_5b175dbb67293b::t_4c11d212f51db1 369
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/ucd_car/QueryVehicleByVinOrPlateInput.java
+  s_5b175dbb67293b::t_c54d47bfa14eae 1-19,29-42,51-52
+  s_5b175dbb67293b::t_a5333522ce3321 20-28,43-50
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/ucd_car/VehicleByVinOrPlateOutput.java
+  s_5b175dbb67293b::t_8730c2ca138d1e 1-32
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ucd/VehicleInput.java
+  s_5b175dbb67293b::t_8278ae2d61b4ac 26-38
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarVinOrPlateHelper.java
+  s_5b175dbb67293b::t_3f6c73ef2c495f 11
+  s_5b175dbb67293b::t_1b92fc1af574be 33-37,39-52,61,75
+  s_5b175dbb67293b::t_d9a95acd4470f2 1-10,12-32,38,53-60,62-74,76-154
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "981e8c909d887e28504258ed4a4f2a0891ef1ab3",
+  "prompts": {},
+  "sessions": {
+    "s_5b175dbb67293b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dd34c034-84b7-456d-a6ed-fc62e3595163",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
