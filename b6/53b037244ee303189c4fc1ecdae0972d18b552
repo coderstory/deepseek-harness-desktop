@@ -1,0 +1,33 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-input-data-check-error.es-MX.properties
+  s_d65a5cf5bd1e72::t_1fb8eca1614665 3
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-reception-error.es-MX.properties
+  s_d65a5cf5bd1e72::t_1fb8eca1614665 2,4,7,10,12-13,15-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.es-MX.properties
+  s_d65a5cf5bd1e72::t_1fb8eca1614665 3,7-9
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/delivery/error/delivery-common-error.es-MX.properties
+  s_d65a5cf5bd1e72::t_1fb8eca1614665 3
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-MX.properties
+  s_d65a5cf5bd1e72::t_1fb8eca1614665 2-3,8,10-12,16,18
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/error/appointment-common-error.es-MX.properties
+  s_d65a5cf5bd1e72::t_1fb8eca1614665 4,6,10
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/config-common-error.es-MX.properties
+  s_d65a5cf5bd1e72::t_1fb8eca1614665 2
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_d65a5cf5bd1e72::t_1fb8eca1614665 1,6-7,10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b653b037244ee303189c4fc1ecdae0972d18b552",
+  "prompts": {},
+  "sessions": {
+    "s_d65a5cf5bd1e72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61332b88-0e42-4c78-9096-ef123deb8290",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
