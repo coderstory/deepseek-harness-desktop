@@ -1,0 +1,19 @@
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_pipa/PolicyItem.java
+  s_87bcdf1143463e::t_cf45ff1b6b92c2 1-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8ef61d97186bfedc205123577cc3936400fa6659",
+  "prompts": {},
+  "sessions": {
+    "s_87bcdf1143463e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9f2e5b61-4c70-4a81-afc8-60f6af273b72",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
