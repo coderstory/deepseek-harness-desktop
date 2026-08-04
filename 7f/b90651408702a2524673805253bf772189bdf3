@@ -1,0 +1,19 @@
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_40796a4789d93a::t_5d484e85bcc5ab 1174,1177-1178
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7fb90651408702a2524673805253bf772189bdf3",
+  "prompts": {},
+  "sessions": {
+    "s_40796a4789d93a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2bdf640-50c6-42dc-8904-5ab9897cbe30",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

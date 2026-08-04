@@ -1,0 +1,19 @@
+D01-dependence/svc-dependency-all/pom.xml
+  s_d65a5cf5bd1e72::t_35c848614f0d9d 85-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b83409f8e078536e143a8aa5e811b91a1c15fe12",
+  "prompts": {},
+  "sessions": {
+    "s_d65a5cf5bd1e72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61332b88-0e42-4c78-9096-ef123deb8290",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/SmsNotifyServiceImplTest.java
+  s_ad9e0cb8aa9103::t_21d3014a1ebfe6 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "71869f6254fd30a9291f7a0f22ffd7f8c813b19e",
+  "prompts": {},
+  "sessions": {
+    "s_ad9e0cb8aa9103": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "229f40d6-cf8b-496e-8fe7-926fcc34637e",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

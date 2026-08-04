@@ -1,0 +1,27 @@
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/sms/SmsParamBuilder.java
+  s_87bcdf1143463e::t_ba97658c9c430d 71-89
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/data/sms/SmsParamBuilderTest.java
+  s_87bcdf1143463e::t_ba97658c9c430d 100-123
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_87bcdf1143463e::t_ba97658c9c430d 1912-1925,1927
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/job/SvcAppointmentMessageSaveJob.java
+  s_87bcdf1143463e::t_ba97658c9c430d 192-209,211-212,215-222
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_87bcdf1143463e::t_ba97658c9c430d 309,321,325-326
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "780620e7afcba5bae8086b48d76322e0e2dc6aa2",
+  "prompts": {},
+  "sessions": {
+    "s_87bcdf1143463e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9f2e5b61-4c70-4a81-afc8-60f6af273b72",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
