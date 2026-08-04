@@ -1,0 +1,76 @@
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcInvoiceInfoCloudServiceImplTest.java
+  s_3f607c04540e2a::t_8a0b9b0d45d79b 95
+  s_3f607c04540e2a::t_38a46c2681fcee 265-270,273,275-276,279-281,286,288,290
+  s_3f607c04540e2a::t_d392e6f3dcc9cd 19
+  s_3f607c04540e2a::t_2112bfa611d400 24
+  s_3f607c04540e2a::t_70e7fc701a5757 94,100,105-109
+  s_3f607c04540e2a::t_03c0d9764fcd22 17
+  s_3f607c04540e2a::t_6afadd3525ab45 101,189,219
+  s_3f607c04540e2a::t_b6ab4a5651dc69 116
+  s_3f607c04540e2a::t_272845954009d1 3
+  s_3f607c04540e2a::t_e344236f1e5532 77-81
+  s_3f607c04540e2a::t_9205dd233367c1 243
+  s_3f607c04540e2a::t_da89eaf3daa97a 122-123
+  s_3f607c04540e2a::t_fe45d86b0a89b0 254
+  s_3f607c04540e2a::t_e34313e0db66d3 119
+  s_3f607c04540e2a::t_4960a9f69e0d7b 139
+  s_3f607c04540e2a::t_c13664a0d99092 271-272
+  s_3f607c04540e2a::t_54deb4d9cbfa00 274
+  s_3f607c04540e2a::t_aa636cddf7c185 277-278
+  s_3f607c04540e2a::t_b09e14de868d8b 282-285
+  s_3f607c04540e2a::t_0e1486b545d75b 287
+  s_3f607c04540e2a::t_a444f1d183bc5a 289
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcInvoiceInfoCloudServiceImpl.java
+  s_3f607c04540e2a::t_04b71067ca02f7 59-61
+  s_3f607c04540e2a::t_68c35b5259d0b8 68-70
+  s_3f607c04540e2a::t_a50da84fd83534 47,52,56-58
+  s_3f607c04540e2a::t_94cb54e0330c2a 17
+  s_3f607c04540e2a::t_a6f0178c673aaa 10
+  s_3f607c04540e2a::t_0412910521f34b 37-43,62-67
+  s_3f607c04540e2a::t_0f35c94ba21251 21
+  s_3f607c04540e2a::t_79627aef8c63ef 8
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ndr/NdrCompanyListDTO.java
+  s_3f607c04540e2a::t_fca747b91c209d 42-57
+  s_3f607c04540e2a::t_019b49568028cf 22-23
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/ESignatureHelper.java
+  s_3f607c04540e2a::t_7f5975b83af69b 121
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/ndr/StoreListOutput.java
+  s_3f607c04540e2a::t_bf69023be05f52 151-152,155-156
+  s_3f607c04540e2a::t_34ca14b5a23912 40,42,44
+  s_3f607c04540e2a::t_bf7b9a72d2fcfd 41
+  s_3f607c04540e2a::t_eb37972a822530 43
+  s_3f607c04540e2a::t_89977cc6537e11 149-150
+  s_3f607c04540e2a::t_b24eebc5cafde6 153-154
+  s_3f607c04540e2a::t_ac04258b9b5df4 5
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ndr/NdrCompanyInfo.java
+  s_3f607c04540e2a::t_e94c02a8411fed 52-67
+  s_3f607c04540e2a::t_676e1886202cf1 17-18
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/ndr/DealerOutput.java
+  s_3f607c04540e2a::t_906f98a8ce393f 267-274
+  s_3f607c04540e2a::t_7ecd32d5476376 65-69
+C06-svc-delivery/svc-cloud-delivery/src/main/java/svc/cloud/delivery/service/data/svc_invoice_info/GetInvoiceInfoByDealerCodeOutput.java
+  s_3f607c04540e2a::t_ef737540e2ef88 15
+  s_3f607c04540e2a::t_27611f68a79f94 24-26
+  s_3f607c04540e2a::t_21360e65d42589 47-54
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/ndr/impl/DefaultNdrHandler.java
+  s_3f607c04540e2a::t_103156f589be1c 432
+  s_3f607c04540e2a::t_053622c4f84910 66-67
+  s_3f607c04540e2a::t_ec9a9d1802bf9b 430-431
+  s_3f607c04540e2a::t_d621760038664b 433
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1ad216edd7489052d51ade1f36858923260f2fa2",
+  "prompts": {},
+  "sessions": {
+    "s_3f607c04540e2a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "516ea0fe-9441-43dd-aee5-6f716877db73",
+        "model": "glm-5.2"
+      },
+      "human_author": "CoderStory <qianyf2015@gmail.com>"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+CLAUDE.md
+  s_5bb330563080d6::t_03f856c2de94cb 76
+doc/rules/rules.md
+  s_5bb330563080d6::t_4612d9d41fa795 236-248
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f9b9897aaf88bb0530517f4ee9e8a56d5b8018e8",
+  "prompts": {},
+  "sessions": {
+    "s_5bb330563080d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a09eec90-0d12-4260-a549-2844ef177a18",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "CoderStory <qianyf2015@gmail.com>"
+    },
+    "s_87c0e79b4f608c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8d610467-c4d0-43df-b7b4-5c0a6f8aee93",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
