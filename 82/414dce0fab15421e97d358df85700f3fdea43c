@@ -1,0 +1,19 @@
+CLAUDE.md
+  s_5bb330563080d6::t_210af8144c608f 128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "82414dce0fab15421e97d358df85700f3fdea43c",
+  "prompts": {},
+  "sessions": {
+    "s_5bb330563080d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a09eec90-0d12-4260-a549-2844ef177a18",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "CoderStory <qianyf2015@gmail.com>"
+    }
+  }
+}

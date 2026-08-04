@@ -1,0 +1,19 @@
+doc/superpowers/specs/2026-07-07-pipa-template-4-5-4-design.md
+  s_d65a5cf5bd1e72::t_cca8e131905698 198
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d433bcdb758745c9964d463c79e7a263a9a0ecd0",
+  "prompts": {},
+  "sessions": {
+    "s_d65a5cf5bd1e72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61332b88-0e42-4c78-9096-ef123deb8290",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

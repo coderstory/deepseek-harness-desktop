@@ -1,0 +1,37 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-input-data-check-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 3
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-pay-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 1
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/config-common-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 6
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 15
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/inc-commom-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 1-9,11,13
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/delivery/error/delivery-common-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 3
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-reception-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 2
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/error/appointment-common-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 6
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/maintain-common-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 4,6-8
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.ko-KR.properties
+  s_d65a5cf5bd1e72::t_37557e35e6e47d 2,11,19,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4377582f7b17250cbbe0899c1f60f3618af902c3",
+  "prompts": {},
+  "sessions": {
+    "s_d65a5cf5bd1e72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61332b88-0e42-4c78-9096-ef123deb8290",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
