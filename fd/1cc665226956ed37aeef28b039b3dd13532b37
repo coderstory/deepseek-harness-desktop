@@ -3,5 +3,23 @@
   "schema_version": "authorship/3.0.0",
   "git_ai_version": "1.6.15",
   "base_commit_sha": "fd1cc665226956ed37aeef28b039b3dd13532b37",
-  "prompts": {}
+  "prompts": {},
+  "sessions": {
+    "s_313f231a587377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14da707f-ef8f-410f-b73b-aa666d83a029",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_87c0e79b4f608c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8d610467-c4d0-43df-b7b4-5c0a6f8aee93",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
 }
