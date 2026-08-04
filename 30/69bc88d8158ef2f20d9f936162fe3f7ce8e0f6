@@ -1,0 +1,19 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcPipaServiceImpl.java
+  s_1c249335a42ae0::t_caf2975b4e154b 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3069bc88d8158ef2f20d9f936162fe3f7ce8e0f6",
+  "prompts": {},
+  "sessions": {
+    "s_1c249335a42ae0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "281ee669-eca0-40d6-b44a-7bb58681d19b",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

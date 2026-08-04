@@ -1,0 +1,17 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0c39419f13dc422d6506a9ce72f74d926b0e8967",
+  "prompts": {},
+  "sessions": {
+    "s_b31fbc3df59809": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "636f9c48-a4b8-4ada-8c5e-63e2f4abef0f",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

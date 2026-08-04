@@ -1,0 +1,21 @@
+doc/superpowers/specs/2026-07-07-pipa-template-4-5-4-REVIEWS.md
+  s_d65a5cf5bd1e72::t_78d2c6c268dad1 1-127
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcPipaDownloadTemplateTest.java
+  s_d65a5cf5bd1e72::t_78d2c6c268dad1 13,63-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "dd92a9608e24e8945d61c8d147a511d0d90ca5a1",
+  "prompts": {},
+  "sessions": {
+    "s_d65a5cf5bd1e72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61332b88-0e42-4c78-9096-ef123deb8290",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
