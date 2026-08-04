@@ -7,6 +7,14 @@ C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/stat
   "base_commit_sha": "404fc0e216dab3fb57e89d38d597e0fad22c9f54",
   "prompts": {},
   "sessions": {
+    "s_6f34f75d6fd4dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-aa444ca5e05ea69c9",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
     "s_d65a5cf5bd1e72": {
       "agent_id": {
         "tool": "claude",

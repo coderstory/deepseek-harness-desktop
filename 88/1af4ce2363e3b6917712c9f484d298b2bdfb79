@@ -14,6 +14,14 @@ CLAUDE.md
         "model": "deepseek-v4-pro"
       },
       "human_author": "CoderStory <qianyf2015@gmail.com>"
+    },
+    "s_87c0e79b4f608c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8d610467-c4d0-43df-b7b4-5c0a6f8aee93",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
     }
   }
 }

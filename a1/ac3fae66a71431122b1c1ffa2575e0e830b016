@@ -15,6 +15,8 @@ C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/se
 C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/ConfirmSvcServiceProxyInput.java
   s_5bb330563080d6::t_9b3f075fb86e2b 86-93
   s_5bb330563080d6::t_40ed61731a92f7 29-30
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/SmsNotifyServiceImplTest.java
+  s_ad9e0cb8aa9103::t_21d3014a1ebfe6 4
 ---
 {
   "schema_version": "authorship/3.0.0",
@@ -29,6 +31,14 @@ C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/da
         "model": "glm-5.2"
       },
       "human_author": "CoderStory <qianyf2015@gmail.com>"
+    },
+    "s_ad9e0cb8aa9103": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "229f40d6-cf8b-496e-8fe7-926fcc34637e",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
     }
   }
 }

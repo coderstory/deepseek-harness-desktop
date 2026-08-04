@@ -25,6 +25,14 @@ C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcPipaServ
   "base_commit_sha": "10422ea8ced324d3697f51b364a9622b229258e2",
   "prompts": {},
   "sessions": {
+    "s_313f231a587377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14da707f-ef8f-410f-b73b-aa666d83a029",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
     "s_d65a5cf5bd1e72": {
       "agent_id": {
         "tool": "claude",
