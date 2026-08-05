@@ -1,0 +1,35 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/mapper/SvcMaintenanceRecordViewMapper.java
+  s_763b6b44969f4b::t_adf7e48d9dde0b 7,28-45
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/UpdateMaintenanceRecordInput.java
+  s_763b6b44969f4b::t_d303568120f97f 49-63
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordSubmitDeleteUpdateTest.java
+  s_763b6b44969f4b::t_24c69488f7f3a5 1-392
+C09-svc-pdi/svc-core-pdi/src/main/resources/mybatis/mapper/svc/core/pdi/SvcMaintenanceRecordViewMapper.xml
+  s_763b6b44969f4b::t_5ef4caee832395 31-46
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_763b6b44969f4b::t_281270cef8f0d7 404-584
+  s_763b6b44969f4b::t_4447866cb52010 61
+  s_763b6b44969f4b::t_7816bda090aad3 23-24,34-36
+  s_763b6b44969f4b::t_4722967cec2dfb 83-88
+  s_763b6b44969f4b::t_5ab66a13aa6cd2 4
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_763b6b44969f4b::t_754e36a764ae87 15,25
+  s_763b6b44969f4b::t_0c7b3cbf1fcd05 70-83
+  s_763b6b44969f4b::t_6e6293940fcde6 465-664
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7e3306a694e763756a0a5b4029ec531ceddf7213",
+  "prompts": {},
+  "sessions": {
+    "s_763b6b44969f4b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f1e82542-1b73-410d-bda9-5887360ac371",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

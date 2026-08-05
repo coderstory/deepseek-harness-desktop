@@ -1,7 +1,22 @@
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/sms/SmsParamBuilder.java
+  s_313f231a587377::t_bbfc3ece1ea5fa 31
+  s_313f231a587377::t_e99edc587c502e 9,17
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/data/sms/SmsParamBuilderTest.java
+  s_313f231a587377::t_ac974c8550e5c1 8
 ---
 {
   "schema_version": "authorship/3.0.0",
   "git_ai_version": "1.6.15",
   "base_commit_sha": "368240935af4b7880cbe660795873ce0385e20fd",
-  "prompts": {}
+  "prompts": {},
+  "sessions": {
+    "s_313f231a587377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14da707f-ef8f-410f-b73b-aa666d83a029",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
 }

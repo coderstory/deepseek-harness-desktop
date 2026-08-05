@@ -1,7 +1,19 @@
+C03-svc-reception/svc-core-reception/pom.xml
+  s_6e8940aa2a2e0c::t_bf29d7b88ce09e 123-124,127,131-132
 ---
 {
   "schema_version": "authorship/3.0.0",
   "git_ai_version": "1.6.15",
   "base_commit_sha": "ec16c96c93c9425361e5196b2359466db9d38746",
-  "prompts": {}
+  "prompts": {},
+  "sessions": {
+    "s_6e8940aa2a2e0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "379751f7-799a-454c-a840-6ad9e99984c8",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
 }

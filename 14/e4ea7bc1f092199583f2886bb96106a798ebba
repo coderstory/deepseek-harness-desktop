@@ -3,5 +3,15 @@
   "schema_version": "authorship/3.0.0",
   "git_ai_version": "1.6.15",
   "base_commit_sha": "14e4ea7bc1f092199583f2886bb96106a798ebba",
-  "prompts": {}
+  "prompts": {},
+  "sessions": {
+    "s_6f34f75d6fd4dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-aa444ca5e05ea69c9",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
 }
