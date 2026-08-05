@@ -1,0 +1,22 @@
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcOrderStoreInfoViewMapper.xml
+  s_6595fdd27d24d9::t_89f6cc8873ed6d 310-314
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyInput.java
+  s_6595fdd27d24d9::t_986b001fe5d679 66,70
+  s_6595fdd27d24d9::t_7cc511e9ec70de 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "01928397b6a7f7919e98ee12891d83827de88a5c",
+  "prompts": {},
+  "sessions": {
+    "s_6595fdd27d24d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ff190886-b8c0-42fe-8646-c0278f07f7c6",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
