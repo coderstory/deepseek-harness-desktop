@@ -1,0 +1,55 @@
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/PermissionDict.java
+  s_277ada6e5875fd::t_6e4fdf525345d4 139
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/enums/ExportTypeEnum.java
+  s_277ada6e5875fd::t_53e503d2dc92a2 5
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcOrderStoreInfoEnt.java
+  s_277ada6e5875fd::t_96b3bdde1a792d 144-147,455-462
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_277ada6e5875fd::t_8b871f0c47cecb 113-123
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_277ada6e5875fd::t_d4a51fe99d6e9a 69-72,79-80,219,569-790
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_277ada6e5875fd::t_8622acb61a1f2f 384-385
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/CustomerRequestInput.java
+  s_277ada6e5875fd::t_f2c96ce2ebc763 31-33,88-95
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetSvcServiceProxyDetailOutput.java
+  s_277ada6e5875fd::t_ae331aca3869cb 108-113,201-216
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyInput.java
+  s_6595fdd27d24d9::t_3f9eae28566275 18-19,66-73
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyOutput.java
+  s_277ada6e5875fd::t_697a50e0b412f1 66-71,124-139
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcOrderStoreInfoViewMapper.xml
+  s_6595fdd27d24d9::t_dd1e480d3e4c44 175,310-315
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/mapper/SvcServiceOperationViewMapper.java
+  s_277ada6e5875fd::t_8e8d3d5fbe812c 3,10,26-34
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_277ada6e5875fd::t_02c192e91e6c01 2864-2920
+C04-svc-maintain/svc-core-maintain/src/main/resources/mybatis/mapper/svc/core/maintain/SvcServiceOperationViewMapper.xml
+  s_277ada6e5875fd::t_e9b345dbc2b245 194-240
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_277ada6e5875fd::t_30f7824b162ab0 811-872
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c845c5b52045474f71a521ae585092288760ea67",
+  "prompts": {},
+  "sessions": {
+    "s_277ada6e5875fd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "113fc1fb-55dd-4c75-945d-c01c216b95b6",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_6595fdd27d24d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ff190886-b8c0-42fe-8646-c0278f07f7c6",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
