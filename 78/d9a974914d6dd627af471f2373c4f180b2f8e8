@@ -1,0 +1,37 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcPipaServiceImpl.java
+  s_5bb330563080d6::t_b0f0680267ece7 652-657
+  s_5bb330563080d6::t_29172afe169014 16
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_pipa/ReplaceBindIdInput.java
+  s_5bb330563080d6::t_47ad17a3bf06db 1-30
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_5bb330563080d6::t_75c2ca09cbaa90 557
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyCloudServiceImpl.java
+  s_5bb330563080d6::t_d0906f0205a03d 135
+  s_5bb330563080d6::t_1c23cc38c0aa8a 451
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_5bb330563080d6::t_c169a9de8054f8 126
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/SvcPipaService.java
+  s_5bb330563080d6::t_a1b6a3eda0903f 83
+  s_5bb330563080d6::t_99371b171d6c46 9
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_5bb330563080d6::t_f3dbd407408af9 290
+  s_5bb330563080d6::t_4491d22956dca2 134
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_5bb330563080d6::t_fb0b236aac8b02 1161
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "78d9a974914d6dd627af471f2373c4f180b2f8e8",
+  "prompts": {},
+  "sessions": {
+    "s_5bb330563080d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a09eec90-0d12-4260-a549-2844ef177a18",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "CoderStory <qianyf2015@gmail.com>"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+doc/7月需求/pipa-bindid接口改造-前端.md
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 1-180
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/SvcPipaService.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 16,81-82
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_service/IncAppointmentOrderInput.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 25-26,409-416
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 27,276-283
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_proxy/UpdateSvcServiceProxyInput.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 54-55,402-408
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcPipaReplaceBindIdTest.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 1-107
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_service/UpdateSvcAppointmentServiceInput.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 30-31,214-220
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 54,559-566
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyCloudServiceImpl.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 57,132-139,447-456
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcPipaServiceImpl.java
+  s_d65a5cf5bd1e72::t_76753c6874c8bf 4,651-667
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "10422ea8ced324d3697f51b364a9622b229258e2",
+  "prompts": {},
+  "sessions": {
+    "s_313f231a587377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14da707f-ef8f-410f-b73b-aa666d83a029",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_d65a5cf5bd1e72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61332b88-0e42-4c78-9096-ef123deb8290",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

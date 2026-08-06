@@ -1,0 +1,24 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/report/config/RestTemplateBuilderConfig.java
+  s_1c249335a42ae0::t_3b706ab47796a7 4
+  s_1c249335a42ae0::t_db188e6a8a57ff 16
+  s_1c249335a42ae0::t_720d75fffa5ffc 1-3
+  s_1c249335a42ae0::t_f21ff43ff33625 5-7,13-15
+  s_1c249335a42ae0::t_b81f8912f69b63 17-19
+  s_1c249335a42ae0::t_7a5899b300dac3 8-12,20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "90ab3612a58ff469bbbcbe1962a690e0adc4cee1",
+  "prompts": {},
+  "sessions": {
+    "s_1c249335a42ae0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "281ee669-eca0-40d6-b44a-7bb58681d19b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

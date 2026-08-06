@@ -1,0 +1,52 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/dto/PriceInfo.java
+  s_c8b525b7706d33::t_02d441eefaa467 14-15
+  s_c8b525b7706d33::t_74db5004ffbc9b 91-98
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/TempSettleLogicTest.java
+  s_ac010c8b41ca46::t_0483d02755738c 29
+C00-svc-base/svc-core-base/src/test/java/svc/core/reception/helper/PriceContextTest.java
+  s_c8b525b7706d33::t_d6c1dec9d58e7e 1-2,4,6-12,14,16-18,22-51,55-59,61-66,68-73,75-76,78-84,86,88-89,91-95,97,100,102-104,106,109,111-115,117,123-127,129,132-133,136-138,140-141,145-146,149-153,155,158,160-162,165-166,168,170-172,174,177-178,180-181
+  s_c8b525b7706d33::t_b871d6506207de 52-54
+  s_c8b525b7706d33::t_4c55ccdcbac639 121
+  s_c8b525b7706d33::t_db9dfe001ed8a1 5,19-21
+  s_c8b525b7706d33::t_54b64891c20eb8 105
+  s_c8b525b7706d33::t_1096b7181d18b0 77,87,90,98-99,101,107-108,110,118-120,122,130-131,134-135,142-144,147-148,156-157,159,164,167,169,175-176,179
+  s_c8b525b7706d33::t_9c8e9c77ca71d7 3,13
+  s_c8b525b7706d33::t_4c205a9a8fe5ae 15,60,67,74,85,96,116,128,139,154,163,173
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_c8b525b7706d33::t_bbe87125313647 304,310-316,320,322,324-327,330-331,335-337,351-366
+  s_c8b525b7706d33::t_0272a77edf3584 321,348
+  s_c8b525b7706d33::t_5627a4f845bab8 11
+  s_c8b525b7706d33::t_b733c896f4aa6f 307-309,317-319,323,328-329,332-334,338-347,349-350
+  s_c8b525b7706d33::t_16e7c013644ed1 278,295-303,306
+  s_c8b525b7706d33::t_ab707cf2331486 305
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/enums/SvcServiceVatTaxTypeEnum.java
+  s_c8b525b7706d33::t_b6d547b5176bed 1-46
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_ac010c8b41ca46::t_165db9d46d9d47 76,298,314,329,339,851,888,924,959,1043-1056,2229,2232-2233,2248-2250
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/GetSvcServiceProxyPdfVat.java
+  s_c8b525b7706d33::t_64102c640f281e 15-17,49-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3cdfbdf53565a733598814636ca5760c9366997d",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    },
+    "s_c8b525b7706d33": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1da46cdc-d796-41e9-90e9-8b58d998fb44",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
