@@ -1,0 +1,20 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppOrderTransitionHelper.java
+  s_56357b97e171ce::t_05d29c21c20a96 122-237
+  s_56357b97e171ce::t_b614004bb274c8 10-11,13,15,20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3db933ed9b3f44386f04bda858f4db048db15184",
+  "prompts": {},
+  "sessions": {
+    "s_56357b97e171ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a17b7eb9-528c-45e6-8e32-378067973bba",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
