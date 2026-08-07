@@ -1,0 +1,24 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/TempSettleCalculator.java
+  s_1bda2700877f4d::t_d80c32c23dea2a 74
+  s_1bda2700877f4d::t_b07f8950737b28 73
+  s_1bda2700877f4d::t_b395d5a98477d2 14-15,18
+  s_1bda2700877f4d::t_468a6760623207 35-36
+  s_1bda2700877f4d::t_274809bd5f9a69 64-65,75-76,84-85,92-95,101-102,109-110,121-122,129-135
+  s_1bda2700877f4d::t_8df45b8adc358a 136-137
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1c52ba7984c42e7cd0b3e0a0eec609bcdd63073b",
+  "prompts": {},
+  "sessions": {
+    "s_1bda2700877f4d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5f87d10e-a247-47a0-8a5f-6bb761c1787c",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
