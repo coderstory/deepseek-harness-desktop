@@ -1,0 +1,25 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppointmentServiceImpl.java
+  s_56357b97e171ce::t_224e9458340913 21
+  s_56357b97e171ce::t_413799f2911e44 118-121
+  s_56357b97e171ce::t_4139b797c0612e 149-152
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/MaintainExternalServiceImpl.java
+  s_56357b97e171ce::t_2bd2284a61e7f0 834-837
+  s_56357b97e171ce::t_6efb5a5a376784 844-847
+  s_56357b97e171ce::t_86f8c451471072 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a0b0ee95eed7b17943bbfc1e2272035d05598292",
+  "prompts": {},
+  "sessions": {
+    "s_56357b97e171ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a17b7eb9-528c-45e6-8e32-378067973bba",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
