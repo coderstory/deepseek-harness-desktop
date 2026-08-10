@@ -1,0 +1,158 @@
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordQueryDetailExportTest.java
+  s_681336aba8940f::t_0be9ea5968cf43 194-195
+  s_d895ee687556cd::t_c794b22df55c79 308-309
+  s_681336aba8940f::t_273d5f7b0eacda 166-168
+  s_681336aba8940f::t_ffba9cd96408eb 224,229
+  s_d895ee687556cd::t_e09026b856e4f6 16
+  s_d895ee687556cd::t_2ea67222187481 295
+  s_d895ee687556cd::t_fe3a7880691e1d 66-67
+  s_d895ee687556cd::t_a19762c1cf088e 322
+  s_681336aba8940f::t_cb25b344862b31 42,52-54
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/GetMaintenanceRecordOutput.java
+  s_681336aba8940f::t_cb10666d46632b 195,199
+  s_681336aba8940f::t_dc92ed093e923d 5
+  s_681336aba8940f::t_cb03d2163b3eca 388,392,396,400
+  s_681336aba8940f::t_34b97a3e081ead 276,280
+  s_681336aba8940f::t_d00511786ae018 81,84
+  s_681336aba8940f::t_2391e0d28b8fbe 121
+  s_681336aba8940f::t_1f23b82e1b58e6 43
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/ExportMaintenanceRecordModel.java
+  s_681336aba8940f::t_95c4c381e1ea99 5
+  s_681336aba8940f::t_a020e96ada26c7 10
+  s_681336aba8940f::t_e334895e39961d 56
+  s_681336aba8940f::t_50f8da4799366b 106,110
+  s_681336aba8940f::t_f0baa6ffa5cc66 35
+  s_681336aba8940f::t_70f05dc4d2e59c 162,166
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/entity/SvcMaintenanceRecordOperationEnt.java
+  s_d895ee687556cd::t_8300fe9fb136c2 59,145,149
+  s_d895ee687556cd::t_265e9abb6b9a50 10
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/CreateMaintenanceRecordInput.java
+  s_d895ee687556cd::t_3f12fdf32c878d 64,68
+  s_d895ee687556cd::t_e70ad9764ae387 28
+  s_d895ee687556cd::t_1c6a4d5399ba4f 7
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/DynamicQueryMaintenanceRecordOutput.java
+  s_681336aba8940f::t_c713b3a578e9d7 210,214
+  s_681336aba8940f::t_7612ed940ff789 5
+  s_681336aba8940f::t_63b6de8ebd18b8 62
+  s_681336aba8940f::t_48b272579cdf2b 146,150
+  s_681336aba8940f::t_cb8a53f40b7e48 41
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/MaintenanceRecordImportError.java
+  s_681336aba8940f::t_6882fa7a86b67e 3,8,14,17,20,23,26,29,32,35
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordQueryHelper.java
+  s_681336aba8940f::t_72b38eec280c08 59,63-64,68
+  s_681336aba8940f::t_be857496494a12 29-30,33,39
+  s_d895ee687556cd::t_2c30fdb90a945e 292-294
+  s_681336aba8940f::t_bee55fb759027d 127
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/DynamicQueryMaintenanceRecordInput.java
+  s_d895ee687556cd::t_da63ea9df98d16 22,25
+  s_d895ee687556cd::t_c0770d652f0ecc 53,57,61,65
+  s_681336aba8940f::t_821da417875b7a 15-16
+  s_d895ee687556cd::t_14ed138ed210f6 6
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_d895ee687556cd::t_94adbcef4a274d 72
+  s_d895ee687556cd::t_d44d8e56ddb8c2 57
+  s_681336aba8940f::t_c90aaf0d16f481 726,733
+  s_681336aba8940f::t_d2ae0283339629 588,590-592,596,604,608,612
+  s_18bca1c82a0f8b::t_11f2306226610c 528,531,535,542,561
+  s_d895ee687556cd::t_91b22b231b32cc 282-283
+  s_18bca1c82a0f8b::t_1d654ae980e625 171
+  s_18bca1c82a0f8b::t_a048d8315c634c 564
+  s_18bca1c82a0f8b::t_87fb93c214ffbc 197
+  s_d895ee687556cd::t_f536acf2ec032f 147,232,432,488,548
+  s_681336aba8940f::t_1256849f6637eb 400
+  s_681336aba8940f::t_bc6d945e95f20a 690,700,718-723,736,740
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/UpdateMaintenanceRecordInput.java
+  s_d895ee687556cd::t_c01c88eff691c3 34
+  s_18bca1c82a0f8b::t_3570faab1bcbbc 13-15,46
+  s_d895ee687556cd::t_2a7ecc125f5497 6
+  s_d895ee687556cd::t_4e033cc5080504 83,87
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/ImportFileModel.java
+  s_18bca1c82a0f8b::t_fdb021d52b902f 10-11
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/utils/MaintenanceRecordValidatorTest.java
+  s_d895ee687556cd::t_058c3ea9cd8383 254
+  s_d895ee687556cd::t_39b83ee8d076f5 278,349
+  s_d895ee687556cd::t_e7453834a7fc65 338
+  s_d895ee687556cd::t_c57a06e1180a99 324
+  s_d895ee687556cd::t_d2f8826941a569 16
+  s_d895ee687556cd::t_96ef4eb5d86151 306
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/entity/SvcMaintenanceRecordEnt.java
+  s_d895ee687556cd::t_0858e73091ef4c 10
+  s_d895ee687556cd::t_aaec743b16b236 59,109,117,125,211,215,323,327,339,343,355,359
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/mapper/SvcMaintenanceRecordViewMapper.java
+  s_d895ee687556cd::t_7b68885b80a014 45
+  s_d895ee687556cd::t_3a590919b56d93 8
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordImportTest.java
+  s_d895ee687556cd::t_f2433e329f9f49 20
+  s_d895ee687556cd::t_aaf95a4895a22f 70
+  s_d895ee687556cd::t_7885282dea7202 91
+  s_d895ee687556cd::t_e6ce1021284a1c 108
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordBoundaryTest.java
+  s_18bca1c82a0f8b::t_4d3807f7cb3066 276-277,286
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_d895ee687556cd::t_6a96fceadcf9f0 623
+  s_d895ee687556cd::t_7173167647be17 278
+  s_d895ee687556cd::t_dee1bad8bf494b 19,23
+  s_d895ee687556cd::t_9d5e1bf0a7c0b2 452
+  s_d895ee687556cd::t_c480bdbcf5bedd 148-153,155-160,162-164
+  s_18bca1c82a0f8b::t_9a6e5ba2145da4 596
+  s_d895ee687556cd::t_cc59aeea9a4884 330
+  s_d895ee687556cd::t_5553ac912acdde 556
+  s_d895ee687556cd::t_fba0f4382331d4 514
+  s_d895ee687556cd::t_e950c3eef47b57 165-168
+  s_d895ee687556cd::t_ff43c50f4bc732 476
+  s_d895ee687556cd::t_b4106a7e9e8bc3 458
+  s_d895ee687556cd::t_0c1fb81fb5c33f 161
+  s_d895ee687556cd::t_356963e7d23895 654
+  s_d895ee687556cd::t_49a3362a53e9f5 578
+  s_d895ee687556cd::t_af35e899ee70da 154
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordFullChainTest.java
+  s_d895ee687556cd::t_33e44752a7ebea 82-83
+  s_18bca1c82a0f8b::t_6cb70c92e34dd6 48,54
+  s_d895ee687556cd::t_fe0c30fcca76dc 286
+  s_d895ee687556cd::t_ad78732475a750 61
+  s_d895ee687556cd::t_dde18d55a5050b 499
+  s_18bca1c82a0f8b::t_add3e4b9768fac 370-371,374,405
+  s_18bca1c82a0f8b::t_fad66eb5f45093 269-270,273,277
+  s_d895ee687556cd::t_df3b9bc4f38ac5 171-172
+  s_d895ee687556cd::t_4b863f6a67c75f 21
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordSubmitDeleteUpdateTest.java
+  s_18bca1c82a0f8b::t_773a3533322815 234
+  s_d895ee687556cd::t_20902ac64df70d 58,117,134,195,217,245
+  s_18bca1c82a0f8b::t_610dcacd484605 40,42
+  s_18bca1c82a0f8b::t_7eb9fca8baec3a 318-319
+  s_d895ee687556cd::t_6bcdc7fa1d3837 191
+  s_d895ee687556cd::t_933b2ce7af9c3e 203
+  s_d895ee687556cd::t_fd65732ec3ee47 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f054955865daf3d772d05ebe020358f182a9f04f",
+  "prompts": {},
+  "sessions": {
+    "s_18bca1c82a0f8b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cba38b1a-ec52-4a35-9e78-ca4d9629599f",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_681336aba8940f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "56443773-32fd-487e-8c7b-d90ba22b1f05",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_d895ee687556cd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fb94483d-3464-4d1a-a736-f26279a99e84",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
