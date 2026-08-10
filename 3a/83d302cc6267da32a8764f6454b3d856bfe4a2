@@ -1,0 +1,57 @@
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/temp_settle/InsuranceSplitDetail.java
+  s_ac010c8b41ca46::t_0a18270010e7d6 51-53
+  s_ac010c8b41ca46::t_931a5aff42214e 31-33
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_ac010c8b41ca46::t_2938141714bbd4 2274
+  s_ac010c8b41ca46::t_efe7749f027504 2595
+C06-svc-delivery/svc-core-delivery/src/main/resources/mybatis/mapper/svc/core/delivery/SvcStatementViewMapper.xml
+  s_ac010c8b41ca46::t_ea10e8211a383c 77
+  s_ac010c8b41ca46::t_72291a4d2b32ff 118
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_ac010c8b41ca46::t_2ec470079efc63 51-54
+  s_ac010c8b41ca46::t_3305f89dfb54d9 207-209
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/TempSettleCalculator.java
+  s_ac010c8b41ca46::t_f0e48830df6782 307-318
+  s_ac010c8b41ca46::t_2bd1257893f436 23
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/QuerySvcServiceMergeDetailOutput.java
+  s_ac010c8b41ca46::t_acd11ce1dcb595 59-61
+  s_ac010c8b41ca46::t_ae68733979552a 33-35
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/TempSettleLogicTest.java
+  s_ac010c8b41ca46::t_65414fcadc3c1a 21
+  s_ac010c8b41ca46::t_9321af3258b7af 486-524
+C00-svc-base/svc-core-base/src/main/java/svc/core/delivery/entity/SvcStatementEnt.java
+  s_ac010c8b41ca46::t_87633c2ba6e804 50-53
+  s_ac010c8b41ca46::t_eaf4bdfd6b1ca6 310-317
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/DynamicQuerySvcStatementOutput.java
+  s_ac010c8b41ca46::t_2aefbba5085e84 58-60
+  s_ac010c8b41ca46::t_fa94c51919b97f 403-405
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceMergeDetailEnt.java
+  s_ac010c8b41ca46::t_40613367cc6fc6 98-100
+  s_ac010c8b41ca46::t_9914ec9ec2fac9 51-54
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/SvcServiceMergeDetailItem.java
+  s_ac010c8b41ca46::t_f0c6a90c97ab62 47-49
+  s_ac010c8b41ca46::t_f9f37c8e396e2f 27-29
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceMergeDetailMapper.xml
+  s_ac010c8b41ca46::t_6ff9775010a9a3 8,12,25-26
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_ac010c8b41ca46::t_e5d9a95771662f 820-824,827-831,834-838
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/ConfirmSettleCalculator.java
+  s_ac010c8b41ca46::t_331fc0b48be341 108
+  s_ac010c8b41ca46::t_52ca9aaa09709c 13-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3a83d302cc6267da32a8764f6454b3d856bfe4a2",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
