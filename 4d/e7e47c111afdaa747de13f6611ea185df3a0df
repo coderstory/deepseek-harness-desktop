@@ -1,0 +1,29 @@
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/BizCodeDict.java
+  s_277ada6e5875fd::t_72ea0d42fbca86 37
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/PermissionDict.java
+  s_277ada6e5875fd::t_cca87fd8d28d2c 245-262
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarHelper.java
+  s_277ada6e5875fd::t_8c323e664b4b67 321-376
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ucd/VehicleInput.java
+  s_277ada6e5875fd::t_0c1f84af98634f 26-38
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/UcdCarService.java
+  s_277ada6e5875fd::t_adb48dd5199735 58-65
+C09-svc-pdi/svc-core-pdi/pom.xml
+  s_277ada6e5875fd::t_c9f0008d239cde 41-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4de7e47c111afdaa747de13f6611ea185df3a0df",
+  "prompts": {},
+  "sessions": {
+    "s_277ada6e5875fd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "113fc1fb-55dd-4c75-945d-c01c216b95b6",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
