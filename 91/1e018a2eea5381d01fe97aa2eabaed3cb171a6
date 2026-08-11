@@ -1,0 +1,27 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_763b6b44969f4b::t_84624a7ebee6e3 1-282
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_763b6b44969f4b::t_f62e850a3677fc 25
+  s_763b6b44969f4b::t_fd94397b6ff9d0 1-24,27-117
+  s_763b6b44969f4b::t_20d3f09e1ab0d8 26
+C09-svc-pdi/svc-core-pdi/pom.xml
+  s_763b6b44969f4b::t_811a7963111686 41-53
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/utils/MaintenanceRecordValidatorTest.java
+  s_763b6b44969f4b::t_15ba60eaef3e76 1-386
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "911e018a2eea5381d01fe97aa2eabaed3cb171a6",
+  "prompts": {},
+  "sessions": {
+    "s_763b6b44969f4b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f1e82542-1b73-410d-bda9-5887360ac371",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

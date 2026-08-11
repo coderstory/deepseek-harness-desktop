@@ -1,0 +1,35 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_26f423fd1e4460::t_fb1ce607703e47 3-4
+  s_26f423fd1e4460::t_51eee6255f27eb 319-320,322-323,326-344,347-377
+  s_26f423fd1e4460::t_be30edf25ab35e 118
+  s_26f423fd1e4460::t_27e24d591191ce 15,18-19
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_802dd489d31db5::t_8b8f154202129a 27
+  s_26f423fd1e4460::t_accdd72002550f 316
+  s_802dd489d31db5::t_9d61f6df834d14 19
+  s_26f423fd1e4460::t_8873beff2c8193 154-156,314,337-345,348-353
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "caf638902b787a31791e6f54e19e9fe47350e507",
+  "prompts": {},
+  "sessions": {
+    "s_26f423fd1e4460": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a467f4f1-4685-4fa9-a89d-c55d886e7710",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_802dd489d31db5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "62637062-3818-4fd0-b22e-4bf58d667bbf",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

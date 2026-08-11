@@ -1,0 +1,35 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_f069ca993e29e4::t_707390808cf00d 203,220-224,226
+  s_f069ca993e29e4::t_4726227d42e36d 105
+  s_f069ca993e29e4::t_e231f6076ed820 243,259-262,264
+  s_f069ca993e29e4::t_729bbaaa33b828 124-127
+  s_f069ca993e29e4::t_356319f62a7fdd 137,148-150
+  s_f069ca993e29e4::t_7df4b6130764a6 452-462
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/MolitOperateOutput.java
+  s_f069ca993e29e4::t_ea86672b3ef29f 9,15-17,25-29,32-33
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitWithdrawResult.java
+  s_f069ca993e29e4::t_dabd113426f53b 24-26
+  s_f069ca993e29e4::t_0f52dfe8ecbde2 27
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitSendResult.java
+  s_f069ca993e29e4::t_f748bd2ebb8cd3 27-29
+  s_f069ca993e29e4::t_5fd622d2477a0d 30
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/molit_thirdparty/MolitLoginResult.java
+  s_f069ca993e29e4::t_70cdd7695270b5 30-32
+  s_f069ca993e29e4::t_b066ce0c5b714d 33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "89a0fc306dba9b8669c8b6048e338717b883b2cf",
+  "prompts": {},
+  "sessions": {
+    "s_f069ca993e29e4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "349b80e9-662f-4923-931f-b27207cde20a",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
