@@ -1,0 +1,33 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileQueryProbeTest.java
+  s_0f2c5540d046df::t_8e44d424061d99 1-147
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileHelperSaveTest.java
+  s_0f2c5540d046df::t_7b264ea22095ab 138,141,144-145,151,154-155,161,171,174-175,191,194-195
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileSceneQueryProbeTest.java
+  s_0f2c5540d046df::t_b6502f47348f7a 1-157
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileSceneSaveProbeTest.java
+  s_0f2c5540d046df::t_739ef63d65f469 82-85
+  s_0f2c5540d046df::t_bcc2441fc7cadb 1-28,30-81,86-108,110,112,114-194
+  s_0f2c5540d046df::t_4f3bc3c318543b 109,111,113
+  s_0f2c5540d046df::t_b1e526e046dd4c 29
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/CustomerProfileHelper.java
+  s_0f2c5540d046df::t_85d04543ad9387 163-165,179
+  s_0f2c5540d046df::t_a5bf37ee6eec56 95
+  s_0f2c5540d046df::t_29978b7e3e4c46 116
+  s_0f2c5540d046df::t_8bd32d60dc8c5d 243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7d82c44c1c480d4d5ea6b58e4059fd1e763259e7",
+  "prompts": {},
+  "sessions": {
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
