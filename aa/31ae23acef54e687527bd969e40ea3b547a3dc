@@ -1,0 +1,34 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileHelperSaveTest.java
+  s_0f2c5540d046df::t_249a6a23d6371f 12,14-20,82,85,88-164,167,171,174-175,181,184-185,191,194-205,226,257
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileHelperWriteModeTest.java
+  s_0f2c5540d046df::t_210f93bea6031b 1-111
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileHelperQuietTest.java
+  s_0f2c5540d046df::t_6378feae12044e 51-52,56-66
+  s_0f2c5540d046df::t_258b563934f10c 1-3,5-10,12-13,17-50,67-174
+  s_0f2c5540d046df::t_592c0cbc94b643 4,11,14-16
+  s_0f2c5540d046df::t_44d1511b4ea88a 53-55
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/customer_profile/SceneSaveInput.java
+  s_0f2c5540d046df::t_67569cad0d2630 81-88
+  s_0f2c5540d046df::t_21e72aa613a516 31-33
+C00-svc-base/svc-core-base/pom.xml
+  s_0f2c5540d046df::t_8bd030af5706f6 211-216
+  s_0f2c5540d046df::t_3f6a3ae8e67250 217-225
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/CustomerProfileHelper.java
+  s_0f2c5540d046df::t_638e7d1eae36b1 191-223
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "aa31ae23acef54e687527bd969e40ea3b547a3dc",
+  "prompts": {},
+  "sessions": {
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
