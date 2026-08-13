@@ -1,0 +1,27 @@
+.planning/phases/17.2-写入侧接线/17.2-03-PLAN.md
+  s_e2b7ba2c4239c5::t_8ebebb677b10ce 5,8
+  s_e2b7ba2c4239c5::t_842aee4969f6e4 110
+  s_e2b7ba2c4239c5::t_05346ecd1762c4 155
+  s_e2b7ba2c4239c5::t_a5872d907cd39a 80
+  s_e2b7ba2c4239c5::t_22d4d38bcfbb10 108
+.planning/phases/17.2-写入侧接线/17.2-02-PLAN.md
+  s_e2b7ba2c4239c5::t_e51b55f3b606c0 146
+.planning/phases/17.2-写入侧接线/17.2-04-PLAN.md
+  s_e2b7ba2c4239c5::t_382c31da5592b9 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "83c74b643995da5e44147b528e487822e20a2505",
+  "prompts": {},
+  "sessions": {
+    "s_e2b7ba2c4239c5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b9f673d4-87d0-42f7-90fa-d97c5a61ad10",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

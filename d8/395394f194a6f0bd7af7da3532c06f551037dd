@@ -1,0 +1,34 @@
+"doc/八月需求/5.3后端开发任务清单 (敏捷故事).md"
+  s_5a446dcf77ce50::t_d60b6d4f29d071 46-49
+  s_5a446dcf77ce50::t_21e3785da144c0 60
+  s_5a446dcf77ce50::t_a4ec967c085d4d 37-38
+doc/八月需求/5.3技术方案-客户隐私信息存客档.md
+  s_5a446dcf77ce50::t_6c8767bacb9430 69
+  s_5a446dcf77ce50::t_dd488d26291415 104-111,114-116,123
+  s_5a446dcf77ce50::t_c077a6ef7726cd 244-245
+  s_5a446dcf77ce50::t_f6041ccc5b7c02 51
+doc/八月需求/5.3上线操作清单.md
+  s_5a446dcf77ce50::t_d5106285c446b2 11,14-21
+  s_5a446dcf77ce50::t_a74bbe7b596a5e 97
+doc/八月需求/5.3前端开发配合文档.md
+  s_5a446dcf77ce50::t_811d255e755441 31-43
+  s_5a446dcf77ce50::t_089cc5aee5834e 72
+  s_5a446dcf77ce50::t_b1be500e9caaed 54
+  s_5a446dcf77ce50::t_a29f65e7256a04 76,81,83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d8395394f194a6f0bd7af7da3532c06f551037dd",
+  "prompts": {},
+  "sessions": {
+    "s_5a446dcf77ce50": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bd9d7879-8806-49b5-9f61-47216b8c33a9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
