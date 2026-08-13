@@ -1,0 +1,20 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_121902319a1d3c::t_7a69491c098a7a 869-874,879
+  s_121902319a1d3c::t_4856f152121551 902-913
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "84248494cafb9098e3a6f7d07636131d7efbad9f",
+  "prompts": {},
+  "sessions": {
+    "s_121902319a1d3c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b944287e-da0f-4bff-a1c1-3cfd8211ae6a",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
