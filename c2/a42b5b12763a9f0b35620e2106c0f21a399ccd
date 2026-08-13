@@ -1,0 +1,26 @@
+"doc/八月需求/维修项目迭代月八技术方案 .md"
+  s_5a446dcf77ce50::t_3b9c59b0b72122 135-136
+  s_5a446dcf77ce50::t_cd93f36c462c69 150
+  s_5a446dcf77ce50::t_aeb59211261684 130
+  s_5a446dcf77ce50::t_c479e3c9406936 213
+  s_5a446dcf77ce50::t_4e482995a6a769 234-235
+  s_5a446dcf77ce50::t_e304726c040592 89-91
+  s_5a446dcf77ce50::t_e62ef667b03eb2 349
+  s_5a446dcf77ce50::t_a11bbfdb835dda 220
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c2a42b5b12763a9f0b35620e2106c0f21a399ccd",
+  "prompts": {},
+  "sessions": {
+    "s_5a446dcf77ce50": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bd9d7879-8806-49b5-9f61-47216b8c33a9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
