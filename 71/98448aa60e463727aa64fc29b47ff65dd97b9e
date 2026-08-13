@@ -1,0 +1,47 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.cs-CZ.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.uz-UZ.properties
+  s_f9731531312491::t_d5753d390057db 17-18
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.hu-HU.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.id-ID.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.th-TH.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sk-SK.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-ES.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.de-DE.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ru-RU.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.fr-FR.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sv-SE.properties
+  s_f9731531312491::t_d5753d390057db 16-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7198448aa60e463727aa64fc29b47ff65dd97b9e",
+  "prompts": {},
+  "sessions": {
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
