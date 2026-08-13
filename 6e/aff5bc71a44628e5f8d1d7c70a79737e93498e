@@ -1,0 +1,34 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/ConfirmSettleCalculator.java
+  s_ac010c8b41ca46::t_eb924630df94db 3
+  s_ac010c8b41ca46::t_cc95baacd9558a 86,92-97
+  s_ac010c8b41ca46::t_568a679d49da6c 151-156
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_121902319a1d3c::t_a4ba4290b75800 870-872,874-880,886
+  s_121902319a1d3c::t_3fc0be929c143c 117
+  s_121902319a1d3c::t_a126f9d4e8f8f4 909-910,916-917
+  s_121902319a1d3c::t_16f3b92dbe3110 791,811,826-831
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6eaff5bc71a44628e5f8d1d7c70a79737e93498e",
+  "prompts": {},
+  "sessions": {
+    "s_121902319a1d3c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b944287e-da0f-4bff-a1c1-3cfd8211ae6a",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    },
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

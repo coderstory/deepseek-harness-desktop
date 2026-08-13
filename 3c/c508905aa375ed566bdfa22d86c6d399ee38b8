@@ -1,0 +1,45 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportListSvcServiceProxyOutput.java
+  s_79abdc51826958::t_ca2682445c0ee9 111,120,123,126,360,364,384,388,392,396,400,404,416
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_79abdc51826958::t_a7708f80c5a968 356,886,951
+  s_79abdc51826958::t_e07ccc66c0551d 433-445
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/ExportSvcServiceOperationDetailOutput.java
+  s_79abdc51826958::t_59a7744231b17d 229,233,237,241,245,249
+  s_79abdc51826958::t_5c735e3b869711 79,83,87,91
+  s_79abdc51826958::t_8bf9323ca5e4ab 205,209
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_79abdc51826958::t_78a1000ecc1d69 74,78,82,86,90,94,98,102,106,234,238,242,246,250,254,258,262,266,270,274,278,290,294,298,302,306,310
+  s_79abdc51826958::t_e8a3efd13f9efa 45
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_79abdc51826958::t_05c23f6af97511 83-85,88-91
+  s_79abdc51826958::t_8aa92e7a2517a7 190-194
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportDetailSvcServiceProxyOutput.java
+  s_79abdc51826958::t_e788f5f7510df6 163,167,171,175
+  s_79abdc51826958::t_1c69ab9dda6772 419,423,427,431,435,439,443,447
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_79abdc51826958::t_d7a834960cf4bb 599-604
+  s_79abdc51826958::t_0ead75e084518c 656-657,659,666-667,670
+  s_79abdc51826958::t_82306912976044 539-544
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/helper/RepairTaskDetailExportHelper.java
+  s_79abdc51826958::t_dd371bc0b5a649 107-110
+  s_79abdc51826958::t_1d00d6cb169af0 207-213
+  s_79abdc51826958::t_8e3f786685c663 124-127
+  s_79abdc51826958::t_48614ac3016776 90-93
+  s_79abdc51826958::t_92bf255c4c1067 206
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3cc508905aa375ed566bdfa22d86c6d399ee38b8",
+  "prompts": {},
+  "sessions": {
+    "s_79abdc51826958": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "899f2c43-221f-4180-bdd8-085349113358",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
