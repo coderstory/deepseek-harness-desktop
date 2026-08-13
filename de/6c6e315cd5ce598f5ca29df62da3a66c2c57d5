@@ -1,0 +1,19 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/SvcBaseError.java
+  s_98a36f06fe9c2d::t_1f729304e8f197 18-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "de6c6e315cd5ce598f5ca29df62da3a66c2c57d5",
+  "prompts": {},
+  "sessions": {
+    "s_98a36f06fe9c2d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a108e4d7b59e60a40",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
