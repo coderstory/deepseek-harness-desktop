@@ -1,0 +1,23 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_caeee0945ed7f5::t_ac78e020f8cdfb 404
+  s_caeee0945ed7f5::t_3ef634c3f4419a 429-441
+  s_caeee0945ed7f5::t_8d77ae0cf7ebae 351,842,907
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportListSvcServiceProxyOutput.java
+  s_caeee0945ed7f5::t_b388ac025b82b1 111,120,123,126,360,364,384,388,392,396,400,404,416
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1d47c16fc6fcb00d509e0613ca3c93e137fa7b31",
+  "prompts": {},
+  "sessions": {
+    "s_caeee0945ed7f5": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "6d5ce9e2-c372-4d6f-ab05-ca5d40e6e1ea",
+        "model": "claude-opus-5-thinking-high"
+      },
+      "human_author": "Lixuan.Zheng1 <leozheng01@aliyun.com>"
+    }
+  }
+}

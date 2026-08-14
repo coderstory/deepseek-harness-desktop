@@ -1,0 +1,40 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelper.java
+  s_79abdc51826958::t_cada026b07f3db 160-162,167-172
+  s_79abdc51826958::t_7c2e08df7d61b5 274-275
+  s_79abdc51826958::t_c1fccbc2c357ff 235-236,259-273
+  s_79abdc51826958::t_fe43bd92a87162 252
+C04-svc-maintain/svc-core-maintain/src/test/java/svc/core/maintain/helper/RepairTaskDetailExportHelperTest.java
+  s_79abdc51826958::t_820e09cb02a158 138-140
+  s_79abdc51826958::t_ac883c1f144dff 235-237
+  s_79abdc51826958::t_47a7b10c5c5c8a 255
+  s_79abdc51826958::t_dbef3aba5bad30 280
+  s_79abdc51826958::t_1a01290f784399 313-315
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_79abdc51826958::t_d8b1ea11d87d63 85-88
+  s_79abdc51826958::t_ee80c63704aa22 168-170,172-174
+  s_79abdc51826958::t_d0e8e0d1d4baa4 223-226
+  s_79abdc51826958::t_3e2ad98adbc1b1 595-596
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_79abdc51826958::t_23bf2405d1891c 848
+  s_79abdc51826958::t_7129e375ce9847 839-840,846-847
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_79abdc51826958::t_2190bc1abe94a6 147-149,151,155,160-161
+  s_79abdc51826958::t_e7cabfd8261c09 93,96
+  s_79abdc51826958::t_67473601b5b1d4 162,200-216
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "82904369385a70994f74d11686e146a9b5258892",
+  "prompts": {},
+  "sessions": {
+    "s_79abdc51826958": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "899f2c43-221f-4180-bdd8-085349113358",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

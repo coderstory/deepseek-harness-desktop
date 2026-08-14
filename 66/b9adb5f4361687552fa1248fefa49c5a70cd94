@@ -1,0 +1,33 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_79abdc51826958::t_32f4eca41d39b1 356,433-445,886,951
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportDetailSvcServiceProxyOutput.java
+  s_79abdc51826958::t_6cf661558fe1de 163,167,171,175,419,423,427,431,435,439,443,447
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportListSvcServiceProxyOutput.java
+  s_79abdc51826958::t_6db383a8a2a251 111,120,123,126,360,364,384,388,392,396,400,404,416
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/helper/RepairTaskDetailExportHelper.java
+  s_79abdc51826958::t_f9251dd8aa9dfb 90-93,107-110,124-127,206-213
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/ExportSvcServiceOperationDetailOutput.java
+  s_79abdc51826958::t_dd80ca742c7914 79,83,87,91,205,209,229,233,237,241,245,249
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_79abdc51826958::t_224bcf19a5e8d2 83-85,88-91,190-194
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_79abdc51826958::t_0263dee7e584e5 549-554,609-614,666-667,669,676-677,680
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_79abdc51826958::t_af25a2394f4afd 45-47,74,78,82,86,90,94,98,102,106,196-203,234,238,242,246,250,254,258,262,266,270,274,278,290,294,298,302,306,310
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "66b9adb5f4361687552fa1248fefa49c5a70cd94",
+  "prompts": {},
+  "sessions": {
+    "s_79abdc51826958": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "899f2c43-221f-4180-bdd8-085349113358",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
