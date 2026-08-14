@@ -1,0 +1,32 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_a19deebc225409::t_5d75415251fdc0 10-11
+  s_a19deebc225409::t_dd61cbf309e312 1287-1288,1292-1295,1298-1299
+  s_a19deebc225409::t_4234dfae020a7b 1151-1157,1159-1164,1170
+  s_a19deebc225409::t_252b451becbca2 1289-1291,1296-1297
+  s_a19deebc225409::t_e110058b60c5a6 1158
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/SmpClient.java
+  s_a19deebc225409::t_3788bb1789dbf4 100
+docs/superpowers/specs/2026-07-24-dsp-outbound-process-perf-design.md
+  s_a19deebc225409::t_3a0f33a2e119c2 155-158
+  s_a19deebc225409::t_36d48125001535 133-136,139
+  s_a19deebc225409::t_b695a7d63f5625 112
+  s_a19deebc225409::t_f501d6ffcb5fb8 128-132,137-138,143
+  s_a19deebc225409::t_20a6a67a421a1b 1-111,113-127,140-142,144-154,159-163,165
+  s_a19deebc225409::t_8922118ee9257c 164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b55859ec411efdbfff3801311e01e9068e611b02",
+  "prompts": {},
+  "sessions": {
+    "s_a19deebc225409": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bc6b05b0-9442-4925-b017-9b994ec990f5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_313f231a587377::t_e1f4777e9df2e8 1213
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/job/SvcAppointmentMessageSaveJob.java
+  s_313f231a587377::t_5c5cc223bd1e2a 236
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_313f231a587377::t_360d27d3840523 1398
+  s_313f231a587377::t_508da562055d4e 1174-1196,1198-1200,1202-1209,1212-1213,1215-1217
+  s_313f231a587377::t_041b28d6aa7111 1211
+  s_313f231a587377::t_c6b85d4e3af63f 1362
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_313f231a587377::t_dd1b872ec62038 432-433,440
+  s_313f231a587377::t_f58142b4207747 406
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8e7f5d0b5c8cfac859475349c8042a008455a9e4",
+  "prompts": {},
+  "sessions": {
+    "s_313f231a587377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14da707f-ef8f-410f-b73b-aa666d83a029",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

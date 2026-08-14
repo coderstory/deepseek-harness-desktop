@@ -1,0 +1,45 @@
+.planning/STATE.md
+  s_0f2c5540d046df::t_e15c13a16a16b0 11
+  s_0f2c5540d046df::t_dfd9857a5189a8 27
+  s_0f2c5540d046df::t_76cf6f7186e51c 71
+  s_0f2c5540d046df::t_65d4730eaa45d0 8-10
+  s_0f2c5540d046df::t_d15b7466218c9b 24-26
+  s_0f2c5540d046df::t_e3edc9d3bdb9bd 70
+  s_7cd2c48aa41ff3::t_3f5cc74ab9612c 2,5-7,13-17,31-35,42-58,62,66,68,74-92
+.planning/REQUIREMENTS.md
+  s_ac907d199b8f86::t_77401f43768e9b 3-4,11,15,18,20,24,26,44,46,49,51,53-54,58,61-63,65,67-71,76,88,90,98,100,107,110-113,115,122,125-127,131,134-135,139,142-143,146
+.planning/ROADMAP.md
+  s_0f2c5540d046df::t_14fe368207bad9 5,7,9-13,17,22,28,35,39-45,47-49,51,53-63,66-73,76-77,79-81,89,94-96,98-99,103-104,108,121-122,124,127-128,132,144,146,149-150,152-154,157-158,161,169,171,174-175,182-183,185,189,198-201,208,225,234,251,261,279-280,283,291,300,302,304,307,309-310,313,315,327,329-332,334-335,339-340,343,349-350,359,362,364,368,373
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e8a76ec74f55d7a00e9790d0e4310eefaa875452",
+  "prompts": {},
+  "sessions": {
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_7cd2c48aa41ff3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ac94eadbe695501d0",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_ac907d199b8f86": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b113f95a-7dab-4667-8fb2-bd659a84d770",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

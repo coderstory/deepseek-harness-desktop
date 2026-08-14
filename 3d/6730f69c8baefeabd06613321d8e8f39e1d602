@@ -1,0 +1,39 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_f874f4e9c6023f::t_7b38aa2d45666b 276-279,296-300,303,311-312,317-320
+  s_f874f4e9c6023f::t_ddb9d3bd1b98d9 253,683,693-695,699-727,882
+  s_f874f4e9c6023f::t_7e3bac545bd3fe 1
+  s_f874f4e9c6023f::t_bfe460a48f6a5e 13-15
+  s_f874f4e9c6023f::t_f47329aabe91c3 12
+  s_f874f4e9c6023f::t_df7150464d2251 254-256
+  s_f874f4e9c6023f::t_74a2adc273e641 728-729
+  s_f874f4e9c6023f::t_df7e5421625490 879-881
+  s_f874f4e9c6023f::t_43201dc37fe862 883
+  s_f874f4e9c6023f::t_b7dbc1db50cb59 62,262,265,761,764,874-878,887-891
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/mapper/AppAfterSalesServiceOrderMapper.java
+  s_72420808945c8e::t_a8b872aeeee193 7,18-20,22,26
+  s_f874f4e9c6023f::t_e5ea03b63cae31 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3d6730f69c8baefeabd06613321d8e8f39e1d602",
+  "prompts": {},
+  "sessions": {
+    "s_72420808945c8e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "23983dfc-2cc6-4d7a-be36-ca557a3ed481",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_f874f4e9c6023f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3d728694-86db-484a-a065-7d54a9aa98fa",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_bd311ae77b3462::t_a1790b631d73f7 741-745,748-749
+  s_bd311ae77b3462::t_10748d467cfbe0 758-806
+  s_bd311ae77b3462::t_c33f42333ae6ed 757
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelper.java
+  s_bd311ae77b3462::t_3b0eac05b0050d 16
+  s_bd311ae77b3462::t_49e4f11e38bce5 202-247
+  s_bd311ae77b3462::t_dc8e91b7614a5a 31-33
+  s_bd311ae77b3462::t_3a36ae4810c715 51-55,61-62,82,88
+  s_bd311ae77b3462::t_931147a64eca51 96-97
+  s_bd311ae77b3462::t_c119d4c166e932 141-150
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_bd311ae77b3462::t_04c486715b5769 29-31,98,100-101,104,106,111-118,131,209,221,223-226,229,237-242,245,248-283,287,298-302,305,322,341,359,373-376,378,391,408,429,448
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "771b3dd807b1ab0f370c5349a2e3773f4719f512",
+  "prompts": {},
+  "sessions": {
+    "s_bd311ae77b3462": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "234ec96e-0192-4068-9d32-2d4deac6fadc",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

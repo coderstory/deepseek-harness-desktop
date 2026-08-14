@@ -1,0 +1,39 @@
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/client/SvcPrivacyCenterClientLatestTest.java
+  s_87bcdf1143463e::t_80f78a134c0733 1-214
+doc/7月需求/4.5.2-PIPA短信-Nacos配置.md
+  s_87bcdf1143463e::t_80f78a134c0733 13-14
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/client/SvcPrivacyCenterClient.java
+  s_87bcdf1143463e::t_80f78a134c0733 36,50,134,309,315
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/client/SvcPrivacyCenterClientTest.java
+  s_87bcdf1143463e::t_80f78a134c0733 67,98
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/client/SvcPrivacyCenterClientUnitTest.java
+  s_87bcdf1143463e::t_80f78a134c0733 52
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/job/SyncPrivacyPoliciesJobTest.java
+  s_87bcdf1143463e::t_80f78a134c0733 1-223
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcPipaSendPipaSmsTest.java
+  s_87bcdf1143463e::t_80f78a134c0733 44,46-47
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcPipaServiceImpl.java
+  s_87bcdf1143463e::t_80f78a134c0733 299,303,362-363
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/job/SyncPrivacyPoliciesJob.java
+  s_87bcdf1143463e::t_80f78a134c0733 23,45,49-50,66
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/client/SvcPrivacyCenterGateway.java
+  s_87bcdf1143463e::t_80f78a134c0733 29
+doc/7月需求/4.5.3-PIPA查询-Nacos配置.md
+  s_87bcdf1143463e::t_80f78a134c0733 7-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b5b535faa54829059ae3cc0d556fac4628701597",
+  "prompts": {},
+  "sessions": {
+    "s_87bcdf1143463e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9f2e5b61-4c70-4a81-afc8-60f6af273b72",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

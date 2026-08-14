@@ -1,0 +1,19 @@
+doc/八月需求/八月需求上线操作清单.md
+  s_0f2c5540d046df::t_eab8fe56595310 3,9,36,40,47,75,78,80,82,98,112,120,126,130,133,147,155
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "91c2159b7a6bfa2666f80c58e48ca3b15583633c",
+  "prompts": {},
+  "sessions": {
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

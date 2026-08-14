@@ -1,0 +1,19 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/Potd2Client.java
+  s_fb0312f27fb968::t_968130e6fb6f8a 54,58,62,66,70-77,82-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ac5079c15f9cf70be2e080cba4232cedf03a7b8b",
+  "prompts": {},
+  "sessions": {
+    "s_fb0312f27fb968": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e90bac7a-b0da-4dde-a2d5-9711b3f1d4ff",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/constant/ColumnItemConfig.java
+  s_5ee7568a3a03a9::t_ee44e14632f1dd 65-69
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_5ee7568a3a03a9::t_d55b4fc1d18881 237-243
+  s_5ee7568a3a03a9::t_6d45e61f38aa2f 118
+  s_5ee7568a3a03a9::t_127624e10157dd 326-343
+  s_5ee7568a3a03a9::t_8794a4d6381bf4 325
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0c80f6199af4183917f78e699d3f3a4c1ce03677",
+  "prompts": {},
+  "sessions": {
+    "s_5ee7568a3a03a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f00115c9-42f9-4946-bd1c-d1034ac14197",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

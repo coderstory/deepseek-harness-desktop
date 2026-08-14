@@ -1,0 +1,22 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/report/config/ReportProxyServlet.java
+  s_2286b7e52d4bfc::t_d45eb677609bbb 49,54-55,59-60,62-69,75,86,88,90-96,101-107,109-111,113-117,119-123,125-149,153-154
+  s_2286b7e52d4bfc::t_872fa87093de21 37,44-45
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/InfomediaVehicleInfoDataUploadService.java
+  s_2286b7e52d4bfc::t_6896d94ac18e1a 416
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f4da52350db0ce4af34a5bb21c8147ca3bf6b7af",
+  "prompts": {},
+  "sessions": {
+    "s_2286b7e52d4bfc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c78bd14a-be46-49f9-8081-0fcb9843dbd4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

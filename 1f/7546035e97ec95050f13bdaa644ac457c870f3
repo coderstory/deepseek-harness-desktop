@@ -1,0 +1,20 @@
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/GetCurrentDispatchMaintainInput.java
+  s_87bcdf1143463e::t_761dc12ac61111 13-14
+  s_87bcdf1143463e::t_d6f6d8705141da 30-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1f7546035e97ec95050f13bdaa644ac457c870f3",
+  "prompts": {},
+  "sessions": {
+    "s_87bcdf1143463e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9f2e5b61-4c70-4a81-afc8-60f6af273b72",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

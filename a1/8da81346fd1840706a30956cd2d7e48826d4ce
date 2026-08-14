@@ -1,0 +1,39 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/config-common-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 3-5
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/pdi/error/svc-base-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 2-11,14-20,23-24
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 2,4-5,7-10,12,15,17-21,24,26,30-32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-pay-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 1
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/inc-commom-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 1-11,13
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/delivery/error/delivery-common-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 1-3
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/error/appointment-common-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 2,5-6,8-9
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-input-data-check-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 5
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/maintain-common-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 3,6-8,10-11,13-14,16-20
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 1,3-4,9-11,15
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-reception-error.nb-NO.properties
+  s_d65a5cf5bd1e72::t_923da283cb4c44 6-11,13-14,16-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a18da81346fd1840706a30956cd2d7e48826d4ce",
+  "prompts": {},
+  "sessions": {
+    "s_d65a5cf5bd1e72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61332b88-0e42-4c78-9096-ef123deb8290",
+        "model": "qwen3.7-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

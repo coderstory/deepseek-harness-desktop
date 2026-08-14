@@ -1,0 +1,40 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/operationLog/enums/UserOperationActionEnum.java
+  s_04825d0bc031ab::t_f5d982d5cf582c 30-31
+  s_04825d0bc031ab::t_c0f6c3344d4876 32-34
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_04825d0bc031ab::t_30472e6b52a61b 19
+  s_04825d0bc031ab::t_8ef294881700d6 237-240
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_04825d0bc031ab::t_e9a14574dcd600 380
+  s_04825d0bc031ab::t_939c1532cd7315 381,389
+  s_04825d0bc031ab::t_9d0ac1db71d591 383
+  s_04825d0bc031ab::t_dbe7f77cbcaac5 93
+  s_04825d0bc031ab::t_ac47eacb8c2e44 86-87,91-92
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/cache/MolitAuthCache.java
+  s_99c8711cfec380::t_972d0c1476daaf 18
+  s_99c8711cfec380::t_f90f15ff9aee4a 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "11b87a198b341e515b9f90552545b1aea891fe4a",
+  "prompts": {},
+  "sessions": {
+    "s_04825d0bc031ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "365be5d0-2e35-43af-9cba-fb3b0768a34e",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_99c8711cfec380": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d6ae5090-08aa-4a7b-a9a7-731cebfed36a",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

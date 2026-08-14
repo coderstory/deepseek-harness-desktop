@@ -1,0 +1,51 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_bd311ae77b3462::t_c9abee33013ed8 63
+  s_bd311ae77b3462::t_7d6a7ea08e7c80 816-849
+  s_bd311ae77b3462::t_3a8470283bfd24 751-753,757
+  s_bd311ae77b3462::t_f43f8c405292e7 66
+  s_bd311ae77b3462::t_5f162e0528890f 815
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_bd311ae77b3462::t_e59627e36126b0 32-33,99,103-107,114,126-134,147,225,261,294,321,328-407,409-423,426,431,433-434,437-438,452,470,489,502,519,540,559
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_bd311ae77b3462::t_1bc417eca9e54f 55-62
+  s_bd311ae77b3462::t_019044ba55e826 218-223
+  s_bd311ae77b3462::t_1d4ae85d198cc5 124
+C06-svc-delivery/svc-core-delivery/src/main/resources/mybatis/mapper/svc/core/delivery/SvcStatementViewMapper.xml
+  s_bd311ae77b3462::t_34ab99451adf44 119
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/GetSettlementInformation.java
+  s_bd311ae77b3462::t_653da93841e9d9 32-34
+  s_bd311ae77b3462::t_28751ae57a3067 122-129
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_bd311ae77b3462::t_70e26032fd9a9f 539-540
+  s_bd311ae77b3462::t_00011ce5d59da9 595-596
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelper.java
+  s_bd311ae77b3462::t_5bf78c5c408a1c 158
+  s_bd311ae77b3462::t_4efa55ad485c2f 159-172
+  s_bd311ae77b3462::t_1fa21aa7d7b82b 14
+  s_bd311ae77b3462::t_747889dcae570d 36-37
+  s_bd311ae77b3462::t_8718c6ad9278b2 58-59,66-67
+  s_bd311ae77b3462::t_6a090552b4ad1b 93
+  s_bd311ae77b3462::t_40baf4d851153b 103
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_bd311ae77b3462::t_2f9e201d4976dc 64-65
+  s_bd311ae77b3462::t_767eb17bf473cc 6-7
+  s_bd311ae77b3462::t_cd678b82c823d0 90-94
+  s_bd311ae77b3462::t_e7bb4edc606640 144-180
+  s_bd311ae77b3462::t_5d500543a55fc1 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8097ce4b8d83b1e361fc328062864ad2754e76e5",
+  "prompts": {},
+  "sessions": {
+    "s_bd311ae77b3462": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "234ec96e-0192-4068-9d32-2d4deac6fadc",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
