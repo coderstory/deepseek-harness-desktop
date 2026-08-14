@@ -1,0 +1,31 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_65ec7fd9fbf7af::t_02795e062bbeca 586-590
+  s_65ec7fd9fbf7af::t_489804e82cb974 642-644,646,653-654,657
+  s_65ec7fd9fbf7af::t_52de3cc26946fd 530-534
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_65ec7fd9fbf7af::t_ef9c900b56a7f5 149-153
+  s_65ec7fd9fbf7af::t_825f0f89b91135 83-85,88-92
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_65ec7fd9fbf7af::t_5990a3d509562f 63,67,71,75,79,83,87,91,95
+  s_65ec7fd9fbf7af::t_414e008c437ce8 209,213,217,221,225,229,233,237,241,245,249,253
+  s_65ec7fd9fbf7af::t_4fd494cb89a43c 265,269,273,277,281,285
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutputTest.java
+  s_65ec7fd9fbf7af::t_6f0c192dc7528b 1-2,4-10,14-20,23,25-38,40-41,43-47,49-50,52-56,58-60,65-66
+  s_65ec7fd9fbf7af::t_c48411c2089bd9 3,11-13,21-22,24,39,42,48,51,57,61-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4dfe1d771ad3a316c7f61f7a354ab1bdde4b425e",
+  "prompts": {},
+  "sessions": {
+    "s_65ec7fd9fbf7af": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7e2e6ec1-5328-47e7-8fc9-2dbc443a6141",
+        "model": "cursor-grok-4.6-high-fast"
+      },
+      "human_author": "Lixuan.Zheng1 <leozheng01@aliyun.com>"
+    }
+  }
+}

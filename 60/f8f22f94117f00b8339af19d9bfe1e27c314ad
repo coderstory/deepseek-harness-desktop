@@ -1,0 +1,36 @@
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementServiceLogicTest.java
+  s_3839a9d4e7d6f3::t_9cdd6ed198c474 297,299-303,305-309
+  s_3839a9d4e7d6f3::t_791d1502f39716 252-253,255-262,264-270,274-284,286-296
+  s_3839a9d4e7d6f3::t_9d2a2d41cd4666 223,225,227-234,236-239,242-243,245-250
+  s_3839a9d4e7d6f3::t_3618364e2d800d 167,169-178,182-186,221
+  s_3839a9d4e7d6f3::t_11b347270adcd4 4-5,10,13-14,18
+  s_3839a9d4e7d6f3::t_ad89ef6c2278c8 6,15-16,23-24,26,30-70,72,75-86,88-99,101-109,112-113,115-122,124,126-133,137-147,149,151-157,161-164,312,316
+  s_3839a9d4e7d6f3::t_7b8aa15fed974d 7-8
+  s_3839a9d4e7d6f3::t_25d9d84aff9ed5 187,190-208,211-213,215-220
+  s_3839a9d4e7d6f3::t_352abaddef0272 165
+  s_3839a9d4e7d6f3::t_995b5deaf756fa 222
+  s_3839a9d4e7d6f3::t_860f9a200ac92c 251
+  s_3839a9d4e7d6f3::t_33ca9cb3a4e0e0 310-311
+  s_3839a9d4e7d6f3::t_85a6c0d21d0680 313-315
+  s_3839a9d4e7d6f3::t_7e3bce87537583 317-319
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_3839a9d4e7d6f3::t_e9563792a1115e 1-131
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_3839a9d4e7d6f3::t_e9563792a1115e 548-549,604-605,804,819,896,916,945
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "60f8f22f94117f00b8339af19d9bfe1e27c314ad",
+  "prompts": {},
+  "sessions": {
+    "s_3839a9d4e7d6f3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8a506fba-40e4-4185-aff6-da44e8b03df8",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
