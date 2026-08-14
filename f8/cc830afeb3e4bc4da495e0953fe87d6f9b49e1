@@ -1,0 +1,26 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueVehicleInfo.java
+  s_0ba0a0fd6df46f::t_900f95273d1163 1-67
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/RoadRescuePolicyConverter.java
+  s_0ba0a0fd6df46f::t_d74ad03bd83655 1-155
+C11-svc-ams/svc-cloud-ams/src/main/java/svc/cloud/ams/service/data/svc_estimate_order/VehicleInput.java
+  s_0ba0a0fd6df46f::t_a239f223374e2c 26-31
+  s_0ba0a0fd6df46f::t_ffa73e37fcf0f5 103-118
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/RoadRescuePolicyConverterTest.java
+  s_0ba0a0fd6df46f::t_c3982d1a6847bb 1-295
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f8cc830afeb3e4bc4da495e0953fe87d6f9b49e1",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
