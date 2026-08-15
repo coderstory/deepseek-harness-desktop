@@ -1,0 +1,24 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_ac010c8b41ca46::t_091878acae6804 116-117
+  s_ac010c8b41ca46::t_4a6110815b4354 106-108
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/ConfirmSettleLogicTest.java
+  s_ac010c8b41ca46::t_905124044ef272 314-362
+  s_ac010c8b41ca46::t_af667b74b04bcc 302-312
+  s_ac010c8b41ca46::t_835b3907b995dc 313
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "907e46552de10c86ce52265fabcf9d6854a6c704",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
