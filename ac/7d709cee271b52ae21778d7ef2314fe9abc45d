@@ -1,0 +1,68 @@
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_73dabae1135206::t_e43553e24b56fc 193
+  s_73dabae1135206::t_9940dd8fe97ad6 80
+  s_73dabae1135206::t_a6d799091e0230 103-104
+  s_73dabae1135206::t_d1884a473d6f40 135
+  s_73dabae1135206::t_f250d96deba794 195-196
+  s_73dabae1135206::t_c6d18753361375 191
+  s_73dabae1135206::t_986e2b3f494173 172
+  s_73dabae1135206::t_529fa0e4884045 99-100
+  s_73dabae1135206::t_2ed8a56d96c65b 136
+doc/八月需求/八月需求上线操作清单.md
+  s_73dabae1135206::t_7dacf540bf4cb0 159
+  s_73dabae1135206::t_6393bdfd88ceb7 51,64
+  s_73dabae1135206::t_13300fae36d5ca 55,68
+  s_73dabae1135206::t_c2328fc650e200 116
+  s_73dabae1135206::t_7c92c48b1927d1 126
+"doc/八月需求/八月需求后端开发任务清单 (敏捷故事).md"
+  s_73dabae1135206::t_e3686eed35a61d 54
+  s_73dabae1135206::t_0a37483eaf795a 81,83-85
+  s_73dabae1135206::t_5f7a364690161b 60
+  s_73dabae1135206::t_a73dd95c63cd1d 56
+  s_73dabae1135206::t_8d66eb7ec88613 47,53
+  s_73dabae1135206::t_47c9d22750175b 59
+  s_73dabae1135206::t_6c7959e4bfcd56 55
+  s_73dabae1135206::t_8b65c7b31d0e6a 95
+  s_73dabae1135206::t_64a4e883fe2bc7 62
+  s_73dabae1135206::t_be626054d1305e 57
+"doc/八月需求/维修项目迭代月八技术方案 .md"
+  s_73dabae1135206::t_3cff392e8f427d 433
+  s_73dabae1135206::t_cfe8e7866c303f 620-621
+  s_73dabae1135206::t_b8f1beb8b5ded0 436
+  s_73dabae1135206::t_3e9cbe2acf142f 628
+  s_73dabae1135206::t_375720ac4c6883 428
+  s_73dabae1135206::t_915804077202da 438
+  s_73dabae1135206::t_27af24455e3f15 435
+  s_73dabae1135206::t_07cfde3f5b28ac 426
+  s_73dabae1135206::t_b2750cc812cebf 1231
+  s_73dabae1135206::t_86644328a6756a 485
+  s_73dabae1135206::t_9d8656a3672846 604-608
+  s_73dabae1135206::t_935f39e6823f9e 434
+  s_73dabae1135206::t_24e97e56077c2f 423
+  s_73dabae1135206::t_cff3a1cca7c80d 429
+  s_73dabae1135206::t_47db0f228e708d 395
+  s_73dabae1135206::t_fb9ca327eb46ba 636
+  s_73dabae1135206::t_e20867b2346cd5 453
+  s_73dabae1135206::t_f70485649a392b 427
+  s_73dabae1135206::t_e3dff05f060c1c 437
+doc/八月需求/八月迭代PRD.md
+  s_73dabae1135206::t_860a2be6bc879f 567
+  s_73dabae1135206::t_fd350c700cd6c2 568
+  s_73dabae1135206::t_f2e9c3ef830ed9 561
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ac7d709cee271b52ae21778d7ef2314fe9abc45d",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
