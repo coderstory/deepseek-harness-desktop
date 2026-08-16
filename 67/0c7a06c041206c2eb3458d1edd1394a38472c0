@@ -1,0 +1,19 @@
+doc/ai-workflow/parts/ch3-cards-3.md
+  s_8757d0c77c3713::t_22ed04beec3162 3,5,7,9,14,16,18,20-21,25,27,29,31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "670c7a06c041206c2eb3458d1edd1394a38472c0",
+  "prompts": {},
+  "sessions": {
+    "s_8757d0c77c3713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a3fe3f2-31e0-4d21-9d74-b00619a48271",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
