@@ -1,0 +1,38 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/appointment/enums/SvcAppointmentMessageLogStatusEnum.java
+  s_aaf827470a20ae::t_e085927157ed0c 8
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_a4161f869f36a1::t_b4711c21f9d74c 381-394
+  s_a4161f869f36a1::t_42840f2637d444 62
+  s_a4161f869f36a1::t_be3ccfe1ff4e5a 187-190
+  s_a4161f869f36a1::t_5434d4f3fba50a 63-67
+  s_a4161f869f36a1::t_07d9ba109a9f6f 380
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/job/SvcAppointmentMessageSaveJob.java
+  s_aaf827470a20ae::t_533b18e23f12ee 84-96
+  s_aaf827470a20ae::t_aac17dba387edb 4
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/limiter/AppSubmitRateLimiter.java
+  s_a4161f869f36a1::t_6784de6ba886af 8-11,16-20,23-25,27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8f7efb03f141fda55fbabf2bc01e7e7cd71e94a2",
+  "prompts": {},
+  "sessions": {
+    "s_a4161f869f36a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "634766f8-fa9f-49f4-aaa6-7a698ef7923e",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_aaf827470a20ae": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2589d436-4cb4-4dc1-b7f2-3469bfbd7785",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
