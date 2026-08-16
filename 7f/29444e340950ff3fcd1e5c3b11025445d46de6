@@ -1,0 +1,23 @@
+C00-svc-base/svc-core-base/pom.xml
+  s_c74ed98b2398d1::t_97ab735604ea5c 197-202
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/provider/impl/SvcFilePlatformFileProviderImpl.java
+  s_c74ed98b2398d1::t_4cc90ab43f0364 1-160
+D03-deploy/svc-standard-api/pom.xml
+  s_c74ed98b2398d1::t_302e9b5388f9c0 63-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7f29444e340950ff3fcd1e5c3b11025445d46de6",
+  "prompts": {},
+  "sessions": {
+    "s_c74ed98b2398d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "399100be-cf30-4ce7-81cd-a0b7975c82e7",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}

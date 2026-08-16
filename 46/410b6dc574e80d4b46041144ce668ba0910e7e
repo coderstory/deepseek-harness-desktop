@@ -1,0 +1,29 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/CustomerProfileHelper.java
+  s_0f2c5540d046df::t_458c7a204cd482 3,11
+  s_0f2c5540d046df::t_5117c2405e1f77 109-113,116
+  s_0f2c5540d046df::t_7b82d0341f48fb 95
+  s_0f2c5540d046df::t_e7a46cf06c4472 143-144,156-158,163-165,179-181
+  s_0f2c5540d046df::t_e5a79580764170 82
+  s_0f2c5540d046df::t_3356f95c3d752a 202-207,213-219,223-234,236-237,246-264
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/CustomerProfileClient.java
+  s_0f2c5540d046df::t_094bb2d09306c8 132,137
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_0f2c5540d046df::t_70f05f56d25f85 54,57
+  s_0f2c5540d046df::t_446959bc248d1a 1106-1107,1110-1117,1119,1129-1138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "46410b6dc574e80d4b46041144ce668ba0910e7e",
+  "prompts": {},
+  "sessions": {
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

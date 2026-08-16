@@ -1,0 +1,29 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_ac010c8b41ca46::t_cae2dba74807da 135-140
+  s_ac010c8b41ca46::t_19a93855015544 13-18
+  s_ac010c8b41ca46::t_26515f28bcb530 53-58
+  s_ac010c8b41ca46::t_e0f61f68e35944 213-217
+  s_ac010c8b41ca46::t_7ac33ce58f6e24 218
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_ac010c8b41ca46::t_d328e14f18bc9a 10,15,17,19-20,22
+  s_ac010c8b41ca46::t_9d2d250af2d4ec 12-14,16
+  s_ac010c8b41ca46::t_7844d922ee2582 88,96,103-125,137-140
+  s_ac010c8b41ca46::t_19cd6fc1b80e0a 99
+  s_ac010c8b41ca46::t_14a2fbb1674291 94-95,97-98,100-102,126-136,141-144
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0bcd6f4eb854595a65050064059cc575899c3a1f",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/ConfirmSettleCalculator.java
+  s_ac010c8b41ca46::t_46a83ed74887eb 116
+  s_ac010c8b41ca46::t_e5ee6a519e0e40 151,155-171
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4b7946ad29f844b8c1614db3fa6fb6bc6f9cb8f0",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

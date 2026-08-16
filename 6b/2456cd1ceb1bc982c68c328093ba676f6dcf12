@@ -1,0 +1,23 @@
+.planning/phases/17.2-写入侧接线/deferred-items.md
+  s_0f2c5540d046df::t_95bb804c1a30c9 1-22
+.planning/phases/17.2-写入侧接线/17.2-01-SUMMARY.md
+  s_0f2c5540d046df::t_751bd99b747177 1-283
+.planning/phases/17.2-写入侧接线/17.2-USER-SETUP.md
+  s_0f2c5540d046df::t_576cc0b1230114 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6b2456cd1ceb1bc982c68c328093ba676f6dcf12",
+  "prompts": {},
+  "sessions": {
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
