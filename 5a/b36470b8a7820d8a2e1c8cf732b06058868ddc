@@ -1,0 +1,39 @@
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/ConfirmSettleLogicTest.java
+  s_ac010c8b41ca46::t_f1cba2b989d89a 284-287,294
+  s_ac010c8b41ca46::t_83df2f903b8f5e 330,334,341,343-344
+  s_ac010c8b41ca46::t_ec5c512b19e2ca 356
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_ac010c8b41ca46::t_7515f6da4abe0a 2559-2564
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_ac010c8b41ca46::t_ca42f6255481f2 106-108
+  s_ac010c8b41ca46::t_c17d03c32a2589 130-134,141-142,144,160,167-193
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/ConfirmSettleCalculator.java
+  s_ac010c8b41ca46::t_2994e008265fb9 116-118
+  s_ac010c8b41ca46::t_44b65cfec45f9e 157-159,165-167,170,172-178
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_4a9aa99b1c4a8f::t_9daf89460919eb 163-167
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5ab36470b8a7820d8a2e1c8cf732b06058868ddc",
+  "prompts": {},
+  "sessions": {
+    "s_4a9aa99b1c4a8f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1814dcc0-8693-4a8e-a033-7aeb91dfdb28",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    },
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

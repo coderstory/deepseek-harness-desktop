@@ -1,0 +1,32 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_1bf1bf8517208a::t_e99c3f4c5fdd83 861,870
+  s_77dbba5b369c53::t_8b039189d15749 62
+  s_77dbba5b369c53::t_73f0eb4c110828 126-127,134,137-139,188-190
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/limiter/AppSubmitRateLimiterServiceImpl.java
+  s_77dbba5b369c53::t_53e6c8ea2984ff 4
+  s_77dbba5b369c53::t_9219cd2cd919f1 35,167
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "76a4b6201a2f61cc34ff92a00b97d5b2ee5ab8ad",
+  "prompts": {},
+  "sessions": {
+    "s_1bf1bf8517208a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "434ddd6d-8066-4c1c-bbe4-4c22178e67a5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_77dbba5b369c53": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "430cb49b-04f8-47cb-a86d-bc741cd81aab",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
