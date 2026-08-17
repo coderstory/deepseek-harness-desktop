@@ -1,0 +1,21 @@
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_e0e0be557527ea::t_f4d0d1f1cdafa9 33-37
+  s_e0e0be557527ea::t_3269d390e35ae3 43
+  s_e0e0be557527ea::t_0bd62cfe36300d 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "479cf685dbad3accbd63b98e40b8a1b759a00a93",
+  "prompts": {},
+  "sessions": {
+    "s_e0e0be557527ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2281f6a7-423f-4c01-ac20-cbac7680429f",
+        "model": "qwen3.7-plus"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
