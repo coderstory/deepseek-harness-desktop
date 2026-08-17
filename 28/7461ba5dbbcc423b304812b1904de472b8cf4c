@@ -1,0 +1,26 @@
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplGetPriceTest.java
+  s_73dabae1135206::t_8ad367ccde159d 1-208
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetMdmStandardHourViewOutput.java
+  s_73dabae1135206::t_8a231f262384d1 156-163
+  s_73dabae1135206::t_f22f02c31fd1b1 24-27
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_73dabae1135206::t_02a8405f073fd4 197-206,209-224
+  s_73dabae1135206::t_f3a2c9e2961da9 207-208
+  s_73dabae1135206::t_2e0bbdc823c200 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "287461ba5dbbcc423b304812b1904de472b8cf4c",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": null
+    }
+  }
+}
