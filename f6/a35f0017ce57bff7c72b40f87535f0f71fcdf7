@@ -1,0 +1,34 @@
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcMaintenanceItemReminderServiceQueryTest.java
+  s_73dabae1135206::t_e48ef13d17edf8 1-270
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcMaintenanceItemReminderService.java
+  s_73dabae1135206::t_755c6965438a40 169-172,188-190
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_maintenance_item_reminder/QuerySvcMaintenanceItemReminderOutput.java
+  s_73dabae1135206::t_417e169331aebf 37-48
+  s_73dabae1135206::t_ab6d3f9a041771 111-134
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetSvcDealerHourPriceResp.java
+  s_eae4c5108df7cc::t_64be600ea11752 56-59,171-178
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f6a35f0017ce57bff7c72b40f87535f0f71fcdf7",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_eae4c5108df7cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a0bffbca85cf2450a",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
