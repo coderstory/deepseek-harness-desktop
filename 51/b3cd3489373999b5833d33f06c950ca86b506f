@@ -1,0 +1,21 @@
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplPdiProductCenterPathTest.java
+  s_cb039fb9c423d1::t_36dfd612fb1e88 157-168
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_cb039fb9c423d1::t_2e205cdaafd5df 404-412
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "51b3cd3489373999b5833d33f06c950ca86b506f",
+  "prompts": {},
+  "sessions": {
+    "s_cb039fb9c423d1": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "5fc5ad28-522a-473c-a2f9-630458b77a50",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "Lixuan.Zheng1 <Lixuan.Zheng1@zeekrlife.com>"
+    }
+  }
+}
