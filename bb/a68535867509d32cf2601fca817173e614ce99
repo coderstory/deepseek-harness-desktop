@@ -1,0 +1,21 @@
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplPdiManhourTest.java
+  s_442e70fac73fcb::t_e3728806c2b738 108-125
+  s_442e70fac73fcb::t_5331a4403b0417 105-107
+  s_442e70fac73fcb::t_ee91fceee1857f 8,18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "bba68535867509d32cf2601fca817173e614ce99",
+  "prompts": {},
+  "sessions": {
+    "s_442e70fac73fcb": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8a991c21-6bec-40c7-be0f-8a291685d03f",
+        "model": "composer-2.5-fast"
+      },
+      "human_author": "Lixuan.Zheng1 <Lixuan.Zheng1@zeekrlife.com>"
+    }
+  }
+}
