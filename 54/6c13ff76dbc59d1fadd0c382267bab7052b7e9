@@ -1,0 +1,19 @@
+C00-svc-base/svc-core-base/pom.xml
+  s_a3a9802da5beeb::t_3ad5a301ad066f 202
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "546c13ff76dbc59d1fadd0c382267bab7052b7e9",
+  "prompts": {},
+  "sessions": {
+    "s_a3a9802da5beeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5d961d1f-1cc6-4359-a011-2bde8e6b2764",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
