@@ -1,0 +1,40 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_15a0b81e6fc26c::t_a831a47bbf3857 41
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_15a0b81e6fc26c::t_332783aceb311a 382,392
+  s_15a0b81e6fc26c::t_3d2ed538f6b53c 407-408
+  s_15a0b81e6fc26c::t_830752694f821a 185,189,192,435
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_15a0b81e6fc26c::t_56a38e5c7aa41c 218-219,228-231
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_15a0b81e6fc26c::t_2ab22148f05be8 309
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_15a0b81e6fc26c::t_5276d2f4e4e7e1 161,179
+  s_15a0b81e6fc26c::t_830752694f821a 162,180
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/SvcBaseError.java
+  s_15a0b81e6fc26c::t_4aec37f029ce5f 27-28
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_15a0b81e6fc26c::t_271d1857ce996c 26,29
+  s_15a0b81e6fc26c::t_af3a781223fa2e 99
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_15a0b81e6fc26c::t_d9314813af3f71 266
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_15a0b81e6fc26c::t_74f4bc746ec3c1 1084,2269
+  s_15a0b81e6fc26c::t_25a97951619718 1330
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ebad5b70ad024cc766ec5a4f44b82753d286f815",
+  "prompts": {},
+  "sessions": {
+    "s_15a0b81e6fc26c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85cf7588-a6db-47fe-b32d-b1d84970fd6e",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
