@@ -1,0 +1,111 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceDto.java
+  s_73dabae1135206::t_567ebd2f454ba3 20,24
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentPartServiceImpl.java
+  s_73dabae1135206::t_8e7f993e9bfac8 225-229
+  s_73dabae1135206::t_74d39d86ac5476 282-283
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_73dabae1135206::t_18cd36d309863a 53-54
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/SvcBaseError.java
+  s_73dabae1135206::t_1af95aefd3bf0c 26-30
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_73dabae1135206::t_b96785fbad5762 234-236
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_73dabae1135206::t_20c8dc1c804743 75-80,85
+  s_73dabae1135206::t_9aefddc1772458 419-420
+  s_73dabae1135206::t_27d86667e8c63b 159-161
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/GetDealerPartPriceMapParam.java
+  s_73dabae1135206::t_e00b6432d1eed2 21
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_73dabae1135206::t_1192ddf5a17e90 70-78
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_maintain_item/QuerySvcAppointmentMaintainItemViewOutput.java
+  s_73dabae1135206::t_70f13afa4da14f 91
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsOutput.java
+  s_73dabae1135206::t_2211fab05a5ec2 14-15,20,23
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/DealerPartPriceDto.java
+  s_73dabae1135206::t_d415d3c5ac1336 24,28
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentPartServiceImplTest.java
+  s_73dabae1135206::t_88f5ff50e272aa 229-231
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetSvcDealerHourPriceResp.java
+  s_73dabae1135206::t_273627f6ab1098 56-61
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/test/XstartupTestInitializer.java
+  s_73dabae1135206::t_c7856df11d573d 14-17
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_73dabae1135206::t_04bf0630b67612 43-54
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceParam.java
+  s_73dabae1135206::t_393c91bdfd772a 23
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_73dabae1135206::t_61949277c5189c 43-47
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_73dabae1135206::t_8541a72b558f0d 28,30-33
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_73dabae1135206::t_ca2613414489f3 119-126
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_73dabae1135206::t_d343d27a00e27c 59-63
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_73dabae1135206::t_5a22e4a4615870 835,1109
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetMdmStandardHourViewOutput.java
+  s_73dabae1135206::t_618ea9f142b0aa 24-29
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/spare_part/SparePartQueryPriceReq.java
+  s_73dabae1135206::t_c80dad198dc7b7 18
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_73dabae1135206::t_4d111b21030861 39-44
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsInput.java
+  s_73dabae1135206::t_5c53ef93df9156 20,22
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentMaintainItemServiceImpl.java
+  s_73dabae1135206::t_a91eb20788dff7 204-208
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_0c23c335fcf654 2169-2170
+  s_73dabae1135206::t_4a3eaefb428457 2275
+  s_73dabae1135206::t_f30d1bebfce940 2320
+  s_7ecfdcd69e3e2d::t_c27df6f0518861 1178-1180
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_73dabae1135206::t_424bbacca041c1 956-964
+  s_73dabae1135206::t_91ce497f234820 989
+  s_73dabae1135206::t_4e227b0812e6b2 990
+  s_73dabae1135206::t_2799a34d5daa15 1005-1006
+  s_73dabae1135206::t_4a90fd91d19826 1004
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_9dc2273edef35b::t_4d0df4659b7991 111-119
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_part/QuerySvcAppointmentPartViewOutput.java
+  s_0908a600fbd783::t_1bad5062e01526 88
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "88e68f08d9c582e44183428a567f00a301431b01",
+  "prompts": {},
+  "sessions": {
+    "s_0908a600fbd783": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ac70aab798aeabf0c",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_7ecfdcd69e3e2d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb8c23e4-bc36-4bac-94f0-e79eaaa51246",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_9dc2273edef35b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "eb91a5e9-7d89-4ac8-bae2-3217c0264ba0",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_73dabae1135206::t_596c7a81b36345 128-137
+.planning/v1.6-SIT-E2E-TEST-CASES.md
+  s_73dabae1135206::t_8de0cedb2efead 206-221
+  s_73dabae1135206::t_7fe0ccb955643e 233
+.planning/v1.6-FINAL-REQUIREMENTS-BASELINE.md
+  s_73dabae1135206::t_7d5adc46c7d75b 80
+  s_73dabae1135206::t_017f0f612415d9 35-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "89c03692b51542726ff625a1c5a2dad3fb6029d0",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

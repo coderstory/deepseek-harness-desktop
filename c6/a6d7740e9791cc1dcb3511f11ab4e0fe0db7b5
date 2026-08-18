@@ -1,0 +1,47 @@
+doc/ai-workflow/assets/diagrams/d3-execute-parallel.mmd
+  s_8757d0c77c3713::t_e0283e9360dcda 1-20
+doc/ai-workflow/assets/diagrams/d6-tool-matrix.mmd
+  s_8757d0c77c3713::t_d52589a7831dea 1-20
+doc/ai-workflow/assets/diagrams/d1-overview.mmd
+  s_8757d0c77c3713::t_f82ce1210d7cf2 1-12
+doc/ai-workflow/assets/diagrams/d4-pdca-loop.mmd
+  s_8757d0c77c3713::t_3c5df0cd473117 1-8
+doc/ai-workflow/assets/diagrams/d2-swimlane.mmd
+  s_6a1c4d8da3a30c::t_1f95ef35a70236 1-18
+doc/ai-workflow/assets/diagrams/d5-quality-funnel.mmd
+  s_6a1c4d8da3a30c::t_1e01829386db86 1-7
+doc/ai-workflow/assets/diagrams/d7-memory-loop.mmd
+  s_0ba0a0fd6df46f::t_75e136ad06019d 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c6a6d7740e9791cc1dcb3511f11ab4e0fe0db7b5",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_6a1c4d8da3a30c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a4156cfba800a6fe5",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8757d0c77c3713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a3fe3f2-31e0-4d21-9d74-b00619a48271",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

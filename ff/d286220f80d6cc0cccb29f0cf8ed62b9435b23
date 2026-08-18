@@ -1,0 +1,34 @@
+doc/ai-workflow/assets/diagrams/d7-memory-loop.mmd
+  s_8757d0c77c3713::t_607d277de01773 2-8
+doc/ai-workflow/2026-08-16-AI全流程开发方法论.md
+  s_8757d0c77c3713::t_ab6607d1439884 1-15,17-157,160-219,221-312,314-345,347-477,479-628
+  s_8757d0c77c3713::t_718bcfb2b05ec6 16,158-159,220,313,346,478
+doc/ai-workflow/assets/diagrams/d6-tool-matrix.mmd
+  s_8757d0c77c3713::t_607d277de01773 2-7,9-14
+doc/ai-workflow/assets/diagrams/d1-overview-chk.svg
+  s_9a9b6117488835::t_7cd0606e9aa68b 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ffd286220f80d6cc0cccb29f0cf8ed62b9435b23",
+  "prompts": {},
+  "sessions": {
+    "s_8757d0c77c3713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a3fe3f2-31e0-4d21-9d74-b00619a48271",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_9a9b6117488835": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a33bdb6ab428c775f",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

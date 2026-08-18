@@ -1,0 +1,38 @@
+doc/八月需求/八月需求上线操作清单.md
+  s_73dabae1135206::t_98e5804a57d99e 116
+  s_73dabae1135206::t_05810cfa0013e4 159
+  s_73dabae1135206::t_2bea09ab809485 126
+"doc/八月需求/维修项目迭代月八技术方案 .md"
+  s_73dabae1135206::t_95fe36504968b6 3-4
+"doc/八月需求/八月需求后端开发任务清单 (敏捷故事).md"
+  s_73dabae1135206::t_6593e5a6064df0 54
+  s_73dabae1135206::t_6950cf8dcdb8db 55
+  s_73dabae1135206::t_fdd3ad786afa45 53
+  s_fb85b25661d45f::t_f2b932755174a8 60
+doc/modules/07-C06-svc-delivery.md
+  s_73dabae1135206::t_ba2799ccdb4489 58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "14ad0348778f8f7fc875144cb0849a3d702ad295",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fb85b25661d45f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a3039c6df67f3ced2",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

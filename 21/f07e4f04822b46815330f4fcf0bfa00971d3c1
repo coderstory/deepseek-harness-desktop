@@ -1,0 +1,52 @@
+.planning/phases/18.1-foundation-iclaim-client-dtos/18.1-UAT.md
+  s_f9731531312491::t_18b33946c56979 1,3-5,7-10,12-16,23-25,33-35,41-43,47-49,55-57,63-66,68,70,72
+  s_475442aa82f3fa::t_79418ec8ced545 2,6,11,17-22,26-32,36-40,44-46,50-54,58-62,67,69,71,73-81
+.planning/REQUIREMENTS.md
+  s_f9731531312491::t_eeb8a5ac17f346 14-16
+  s_f9731531312491::t_42532dc390e3b0 32
+  s_f9731531312491::t_75976f110e11f2 25
+  s_f9731531312491::t_691ef12aa75497 56
+  s_f9731531312491::t_62bc2841868489 51
+  s_2198f28b42bc3e::t_c2d7a39864d783 1-13,17-19,21-24,27-31,33-45,47-50,52-55,57-74
+  s_f9731531312491::t_af2b3ccade3851 20
+  s_475442aa82f3fa::t_e28026651cb584 26
+  s_2198f28b42bc3e::t_daba1d2dbcc6cb 46
+  s_475442aa82f3fa::t_b18670e7b8e082 77-79,83
+  s_2198f28b42bc3e::t_18a6855d2ba720 75-76,80-82,84-95,97-101
+  s_f9731531312491::t_370634c676bdd7 96
+.planning/phases/18.1-foundation-iclaim-client-dtos/18.1-VERIFICATION.md
+  s_f9731531312491::t_438ae66f2cd691 1-3,14-195
+  s_475442aa82f3fa::t_cffb88c720d25a 4-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "21f07e4f04822b46815330f4fcf0bfa00971d3c1",
+  "prompts": {},
+  "sessions": {
+    "s_2198f28b42bc3e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "21b02209-03d7-446f-bc19-55d92145cbe9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_475442aa82f3fa": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "473d0c91-a736-4dcf-a6ea-3ce870666d15",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

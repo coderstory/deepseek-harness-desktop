@@ -1,0 +1,47 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsOutput.java
+  s_73dabae1135206::t_3caf9895f7176f 18-21
+  s_73dabae1135206::t_1af20b08f8df91 62-77
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_109141ebe1798c 68-71
+  s_73dabae1135206::t_cc6ad0c3ed8881 101,103,110-112,114-116
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsInput.java
+  s_73dabae1135206::t_9b396e317f25c1 23-25
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceGetMdmPartsTest.java
+  s_73dabae1135206::t_c5c79ef5be8c84 9,17,31-34,78-106,127-154
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_73dabae1135206::t_e0fe769bf7e09b 977-978
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewOutput.java
+  s_73dabae1135206::t_c92661421f00b7 51-53
+  s_73dabae1135206::t_45945b19094548 228-235
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_73dabae1135206::t_00fb11522a348c 202-205
+  s_73dabae1135206::t_ce813592c941da 263-264
+  s_73dabae1135206::t_51c197ef614761 272-274,276,282
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceDto.java
+  s_73dabae1135206::t_89a17e0797472b 20-25
+  s_73dabae1135206::t_dbcc095cee2ee1 65-80
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplQueryViewTest.java
+  s_73dabae1135206::t_98d2c706ba0698 32,42,44-50,106-110,112-113,115,133,137,142-161,165-166,170,175-176,180-181,185,189-191,195,199,204-206
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_73dabae1135206::t_be2e016c0a33ef 42,44-48,57-66,125,147-153,161-162,166-178,180,183-185,189,193,195,198-202,206-207,211,213,216-220,224-225,229-230,233-235,239,243,245,248-249,253,257,259,262-264
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_73dabae1135206::t_bd14a906b9bfa8 59
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/AbstractPotdDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_ed1e28f08493e6 115-118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f59f2018250db52d952f685ed44c93d21142886f",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
