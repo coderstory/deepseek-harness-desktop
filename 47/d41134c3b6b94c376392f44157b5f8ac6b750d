@@ -1,0 +1,24 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_00c7994e3272cc::t_0b46cb77c2f9bf 1574-1575,1587-1596
+  s_00c7994e3272cc::t_4d4c052e1cb8be 76
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_00c7994e3272cc::t_51b7186946d97e 845-882
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_00c7994e3272cc::t_034585a94a1309 133-134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "47d41134c3b6b94c376392f44157b5f8ac6b750d",
+  "prompts": {},
+  "sessions": {
+    "s_00c7994e3272cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3ec54bc3-3c90-4798-a582-1e8ff7ca62bf",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

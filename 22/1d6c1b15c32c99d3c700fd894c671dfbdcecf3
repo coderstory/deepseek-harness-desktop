@@ -1,0 +1,39 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelper.java
+  s_a3dd2f25f8cf0b::t_319db6e203d771 175-176
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportDetailSvcServiceProxyOutput.java
+  s_a3dd2f25f8cf0b::t_01d01c7b1c81a2 175,177
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_a3dd2f25f8cf0b::t_2912ae8011682c 28,74,185,193-195,202-203,581,585,588-589,594,601,603-604,609-610,614-615,619,623-624
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/helper/RepairTaskDetailExportHelper.java
+  s_a3dd2f25f8cf0b::t_95157fba1d9e56 13,93,110,127,173-174,183-205
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/ExportSvcServiceOperationDetailOutput.java
+  s_a3dd2f25f8cf0b::t_83ff5260fd429b 91
+C04-svc-maintain/svc-core-maintain/src/test/java/svc/core/maintain/helper/RepairTaskDetailExportHelperTest.java
+  s_a3dd2f25f8cf0b::t_c84f8ebf21b123 29-30,251,260-261,266,272-291,293-327,329,338,481,484-485,488,492,494-496
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_277ada6e5875fd::t_5d790d75822d89 1-14,16-22,25-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "221d6c1b15c32c99d3c700fd894c671dfbdcecf3",
+  "prompts": {},
+  "sessions": {
+    "s_277ada6e5875fd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "113fc1fb-55dd-4c75-945d-c01c216b95b6",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_a3dd2f25f8cf0b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "810e36e6-5462-4a37-ae01-c3098d2430f8",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

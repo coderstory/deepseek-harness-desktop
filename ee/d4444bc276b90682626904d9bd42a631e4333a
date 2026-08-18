@@ -1,0 +1,21 @@
+C04-svc-maintain/svc-core-maintain/src/main/resources/mybatis/mapper/svc/core/maintain/SvcServiceOperationViewMapper.xml
+  s_e0e0be557527ea::t_e35c8dd01ae9a3 207
+  s_e0e0be557527ea::t_cb7d0703b5d0d5 196-206,213
+  s_e0e0be557527ea::t_6262d58b532f84 215
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "eed4444bc276b90682626904d9bd42a631e4333a",
+  "prompts": {},
+  "sessions": {
+    "s_e0e0be557527ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2281f6a7-423f-4c01-ac20-cbac7680429f",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

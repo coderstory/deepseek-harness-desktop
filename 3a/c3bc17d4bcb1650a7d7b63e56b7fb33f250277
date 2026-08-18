@@ -1,0 +1,33 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportListSvcServiceProxyOutput.java
+  s_79abdc51826958::t_b335b7523fd04d 6-7,113,122,125,128,362,366,386,390,394,398,402,406,418
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_79abdc51826958::t_921224b2570fb0 539-540,595-596,649,656-657,660
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_79abdc51826958::t_eb8e4f1d1a69fd 6-7,47-48,51-54,81,85,89,93,97,101,105,109,113,123-126,215-217,248,252,256,260,264,268,272,276,280,284,288,292,304,308,312,316,320,324,343-350
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_277ada6e5875fd::t_bd7dcbfe3d6fe8 1-14,16-22,25-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3ac3bc17d4bcb1650a7d7b63e56b7fb33f250277",
+  "prompts": {},
+  "sessions": {
+    "s_277ada6e5875fd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "113fc1fb-55dd-4c75-945d-c01c216b95b6",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_79abdc51826958": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "899f2c43-221f-4180-bdd8-085349113358",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

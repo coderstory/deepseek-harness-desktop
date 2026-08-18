@@ -1,0 +1,50 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_dc5a1f1e60be43::t_2c51bc629cf0a4 135,137,151,1461,1463-1568
+  s_c3036ed101f37e::t_0de9287ddf9a71 851-853,865-867,870-871
+  s_c2c92ab7bde43f::t_501cebcbc9566a 223,233
+  s_dc5a1f1e60be43::t_fbae946551c8b8 1462
+  s_c3036ed101f37e::t_75031f8e9e96e3 854-856,859-862
+  s_c3036ed101f37e::t_e9151a6d8dde0c 876
+  s_c3036ed101f37e::t_0fd0836d6d0056 830-836
+  s_c3036ed101f37e::t_c8ca343c88c7b5 175
+  s_dc5a1f1e60be43::t_56a5c425036755 101
+  s_dc5a1f1e60be43::t_9b74ec37614f4a 180
+  s_dc5a1f1e60be43::t_adb940b2c55bd8 136
+  s_dc5a1f1e60be43::t_3af62dcf172163 150
+  s_dc5a1f1e60be43::t_cccedf749dc992 179
+  s_c2c92ab7bde43f::t_eb8109de6f2612 234
+  s_c3036ed101f37e::t_879bc639a5425e 872
+  s_dc5a1f1e60be43::t_0e7297ee9e7755 104-106,125,132,153-155,159,161,991,1001,1006
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a1eb7754f99f47f87cc1431c404e3b0802155c6c",
+  "prompts": {},
+  "sessions": {
+    "s_c2c92ab7bde43f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5311e0a1-4466-4c3b-b713-95acd6b22d80",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_c3036ed101f37e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "76437cc0-8234-4997-b076-0ba617c18496",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_dc5a1f1e60be43": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "83b2fbde-76ab-47a8-a004-7a58d4dbb473",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
