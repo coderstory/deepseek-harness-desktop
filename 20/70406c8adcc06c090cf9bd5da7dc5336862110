@@ -1,0 +1,29 @@
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_73dabae1135206::t_1086a35fe348f6 6,8,12
+.planning/v1.6-SIT-E2E-TEST-CASES.md
+  s_73dabae1135206::t_d8351030a49e24 218
+.planning/v1.6-FINAL-REQUIREMENTS-BASELINE.md
+  s_73dabae1135206::t_4cfd2dc76a4541 35
+  s_73dabae1135206::t_8bba3948290935 11
+  s_73dabae1135206::t_783d21e70ef6e8 56-57
+  s_73dabae1135206::t_e97b938983e84a 78-79
+doc/八月需求/swagger/5.4-swagger-merged.json
+  s_73dabae1135206::t_5d1718a386ea52 6,9-10,14-67,70-72,74-76,84-86,94-96,104-107,110,123-178,180-184,186,188-216,246,249,255,265,267-268,272,274,276,278-281,283,290
+  s_73dabae1135206::t_7446373b3d4220 217,254,264,266,282,285,348-397,399,428
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2070406c8adcc06c090cf9bd5da7dc5336862110",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

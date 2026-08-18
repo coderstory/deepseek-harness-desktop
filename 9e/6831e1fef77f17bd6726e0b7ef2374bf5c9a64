@@ -1,0 +1,63 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_4ed2853dfb43b3::t_22ce204d7dd146 79,90-91
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/DealerPartPriceDto.java
+  s_4ed2853dfb43b3::t_a59da84d2d8e5d 69-84
+  s_4ed2853dfb43b3::t_5d4d2ed667c0fd 24-29
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/SparePartHelperTest.java
+  s_4ed2853dfb43b3::t_1af1c0b4fb550e 102,105-106,117
+  s_4ed2853dfb43b3::t_d6e5b1b9a273c8 1-14,16-31,36-101,103-104,107-116,118-121
+  s_4ed2853dfb43b3::t_8ddec5cecb1649 15,32-35
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/service/data/mdm_parts/GetMdmPartsInput.java
+  s_4ed2853dfb43b3::t_a522017de006a9 24-26
+  s_4ed2853dfb43b3::t_e8ac5157abe470 74-76
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/test/XstartupTestInitializer.java
+  s_4ed2853dfb43b3::t_3ff9ab3ad762de 1-49
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_73dabae1135206::t_4cd8b3d990203f 1-220
+C00-svc-base/svc-core-base/src/test/java/svc/core/reception/helper/StatementHelperGetPriceContextTest.java
+  s_73dabae1135206::t_29954b9af12200 1-159
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_4ed2853dfb43b3::t_0117541f8873ee 7
+  s_73dabae1135206::t_ed5d0e41bda811 95,97-100,107-118
+  s_73dabae1135206::t_0e883d142f1ca7 22
+  s_4ed2853dfb43b3::t_734330f879006c 198-209,219-245
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/SparePartHelper.java
+  s_4ed2853dfb43b3::t_c9da45ebd57385 59-61
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_4ed2853dfb43b3::t_131f538d6d85ef 1-17,19,21-35,37-42,47-61,63-65,67-81,100,102-104,107-121,128-129,139-142,144-146,149-163,170-171,181-184,186-188,191-193,195-199,202-205,209-210,220-223,225-227,230-232,234-237,241-244,248-249,258-261,263-265,268-276,278-282,289-290,300-303,305-306,310-313,315-317,320-321,329,339-341
+  s_4ed2853dfb43b3::t_f7dc87ecf9cb26 18,36,62,66,82-99,101,105-106,122-127,130-138,143,147-148,164-169,172-180,185,189-190,194,200-201,206-208,211-219,224,228-229,233,238-240,245-247,250-257,262,266-267,277,283-288,291-299,304,307-309,314,318-319,322-328,330-338
+  s_4ed2853dfb43b3::t_0df9753d298d8e 20,43-46
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/config/service/data/svc_labour_hour_type_price/QueryLabourHourTypeCodeByDealerCodeInput.java
+  s_4ed2853dfb43b3::t_d375db9be11741 100-102
+  s_4ed2853dfb43b3::t_6c2e5c1b05f09f 34-36
+C00-svc-base/svc-core-base/pom.xml
+  s_4ed2853dfb43b3::t_06dd1344df77a2 217-229
+  s_4ed2853dfb43b3::t_ab9e5f72881151 211-216
+  s_4ed2853dfb43b3::t_e0b92b7d021b3e 230-236
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EuPotdDealerPurchaseInfoAclHandler.java
+  s_4ed2853dfb43b3::t_a7513fbf54b428 49,64-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9e6831e1fef77f17bd6726e0b7ef2374bf5c9a64",
+  "prompts": {},
+  "sessions": {
+    "s_4ed2853dfb43b3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf8fb2f2-45fb-490f-ba74-1c8db8b740d3",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

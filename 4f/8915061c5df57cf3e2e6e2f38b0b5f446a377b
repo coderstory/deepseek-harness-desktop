@@ -1,0 +1,42 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_5f6f5d5951aecf 77-86,94,112-155
+  s_73dabae1135206::t_0c51cc3cf11891 6,12,15,18-19,22,31-32,36
+  s_73dabae1135206::t_f3a4e95f0cf78a 156
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_73dabae1135206::t_328e0bb52713c8 1-255
+.planning/v1.6-FINAL-REQUIREMENTS-BASELINE.md
+  s_73dabae1135206::t_1f0317d0137390 26
+  s_73dabae1135206::t_704dda3c91b281 23-25
+  s_73dabae1135206::t_08b413e861b8f5 27-29
+  s_42338f728de247::t_e2511d88ddcfc2 1-22,30-74
+.planning/STATE.md
+  s_73dabae1135206::t_795625180b11bf 66
+.planning/phases/18.4-query-transfer/18.4-CONTEXT.md
+  s_73dabae1135206::t_1ba943024b078d 132
+  s_73dabae1135206::t_d5855866154546 44
+  s_73dabae1135206::t_f6d7a30d8b486a 113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4f8915061c5df57cf3e2e6e2f38b0b5f446a377b",
+  "prompts": {},
+  "sessions": {
+    "s_42338f728de247": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-aa40b0e347d221a1f",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
