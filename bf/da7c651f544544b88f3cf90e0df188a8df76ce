@@ -1,0 +1,23 @@
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/constant/GlobalParamsConfig.java
+  s_cca1f2f71dc74c::t_16eacfca24862c 125-126
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_cca1f2f71dc74c::t_e6cf49de757769 85-92
+  s_cca1f2f71dc74c::t_45a5244c14077d 93-95
+  s_cca1f2f71dc74c::t_1b283a59aa74bf 96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "bfda7c651f544544b88f3cf90e0df188a8df76ce",
+  "prompts": {},
+  "sessions": {
+    "s_cca1f2f71dc74c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2672cbf9-b6f8-44a3-b2f0-360d91561894",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}
