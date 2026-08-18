@@ -1,0 +1,58 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.th-TH.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.en-US.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.de-DE.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.fr-FR.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.hu-HU.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.cs-CZ.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sk-SK.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.zh-CN.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_15a0b81e6fc26c::t_7ddb9ae303248f 100
+  s_15a0b81e6fc26c::t_4daa7b18e6d586 26,28,30
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_15a0b81e6fc26c::t_087b90e72be0c7 161-162,179-180
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-ES.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sv-SE.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.id-ID.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/SvcBaseError.java
+  s_15a0b81e6fc26c::t_e0850e0f68076a 28-29,32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.uz-UZ.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 18
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ru-RU.properties
+  s_15a0b81e6fc26c::t_48d2a24c382bff 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8f0baaa213d1a06b053a784e4610603d3f999ecd",
+  "prompts": {},
+  "sessions": {
+    "s_15a0b81e6fc26c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85cf7588-a6db-47fe-b32d-b1d84970fd6e",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
