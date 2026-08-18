@@ -1,0 +1,41 @@
+doc/八月需求/5.3上线操作清单.md
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-122
+doc/八月需求/八月迭代PRD.md
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-1574
+doc/八月需求/5.3技术方案-客户隐私信息存客档.md
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-290
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-176
+"doc/八月需求/5.3后端开发任务清单 (敏捷故事).md"
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-57
+doc/八月需求/客档API/场景客档_upsert_保存。YApi高效易用功能强大的可视化接口管理平台_20260811162141.md
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-191
+doc/八月需求/5.3前端开发配合文档.md
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-86
+doc/八月需求/客档API/场景客档分页查询无子表。YApi高效易用功能强大的可视化接口管理平台_20260811162821.md
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-165
+doc/八月需求/客档API/场景客档详情单条查询含子表。YApi高效易用功能强大的可视化接口管理平台_20260811162603.md
+  s_2198f28b42bc3e::t_4774c5faa9ef1f 1-140
+doc/八月需求/八月需求上线操作清单.md
+  s_2198f28b42bc3e::t_c6f9580a1499f4 1-155
+"doc/八月需求/八月需求后端开发任务清单 (敏捷故事).md"
+  s_2198f28b42bc3e::t_cad3bd67c7921c 1-90
+"doc/八月需求/维修项目迭代月八技术方案 .md"
+  s_2198f28b42bc3e::t_a615ff9ead090d 1-1330
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "61f0f87571662d340e4bebbade3198a6c30e15b5",
+  "prompts": {},
+  "sessions": {
+    "s_2198f28b42bc3e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "21b02209-03d7-446f-bc19-55d92145cbe9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

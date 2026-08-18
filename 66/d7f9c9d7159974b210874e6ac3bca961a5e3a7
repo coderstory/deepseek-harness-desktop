@@ -1,0 +1,66 @@
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_73dabae1135206::t_6f332f8e0b47c6 283-306
+  s_73dabae1135206::t_70b53d1c4c64b7 282
+.planning/phases/18.4-query-transfer/18.4-CONTEXT.md
+  s_73dabae1135206::t_8f5d6124d96802 46-49
+.planning/STATE.md
+  s_73dabae1135206::t_9be51bceb2f2cb 84
+  s_73dabae1135206::t_94046ed4cfa706 68-71
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_73dabae1135206::t_b478f497934dc3 835-837
+  s_73dabae1135206::t_35a95a22e07fe8 1108-1139,1141-1152,1157-1158,1160-1161
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_73dabae1135206::t_08c9d0217e8b53 357-451
+  s_73dabae1135206::t_c8fad2bfd7cf2f 31-32
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_73dabae1135206::t_2dc6c3d4d4199e 284-291,297-298,302
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentPartServiceImplTest.java
+  s_73dabae1135206::t_c0fb642ef568df 27-28
+  s_73dabae1135206::t_657e89b8c66a71 192-193
+  s_73dabae1135206::t_4e3523415b16f1 133-134
+  s_73dabae1135206::t_8919003c105834 223-293
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_73dabae1135206::t_61d7ecd4ff5817 28
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentPartServiceImpl.java
+  s_73dabae1135206::t_f6c42f87655b9e 292-312
+  s_73dabae1135206::t_387eb7367fc7ba 244-254
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_73dabae1135206::t_8b4fa0f99cf592 19
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_73dabae1135206::t_bdc4369ac02e7a 6,17-18
+  s_73dabae1135206::t_42aa9463a0fdd2 250-324
+doc/八月需求/八月需求上线操作清单.md
+  s_73dabae1135206::t_d1e158dfc5d4a2 54-57,67-70
+  s_73dabae1135206::t_ceca88890e5f18 51,64
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_73dabae1135206::t_64c97e2b8191af 76-81
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_73dabae1135206::t_0b780ad79e4b5e 148,152-160
+  s_73dabae1135206::t_35f27d4297f439 90
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_73dabae1135206::t_6bc768e8ab69b7 317-320,329-330,334
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_73dabae1135206::t_191e647b8d0b5c 287-289
+  s_73dabae1135206::t_5893d978ab0328 265
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_f4c64214a0dae8 1200-1206,1208-1209,1211
+  s_73dabae1135206::t_97d0da331aeaf7 1031-1033
+  s_73dabae1135206::t_73bc53ee666621 2206-2210
+  s_73dabae1135206::t_79764a7c7dd518 768-776,784-806
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "66d7f9c9d7159974b210874e6ac3bca961a5e3a7",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.planning/v1.6-SIT-E2E-TEST-CASES.md
+  s_73dabae1135206::t_7ada315237a71e 5-6
+  s_73dabae1135206::t_341144f8262c15 161,163,165,167,215-216
+  s_73dabae1135206::t_b90eb468ac0826 14
+  s_73dabae1135206::t_7fba7c3b98fc8f 222-224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "28ad29b3f8a12f3552de2c19b64630b30f648b62",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

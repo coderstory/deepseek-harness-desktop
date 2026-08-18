@@ -1,0 +1,57 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_8757d0c77c3713::t_f3b39a3ca85a48 295-301,395
+  s_73dabae1135206::t_49c25655b3a3c9 388-394
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_73dabae1135206::t_a188e58abba273 491-545
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_73dabae1135206::t_63e405b626d769 325-374
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentPartServiceImpl.java
+  s_73dabae1135206::t_740e36ff70af00 291-293
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_73dabae1135206::t_d6538a4cd4d80c 453-507
+.planning/phases/18.4-query-transfer/18.4-CONTEXT.md
+  s_73dabae1135206::t_3bf677a32e2258 131-134
+  s_73dabae1135206::t_ddde792b30c707 50-57
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_3b5101aecb34ab 1086-1093
+  s_73dabae1135206::t_4ec025626ba698 776,782-784
+  s_73dabae1135206::t_4abb87af9ce415 1212-1217
+  s_8757d0c77c3713::t_26ac959ac2221a 1073-1074,1218
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_73dabae1135206::t_601261896aa6d6 1115
+  s_73dabae1135206::t_8ae9b1f31c6bd1 1122,1124,1128-1130,1136-1137
+  s_73dabae1135206::t_ed24b9295d53ed 835,1108
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_2743ec3b790f10 254-255
+.planning/STATE.md
+  s_73dabae1135206::t_0ee5479905d20a 85
+  s_73dabae1135206::t_21648984c0f78e 70
+  s_73dabae1135206::t_490aa625bcd148 94-96
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_73dabae1135206::t_8d699e5897dba9 418-424
+  s_73dabae1135206::t_c4cb0aafdcbdb1 327-333,425
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0aad76c6a28d0a4f8750ba8b8293f5a2d8228d08",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8757d0c77c3713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a3fe3f2-31e0-4d21-9d74-b00619a48271",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

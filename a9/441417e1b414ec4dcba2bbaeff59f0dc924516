@@ -1,0 +1,41 @@
+doc/八月需求/八月需求上线操作清单.md
+  s_73dabae1135206::t_483b1d27af40f3 119,122
+  s_8757d0c77c3713::t_77d9354fee4eed 123
+.planning/STATE.md
+  s_73dabae1135206::t_a460e2ca0f6922 97-99
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_52c0e860b43c33 1313-1315,1321-1322
+  s_73dabae1135206::t_b6ce5287043e08 2305-2311
+  s_73dabae1135206::t_7b1e71e0f82143 2260-2267
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_73dabae1135206::t_f2b1c4af425fcf 154,158,160
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_73dabae1135206::t_7541c2d8abb0f9 376-465
+  s_73dabae1135206::t_d1be6b9d369027 15
+.planning/phases/18.4-query-transfer/18.4-CONTEXT.md
+  s_73dabae1135206::t_ec39717fd8be1f 58-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a9441417e1b414ec4dcba2bbaeff59f0dc924516",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8757d0c77c3713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a3fe3f2-31e0-4d21-9d74-b00619a48271",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

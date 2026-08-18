@@ -1,0 +1,46 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimClientTest.java
+  s_798b429084242e::t_68be3fdfab2e44 225-227
+  s_798b429084242e::t_b376697a460d1d 78,81,102,160
+  s_798b429084242e::t_f413a3209ba09f 49
+  s_798b429084242e::t_4e118e0de73420 59-60,65
+  s_798b429084242e::t_458d1dd4ab0c4f 61-64
+  s_798b429084242e::t_c2cd46399a7ea1 244,255
+  s_798b429084242e::t_e7ccba1fb22389 224
+  s_798b429084242e::t_961b9c580a5989 66-70
+  s_798b429084242e::t_8638386d7b65df 1-2,7-11,23-28,44-46,55-58,71-77,79-80,82-101,103-129,132-136,143-146,295,297-305
+  s_798b429084242e::t_8c7b511e4cc5a0 3-6,12-14,16-22,29-30,32-43,130,137-142,147-150,239-243,248-254,256-294,296
+  s_798b429084242e::t_dd428d8cd146c3 166-167
+  s_798b429084242e::t_3d93145fa5c054 151-159,161-165,214-223,228-238
+  s_798b429084242e::t_5483a7fbee44ca 131
+  s_798b429084242e::t_1dee08011098de 245-247
+  s_f9731531312491::t_3d04283b47d7c3 15,168-213
+  s_798b429084242e::t_862a32b190d769 47-48,50-54
+  s_798b429084242e::t_c598bf49c98b31 31
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_798b429084242e::t_4ae3ede9a187b6 1-7,9,11-13,25-27,29,34,38,46,49-50,61,67,72,84,90,92-93,96-98,103,112-113,117,126-127,129
+  s_f9731531312491::t_3d04283b47d7c3 8,10,14-24,28,30-33,35-37,39-45,47-48,51-60,62-66,68-71,73-83,85-89,91,94-95,99-102,104-111,114-116,118-125,128,130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e7cacc6dd89ed41e40443c153a5643d0f3703acc",
+  "prompts": {},
+  "sessions": {
+    "s_798b429084242e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d47255-aec7-4b01-8342-d11ff814b1bd",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

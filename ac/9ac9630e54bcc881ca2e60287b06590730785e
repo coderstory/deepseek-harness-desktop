@@ -1,0 +1,25 @@
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplQueryViewTest.java
+  s_73dabae1135206::t_3ec44c282df25e 40,42-49,106-108,132-133,137,148,152,162,166,170-171,175,179,184-185
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_73dabae1135206::t_735a0fa5560efb 292-293
+  s_73dabae1135206::t_2645e4ccb1f018 301-302
+  s_73dabae1135206::t_3d2c165ec13a99 231-234
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_73dabae1135206::t_c021cad65fc245 59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ac9ac9630e54bcc881ca2e60287b06590730785e",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

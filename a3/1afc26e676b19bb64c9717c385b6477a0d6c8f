@@ -1,0 +1,20 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimClientTest.java
+  s_49c56d77fb61e7::t_dc5a55feaa2ec9 170-215
+  s_49c56d77fb61e7::t_3ed9155d0bbda2 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a31afc26e676b19bb64c9717c385b6477a0d6c8f",
+  "prompts": {},
+  "sessions": {
+    "s_49c56d77fb61e7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b155126c-5a29-415f-97e2-06f62aa0998e",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

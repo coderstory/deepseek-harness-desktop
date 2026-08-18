@@ -1,0 +1,33 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ClaimLabourHourRateDTO.java
+  s_f9731531312491::t_71c4bed999af18 1-57
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_f9731531312491::t_1830c4a32ee88c 1-147
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_f9731531312491::t_298a46162cacd0 5,7-9,14,17-18,20-22,24,27-28,30-31,33-35,50,73,92,112,125,143,158,176,193,201
+C00-svc-base/svc-core-base/pom.xml
+  s_72322046953d71::t_b38379025f0f1b 170-181,203-214
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7054d48ef6b3018048b60370ddce2a617e22088f",
+  "prompts": {},
+  "sessions": {
+    "s_72322046953d71": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-af4c0e086feffd077",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

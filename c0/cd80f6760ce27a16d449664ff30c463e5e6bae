@@ -1,0 +1,77 @@
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentMaintainItemServiceImplTest.java
+  s_73dabae1135206::t_1c3f514d53d89f 1-120,123-153
+  s_73dabae1135206::t_306e675a1eff08 121-122
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentPartServiceImpl.java
+  s_73dabae1135206::t_7e90b651733c56 14,16-17,21,33
+  s_73dabae1135206::t_483106b21ac76c 273-290,303-316
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_4ed2853dfb43b3::t_4ff3d3ec825f2d 551
+  s_4ed2853dfb43b3::t_9453e49aa55e8c 1134-1139,1142-1151
+  s_4ed2853dfb43b3::t_8106365e934e0e 1140-1141
+  s_73dabae1135206::t_414af131b0a053 2138-2142,2156-2163
+  s_73dabae1135206::t_05d0c357de8add 2192-2201
+  s_4ed2853dfb43b3::t_ffe79dad363c5e 977,986-990
+  s_4ed2853dfb43b3::t_8cde276ba8e8fd 1021-1026,1029-1034,1038-1055,1057
+  s_4ed2853dfb43b3::t_989a57620bb89d 120
+  s_4ed2853dfb43b3::t_ccced057737cb1 766-778
+  s_4ed2853dfb43b3::t_45c3873df6598c 80
+  s_4ed2853dfb43b3::t_4cf3dba5ac7bfb 976,978-985
+  s_4ed2853dfb43b3::t_df425ca12f3277 883
+  s_4ed2853dfb43b3::t_5e70c2fffae3dd 1027-1028
+  s_4ed2853dfb43b3::t_41d607866eb16f 42
+  s_fbfe372877ccbc::t_3253d9d514a7c6 991
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_4ed2853dfb43b3::t_b250c19b0d4616 141
+  s_4ed2853dfb43b3::t_7865f30f1fbaf5 78
+  s_4ed2853dfb43b3::t_9a618790e6d1fa 1-77,79-140,142-202
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/test/XstartupTestInitializer.java
+  s_73dabae1135206::t_4d838a829df2fc 1-46
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentPartServiceImplTest.java
+  s_73dabae1135206::t_9bf2588eece18e 1-219
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_73dabae1135206::t_c5d75c714e3543 93-105
+  s_4ed2853dfb43b3::t_0bf6b915177fbb 75-92
+  s_416c33a7376d3a::t_692117a35c72d8 121,123
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_73dabae1135206::t_29684f1c9df87d 1-287
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c0cd80f6760ce27a16d449664ff30c463e5e6bae",
+  "prompts": {},
+  "sessions": {
+    "s_416c33a7376d3a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a110934e1b73e3dae",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_4ed2853dfb43b3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf8fb2f2-45fb-490f-ba74-1c8db8b740d3",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
