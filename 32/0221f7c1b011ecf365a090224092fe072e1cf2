@@ -1,0 +1,21 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_c0a65949ee0077::t_30f9641ed35fee 147,149
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_c0a65949ee0077::t_a13f744fba4334 51,55-59,207-214
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "320221f7c1b011ecf365a090224092fe072e1cf2",
+  "prompts": {},
+  "sessions": {
+    "s_c0a65949ee0077": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5ae47268-ba95-4900-86a1-b4c11b74231b",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
