@@ -1,0 +1,35 @@
+doc/ai-workflow/parts/ch1-2.md
+  s_8757d0c77c3713::t_6b9c10062a8c30 73
+  s_8757d0c77c3713::t_eed73947ccaf15 40
+  s_8757d0c77c3713::t_6147370aa37742 9,13
+  s_8757d0c77c3713::t_3e92d2e7ec6240 29
+  s_8757d0c77c3713::t_2ab10fb8e0ff2b 33
+doc/ai-workflow/2026-08-16-AI全流程开发方法论.md
+  s_8757d0c77c3713::t_1c4db02694c9e0 25,29,45,49,56,89,186,360-361,403,433,469,520,623
+doc/ai-workflow/parts/ch4-case.md
+  s_8757d0c77c3713::t_f7b8280a2a5269 57
+  s_8757d0c77c3713::t_2a5411c645eccc 14-15
+  s_8757d0c77c3713::t_6b446ce399eeb7 87
+  s_8757d0c77c3713::t_5968dfe10f2a76 123
+doc/ai-workflow/parts/ch5-7.md
+  s_8757d0c77c3713::t_bef258431dc61b 145
+  s_8757d0c77c3713::t_7c5e7bbd012341 42
+doc/ai-workflow/parts/ch3-cards-1.md
+  s_8757d0c77c3713::t_46cbfa99d25553 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ca486d50eae3a3bce972bab2a89f9e418538029d",
+  "prompts": {},
+  "sessions": {
+    "s_8757d0c77c3713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a3fe3f2-31e0-4d21-9d74-b00619a48271",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

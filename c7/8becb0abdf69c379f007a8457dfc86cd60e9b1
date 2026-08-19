@@ -1,0 +1,20 @@
+doc/八月需求/swagger/5.4-swagger-merged.json
+  s_73dabae1135206::t_5d1718a386ea52 12,513,726,900,1643,2198,2382
+  s_73dabae1135206::t_b8d210a12b4185 2553-2559
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c78becb0abdf69c379f007a8457dfc86cd60e9b1",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

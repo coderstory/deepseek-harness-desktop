@@ -1,0 +1,23 @@
+doc/八月需求/swagger/5.4-swagger-svc-reception.json
+  s_73dabae1135206::t_d72dfcb245a72a 1
+doc/八月需求/swagger/5.4-swagger-svc-appointment.json
+  s_73dabae1135206::t_d72dfcb245a72a 1
+doc/八月需求/swagger/5.4-swagger-svc-config.json
+  s_73dabae1135206::t_d72dfcb245a72a 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d43f98aa791459f09adffa4427deb0f922000fb1",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

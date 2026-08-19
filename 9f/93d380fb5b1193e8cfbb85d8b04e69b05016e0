@@ -1,0 +1,22 @@
+.planning/v1.6-FINAL-REQUIREMENTS-BASELINE.md
+  s_73dabae1135206::t_5d6d6c05d8dbc5 28,30-32,35
+  s_73dabae1135206::t_00c243fb9a7787 76
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_73dabae1135206::t_fc2e9ebe37c2b6 7,14-15,22,24,26,30,32-34,37-39,42,65,72,74-75,81-82,91,104,115-116,124-127,129,131,133-134,136,138,140,143-146,149,153,157,159,165,169,173,187,190
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9f93d380fb5b1193e8cfbb85d8b04e69b05016e0",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

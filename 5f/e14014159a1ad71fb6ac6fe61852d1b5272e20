@@ -1,0 +1,26 @@
+doc/ai-workflow/parts/ch4-case.md
+  s_8757d0c77c3713::t_7c68b7686727a0 71
+  s_8757d0c77c3713::t_e5dd65c8457d7c 127,129
+  s_8757d0c77c3713::t_b6174eb340d192 1-38,40,42-50,52-56,58-70,72-90,92-103,105-126,128,130-131
+  s_8757d0c77c3713::t_5fe19b46533278 51
+  s_8757d0c77c3713::t_e7425430aa3ab8 39,41
+  s_8757d0c77c3713::t_d3ae53c53210bd 91
+  s_8757d0c77c3713::t_99204fd53363c6 104
+  s_8757d0c77c3713::t_909aae020d0b14 57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5fe14014159a1ad71fb6ac6fe61852d1b5272e20",
+  "prompts": {},
+  "sessions": {
+    "s_8757d0c77c3713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a3fe3f2-31e0-4d21-9d74-b00619a48271",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

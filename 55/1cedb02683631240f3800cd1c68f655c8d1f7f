@@ -1,0 +1,19 @@
+.planning/phases/18.1-foundation-iclaim-client-dtos/18.1-02-SUMMARY.md
+  s_f9731531312491::t_05bc225974ab8c 1-137
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "551cedb02683631240f3800cd1c68f655c8d1f7f",
+  "prompts": {},
+  "sessions": {
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

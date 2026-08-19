@@ -1,0 +1,19 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_d6b01f68662ede::t_c71e06ee1117f2 43-45,190-197
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6309fc436337197991f2b59846ac68b1178b1fd3",
+  "prompts": {},
+  "sessions": {
+    "s_d6b01f68662ede": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "266d917d-4d1e-4a4d-9be3-64a1da8c4092",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.planning/ROADMAP.md
+  s_73dabae1135206::t_69759905e7e029 147
+  s_73dabae1135206::t_93bdc32fed9175 35
+.planning/v1.6-SIT-E2E-TEST-CASES.md
+  s_73dabae1135206::t_5db0bfcaa8006a 49-51,53-54,59,61-62,64-67,69,71-72,74,76-77
+  s_73dabae1135206::t_efb6c331e6a7c4 15
+  s_73dabae1135206::t_a045091d293587 30-32
+  s_73dabae1135206::t_11ef12a00d058b 5,47
+  s_73dabae1135206::t_c500baaa012951 18
+  s_73dabae1135206::t_460943a8caaa47 52,57
+  s_73dabae1135206::t_7899a4f3535306 17
+.planning/phases/18.4-query-transfer/18.4-02-SUMMARY.md
+  s_73dabae1135206::t_333c3f54a792e6 10-11
+.planning/phases/18.4-query-transfer/18.4-02-PLAN.md
+  s_73dabae1135206::t_9fbef0ced45973 30-31
+.planning/v1.6-FINAL-REQUIREMENTS-BASELINE.md
+  s_73dabae1135206::t_8fe114489144e0 63
+  s_73dabae1135206::t_757cca2e674587 56
+  s_73dabae1135206::t_6ad311133632c7 11
+.planning/phases/18.4-query-transfer/18.4-CONTEXT.md
+  s_73dabae1135206::t_b4ee16ac172ba7 18
+  s_73dabae1135206::t_685725fedbce26 104
+  s_73dabae1135206::t_1fb783a900df2a 114
+  s_73dabae1135206::t_26e218585f3d77 33
+  s_73dabae1135206::t_435c24234b2648 113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "abb48421997c38ee3f81bbe56920af0b0eac08a2",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

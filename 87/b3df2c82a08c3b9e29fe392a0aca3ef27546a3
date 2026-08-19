@@ -1,0 +1,21 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentPartServiceImpl.java
+  s_73dabae1135206::t_098d57df945550 46
+  s_73dabae1135206::t_dad475ae9d2821 240-244
+  s_73dabae1135206::t_c57392d1ee027a 281-283
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "87b3df2c82a08c3b9e29fe392a0aca3ef27546a3",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

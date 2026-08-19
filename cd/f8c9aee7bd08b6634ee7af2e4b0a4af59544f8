@@ -1,0 +1,19 @@
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_73dabae1135206::t_4fa823d32ecb53 42-127
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cdf8c9aee7bd08b6634ee7af2e4b0a4af59544f8",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

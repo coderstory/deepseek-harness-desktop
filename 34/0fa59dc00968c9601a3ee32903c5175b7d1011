@@ -1,0 +1,19 @@
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_7ecfdcd69e3e2d::t_d4802451dac5e6 14,160
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "340fa59dc00968c9601a3ee32903c5175b7d1011",
+  "prompts": {},
+  "sessions": {
+    "s_7ecfdcd69e3e2d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb8c23e4-bc36-4bac-94f0-e79eaaa51246",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
