@@ -1,0 +1,39 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/MaintenanceRecordImportModel.java
+  s_763b6b44969f4b::t_fc54e93a8e6b62 4,10,14
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_763b6b44969f4b::t_952980400f75b6 72-77
+  s_763b6b44969f4b::t_9845d7fefd50c4 7
+  s_763b6b44969f4b::t_8db577d90fc959 38
+  s_763b6b44969f4b::t_d3f457893863af 272-275,278
+  s_763b6b44969f4b::t_371e92076fbedc 4,6,9,11,19,26-30,36-37,39-41,43-44,46,48,51-55
+  s_763b6b44969f4b::t_902eb2156ad881 149-271,276-277,279-390
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordImportTest.java
+  s_763b6b44969f4b::t_bae9e6b484a604 25
+  s_763b6b44969f4b::t_4e859a55a72d1a 1-24,26-306,319-395
+  s_763b6b44969f4b::t_3e0805eb8b9892 307-318
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/ImportFileModel.java
+  s_763b6b44969f4b::t_1b2fd14e11537b 1-50
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_763b6b44969f4b::t_1bec53e3b516c0 14,18-19,21,24
+  s_763b6b44969f4b::t_40bab0d0ada726 308-448,451,457-458,483-490
+  s_763b6b44969f4b::t_cc9a8c13425ee2 168-170,177-196,200-202,210,217
+  s_763b6b44969f4b::t_d9c75761c7d808 41-67
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/MaintenanceRecordImportError.java
+  s_763b6b44969f4b::t_5b419cb08f1789 4,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7f2c72a8e03ad2ca199b7c1a18f98292974bb0ea",
+  "prompts": {},
+  "sessions": {
+    "s_763b6b44969f4b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f1e82542-1b73-410d-bda9-5887360ac371",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

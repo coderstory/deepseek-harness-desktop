@@ -1,0 +1,19 @@
+C00-svc-base/svc-core-base/pom.xml
+  s_c74ed98b2398d1::t_9069bacf269d04 202-207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d52532143704b8f156364a1bb3ce269c3a6ef769",
+  "prompts": {},
+  "sessions": {
+    "s_c74ed98b2398d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "399100be-cf30-4ce7-81cd-a0b7975c82e7",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}

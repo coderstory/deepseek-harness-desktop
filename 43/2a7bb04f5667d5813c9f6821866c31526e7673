@@ -1,0 +1,19 @@
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_e651ccd5142741::t_53bde94547203e 1-6,9-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "432a7bb04f5667d5813c9f6821866c31526e7673",
+  "prompts": {},
+  "sessions": {
+    "s_e651ccd5142741": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-abc6b5bae02c52f1f",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

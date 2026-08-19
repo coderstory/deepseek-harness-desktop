@@ -1,0 +1,227 @@
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_42476d464d1701::t_76eba4fe599303 1-7,10-16,19-21,25-26,28-33,35-36
+  s_42476d464d1701::t_1bb03fa0eca22b 23-24
+  s_42476d464d1701::t_284228e464a8c4 17-18
+  s_42476d464d1701::t_820929fd36aa59 22
+  s_42476d464d1701::t_5dbc4e2881d7a8 27
+  s_42476d464d1701::t_0c1e214488627c 34
+doc/八月需求/5.4-Nacos配置-UAT.md
+  s_42476d464d1701::t_4ee2986d70550d 1-100
+doc/八月需求/v1.6-Nacos新增配置清单-UAT.md
+  s_42476d464d1701::t_2e8b52c81caaac 1-60
+AGENTS.md
+  s_42476d464d1701::t_76eba4fe599303 38
+doc/八月需求/v1.6-Nacos新增配置清单-PROD.md
+  s_42476d464d1701::t_1c4395191937a3 1-62
+.claude/settings.json
+  s_42476d464d1701::t_76eba4fe599303 3-4
+  s_88d1ceb4967aa4::t_28fb96575d8623 6
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_16916f05dd1ec1::t_d4cfea0317dbf4 846,848-864,1155
+  s_16916f05dd1ec1::t_cbc77fd8696e4b 1137
+  s_16916f05dd1ec1::t_99531918dc60ef 1156
+  s_16916f05dd1ec1::t_8d52aecffbce5a 37,138,219,234,345,445,452,499,659,680,742,757,773,788,877,947,1028,1072,1086,1139-1151,1153
+doc/八月需求/5.4-Nacos配置-SIT.md
+  s_42476d464d1701::t_34364034ab00d0 1-96
+opencode.jsonc
+  s_42476d464d1701::t_e83c7d2229fc84 1-5
+doc/八月需求/5.4-Nacos配置-PROD.md
+  s_42476d464d1701::t_01d239f2c2a8ee 1-115
+.planning/v1.6-SIT-E2E-TEST-CASES.md
+  s_4e640215477911::t_8438216c130355 206,208-228,232-254,256-258,260-308
+  s_4e640215477911::t_890dd667356953 89-90
+  s_42476d464d1701::t_33e354ee577620 347-349
+  s_4e640215477911::t_f018fd5328d052 352,356,358,360
+  s_4e640215477911::t_ae518747182c90 364-366,371,373,375-378,380-383,385-388,390-393,395-420,422-423,425-440,442,444-456,458,461,463-464
+  s_42476d464d1701::t_14e5a5647198a6 353,367
+  s_4e640215477911::t_25d1f7cb163567 351,354-355,357,359,361-363
+  s_4e640215477911::t_8a73e5625dd903 368-370,372,374,379,384,389,394,441,443,459
+  s_4e640215477911::t_4d9052436f6a61 310-346
+  s_42476d464d1701::t_19da1f0177bf13 5
+  s_42476d464d1701::t_e5b51561b8eeee 466-570
+  s_4e640215477911::t_42f4132de72300 309
+  s_4e640215477911::t_9a4c611d0fc0c7 421
+  s_4e640215477911::t_674d60cda364b7 424
+  s_4e640215477911::t_c5b6d0e0e3b833 457
+  s_4e640215477911::t_153e1743b370dc 460
+  s_4e640215477911::t_940809d47b5c8a 462
+  s_16916f05dd1ec1::t_e71a7243dbfeb5 350,465
+doc/八月需求/v1.6-Nacos新增配置清单-SIT.md
+  s_42476d464d1701::t_e27dd8fa565b70 1-68
+.gsd/dispatch-isolation-sentinel.json
+  s_0f2c5540d046df::t_55aaae7acc6b34 1
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/constant/GlobalParamsConfig.java
+  s_16916f05dd1ec1::t_5e2026f04644dc 125-126
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/PermissionDict.java
+  s_16916f05dd1ec1::t_9fa6146d87abee 139
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/enums/ExportTypeEnum.java
+  s_16916f05dd1ec1::t_222199af68dfa5 5
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcOrderStoreInfoEnt.java
+  s_16916f05dd1ec1::t_1522a33eb12de1 144-147,455-462
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/constant/PriceTypeDict.java
+  s_16916f05dd1ec1::t_d3727b4b49be78 1-19
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/entity/SvcDealerHourEnt.java
+  s_16916f05dd1ec1::t_ee75f213f9f22b 482-493
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/entity/SvcDealerHourLogEnt.java
+  s_16916f05dd1ec1::t_b60b66e41fd569 494-505
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/job/FixHistoryForDealerHourPriceJob.java
+  s_16916f05dd1ec1::t_abd99927d5644a 14,51,72,84,93
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/job/SyncIclaimHourPriceJob.java
+  s_16916f05dd1ec1::t_edb3c4c9b00c34 1-237
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_16916f05dd1ec1::t_fffef426c9b49f 32,161,177
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcAdditionalItemServiceImpl.java
+  s_16916f05dd1ec1::t_994e3c27c6a74f 33,389
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelper.java
+  s_16916f05dd1ec1::t_d18c429d22384f 1-251
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_16916f05dd1ec1::t_f84c3892f0d338 113-123
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_16916f05dd1ec1::t_669466cf43ce19 60,69-72,79-80,219,569-846,1086,1098
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_16916f05dd1ec1::t_5a0878875e0e8f 389-390
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/CustomerRequestInput.java
+  s_16916f05dd1ec1::t_6716b797be91e7 31-33,88-95
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportDetailSvcServiceProxyOutput.java
+  s_16916f05dd1ec1::t_afd0965de16964 1-452
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetSvcServiceProxyDetailOutput.java
+  s_16916f05dd1ec1::t_fd39d74ff76c72 108-113,201-216
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyInput.java
+  s_16916f05dd1ec1::t_708cf4f4f4ddf8 18-19,66-73
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyOutput.java
+  s_16916f05dd1ec1::t_f0ab13cfd31325 66-71,124-139
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_16916f05dd1ec1::t_5e6443695ce577 88-95
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcOrderStoreInfoViewMapper.xml
+  s_16916f05dd1ec1::t_8c4ad9625b46d9 175,310-315
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_16916f05dd1ec1::t_d57146fc6f2055 1-455
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyHelperTest.java
+  s_16916f05dd1ec1::t_f0bd8f7e894767 1-33
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/helper/RepairTaskDetailExportHelper.java
+  s_16916f05dd1ec1::t_7c76d4278c2ca3 13,93,110,127,173-174,183-205
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/mapper/SvcServiceOperationViewMapper.java
+  s_16916f05dd1ec1::t_359e6e637928c4 3,10,26-34
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_16916f05dd1ec1::t_11a6b324e5fc05 2864-2916
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/ExportSvcServiceOperationDetailOutput.java
+  s_16916f05dd1ec1::t_7b18a6c108b7bd 91
+C04-svc-maintain/svc-core-maintain/src/main/resources/mybatis/mapper/svc/core/maintain/SvcServiceOperationViewMapper.xml
+  s_16916f05dd1ec1::t_cadf708aac9ba1 194-218
+C04-svc-maintain/svc-core-maintain/src/test/java/svc/core/maintain/helper/RepairTaskDetailExportHelperTest.java
+  s_16916f05dd1ec1::t_c90b052de6698f 10,12,29-30,245,254-255,259-261,266,268-321,323,332,474-491
+C06-svc-delivery/svc-core-delivery/data/KrInvoiceNegative_2026-06-02.html
+  s_c0eba79ae28fc5::t_d7d2058c28b286 1-2042
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260812_162234.html
+  s_c0eba79ae28fc5::t_c746e4aa592b02 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260812_162242.html
+  s_c0eba79ae28fc5::t_5526c245637c85 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260812_162257.html
+  s_c0eba79ae28fc5::t_ec37e9b7288a04 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260812_162257.html
+  s_c0eba79ae28fc5::t_4a70988bd35b06 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260812_162257.html
+  s_c0eba79ae28fc5::t_be0107683191be 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260812_162255.html
+  s_c0eba79ae28fc5::t_735c732c9a58e1 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260812_162259.html
+  s_c0eba79ae28fc5::t_89e739056ae8b2 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260812_162244.html
+  s_c0eba79ae28fc5::t_c440451d28cd95 1-2103
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_16916f05dd1ec1::t_68de49eda81b4b 11-12,27-28,50
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_16916f05dd1ec1::t_8eaee367d990ea 811-872
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcPDITaskService.java
+  s_16916f05dd1ec1::t_e79547ed6ee788 1325,1346-1347,1514-1515
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/strategy/PreDeliveryTaskHandler.java
+  s_16916f05dd1ec1::t_0984acca67fc60 24-25
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/strategy/impl/EuZeekrPreDeliveryTaskHandlerImpl.java
+  s_16916f05dd1ec1::t_228511c97f9b33 3-4,11,15,19-20,42-46,105-115
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/strategy/impl/NotDirectModelPreDeliveryTaskHandlerImpl.java
+  s_16916f05dd1ec1::t_0afd5f34662762 3-4,10,33-37,80-84
+doc/sql/feature/2026-08-19-iclaim-msrp-unification.sql
+  s_16916f05dd1ec1::t_9485332f0292b1 1-17
+doc/sql/feature/20260727-repeat-repair.sql
+  s_16916f05dd1ec1::t_6e08d458652e6e 1-5
+doc/sql/feature/20260810-eu极氪pdi改造
+  s_16916f05dd1ec1::t_19918d6f32dba3 1-12
+package.json
+  s_7d4fcf63f62a69::t_441fca8516b983 1-5
+.claude/skills/api-test/config/environments.local.json
+  s_42476d464d1701::t_c785e1b75015bf 14,16,19
+.codebuddy/settings.json
+  s_88d1ceb4967aa4::t_80add9952997b9 1-3
+.gemini/settings.json
+  s_88d1ceb4967aa4::t_a4484b002984c0 1-3
+.mcp.json
+  s_88d1ceb4967aa4::t_4c4df0f7082bb3 7
+.qoder/mcp.json
+  s_88d1ceb4967aa4::t_54653d5d879882 1-5
+.qoder/settings.json
+  s_88d1ceb4967aa4::t_a210adfddc1c65 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "71d9cfcd2ab3c0ba827d42656b9c751a74bfcbc5",
+  "prompts": {},
+  "sessions": {
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_16916f05dd1ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1934a4c0-f539-475f-998b-78710ffbefa6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_42476d464d1701": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "54c0521b-305f-4296-a7d7-0629820c968b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_4e640215477911": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "31e090c6-38a5-4a64-a917-dc82377525a5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_7d4fcf63f62a69": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1750ae6e-2c4a-4bc0-9740-a201b3f7658b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_88d1ceb4967aa4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a085c2b6a0e8b7392",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_c0eba79ae28fc5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e203767-bba6-4f0f-8bae-45ee460671e3",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
