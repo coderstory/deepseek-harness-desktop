@@ -1,0 +1,39 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/entity/SvcMaintenanceRecordEnt.java
+  s_763b6b44969f4b::t_bbb18d927fbf2d 1-370
+C09-svc-pdi/svc-core-pdi/src/main/resources/mybatis/mapper/svc/core/pdi/SvcMaintenanceRecordViewMapper.xml
+  s_763b6b44969f4b::t_5abb36496f39ad 1-31
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/BizCodeDict.java
+  s_763b6b44969f4b::t_014ea4c90cba74 37
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/entity/SvcMaintenanceRecordOperationEnt.java
+  s_763b6b44969f4b::t_9e9e4aed6f1341 1-160
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/mapper/SvcMaintenanceRecordMapper.java
+  s_763b6b44969f4b::t_ae472239fd6fd9 1-9
+D03-deploy/svc-standard-api/src/main/resources/sql/svc_maintenance_record.sql
+  s_763b6b44969f4b::t_c33b9692caf341 1-67
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/mapper/SvcMaintenanceRecordOperationMapper.java
+  s_763b6b44969f4b::t_55ed43559256bd 1-20
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/enums/SvcMaintenanceRecordOperationTypeEnum.java
+  s_763b6b44969f4b::t_40e463a116082a 1-46
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/mapper/SvcMaintenanceRecordViewMapper.java
+  s_763b6b44969f4b::t_5fe94cc3d22770 1-27
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/enums/SvcMaintenanceRecordStatusEnum.java
+  s_763b6b44969f4b::t_477e18244d74fa 1-44
+C09-svc-pdi/svc-core-pdi/src/main/resources/mybatis/mapper/svc/core/pdi/SvcMaintenanceRecordOperationMapper.xml
+  s_763b6b44969f4b::t_b9af74fb271376 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "87197a6fb06b808da9f15d907f6b47e457469b3c",
+  "prompts": {},
+  "sessions": {
+    "s_763b6b44969f4b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f1e82542-1b73-410d-bda9-5887360ac371",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
