@@ -1,0 +1,23 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_a3a9802da5beeb::t_cd9d0532ba3202 122,158
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_a3a9802da5beeb::t_62a928fae3c03f 251
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_a3a9802da5beeb::t_cb1e7d60b6ae79 1162
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1bcb44d8bedfd97c49d3f9c2ac0848423dd69420",
+  "prompts": {},
+  "sessions": {
+    "s_a3a9802da5beeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5d961d1f-1cc6-4359-a011-2bde8e6b2764",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

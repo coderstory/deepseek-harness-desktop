@@ -1,0 +1,19 @@
+doc/sql/feature/2026-08-19-iclaim-msrp-unification.sql
+  s_16916f05dd1ec1::t_cf769a9017cf24 7-9,11-13,15-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4ccb92359cf0e8729f162e89da0e990fe35420e5",
+  "prompts": {},
+  "sessions": {
+    "s_16916f05dd1ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1934a4c0-f539-475f-998b-78710ffbefa6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
