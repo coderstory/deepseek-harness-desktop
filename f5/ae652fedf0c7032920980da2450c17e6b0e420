@@ -1,0 +1,33 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_b2f198fe3e461f::t_8aaf215eede7ab 768-769,772-781
+  s_b2f198fe3e461f::t_368cccf78b644a 2066-2067
+  s_b2f198fe3e461f::t_5842e90dc30bdd 1015,1017-1026,1028-1030
+  s_b2f198fe3e461f::t_62ca34e0f32a66 893
+  s_b2f198fe3e461f::t_ab0a29cab0d01e 2155
+tc_test/runner.py
+  s_8bbde6e3cbd03b::t_bb297cdee572cf 1-99
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f5ae652fedf0c7032920980da2450c17e6b0e420",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_b2f198fe3e461f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "386810c1-67e7-4503-b0fa-2fa320c4ba8b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
