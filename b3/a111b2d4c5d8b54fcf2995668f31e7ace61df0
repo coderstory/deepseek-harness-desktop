@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_8bbde6e3cbd03b::t_5b59e640b17cb6 1102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b3a111b2d4c5d8b54fcf2995668f31e7ace61df0",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
