@@ -1,0 +1,56 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_8bbde6e3cbd03b::t_c36d712475f504 385
+  s_8bbde6e3cbd03b::t_eff733b8bd2855 281
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_8bbde6e3cbd03b::t_315196b3e58b92 289
+  s_8bbde6e3cbd03b::t_63fac818af0b38 389
+  s_8bbde6e3cbd03b::t_35f880535821b0 258
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/AbpUserMapper.xml
+  s_8bbde6e3cbd03b::t_93c4b426ef43c5 1-50
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/AccessLogViewMapper.xml
+  s_8bbde6e3cbd03b::t_6babbab65b92f8 1-40
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/MdmAdminAreaViewMapper.xml
+  s_8bbde6e3cbd03b::t_6057481797e4d2 1-126
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/MdmCSCViewMapper.xml
+  s_8bbde6e3cbd03b::t_1b6ab43816eb18 1-79
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/MdmDealerMapper.xml
+  s_8bbde6e3cbd03b::t_bb898f74520109 1-133
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/MdmEmployeeMapper.xml
+  s_8bbde6e3cbd03b::t_a683a3f4d7ebf5 1-328
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/MdmPartsEngineeringMapper.xml
+  s_8bbde6e3cbd03b::t_be76831f05ad4b 1-49
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/MdmVehicleDocumentViewMapper.xml
+  s_8bbde6e3cbd03b::t_eff6c48514cdc6 1-128
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/SvcDealerTechnicianViewMapper.xml
+  s_8bbde6e3cbd03b::t_b7662dc7b58ac4 1-58
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/SvcMaintainOperationViewMapper.xml
+  s_8bbde6e3cbd03b::t_fbc98a3e43a4e6 1-113
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/base/SvcUploadFileRelationViewMapper.xml
+  s_8bbde6e3cbd03b::t_bcf50daf077156 1-76
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/config/SvcItemConfigMapper.xml
+  s_8bbde6e3cbd03b::t_fed3f269d703df 1-18
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/delivery/SvcDeliveryInspectionMapper.xml
+  s_8bbde6e3cbd03b::t_32cc21aa516fd1 1-13
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/operationlog/SvcUserOperationLogMapper.xml
+  s_8bbde6e3cbd03b::t_1890de26dcfbf5 1-63
+C00-svc-base/svc-core-base/${project.build.directory}/classes/mybatis/mapper/svc/core/reception/SvcServiceProxyViewMapper.xml
+  s_8bbde6e3cbd03b::t_cef3987247a88a 1-738
+tc_test/full_runner.py
+  s_8bbde6e3cbd03b::t_3a4b1d209be8ea 1-145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "fb255a25236164ea2cbab4e3f8b8c587cac1d2c6",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
