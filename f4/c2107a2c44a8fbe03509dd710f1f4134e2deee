@@ -1,0 +1,129 @@
+tc_test/tc_transfer_retest.py
+  s_8bbde6e3cbd03b::t_471b6a38ac72a4 1-32
+tc_test/dump_raw.py
+  s_8bbde6e3cbd03b::t_ed095e52419eb4 1-8
+sit_lib.py
+  s_8bbde6e3cbd03b::t_ca34c863034899 1-36
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_8bbde6e3cbd03b::t_dfc5b805072980 803-804,806-816
+  s_8bbde6e3cbd03b::t_df5121525bb388 1252,1254
+  s_8bbde6e3cbd03b::t_9e693ec1a080ba 801-802,805
+tc_test/runner.py
+  s_8bbde6e3cbd03b::t_c2838aa95af500 7
+  s_8bbde6e3cbd03b::t_8fe996af0f5683 1-6,8-34
+tc_test/tc10_tc66.py
+  s_8bbde6e3cbd03b::t_dbd5d7fce2a489 1-86
+tc_test/probe_dealers.py
+  s_8bbde6e3cbd03b::t_e12fe7d4ae67c2 1-7
+tc_test/list_dealers.py
+  s_8bbde6e3cbd03b::t_f4c2638c8af031 1-15
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_8bbde6e3cbd03b::t_ca9109e34e4885 170
+tc_test/probe_iclaim_missing.py
+  s_8bbde6e3cbd03b::t_89df841fc301d7 1-48
+tc_test/mdm_probe.py
+  s_8bbde6e3cbd03b::t_d3e90ab5343298 1-19
+tc_test/tc53_62.py
+  s_8bbde6e3cbd03b::t_b3a6bd45ba986b 1-59
+tc_test/phase1_probe.py
+  s_8bbde6e3cbd03b::t_c3b1e0ef3c9798 14-23
+  s_8bbde6e3cbd03b::t_42307b3395ba8c 1-13,24-63
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_8bbde6e3cbd03b::t_2326607be69fd2 278
+  s_8bbde6e3cbd03b::t_7b052ecd228276 436
+  s_8bbde6e3cbd03b::t_4bb6add18fe360 96
+  s_8bbde6e3cbd03b::t_a2d8ba9f90df57 80-82,84,87
+  s_8bbde6e3cbd03b::t_8450361ac7205c 373
+  s_8bbde6e3cbd03b::t_881e309360a8d4 83
+tc_test/tc63_66_enforce.py
+  s_8bbde6e3cbd03b::t_8aaab8465d1885 1-95
+tc_test/tc_probe_paths.py
+  s_8bbde6e3cbd03b::t_5733374db1fe07 1-12,15,17-23
+  s_8bbde6e3cbd03b::t_91b629bea4d6f9 13-14,16
+tc_test/PROGRESS.md
+  s_8bbde6e3cbd03b::t_aeb022f1b519d4 9-10,13,15,17,19-21,23,25,27,29
+  s_8bbde6e3cbd03b::t_8d9cc5d5a092f4 7,11-12,14
+  s_8bbde6e3cbd03b::t_4a25f5948d4086 1-6,8,16,18,22,24,26,28
+  s_8bbde6e3cbd03b::t_06875c654f8ab1 30-92
+tc_test/analyze_tc53_62.py
+  s_8bbde6e3cbd03b::t_d1068f5a7225e4 1-33
+tc_test/probe_save.py
+  s_8bbde6e3cbd03b::t_ae5c6ac94484ae 6-67
+  s_8bbde6e3cbd03b::t_f4c87685c2a812 3-5
+  s_8bbde6e3cbd03b::t_2c098878b744c4 68
+  s_e4cd7e85401f1e::t_d1f6bc59cdff92 1-2
+tc_test/backup_refresh_token.txt
+  s_8bbde6e3cbd03b::t_d751d8b740546f 1
+C01-svc-config/svc-core-config/pom.xml
+  s_8bbde6e3cbd03b::t_0402554d041013 96-108
+tc_test/p8_realpart.py
+  s_8bbde6e3cbd03b::t_f4cd0c3f048211 1-23,25-34
+  s_8bbde6e3cbd03b::t_c6cdab62756f4d 24
+.claude-tmp-tc01.json
+  s_8bbde6e3cbd03b::t_2110642b3e558d 1
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_8bbde6e3cbd03b::t_c27437292cb4c2 269
+  s_8bbde6e3cbd03b::t_0d655d3f02aef5 129,131
+scan_tokens.py
+  s_8bbde6e3cbd03b::t_0316b42c7680d4 1-71
+tc_test/tc_run.py
+  s_8bbde6e3cbd03b::t_731005661edf83 1-154
+tc_test/probe_hour2.py
+  s_8bbde6e3cbd03b::t_4ccc0c5890d258 1-7
+tc_test/tc62_earlyreturn.py
+  s_8bbde6e3cbd03b::t_6629afed9b4abc 1-28
+tc_test/check_dealers.py
+  s_8bbde6e3cbd03b::t_e3bca314edea5c 1-15
+tc_test/tc45_tc19.py
+  s_8bbde6e3cbd03b::t_9d0d0677e067e1 1-68
+tc_test/results_tc53_62.json
+  s_8bbde6e3cbd03b::t_977d6365824c74 1-117
+tc_test/tc14_tc40.py
+  s_8bbde6e3cbd03b::t_faef493a49ac0a 1-39
+tc_test/probe_hour.py
+  s_8bbde6e3cbd03b::t_b174ead7341dbe 1-9
+C00-svc-base/svc-core-base/pom.xml
+  s_8bbde6e3cbd03b::t_ecd8d90043a5e6 211-229
+  s_8bbde6e3cbd03b::t_3b14ee35cb6047 230-239
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/AbstractPotdDealerPurchaseInfoAclHandler.java
+  s_8bbde6e3cbd03b::t_5ade53e33cc15a 134,136
+tc_test/db_recon.py
+  s_8bbde6e3cbd03b::t_601e43e26b0d7b 1-36
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_8bbde6e3cbd03b::t_6fca81dbbbe473 65
+  s_8bbde6e3cbd03b::t_dee7acc69e9e2c 77
+  s_8bbde6e3cbd03b::t_d47269603b68a9 62-64,66,69
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_8bbde6e3cbd03b::t_e98b9fea0da895 225
+  s_8bbde6e3cbd03b::t_49a5cfeaa48455 84
+  s_8bbde6e3cbd03b::t_4069aae69485fc 81-83,85,88
+  s_8bbde6e3cbd03b::t_aa3455611c2fa1 100
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_8bbde6e3cbd03b::t_44c5dd1fd52945 1390,1392
+tc_test/final_probes.py
+  s_8bbde6e3cbd03b::t_88ee86088757f5 1-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f4c2107a2c44a8fbe03509dd710f1f4134e2deee",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_e4cd7e85401f1e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fd46b83f-dc98-436e-bf0f-fefa6d061516",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
