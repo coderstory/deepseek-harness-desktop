@@ -1,0 +1,200 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ru-RU.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_b2f198fe3e461f::t_7f2e306974fb6a 112-117
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.id-ID.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.uz-UZ.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 18
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_b2f198fe3e461f::t_d45f4567e110dc 142
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_b2f198fe3e461f::t_4510f593244f1b 71-76
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_b2f198fe3e461f::t_577886325cc0c1 93
+  s_b2f198fe3e461f::t_2b63aedabc6b45 77-78,80-81,84-85
+  s_b2f198fe3e461f::t_61fbcb81951704 115
+  s_b2f198fe3e461f::t_3f1d012b2d68cd 149
+  s_b2f198fe3e461f::t_df482197619c7b 111-113
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sv-SE.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_b2f198fe3e461f::t_b707ceb93c1e24 16,20-21,32,53,56,66-67,76-77,87-88,118
+  s_b2f198fe3e461f::t_785c9f289b7d9f 35,38
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+tc_test/save_body.json
+  s_8bbde6e3cbd03b::t_b8a19272ca2902 1
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_b2f198fe3e461f::t_c3cbb69400cf99 762
+  s_b2f198fe3e461f::t_b3b0f59e534ad4 587
+  s_b2f198fe3e461f::t_a07a051aab4b5c 1365
+  s_b2f198fe3e461f::t_198b2e169b211f 729
+  s_b2f198fe3e461f::t_f92846194f3f18 639
+  s_b2f198fe3e461f::t_09ea74943ab72c 720-722
+  s_b2f198fe3e461f::t_72664dbb0b8c5e 756
+  s_b2f198fe3e461f::t_73759211b6f1c2 1261
+  s_b2f198fe3e461f::t_70a9d7b0b43c22 743
+  s_b2f198fe3e461f::t_e90d491be0f340 1337
+  s_b2f198fe3e461f::t_7b514c8255e2e4 1368
+  s_b2f198fe3e461f::t_ad3dd82bed0dad 1383
+  s_b2f198fe3e461f::t_03d06934a55fb9 1221-1222
+  s_b2f198fe3e461f::t_cff4e2c6657f9a 738
+  s_b2f198fe3e461f::t_96811628d369ab 791
+  s_b2f198fe3e461f::t_043bc59a09f6a1 1326
+  s_b2f198fe3e461f::t_7372b798181218 859
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.hu-HU.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.cs-CZ.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-ES.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.th-TH.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_b2f198fe3e461f::t_cb617eb49530c5 551
+  s_b2f198fe3e461f::t_8f2b0c21745fc3 1207
+  s_b2f198fe3e461f::t_f8b76b7b60e5bb 2310
+  s_b2f198fe3e461f::t_1312f9ecc9568e 2232
+  s_b2f198fe3e461f::t_46edbebde2e93a 2304
+  s_b2f198fe3e461f::t_15feb744d2ea9e 1069
+  s_b2f198fe3e461f::t_12b712a89b2ee9 2319
+  s_b2f198fe3e461f::t_b2a04cb7c83c74 2271
+  s_b2f198fe3e461f::t_ef73867955c1b7 1011-1013
+  s_b2f198fe3e461f::t_29cf76d2aa0d42 769-771
+  s_b2f198fe3e461f::t_dd9ca6b2c8ae38 778
+  s_b2f198fe3e461f::t_fc98af26ef5ff8 1079
+  s_b2f198fe3e461f::t_217e6c37fc9d57 1176-1177
+  s_b2f198fe3e461f::t_4465297dfa170f 1225-1227
+  s_b2f198fe3e461f::t_9133ddb7930560 1067
+  s_b2f198fe3e461f::t_4acac721c9aacb 912,915
+  s_b2f198fe3e461f::t_41892e7e5ee83f 1028
+  s_b2f198fe3e461f::t_f671280bedcd3f 1312,1314
+  s_b2f198fe3e461f::t_acb321db5e0221 1091-1092
+  s_b2f198fe3e461f::t_a16ebadf89a6da 2263-2264
+  s_b2f198fe3e461f::t_9c428d88228199 1219-1220
+  s_b2f198fe3e461f::t_5e05b1427cbdae 1212-1213
+  s_b2f198fe3e461f::t_48be29527c4569 1200
+  s_b2f198fe3e461f::t_ae9719dde074d0 1165
+  s_b2f198fe3e461f::t_878ce78bc8c519 1084-1085
+  s_b2f198fe3e461f::t_744c3fc203d8ff 2225-2227
+  s_b2f198fe3e461f::t_f866f7ce49106a 2317
+  s_b2f198fe3e461f::t_e5a5e44a7d5303 2158-2160
+  s_b2f198fe3e461f::t_ec60157828d7bb 2257
+  s_b2f198fe3e461f::t_bdd7093882338f 1196
+  s_b2f198fe3e461f::t_5cffa79997dfe4 1204
+  s_b2f198fe3e461f::t_d614471bfcb768 1019
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_b2f198fe3e461f::t_6d0cd75a194a3c 1764
+  s_b2f198fe3e461f::t_eb5d917739af02 731
+  s_b2f198fe3e461f::t_19920f3bb278db 1928
+  s_b2f198fe3e461f::t_aacb86c5335769 625
+  s_b2f198fe3e461f::t_63ee97a3d469ef 1666
+  s_b2f198fe3e461f::t_83cd209f8289e3 1886
+  s_b2f198fe3e461f::t_515e60cd469a4c 1633
+  s_b2f198fe3e461f::t_107529189d0a8f 2253
+  s_b2f198fe3e461f::t_500a03dced949e 712
+  s_b2f198fe3e461f::t_7996ef21ca6bd8 1703
+  s_b2f198fe3e461f::t_f3beecb3efcf19 2275
+  s_b2f198fe3e461f::t_0bd48efd820e9d 2183
+  s_b2f198fe3e461f::t_33ae6d2bc67fd2 1947
+  s_b2f198fe3e461f::t_0aed746f54f3b6 725
+  s_b2f198fe3e461f::t_1a3a23dd1d3685 685
+  s_fbfe372877ccbc::t_3226a1ed838f07 695,787-788,1590,1627
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_b2f198fe3e461f::t_fc7708523ed614 260-261
+  s_b2f198fe3e461f::t_27b8038641b675 415
+  s_b2f198fe3e461f::t_5ec9a51b5a6570 336
+  s_b2f198fe3e461f::t_c8e43faa21c6d6 79
+  s_b2f198fe3e461f::t_3e944dafbd6ea2 298
+  s_b2f198fe3e461f::t_8a35f97642ec11 353
+  s_b2f198fe3e461f::t_714b3818c3ce9c 422
+  s_b2f198fe3e461f::t_028c50680a43a4 342-344
+  s_b2f198fe3e461f::t_5d55cd1944eeef 427-428
+  s_b2f198fe3e461f::t_da48c70d605cca 275
+  s_b2f198fe3e461f::t_1591056ae01945 434-435
+  s_b2f198fe3e461f::t_36d3dc5e3bb9a1 326,330
+  s_b2f198fe3e461f::t_588ae5451f6acb 153-159
+  s_b2f198fe3e461f::t_e95eff450c7cd1 169-170
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_b2f198fe3e461f::t_a756c9f8b0bd3f 1004
+  s_b2f198fe3e461f::t_33e0a407782bb2 1165
+  s_b2f198fe3e461f::t_5b487d50509732 685
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetSvcDealerHourPriceResp.java
+  s_b2f198fe3e461f::t_30bbc10ded716e 57,59-60
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sk-SK.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_b2f198fe3e461f::t_843e84ef1a4589 19
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_b2f198fe3e461f::t_163a22edb30cdd 28
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/SparePartHelper.java
+  s_b2f198fe3e461f::t_f1181ff7b57d96 57
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.fr-FR.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_b2f198fe3e461f::t_4ca30847904436 60-62
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_b2f198fe3e461f::t_7dd300814c9f30 101
+  s_b2f198fe3e461f::t_83e62c34cdaafb 250
+  s_b2f198fe3e461f::t_4dca191a0b53ca 220
+  s_b2f198fe3e461f::t_bdb2c0c639c6d8 180,182
+  s_b2f198fe3e461f::t_90adcc3170e94b 234-235
+  s_b2f198fe3e461f::t_106449d6ca451f 103
+  s_b2f198fe3e461f::t_42a2d270e65d15 211
+  s_b2f198fe3e461f::t_e6059b79759d1e 68-71
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.de-DE.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_b2f198fe3e461f::t_d56ace944f5896 17
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_b2f198fe3e461f::t_a81fc0614dfdd9 422-423
+  s_b2f198fe3e461f::t_ebd76d39fea30f 180
+  s_b2f198fe3e461f::t_41e4e4f6b26b14 98
+  s_b2f198fe3e461f::t_d210a0a5bfa09d 170-172
+  s_b2f198fe3e461f::t_2412b338022b27 336-338
+  s_b2f198fe3e461f::t_3730bdfcda77b6 269
+  s_b2f198fe3e461f::t_e106509f758e3f 239-240
+  s_b2f198fe3e461f::t_63d3947a1e370d 283-284
+  s_b2f198fe3e461f::t_d9108ff268d6f6 417
+  s_b2f198fe3e461f::t_6be7aa8393e3b9 330
+  s_b2f198fe3e461f::t_49040850ce5010 429-430
+  s_b2f198fe3e461f::t_47409c205072d3 323,325
+  s_b2f198fe3e461f::t_6d0b790bbe44a6 227-231
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2813a9c1ed514813bac9c8df804c6a5d739e7243",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_b2f198fe3e461f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "386810c1-67e7-4503-b0fa-2fa320c4ba8b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
