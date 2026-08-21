@@ -1,0 +1,22 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_7646f5152e2e4f::t_0f84b5b68dabdc 80
+  s_7646f5152e2e4f::t_cbc521f276e0b9 2485-2494
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentHelper.java
+  s_7646f5152e2e4f::t_a95c53581b781b 327-336
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2554905704f677ceba6e85948de09167e3559852",
+  "prompts": {},
+  "sessions": {
+    "s_7646f5152e2e4f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78718596-dbab-4988-834a-416e36d80c18",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

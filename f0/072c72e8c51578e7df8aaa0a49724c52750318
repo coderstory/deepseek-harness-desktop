@@ -1,0 +1,19 @@
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/service/MaintainExternalServiceWorkOrderRouteTest.java
+  s_7646f5152e2e4f::t_8ed17324feefd8 1-66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f0072c72e8c51578e7df8aaa0a49724c52750318",
+  "prompts": {},
+  "sessions": {
+    "s_7646f5152e2e4f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78718596-dbab-4988-834a-416e36d80c18",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
