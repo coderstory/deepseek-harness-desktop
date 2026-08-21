@@ -1,0 +1,33 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarHelper.java
+  s_1283219b3f89ed::t_6ce30e4bc6ad3a 142
+  s_1283219b3f89ed::t_73c3d5a68e1f25 43-44
+  s_1283219b3f89ed::t_2c07bb52c671dd 233
+  s_1283219b3f89ed::t_cc8cc14308fb91 141
+  s_1283219b3f89ed::t_dad5f25ae93456 161
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/StandardHourServiceImpl.java
+  s_663097a95c4058::t_9c7f1778335058 22,73,128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "58a9bf82b0c6b70ac5482d1e76473f04860ef267",
+  "prompts": {},
+  "sessions": {
+    "s_1283219b3f89ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be1e52f-a913-4fe9-8b5b-c2cdb1596ce0",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_663097a95c4058": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "83ee1ce7-7075-4f89-a84e-e9707b82c8ee",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}
