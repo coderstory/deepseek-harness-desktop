@@ -1,0 +1,30 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/dto/CheckUserV2ApiResponse.java
+  s_005ecc5c38121e::t_1c80732151c287 1-25
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/CEndUserCenterClient.java
+  s_005ecc5c38121e::t_fdfbf9f342f5df 15
+  s_005ecc5c38121e::t_e3174b94ebfefc 89-128
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_005ecc5c38121e::t_2e6a36e2badbfb 363-388
+  s_005ecc5c38121e::t_a18c0a7ea13dbe 121-125
+  s_005ecc5c38121e::t_c7a3eda76566ab 55
+  s_005ecc5c38121e::t_004ef01e47abfd 142,145-149,151-156
+  s_005ecc5c38121e::t_e525eed1f9da48 362
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/IncCommonError.java
+  s_005ecc5c38121e::t_b39a09e3f81296 19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5acd53ce80cb9d13977d27a410e82f5600228de2",
+  "prompts": {},
+  "sessions": {
+    "s_005ecc5c38121e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3258778d-d12d-481f-aaae-dd9ca2199e7d",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
