@@ -1,0 +1,102 @@
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_8bbde6e3cbd03b::t_3ce00c12cc3108 320-321,358-367,392-400,421-422,427-434,461-463,467-468,474-481,513,515,530
+  s_8bbde6e3cbd03b::t_58ecb704c155cb 147-151,180-184
+tc_test/runner.py
+  s_8bbde6e3cbd03b::t_e8172e3a9224a4 1,5-13,16-18,20-100
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/config/service/data/svc_labour_hour_type_price/QueryLabourHourTypeCodeByDealerCodeInput.java
+  s_7ecfdcd69e3e2d::t_2f1a02ea13765f 34
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/SparePartHelper.java
+  s_7ecfdcd69e3e2d::t_7603719dfbdc9a 57
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_7ecfdcd69e3e2d::t_c1000f0dabb0bf 77-78,80-81,83-84,92,110-111,113,147
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_7ecfdcd69e3e2d::t_4167b856414881 68-71,101,103,181,183,212,221,234-235,250
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_7ecfdcd69e3e2d::t_7e017fb2b07a52 16,20-21,32,35,38,53,56,66-67,76-77,87,89,119
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetSvcDealerHourPriceResp.java
+  s_7ecfdcd69e3e2d::t_c6bd0e454e537b 57,59-60
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_7ecfdcd69e3e2d::t_574ef1f2db9c8f 60-62
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_7ecfdcd69e3e2d::t_6111e84004c525 28
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_7ecfdcd69e3e2d::t_14e5060c70c7f0 71-76
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_7ecfdcd69e3e2d::t_e0e36fd1206298 19
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_7ecfdcd69e3e2d::t_e9bc6c48d31373 112-117
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_7ecfdcd69e3e2d::t_4e437cb4914c71 551-552,768-769,772-781,890,893,1015,1017-1026,1028-1030,1077,1088-1089,1107,1111,1115,1118,1123,1129-1130,1135,1221-1222,2066-2067,2131-2132,2137,2155,2185,2191-2192,2198,2200
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_7ecfdcd69e3e2d::t_b614a41cf9831f 625,684,694,711,724,730,786-787
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_7ecfdcd69e3e2d::t_ab307b95a3798c 98,170-172,180,227-231,239,268,281-282,319-320,322,327,333-334,412,417-418,424-425
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_7ecfdcd69e3e2d::t_4748a55373ac8a 79,153-159,169,259-260,274,297,325,327,333,339-340,348,410,416,421-422,428-429
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.cs-CZ.properties
+  s_7ecfdcd69e3e2d::t_f539c049a5311a 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.de-DE.properties
+  s_7ecfdcd69e3e2d::t_bbdb21208c03a3 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-ES.properties
+  s_7ecfdcd69e3e2d::t_08806a701d3267 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_7ecfdcd69e3e2d::t_b99c595b4f2836 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.fr-FR.properties
+  s_7ecfdcd69e3e2d::t_298d474d1431d8 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.hu-HU.properties
+  s_7ecfdcd69e3e2d::t_78c2a224f182cb 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.id-ID.properties
+  s_7ecfdcd69e3e2d::t_a7b437fbe01f58 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_7ecfdcd69e3e2d::t_27359f9c89c5c7 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_7ecfdcd69e3e2d::t_2a79db504f46a9 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_7ecfdcd69e3e2d::t_ff566d56fafbdf 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ru-RU.properties
+  s_7ecfdcd69e3e2d::t_d4c22d3d216be8 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sk-SK.properties
+  s_7ecfdcd69e3e2d::t_9f8a2d0f5369b5 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sv-SE.properties
+  s_7ecfdcd69e3e2d::t_02f35deda5ce9f 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.th-TH.properties
+  s_7ecfdcd69e3e2d::t_32843a815d2cf5 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.uz-UZ.properties
+  s_7ecfdcd69e3e2d::t_61701ec887be44 18
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_7ecfdcd69e3e2d::t_69fb2472484f2f 989,1150
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_fd9297ddd4d6a8::t_562ff8d550a064 587,639,720-721,726,735,740,753,759,788,856,1220-1221,1260,1325,1336,1364,1367,1382
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ce7921016a068b1f8cd688eb9d8b5c4aa38d0419",
+  "prompts": {},
+  "sessions": {
+    "s_7ecfdcd69e3e2d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb8c23e4-bc36-4bac-94f0-e79eaaa51246",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fd9297ddd4d6a8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a0c30b303ae5f0819",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

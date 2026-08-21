@@ -1,0 +1,35 @@
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_8bbde6e3cbd03b::t_df4b8925e55432 75-92
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_8bbde6e3cbd03b::t_bb88c04b6fe0e3 366,392,395-396,398-400
+  s_8bbde6e3cbd03b::t_dabfe32aec48da 342-343,360-361
+  s_8bbde6e3cbd03b::t_c128a453382d8c 530-531,548-549
+  s_8bbde6e3cbd03b::t_d5a055dfdb5932 469,471
+C03-svc-reception/svc-core-reception/pom.xml
+  s_8bbde6e3cbd03b::t_c7f99afd980181 147
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_8bbde6e3cbd03b::t_fc5155671a2014 273-274,291-296
+  s_8bbde6e3cbd03b::t_070b73df44d273 41
+  s_8bbde6e3cbd03b::t_c91f3c0ceedf80 433-434
+  s_8bbde6e3cbd03b::t_a58de6e51722b7 301,329-333
+  s_8bbde6e3cbd03b::t_0c0d7991adc417 493-495,511-516
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_8bbde6e3cbd03b::t_a3961b23435cfd 40-41
+  s_8bbde6e3cbd03b::t_e8e4bd06aa1f09 230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "fbf5cd9a405ffc815a0c0717f5e3fa4c7fa4e295",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

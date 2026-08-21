@@ -37,6 +37,14 @@ C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/Svc
         "model": "glm-5.2"
       },
       "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
     }
   }
 }

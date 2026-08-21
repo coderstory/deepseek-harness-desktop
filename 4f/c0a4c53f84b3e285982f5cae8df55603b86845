@@ -1,0 +1,23 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_26b3a083c89252::t_8c65382e7fa0bd 1129,1133-1134
+  s_26b3a083c89252::t_7deb97dc157527 1152
+  s_26b3a083c89252::t_cb91eed4a3d3ff 1001-1002
+  s_26b3a083c89252::t_3764aa35f016c6 1014-1024
+  s_26b3a083c89252::t_d704e6351ddefe 1143,1146,1153,1162-1163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4fc0a4c53f84b3e285982f5cae8df55603b86845",
+  "prompts": {},
+  "sessions": {
+    "s_26b3a083c89252": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d29fc2f7-3683-4929-b944-cab438817aa2",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+C09-svc-pdi/svc-core-pdi/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 71
+D03-deploy/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 29
+C02-svc-appointment/svc-cloud-appointment/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 45
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsOutput.java
+  s_8bbde6e3cbd03b::t_f2677337c8a925 96
+C03-svc-reception/svc-core-reception/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 13,129,147,166
+C01-svc-config/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 33
+C03-svc-reception/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 30
+C03-svc-reception/svc-cloud-reception/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 39
+C04-svc-maintain/svc-core-maintain/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 129
+C00-svc-base/svc-core-base/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 224
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 110
+D03-deploy/svc-standard-api/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 164
+D01-dependence/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 29
+C01-svc-config/svc-core-config/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 112
+C04-svc-maintain/svc-cloud-maintain/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 31
+C06-svc-delivery/svc-cloud-delivery/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 31
+C04-svc-maintain/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 30
+C02-svc-appointment/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 30
+C10-svc-inc/svc-core-inc/pom.xml
+  s_8bbde6e3cbd03b::t_79e312b9477dc5 106
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 142
+C09-svc-pdi/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 30
+C01-svc-config/svc-cloud-config/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 39
+C06-svc-delivery/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 30
+C06-svc-delivery/svc-core-delivery/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 101
+C09-svc-pdi/svc-cloud-pdi/pom.xml
+  s_8bbde6e3cbd03b::t_00d0d7323cb81c 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f1bd370f9c5d629f707f5fb001fdab32c6740fec",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

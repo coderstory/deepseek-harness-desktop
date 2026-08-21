@@ -1,0 +1,47 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_854b4bef7beda4::t_01f7a4f5c409b6 71,75-82,95-108
+  s_112df0759c69d6::t_2f61176307936c 620-621
+  s_854b4bef7beda4::t_20abb993eba286 619
+  s_854b4bef7beda4::t_43ac3ce296499e 3,15-16,19
+  s_854b4bef7beda4::t_e01a5cfe84e2b8 72-74
+  s_854b4bef7beda4::t_cb02743c7eac5e 109
+  s_112df0759c69d6::t_bcaded9e2c5b92 622
+  s_112df0759c69d6::t_903c7538e9e5a7 41
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/enums/quick_search/QuickMolitEnum.java
+  s_112df0759c69d6::t_a344ca334de4f3 11-14
+  s_854b4bef7beda4::t_34d08b2d368c6f 1-10,15-70
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_714c673bbcb8c8::t_e4cd62dd70588a 416
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "684fa25a57f7b9e17bba4232bea4b9080a90dad3",
+  "prompts": {},
+  "sessions": {
+    "s_112df0759c69d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "688f9412-271f-4a0b-a722-978ca8e5fd49",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_714c673bbcb8c8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "967a3f3b-b3d0-4d34-9697-a93b89e70446",
+        "model": "unknown"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_854b4bef7beda4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ff36826f-cd70-4324-8b65-509eff74d564",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

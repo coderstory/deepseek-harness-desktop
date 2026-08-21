@@ -1,0 +1,27 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_e4cd7e85401f1e::t_7c0077e5c9f5e5 82,91,273
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_e4cd7e85401f1e::t_51b90f36ab05bf 64,72
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_e4cd7e85401f1e::t_2346347b5c3c48 83,95
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_e4cd7e85401f1e::t_fe3eb42a37f1bf 45,69,87,190
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_e4cd7e85401f1e::t_8d8697291588a2 218,223,225,258,263,265,296,301,336,341,373,377,379,411,415,449,453,484,490,543,554,560,565,600,605,675,680,685
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "51da27dfb6af9a1828bcabcc8d196929a9ca66e9",
+  "prompts": {},
+  "sessions": {
+    "s_e4cd7e85401f1e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fd46b83f-dc98-436e-bf0f-fefa6d061516",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

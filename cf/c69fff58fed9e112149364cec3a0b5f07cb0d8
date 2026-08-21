@@ -1,0 +1,71 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_3c2882a0939eac::t_b698671ba78e8b 446
+doc/八月需求/八月需求上线操作清单.md
+  s_3c2882a0939eac::t_27dafbed7f2ca5 9-16
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_3c2882a0939eac::t_82abae56486df3 99-101
+  s_3c2882a0939eac::t_761e7a92993656 22-24
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_3c2882a0939eac::t_3271b267100942 198-200
+  s_3c2882a0939eac::t_0074726484d927 19,27,29,45,47-51,88-90,101,133,137,139,143,145,147-151,161,163-165,170,172,176,178,180-184,194,196-197,205,207,211,213,217-218,227-228,233,237,239,241,244,246-253,257-261,267-270,274,276-278,282-285,287-288,290,292,295-300,302,304,306-309,311,316,320-322,325,327,331-332,335,337,340,342-343,348,352,354,356-367,370-372,374,379-381,386-388,390-401,403-404,406,409,411-412,417,421-423,427-434,436-437,439-443,445,447-450,455-457,459,461-463,467-468,470,474-481,483,489-490,495-496,498,503,507,509,511,513,515,519,521,526-527
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_3c2882a0939eac::t_41e3d6a9ae17d7 488,494
+  s_3c2882a0939eac::t_a0cfdf57cb98b8 983-986
+  s_3c2882a0939eac::t_cc00652ac4a50f 17
+  s_3c2882a0939eac::t_6278457b5ea29c 487,489-493
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/dto/BeforeSaveOrUpdateCheckCxt.java
+  s_3c2882a0939eac::t_bf322adc9a4ca0 7-8,13
+  s_3c2882a0939eac::t_461cc3369207ec 38-45
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_3c2882a0939eac::t_22a02cc90d1f52 449
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_3c2882a0939eac::t_fa80b9963feea0 47
+  s_3c2882a0939eac::t_116e5cd56f32e9 50
+  s_3c2882a0939eac::t_15ece3f1265053 51
+  s_ad4e6ba698bade::t_0aba8860f8b7ea 155
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceProxyEnt.java
+  s_3c2882a0939eac::t_058003c622ce29 1466-1473
+  s_3c2882a0939eac::t_1305a4579869e4 471-474
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_3c2882a0939eac::t_109632d51dd7a4 837-844,846-850,852-853,858
+  s_3c2882a0939eac::t_405d8ef7d32138 845
+  s_3c2882a0939eac::t_42a03bed863dc3 447,652,737,751,766,780,1023
+  s_3c2882a0939eac::t_0c1801ccb28e0b 441
+  s_3c2882a0939eac::t_e3942dee77e503 342,493,672,874,943,1084
+  s_3c2882a0939eac::t_c520bdb8f1997f 22
+  s_3c2882a0939eac::t_b683d766a2865e 860
+  s_3c2882a0939eac::t_f9d5f38879eb7f 1004-1005
+  s_3c2882a0939eac::t_f244d4b480736d 1134-1147,1149-1153,1155-1157
+  s_3c2882a0939eac::t_6ae090ed911007 854-856,859
+  s_3c2882a0939eac::t_9d44bae84269cb 1164
+  s_3c2882a0939eac::t_f44894d0ef6bc3 684-686
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_3c2882a0939eac::t_ce4cd28be385f6 31-33
+  s_3c2882a0939eac::t_1e0716697daebf 76-78
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_3c2882a0939eac::t_7a0fe741be0e7e 397-399
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cfc69fff58fed9e112149364cec3a0b5f07cb0d8",
+  "prompts": {},
+  "sessions": {
+    "s_3c2882a0939eac": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0bd69670-ea9f-4e9a-aff3-45dea697ee66",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_ad4e6ba698bade": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8ec1916a-70bb-4aae-90cf-ccf723f35efa",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

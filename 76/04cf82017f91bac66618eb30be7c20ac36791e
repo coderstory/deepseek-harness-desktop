@@ -1,0 +1,309 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_467ec6c8f21509::t_b8613c684da3af 750
+  s_467ec6c8f21509::t_934c3e5f2a71cb 20,44,587,639,720-721,726,735,740,759,788,856,1010,1193-1206,1233-1242,1298-1299,1307-1315,1337-1341,1355-1357
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_467ec6c8f21509::t_a216a48a5a64e6 56
+  s_467ec6c8f21509::t_a5a0785c9745c0 33
+  s_467ec6c8f21509::t_a3dd7a391b2dbe 21-22
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsOutput.java
+  s_467ec6c8f21509::t_80ef1ca4b0ab40 74,97-113
+  s_467ec6c8f21509::t_ba01d548ffed5b 14-15,20-25
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_467ec6c8f21509::t_d93e5675d5c2e9 550
+  s_467ec6c8f21509::t_65773fe07b3e80 606
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_467ec6c8f21509::t_bb0e1e20a5aadb 39
+  s_467ec6c8f21509::t_fd3eb6832a37a7 48-49
+.claude/settings.json
+  s_467ec6c8f21509::t_fb91229f2bcccf 3-4,6
+.claude/skills/api-test/config/environments.local.json
+  s_467ec6c8f21509::t_6271f596812952 14,16,19
+.gsd/dispatch-isolation-sentinel.json
+  s_467ec6c8f21509::t_051141b4fae899 1
+.mcp.json
+  s_467ec6c8f21509::t_90e8d7815cf2c6 7
+.planning/REQUIREMENTS.md
+  s_467ec6c8f21509::t_45e2286062ea5e 1-101
+.planning/ROADMAP.md
+  s_467ec6c8f21509::t_f04d817c495410 1-220
+.planning/STATE.md
+  s_467ec6c8f21509::t_e4192fba6b54a7 1-117
+.planning/phases/18.1-foundation-iclaim-client-dtos/18.1-UAT.md
+  s_467ec6c8f21509::t_4931cc701a3961 1-81
+.planning/phases/18.1-foundation-iclaim-client-dtos/18.1-VERIFICATION.md
+  s_467ec6c8f21509::t_cd2cb7b2aa0d61 1-195
+.planning/phases/18.2-price-infrastructure/18.2-01-PLAN.md
+  s_467ec6c8f21509::t_95f844fa400496 1-244
+.planning/phases/18.2-price-infrastructure/18.2-01-SUMMARY.md
+  s_467ec6c8f21509::t_faf43366da4244 1-6,8,10,12,14,16-21,23,25-29,31,33-37,39,41-42
+.planning/phases/18.2-price-infrastructure/18.2-02-PLAN.md
+  s_467ec6c8f21509::t_a0143af664d84f 1-208
+.planning/phases/18.2-price-infrastructure/18.2-02-SUMMARY.md
+  s_467ec6c8f21509::t_bc198a6b096667 1-37
+.planning/phases/18.2-price-infrastructure/18.2-03-PLAN.md
+  s_467ec6c8f21509::t_6711ba8e5b70ec 1-278
+.planning/phases/18.2-price-infrastructure/18.2-03-SUMMARY.md
+  s_467ec6c8f21509::t_3d910001c49eb6 1-42
+.planning/phases/18.2-price-infrastructure/18.2-CONTEXT.md
+  s_467ec6c8f21509::t_884e092c529fac 1-135
+.planning/phases/18.2-price-infrastructure/18.2-DISCUSSION-LOG.md
+  s_467ec6c8f21509::t_809f535adf39e8 1,3-8,12-22,24-27,29-30,32-40,44,46-49,51-52,54,56,58-62,64-65,67,69,71-74,76-77,79,81,83-86,88-89,93,95-98,100-101,105-115,117,119-122,124,126-127
+.planning/phases/18.2-price-infrastructure/18.2-RESEARCH.md
+  s_467ec6c8f21509::t_afd044614927c8 1-535
+.planning/phases/18.2-price-infrastructure/18.2-REVIEW.md
+  s_467ec6c8f21509::t_a258ee71cc605f 1-296
+.planning/phases/18.2-price-infrastructure/18.2-UI-SPEC.md
+  s_467ec6c8f21509::t_d5ca6b0851987b 1-77
+.planning/phases/18.2-price-infrastructure/18.2-VALIDATION.md
+  s_467ec6c8f21509::t_2fb1018fa08506 1-82
+.planning/phases/18.3-save-paths/18.3-01-PLAN.md
+  s_467ec6c8f21509::t_6375d98d0c5f8e 1-136
+.planning/phases/18.3-save-paths/18.3-01-SUMMARY.md
+  s_467ec6c8f21509::t_4b4c486183918e 1-46
+.planning/phases/18.3-save-paths/18.3-02-PLAN.md
+  s_467ec6c8f21509::t_4e31f6e4154006 1-162
+.planning/phases/18.3-save-paths/18.3-02-SUMMARY.md
+  s_467ec6c8f21509::t_10b46974819bb7 1-50
+.planning/phases/18.3-save-paths/18.3-CONTEXT.md
+  s_467ec6c8f21509::t_aa3e25c6aa46be 1-71
+.planning/phases/18.3-save-paths/18.3-UAT.md
+  s_467ec6c8f21509::t_3ded03811ed398 1-63
+.planning/phases/18.4-query-transfer/18.4-01-PLAN.md
+  s_467ec6c8f21509::t_33dfd3b11a4d51 1-64
+.planning/phases/18.4-query-transfer/18.4-01-SUMMARY.md
+  s_467ec6c8f21509::t_fe94f64cee9a92 1-44
+.planning/phases/18.4-query-transfer/18.4-02-PLAN.md
+  s_467ec6c8f21509::t_0bd29fd2952f2d 1-105
+.planning/phases/18.4-query-transfer/18.4-02-SUMMARY.md
+  s_467ec6c8f21509::t_5298f27515a761 1-55
+.planning/phases/18.4-query-transfer/18.4-03-PLAN.md
+  s_467ec6c8f21509::t_86226c814e465e 1-65
+.planning/phases/18.4-query-transfer/18.4-03-SUMMARY.md
+  s_467ec6c8f21509::t_b2dd9608d2eb56 1-44
+.planning/phases/18.4-query-transfer/18.4-04-PLAN.md
+  s_467ec6c8f21509::t_190650dac56acc 1-77
+.planning/phases/18.4-query-transfer/18.4-04-SUMMARY.md
+  s_467ec6c8f21509::t_2a508c191da43e 1-47
+.planning/phases/18.4-query-transfer/18.4-CONTEXT.md
+  s_467ec6c8f21509::t_b6fe4fc6fcce0e 1-142
+.planning/v1.6-FINAL-REQUIREMENTS-BASELINE.md
+  s_467ec6c8f21509::t_ab90c0f0d8f696 1-79
+.planning/v1.6-SIT-E2E-TEST-CASES.md
+  s_467ec6c8f21509::t_f88047cb8537be 1-570
+AGENTS.md
+  s_467ec6c8f21509::t_2132ac288c28da 38
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/constant/GlobalParamsConfig.java
+  s_467ec6c8f21509::t_51a5c6cb7d33c9 125-126
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/service/data/mdm_parts/GetMdmPartsInput.java
+  s_467ec6c8f21509::t_02e90310a4554e 24-26,74-76
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/config/service/data/svc_labour_hour_type_price/QueryLabourHourTypeCodeByDealerCodeInput.java
+  s_467ec6c8f21509::t_e0cf14335c916a 34-36,100-102
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/SvcBaseError.java
+  s_467ec6c8f21509::t_65e066eda73594 26-32
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_467ec6c8f21509::t_5807442a25c0cb 1-142
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/SparePartHelper.java
+  s_467ec6c8f21509::t_034b100880b0e8 57-60
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ClaimLabourHourRateDTO.java
+  s_467ec6c8f21509::t_3bd35136528c3d 1-58
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/spare_part/SparePartQueryPriceReq.java
+  s_467ec6c8f21509::t_adbe58917d1d2f 12-15,22-24,50-65,81-88
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/AbstractPotdDealerPurchaseInfoAclHandler.java
+  s_467ec6c8f21509::t_fb05fb0a72af58 103-104,117-120
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/DealerPartPriceDto.java
+  s_467ec6c8f21509::t_5cfeebe02f5530 24-31,71-86
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/GetDealerPartPriceMapParam.java
+  s_467ec6c8f21509::t_f12c9c4393439e 21-23,32-39
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceDto.java
+  s_467ec6c8f21509::t_ba8cb972f13dc1 20-27,67-82
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceParam.java
+  s_467ec6c8f21509::t_012e68e9c87836 23-25,34-41
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_467ec6c8f21509::t_1f7cf97abbce1f 6,12,15,18-19,22,31,35,75-83,91,97,108-162
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_467ec6c8f21509::t_ad496748b464c2 7,66-72,101,103,110,113-116,170-176,202-213,222-256
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_467ec6c8f21509::t_343c2f3bdcadad 1-155
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceProxyEnt.java
+  s_467ec6c8f21509::t_e7b02f2f940f40 471-474,1466-1473
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/SparePartHelperTest.java
+  s_467ec6c8f21509::t_e25619f26d4f4f 1-119
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_467ec6c8f21509::t_e61708883125fb 1-435
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_467ec6c8f21509::t_7e4217819db630 1-341
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_467ec6c8f21509::t_a71b3feffd7deb 1-266
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/test/XstartupTestInitializer.java
+  s_467ec6c8f21509::t_6017f8ad5edcfa 1-49
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimClientTest.java
+  s_467ec6c8f21509::t_08a90ed13f97e0 1-300
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_467ec6c8f21509::t_7872d8dde897a9 1-230
+C00-svc-base/svc-core-base/src/test/java/svc/core/reception/helper/StatementHelperGetPriceContextTest.java
+  s_467ec6c8f21509::t_fe69dded6e3407 1-159
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetSvcDealerHourPriceResp.java
+  s_467ec6c8f21509::t_4c1c4876a7d4b2 56-64,176-183
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_467ec6c8f21509::t_0d8ec68aecf978 59-65,218-220
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_467ec6c8f21509::t_0d39e4d6fb0060 28-33,73-78
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_467ec6c8f21509::t_da58ae45de949d 22,46-47,50-51,70-87
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_467ec6c8f21509::t_992557c6cfe196 19-24,96-101
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_467ec6c8f21509::t_a06adcb741ff17 111-128
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_467ec6c8f21509::t_acc068b2a6664b 200-206,263-265,272-275,279
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_467ec6c8f21509::t_d4773aca30346a 8,15,21-25,342,441,447,493,652,672,683-685,717-720,732,746,761,775,843,912,971-975,992,1001-1002,1024-1028,1053,1070,1103-1128,1132-1158
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcMdmStandardHourService.java
+  s_467ec6c8f21509::t_c34fb434bec3c2 69
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplQueryViewTest.java
+  s_467ec6c8f21509::t_699f557d0dedce 1-187
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_467ec6c8f21509::t_242ed32d000ed9 1-530
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_467ec6c8f21509::t_5535ad0ee91ce4 42,80,120,551-553,768-783,888-895,1015-1016,1077,1079,1088-1089,1107-1108,1110-1142,1221-1229,2064-2068,2131-2133,2137-2141,2184-2202
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_467ec6c8f21509::t_aa5edc08dc9444 1-468
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_467ec6c8f21509::t_0743df738dca97 1-291
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/test/XstartupTestInitializer.java
+  s_467ec6c8f21509::t_59d5ebf673cc48 1-50
+C03-svc-reception/svc-core-reception/pom.xml
+  s_467ec6c8f21509::t_137290a6c53c87 113-125
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_467ec6c8f21509::t_59a9095b7e1ea4 17,487-494,983-986
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_467ec6c8f21509::t_753fa16956457a 31,35-36,57,68-69,669-674,708-757,809-824
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsInput.java
+  s_467ec6c8f21509::t_c81210e5002e42 20,22,25-37
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_467ec6c8f21509::t_1d38254b9a8746 11-12,32,89-102,170-194,226-234,239-244,269-271,281-303,315-346,349,406-436
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/dto/BeforeSaveOrUpdateCheckCxt.java
+  s_467ec6c8f21509::t_906ef652b3a9bf 7-8,13,38-45
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_467ec6c8f21509::t_b8d01ec44a47ab 14,16-18,30,40-41,75-80,85,151-162,168-173,257-311,319-351,410-439
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceGetMdmPartsTest.java
+  s_467ec6c8f21509::t_7d84fa15cf5193 1-155
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceQbWarrantyTest.java
+  s_467ec6c8f21509::t_8b7144668fbddd 1-339
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_467ec6c8f21509::t_232570e1bd5d41 1-424
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerEnforceTest.java
+  s_467ec6c8f21509::t_1ca93ed8636ba2 1-244
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_467ec6c8f21509::t_9de4257a9c92cf 1-555
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_467ec6c8f21509::t_935cbce4b649d1 1-533
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_467ec6c8f21509::t_e87d06f4e3ccd5 2908
+C04-svc-maintain/svc-core-maintain/src/main/resources/mybatis/mapper/svc/core/maintain/SvcServiceOperationViewMapper.xml
+  s_467ec6c8f21509::t_12a65248f77740 196-208,214,216
+CLAUDE.md
+  s_467ec6c8f21509::t_427b5e53e7430f 61
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_467ec6c8f21509::t_df5b4e96f0debf 40,55-58
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/error/appointment-common-error.zh-CN.properties
+  s_467ec6c8f21509::t_59f63d58edb6ec 1-10
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.cs-CZ.properties
+  s_467ec6c8f21509::t_9f3cc03b483926 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.de-DE.properties
+  s_467ec6c8f21509::t_b54b3ab176d961 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.en-US.properties
+  s_467ec6c8f21509::t_b69cc5998aefe6 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-ES.properties
+  s_467ec6c8f21509::t_edc22cec8ad860 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_467ec6c8f21509::t_9641b68ee9ead7 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.fr-FR.properties
+  s_467ec6c8f21509::t_cb23f6953c4f31 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.hu-HU.properties
+  s_467ec6c8f21509::t_98a2fecb2bcbfd 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.id-ID.properties
+  s_467ec6c8f21509::t_8778bb5c6cb631 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_467ec6c8f21509::t_2bfbc9a6488a16 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_467ec6c8f21509::t_5bde3864d6de9d 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_467ec6c8f21509::t_d36bc703159c33 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ru-RU.properties
+  s_467ec6c8f21509::t_fe31290fe08812 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sk-SK.properties
+  s_467ec6c8f21509::t_38d3a445ad4eda 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sv-SE.properties
+  s_467ec6c8f21509::t_092144e1caebd0 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.th-TH.properties
+  s_467ec6c8f21509::t_30bccd6d6a3532 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.uz-UZ.properties
+  s_467ec6c8f21509::t_7761fdc0e342ed 17-18
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.zh-CN.properties
+  s_467ec6c8f21509::t_0c68f0d6d1551a 14-17
+doc/modules/07-C06-svc-delivery.md
+  s_467ec6c8f21509::t_dc98ca3cc1af6c 58
+doc/八月需求/5.3上线操作清单.md
+  s_467ec6c8f21509::t_f693f145a520f3 1-122
+doc/八月需求/5.3前端开发配合文档.md
+  s_467ec6c8f21509::t_8bf6879c6af0d8 1-86
+"doc/八月需求/5.3后端开发任务清单 (敏捷故事).md"
+  s_467ec6c8f21509::t_7ea21567f11918 1-57
+doc/八月需求/5.3技术方案-客户隐私信息存客档.md
+  s_467ec6c8f21509::t_0e6e960e4f1ae5 1-290
+doc/八月需求/5.4-Nacos配置-PROD.md
+  s_467ec6c8f21509::t_ff25617e5a05e9 1-115
+doc/八月需求/5.4-Nacos配置-SIT.md
+  s_467ec6c8f21509::t_2dd0f98a52a37f 1-96
+doc/八月需求/5.4-Nacos配置-UAT.md
+  s_467ec6c8f21509::t_0a0e32315610bb 1-100
+doc/八月需求/5.4接口Swagger对接说明.md
+  s_467ec6c8f21509::t_19ed57ce946cdb 1,3-9,11,13-15,17-19,21-23,25,27-29,31,33-37,39-45,47-49,51,53-57,59,61,63-65,67,69,71-73,75,77,79-81,83,85,87-95
+doc/八月需求/iClaim测试数据申请文本.md
+  s_467ec6c8f21509::t_e1b646ef9f120b 1-40
+doc/八月需求/swagger/5.4-swagger-merged.json
+  s_467ec6c8f21509::t_6fa9eba6430231 1-623
+doc/八月需求/v1.6-Nacos新增配置清单-PROD.md
+  s_467ec6c8f21509::t_bfcc73ea517a9e 1-62
+doc/八月需求/v1.6-Nacos新增配置清单-SIT.md
+  s_467ec6c8f21509::t_747b2958287359 1-68
+doc/八月需求/v1.6-Nacos新增配置清单-UAT.md
+  s_467ec6c8f21509::t_825ccbf00e2150 1-60
+doc/八月需求/八月迭代PRD.md
+  s_467ec6c8f21509::t_b2e1f3af782739 1-1574
+doc/八月需求/八月需求上线操作清单.md
+  s_467ec6c8f21509::t_0c470209070b36 1-168
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_467ec6c8f21509::t_ff4610724f98e4 1,3-8,10,12-16,18,20,22-24,26-38,40-54,56-57,59,61,63-65,67,69-71,73,75-82,84-88
+"doc/八月需求/八月需求后端开发任务清单 (敏捷故事).md"
+  s_467ec6c8f21509::t_1aa818f9d5af0a 1-93
+doc/八月需求/客档API/场景客档_upsert_保存。YApi高效易用功能强大的可视化接口管理平台_20260811162141.md
+  s_467ec6c8f21509::t_fe5041277b324e 1-191
+doc/八月需求/客档API/场景客档分页查询无子表。YApi高效易用功能强大的可视化接口管理平台_20260811162821.md
+  s_467ec6c8f21509::t_702a1772b304db 1-165
+doc/八月需求/客档API/场景客档详情单条查询含子表。YApi高效易用功能强大的可视化接口管理平台_20260811162603.md
+  s_467ec6c8f21509::t_69ff0cf69087c6 1,3,5,7-13,15-20,22,24,26,28-56,58,60,62,64,66-84,86,88,90,92,94,96,98-100,102,104-106,108,110-116,118,120-138,140
+"doc/八月需求/维修项目迭代月八技术方案 .md"
+  s_467ec6c8f21509::t_a056a3f6bfbd85 1-1344
+package.json
+  s_467ec6c8f21509::t_3e3ffe5e2e2f09 1-5
+tc_test/runner.py
+  s_467ec6c8f21509::t_54fc632eb00dae 1-99
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7604cf82017f91bac66618eb30be7c20ac36791e",
+  "prompts": {},
+  "sessions": {
+    "s_467ec6c8f21509": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6d734635-6f4b-44e7-8208-b987a8b0a219",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

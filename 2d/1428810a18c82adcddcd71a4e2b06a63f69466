@@ -1,0 +1,20 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/MaintainExternalServiceImpl.java
+  s_7646f5152e2e4f::t_d8b6aaaaee7bba 128-160,162-165,168-174
+  s_7646f5152e2e4f::t_08661781c15240 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2d1428810a18c82adcddcd71a4e2b06a63f69466",
+  "prompts": {},
+  "sessions": {
+    "s_7646f5152e2e4f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78718596-dbab-4988-834a-416e36d80c18",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_26b3a083c89252::t_9ddbec6ec46afe 2104-2107
+  s_26b3a083c89252::t_01bf5c87281dbe 895
+  s_26b3a083c89252::t_984bd00148351e 1263-1264
+  s_26b3a083c89252::t_042c8163dfb5b6 1065-1073
+  s_26b3a083c89252::t_316783b5502b2b 2184-2203
+  s_26b3a083c89252::t_870635fbb25b95 58-59
+  s_26b3a083c89252::t_d19fe18303a8cd 2220-2223
+  s_26b3a083c89252::t_da451beb9b6431 990-1015
+  s_8bbde6e3cbd03b::t_b11cdd2c08a56c 1043-1044
+  s_26b3a083c89252::t_786fd04deec529 2174-2175
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_26b3a083c89252::t_4c0df2d92c1d33 35-36
+  s_26b3a083c89252::t_31ac9bbc32bfe8 696-702,708
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_26b3a083c89252::t_780cb6fe687de9 1262-1268,1272
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "945625a70bc199741e29eb27fc311ea4c2849f4b",
+  "prompts": {},
+  "sessions": {
+    "s_26b3a083c89252": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d29fc2f7-3683-4929-b944-cab438817aa2",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
