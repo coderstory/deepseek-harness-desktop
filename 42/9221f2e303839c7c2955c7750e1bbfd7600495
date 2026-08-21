@@ -1,0 +1,43 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_e4cd7e85401f1e::t_59ca7fdc66c195 1218,1220-1221,1227-1228,1237-1238
+  s_e4cd7e85401f1e::t_149db34223b962 1244-1319,1321,1332-1334
+  s_e4cd7e85401f1e::t_f692d0761b4bb9 851,853-869,873-874,877-882,884-885
+  s_e4cd7e85401f1e::t_ca41a072991ca9 1320,1322-1331
+  s_e4cd7e85401f1e::t_5ab4224c41ecb2 1063
+  s_e4cd7e85401f1e::t_0c59ac289bc009 731-735
+  s_e4cd7e85401f1e::t_2be797b908578f 1085-1089
+  s_e4cd7e85401f1e::t_f7e2921b74a253 719-720
+  s_e4cd7e85401f1e::t_6b2a79e2a7a1f2 1166,1169-1183,1187-1188,1191-1205,1207-1208
+  s_e4cd7e85401f1e::t_e6b77c096b2ee9 1062
+  s_e4cd7e85401f1e::t_b3c55a784db691 1243
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_e4cd7e85401f1e::t_cd5808ff9829a8 158-206
+  s_e4cd7e85401f1e::t_94debbd5dd8009 407
+  s_e4cd7e85401f1e::t_c368799db9777c 630-635
+  s_e4cd7e85401f1e::t_afde74e4dbb05e 369
+  s_e4cd7e85401f1e::t_c87ac5e7072e5f 5,14
+  s_e4cd7e85401f1e::t_410d95db5ee2a7 254
+  s_e4cd7e85401f1e::t_998fec37e51a65 440-443,445
+  s_e4cd7e85401f1e::t_709bc39fcb741d 513
+  s_e4cd7e85401f1e::t_465002c7777533 476-512,514-628,636-711
+  s_e4cd7e85401f1e::t_c7471fac1c5f7d 3-4,6-7,9,12,23-27,34
+  s_e4cd7e85401f1e::t_b2ca0a1b70c2bc 211-214
+  s_e4cd7e85401f1e::t_f374085755deea 629
+  s_e4cd7e85401f1e::t_aa80fc98824fba 327-330,332
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "429221f2e303839c7c2955c7750e1bbfd7600495",
+  "prompts": {},
+  "sessions": {
+    "s_e4cd7e85401f1e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fd46b83f-dc98-436e-bf0f-fefa6d061516",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
