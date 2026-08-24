@@ -1,0 +1,24 @@
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_maintain_rule_part/QuerySvcMaintainRulePartOutput.java
+  s_8bbde6e3cbd03b::t_6532def7afd842 202-203,206-207
+  s_8bbde6e3cbd03b::t_94deca7ebaae51 35
+  s_8bbde6e3cbd03b::t_17647c69d68330 34,36
+  s_8bbde6e3cbd03b::t_317f92e8e561df 204-205,208-209
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcServiceMaintainRuleServiceImpl.java
+  s_8bbde6e3cbd03b::t_e39a32f700f87a 1078
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6b00da03cc69d3a25930a3daabdd82b0f1218817",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
