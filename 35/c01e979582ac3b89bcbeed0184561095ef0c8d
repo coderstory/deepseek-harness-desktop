@@ -1,0 +1,19 @@
+C10-svc-inc/svc-core-inc/pom.xml
+  s_ada19176724cda::t_02097516e6a913 112-115
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "35c01e979582ac3b89bcbeed0184561095ef0c8d",
+  "prompts": {},
+  "sessions": {
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
