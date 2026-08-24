@@ -1,0 +1,91 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_7646f5152e2e4f::t_bc3fc663938ed8 86,2654-2663
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/IncCommonError.java
+  s_005ecc5c38121e::t_7673f7abdb75c0 6-20,39
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/module/SvcCoreBaseModule.java
+  s_e0e0be557527ea::t_89d94b86dc1e21 4,16,28-29
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/AesSecureUtil.java
+  s_f0368c103cd724::t_dec0c717ed0b02 4,9-10,26-27,36-58,117-176
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/enums/AppointmentServiceTypeEnum.java
+  s_ada19176724cda::t_2f1decfda6a4a7 20-39
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentHelper.java
+  s_b638fc6f74b6a7::t_fb19694204b41f 60-61,292-308,327-336,373-388
+C10-svc-inc/svc-core-inc/pom.xml
+  s_ada19176724cda::t_a9211110672bbf 103-116
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppointmentServiceImpl.java
+  s_56357b97e171ce::t_0cfcbfdde2c869 21-22,118-121,149-152
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/MaintainExternalServiceImpl.java
+  s_ef39ac76d55710::t_954c4b37aff105 27-28,128-160,162-165,168-174,877-880,887-890
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "668b04ba30032ae7f74d273c5130958d437f104f",
+  "prompts": {},
+  "sessions": {
+    "s_005ecc5c38121e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3258778d-d12d-481f-aaae-dd9ca2199e7d",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_56357b97e171ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a17b7eb9-528c-45e6-8e32-378067973bba",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_7646f5152e2e4f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78718596-dbab-4988-834a-416e36d80c18",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_b638fc6f74b6a7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a4638a9499337a782",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_e0e0be557527ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2281f6a7-423f-4c01-ac20-cbac7680429f",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_ef39ac76d55710": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ad23669c57901d6e4",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_f0368c103cd724": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "58b2416f-e6d5-457c-b09a-e5c0fe2638eb",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
