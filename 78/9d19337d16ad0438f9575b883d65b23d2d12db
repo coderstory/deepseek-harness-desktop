@@ -1,0 +1,21 @@
+C00-svc-base/svc-core-base/pom.xml
+  s_467ec6c8f21509::t_4ec019741a7362 211-216
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_467ec6c8f21509::t_3a0b101843ecf8 95-96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "789d19337d16ad0438f9575b883d65b23d2d12db",
+  "prompts": {},
+  "sessions": {
+    "s_467ec6c8f21509": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6d734635-6f4b-44e7-8208-b987a8b0a219",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

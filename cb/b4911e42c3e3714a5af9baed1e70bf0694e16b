@@ -1,0 +1,23 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_4a3a801b02e7a3::t_92d243a7f030f1 1161-1170,1172-1173
+.tmp-review/diff.patch
+  s_4a3a801b02e7a3::t_5ac79fc249cc4d 1-233
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_4a3a801b02e7a3::t_e22e02de768d98 67-71,74,78,87,132-133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cbb4911e42c3e3714a5af9baed1e70bf0694e16b",
+  "prompts": {},
+  "sessions": {
+    "s_4a3a801b02e7a3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "51c5d7c1-21ca-4f69-981e-a9fbd7d37fd1",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_c357b90090e616::t_22e8453de5e134 180-183,185
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_714c673bbcb8c8::t_6e84f97099e1af 188,400
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "aac289f7eda55324e4771b05a78e81c634fb05e9",
+  "prompts": {},
+  "sessions": {
+    "s_714c673bbcb8c8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "967a3f3b-b3d0-4d34-9697-a93b89e70446",
+        "model": "unknown"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_c357b90090e616": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d311d085-e4d4-4527-9867-9aed313ddbdc",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
