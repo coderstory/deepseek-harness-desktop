@@ -1,0 +1,19 @@
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/message/SendMessageInput.java
+  s_ea473cf142c74a::t_0fd117e04adcd1 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b754c4ebc36b4a0d53768dd440f351c3e97a5b26",
+  "prompts": {},
+  "sessions": {
+    "s_ea473cf142c74a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "55addc67-803b-4afa-9e4f-cb4cad0ffcee",
+        "model": "unknown"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

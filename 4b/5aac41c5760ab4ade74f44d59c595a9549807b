@@ -1,0 +1,65 @@
+.claude/settings.json
+  s_0ba0a0fd6df46f::t_f2da19f06d384a 4,6-37,39-41
+  s_0ba0a0fd6df46f::t_277eea1cc7767c 38
+.mcp.json
+  s_0ba0a0fd6df46f::t_f2da19f06d384a 6-18,20
+  s_0ba0a0fd6df46f::t_fd60914c2c3ca1 19,21-23
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/service/RoadRescueDataPushServiceTest.java
+  s_0ba0a0fd6df46f::t_b3ac1d5dc4a032 86
+.planning/phases/18.2-service-job/18.2-02-PLAN.md
+  s_0ba0a0fd6df46f::t_fc604d98becba2 203
+  s_0ba0a0fd6df46f::t_e5a5046a93bfca 173
+  s_0ba0a0fd6df46f::t_43820ec571cf66 23
+  s_0ba0a0fd6df46f::t_2065378ca96345 174
+.planning/ROADMAP.md
+  s_0ba0a0fd6df46f::t_f974808a126f63 12
+  s_0ba0a0fd6df46f::t_66e64fbe993a6b 93
+  s_0ba0a0fd6df46f::t_b82efa18449b2a 112-114
+  s_0ba0a0fd6df46f::t_50bb5841235ba9 122
+  s_0ba0a0fd6df46f::t_e92dad8485dc1d 97
+  s_0ba0a0fd6df46f::t_0cc5a66a2b6a0e 131
+  s_0ba0a0fd6df46f::t_cea7fb6bae43fa 123-130
+  s_0ba0a0fd6df46f::t_d0d776f28afba9 19-20
+  s_0ba0a0fd6df46f::t_2021d602d3c234 132
+.planning/phases/18.2-service-job/18.2-REVIEW.md
+  s_0ba0a0fd6df46f::t_b907adf3ce87b7 118
+  s_0ba0a0fd6df46f::t_280aae876b20c3 103
+  s_0ba0a0fd6df46f::t_23bd64d9378a85 134
+AGENTS.md
+  s_0ba0a0fd6df46f::t_f2da19f06d384a 38-77
+.planning/phases/18.2-service-job/18.2-01-PLAN.md
+  s_0ba0a0fd6df46f::t_81f4f822866674 84
+  s_0ba0a0fd6df46f::t_16ece9a1ec4571 41
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/RoadRescueDataPushService.java
+  s_0ba0a0fd6df46f::t_1918d05d149dfd 184,186
+  s_0ba0a0fd6df46f::t_cc141b3d551d7c 39
+  s_0ba0a0fd6df46f::t_65c960a6d12b4f 855
+  s_0ba0a0fd6df46f::t_9a7a91adc5d44e 898-899
+  s_0ba0a0fd6df46f::t_1e33316435fddf 834,854,856
+  s_0ba0a0fd6df46f::t_e400e2a201fc4b 671-683
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-01-PLAN.md
+  s_0ba0a0fd6df46f::t_84633a3caf1741 36
+  s_0ba0a0fd6df46f::t_8e5718a3b0ce63 181,357
+.gitignore
+  s_0ba0a0fd6df46f::t_f8c0451d543c22 54-55
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-02-PLAN.md
+  s_0ba0a0fd6df46f::t_302bb9cbfbfb20 27,337
+CLAUDE.md
+  s_0ba0a0fd6df46f::t_aad9ead979e786 131-169
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4b5aac41c5760ab4ade74f44d59c595a9549807b",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
