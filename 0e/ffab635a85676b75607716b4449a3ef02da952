@@ -1,0 +1,19 @@
+.planning/phases/05.8-korea-invoice/05.8-Phase2-SUMMARY.md
+  s_fbfe372877ccbc::t_c6749bf7f65633 1-126
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0effab635a85676b75607716b4449a3ef02da952",
+  "prompts": {},
+  "sessions": {
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

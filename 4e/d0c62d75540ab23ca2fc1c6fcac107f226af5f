@@ -1,0 +1,21 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsTokenCache.java
+  s_0ba0a0fd6df46f::t_6fe6441ad47a6a 16-19
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsClient.java
+  s_0ba0a0fd6df46f::t_a1a48244560fc8 280-282
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4ed0c62d75540ab23ca2fc1c6fcac107f226af5f",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
