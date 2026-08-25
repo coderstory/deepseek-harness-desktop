@@ -1,0 +1,42 @@
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-01-PLAN.md
+  s_0ba0a0fd6df46f::t_d4613a33f95d30 1-361
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-02-PLAN.md
+  s_0ba0a0fd6df46f::t_b60c56243ed1a8 1-341
+.planning/ROADMAP.md
+  s_2885989fad5127::t_8b76df94f85e34 1-45,48,53-102,104-109,112
+  s_9dafdc0feea31c::t_76d7fa0600713f 110-111
+  s_0ba0a0fd6df46f::t_c962c9de06f9a7 46-47,49-52
+  s_9dafdc0feea31c::t_426e73aa669fa2 103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c9918b58b63527f5f0d4a0a390a0dd3d0e4df88f",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_2885989fad5127": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da36d6ee-7183-456d-9d50-513c2556405e",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_9dafdc0feea31c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8778377b-d918-4c57-892c-33c0392fba7e",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

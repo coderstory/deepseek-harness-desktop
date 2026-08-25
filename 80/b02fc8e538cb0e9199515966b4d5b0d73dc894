@@ -1,0 +1,20 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_fbfe372877ccbc::t_2f668fc9d94657 781
+  s_fbfe372877ccbc::t_206975983e7132 780,782
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "80b02fc8e538cb0e9199515966b4d5b0d73dc894",
+  "prompts": {},
+  "sessions": {
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

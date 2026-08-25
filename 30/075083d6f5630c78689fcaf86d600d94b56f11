@@ -1,0 +1,28 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueVehicleInfo.java
+  s_0ba0a0fd6df46f::t_7ee0335a1aa3a1 62
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/RoadRescueProbeTest.java
+  s_0ba0a0fd6df46f::t_59402908602593 287
+  s_0ba0a0fd6df46f::t_5c6c18dc6162bc 823
+  s_0ba0a0fd6df46f::t_67a7ded91266de 271,273
+C11-svc-ams/svc-cloud-ams/src/main/java/svc/cloud/ams/service/data/svc_estimate_order/VehicleInput.java
+  s_0ba0a0fd6df46f::t_f8b154bafdfdea 29
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/RoadRescueDataPushService.java
+  s_0ba0a0fd6df46f::t_dbc7fbb826c7c9 696
+  s_0ba0a0fd6df46f::t_66302a7a06745d 707
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "30075083d6f5630c78689fcaf86d600d94b56f11",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

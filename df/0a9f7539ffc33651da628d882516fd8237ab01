@@ -1,0 +1,28 @@
+C04-svc-maintain/svc-core-maintain/src/test/java/svc/core/maintain/helper/RepairTaskDetailExportHelperTest.java
+  s_79abdc51826958::t_820e09cb02a158 138-140
+  s_79abdc51826958::t_ac883c1f144dff 235-237
+  s_79abdc51826958::t_47a7b10c5c5c8a 255
+  s_79abdc51826958::t_dbef3aba5bad30 280
+  s_79abdc51826958::t_1a01290f784399 313-315
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_79abdc51826958::t_d8b1ea11d87d63 85-88
+  s_79abdc51826958::t_ee80c63704aa22 168-170,172-174
+  s_79abdc51826958::t_d0e8e0d1d4baa4 223-226
+  s_79abdc51826958::t_3e2ad98adbc1b1 595-596
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "df0a9f7539ffc33651da628d882516fd8237ab01",
+  "prompts": {},
+  "sessions": {
+    "s_79abdc51826958": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "899f2c43-221f-4180-bdd8-085349113358",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
