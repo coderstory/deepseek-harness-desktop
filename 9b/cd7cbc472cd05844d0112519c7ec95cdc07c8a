@@ -1,0 +1,69 @@
+C12-svc-estimate/svc-cloud-estimate/src/main/java/svc/cloud/estimate/service/data/svc_estimate_order/CreateEstimateOrderPartInput.java
+  s_6c8976daaf049d::t_3d789d483e563e 43-44,48-49
+  s_6c8976daaf049d::t_b087c7ed5f0f53 7
+  s_6c8976daaf049d::t_6a6c07be5af041 218-219,222-223,226-227,230-231
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_6c8976daaf049d::t_44ed5ede66e38f 322-323,327
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_6c8976daaf049d::t_6b4466fe50673a 327-328
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_part/CreateSvcAppointmentPartInput.java
+  s_6c8976daaf049d::t_5e45021e2473d9 7
+  s_6c8976daaf049d::t_a0c49a564e9898 224-225,228-229,232-233,236-237
+  s_6c8976daaf049d::t_0301f8ed9a747c 47-48,52-53
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/SvcServiceOrderPartPut.java
+  s_6c8976daaf049d::t_727436a86b5807 6
+  s_6c8976daaf049d::t_449c85ec68ec24 45-46,49-50
+  s_6c8976daaf049d::t_e45508c8b79c6b 161-162,165-166,169-170,173-174
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartView.java
+  s_6c8976daaf049d::t_73d079f63bd797 551-552,555-556,559-560,563-564
+  s_6c8976daaf049d::t_e84588aed32801 6
+  s_6c8976daaf049d::t_6dfb7e8e53cf2a 111-112,116-117
+C12-svc-estimate/svc-core-estimate/src/main/java/svc/core/estimate/entity/SvcEstimateOrderPartEnt.java
+  s_6c8976daaf049d::t_a94257869de202 69-70,74-75
+  s_6c8976daaf049d::t_e110e9e49ade8a 349-350,353-354,357-358,361-362
+  s_6c8976daaf049d::t_3a20d7d3ac44b7 8
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartEnt.java
+  s_6c8976daaf049d::t_27d5820c23a392 8
+  s_6c8976daaf049d::t_0be6d54a037a31 126-127,131-132
+  s_6c8976daaf049d::t_605ff51fe652e1 579-580,583-584,587-588,591-592
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_order_part/GetSvcServiceOrderPartOutput.java
+  s_6c8976daaf049d::t_33d94e2f7b965e 22-24,28-29
+  s_6c8976daaf049d::t_868ce35637c273 767-768,771-772,775-776,779-780
+  s_6c8976daaf049d::t_3b58c428f29599 7
+C02-svc-appointment/svc-core-appointment/src/main/resources/mybatis/mapper/svc/core/appointment/SvcAppointmentPartViewMapper.xml
+  s_6c8976daaf049d::t_c100ee6ee5ab89 47-48
+  s_6c8976daaf049d::t_af4890c13685f7 93-94
+  s_6c8976daaf049d::t_6dd373eac48068 24-25
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartView.java
+  s_6c8976daaf049d::t_70787606c640ae 188-203
+  s_6c8976daaf049d::t_76e3075ab2dc50 5
+  s_6c8976daaf049d::t_b122f04b93018f 62-71
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_6c8976daaf049d::t_34842aa3e17e44 1180-1181,1186-1187,1191
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceOrderPartMapper.xml
+  s_6c8976daaf049d::t_f18a3fa096689c 10
+  s_6c8976daaf049d::t_552bb9efaf476f 75
+  s_6c8976daaf049d::t_c0df42e73700e3 81
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartEnt.java
+  s_6c8976daaf049d::t_752d84164340fd 366-367,370-371,374-375,378-379
+  s_6c8976daaf049d::t_b7428e259608a9 67-68,72-73
+  s_6c8976daaf049d::t_1156e3922a8109 8
+doc/八月需求/八月需求上线操作清单.md
+  s_6c8976daaf049d::t_bcfd01dc4d73df 16-17,20-21,24-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9bcd7cbc472cd05844d0112519c7ec95cdc07c8a",
+  "prompts": {},
+  "sessions": {
+    "s_6c8976daaf049d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f004eea1-3283-4413-9167-80f3a1e7a3ac",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
