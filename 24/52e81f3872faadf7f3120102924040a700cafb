@@ -1,0 +1,52 @@
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceKrEmPriceContextTest.java
+  s_fbfe372877ccbc::t_629d8fd2e274e0 1-4,6-318
+  s_fbfe372877ccbc::t_c3160377d89769 5
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_fbfe372877ccbc::t_375bbdf3dc8146 96-97
+  s_fbfe372877ccbc::t_f89f96dd971873 139
+  s_fbfe372877ccbc::t_42ba23962c0f5c 177
+  s_fbfe372877ccbc::t_f52ba1b8f0a82a 10,27-28,31-32,47
+  s_fbfe372877ccbc::t_be85a2c0346f5f 57-59
+  s_fbfe372877ccbc::t_7ba6a407b1e08f 219-279
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_fbfe372877ccbc::t_e44dda52d16655 232-240
+  s_fbfe372877ccbc::t_5350096ea46e04 23
+  s_fbfe372877ccbc::t_dc18d1410837e4 1091-1108
+  s_fbfe372877ccbc::t_434169b8aef29e 730-734
+  s_fbfe372877ccbc::t_c3657b4806ae60 514,516-524
+  s_fbfe372877ccbc::t_77ff691cd6bee7 142-151
+  s_fbfe372877ccbc::t_d99a34f701a0ac 1274-1275,1279-1296
+  s_73dabae1135206::t_232098cd4e215a 1276-1278
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_fbfe372877ccbc::t_d7ed9cec2b8587 139
+  s_fbfe372877ccbc::t_3f78a723cd1d1c 616-624
+  s_fbfe372877ccbc::t_7b3af8935e3eaa 27-31
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_fbfe372877ccbc::t_857774d2035880 515-603,606-688
+  s_fbfe372877ccbc::t_b08b759b0df1de 438,440-441
+  s_fbfe372877ccbc::t_b65d18119890b5 604-605
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2452e81f3872faadf7f3120102924040a700cafb",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

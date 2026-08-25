@@ -1,0 +1,49 @@
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsTokenCacheTest.java
+  s_0ba0a0fd6df46f::t_be5f7e18379165 1-192
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsClient.java
+  s_0ba0a0fd6df46f::t_ef8dd5348a6441 160-182,196-198,209,214,220-229
+  s_73dabae1135206::t_0039e235c1e58d 230
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/RoadRescuePolicyConverterTest.java
+  s_0ba0a0fd6df46f::t_a30200b43316e0 295-362
+.planning/ROADMAP.md
+  s_0ba0a0fd6df46f::t_1ac7aef34a4712 53
+  s_fbfe372877ccbc::t_6e89c09312b304 51-52,54-56
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsClientTest.java
+  s_0ba0a0fd6df46f::t_cc0a3f0c4cec6f 250
+  s_0ba0a0fd6df46f::t_ef59095a62d19b 208-249,251-355
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsTokenCache.java
+  s_0ba0a0fd6df46f::t_bf95701aa75b59 39-52,66-80,87-101
+  s_fbfe372877ccbc::t_bfebd7bdefa662 102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8681f0a278a2ab805169d8fe398409c1bafb7b0d",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

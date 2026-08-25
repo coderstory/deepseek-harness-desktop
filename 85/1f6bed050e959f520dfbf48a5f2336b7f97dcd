@@ -1,0 +1,77 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 11-16,49,53-57,127-132,205-211,215,219
+  s_fbfe372877ccbc::t_0c4f50da50a64c 213-214
+  s_fbfe372877ccbc::t_8cd1ac9a3c85b1 216-218
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/ConfirmSettleLogicTest.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 284-287,294,307-367
+.planning/phases/05.8-korea-invoice/05.8-DISCUSS-CHECKPOINT.json
+  s_fbfe372877ccbc::t_94e05dbf6eb79e 7,15-17,19
+  s_fbfe372877ccbc::t_a48a45186f3089 71-76
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/ConfirmSettleCalculator.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 116-118,157-159,165-167,170,172-178
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceRepairItemMergeServiceImpl.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 21,157-161
+  s_fbfe372877ccbc::t_107095c362aa60 162
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 106-108,116-117,130-134,141-142,144,160,167-193
+.planning/ROADMAP.md
+  s_fbfe372877ccbc::t_648d3d944ce926 39-43
+  s_fbfe372877ccbc::t_ff6ca1f5f567aa 16
+  s_fbfe372877ccbc::t_2223658686a655 35
+  s_fbfe372877ccbc::t_9d071a69b6ac8c 34
+  s_fbfe372877ccbc::t_fe32675231a655 38
+  s_fbfe372877ccbc::t_edb77098f44098 21,26
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcInsuranceCompanyService.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 18-20,45,109-121,125,127
+doc/八月需求/5.8技术方案-韩国发票调整金额闭环.md
+  s_fbfe372877ccbc::t_c9158526708983 51,53,55-58
+  s_fbfe372877ccbc::t_488cc6a89a48d9 6
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 76,371-373,376-385,1187-1222,1574-1575,1578-1582,1592-1601,2571-2576
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 193-197
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 10,12-17,19-20,22,88,93-121,125-130,132,135-137,142,147,149,151
+  s_fbfe372877ccbc::t_34e50f4d8fc713 122-124,131,133-134,138-140,143-146
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 86,837,839,841-843,845,855-894,937-940,949,952-954,959,962-964,969,972-974,1004-1022,1054,1058,1060,1065,1068
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/SvcServiceRepairItemMergeService.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 10,23-24
+  s_fbfe372877ccbc::t_3687f2424d6ead 25
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_fbfe372877ccbc::t_33f0a76bf9fa88 308,310-311
+.claude/settings.json
+  s_362bfed6931d71::t_517b2e84a5b4e8 3-17,19-29
+.gitignore
+  s_362bfed6931d71::t_779b4fcbef8850 54-55
+.mcp.json
+  s_362bfed6931d71::t_54c1720fafde37 6-15
+AGENTS.md
+  s_362bfed6931d71::t_f352fade067784 38-77
+CLAUDE.md
+  s_362bfed6931d71::t_cb408908984125 131-169
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "851f6bed050e959f520dfbf48a5f2336b7f97dcd",
+  "prompts": {},
+  "sessions": {
+    "s_362bfed6931d71": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9a4993e1-9383-48a3-83f8-e749d86c643c",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

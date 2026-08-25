@@ -1,0 +1,32 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/ESignatureHelperTest.java
+  s_7992a3df423241::t_b47c7db3dab7ab 95
+  s_7992a3df423241::t_bbc60086f8d079 34
+  s_7992a3df423241::t_db94fff5934c65 42
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_7992a3df423241::t_aa41e55ba9f060 1161
+  s_7992a3df423241::t_e1e0489090161b 1166,1172-1173
+C00-svc-base/svc-core-base/pom.xml
+  s_7992a3df423241::t_f2464891dc238a 217
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_7992a3df423241::t_11b23f355209d2 89,92,146,202,316
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_7992a3df423241::t_e5a0ba93b94fdb 70,73
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_7992a3df423241::t_c2e877d5f155fe 93,96,220
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ffe09f47c0e8d5e40adefd868ce97169ed602f22",
+  "prompts": {},
+  "sessions": {
+    "s_7992a3df423241": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7eb8f8ae-3d88-4bb9-a183-7ead69ec89f6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
