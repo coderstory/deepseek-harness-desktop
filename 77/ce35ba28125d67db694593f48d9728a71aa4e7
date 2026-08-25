@@ -1,0 +1,23 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/SvcIncFileService.java
+  s_ef7d4ca2996d9f::t_9874c9ec20c253 3-5
+  s_ef7d4ca2996d9f::t_8927f1c5d92b74 120-159
+  s_ef7d4ca2996d9f::t_1aca0cb06904c7 119
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_ef7d4ca2996d9f::t_4e622f2c62752f 189-209
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "77ce35ba28125d67db694593f48d9728a71aa4e7",
+  "prompts": {},
+  "sessions": {
+    "s_ef7d4ca2996d9f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "41d608c8-b12d-4480-b31b-d0377f3df179",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
