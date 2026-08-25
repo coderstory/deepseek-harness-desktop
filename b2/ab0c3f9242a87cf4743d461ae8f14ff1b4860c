@@ -1,0 +1,80 @@
+.planning/ROADMAP.md
+  s_321c1b428aba01::t_37fa833ee3f610 12,28,43,90-200,425-428
+  s_321c1b428aba01::t_48e0cdbafd102e 337-423
+  s_321c1b428aba01::t_dd2448a81e9520 201-203
+  s_321c1b428aba01::t_aa09b9078dd435 424
+  s_321c1b428aba01::t_09fe7df59ffa0e 204
+doc/八月需求/八月需求上线操作清单.md
+  s_321c1b428aba01::t_340641ae2cfb36 9,12-13,15-16,18-20,22-24,26-28
+  s_321c1b428aba01::t_d9f521e2517140 3,30,34,50,53-76,79,82,84-85,88-89,94,97-100,108-110,123,125,127,139,153,156,161,167,171,174,188-194,200-222,224
+C03-svc-reception/svc-core-reception/pom.xml
+  s_321c1b428aba01::t_4778ac8fb08fff 142
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-01-PLAN.md
+  s_321c1b428aba01::t_1d6b92121862ec 1-361
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-02-PLAN.md
+  s_321c1b428aba01::t_d74089bba3eed2 1-341
+.planning/phases/18.2-service-job/18.2-01-PLAN.md
+  s_321c1b428aba01::t_5d046efc862d1e 1-344
+.planning/phases/18.2-service-job/18.2-02-PLAN.md
+  s_321c1b428aba01::t_069696faa6221a 1-252
+.planning/phases/18.2-service-job/18.2-REVIEW.md
+  s_321c1b428aba01::t_013d83ff64c0d7 1-146
+.planning/phases/18.2-service-job/18.2-VALIDATION.md
+  s_321c1b428aba01::t_56f2027d387202 1-88
+C11-svc-ams/svc-cloud-ams/src/main/java/svc/cloud/ams/service/data/svc_estimate_order/VehicleInput.java
+  s_321c1b428aba01::t_438c4f0a9ab2e9 26-31,103-118
+C11-svc-ams/svc-core-ams/pom.xml
+  s_321c1b428aba01::t_0d85f0aac66714 56-75,77-91
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueOperationLog.java
+  s_321c1b428aba01::t_bc8454d532fff6 1-84
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueVehicleData.java
+  s_321c1b428aba01::t_a14b9ee0f1d656 1-78
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueVehicleInfo.java
+  s_321c1b428aba01::t_4293b1eaf8338b 1-67
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/job/RoadRescueDataPushJob.java
+  s_321c1b428aba01::t_38b2b5cf2f9a5e 1-140
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/job/param/RoadRescuePushJobParam.java
+  s_321c1b428aba01::t_da0b1b5aff376e 1-43
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/mapper/RoadRescueOperationLogMapper.java
+  s_321c1b428aba01::t_93c1500a0e9a3c 1-13
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/mapper/RoadRescueVehicleDataMapper.java
+  s_321c1b428aba01::t_de8a984a6ea980 1-13
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/RoadRescueDataPushService.java
+  s_321c1b428aba01::t_63d701be46653b 1-944
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsClient.java
+  s_321c1b428aba01::t_c0586d9c792fe3 1-431
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsTokenCache.java
+  s_321c1b428aba01::t_fa224fe3312840 1-149
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/RoadRescuePolicyConverter.java
+  s_321c1b428aba01::t_d5b4327fe85c01 1-162
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/VehicleClient.java
+  s_321c1b428aba01::t_2ef755c86087ed 18-20,71-118
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/RoadRescueProbeTest.java
+  s_321c1b428aba01::t_e81ebe9a3f6a6d 1-1114
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/job/RoadRescueDataPushJobTest.java
+  s_321c1b428aba01::t_b7acec1877ce86 1-63
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/service/RoadRescueDataPushServiceTest.java
+  s_321c1b428aba01::t_53769f3fd2e964 1-922
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsClientTest.java
+  s_321c1b428aba01::t_6ec689f0b361d9 1-389
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsTokenCacheTest.java
+  s_321c1b428aba01::t_3a7998902fd9fc 1-195
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/RoadRescuePolicyConverterTest.java
+  s_321c1b428aba01::t_c9e52aec7de202 1-402
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b2ab0c3f9242a87cf4743d461ae8f14ff1b4860c",
+  "prompts": {},
+  "sessions": {
+    "s_321c1b428aba01": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42e16432-3c17-4be0-bfff-44f1c3076937",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
