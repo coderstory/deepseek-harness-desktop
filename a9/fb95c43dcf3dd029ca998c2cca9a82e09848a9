@@ -1,0 +1,19 @@
+docs/superpowers/specs/2026-08-17-get-pdi-mdm-standard-hour-product-center-design.md
+  s_3d31bbe0ee2a9c::t_c4ea80bc0a674b 1-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a9fb95c43dcf3dd029ca998c2cca9a82e09848a9",
+  "prompts": {},
+  "sessions": {
+    "s_3d31bbe0ee2a9c": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7ffc2e8a-224c-4733-8a78-83feb2253c78",
+        "model": "default"
+      },
+      "human_author": "Lixuan.Zheng1 <Lixuan.Zheng1@zeekrlife.com>"
+    }
+  }
+}

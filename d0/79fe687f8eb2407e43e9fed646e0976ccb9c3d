@@ -1,0 +1,27 @@
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/AppointmentPageOutput.java
+  s_ada19176724cda::t_ccacd8381bbb47 135,139,143,147
+  s_ada19176724cda::t_10ef20ef0d0fe2 46-47,49-50
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/enums/AppointmentServiceTypeEnum.java
+  s_ada19176724cda::t_10306b123e0caf 20-39
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_ada19176724cda::t_5ed0bd0d13a4c8 1333-1335
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentQueryAssembler.java
+  s_ada19176724cda::t_126b38be3a39a4 14-15
+  s_ada19176724cda::t_363229dfd04627 117-121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d079fe687f8eb2407e43e9fed646e0976ccb9c3d",
+  "prompts": {},
+  "sessions": {
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

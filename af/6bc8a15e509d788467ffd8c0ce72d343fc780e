@@ -1,0 +1,82 @@
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_73dabae1135206::t_79d10640f5c169 396-397
+  s_73dabae1135206::t_42072967bec515 10
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.en-US.properties
+  s_73dabae1135206::t_33c783de1f873e 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.id-ID.properties
+  s_73dabae1135206::t_33c783de1f873e 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.fr-FR.properties
+  s_73dabae1135206::t_33c783de1f873e 32
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_73dabae1135206::t_2e6b0fe28ec069 245-246,255-256
+  s_73dabae1135206::t_5eb95bca4560b1 9
+  s_73dabae1135206::t_ac4dbc8d8cdb0b 283-309
+  s_7ecfdcd69e3e2d::t_02b48204d0ae8a 282
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.hu-HU.properties
+  s_73dabae1135206::t_33c783de1f873e 32
+C01-svc-config/svc-core-config/pom.xml
+  s_73dabae1135206::t_ae149481d18056 109-110
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/service/data/mdm_parts/GetMdmPartsInput.java
+  s_73dabae1135206::t_e36a87f310579c 24
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_552298deb9d0b2 989-993,995
+  s_73dabae1135206::t_76245cd1e7d536 1249-1253
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_73dabae1135206::t_8209fd37cb25f0 272
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-ES.properties
+  s_73dabae1135206::t_33c783de1f873e 32
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/config/service/data/svc_labour_hour_type_price/QueryLabourHourTypeCodeByDealerCodeInput.java
+  s_73dabae1135206::t_442cbab7dee104 34
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_69ab0451a144a3 101
+  s_73dabae1135206::t_3dac4a7d801fa7 184-185
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_73dabae1135206::t_8c081ce0d33e54 39-41
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.de-DE.properties
+  s_73dabae1135206::t_33c783de1f873e 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nl-NL.properties
+  s_73dabae1135206::t_33c783de1f873e 32
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_73dabae1135206::t_e71d8023f5667d 160,162
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_73dabae1135206::t_33d3de6afa21be 1179
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_73dabae1135206::t_4bd0e1766a6f6a 183-191
+  s_73dabae1135206::t_37a68cc753b3e9 10
+  s_73dabae1135206::t_355341ad5c2e27 79-87
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_73dabae1135206::t_9e76de4312677a 106,148,190,267,309
+  s_73dabae1135206::t_5a4f3b3cce68cf 229
+  s_73dabae1135206::t_e86ba3e9c3890c 62
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_73dabae1135206::t_b678876dcf33d1 280-283,296,299-301,303
+  s_73dabae1135206::t_aa527d6d001ff2 205,207
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-MX.properties
+  s_73dabae1135206::t_33c783de1f873e 32
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentPartServiceImpl.java
+  s_7ecfdcd69e3e2d::t_e5a2f1cea9485b 275-276,278-289
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "af6bc8a15e509d788467ffd8c0ce72d343fc780e",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_7ecfdcd69e3e2d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb8c23e4-bc36-4bac-94f0-e79eaaa51246",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

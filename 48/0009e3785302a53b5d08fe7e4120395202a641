@@ -1,0 +1,33 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_8bbde6e3cbd03b::t_4134418443d0ae 95-96
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_8bbde6e3cbd03b::t_369e3236589773 75-92
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_8bbde6e3cbd03b::t_bb567408efe3b8 40-41,230
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_8bbde6e3cbd03b::t_7698a75e8e4c75 281,385
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_8bbde6e3cbd03b::t_b5b86cbb9bb031 258,289,389
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_8bbde6e3cbd03b::t_7bbe076924b4b1 342-343,360-361,366,392,395-396,398-400,469,471,530-531,548-549
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_8bbde6e3cbd03b::t_6d2d79fd76a944 41,273-274,291-296,301,329-333,433-434,493-495,511-516
+tc_test/full_runner.py
+  s_8bbde6e3cbd03b::t_afc804662281be 1-145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "480009e3785302a53b5d08fe7e4120395202a641",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

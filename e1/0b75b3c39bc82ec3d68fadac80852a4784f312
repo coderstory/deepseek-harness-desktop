@@ -1,0 +1,41 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/MaintenanceRecordImportError.java
+  s_763b6b44969f4b::t_744112eea1e9ac 1-101
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/MaintenanceRecordImportModel.java
+  s_763b6b44969f4b::t_5fcfae2c05c9ba 1-91
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/SubmitMaintenanceRecordInput.java
+  s_763b6b44969f4b::t_a465c9749b8695 1-28
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/ImportMaintenanceRecordOutput.java
+  s_763b6b44969f4b::t_2030f395e2e152 1-47
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/ImportTemplateInput.java
+  s_763b6b44969f4b::t_3f48bdc083beff 1-22
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/DynamicQueryMaintenanceRecordOutput.java
+  s_763b6b44969f4b::t_5a47d7f6e33099 1-225
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/SvcMaintenanceRecordIdInput.java
+  s_763b6b44969f4b::t_67190eb182bea9 1-32
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/UpdateMaintenanceRecordInput.java
+  s_763b6b44969f4b::t_e74dde7339e8c6 1-120
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/GetMaintenanceRecordOutput.java
+  s_763b6b44969f4b::t_54b4f889e2904e 1-411
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/CreateMaintenanceRecordInput.java
+  s_763b6b44969f4b::t_ddbccf037cd94e 1-95
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/DynamicQueryMaintenanceRecordInput.java
+  s_763b6b44969f4b::t_dbda1e280b910a 1-143
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/ExportMaintenanceRecordModel.java
+  s_763b6b44969f4b::t_9952d1dfea95c5 1-171
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e10b75b3c39bc82ec3d68fadac80852a4784f312",
+  "prompts": {},
+  "sessions": {
+    "s_763b6b44969f4b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f1e82542-1b73-410d-bda9-5887360ac371",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

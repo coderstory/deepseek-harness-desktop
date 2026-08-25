@@ -1,0 +1,55 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/AesSecureUtil.java
+  s_f0368c103cd724::t_36fcdc55053e51 26-27
+  s_f0368c103cd724::t_ec647423cb2b67 9-10
+  s_f0368c103cd724::t_096acde3d14d74 167-174
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_f0368c103cd724::t_54f30eeb8c2b6f 135
+  s_f0368c103cd724::t_72bb012ca5c176 1086
+  s_f0368c103cd724::t_b327592be62236 1058
+  s_f0368c103cd724::t_ab1c9063f4a6fc 1427
+  s_f0368c103cd724::t_3e142d9e4dae12 299-306,308-315
+  s_f0368c103cd724::t_58948753cbb157 1017
+  s_f0368c103cd724::t_2e55247744d3e2 1050
+  s_f0368c103cd724::t_37367fa9e44c8e 1305
+  s_f0368c103cd724::t_870782173d0885 156
+  s_f0368c103cd724::t_f037fe0b8d2f8b 1194
+  s_f0368c103cd724::t_d0eed7e7266a53 1094
+  s_f0368c103cd724::t_6638aaf66b27d5 1488
+  s_f0368c103cd724::t_816a3112e53bb3 1516
+  s_f0368c103cd724::t_35db0c1aa0c3a6 1248
+  s_f0368c103cd724::t_c0375480d60ff3 1506
+  s_f0368c103cd724::t_d312847216c756 1126
+  s_f0368c103cd724::t_2441f5a7bece2e 1498
+  s_f0368c103cd724::t_616df2023293f5 1419
+  s_f0368c103cd724::t_769deff095f8d3 1174
+  s_f0368c103cd724::t_4c37a0637c6f85 1449
+  s_f0368c103cd724::t_8c964b34c7ae51 1186
+  s_f0368c103cd724::t_cd7c2796ca05c2 1209
+  s_f0368c103cd724::t_378eb052c48ec5 1377
+  s_f0368c103cd724::t_5afe2895926e01 307
+  s_f0368c103cd724::t_cb0c7b0e56d197 1441
+  s_f0368c103cd724::t_d829bb577aeab6 1263
+  s_f0368c103cd724::t_ecf609b5c93573 1385
+  s_f0368c103cd724::t_b21c5d386598bd 1136
+  s_f0368c103cd724::t_3974c90abfacce 1271
+  s_f0368c103cd724::t_d708bafc10c7ee 1295
+  s_f0368c103cd724::t_448408dfb00318 148
+  s_f0368c103cd724::t_9297a309b85e4f 175
+  s_f0368c103cd724::t_61fd54e71a3181 1166
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9bef744676b95afed7582409809f7b15aef0cb0b",
+  "prompts": {},
+  "sessions": {
+    "s_f0368c103cd724": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "58b2416f-e6d5-457c-b09a-e5c0fe2638eb",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

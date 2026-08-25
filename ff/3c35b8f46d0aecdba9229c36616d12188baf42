@@ -1,0 +1,62 @@
+C06-svc-delivery/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 30
+C04-svc-maintain/svc-cloud-maintain/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 31
+C01-svc-config/svc-cloud-config/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 39
+C02-svc-appointment/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 30
+D01-dependence/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 29
+D03-deploy/svc-standard-api/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 164
+C01-svc-config/svc-core-config/pom.xml
+  s_4a3a801b02e7a3::t_884407e8dce27e 112
+C03-svc-reception/svc-cloud-reception/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 39
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 110
+C01-svc-config/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 33
+C09-svc-pdi/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 30
+C10-svc-inc/svc-core-inc/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 142
+  s_4a3a801b02e7a3::t_a3051089c5bed0 106
+C03-svc-reception/svc-core-reception/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 13,129,147,166
+C04-svc-maintain/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 30
+D03-deploy/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 29
+C09-svc-pdi/svc-core-pdi/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 58
+C04-svc-maintain/svc-core-maintain/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 129
+C06-svc-delivery/svc-core-delivery/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 98
+C06-svc-delivery/svc-cloud-delivery/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 31
+C02-svc-appointment/svc-cloud-appointment/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 45
+C03-svc-reception/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 30
+C09-svc-pdi/svc-cloud-pdi/pom.xml
+  s_4a3a801b02e7a3::t_32f6143d6cb907 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ff3c35b8f46d0aecdba9229c36616d12188baf42",
+  "prompts": {},
+  "sessions": {
+    "s_4a3a801b02e7a3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "51c5d7c1-21ca-4f69-981e-a9fbd7d37fd1",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

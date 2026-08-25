@@ -1,0 +1,93 @@
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceQbWarrantyTest.java
+  s_42476d464d1701::t_a57da1bbe548b5 274-338
+  s_42476d464d1701::t_581e4b63209872 26,34,40
+  s_42476d464d1701::t_b2752eaf9c222c 1-25,27-33,35-39,41-64,81-273,339
+  s_42476d464d1701::t_698d7ca388b960 65-80
+.planning/ROADMAP.md
+  s_4e640215477911::t_315fc994509130 37
+  s_4e640215477911::t_07b805717cdd92 197,201-207,220
+  s_42476d464d1701::t_57dc860e03460f 188-195
+  s_4e640215477911::t_f55a8725ae2cb4 38
+  s_4e640215477911::t_f1e8ed20578a55 174-187
+  s_4e640215477911::t_9b74c597939850 199
+  s_4e640215477911::t_f75af147a67eca 11
+  s_4e640215477911::t_b1f7abbf5dbe71 200
+  s_4e640215477911::t_c4a94dca978000 198
+  s_f4ecd1b3b94d19::t_741b4423a6770b 196
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_42476d464d1701::t_0b948407251aab 90-91
+  s_42476d464d1701::t_f7e225a24e269e 439
+  s_42476d464d1701::t_d773fbd0c464cc 161-185
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_42476d464d1701::t_17f58edbd027bc 450
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_42476d464d1701::t_0e2dcd1282d913 971-972
+  s_42476d464d1701::t_749c4f3f82dd1c 42
+  s_42476d464d1701::t_055667184ebab3 866-879
+  s_42476d464d1701::t_f3297006d319c1 906-915
+  s_42476d464d1701::t_624307a7856e27 19
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_42476d464d1701::t_4f5776ee9b9761 32,38,45
+  s_42476d464d1701::t_5bb7a57f56164c 76-92
+  s_42476d464d1701::t_b4456a3ba4ce9f 1-31,33-37,39-44,46-75,93-424
+C03-svc-reception/svc-core-reception/pom.xml
+  s_42476d464d1701::t_9f2989fc721af5 113-125
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_42476d464d1701::t_405ff85533edfd 66-67
+  s_42476d464d1701::t_33b98b71c4b024 712-727
+  s_42476d464d1701::t_8a3dbc1b78bec1 56
+  s_42476d464d1701::t_5d1e808c12664b 21
+  s_42476d464d1701::t_517545450b9a2c 572-577
+  s_42476d464d1701::t_bfb7fd9a40cc19 611-660
+  s_42476d464d1701::t_40e011433bee2f 31,35-36
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_42476d464d1701::t_7e8bc7c1209f3f 514-532
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerEnforceTest.java
+  s_42476d464d1701::t_e4abaa5a5cecd0 1-244
+.planning/STATE.md
+  s_4e640215477911::t_02e2bf3216cdb9 5-6
+  s_4e640215477911::t_543666d4a17ad1 7-11,13
+  s_42476d464d1701::t_ff370f8e3d6e67 103
+  s_4e640215477911::t_5da8256c745701 56-59
+  s_8ebfb58d25d624::t_39599becd677c7 115-116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8480d98373aa7a0c5babcb36df33779628754b6b",
+  "prompts": {},
+  "sessions": {
+    "s_42476d464d1701": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "54c0521b-305f-4296-a7d7-0629820c968b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_4e640215477911": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "31e090c6-38a5-4a64-a917-dc82377525a5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8ebfb58d25d624": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a5ff6483876923e6e",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_f4ecd1b3b94d19": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ae9be9070228bef85",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

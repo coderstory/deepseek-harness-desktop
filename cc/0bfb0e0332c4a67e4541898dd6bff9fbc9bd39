@@ -1,0 +1,35 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_11693b58d96538 1095
+  s_73dabae1135206::t_e8d7fb822309bb 1096-1097
+  s_73dabae1135206::t_0bf3c5a4431f54 1230-1232
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_73dabae1135206::t_c5e19dd56b3d38 237-239,241
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_73dabae1135206::t_f2c237baca519c 423-424
+  s_73dabae1135206::t_bad223ff89d427 94
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_73dabae1135206::t_a83f2670dff657 112
+  s_73dabae1135206::t_49b8b0bcfe9827 461-462
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_73dabae1135206::t_58457666b89088 400-401,404-405
+  s_73dabae1135206::t_fd6d748be10e03 306-307,310-311
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_73dabae1135206::t_c8aa11e8014d5a 430-431,434-435
+  s_73dabae1135206::t_c524e0cea2cee2 338-339,342-343
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cc0bfb0e0332c4a67e4541898dd6bff9fbc9bd39",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

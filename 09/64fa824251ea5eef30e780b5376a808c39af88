@@ -1,0 +1,45 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartEnt.java
+  s_8bbde6e3cbd03b::t_a37963dbd1eae5 123-130
+  s_8bbde6e3cbd03b::t_b980f3eb50a6ea 576-591
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_order_part/GetSvcServiceOrderPartOutput.java
+  s_8bbde6e3cbd03b::t_452e3db9aa585e 4,19-24
+  s_8bbde6e3cbd03b::t_7f846631eea4c4 25
+C12-svc-estimate/svc-cloud-estimate/src/main/java/svc/cloud/estimate/service/data/svc_estimate_order/CreateEstimateOrderPartInput.java
+  s_8bbde6e3cbd03b::t_452e3db9aa585e 4
+  s_8bbde6e3cbd03b::t_eefe77062fa47f 40-47,214-229
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/SvcServiceOrderPartPut.java
+  s_8bbde6e3cbd03b::t_868b10261be952 42-47
+  s_8bbde6e3cbd03b::t_ff87da50787b28 168-183
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_part/CreateSvcAppointmentPartInput.java
+  s_8bbde6e3cbd03b::t_452e3db9aa585e 4
+  s_8bbde6e3cbd03b::t_e916f698297090 44-51,221-236
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartView.java
+  s_8bbde6e3cbd03b::t_2973745a011edf 108-115
+  s_8bbde6e3cbd03b::t_b00fb1af9f1de8 548-563
+doc/八月需求/八月需求上线操作清单.md
+  s_8bbde6e3cbd03b::t_65e48eb687ffe1 14-15,18-19,22-23
+  s_8bbde6e3cbd03b::t_e6c0ff4daa9c0f 13
+  s_8bbde6e3cbd03b::t_1d03a954882b8e 16-17
+  s_8bbde6e3cbd03b::t_1a38900f15d357 20-21
+  s_8bbde6e3cbd03b::t_0e6ae049364cdc 24-25
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartEnt.java
+  s_8bbde6e3cbd03b::t_f9476c305009b2 64-71
+C12-svc-estimate/svc-core-estimate/src/main/java/svc/core/estimate/entity/SvcEstimateOrderPartEnt.java
+  s_8bbde6e3cbd03b::t_41d8a38ae0c3da 66-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0964fa824251ea5eef30e780b5376a808c39af88",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

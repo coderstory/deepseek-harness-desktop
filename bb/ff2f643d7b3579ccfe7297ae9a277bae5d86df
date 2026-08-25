@@ -1,0 +1,43 @@
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_73dabae1135206::t_49b455bc925b34 97-128
+  s_73dabae1135206::t_b4558ce8d1948e 96
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_73dabae1135206::t_8ac56140d7baa3 17
+  s_73dabae1135206::t_17a8ccfdaa0460 263
+  s_73dabae1135206::t_c0d749f15b3676 327,330,334-335,337,352-355,361-364,368-396
+  s_fbfe372877ccbc::t_7203b393f9e6ab 397
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_73dabae1135206::t_778087c86af4b3 149-154
+  s_73dabae1135206::t_093280585d0573 239-244,247-265,270-280
+  s_73dabae1135206::t_c264238c687ab9 290,296-297,309-312
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_73dabae1135206::t_8aa98e9e124de2 376-378
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_73dabae1135206::t_5ff305f6471cb4 234-238,240-250
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_91938056452826 1133-1140,1142-1149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "bbff2f643d7b3579ccfe7297ae9a277bae5d86df",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

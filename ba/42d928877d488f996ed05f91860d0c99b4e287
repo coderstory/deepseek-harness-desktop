@@ -1,0 +1,21 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/job/SyncIclaimHourPriceJob.java
+  s_16916f05dd1ec1::t_ad88bffd4950ed 137-141
+  s_16916f05dd1ec1::t_ce191c4ee0187d 60-63,66-70
+  s_16916f05dd1ec1::t_7f5c20d777ec1e 71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ba42d928877d488f996ed05f91860d0c99b4e287",
+  "prompts": {},
+  "sessions": {
+    "s_16916f05dd1ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1934a4c0-f539-475f-998b-78710ffbefa6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

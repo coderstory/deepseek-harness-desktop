@@ -1,0 +1,79 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_73dabae1135206::t_429811e1ef6366 284,289
+  s_73dabae1135206::t_3663dc0ba345cb 190-198,204
+  s_73dabae1135206::t_df7f32396e78ad 297
+  s_73dabae1135206::t_012faf15ed0d69 364,369
+  s_73dabae1135206::t_1c5afa4d96fb6c 244
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/service/data/mdm_parts/GetMdmPartsInput.java
+  s_73dabae1135206::t_12f1ed6ab80df5 24
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_73dabae1135206::t_13da25989ea708 833,838,842,847
+  s_73dabae1135206::t_04b24ecd6f2f30 682-687
+  s_73dabae1135206::t_7c9e45cdc03132 1118,1123,1127,1132
+  s_73dabae1135206::t_9e55cf86dd5a43 990-994
+  s_73dabae1135206::t_c1aac68d52370b 1173-1175
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_f78ea52cd1e578 215,236,242,256
+  s_73dabae1135206::t_b41fc7786af38d 115,120,124
+  s_73dabae1135206::t_5f638ef32b16f4 182-188
+  s_73dabae1135206::t_79e993a7b281e2 67-72
+  s_73dabae1135206::t_71be26249463f9 104
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_73dabae1135206::t_263505f8af796d 59
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/config/service/data/svc_labour_hour_type_price/QueryLabourHourTypeCodeByDealerCodeInput.java
+  s_73dabae1135206::t_74d783b77519a0 34
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EuPotdDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_06153a45180dea 49
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_73dabae1135206::t_23995dd0a6a7cc 19
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_73dabae1135206::t_121cc50efced8c 28
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_55866252075b8a 886-892
+  s_73dabae1135206::t_1eb4e29bdec35c 987-988
+  s_73dabae1135206::t_fce9263fbf7f6e 2078,2082
+  s_73dabae1135206::t_350cb60ed2f98d 2159
+  s_73dabae1135206::t_83ee5a55304f76 551-552
+  s_73dabae1135206::t_ea2f76e2039d9e 2215
+  s_73dabae1135206::t_19e70360a29aad 2178
+  s_73dabae1135206::t_ab5dbc6757cebd 1033,1038,1043
+  s_73dabae1135206::t_69226806bdbfce 2079-2081
+  s_73dabae1135206::t_634b5e51aad5d7 768-769
+  s_73dabae1135206::t_a7a01a278fbdac 1147,1151-1152,1154,1159,1165
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_a86cb5d0f700f9 79
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_73dabae1135206::t_35c869512674d7 144-152,159
+  s_73dabae1135206::t_8c596ddfa0fa1b 249,255
+  s_73dabae1135206::t_4454df6b5a07af 306,312,320
+  s_73dabae1135206::t_58e99163fe7335 278
+  s_73dabae1135206::t_a368c64830d9c7 388,393,401
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/SparePartHelper.java
+  s_73dabae1135206::t_378d38f0e16a12 59-60
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_73dabae1135206::t_295ff6e85a3310 977-978
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentPartServiceImpl.java
+  s_73dabae1135206::t_125ba254db4705 273-274,288
+  s_73dabae1135206::t_30c04dcf0a1afd 308,311,315,319
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_73dabae1135206::t_0eb56e032648cd 264,273,281,284
+  s_73dabae1135206::t_b1a1ce27b9abf4 202-207
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsInput.java
+  s_73dabae1135206::t_3c8d5b51522e5f 23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "34ea6b332c15bc3e83c9e0d43e8880a88bf42744",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

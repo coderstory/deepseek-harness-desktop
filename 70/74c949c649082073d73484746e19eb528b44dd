@@ -1,0 +1,38 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/enums/AppointmentTypeEnum.java
+  s_636d874efc02e9::t_f4cd322d5833ea 1-76
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/notice/appointment-common-notice.ko-KR.properties
+  s_636d874efc02e9::t_f4cd322d5833ea 1-2
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/notice/appointment-common-notice.en-US.properties
+  s_636d874efc02e9::t_f4cd322d5833ea 1-2
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/notice/AppointmentCommonNoticeI18n.java
+  s_636d874efc02e9::t_f4cd322d5833ea 1-35
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/util/AppointmentPdfParamsBuilderTest.java
+  s_636d874efc02e9::t_f4cd322d5833ea 13,16-17,29-31,33-36,38,42-46,54,58-73,78,80,82,84-87,96,106-109,111-113,115-118,120-121
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppointmentConfirmationPdfServiceImpl.java
+  s_636d874efc02e9::t_f4cd322d5833ea 27-29,34-35,38-39,41,63,66-71,73-74,87,90,94
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/util/AppointmentPdfParamsBuilder.java
+  s_636d874efc02e9::t_f4cd322d5833ea 5,16-21,25-36,41-53,57-63,73,78,82-87,89,98-104,113-120
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/AppointmentConfirmationPdfService.java
+  s_636d874efc02e9::t_f4cd322d5833ea 27,30
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/job/SvcAppointmentMessageSaveJob.java
+  s_636d874efc02e9::t_a51c6b33005319 224-259,261-262,265-274,278-279,281
+  s_636d874efc02e9::t_f4cd322d5833ea 31,48,51,129-130,133,137,139-142,148,153,171,184,187,191,193,196-199,205-209,211,213,216,220,282,284,322-339
+  s_636d874efc02e9::t_09518e85db24ee 280,283
+  s_636d874efc02e9::t_d3f7d6db755aa6 340
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7074c949c649082073d73484746e19eb528b44dd",
+  "prompts": {},
+  "sessions": {
+    "s_636d874efc02e9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6ef38d9b-4558-4823-9a4b-2a468e89c6b2",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

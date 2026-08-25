@@ -1,0 +1,35 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_f9731531312491::t_e22010932acd4f 1-285
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3f33800721761a7e8fa218b98359e855fcd13365",
+  "prompts": {},
+  "sessions": {
+    "s_3c2882a0939eac": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0bd69670-ea9f-4e9a-aff3-45dea697ee66",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_ad4e6ba698bade": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8ec1916a-70bb-4aae-90cf-ccf723f35efa",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

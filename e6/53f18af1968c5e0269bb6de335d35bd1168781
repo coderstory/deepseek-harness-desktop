@@ -1,0 +1,42 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_26b3a083c89252::t_fb4501c13981b0 321-323,327
+C02-svc-appointment/svc-core-appointment/src/main/resources/mybatis/mapper/svc/core/appointment/SvcAppointmentPartViewMapper.xml
+  s_26b3a083c89252::t_13558054112ef8 24-25
+  s_26b3a083c89252::t_33489798ed54be 93-94
+  s_26b3a083c89252::t_14ca92cd0d8912 46-48
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceOrderPartMapper.xml
+  s_26b3a083c89252::t_dbf7bd62a8be78 10
+  s_26b3a083c89252::t_36f8e253fc78b2 75,81
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_26b3a083c89252::t_94073877f86872 1179-1181,1186-1187,1191
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_26b3a083c89252::t_840882755ec2ef 326-328
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartEnt.java
+  s_26b3a083c89252::t_762c2513df2067 354-369
+C12-svc-estimate/svc-core-estimate/src/main/java/svc/core/estimate/entity/SvcEstimateOrderPartEnt.java
+  s_fbfe372877ccbc::t_72061af9206099 337-352
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e653f18af1968c5e0269bb6de335d35bd1168781",
+  "prompts": {},
+  "sessions": {
+    "s_26b3a083c89252": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d29fc2f7-3683-4929-b944-cab438817aa2",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

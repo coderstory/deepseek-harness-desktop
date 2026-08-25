@@ -1,0 +1,50 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_e2b4709d42f42d::t_f446605ae5a098 846,862-871
+  s_544348ec4164ba::t_5d0344c277912c 1163
+  s_e2b4709d42f42d::t_5cf63fe22ff14b 1145,1160-1162,1164-1169
+  s_544348ec4164ba::t_1e22ed9b24815e 1112,1175-1197
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_16916f05dd1ec1::t_f2cc123472862f 969
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_42476d464d1701::t_f0d222643bae04 22,46-47,50-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6474bfc8b7403539324a307a0a66aeb269562738",
+  "prompts": {},
+  "sessions": {
+    "s_16916f05dd1ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1934a4c0-f539-475f-998b-78710ffbefa6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_42476d464d1701": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "54c0521b-305f-4296-a7d7-0629820c968b",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_544348ec4164ba": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0a17c7cb-f64d-4af9-b803-e5ac742e5415",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_e2b4709d42f42d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2f9d7123-84c0-4d2c-9107-742acc6d3f3b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

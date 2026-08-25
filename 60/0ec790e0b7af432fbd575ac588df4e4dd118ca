@@ -1,0 +1,67 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/ratelimit/LeakyBucket.java
+  s_ada19176724cda::t_35246b0e86f4e6 44-49,57-97
+  s_ada19176724cda::t_fa107997b78247 18
+  s_ada19176724cda::t_d2cd96002c8867 32-33,40-43,50-56
+  s_ada19176724cda::t_478bec7d5a570f 1-3,5-17,19-31,34-39,98-99
+  s_ada19176724cda::t_4b60d1e29bb96d 4
+C10-svc-inc/svc-core-inc/src/test/java/svc/core/inc/ratelimit/LeakyBucketTest.java
+  s_ada19176724cda::t_09c473456c030d 85
+  s_ada19176724cda::t_311f90486d8362 86,88,94
+  s_ada19176724cda::t_931a2f0939a701 1-84,87,89-93,95-194
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_ada19176724cda::t_8316bbcbcc6e95 55-56,59-71
+  s_ada19176724cda::t_82811cd24e92d1 57-58
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/ratelimit/FunnelStateCache.java
+  s_ada19176724cda::t_dd4aa16fc5a96d 1-81
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_ada19176724cda::t_74a8ce06f06493 1263-1264
+  s_ada19176724cda::t_e5fa51da7d02ff 1447-1448
+  s_ada19176724cda::t_82c3d96ab64b4c 1673-1674
+  s_ada19176724cda::t_5978abca26935e 451-463
+  s_ada19176724cda::t_f1e1e16366190c 1326
+  s_ada19176724cda::t_e7d4b6f26454d9 1303
+  s_ada19176724cda::t_bdc62f07c0aa5b 1446
+  s_ada19176724cda::t_b458a63cff3890 1603-1604
+  s_ada19176724cda::t_a04d66b1c297ed 1409
+  s_ada19176724cda::t_128a2dc01724e3 1658,1662-1663
+  s_ada19176724cda::t_6262942a08cb55 502-507,511-523,525,528-537
+  s_ada19176724cda::t_ddbd947727f5a6 1602
+  s_ada19176724cda::t_5b66c8e0086820 1410-1411
+  s_ada19176724cda::t_89d692fbc86d04 1304-1305
+  s_ada19176724cda::t_3114a401705469 1384-1385
+  s_ada19176724cda::t_085bd786c0191b 1672
+  s_ada19176724cda::t_fccf22a17f8352 185-190
+  s_ada19176724cda::t_e1422127a55595 484-488,492-501
+  s_ada19176724cda::t_0dd52651499ba6 441-450,464-466,472-478,481-483
+  s_ada19176724cda::t_0187057d8842f0 508-510
+  s_ada19176724cda::t_024e754660797e 467-469
+  s_ada19176724cda::t_7739ba3e1c944f 1383
+  s_ada19176724cda::t_ba37f66431d09b 1660-1661
+  s_ada19176724cda::t_952df5e537c89a 69
+  s_ada19176724cda::t_947b46402ce88b 1659
+  s_ada19176724cda::t_45e06592f38454 177-181
+  s_ada19176724cda::t_a7c17a608aba3a 1671,1675-1676
+  s_ada19176724cda::t_e2ae101bfdad6c 1327-1328
+  s_ada19176724cda::t_f02ad095e67764 489-491
+  s_ada19176724cda::t_351327580a7ea7 1262
+  s_ada19176724cda::t_3f9ed746af3b8f 470-471
+  s_ada19176724cda::t_f493dc5e27ec05 479-480
+  s_ada19176724cda::t_a3f429eb1b0f6b 524
+  s_ada19176724cda::t_d7928506359705 526-527
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "600ec790e0b7af432fbd575ac588df4e4dd118ca",
+  "prompts": {},
+  "sessions": {
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

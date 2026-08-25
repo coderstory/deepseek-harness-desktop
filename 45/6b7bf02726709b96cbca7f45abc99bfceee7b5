@@ -1,0 +1,21 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_16916f05dd1ec1::t_e5e01932223b2a 177
+  s_16916f05dd1ec1::t_8d6228d3b3360f 32
+  s_16916f05dd1ec1::t_b243a8a12dfdc1 161
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "456b7bf02726709b96cbca7f45abc99bfceee7b5",
+  "prompts": {},
+  "sessions": {
+    "s_16916f05dd1ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1934a4c0-f539-475f-998b-78710ffbefa6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

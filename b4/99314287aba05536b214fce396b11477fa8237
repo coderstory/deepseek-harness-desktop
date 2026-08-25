@@ -1,0 +1,37 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_ada19176724cda::t_648ed0151f57e9 318-319
+  s_ada19176724cda::t_28434d084cbd78 317,320,322-325,327-329,331-333,808
+  s_ada19176724cda::t_bd7f015ebdcfa8 1174
+  s_ada19176724cda::t_207bee7ef6456e 1343
+  s_ada19176724cda::t_b2d745b7016af7 1408-1409,1413-1416
+  s_ada19176724cda::t_e8c5226988230f 1493
+  s_ada19176724cda::t_a53a0f58a51b5a 1517-1518,1528-1530
+  s_ada19176724cda::t_0967c1121845a3 90,321,326,330,1173,1203,1342,1420,1492,1499,1536
+  s_ada19176724cda::t_819a2b8f6794e7 809-827
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/result/XAppPageResult.java
+  s_ada19176724cda::t_1b72bca17a3cf6 23,54-95
+  s_ada19176724cda::t_4964b7dfff1358 39
+  s_ada19176724cda::t_6a3de86646e5e9 20-22
+  s_ada19176724cda::t_bf74f95b929e34 24-26,36-38
+  s_ada19176724cda::t_f3a42072200509 40-42,51-53
+  s_ada19176724cda::t_c16d278b6a4b06 96-98
+  s_ada19176724cda::t_3e9c1947ba0972 1-19,27-35,43-50,99-239
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/result/Page.java
+  s_ada19176724cda::t_14cd6df394dce8 1-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b499314287aba05536b214fce396b11477fa8237",
+  "prompts": {},
+  "sessions": {
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

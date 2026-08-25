@@ -1,0 +1,35 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_f3e84b85d642ad::t_7d28111e051a87 49
+  s_f3e84b85d642ad::t_ba35af7644b3b0 2498-2502
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/WebHeaderUtils.java
+  s_f3e84b85d642ad::t_fb89a6b830745b 45-56
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/utils/TenantUtil.java
+  s_f3e84b85d642ad::t_0aefe139a07225 83-87,91-92,95-98,102-109
+  s_f3e84b85d642ad::t_316c56281943cc 88-90,93-94,99-101
+  s_f3e84b85d642ad::t_74c6bba568de37 81-82
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_f3e84b85d642ad::t_7c12c1e43d3338 15-16
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/MaintainExternalServiceImpl.java
+  s_f3e84b85d642ad::t_dca7f568d46078 31
+  s_f3e84b85d642ad::t_1097aa7d5b7fcd 163-168
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentHelper.java
+  s_f3e84b85d642ad::t_176262a2604e7a 293-298
+  s_f3e84b85d642ad::t_46c906bf9d1d0f 33
+  s_f3e84b85d642ad::t_3fe7af111747c5 331-335
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3120ba00a29704cbebaf268014a495e820d0d9fe",
+  "prompts": {},
+  "sessions": {
+    "s_f3e84b85d642ad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f7450ce7-fd50-4897-8107-4b289db06996",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

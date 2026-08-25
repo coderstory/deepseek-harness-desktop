@@ -1,0 +1,30 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/ESignatureHelper.java
+  s_4a3a801b02e7a3::t_b1bb671d8efc3b 137
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_4a3a801b02e7a3::t_3e6db7474a45f5 146,316
+  s_4a3a801b02e7a3::t_83c91d70c3e8d7 89,92
+  s_4a3a801b02e7a3::t_5b5012a5a0464a 202
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_4a3a801b02e7a3::t_f9654597404fb1 70,73
+C00-svc-base/svc-core-base/pom.xml
+  s_4a3a801b02e7a3::t_51fabe004951d6 217-223
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_4a3a801b02e7a3::t_c996fdb797000b 93,96
+  s_4a3a801b02e7a3::t_1bdb63436d5fb0 220
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4087019305a84aef016b31f32ea88c810b97d82d",
+  "prompts": {},
+  "sessions": {
+    "s_4a3a801b02e7a3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "51c5d7c1-21ca-4f69-981e-a9fbd7d37fd1",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

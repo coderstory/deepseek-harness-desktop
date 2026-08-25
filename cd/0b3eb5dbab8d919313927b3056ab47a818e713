@@ -1,0 +1,59 @@
+C01-svc-config/svc-core-config/pom.xml
+  s_73dabae1135206::t_e1a2914bfad3d9 93-105
+  s_73dabae1135206::t_fcc27e7e66b552 123
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_73dabae1135206::t_a5e72ae903d8bd 19-20,23,25-28,30-31
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentMaintainItemServiceImplTest.java
+  s_73dabae1135206::t_d72c924d1a5eac 39
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/DealerPartPriceDto.java
+  s_73dabae1135206::t_10505cdb3f7a26 25,29
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_73dabae1135206::t_a381f42dd721b0 1132-1140
+  s_73dabae1135206::t_6bbb345e5a5938 841-849
+  s_73dabae1135206::t_a56562b1d137a9 1197-1199
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_73dabae1135206::t_85d0b23f694c85 72-73,81-92,113-114,120
+  s_73dabae1135206::t_df0b6560d938cc 15-21
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_73dabae1135206::t_36ed60ac94ce84 250
+  s_73dabae1135206::t_60aae0df77c641 251-253,256-264,268
+  s_73dabae1135206::t_0288644c8ce08e 291
+  s_73dabae1135206::t_fbf982be09f43c 317-318,325-326,328
+  s_73dabae1135206::t_1973350e146575 407-408,410
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_3c39e56fd00b5e 224-225,235-236
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_73dabae1135206::t_4c616b224d256d 377-378,380
+  s_73dabae1135206::t_83676c443e96cb 246-247,251-253
+  s_73dabae1135206::t_85aa0d7d4d67e4 293-294,296
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_73dabae1135206::t_c8e2143ab6e45e 995-999
+  s_73dabae1135206::t_788858699302aa 1160-1166
+  s_73dabae1135206::t_ca856aa4d6604d 1255-1258,1260-1264
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.zh-CN.properties
+  s_0ba0a0fd6df46f::t_a66f629ba4b324 16-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cd0b3eb5dbab8d919313927b3056ab47a818e713",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

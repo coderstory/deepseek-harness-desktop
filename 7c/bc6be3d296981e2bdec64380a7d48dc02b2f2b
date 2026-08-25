@@ -1,0 +1,26 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_16916f05dd1ec1::t_dd825c8fa85808 1120-1138
+  s_16916f05dd1ec1::t_05740c62d39551 14
+  s_16916f05dd1ec1::t_8cb22bd2a80135 835-853
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_16916f05dd1ec1::t_626b0c33c64ed8 111-129
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_16916f05dd1ec1::t_2f072d62a6b4aa 71-88
+  s_16916f05dd1ec1::t_30ae56c8757832 70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7cbc6be3d296981e2bdec64380a7d48dc02b2f2b",
+  "prompts": {},
+  "sessions": {
+    "s_16916f05dd1ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1934a4c0-f539-475f-998b-78710ffbefa6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

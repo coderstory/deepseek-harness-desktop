@@ -1,0 +1,30 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_8bbde6e3cbd03b::t_6234e5243bf08e 787-790,794
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_8bbde6e3cbd03b::t_82a8b8558528e7 271,275-276,278
+  s_8bbde6e3cbd03b::t_9c79dea42a930a 132-134
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_8bbde6e3cbd03b::t_9483f295275f7a 171,175-176,178
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/AbstractPotdDealerPurchaseInfoAclHandler.java
+  s_8bbde6e3cbd03b::t_99dabf484474e3 134,137-139
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_8bbde6e3cbd03b::t_d2f2f29645901a 1399
+  s_8bbde6e3cbd03b::t_675c67cd9c64d3 1407
+  s_8bbde6e3cbd03b::t_e6d7d4257613bb 1390
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2887be7d6416887da955c21796f62b8aa04939b3",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

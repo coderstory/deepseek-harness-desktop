@@ -1,0 +1,63 @@
+.planning/ROADMAP.md
+  s_f9731531312491::t_424dae9d8434dc 71-72,79,82
+  s_798b429084242e::t_896a82b314f6c1 53
+  s_f9731531312491::t_bdbfb0b20a8b59 54
+  s_798b429084242e::t_9066e7a0e7bcdb 157,159,161,164-166
+  s_f9731531312491::t_3eb5c09dd79c8a 179
+  s_f9731531312491::t_7c74d0e71006d3 36
+  s_2198f28b42bc3e::t_0b37cf7202c625 1-30,32-35,37-50,55-57,64-70,73-77,80-81,83-102,104-138,140-143,150-155,158,160,162-163,167-178
+  s_798b429084242e::t_86d0d48dea82b9 52
+  s_f9731531312491::t_243cd6868f06b6 103
+  s_f9731531312491::t_4d43000d161a32 139,145-149
+  s_798b429084242e::t_c4fb9539b950f0 59
+  s_475442aa82f3fa::t_c7e90ffb08bdfd 31
+  s_475442aa82f3fa::t_4d551d08883181 51,58,60-63,78,144,156
+.planning/STATE.md
+  s_475442aa82f3fa::t_a7e08a98a5f77b 49-50
+  s_475442aa82f3fa::t_f30c35ab3258c2 5-11,13-16
+  s_2198f28b42bc3e::t_859f0b0e70296c 19,21-27,34,37,39-43,45,47-48,51-55,58-90,92
+  s_2198f28b42bc3e::t_caa3555eff0d63 1,12,17-18,20,28-29,36,38,44,46,56-57,91,93
+  s_475442aa82f3fa::t_225506fed7abe1 30-33,35
+  s_2198f28b42bc3e::t_ea3108a9ad27ec 94-96
+  s_475442aa82f3fa::t_559ee841f72374 2-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "89c1da4dbce6cf696f3563dfe8102e0e51b25e2a",
+  "prompts": {},
+  "sessions": {
+    "s_2198f28b42bc3e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "21b02209-03d7-446f-bc19-55d92145cbe9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_475442aa82f3fa": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "473d0c91-a736-4dcf-a6ea-3ce870666d15",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_798b429084242e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d47255-aec7-4b01-8342-d11ff814b1bd",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

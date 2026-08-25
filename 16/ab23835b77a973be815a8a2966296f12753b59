@@ -1,0 +1,131 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.uz-UZ.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 33-34
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-MX.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 32-33
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nl-NL.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 32-33
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.en-US.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 32-33
+C03-svc-reception/svc-core-reception/pom.xml
+  s_73dabae1135206::t_cf0401daee0f00 113-125
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_4ed2853dfb43b3::t_2f1c87e7614bf4 262,267-268,271
+  s_4ed2853dfb43b3::t_f26c35a70c5ec7 348
+  s_4ed2853dfb43b3::t_e3007e9c7f7f75 241,243-245
+  s_4ed2853dfb43b3::t_9d61dda2c17b6d 353
+  s_4ed2853dfb43b3::t_4d6647cf718038 32
+  s_4ed2853dfb43b3::t_4df2136b4ddd2f 347
+  s_4ed2853dfb43b3::t_f2af4243a0c249 266,344
+  s_4ed2853dfb43b3::t_81367f8ed12b19 11-12
+  s_4ed2853dfb43b3::t_5672d437d655f4 263-265,278-280
+  s_4ed2853dfb43b3::t_59dbf125f77b9f 240
+  s_4ed2853dfb43b3::t_a3bdf0531af156 270
+  s_4ed2853dfb43b3::t_64eadfa2835d2b 194-199
+  s_4ed2853dfb43b3::t_8603c7fb16519e 269
+  s_4ed2853dfb43b3::t_11bab1260dc19b 272-277
+  s_4ed2853dfb43b3::t_e620d52f96c377 339-343,345-346,349-352,354-358
+  s_4ed2853dfb43b3::t_b1315b7eef9fd3 242
+  s_4ed2853dfb43b3::t_38080e6f4d202c 233-239,246
+  s_4ed2853dfb43b3::t_130d295e238afd 281
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.ru-RU.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 34-35
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.sk-SK.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 33-34
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-ES.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 32-33
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsInput.java
+  s_73dabae1135206::t_0bfb865d94f7b3 23-33
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.sv-SE.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 33-34
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_4ed2853dfb43b3::t_860a7fc1162f14 39-41
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.id-ID.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 32-33
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.ko-KR.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 33-34
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_4ed2853dfb43b3::t_2391e8b258e524 286-287
+  s_4ed2853dfb43b3::t_f662e1ed543502 261,263,265
+  s_4ed2853dfb43b3::t_6f7437e90e40eb 254-259,264,266
+  s_4ed2853dfb43b3::t_af255c6308abb0 40-41
+  s_4ed2853dfb43b3::t_dde6700f80d80d 232-253
+  s_4ed2853dfb43b3::t_d471db454d74bd 368-369
+  s_4ed2853dfb43b3::t_044b11c3937c1a 274-285,288-301,303
+  s_4ed2853dfb43b3::t_3ce73dc6ad5047 361-367,370-373,375-377
+  s_4ed2853dfb43b3::t_e87f931f275aba 14,16-18
+  s_4ed2853dfb43b3::t_7293ed84a1c47c 30
+  s_4ed2853dfb43b3::t_0dc7135d7750f9 262
+  s_4ed2853dfb43b3::t_4f8a99afdcd381 260
+  s_4ed2853dfb43b3::t_e6ece6f0a3185f 374
+  s_4ed2853dfb43b3::t_bf08d9a48f9c9d 378
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_73dabae1135206::t_d196653580ccc2 977
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_4ed2853dfb43b3::t_8bf768270b51ae 1-2,5-9,11-16,18-23,25-32,34-37,44,54,67,79-80,83,86,90,93-94,98-100,105-106,108-110,112,115-117,124-126,128,131-139,148-149,151-154,156-177,179-184,186-207,209-219,235-236,238,241,246-247,250,255-256,259-262,265-266,270-271,277-279,282-287,290-291,301-304,307,309-311,313-314,317,322,324-328,331-333,336-339,342-345,347-348,351-352,358-368,371-373,376-379,385-386,388-389,392-393,399-402,404-407,409-417,420,425,427-432
+  s_73dabae1135206::t_cf752d5c1d1843 50,76
+  s_4ed2853dfb43b3::t_39d5646951279b 403
+  s_4ed2853dfb43b3::t_2f5b33dbe7530e 24
+  s_73dabae1135206::t_36221321f9b3d7 142-143
+  s_73dabae1135206::t_1f143dc9233dcc 118-122,127
+  s_4ed2853dfb43b3::t_c336dd37a0180b 40,220-221,225-229,231-234,296,323,382,384,398,426
+  s_73dabae1135206::t_3e774fd46fc569 17
+  s_73dabae1135206::t_3a2055da7f40c0 10
+  s_4ed2853dfb43b3::t_3c8f1b9f7f4987 230,272
+  s_4ed2853dfb43b3::t_a027af6e12b6a5 104
+  s_73dabae1135206::t_98b3e1bf11b306 3-4,33,38-39,41-43,45-49,51-53,55-66,68-75,77-78,81,84-85,87-89,91-92,95-97,101-103,107,111,113-114,123,129-130,140-141,144,150,155,178,185,208,222-224,237,239-240,242-245,248-249,251-254,257-258,263-264,267-269,273-276,280-281,288-289,292-295,297-300,305-306,308,312,315-316,318-321,329-330,334-335,340-341,346,349-350,353-357,369-370,374-375,380-381,383,387,390-391,394-397,408,418-419,421-424,433
+  s_4ed2853dfb43b3::t_e3d61d2fa03309 145-147
+  s_73dabae1135206::t_6c12f8d7c2f429 82
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.th-TH.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 34-35
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceGetMdmPartsTest.java
+  s_73dabae1135206::t_2de95a503f6c23 1-93
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.fr-FR.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 32-33
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.cs-CZ.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 33-34
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nb-NO.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 33-34
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.hu-HU.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 32-33
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.de-DE.properties
+  s_4ed2853dfb43b3::t_f6ef658f7bb323 32-33
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_4ed2853dfb43b3::t_688579d02b82b8 388
+  s_4ed2853dfb43b3::t_96c7d6230021f9 286
+  s_4ed2853dfb43b3::t_d18b214f0914fb 1-239,241-285,287-387,389-442
+  s_4ed2853dfb43b3::t_e154ef6709b2df 240
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.zh-CN.properties
+  s_d32b3ceab68396::t_0e3a77a3b15623 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "16ab23835b77a973be815a8a2966296f12753b59",
+  "prompts": {},
+  "sessions": {
+    "s_4ed2853dfb43b3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf8fb2f2-45fb-490f-ba74-1c8db8b740d3",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_d32b3ceab68396": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a8ed9097ab07101ea",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

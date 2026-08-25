@@ -1,0 +1,59 @@
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/AppMessageNotifyService.java
+  s_ea473cf142c74a::t_c1178b43ffd58c 1-26
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppMqSyncHelper.java
+  s_ea473cf142c74a::t_d24a8572810df1 21
+  s_ea473cf142c74a::t_6a1c4d9df75d8d 7
+  s_e65876c4f61bf1::t_96d91a91c54161 31
+  s_ea473cf142c74a::t_99f5b2a9fe8519 200
+  s_ea473cf142c74a::t_587b4535b6f92c 209-211,224
+  s_ea473cf142c74a::t_5f395c5d544b1b 150
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_e65876c4f61bf1::t_f7590db0459823 24-36
+  s_e65876c4f61bf1::t_7b3bc4c9f7fd83 52-53,55,58,61-62,65,69-70,76
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppMessageNotifyServiceImpl.java
+  s_ea473cf142c74a::t_dcc163c573905a 1,3-10,14,21,23-25,27,30-31,33-50,52-67,69-75,77,80-90,93-95,97-99,102-143,146
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/event/ServiceOrderMessageEvent.java
+  s_e65876c4f61bf1::t_ce02c96c731de2 11
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/event/ServiceOrderMessageListener.java
+  s_e65876c4f61bf1::t_3bb77cf054344c 52,54
+  s_180c8f02d279a6::t_8eb50fcd453b1f 3,13
+  s_180c8f02d279a6::t_06d3604dfe3f9c 118-122,124,129-132,134-150,152-166,168,170-188
+  s_180c8f02d279a6::t_d4fb8148d12471 77
+  s_180c8f02d279a6::t_1a6d6bcb46c8a0 105
+  s_180c8f02d279a6::t_3fc419262e47e0 36-41
+  s_e65876c4f61bf1::t_8ce782f4cc6bec 22
+  s_ea473cf142c74a::t_2b38e9818b369d 4,7-8,11-12,14-15,20-21,24-25,30-35,46,50-51,53,59-76,78-104,106-117,123,125-128,133,151,167,169
+  s_180c8f02d279a6::t_f7bdf6fbf178f5 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "86bbe139bab5a042169c3c3b606b8de57cb1c582",
+  "prompts": {},
+  "sessions": {
+    "s_180c8f02d279a6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "82768780-01a2-44c3-878f-d498bd058bd0",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_e65876c4f61bf1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2f7cab24-c976-4bb4-9d7a-1283d24223d1",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_ea473cf142c74a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "55addc67-803b-4afa-9e4f-cb4cad0ffcee",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
