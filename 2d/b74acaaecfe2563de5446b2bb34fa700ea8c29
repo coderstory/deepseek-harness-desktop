@@ -1,0 +1,19 @@
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_42476d464d1701::t_bb0f6ad8875ed5 39-40,55-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2db74acaaecfe2563de5446b2bb34fa700ea8c29",
+  "prompts": {},
+  "sessions": {
+    "s_42476d464d1701": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "54c0521b-305f-4296-a7d7-0629820c968b",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

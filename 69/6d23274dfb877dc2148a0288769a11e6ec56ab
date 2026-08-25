@@ -1,0 +1,61 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_d1b453fb1bd3d9::t_b5be04eb991090 378-393
+  s_e3b14dfea3a8ff::t_433e53834d6e6b 394-464
+  s_d1b453fb1bd3d9::t_785655f0776724 94
+  s_d1b453fb1bd3d9::t_561574c9f31174 84
+  s_f6fbe0a1190453::t_ae657c054ac4e8 329-332
+  s_d1b453fb1bd3d9::t_505233aa169f7e 190-202,204-206,208-209,211-212,214-215,227-228,231-247
+  s_d1b453fb1bd3d9::t_435519413bfa00 3
+  s_d1b453fb1bd3d9::t_9b33c2d13a8860 67
+  s_e3b14dfea3a8ff::t_e03e2faa19786a 87
+  s_28ccfa144b17d9::t_12c20949ab2597 131-134
+  s_d1b453fb1bd3d9::t_c6a5ae16b0422a 78-79,81
+  s_e3b14dfea3a8ff::t_2f309eee35adbf 203,207,218-221,224-226
+  s_d1b453fb1bd3d9::t_7e448d70969956 51,54
+  s_d1b453fb1bd3d9::t_5364f87900e158 17
+  s_28ccfa144b17d9::t_0894b1c2038a57 308-328,333-337
+  s_d1b453fb1bd3d9::t_815983f165408d 71-73
+  s_d1b453fb1bd3d9::t_9af89ec8155137 248
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/job/SvcAppointmentMessageSaveJob.java
+  s_d1b453fb1bd3d9::t_9c7212f980c79d 65-70,72-144,146-149,151-160,162-163,166-186,188-189,191-192,195-201,203-211
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "696d23274dfb877dc2148a0288769a11e6ec56ab",
+  "prompts": {},
+  "sessions": {
+    "s_28ccfa144b17d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "96a867cb-0b41-476a-b885-70994083895e",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_d1b453fb1bd3d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a76d5bb5-62da-4a52-9ae2-35247d531264",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_e3b14dfea3a8ff": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0cec4390-ab9d-4852-854c-c1d65323384a",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_f6fbe0a1190453": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be43763d-b6c8-41f7-a0c3-d0bf298237e2",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

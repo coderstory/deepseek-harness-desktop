@@ -1,0 +1,78 @@
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_4ed2853dfb43b3::t_357bcc6567c5a1 46-61
+  s_4ed2853dfb43b3::t_9bbe395fbba50b 23,28,31
+  s_4ed2853dfb43b3::t_40e8e481b85921 1-22,24-27,29-30,32-33,35-45,62-82,89-355
+  s_4ed2853dfb43b3::t_6382b2e763effd 34
+  s_4ed2853dfb43b3::t_4063d16e15b24d 83-88
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_4ed2853dfb43b3::t_2d9700c4df28b5 70-80
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_4ed2853dfb43b3::t_4d714218cdae9e 59-61
+  s_4ed2853dfb43b3::t_d48e57f14b2cf4 214-216
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_4ed2853dfb43b3::t_5b314561ba6b20 1154-1162
+  s_4ed2853dfb43b3::t_bca2cc05e79896 15
+  s_4ed2853dfb43b3::t_5412e78c325a94 8
+  s_4ed2853dfb43b3::t_cff476d439213e 21-24
+  s_4ed2853dfb43b3::t_06bc9d78cd848e 1163-1169
+  s_4ed2853dfb43b3::t_4071d0f2e87229 826-841
+  s_4ed2853dfb43b3::t_22980a44082a90 1103-1118
+  s_4ed2853dfb43b3::t_1071f02f5beb58 1170-1171
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_4ed2853dfb43b3::t_d55edbe6e26bb6 111-121
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplQueryViewTest.java
+  s_73dabae1135206::t_e1b16943180157 153
+  s_73dabae1135206::t_4a544996d208b5 50-52
+  s_73dabae1135206::t_44221dd1edc99a 145
+  s_73dabae1135206::t_00d8bc20d13ea5 128-131,133-134,140,146-148
+  s_73dabae1135206::t_2381444f699999 167
+  s_73dabae1135206::t_48ea9408c6d8d7 1-2,4-10,12-49,53-127,132,135-139,141-144,149-152,154-166,168-204
+  s_73dabae1135206::t_39733834cb10ad 3,11
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_4ed2853dfb43b3::t_d93bcecc40ca05 258
+  s_73dabae1135206::t_43c00867c7c652 265-279,283
+  s_73dabae1135206::t_0b41a57403141f 42
+  s_a35d4d26c61171::t_22eff8def62f87 13
+C01-svc-config/svc-core-config/pom.xml
+  s_4ed2853dfb43b3::t_b08e3cc98ad8e9 114
+  s_4ed2853dfb43b3::t_614bec941e4a2a 17
+  s_4ed2853dfb43b3::t_44c7628a91e149 113
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_4ed2853dfb43b3::t_738a7a029bef65 70-72
+  s_4ed2853dfb43b3::t_c71eb368d9cb70 28-30
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_4ed2853dfb43b3::t_9e2db38151ad2f 93-95
+  s_4ed2853dfb43b3::t_0fe8dbcb6b4b40 19-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5f1e72b272d2ef5f20212fedb925806a67b8f947",
+  "prompts": {},
+  "sessions": {
+    "s_4ed2853dfb43b3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf8fb2f2-45fb-490f-ba74-1c8db8b740d3",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_a35d4d26c61171": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a7b4e05fcc4830521",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

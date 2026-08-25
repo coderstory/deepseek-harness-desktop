@@ -1,0 +1,26 @@
+.planning/phases/18.2-price-infrastructure/18.2-02-PLAN.md
+  s_1d57b3d31edb68::t_e85fc9045173af 1-208
+.planning/phases/18.2-price-infrastructure/18.2-01-PLAN.md
+  s_1d57b3d31edb68::t_1c0688f8dffd96 1-236
+.planning/phases/18.2-price-infrastructure/18.2-03-PLAN.md
+  s_1d57b3d31edb68::t_bdc039c6aadbee 1-296
+.planning/ROADMAP.md
+  s_1d57b3d31edb68::t_df517910e30c39 180
+  s_1d57b3d31edb68::t_8ddfa58d6e57eb 85-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cbd39d31198795a3f41e421767a56324bab51c69",
+  "prompts": {},
+  "sessions": {
+    "s_1d57b3d31edb68": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e8233962-aae0-4874-8a73-db79e6af54ec",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

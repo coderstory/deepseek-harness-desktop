@@ -1,0 +1,20 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcAdditionalItemServiceImpl.java
+  s_16916f05dd1ec1::t_76de91fad53805 33
+  s_16916f05dd1ec1::t_09d9df9b8cd677 389
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "92c63d9be1c4333b38afba3e6ca1b769abf8cd29",
+  "prompts": {},
+  "sessions": {
+    "s_16916f05dd1ec1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1934a4c0-f539-475f-998b-78710ffbefa6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

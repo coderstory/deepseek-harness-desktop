@@ -1,0 +1,26 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/GetDealerPartPriceMapParam.java
+  s_f9731531312491::t_3fb4d489758d9d 21-23
+  s_f9731531312491::t_d97f4e2495c75a 32-39
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/spare_part/SparePartQueryPriceReq.java
+  s_f9731531312491::t_4ee1f098c2711a 18-20
+  s_f9731531312491::t_db27aba9f9bc77 61-68
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceParam.java
+  s_f9731531312491::t_4cc132502e4372 23-25
+  s_f9731531312491::t_2c838af31b0ae3 34-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "50b02890651862db65bd0ceccfd1e53c4cae6d28",
+  "prompts": {},
+  "sessions": {
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,179 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_7646f5152e2e4f::t_90cec180a70874 42,51,555-563,1885,1898-1911
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/PermissionDict.java
+  s_56357b97e171ce::t_9fdc60ad64d8ce 139,155
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/enums/ExportTypeEnum.java
+  s_af5fa319b95ee9::t_0f8db1f8cad755 5,8
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcOrderStoreInfoEnt.java
+  s_8f8eccafd8db91::t_beaff571a08a03 144-147,455-462
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_68015f0993cdc8::t_11791033b462de 8
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/strategy/appointment/AbstractAppointmentHandler.java
+  s_ada19176724cda::t_d454d8f431ff49 7,27,32-35,61,77,80,86-88,130-138,150,171-176,182-184,188-189,257-265,271,287-294,303-462,471-473,523-524,531,535-546,1182,1234-1235
+C03-svc-reception/svc-core-reception/pom.xml
+  s_bd311ae77b3462::t_0fc99a8f0112b5 8,12-14,49-53,107-112,142-149
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_8f8eccafd8db91::t_f553b3841db670 8,16,59-62,69,71-72,110,113-123,510-512,582-619,1186,1243-1274,1279-1280,1282-1294,1296-1310,1312-1322,1325,1513-1562
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_79abdc51826958::t_37ce9751ec81d0 66-69,76-77,216,566-843
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_8f8eccafd8db91::t_36e819e398d313 9,19,30,33-36,63-64,84,125,382-383,477-493,556-560,1164-1229,1247-1254,1301-1304,1376,1412
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/CustomerRequestInput.java
+  s_8f8eccafd8db91::t_b558b98380e2e2 31-39,88-95,103-119
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetSvcServiceProxyDetailOutput.java
+  s_8f8eccafd8db91::t_a0f5dbe9c444dc 108-113,146-149,152,201-216,570-585
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyInput.java
+  s_8f8eccafd8db91::t_d5dcbf6b45a0c3 18-19,33-36,66-73,162-177
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ListSvcServiceProxyOutput.java
+  s_8f8eccafd8db91::t_f45f046cb623bf 66-71,124-139
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_ada19176724cda::t_8dd61384a4111a 15,85-92,123-138
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcOrderStoreInfoViewMapper.xml
+  s_8f8eccafd8db91::t_3f21fdfff10430 175,298-303,310-315
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/mapper/SvcServiceOperationViewMapper.java
+  s_7c1c9e1a40f7b9::t_e91a1c6141e9bc 3,10,26-34
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/SvcMaintainOperationServiceImpl.java
+  s_e0e0be557527ea::t_f36f75fdfe67d9 29-32,76-79,102,115,650-651,764-771,1157-1215,1937,2579-2580,2631-2632,2656-2956
+C04-svc-maintain/svc-core-maintain/src/main/resources/mybatis/mapper/svc/core/maintain/SvcServiceOperationViewMapper.xml
+  s_e0e0be557527ea::t_c36d23a569f5b1 145,194-218,304-306
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_79abdc51826958::t_942ace3709cfef 5,49,529,531-533,535-536,583,585-587,589-590,640,647-648,651,811-872
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_79abdc51826958::t_4d33d3b7878a3d 6-7,36-38,51-73,75-91,93,95,97-105,163-170,195-267,271,275,279,283,287,290-305
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_7ffc5ac7fd20d1::t_442af8eac354bd 12,27-28,504-506,509,824-833,841-842,851-871
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/invoice/EmInvoiceExcelService.java
+  s_277ada6e5875fd::t_e36cc211c92122 36-38,40-46,51-58,69-71,73-76,87-88
+C06-svc-delivery/svc-core-delivery/src/main/resources/mybatis/mapper/svc/core/delivery/SvcStatementViewMapper.xml
+  s_bd311ae77b3462::t_0413866771dc97 127
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/em/InvoiceTmpForward.ftl
+  s_64b33ca253c3d4::t_2d9ef571a4bb25 1766,1791,1823,1826,1833,1836,1843,1846,1854,1857,1864,1867,1874,1877,1883,1886,1893,1896,1904,1978,1988-1989,1999,2020,2035,2041,2077,2081,2085,2093,2099,2118,2365,2376-2377,2387,2411-2412,2441,2487,2504,2510,2548,2553,2558,2566,2572,2591,2852,2883,2970,2983-2984,2996,3025,3044,3050,3092,3097,3102,3110,3117,3137,3426,3438-3439,3452,3476,3496,3502,3544,3549,3554,3562,3569,3590,3880,3893-3894,3907,3946,3986,4048,4069,4075,4120,4125,4131,4140,4147,4168-4169,4487,4531,4629,4642-4643,4656-4657,4687,4708,4715,4761,4767,4773,4782,4789,4811-4812,5109,5141,5218,5248,5325
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/em/InvoiceTmpNegative.ftl
+  s_64b33ca253c3d4::t_4531c1baac7c7f 1766,1791,1807,1810,1819,1822,1829,1832,1839,1842,1850,1853,1860,1863,1870,1873,1879,1882,1889,1892,1900,1974,1984-1985,1995-1996,2017,2032,2038,2074,2078,2082,2090,2096,2115,2362,2373-2374,2384,2407-2408,2436,2482,2499,2505,2543,2548,2553,2561,2567,2586,2847,2878,2965,2977,2988,3016,3035,3041,3083,3088,3093,3101,3108,3128,3417,3429,3442,3466,3486,3492,3534,3539,3544,3552,3559,3580,3870,3883,3896,3935,3974,4036,4057,4063,4108,4113,4119,4128,4135,4156-4157,4475,4516,4614,4627,4640,4666,4687,4694,4740,4746,4752,4761,4768,4790-4791,5088,5118,5195,5224,5301
+C09-svc-pdi/svc-core-pdi/pom.xml
+  s_2e0e200e3802d1::t_7b180906e123c7 8
+C10-svc-inc/svc-cloud-inc/pom.xml
+  s_ada19176724cda::t_f71a34474f9108 8
+C10-svc-inc/svc-core-inc/pom.xml
+  s_ada19176724cda::t_2474a3244e1fcb 8,29,119-121,132-140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "639bb9af59851989bb5d5e74df042daf193771b5",
+  "prompts": {},
+  "sessions": {
+    "s_277ada6e5875fd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "113fc1fb-55dd-4c75-945d-c01c216b95b6",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_2e0e200e3802d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a5182e0cf57cade21",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_56357b97e171ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a17b7eb9-528c-45e6-8e32-378067973bba",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_64b33ca253c3d4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5a6eb940-e014-4479-82a4-9a26970c6b6e",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_68015f0993cdc8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bffed75d-cc96-4565-bd16-cf63c4441d80",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_7646f5152e2e4f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78718596-dbab-4988-834a-416e36d80c18",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_79abdc51826958": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "899f2c43-221f-4180-bdd8-085349113358",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_7c1c9e1a40f7b9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ab0431596b43a0bd5",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_7ffc5ac7fd20d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22a188c5-35b9-4ae1-81ad-6a856ad68410",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_8f8eccafd8db91": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a489c6c7eb618021a",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_af5fa319b95ee9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f4d67368-c20a-4321-9547-b13bd2e339f1",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_bd311ae77b3462": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "234ec96e-0192-4068-9d32-2d4deac6fadc",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_e0e0be557527ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2281f6a7-423f-4c01-ac20-cbac7680429f",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

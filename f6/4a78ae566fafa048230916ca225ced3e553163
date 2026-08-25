@@ -1,0 +1,50 @@
+C10-svc-inc/svc-core-inc/pom.xml
+  s_ada19176724cda::t_dd9c17eff50297 104-117
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/SvcIncFileService.java
+  s_b0bb097c9ddc0c::t_0383d1b47dece5 68
+  s_b0bb097c9ddc0c::t_68ebe85cd7e5c3 57
+  s_b0bb097c9ddc0c::t_3c89a840955dbd 86-92,94
+  s_ada19176724cda::t_484b759ff313a4 8,13,23-31,34,42-45,50,52-53,56,59,62-65,67,75,83,93,95,110-111,114,116,125,132-136,141,143
+  s_b0bb097c9ddc0c::t_1d73e4498c3a98 58
+  s_ada19176724cda::t_9269443879bf67 80,107,109
+  s_b0bb097c9ddc0c::t_97a6df443f4052 117-124,126,128-131,138
+  s_ada19176724cda::t_d652c2fcaf0d4d 1-7,9-12,15-22,37-41,46-49,51,54-55,60-61,84,96,115,127,137,142,144-156
+  s_b0bb097c9ddc0c::t_7e336323ae60b4 32-33,35-36
+  s_b0bb097c9ddc0c::t_317cb0596f5f8a 14
+  s_b0bb097c9ddc0c::t_b09fa1ea9b547d 139-140
+  s_ada19176724cda::t_2171842e6fd3f4 66
+  s_ada19176724cda::t_99acb1726d9661 76-79
+  s_ada19176724cda::t_af0f61d90b8564 81-82
+  s_ada19176724cda::t_7a37d67fdb688f 97-99,104-106
+  s_ada19176724cda::t_a2d8716e4e91b2 108
+  s_ada19176724cda::t_b4639aa3992ab4 112-113
+  s_b0bb097c9ddc0c::t_f9aa97ade94e88 69-74,85,100-103
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_ada19176724cda::t_64a5c715448066 72-73,79
+  s_ada19176724cda::t_3131455d0200c0 80-81
+  s_ada19176724cda::t_ae92fe54a5d57a 74-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f64a78ae566fafa048230916ca225ced3e553163",
+  "prompts": {},
+  "sessions": {
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_b0bb097c9ddc0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "55de3165-782c-4e8d-bc37-b2f751f3beea",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/enums/SvcServiceMolitStatusEnum.java
+  s_f41018ab528e17::t_26acdcc4f8be97 10-11
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/MolitSentStatusCheckOutput.java
+  s_32478040ca6b58::t_6071fd1987c1e6 30-33
+  s_05c8ea691e57fb::t_bbb840f4f1e0d4 1-8,15-29,34-44
+  s_32478040ca6b58::t_66bbc0e27b49a1 9-14
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/PermissionDict.java
+  s_05c8ea691e57fb::t_23f60cc659feab 248
+C00-svc-base/svc-core-base/src/main/java/svc/core/operationLog/enums/UserOperationActionEnum.java
+  s_05c8ea691e57fb::t_da12a91d7653b8 34-35
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/MolitOperateValidator.java
+  s_f41018ab528e17::t_d21383b719c509 60
+  s_f41018ab528e17::t_df52236fda6a23 65-66
+  s_05c8ea691e57fb::t_59d9ccda350e04 29,40
+  s_f41018ab528e17::t_f9f2e25009bb93 43-44
+  s_f41018ab528e17::t_bcd4301053037e 24
+  s_f41018ab528e17::t_db154157ab1c6c 27
+  s_f41018ab528e17::t_f9b52cd74667fe 36-37
+  s_f41018ab528e17::t_6ddca156ea6f25 25
+  s_05c8ea691e57fb::t_705b5a096c5d63 61
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/util/MolitClient.java
+  s_05c8ea691e57fb::t_81c3751edaab27 121-134
+  s_05c8ea691e57fb::t_e3213c137ddc72 17-18
+  s_05c8ea691e57fb::t_77945362642341 54-57
+  s_05c8ea691e57fb::t_7b0139d205d7e1 35
+  s_05c8ea691e57fb::t_96e75f6783d113 120
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/MolitSentStatusCheckInput.java
+  s_05c8ea691e57fb::t_3382659962d3bb 1-14
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/ListSvcServiceMolitOutput.java
+  s_05c8ea691e57fb::t_78a7ebf3cdd075 143-150
+  s_05c8ea691e57fb::t_9006b722b46cec 45-47
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/entity/SvcServiceMolitEnt.java
+  s_05c8ea691e57fb::t_de9a22a45743b6 91-94
+  s_05c8ea691e57fb::t_d6441573b8e08b 238-245
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_05c8ea691e57fb::t_9cc234d98264c5 51
+  s_05c8ea691e57fb::t_3168cf89e20367 180
+  s_05c8ea691e57fb::t_c5368e87af6bb5 593
+  s_05c8ea691e57fb::t_66cbad17b9de9d 33
+  s_05c8ea691e57fb::t_4835c701c9afb2 334
+  s_05c8ea691e57fb::t_1e19c80098669c 372-400
+  s_05c8ea691e57fb::t_7929fdb0e644c9 125
+  s_05c8ea691e57fb::t_0680ad01454929 23,26
+  s_05c8ea691e57fb::t_514c25ffdcda61 329-333,335-336
+  s_05c8ea691e57fb::t_30ac9792f7f04d 146-179,181-236
+  s_05c8ea691e57fb::t_3718eaab2dc2b0 35-36
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/MolitOperateService.java
+  s_714c673bbcb8c8::t_f6923f043c65df 397
+  s_714c673bbcb8c8::t_920fd1e014402a 413
+  s_714c673bbcb8c8::t_87103a65ddbfe0 99,101
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_molit/GetMolitWorkOrderDetailOutput.java
+  s_05c8ea691e57fb::t_f8329e29534832 48-50
+  s_05c8ea691e57fb::t_09648327ca847e 154-161
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6cfb61f178541d4817a105d360224b7d91e89da3",
+  "prompts": {},
+  "sessions": {
+    "s_05c8ea691e57fb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "86e3eade-5761-496d-8502-22c6684dd371",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_32478040ca6b58": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97574b0e-a60e-4563-9888-92550e5417ac",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_714c673bbcb8c8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "967a3f3b-b3d0-4d34-9697-a93b89e70446",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_f41018ab528e17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7157c6c8-d21d-48ad-98f3-3db590422f6f",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

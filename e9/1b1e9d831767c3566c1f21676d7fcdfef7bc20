@@ -1,0 +1,50 @@
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/helper/RepairTaskDetailExportHelper.java
+  s_a3dd2f25f8cf0b::t_c1abbb517719b9 127
+  s_a3dd2f25f8cf0b::t_f5f8cd674f601b 110
+  s_a3dd2f25f8cf0b::t_c19223d42b4e57 184-205
+  s_a3dd2f25f8cf0b::t_3b66669063619b 13
+  s_a3dd2f25f8cf0b::t_ef9507efcfa53c 93
+  s_a3dd2f25f8cf0b::t_d0e9fccf5edf38 173-174
+  s_a3dd2f25f8cf0b::t_b8a77092dda702 183
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelper.java
+  s_a3dd2f25f8cf0b::t_d5e44cafe1c7b8 157-158
+C04-svc-maintain/svc-core-maintain/src/test/java/svc/core/maintain/helper/RepairTaskDetailExportHelperTest.java
+  s_a3dd2f25f8cf0b::t_78e2607df1df60 259-261
+  s_a3dd2f25f8cf0b::t_48464711d3a546 475,478-479,482,486,488-490
+  s_a3dd2f25f8cf0b::t_6e471c843097e8 29-30
+  s_a3dd2f25f8cf0b::t_9d43b8115d8803 245,254-255
+  s_a3dd2f25f8cf0b::t_44609cfa4c8185 266,268-321,323,332
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/service/data/svc_maintain_operation/ExportSvcServiceOperationDetailOutput.java
+  s_a3dd2f25f8cf0b::t_38b9fdc45e1711 91
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/ExportDetailSvcServiceProxyOutput.java
+  s_a3dd2f25f8cf0b::t_6ae46c80bd70f3 175,177
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_a3dd2f25f8cf0b::t_b9567e5756b39f 169,177-179,186-187
+  s_a3dd2f25f8cf0b::t_54407788f88928 73
+  s_a3dd2f25f8cf0b::t_9effcfd5b692d7 28
+  s_a3dd2f25f8cf0b::t_37b1f3c109b785 410,414,417-418,423,430,432-433,438-439,443-444,448,452-453
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e91b1e9d831767c3566c1f21676d7fcdfef7bc20",
+  "prompts": {},
+  "sessions": {
+    "s_a3dd2f25f8cf0b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "810e36e6-5462-4a37-ae01-c3098d2430f8",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_ada19176724cda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d2dac97c-df28-4b96-bbc7-9991a7d19d07",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

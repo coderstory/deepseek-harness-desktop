@@ -1,0 +1,27 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/AbstractPotdDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_c95be9dba55053 103-104
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_73dabae1135206::t_b14851b0b8e262 45-47,69-70
+  s_73dabae1135206::t_db0738656dc174 266-434
+  s_73dabae1135206::t_231f1a34318c8c 15,21,25-26,35,40
+  s_73dabae1135206::t_4b693338f23915 71
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_6f1a90d6a4a190 116-122,124-136,138-154,156-158,161
+  s_73dabae1135206::t_85205c7cb5e6ba 84-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5b983d80b741b63dedfb9b078cdf2252e024d7d0",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/limiter/AppSubmitRateLimiterServiceImpl.java
+  s_a4161f869f36a1::t_be2806d81578d5 1-166
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ff1c3e79fd9a8dfcee53dc527381317b27b2c6bc",
+  "prompts": {},
+  "sessions": {
+    "s_a4161f869f36a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "634766f8-fa9f-49f4-aaa6-7a698ef7923e",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

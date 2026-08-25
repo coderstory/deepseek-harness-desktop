@@ -1,0 +1,31 @@
+.planning/STATE.md
+  s_73dabae1135206::t_a1f8384829b490 65-67
+.planning/phases/18.4-query-transfer/18.4-CONTEXT.md
+  s_73dabae1135206::t_9614d5645f7aa2 40-45
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ClaimLabourHourRateDTO.java
+  s_73dabae1135206::t_db89fcfbe6625f 15
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_235afc7bb09b47 67-71
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_73dabae1135206::t_231d8f2f9d60f5 239-240
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_73dabae1135206::t_ce236606d29ef7 282
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_73dabae1135206::t_0f6f1766e928f2 834,1126
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f359c4df49408682cb04511da04b55c9c6f08def",
+  "prompts": {},
+  "sessions": {
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

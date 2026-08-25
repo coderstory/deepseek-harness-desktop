@@ -1,0 +1,24 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_e2b4709d42f42d::t_01cd9e300d9fad 234-235
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/spare_part/SparePartQueryPriceReq.java
+  s_e2b4709d42f42d::t_5c62fe1b2d6e77 50-65
+  s_e2b4709d42f42d::t_81ce78d69427c7 12-15
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_e2b4709d42f42d::t_5bbc30b794cae5 141-142
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b1e401b4a0f35d1fa9cfe14be5833a1c8fbee699",
+  "prompts": {},
+  "sessions": {
+    "s_e2b4709d42f42d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2f9d7123-84c0-4d2c-9107-742acc6d3f3b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

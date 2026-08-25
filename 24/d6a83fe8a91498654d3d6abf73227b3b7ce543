@@ -1,0 +1,41 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_eb0eaa9f0520a8::t_42dfe374a2e967 384-386,392
+  s_eb0eaa9f0520a8::t_7fc9af6ba7deef 1030
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/AesSecureUtil.java
+  s_eb0eaa9f0520a8::t_eb56baa48ce955 4
+  s_eb0eaa9f0520a8::t_30e0d54e1a14ba 113-165
+  s_eb0eaa9f0520a8::t_d5cfa5fd527976 32,43,46,49-54
+  s_7f64d6fdf1b94c::t_04f20ee4f807b2 33-42,44-45,47-48
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/mapper/AppAfterSalesServiceOrderMapper.java
+  s_eb0eaa9f0520a8::t_e1e6957f433c07 20,26
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/mybatis/OverseasEncryptHandler.java
+  s_eb0eaa9f0520a8::t_e66748fa411ea5 1-68
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/AppAfterSalesServiceOrderEnt.java
+  s_eb0eaa9f0520a8::t_7bc5ec06c15a14 15
+  s_eb0eaa9f0520a8::t_9654d332ab2752 7
+  s_eb0eaa9f0520a8::t_34c2c934b7c0e4 85,89,93,97,101,105,109,113,117,121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "24d6a83fe8a91498654d3d6abf73227b3b7ce543",
+  "prompts": {},
+  "sessions": {
+    "s_7f64d6fdf1b94c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef64af90-d0da-48a3-a667-d97671fd7460",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_eb0eaa9f0520a8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bcb08d94-ba0a-40e5-8781-a3313a05d317",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_f9731531312491::t_246cd98fbb9495 161-162
+  s_f9731531312491::t_2f87b8193e4909 179-180
+  s_f9731531312491::t_c355f3ab8b0cc7 76-77
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.cs-CZ.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.de-DE.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.fr-FR.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.th-TH.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sk-SK.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.en-US.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.uz-UZ.properties
+  s_f9731531312491::t_8a41d002112fe8 17-18
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/SvcBaseError.java
+  s_f9731531312491::t_d8774ff3b82a40 26-27
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.id-ID.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sv-SE.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-ES.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ru-RU.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.hu-HU.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.zh-CN.properties
+  s_f9731531312491::t_8a41d002112fe8 14-15
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_f9731531312491::t_8a41d002112fe8 16-17
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_f9731531312491::t_e4045e7005c343 105
+  s_f9731531312491::t_6e38760c180e7b 98
+  s_f9731531312491::t_73194fe42ff1c9 114
+  s_f9731531312491::t_860e394c9b3984 54-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7c994ead6a2389b5ae26fbd03772b2cb56b3e114",
+  "prompts": {},
+  "sessions": {
+    "s_f9731531312491": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7d88af3-0462-4904-99ec-507c0e1e5698",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
