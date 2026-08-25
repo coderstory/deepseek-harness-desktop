@@ -1,0 +1,91 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/ESignatureHelperTest.java
+  s_7992a3df423241::t_5ed3b08d037027 95
+  s_7992a3df423241::t_54cb1888c1d5bd 34
+  s_7992a3df423241::t_ac92d19e9f311b 42
+C00-svc-base/svc-core-base/pom.xml
+  s_7992a3df423241::t_27611bc6990ed6 217
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_7992a3df423241::t_bf5d0671441299 123
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_7992a3df423241::t_69b03b67ebeaf9 192
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_7992a3df423241::t_1b70094a864966 67-71,74,78-80,88,121-123,135-136
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartEnt.java
+  s_7992a3df423241::t_6bd7f042241593 123-130,576-591
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartView.java
+  s_7992a3df423241::t_11e5cd19eef6dd 108-115,548-563
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_7992a3df423241::t_e3a2bd652f80bb 89,92,146,202,316
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_7992a3df423241::t_bea5fd54d5d413 70,73
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_7992a3df423241::t_c988bba87eabb9 93,96,220
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_maintain_rule_part/QuerySvcMaintainRulePartOutput.java
+  s_7992a3df423241::t_492e424e43cc2a 34-36,202-209
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_7992a3df423241::t_276bf3c7be5f45 1001-1002,1014-1024,1129,1133-1134,1143,1146,1152-1153,1161-1173,1175-1176
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcServiceMaintainRuleServiceImpl.java
+  s_7992a3df423241::t_c32aa06d2d69bf 1078
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_part/CreateSvcAppointmentPartInput.java
+  s_7992a3df423241::t_057e2f11a809e4 4,44-51,221-236
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_7992a3df423241::t_c7b1273fc077d6 75-92
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartEnt.java
+  s_7992a3df423241::t_3c52d2a644b7ad 64-71,362-377
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_7992a3df423241::t_2d1712e9ee850e 58-59,895,990-1018,1046-1047,1068-1076,1117,1119,1147-1148,1152,1179-1181,1186-1187,1191,1270-1271,2111-2114,2181-2182,2191-2210,2227-2230
+C02-svc-appointment/svc-core-appointment/src/main/resources/mybatis/mapper/svc/core/appointment/SvcAppointmentPartViewMapper.xml
+  s_7992a3df423241::t_c66d3125833ef0 24-25,46-48,93-94
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_7992a3df423241::t_99dec8288c7926 40-41,230
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_order_part/GetSvcServiceOrderPartOutput.java
+  s_7992a3df423241::t_d711b6875911d5 4,19-25,762-777
+C03-svc-reception/svc-core-reception/pom.xml
+  s_7992a3df423241::t_0b9045930cdab5 147
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_7992a3df423241::t_a3408e6ebb2505 28-29,489,492-504,506-507
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_7992a3df423241::t_1ae7233967bb7e 1235-1241,1245
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_7992a3df423241::t_1f3ac845886260 35-36,720-726,732
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetSvcServiceProxyDetailOutput.java
+  s_7992a3df423241::t_2be65cdd7b1df5 7,131-133,535-542
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/SvcServiceOrderPartPut.java
+  s_7992a3df423241::t_5da6d9691d8006 42-47,168-183
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_7992a3df423241::t_3b3d7c31a2e369 282,322-324,328,390
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_7992a3df423241::t_b22b1943b3df46 258,289,326-328,392
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceOrderPartMapper.xml
+  s_7992a3df423241::t_455e9a2cefa435 10,75,81
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_7992a3df423241::t_d4e93ec1efa565 342-343,360-361,366,392,395-396,398-400,469,471,530-531,548-549
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_7992a3df423241::t_3eb9a47b9583a3 41,273-274,291-296,301,329-333,433-434,493-495,511-516
+C12-svc-estimate/svc-cloud-estimate/src/main/java/svc/cloud/estimate/service/data/svc_estimate_order/CreateEstimateOrderPartInput.java
+  s_7992a3df423241::t_16bb1396832ae4 4,40-47,214-229
+C12-svc-estimate/svc-core-estimate/src/main/java/svc/core/estimate/entity/SvcEstimateOrderPartEnt.java
+  s_7992a3df423241::t_fb1a9ffe2ded65 66-73,345-360
+doc/八月需求/PRD-v1.6-差距分析.md
+  s_7992a3df423241::t_fe039ae61b9d28 1-227
+doc/八月需求/八月需求上线操作清单.md
+  s_7992a3df423241::t_5e5da82ef5cba6 13-25
+tc_test/full_runner.py
+  s_7992a3df423241::t_d0ff65414ceb99 1-145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "87ccda7dd7d297282318a2ed02d21799e949b1d4",
+  "prompts": {},
+  "sessions": {
+    "s_7992a3df423241": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7eb8f8ae-3d88-4bb9-a183-7ead69ec89f6",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

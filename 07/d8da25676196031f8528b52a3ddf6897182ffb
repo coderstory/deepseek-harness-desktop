@@ -1,0 +1,35 @@
+.planning/ROADMAP.md
+  s_0ba0a0fd6df46f::t_c65726a9c86197 108
+  s_0ba0a0fd6df46f::t_052a54bd7d7d6d 115
+  s_7ecfdcd69e3e2d::t_43ebb663b73841 46,57
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/RoadRescuePolicyConverterTest.java
+  s_0ba0a0fd6df46f::t_de868c3454ff24 3
+  s_0ba0a0fd6df46f::t_56725b09872201 364-401
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsTokenCacheTest.java
+  s_0ba0a0fd6df46f::t_7f60d7caffe7cf 75-77
+  s_0ba0a0fd6df46f::t_0e4924aa99cf79 22-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "07d8da25676196031f8528b52a3ddf6897182ffb",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_7ecfdcd69e3e2d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb8c23e4-bc36-4bac-94f0-e79eaaa51246",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

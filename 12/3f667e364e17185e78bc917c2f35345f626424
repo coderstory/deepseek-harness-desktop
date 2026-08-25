@@ -1,0 +1,29 @@
+.planning/phases/18.2-service-job/18.2-01-PLAN.md
+  s_0ba0a0fd6df46f::t_73b569c132c3a0 1-344
+.planning/phases/18.2-service-job/18.2-VALIDATION.md
+  s_0ba0a0fd6df46f::t_e03ee2449cccf6 1-88
+.planning/phases/18.2-service-job/18.2-02-PLAN.md
+  s_0ba0a0fd6df46f::t_9927bfd687a566 1-252
+.planning/ROADMAP.md
+  s_0ba0a0fd6df46f::t_5b7eb7b3c1f8f3 88-98
+  s_0ba0a0fd6df46f::t_cc0e2aed5c5414 40-42
+  s_0ba0a0fd6df46f::t_705e5541cd1e6f 9
+  s_0ba0a0fd6df46f::t_a19f6d3c85f8fc 75-81
+  s_0ba0a0fd6df46f::t_b91b9c6d2bfc14 36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "123f667e364e17185e78bc917c2f35345f626424",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

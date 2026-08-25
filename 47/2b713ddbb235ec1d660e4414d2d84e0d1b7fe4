@@ -1,0 +1,40 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsTokenCache.java
+  s_0ba0a0fd6df46f::t_8d7638220efedd 1-102
+C11-svc-ams/svc-core-ams/pom.xml
+  s_0ba0a0fd6df46f::t_8746ef645b5a84 56-75
+  s_0ba0a0fd6df46f::t_c778c71e0ffc93 77-87
+doc/八月需求/八月需求上线操作清单.md
+  s_0ba0a0fd6df46f::t_5ba572690abef7 73
+  s_0ba0a0fd6df46f::t_1f861111f996fc 15-61
+  s_73dabae1135206::t_f7997c8c0abbf9 1-14,62-72,74-211
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/RoadRescueProbeTest.java
+  s_0ba0a0fd6df46f::t_5a9e5b9be6fc16 1-3,5-54,56-84
+  s_0ba0a0fd6df46f::t_e7300bbfdbf148 55
+  s_0ba0a0fd6df46f::t_38f8f2b9dc2a98 4
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsClient.java
+  s_0ba0a0fd6df46f::t_ea0300b95cc3f3 1-135
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "472b713ddbb235ec1d660e4414d2d84e0d1b7fe4",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_73dabae1135206": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "913528a1-72c9-4786-802e-be89d84ac2af",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
