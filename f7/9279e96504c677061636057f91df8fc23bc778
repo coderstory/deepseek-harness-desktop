@@ -1,0 +1,38 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/MaintainExternalServiceImpl.java
+  s_f3e84b85d642ad::t_6ade9517e831b7 163-165,167
+  s_f3e84b85d642ad::t_9644dc0a64a05d 270
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_f3e84b85d642ad::t_08f9f342b5cae5 16
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_service/GetSvcAppointmentServiceViewOutput.java
+  s_f3e84b85d642ad::t_b53193dc8894b6 155-157
+  s_f3e84b85d642ad::t_91374011fa5170 729-736
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentHelper.java
+  s_f3e84b85d642ad::t_f7da7f35c4c7e3 324-335
+  s_f3e84b85d642ad::t_af62097266d53a 297-298,301
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_proxy/GetSvcServiceProxyOutput.java
+  s_f3e84b85d642ad::t_ac35ccd3143770 268-270
+  s_f3e84b85d642ad::t_240bfe98e20387 1288-1295
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_f3e84b85d642ad::t_5a05b3fab3e0a7 2505-2506,2508
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/message/PushMaintainOrderInfoMsg.java
+  s_f3e84b85d642ad::t_7b18050757a9b9 178-185
+  s_f3e84b85d642ad::t_e32612c8de3e3f 53-55
+C02-svc-appointment/svc-core-appointment/src/main/resources/mybatis/mapper/svc/core/appointment/SvcAppointmentServiceViewMapper.xml
+  s_f3e84b85d642ad::t_8f30fec66b4e94 177
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f79279e96504c677061636057f91df8fc23bc778",
+  "prompts": {},
+  "sessions": {
+    "s_f3e84b85d642ad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f7450ce7-fd50-4897-8107-4b289db06996",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
