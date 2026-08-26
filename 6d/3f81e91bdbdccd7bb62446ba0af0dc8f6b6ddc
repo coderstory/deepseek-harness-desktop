@@ -1,0 +1,33 @@
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_95523bc37978d8::t_c631d61bec3662 39-40
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_1c455ba6e8628e::t_4aace790a54ecb 1-7,10-23
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_95523bc37978d8::t_eebc56155a4fbc 422,699
+D01-dependence/svc-dependency-all/pom.xml
+  s_1c455ba6e8628e::t_5bdbc1ead0e62b 19-28,85-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6d3f81e91bdbdccd7bb62446ba0af0dc8f6b6ddc",
+  "prompts": {},
+  "sessions": {
+    "s_1c455ba6e8628e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "966dc594-ca7d-408e-8a53-de2fda1a71b5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
