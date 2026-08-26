@@ -1,0 +1,30 @@
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_1c455ba6e8628e::t_448cf8b320339f 306-307,312,315-316,318-321
+  s_1c455ba6e8628e::t_d5e67539f58de8 325-326,333-334,336-338
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_1c455ba6e8628e::t_545da19690d826 266,282-284
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_1c455ba6e8628e::t_067d539b57c04b 1190-1193
+  s_1c455ba6e8628e::t_1a719009fa5abe 1160-1165
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_1c455ba6e8628e::t_62a40326415b56 299-300
+  s_1c455ba6e8628e::t_bf9d0a1c70c7b2 329-330
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceQbWarrantyTest.java
+  s_1c455ba6e8628e::t_8054b2e64c55bf 247-248,252-253,255-258
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f38a830bb60f308bfcba08f3fa7f85c46c10a967",
+  "prompts": {},
+  "sessions": {
+    "s_1c455ba6e8628e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "966dc594-ca7d-408e-8a53-de2fda1a71b5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

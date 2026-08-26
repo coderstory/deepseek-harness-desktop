@@ -1,0 +1,110 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_95523bc37978d8::t_55816762e97df7 47
+  s_95523bc37978d8::t_d4480f33022230 39
+.gitignore
+  s_95523bc37978d8::t_7c9d1a80e71250 55-69
+C00-svc-base/svc-core-base/src/test/java/svc/core/reception/helper/PriceContextTest.java
+  s_95523bc37978d8::t_1a5afe809bb30f 181-250
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_95523bc37978d8::t_6a1c0f5417754a 80,724-725
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.zh-CN.properties
+  s_95523bc37978d8::t_54d9fcd89f88e2 22
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.de-DE.properties
+  s_95523bc37978d8::t_0aa5723ede140d 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.en-US.properties
+  s_95523bc37978d8::t_01aa8176c6f022 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-ES.properties
+  s_95523bc37978d8::t_73e859b36f526f 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-MX.properties
+  s_95523bc37978d8::t_a223993d04d4cd 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.fr-FR.properties
+  s_95523bc37978d8::t_9c7df331177ab5 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.hu-HU.properties
+  s_95523bc37978d8::t_81ae1d78cd3bdc 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.id-ID.properties
+  s_95523bc37978d8::t_c7de5330b99244 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nl-NL.properties
+  s_95523bc37978d8::t_2f7909b384894a 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.ru-RU.properties
+  s_95523bc37978d8::t_1e7fc1b8c5cac5 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.th-TH.properties
+  s_95523bc37978d8::t_e6c444583c7fa1 33-40
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/CountryVatItemFilter.java
+  s_95523bc37978d8::t_511bde1a981490 1-24
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_1c455ba6e8628e::t_11fda34fa5564d 59-60,86-89,95-96,280-283,285-291,296,298,320,322,340,342
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/VatItemFilter.java
+  s_95523bc37978d8::t_4f7f3808a92a00 1-32
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_95523bc37978d8::t_23c21f7b13a7cf 1011,1126,1166
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_1c455ba6e8628e::t_5f9054032d55a0 6,20-21,26-31
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_95523bc37978d8::t_2e82a356deb77b 10,27-29,32-33,48,58-60,97-98,140,149-150,157-176,179,202,222,244-305
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/GetSvcStatementInvoiceOutput.java
+  s_95523bc37978d8::t_b64489dc9f9a3d 8,104-115
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/SvcStatementInvoiceModel.java
+  s_95523bc37978d8::t_dd520cabbf991f 136-138,601-608
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_95523bc37978d8::t_b17e9580d14c15 16,95-104,119-120,187-195,202-205,473,475-483,496,682-683,685-687,690-696,698-700
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_95523bc37978d8::t_3876df95181270 1-892
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceExcelService.java
+  s_95523bc37978d8::t_7e3f27ea83d5c2 172-174
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/kr/KrInvoiceForward.ftl
+  s_95523bc37978d8::t_d97463d7487cc6 1858-1862,1981-1985
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/kr/KrInvoiceNegative.ftl
+  s_95523bc37978d8::t_df2b7fda841d3c 1879-1883,2002-2006
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceKrEmPriceContextTest.java
+  s_95523bc37978d8::t_888ecf7f3e2e49 1-321
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceRedInvoiceSecurityTest.java
+  s_95523bc37978d8::t_8d8eaf9be5786c 1-275
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceTest.java
+  s_95523bc37978d8::t_08cd1e9d85c37e 1-277
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_1c455ba6e8628e::t_363855af6938e4 3-5,7-22,25-32,34-35,37,40-43,46-47,57,61-66,68,72,99-100,111,114-115,117-118,120,122-132,214-878,880-883,886-919,921-923
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceForwardTest.java
+  s_95523bc37978d8::t_f190d3ca84b3bb 714-756
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceGenerateTest.java
+  s_95523bc37978d8::t_e598f140484a05 506-630
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceNegativeTest.java
+  s_95523bc37978d8::t_da83a91a3dd318 392-477
+doc/八月需求/5.8-PRD-vs-代码对比.md
+  s_95523bc37978d8::t_8d0be370ed1d32 1-194
+doc/八月需求/5.8-反向PRD-代码实现-v2.md
+  s_95523bc37978d8::t_c28e41f3a6a525 1-558
+doc/八月需求/5.8-反向PRD-代码实现-v3.md
+  s_95523bc37978d8::t_b72c1b2ad4fcf2 1-472
+doc/八月需求/5.8-反向PRD-代码实现.md
+  s_95523bc37978d8::t_bf82d0c18f02df 1-499
+doc/八月需求/5.8-开发文档.md
+  s_95523bc37978d8::t_3ebb4a6832c6ea 1-315
+doc/八月需求/PRD-할인-소계-口径确认.md
+  s_95523bc37978d8::t_a38c44daf07cdc 1-18
+doc/八月需求/韩国开票需求梳理与疑问清单.md.txt
+  s_95523bc37978d8::t_23bbb129dde5c0 1-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5db9bf8b3bab7317718a1d3c81581dadb29dc8e4",
+  "prompts": {},
+  "sessions": {
+    "s_1c455ba6e8628e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "966dc594-ca7d-408e-8a53-de2fda1a71b5",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

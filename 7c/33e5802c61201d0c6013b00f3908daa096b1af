@@ -1,0 +1,20 @@
+doc/八月需求/5.8技术方案-韩国发票调整金额闭环.md
+  s_362bfed6931d71::t_742e3814752b84 79
+  s_362bfed6931d71::t_08ddbb43288a33 1-78,80-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7c33e5802c61201d0c6013b00f3908daa096b1af",
+  "prompts": {},
+  "sessions": {
+    "s_362bfed6931d71": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9a4993e1-9383-48a3-83f8-e749d86c643c",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

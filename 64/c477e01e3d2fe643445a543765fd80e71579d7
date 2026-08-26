@@ -1,0 +1,27 @@
+C00-svc-base/svc-core-base/cp.txt
+  s_95523bc37978d8::t_c02f26ad32ae54 1
+CODEBUDDY.md
+  s_95523bc37978d8::t_dfd40290d8e94b 1-38
+GEMINI.md
+  s_95523bc37978d8::t_468d9d4ddb83cc 1-38
+QODER.md
+  s_95523bc37978d8::t_88b7a93dc123aa 1-38
+opencode.jsonc
+  s_95523bc37978d8::t_b1954424f8540f 1-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "64c477e01e3d2fe643445a543765fd80e71579d7",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

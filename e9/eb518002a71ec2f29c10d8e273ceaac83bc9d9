@@ -1,0 +1,205 @@
+.claude/skills/xmind-driven-testing/scripts/inject_log.py
+  s_95523bc37978d8::t_1333c0f9608b15 1-57
+.claude/skills/xmind-driven-testing/METHODOLOGY.md
+  s_95523bc37978d8::t_352999d983c70e 1-200
+.claude/skills/xmind-driven-testing/config/env.template.yaml
+  s_95523bc37978d8::t_c315a9da2eb534 1-101
+.claude/skills/xmind-driven-testing/java-mock/README.md
+  s_95523bc37978d8::t_432144bac0bd58 1-34
+.gitignore
+  s_95523bc37978d8::t_7874b0ad4f8fef 14,16-22,25-27,31-45,48-49,51-56
+.cursorrules
+  s_95523bc37978d8::t_87084e36492305 1-38
+.gemini/skills/explore-codebase/SKILL.md
+  s_95523bc37978d8::t_cfa698e1d34231 1-28
+.gemini/settings.json
+  s_95523bc37978d8::t_de0ff54b6e41ff 1-30
+.claude/skills/xmind-driven-testing/scripts/jwt_parser.py
+  s_95523bc37978d8::t_8322393f14e25f 1-69
+.claude/skills/xmind-driven-testing/config/env.local.yaml.example
+  s_95523bc37978d8::t_f2a3040560517b 1-91
+.editorconfig
+  s_95523bc37978d8::t_33234ee0e5df93 1-25
+.claude/skills/xmind-driven-testing/scripts/restart_service.py
+  s_95523bc37978d8::t_fee867bb12cd7f 1-401
+.kiro/steering/code-review-graph.md
+  s_95523bc37978d8::t_5073e0aaaa08da 1-38
+.claude/skills/xmind-driven-testing/scripts/run_case.sh
+  s_95523bc37978d8::t_0321ff13263ef5 1-321
+.claude/skills/xmind-driven-testing/tests/unit/test_parse_xmind.py
+  s_95523bc37978d8::t_71a2a0547f0c77 1-85
+.claude/skills/xmind-driven-testing/references/mock-types.md
+  s_95523bc37978d8::t_93d5216be2012c 1-29
+.gsd/dispatch-isolation-sentinel.json
+  s_95523bc37978d8::t_ff0b830632123f 1
+.claude/skills/xmind-driven-testing/java-mock/xstartup/core/base/provider/impl/XJwtTokenStorageProviderImpl.java
+  s_95523bc37978d8::t_cb562f5e4a4509 1-354
+.claude/skills/api-test/references/api-path-rules.md
+  s_95523bc37978d8::t_da2c65f18370f5 1-54
+.claude/skills/api-test/templates/report-template.md
+  s_95523bc37978d8::t_5fe7b452c8f24f 1-40
+.claude/skills/xmind-driven-testing/templates/snapshot.yaml.template
+  s_95523bc37978d8::t_fdc99724a3829d 1-33
+.gitattributes
+  s_95523bc37978d8::t_3a1c2fa5070ef8 1-37
+.gemini/skills/review-changes/SKILL.md
+  s_95523bc37978d8::t_0fd127269a1904 1-29
+.claude/skills/api-test/scripts/api-test-helper.js
+  s_95523bc37978d8::t_747e684f11e2ff 1-354
+.claude/skills/xmind-driven-testing/scripts/gen_report.py
+  s_95523bc37978d8::t_9ecd5f94378ffe 1-83
+.claude/skills/xmind-driven-testing/tests/unit/test_gen_report.py
+  s_95523bc37978d8::t_ef37bfd9af17ba 1-117
+.claude/skills/xmind-driven-testing/tests/unit/test_health_check_logback.py
+  s_95523bc37978d8::t_be1d72173dc862 1-82
+.codebuddy/settings.json
+  s_95523bc37978d8::t_728fa5d6bc6980 1-28
+.planning/phases/05.8-korea-invoice/05.8-Phase2-SUMMARY.md
+  s_95523bc37978d8::t_a4b21b0a2cf03a 1-126
+.claude/.gitignore
+  s_95523bc37978d8::t_e07d3634550544 1-22
+.claude/skills/xmind-driven-testing/templates/case.yaml.template
+  s_95523bc37978d8::t_b29925a023ea16 1-43
+.claude/skills/api-test/references/mock-types.md
+  s_95523bc37978d8::t_de89b38ff8748d 1-29
+.claude/skills/xmind-driven-testing/references/headers.md
+  s_95523bc37978d8::t_66cb805df1c9a7 1-36
+.claude/skills/xmind-driven-testing/tests/unit/test_env_loader.py
+  s_95523bc37978d8::t_74dfa3805f7ab8 1-44
+.claude/skills/api-test/config/environments.local.json
+  s_95523bc37978d8::t_d857990401cccc 1-22
+.claude/skills/xmind-driven-testing/scripts/parse_xmind.py
+  s_95523bc37978d8::t_829f2b7cac3b6f 1-178
+.claude/settings.json
+  s_95523bc37978d8::t_d9061f381ffdd1 1-32
+.claude/skills/xmind-driven-testing/templates/report.html.template
+  s_95523bc37978d8::t_1e386a8d8d3dd8 1-91
+.planning/phases/05.8-korea-invoice/05.8-01-SUMMARY.md
+  s_95523bc37978d8::t_bd41cb69e7fb6a 1-118
+.claude/skills/xmind-driven-testing/tests/unit/test_health_check_idea.py
+  s_95523bc37978d8::t_252836a8b02048 1-90
+.gemini/hooks/crg-session-start.sh
+  s_95523bc37978d8::t_57e270eadb4a93 1-15
+.claude/skills/xmind-driven-testing/scripts/db_query.py
+  s_95523bc37978d8::t_a8b87225d76a22 1-92
+.claude/skills/xmind-driven-testing/scripts/http_client.py
+  s_95523bc37978d8::t_aed68307f4bbbb 1-152
+.claude/skills/xmind-driven-testing/scripts/precision_sync.py
+  s_95523bc37978d8::t_a3ba5e29dc9db7 1-689
+.claude/skills/xmind-driven-testing/scripts/env_loader.py
+  s_95523bc37978d8::t_b55c3d6ad39656 1-37
+.claude/skills/xmind-driven-testing/tests/unit/test_parse_input.py
+  s_95523bc37978d8::t_b0f27c58e886ad 1-35
+.claude/skills/xmind-driven-testing/tests/unit/test_health_check_devtools.py
+  s_95523bc37978d8::t_6be5221751d6d7 1-76
+.gemini/hooks/crg-update.sh
+  s_95523bc37978d8::t_abf31621da8ba4 1-10
+.claude/skills/xmind-driven-testing/references/error-codes.md
+  s_95523bc37978d8::t_5effed7d5883b7 1-38
+.codebuddy/skills/explore-codebase/SKILL.md
+  s_95523bc37978d8::t_53ec4e1f408703 1-28
+.claude/skills/rs-review/SKILL.md
+  s_95523bc37978d8::t_fc7f0bfbde5d2c 1-270
+.codebuddy/skills/review-changes/SKILL.md
+  s_95523bc37978d8::t_3c4c507dffdfd4 1-29
+.claude/skills/xmind-driven-testing/scripts/filter_rules.py
+  s_95523bc37978d8::t_7e1a5e47236a67 1-41
+.claude/skills/xmind-driven-testing/tests/unit/test_inject_log.py
+  s_95523bc37978d8::t_8c276e4837cc97 1-56
+.codebuddy/skills/refactor-safely/SKILL.md
+  s_95523bc37978d8::t_58043b66b7ff25 1-28
+.claude/skills/xmind-driven-testing/tests/unit/test_db_query.py
+  s_95523bc37978d8::t_be0d07c67f1fa0 1-36
+.github/code-review-graph.instruction.md
+  s_95523bc37978d8::t_0b0695b73d489a 1-46
+.claude/skills/xmind-driven-testing/tests/unit/test_jwt_parser.py
+  s_95523bc37978d8::t_f22a4d5a8c64f8 1-135
+.claude/skills/xmind-driven-testing/README.md
+  s_95523bc37978d8::t_31ed654054bf2b 1-267
+.gemini/skills/refactor-safely/SKILL.md
+  s_95523bc37978d8::t_c6a40a832d2cfa 1-28
+.windsurfrules
+  s_95523bc37978d8::t_33c49f2f056c9c 1-38
+.claude/skills/xmind-driven-testing/config/filter-rules.yaml
+  s_95523bc37978d8::t_afb816af8910ee 1-48
+.claude/skills/xs-claude-md/SKILL.md
+  s_95523bc37978d8::t_2c56a00052a51b 1-182
+.claude/skills/xmind-driven-testing/scripts/run_all.sh
+  s_95523bc37978d8::t_88dd2d6c783e49 1-213
+.qoder/mcp.json
+  s_95523bc37978d8::t_39a6ffc77587f0 1-14
+.claude/skills/xmind-driven-testing/SKILL.md
+  s_95523bc37978d8::t_a7dd19acbda652 1-171
+.claude/skills/api-test/config/token-cache.json
+  s_95523bc37978d8::t_7df6521c62636b 1-17
+.claude/skills/xmind-driven-testing/scripts/health_check_env.py
+  s_95523bc37978d8::t_12c75b8848a601 1-360
+.claude/skills/xmind-driven-testing/references/api-path-rules.md
+  s_95523bc37978d8::t_20e8373be8475a 1-54
+.claude/skills/xmind-driven-testing/tests/unit/test_precision_sync.py
+  s_95523bc37978d8::t_1b7febdd7226f4 1-326
+.claude/skills/api-test/references/error-codes.md
+  s_95523bc37978d8::t_0ea1e0dec31314 1-38
+.claude/skills/xmind-driven-testing/tests/unit/test_http_client.py
+  s_95523bc37978d8::t_2aef56b0881f38 1-131
+.claude/skills/xmind-driven-testing/scripts/health_check.py
+  s_95523bc37978d8::t_aebcbde6a26d86 1-260
+.claude/skills/api-test/templates/batch-report-template.md
+  s_95523bc37978d8::t_f2802b0d3e0788 1-26
+.planning/ROADMAP.md
+  s_95523bc37978d8::t_a82699b8a44ec6 1-43
+.claude/skills/xmind-driven-testing/references/error-codes.json
+  s_95523bc37978d8::t_810915882303f0 1-42
+.codebuddy/skills/debug-issue/SKILL.md
+  s_95523bc37978d8::t_6506a1e8abb0fe 1-27
+.claude/skills/api-test/references/error-codes.json
+  s_95523bc37978d8::t_8734bfae6c6f8f 1-42
+.claude/skills/api-test/SKILL.md
+  s_95523bc37978d8::t_6218f54014d540 1-221
+.claude/skills/xmind-driven-testing/tests/fixtures/dummy_case.yaml
+  s_95523bc37978d8::t_525419c9c0a866 1-11
+.claude/skills/xmind-driven-testing/tests/fixtures/sample_openapi.md
+  s_95523bc37978d8::t_b30550d1bb54fe 1-159
+.gemini/skills/debug-issue/SKILL.md
+  s_95523bc37978d8::t_e8116bf294cb65 1-27
+.claude/skills/api-test/config/environments.local.json.template
+  s_95523bc37978d8::t_18163762f31ae5 1-41
+.qoder/settings.json
+  s_95523bc37978d8::t_a5852627981b83 1-28
+.claude/skills/api-test/references/headers.md
+  s_95523bc37978d8::t_907f9f564d5761 1-36
+.claude/skills/xmind-driven-testing/scripts/parse_openapi.py
+  s_95523bc37978d8::t_e5e95d6a2e5858 1-99
+.claude/skills/gen-ftl-template/knowledge/pitfalls.md
+  s_95523bc37978d8::t_ece4f365cf2a0f 1-100
+.claude/skills/xmind-driven-testing/tests/unit/test_restart_service.py
+  s_95523bc37978d8::t_e7285a6ab45c7b 1-285
+.claude/skills/xmind-driven-testing/tests/integration/test_end_to_end.py
+  s_95523bc37978d8::t_0dc23d548e563d 1-99
+.mcp.json
+  s_95523bc37978d8::t_ef161eedbf279b 1-18
+.claude/skills/xmind-driven-testing/tests/unit/test_filter_rules.py
+  s_95523bc37978d8::t_cc520e8f896902 1-58
+.claude/skills/xmind-driven-testing/tests/unit/test_parse_openapi.py
+  s_95523bc37978d8::t_864b36d9ebcc0d 1-39
+.claude/skills/xmind-driven-testing/.gitignore
+  s_95523bc37978d8::t_71ee3d371b4688 1-11
+.planning/phases/05.8-korea-invoice/05.8-DISCUSS-CHECKPOINT.json
+  s_95523bc37978d8::t_dc76795784927d 1-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e9eb518002a71ec2f29c10d8e273ceaac83bc9d9",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_fbfe372877ccbc::t_719028c7c1af3c 156-165,168-178
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceRedInvoiceSecurityTest.java
+  s_fbfe372877ccbc::t_73e047fecc2ae0 1-275
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0133969022c5b92dceed7d85cfe8846bc797c0b9",
+  "prompts": {},
+  "sessions": {
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
