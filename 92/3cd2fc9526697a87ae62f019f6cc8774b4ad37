@@ -1,0 +1,55 @@
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/SaveSvcServiceRepairItemMergeInput.java
+  s_b11166d12e3d4f::t_f28960a3610598 1-14
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceRepairItemEnt.java
+  s_b11166d12e3d4f::t_e1fc2579daa5db 51-58
+  s_b11166d12e3d4f::t_b7551619730b36 230,232-245
+  s_b11166d12e3d4f::t_7fc833fc874c45 231
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/mapper/SvcServiceRepairItemMergeMapper.java
+  s_b11166d12e3d4f::t_52f41c8e9c6d47 1-18
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceRepairItemMergeServiceImpl.java
+  s_b11166d12e3d4f::t_3f24b3a5076eb4 1-142
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/SvcServiceRepairItemMergeItem.java
+  s_b11166d12e3d4f::t_a3e2638a1ac40f 1-51
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceMergeDetailMapper.xml
+  s_b11166d12e3d4f::t_6b5eabaa231c1d 1-36
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/QuerySvcServiceRepairItemMergeInput.java
+  s_b11166d12e3d4f::t_1a98556ea3c13f 1-12
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/entity/SvcServiceRepairItemView.java
+  s_b11166d12e3d4f::t_713b08cb694e31 38-45
+  s_b11166d12e3d4f::t_599086d58f2387 150-165
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/SvcServiceRepairItemMergeService.java
+  s_b11166d12e3d4f::t_08f148c15ad48b 1-20
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/mapper/SvcServiceMergeDetailMapper.java
+  s_b11166d12e3d4f::t_fe39fbf24dada5 1-23
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceRepairItemMergeMapper.xml
+  s_b11166d12e3d4f::t_5a9397c5922d82 1-20
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/QuerySvcServiceRepairItemMergeOutput.java
+  s_b11166d12e3d4f::t_56913af8b6b5ad 1-57
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceRepairItemViewMapper.xml
+  s_b11166d12e3d4f::t_75bf58270deaf4 37-38
+  s_b11166d12e3d4f::t_aad17a2f53111a 12-13
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceMergeDetailEnt.java
+  s_b11166d12e3d4f::t_ab406cf234ae13 1-105
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/QuerySvcServiceMergeDetailOutput.java
+  s_b11166d12e3d4f::t_d79c6be6aa5f5a 1-56
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/SvcServiceMergeDetailItem.java
+  s_b11166d12e3d4f::t_ff325954425467 1-44
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceRepairItemMergeEnt.java
+  s_b11166d12e3d4f::t_77d65905aed526 1-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "923cd2fc9526697a87ae62f019f6cc8774b4ad37",
+  "prompts": {},
+  "sessions": {
+    "s_b11166d12e3d4f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32a457dc-29eb-47cf-8937-d57a5c28a2f5",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
