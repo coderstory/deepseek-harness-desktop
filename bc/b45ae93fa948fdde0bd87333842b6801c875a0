@@ -186,6 +186,7 @@ C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/Sv
   s_ac010c8b41ca46::t_f8c8c181c34f1f 2517-2519,2531-2533
   s_ac010c8b41ca46::t_29a1ef60cd7de5 2535-2537,2539-2541
   s_ac010c8b41ca46::t_7fe30d0a97a6b3 2543
+  s_55ee644e367d6d::t_60d5865c68a398 1385,1423-1433,1435-1442,1451-1452,1474-1477,1488-1491,1505-1506,1514-1515,1555-1578,1586-1588,1603-1615,1623,1640-1657,1677,1718-1721,1766-1778,1815-1824,1837-1839,1855-1859,1871-1880,1888-1891,1899-1922,1930-1961,1969,1977-1978,1986-1987,1997-1999,2010,2023,2046-2047,2061-2071,2115-2124,2132-2139,2147-2154,2178-2180,2195,2212-2213,2226-2229,2239-2250,2264-2280,2288-2299,2307-2310,2318-2322,2341-2353,2365-2372,2380,2389-2390,2399-2416,2430-2438,2453-2468,2487-2490,2498-2510,2520-2530,2538
 C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/RepairInformationItemOutput.java
   s_ac010c8b41ca46::t_94715effae1c5e 35-40,42-43
   s_ac010c8b41ca46::t_2fb5f1dfa09336 41
@@ -231,6 +232,7 @@ C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/Rece
   s_ac010c8b41ca46::t_e0b3c777735dae 40-43
   s_ac010c8b41ca46::t_d164fef6d3a92f 44-45
   s_ac010c8b41ca46::t_f0da9f18472c22 38
+  s_55ee644e367d6d::t_46c17b2351b147 39
 C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/temp_settle/TempSettleInfoInput.java
   s_ac010c8b41ca46::t_83676df315581e 1-15
 C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/PermissionDict.java
@@ -244,6 +246,12 @@ C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/
   s_ac010c8b41ca46::t_96f9e3b8a6596d 11,21-23
 D03-deploy/svc-standard-api/src/main/resources/sql/2407-DDL.sql
   s_9259b361c3ac45::t_8d512238c3f124 1687
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcInsuranceCompanyService.java
+  s_55ee644e367d6d::t_60d5865c68a398 111-112
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/SvcSystemOrderInput.java
+  s_55ee644e367d6d::t_60d5865c68a398 20-22,46-54
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/GetSvcServiceProxyPdfOutput.java
+  s_55ee644e367d6d::t_60d5865c68a398 102-104,108-109,478-483
 ---
 {
   "schema_version": "authorship/3.0.0",
@@ -251,6 +259,14 @@ D03-deploy/svc-standard-api/src/main/resources/sql/2407-DDL.sql
   "base_commit_sha": "bcb45ae93fa948fdde0bd87333842b6801c875a0",
   "prompts": {},
   "sessions": {
+    "s_55ee644e367d6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e23364f5-d938-4057-b5c3-f75ede5f047d",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    },
     "s_9259b361c3ac45": {
       "agent_id": {
         "tool": "claude",
