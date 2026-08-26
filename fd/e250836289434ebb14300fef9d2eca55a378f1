@@ -1,0 +1,33 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_79abdc51826958::t_b1db22d4949276 60,63,748-750,754,812-846
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_79abdc51826958::t_4caf481353da5a 61-76,137-140,243-248
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/GetSettlementInformation.java
+  s_bd311ae77b3462::t_6171adc5d56e45 32-34,122-129
+C06-svc-delivery/svc-core-delivery/src/main/resources/mybatis/mapper/svc/core/delivery/SvcStatementViewMapper.xml
+  s_bd311ae77b3462::t_244aee5367dcec 119
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "fde250836289434ebb14300fef9d2eca55a378f1",
+  "prompts": {},
+  "sessions": {
+    "s_79abdc51826958": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "899f2c43-221f-4180-bdd8-085349113358",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_bd311ae77b3462": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "234ec96e-0192-4068-9d32-2d4deac6fadc",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
