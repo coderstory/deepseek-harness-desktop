@@ -1,0 +1,28 @@
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/TempSettleLogicTest.java
+  s_ac010c8b41ca46::t_e6964bcc0b500f 21
+  s_ac010c8b41ca46::t_d1e1a93ca3cdb3 432-484
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/TempSettleCalculator.java
+  s_ac010c8b41ca46::t_003b9940970be5 23
+  s_ac010c8b41ca46::t_7dffef25bde365 6
+  s_ac010c8b41ca46::t_522a5eb39e7dab 276-305
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_ac010c8b41ca46::t_e1e9e143fbc727 356
+  s_ac010c8b41ca46::t_007efb1efd13a7 345-355,357-402
+  s_ac010c8b41ca46::t_f6d0047feffa7b 418-421
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0422055f930e058a4d585fb3085d12629b6a1181",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
