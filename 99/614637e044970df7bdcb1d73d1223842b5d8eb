@@ -1,0 +1,48 @@
+.claude/settings.json
+  s_0ba0a0fd6df46f::t_d4f2ec0ab57d30 4,6-37,39-41
+  s_0ba0a0fd6df46f::t_e80b984d4af98f 38
+.mcp.json
+  s_0ba0a0fd6df46f::t_d4f2ec0ab57d30 6-18,20
+  s_0ba0a0fd6df46f::t_602d4b39312ae6 19,21-23
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/RoadRescueDataPushService.java
+  s_0ba0a0fd6df46f::t_95d2c81de09530 385
+  s_0ba0a0fd6df46f::t_341ee75ac7ffb8 156,163,173,177,182,188,209,223,245,260,269,289,294,304,316,329,687,742,765,778,851,860
+AGENTS.md
+  s_0ba0a0fd6df46f::t_d4f2ec0ab57d30 38-77
+D01-dependence/svc-dependency-all/pom.xml
+  s_0ba0a0fd6df46f::t_d4f2ec0ab57d30 19-28,85-94
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_0ba0a0fd6df46f::t_d4f2ec0ab57d30 1-7,10-35
+.gitignore
+  s_0ba0a0fd6df46f::t_6d8555b32f6e4c 54-55
+.planning/ROADMAP.md
+  s_0ba0a0fd6df46f::t_545a2b5308891e 12,19-20,93,97,112-114,122-132
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-01-PLAN.md
+  s_0ba0a0fd6df46f::t_504162717c8bfd 36,181,357
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-02-PLAN.md
+  s_0ba0a0fd6df46f::t_62f1a4bded6e06 27,337
+.planning/phases/18.2-service-job/18.2-01-PLAN.md
+  s_0ba0a0fd6df46f::t_66ceff4d7e83c7 41,84
+.planning/phases/18.2-service-job/18.2-02-PLAN.md
+  s_0ba0a0fd6df46f::t_065917f68f1c53 23,173-174,203
+.planning/phases/18.2-service-job/18.2-REVIEW.md
+  s_0ba0a0fd6df46f::t_9806f565947bbc 103,118,134
+CLAUDE.md
+  s_0ba0a0fd6df46f::t_f776be416bc36c 131-169
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "99614637e044970df7bdcb1d73d1223842b5d8eb",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
