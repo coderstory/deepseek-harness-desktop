@@ -1,0 +1,19 @@
+.gitignore
+  s_362bfed6931d71::t_5a12fec031194c 57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0663b8f75d7742fc6fc93bc23e82cb83a4444651",
+  "prompts": {},
+  "sessions": {
+    "s_362bfed6931d71": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9a4993e1-9383-48a3-83f8-e749d86c643c",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
