@@ -1,0 +1,33 @@
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/GenTwoScenariosTest.java
+  s_013544e2545ef8::t_21e816911d9d06 132-133
+  s_013544e2545ef8::t_d6a926968771e0 14-16,24,26
+  s_013544e2545ef8::t_237a9a03e4c417 568-637
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_013544e2545ef8::t_af896cc5353c01 247-260
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_013544e2545ef8::t_a6bb0c1f335b9d 67
+  s_013544e2545ef8::t_af9aa7f6c190ff 816-826,830-832
+  s_013544e2545ef8::t_52deae8674d1a1 903-1009,1087
+  s_013544e2545ef8::t_018253fb3b0eaf 1010,1088-1144
+  s_013544e2545ef8::t_adafdc13af67a4 723
+  s_013544e2545ef8::t_e4c8a2162842d0 888
+  s_013544e2545ef8::t_3b680b55974974 1011
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementServiceKrEmDirectReadTest.java
+  s_013544e2545ef8::t_8ae78f6fb19566 1-178
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0a1e17f7d2220fba2af170000180ad9cce4b5010",
+  "prompts": {},
+  "sessions": {
+    "s_013544e2545ef8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e1b496f3-f04c-40bc-bbe3-2ded99737e30",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
