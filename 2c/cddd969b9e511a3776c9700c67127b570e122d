@@ -1,0 +1,19 @@
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceGenerateTest.java
+  s_95523bc37978d8::t_193a09e0fd0246 506-630
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2ccddd969b9e511a3776c9700c67127b570e122d",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

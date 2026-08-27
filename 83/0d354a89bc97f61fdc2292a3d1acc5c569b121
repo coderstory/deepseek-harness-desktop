@@ -1,0 +1,27 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_95523bc37978d8::t_ea113b325def89 1-54,56-892
+  s_95523bc37978d8::t_d75f8def203798 55
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_95523bc37978d8::t_1b7d56f7166675 99-100
+  s_95523bc37978d8::t_7b4a55e278934f 347,466,551,680
+  s_95523bc37978d8::t_cbcfd4d847d71e 68,72
+  s_95523bc37978d8::t_dc2331165f07a8 115
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_95523bc37978d8::t_8b99a594fa9a18 120,479,496
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "830d354a89bc97f61fdc2292a3d1acc5c569b121",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.claude/settings.json
+  s_95523bc37978d8::t_de2fdaa576de54 3-4
+  s_95523bc37978d8::t_c5ec0fd2fb0c7e 6-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "04b4740963b68c83448f42ec95d4387bc4ddd848",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

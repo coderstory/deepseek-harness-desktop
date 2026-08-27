@@ -1,0 +1,49 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.hu-HU.properties
+  s_17500fa05342fc::t_70e21453fc0995 32-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.cs-CZ.properties
+  s_17500fa05342fc::t_70e21453fc0995 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.sv-SE.properties
+  s_17500fa05342fc::t_70e21453fc0995 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-MX.properties
+  s_17500fa05342fc::t_70e21453fc0995 32-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.id-ID.properties
+  s_17500fa05342fc::t_70e21453fc0995 32-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.fr-FR.properties
+  s_17500fa05342fc::t_70e21453fc0995 32-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.en-US.properties
+  s_17500fa05342fc::t_70e21453fc0995 32-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nb-NO.properties
+  s_17500fa05342fc::t_70e21453fc0995 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.uz-UZ.properties
+  s_17500fa05342fc::t_70e21453fc0995 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.th-TH.properties
+  s_17500fa05342fc::t_70e21453fc0995 34-41
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nl-NL.properties
+  s_17500fa05342fc::t_70e21453fc0995 32-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.sk-SK.properties
+  s_17500fa05342fc::t_70e21453fc0995 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.ru-RU.properties
+  s_17500fa05342fc::t_70e21453fc0995 34-41
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-ES.properties
+  s_17500fa05342fc::t_70e21453fc0995 32-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.ko-KR.properties
+  s_17500fa05342fc::t_70e21453fc0995 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.de-DE.properties
+  s_17500fa05342fc::t_61d9b5d7acbb2c 32-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e5e42ad9f575de2435ba43f75e3e016fce29ab48",
+  "prompts": {},
+  "sessions": {
+    "s_17500fa05342fc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ee7f6139-b84a-4ee0-8887-6959a596a906",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceKrEmPriceContextTest.java
+  s_95523bc37978d8::t_3a0705871deaaa 6,51,140,158,195-196,203,315
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_95523bc37978d8::t_3a0705871deaaa 59-60,86-89,95-96,282,285,289,291,296,298,314,317,320-322,341-342
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/GetSvcStatementInvoiceOutput.java
+  s_95523bc37978d8::t_3a0705871deaaa 8,106,108,112
+doc/八月需求/韩国开票需求梳理与疑问清单.md.txt
+  s_95523bc37978d8::t_3a0705871deaaa 1-29
+doc/八月需求/PRD-할인-소계-口径确认.md
+  s_95523bc37978d8::t_3a0705871deaaa 1-18
+doc/八月需求/5.8-PRD-vs-代码对比.md
+  s_95523bc37978d8::t_3a0705871deaaa 1-194
+doc/八月需求/5.8-反向PRD-代码实现.md
+  s_95523bc37978d8::t_3a0705871deaaa 1-499
+doc/八月需求/5.8-反向PRD-代码实现-v2.md
+  s_95523bc37978d8::t_3a0705871deaaa 1-558
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/VatItemFilter.java
+  s_95523bc37978d8::t_3a0705871deaaa 1-27
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_95523bc37978d8::t_3a0705871deaaa 314-316,420-422,490,567,572,648,816
+doc/八月需求/5.8-开发文档.md
+  s_95523bc37978d8::t_3a0705871deaaa 1-315
+doc/八月需求/5.8-反向PRD-代码实现-v3.md
+  s_95523bc37978d8::t_3a0705871deaaa 1-472
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/KrEmVatItemFilter.java
+  s_95523bc37978d8::t_3a0705871deaaa 1-26
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_95523bc37978d8::t_3a0705871deaaa 757-759,1510,1514
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/SystemOrderInput.java
+  s_95523bc37978d8::t_3a0705871deaaa 3,12
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_95523bc37978d8::t_3a0705871deaaa 723-726,774
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_95523bc37978d8::t_3a0705871deaaa 234,236-240,253,256,289,296,301
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceTest.java
+  s_95523bc37978d8::t_3a0705871deaaa 34,127,130-131,173,175,239
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e548aa753bee5d495bf43672b0bcbcd84101caa6",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

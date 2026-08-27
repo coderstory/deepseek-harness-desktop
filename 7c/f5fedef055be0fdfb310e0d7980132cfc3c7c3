@@ -1,0 +1,23 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_ac010c8b41ca46::t_eff614274d947a 86
+  s_ac010c8b41ca46::t_4fda6149b88c3b 955-957,960-970
+  s_ac010c8b41ca46::t_686fa78fea68cb 954,958-959,971-972
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_ac010c8b41ca46::t_d15ebaf31ca04c 302,304-305
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7cf5fedef055be0fdfb310e0d7980132cfc3c7c3",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

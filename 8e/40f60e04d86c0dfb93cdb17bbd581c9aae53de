@@ -1,0 +1,19 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_1c455ba6e8628e::t_50965f93021a77 2203
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8e40f60e04d86c0dfb93cdb17bbd581c9aae53de",
+  "prompts": {},
+  "sessions": {
+    "s_1c455ba6e8628e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "966dc594-ca7d-408e-8a53-de2fda1a71b5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

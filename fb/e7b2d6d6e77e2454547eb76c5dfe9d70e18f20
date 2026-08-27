@@ -1,0 +1,23 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_55ee644e367d6d::t_d3ab1551fbfe50 117,791,811,826-831,870-872,874-880,886,909-910,916-917
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_55ee644e367d6d::t_d3ab1551fbfe50 305,312-313
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/ConfirmSettleCalculator.java
+  s_55ee644e367d6d::t_d3ab1551fbfe50 3,86,92-97,151-156
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "fbe7b2d6d6e77e2454547eb76c5dfe9d70e18f20",
+  "prompts": {},
+  "sessions": {
+    "s_55ee644e367d6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e23364f5-d938-4057-b5c3-f75ede5f047d",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

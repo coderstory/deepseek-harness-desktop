@@ -1,0 +1,51 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.de-DE.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.fr-FR.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.hu-HU.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.es-MX.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.nb-NO.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/QuerySvcInsuranceCompanyInput.java
+  s_55ee644e367d6d::t_2d4abf53c9e308 6-7,14,17,30,34,38,42
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.sv-SE.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/error/ConfigCommonError.java
+  s_55ee644e367d6d::t_2d4abf53c9e308 20
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.id-ID.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.nl-NL.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.zh-CN.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 21
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.ru-RU.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcInsuranceCompanyService.java
+  s_55ee644e367d6d::t_2d4abf53c9e308 34,63-64,108-109
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.th-TH.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.es-ES.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.ko-KR.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.uz-UZ.properties
+  s_55ee644e367d6d::t_2d4abf53c9e308 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "95bc5bc8c029cda04657ddb7e70f944bdc9f1586",
+  "prompts": {},
+  "sessions": {
+    "s_55ee644e367d6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e23364f5-d938-4057-b5c3-f75ede5f047d",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
