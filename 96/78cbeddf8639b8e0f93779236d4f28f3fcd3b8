@@ -1,0 +1,19 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_95523bc37978d8::t_3b5746a6068450 466,686
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9678cbeddf8639b8e0f93779236d4f28f3fcd3b8",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
