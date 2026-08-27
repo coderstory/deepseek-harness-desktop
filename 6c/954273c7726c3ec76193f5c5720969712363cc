@@ -1,0 +1,23 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_ac010c8b41ca46::t_b69037330aa2a5 2093
+  s_ac010c8b41ca46::t_8ceb2d1f03c05e 2112-2117
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/RepairInformationItemInput.java
+  s_ac010c8b41ca46::t_a545738181e905 154-169
+  s_ac010c8b41ca46::t_02d33a5de5307e 29,32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6c954273c7726c3ec76193f5c5720969712363cc",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
