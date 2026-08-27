@@ -1,0 +1,22 @@
+C01-svc-config/svc-core-config/src/main/resources/mybatis/mapper/svc/core/config/MdmStandardHourMapper.xml
+  s_7d02d8bc1c739b::t_f54bbdc136df5d 51-55,144-240,244,246-247,249-265,267-276
+  s_7d02d8bc1c739b::t_1a6e087f1dff1b 241-243,245,248
+  s_7d02d8bc1c739b::t_36fd8a3f0d7a68 266
+  s_7d02d8bc1c739b::t_3239614c4fbe2d 277
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "390d4d9a7d340cb61ab18947a3a459dcea27ab0b",
+  "prompts": {},
+  "sessions": {
+    "s_7d02d8bc1c739b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03d91a6f-4b7e-4a64-bc74-e3534a5c8226",
+        "model": "glm-5.2"
+      },
+      "human_author": "Lixuan.Zheng1 <Lixuan.Zheng1@zeekrlife.com>"
+    }
+  }
+}
