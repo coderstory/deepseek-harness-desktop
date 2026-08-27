@@ -1,0 +1,37 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_95523bc37978d8::t_cae82007a7213c 233
+  s_95523bc37978d8::t_6cce4262007df5 436
+  s_95523bc37978d8::t_6aff7238189a93 455
+  s_95523bc37978d8::t_a142ee49297b24 465
+  s_95523bc37978d8::t_67be770560fb7d 422,698
+  s_95523bc37978d8::t_9c1b4a96e55b9c 389
+  s_95523bc37978d8::t_4567f63b005ed8 450
+  s_95523bc37978d8::t_21f48832ca5ce6 463-464
+  s_95523bc37978d8::t_19145bf3fbd88d 237
+  s_95523bc37978d8::t_750ef378a8912d 403
+  s_95523bc37978d8::t_744875880fec38 678
+  s_95523bc37978d8::t_df470a52171a28 683
+  s_95523bc37978d8::t_f216e94dae4188 890-894
+  s_95523bc37978d8::t_07ffd95f89d06b 666-670
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_95523bc37978d8::t_942308fa745eef 540-544
+  s_95523bc37978d8::t_cf194070a87bd5 684-688
+  s_95523bc37978d8::t_abbff6018b790d 693-694
+  s_95523bc37978d8::t_9321ef3f03ea0a 334-335
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e7a52f4272ff424ff607243af799d6c9034034b8",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

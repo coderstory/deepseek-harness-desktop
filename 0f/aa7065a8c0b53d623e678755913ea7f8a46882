@@ -1,0 +1,27 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_1c455ba6e8628e::t_a01df8de365a2b 1070-1072
+D01-dependence/svc-dependency-all/pom.xml
+  s_1c455ba6e8628e::t_f743dd4577964e 19-28,85-94
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_1c455ba6e8628e::t_10d4c2b3cf5d21 39-40
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_1c455ba6e8628e::t_6241c42e865384 1-7,10-23
+doc/需求评审/iRepair-九月迭代PRD-缺陷分析-20260826.md
+  s_1c455ba6e8628e::t_38d3c23cabfce0 1-659
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0faa7065a8c0b53d623e678755913ea7f8a46882",
+  "prompts": {},
+  "sessions": {
+    "s_1c455ba6e8628e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "966dc594-ca7d-408e-8a53-de2fda1a71b5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

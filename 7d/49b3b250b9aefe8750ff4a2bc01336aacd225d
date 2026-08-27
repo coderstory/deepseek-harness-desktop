@@ -1,0 +1,38 @@
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_1c455ba6e8628e::t_acd0118b06efe5 76-77,95-96
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_1c455ba6e8628e::t_44625452432e04 1-7,10-23
+doc/需求评审/iRepair-九月迭代PRD-缺陷分析-20260826.md
+  s_a745d8f4d0b015::t_6afcab8e9b91aa 1-659
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_1c455ba6e8628e::t_e9fe774abe4349 107,114
+D01-dependence/svc-dependency-all/pom.xml
+  s_1c455ba6e8628e::t_939ae1819402c2 85-94
+  s_1c455ba6e8628e::t_de31a78d98ab34 19-28
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_1c455ba6e8628e::t_593cfdfc72e704 39-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7d49b3b250b9aefe8750ff4a2bc01336aacd225d",
+  "prompts": {},
+  "sessions": {
+    "s_1c455ba6e8628e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "966dc594-ca7d-408e-8a53-de2fda1a71b5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_a745d8f4d0b015": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a4dc6fe4-a085-42e2-a35a-4d3c4e0bbc55",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

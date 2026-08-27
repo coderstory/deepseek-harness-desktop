@@ -1,0 +1,30 @@
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceForwardTest.java
+  s_fbfe372877ccbc::t_ef732b5bf6e74a 714-756
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_fbfe372877ccbc::t_a031ae947a4ba4 501
+  s_fbfe372877ccbc::t_73dcee3f6e246e 454,457,475-476,478
+  s_fbfe372877ccbc::t_95fc303cd955de 5-13,16-22,28-31,34-35
+  s_fbfe372877ccbc::t_1a3f5a9cc489a9 210-258,261-262,264-265,267-271,273-283,286,288-294,297-355,358-359,361-362,364-368,370-380,383,385-391,394-449,452-453,455-456,458-462,464-474,477,479-500,502-508
+  s_fbfe372877ccbc::t_8f4fef93aef532 3
+  s_fbfe372877ccbc::t_d7ad173ed2d244 272,369,463
+  s_fbfe372877ccbc::t_2cd461531130d3 49-54
+  s_fbfe372877ccbc::t_a80ec63c9ce3a4 24
+  s_fbfe372877ccbc::t_a9a3514c2bae2c 263,266,284-285,287,295-296,360,363,381-382,384,392-393
+  s_fbfe372877ccbc::t_2a6e8130f87cd4 259-260,356-357,450-451
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "51f6678b9564a6d16db1e2d52f267900b04e89e0",
+  "prompts": {},
+  "sessions": {
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

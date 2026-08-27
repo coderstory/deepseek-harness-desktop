@@ -1,0 +1,24 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/event/ServiceOrderMessageListener.java
+  s_baabd2020648d1::t_0bb024a414dbe5 272,276-281
+  s_baabd2020648d1::t_4e94cae13031a9 6
+  s_baabd2020648d1::t_ffd3a09900d7f7 90-92,98-100
+  s_baabd2020648d1::t_c57c97df87f6a8 81-82
+  s_baabd2020648d1::t_095d2474cc68a6 57-59
+  s_baabd2020648d1::t_25c4854219cfde 34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ccdcd5d864d44dd2633aecfafbe6924332c16cf0",
+  "prompts": {},
+  "sessions": {
+    "s_baabd2020648d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b58029e8-660b-46b4-a1df-6a76d46d28fe",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

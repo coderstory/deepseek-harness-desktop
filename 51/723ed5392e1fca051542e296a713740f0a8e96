@@ -1,0 +1,22 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/InfomediaVehicleInfo.java
+  s_41b303d57eac17::t_7f10c66d72c75f 189-196
+  s_41b303d57eac17::t_1ae97bc93c88a7 44-45
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/InfomediaVehicleInfoDataUploadService.java
+  s_41b303d57eac17::t_b6b33ca035afde 474
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "51723ed5392e1fca051542e296a713740f0a8e96",
+  "prompts": {},
+  "sessions": {
+    "s_41b303d57eac17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42839fd8-330f-4bd9-8b5f-2370a22eb0f4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
