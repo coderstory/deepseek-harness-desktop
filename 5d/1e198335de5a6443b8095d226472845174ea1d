@@ -1,0 +1,38 @@
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_7b573b4303bd38::t_9c6f1fcf5af092 369
+  s_7b573b4303bd38::t_abd996bc98fb24 396
+  s_7b573b4303bd38::t_0c0fc4bc258503 397,399
+  s_7b573b4303bd38::t_8d3e869a21a60e 232-233
+  s_7b573b4303bd38::t_0c64d8917864cf 245,250
+  s_7b573b4303bd38::t_ced72f29b5de1c 374
+  s_7b573b4303bd38::t_347ca9e4e54d38 262
+  s_7b573b4303bd38::t_efd649b082c243 270,301,320,337,364,375,391,398,400
+  s_7b573b4303bd38::t_aee284632e63fd 61
+  s_7b573b4303bd38::t_62ec4dbb9a24be 9
+  s_7b573b4303bd38::t_2b1bc61fd20eaf 165
+  s_7b573b4303bd38::t_4cd35ef9da3f8b 266-267
+  s_7b573b4303bd38::t_64e98e6c8d5c6a 277,308,326,344,384,403
+  s_7b573b4303bd38::t_92ac1a8b629f70 356
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_7b573b4303bd38::t_c8e3ef15574d11 662
+  s_7b573b4303bd38::t_c0317ba60903bd 804
+  s_7b573b4303bd38::t_67faf0e88173d7 806
+  s_7b573b4303bd38::t_971c31b7260fe8 705,709
+  s_7b573b4303bd38::t_f1ab305593014d 714
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5d1e198335de5a6443b8095d226472845174ea1d",
+  "prompts": {},
+  "sessions": {
+    "s_7b573b4303bd38": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71536071-52f0-4ca1-9548-1ab4be6765f7",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

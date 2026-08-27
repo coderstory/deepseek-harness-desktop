@@ -1,0 +1,27 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/job/RoadRescueDataPushJob.java
+  s_0ba0a0fd6df46f::t_1405e9382ad3bd 108
+  s_0ba0a0fd6df46f::t_d3bd9ed8009c60 92
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/RoadRescueDataPushService.java
+  s_0ba0a0fd6df46f::t_23b336eae925e9 467
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/service/RoadRescueDataPushServiceTest.java
+  s_0ba0a0fd6df46f::t_d12b8065b91a1f 823
+  s_0ba0a0fd6df46f::t_8bdb417fd7d96b 745-773
+  s_0ba0a0fd6df46f::t_a19a01ddf9174e 493,541,712,737,927
+  s_0ba0a0fd6df46f::t_c0e9da05e4e81c 744
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6d20a5c6dced56f8eea107c0efa99e22d00dfa6d",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
