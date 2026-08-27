@@ -1,0 +1,30 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsClient.java
+  s_0ba0a0fd6df46f::t_348e7331fdb5c7 119-120
+  s_0ba0a0fd6df46f::t_1fcb96c0d2688c 222-223
+  s_0ba0a0fd6df46f::t_8519caecd38e26 184-185
+  s_0ba0a0fd6df46f::t_751e5138573366 150,154
+  s_0ba0a0fd6df46f::t_880e05bf670e3c 202-204
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsTokenCacheTest.java
+  s_0ba0a0fd6df46f::t_7ddcd5512ff36d 71-75
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueVehicleInfo.java
+  s_0ba0a0fd6df46f::t_114bff22bcfb71 29
+  s_0ba0a0fd6df46f::t_cbc5e5f1cd2f05 10
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/RoadRescuePolicyConverter.java
+  s_0ba0a0fd6df46f::t_8f2110956ca4f4 46,48-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c209115f42b7d9d4ac8707239a102e47bd7291ea",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

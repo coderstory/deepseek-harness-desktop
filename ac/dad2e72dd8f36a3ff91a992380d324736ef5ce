@@ -1,0 +1,26 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_3839a9d4e7d6f3::t_1a5301fe5c5c44 35-52,60-61
+  s_3839a9d4e7d6f3::t_97969fd153de71 53-59
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementServiceLogicTest.java
+  s_3839a9d4e7d6f3::t_0cfebdb0d589db 225-293
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_3839a9d4e7d6f3::t_fee92b65b4fc6d 790-792
+  s_3839a9d4e7d6f3::t_b29614b36fbbd4 812-813
+  s_3839a9d4e7d6f3::t_a924ec02087f06 828-829
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "acdad2e72dd8f36a3ff91a992380d324736ef5ce",
+  "prompts": {},
+  "sessions": {
+    "s_3839a9d4e7d6f3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8a506fba-40e4-4185-aff6-da44e8b03df8",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_fbfe372877ccbc::t_a150387af3c4d7 1054-1058
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceExcelService.java
+  s_fbfe372877ccbc::t_7da4898bfdbe61 172-174
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/SvcStatementInvoiceModel.java
+  s_fbfe372877ccbc::t_bda45cc0b2f70e 136-138
+  s_fbfe372877ccbc::t_3d4433eb005876 601-608
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/kr/KrInvoiceForward.ftl
+  s_158c70195384cd::t_959998e54e9d66 1981-1985
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "39a58d1db82e1c676fa904da48ff1d8dded13386",
+  "prompts": {},
+  "sessions": {
+    "s_158c70195384cd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ae6bc6e8405dcd2c3",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.planning/phases/18.2-service-job/18.2-02-PLAN.md
+  s_0ba0a0fd6df46f::t_fc604d98becba2 203
+  s_0ba0a0fd6df46f::t_43820ec571cf66 23
+  s_0ba0a0fd6df46f::t_2065378ca96345 174
+  s_0ba0a0fd6df46f::t_e5a5046a93bfca 173
+  s_0ba0a0fd6df46f::t_47049604647872 20-22
+  s_0ba0a0fd6df46f::t_61c3b2607fb74d 24-26,170-172
+  s_0ba0a0fd6df46f::t_4fe8e5f20469b5 175-177,200-202
+  s_0ba0a0fd6df46f::t_d1b4043dd2af0c 204-206
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-02-PLAN.md
+  s_0ba0a0fd6df46f::t_302bb9cbfbfb20 27
+  s_0ba0a0fd6df46f::t_0bcb98bb6db709 24-26
+  s_0ba0a0fd6df46f::t_90995e9238596c 28-30
+.planning/ROADMAP.md
+  s_0ba0a0fd6df46f::t_66e64fbe993a6b 93
+  s_0ba0a0fd6df46f::t_e92dad8485dc1d 97
+  s_0ba0a0fd6df46f::t_f974808a126f63 12
+  s_0ba0a0fd6df46f::t_b82efa18449b2a 112
+  s_0ba0a0fd6df46f::t_d0d776f28afba9 19-20
+  s_0ba0a0fd6df46f::t_4afe73f32fa913 9-11
+  s_0ba0a0fd6df46f::t_4b102d5ef4fe82 13-18
+  s_0ba0a0fd6df46f::t_5252339d6d3b58 21-23
+.planning/phases/18.2-service-job/18.2-01-PLAN.md
+  s_0ba0a0fd6df46f::t_16ece9a1ec4571 41
+  s_0ba0a0fd6df46f::t_81f4f822866674 84
+  s_0ba0a0fd6df46f::t_3b3538be4e5619 38-40
+  s_0ba0a0fd6df46f::t_b891240263b82c 42-44,81-83
+  s_0ba0a0fd6df46f::t_d000064da8f1db 85-87
+.planning/phases/18.2-service-job/18.2-REVIEW.md
+  s_0ba0a0fd6df46f::t_b907adf3ce87b7 118
+  s_0ba0a0fd6df46f::t_280aae876b20c3 103
+  s_0ba0a0fd6df46f::t_23bd64d9378a85 134
+  s_0ba0a0fd6df46f::t_18b469715d607e 100-102
+  s_0ba0a0fd6df46f::t_be0ed378f78c0f 104-106,115-117
+  s_0ba0a0fd6df46f::t_6322a49cf8da68 119-121,131-133
+  s_0ba0a0fd6df46f::t_e02f32249934e7 135-137
+.planning/phases/18.1-ddl-ucd-dto-pdmsclient/18.1-01-PLAN.md
+  s_0ba0a0fd6df46f::t_84633a3caf1741 36
+  s_0ba0a0fd6df46f::t_8e5718a3b0ce63 181
+  s_0ba0a0fd6df46f::t_2e8e092304393f 33-35
+  s_0ba0a0fd6df46f::t_a257009842ebee 37-39,178-180
+  s_0ba0a0fd6df46f::t_fb5f38455a2d43 182-184
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c46fafba78f9e2ccaa2b8fa3d34117f93c4834fd",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

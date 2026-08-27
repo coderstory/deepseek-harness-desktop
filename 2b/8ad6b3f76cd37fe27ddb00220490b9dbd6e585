@@ -1,0 +1,29 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelper.java
+  s_a3dd2f25f8cf0b::t_53d8ecb1d4db8e 33
+  s_a3dd2f25f8cf0b::t_d9be874ae6b6de 250,253-257,262,264,266-270,273,283-286
+  s_a3dd2f25f8cf0b::t_a84f64b1ea841a 223-228,242
+  s_a3dd2f25f8cf0b::t_430f8e154b6844 237,240-241
+  s_a3dd2f25f8cf0b::t_3f0e823d7da465 147-151
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_a3dd2f25f8cf0b::t_55891f185f15c5 809
+  s_a3dd2f25f8cf0b::t_69a1ebae092df8 763,765-768
+  s_a3dd2f25f8cf0b::t_4cf9d05d10fc5b 743
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/helper/SvcServiceProxyDetailExportHelperTest.java
+  s_a3dd2f25f8cf0b::t_3e36b09b41e342 329-388
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2b8ad6b3f76cd37fe27ddb00220490b9dbd6e585",
+  "prompts": {},
+  "sessions": {
+    "s_a3dd2f25f8cf0b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "810e36e6-5462-4a37-ae01-c3098d2430f8",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

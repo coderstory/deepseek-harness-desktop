@@ -1,0 +1,980 @@
+.tmp-review/chunks/D03-deploy_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_cache_SvcPrivacyPolicyCacheTest.java.md
+  s_44a923cf9b57a4::t_67d6f0c3deedd0 1-32
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_095740.html
+  s_fbfe372877ccbc::t_62563e1ed09a50 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_111308.html
+  s_fbfe372877ccbc::t_b8410d744490e3 1-2109
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceNegativePdfGenTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_client_SvcPrivacyCenterServiceUnitTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-62
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_client_SvcPrivacyCenterServiceLatestTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-219
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_113814.html
+  s_fbfe372877ccbc::t_222b4dd4469be5 1-2395
+.tmp-review/reviews/SECOND_PASS.md
+  s_fbfe372877ccbc::t_2eb4724ff15dc5 1-10
+  s_44a923cf9b57a4::t_c1be8b81e7a35c 11-35
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_194158.html
+  s_fbfe372877ccbc::t_efd0be53ca0ec6 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_195535.html
+  s_fbfe372877ccbc::t_2311e429e73639 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194407.html
+  s_fbfe372877ccbc::t_d30433f3485fde 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_195535.html
+  s_fbfe372877ccbc::t_2311e429e73639 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_104421.html
+  s_fbfe372877ccbc::t_909e9185825e06 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_113826.html
+  s_fbfe372877ccbc::t_222b4dd4469be5 1-2109
+.tmp-review/chunks/C03-svc-reception_svc-core-reception_src_test_java_svc_core_reception_helper_SvcServiceProxyHelperSendSmsTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-52
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_invoice_GetSvcStatementInvoiceOutput.java.md
+  s_44a923cf9b57a4::t_140dbd6fc8916f 1-37
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_service_SvcStatementInvoiceServiceRedInvoiceSecurityTest.java.md
+  s_44a923cf9b57a4::t_71fdbae0c54eca 1-49
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_195133.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2103
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_fbfe372877ccbc::t_e14cededbc5772 1071-1085
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194613.html
+  s_fbfe372877ccbc::t_e743626c451c2a 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_195517.html
+  s_fbfe372877ccbc::t_2311e429e73639 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260821_105004.html
+  s_5250e48b088da7::t_8e29ce8971c347 1-2005
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194428.html
+  s_fbfe372877ccbc::t_d30433f3485fde 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_111800.html
+  s_fbfe372877ccbc::t_fc488aa43de07d 1-2048
+.tmp-review/chunks/C00-svc-base_svc-core-base_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260824_180531.html
+  s_fbfe372877ccbc::t_39e7a1804c7c24 1-2005
+.tmp-review/chunks/C09-svc-pdi_svc-cloud-pdi_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_base_helper_UcdCarHelper.java.md
+  s_44a923cf9b57a4::t_fbfb0ba25efd38 1-49
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_main_java_svc_core_inc_util_KoreaSmsPredicate.java.md
+  s_44a923cf9b57a4::t_192d09ad6c3a13 1-31
+.tmp-review/chunks/C09-svc-pdi_svc-core-pdi_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-60
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_main_java_svc_core_inc_service_SmsNotifyServiceImpl.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_invoice_SvcStatementInvoiceModel.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-56
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_delivery_entity_SvcStateAmountDetailEnt.java.md
+  s_44a923cf9b57a4::t_e7bd05369a50a5 1-44
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_service_SvcInvoiceInfoCloudServiceImplTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-52
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_104412.html
+  s_fbfe372877ccbc::t_909e9185825e06 1-2108
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_104408.html
+  s_fbfe372877ccbc::t_909e9185825e06 1-2395
+.tmp-review/reviews/C03-svc-reception_svc-core-reception_src_main_java_svc_core_reception_service_data_svc_service_proxy_GetSvcStatementInvoiceKrEmInput.java.md
+  s_44a923cf9b57a4::t_a8afd50aa1a078 1-38
+.tmp-review/chunks/D01-dependence_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+doc/八月需求/5.8-反向PRD-代码实现.md
+  s_fbfe372877ccbc::t_9b314e2fdc14ed 1-499
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260821_105004.html
+  s_5250e48b088da7::t_8e29ce8971c347 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194411.html
+  s_fbfe372877ccbc::t_d30433f3485fde 1-2103
+.tmp-review/reviews/EmStatementHandlerImpl.md
+  s_fbfe372877ccbc::t_a9c792d6cf6f81 1-35
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_194716.html
+  s_fbfe372877ccbc::t_92f3d2351771ba 1-2103
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260824_180523.html
+  s_fbfe372877ccbc::t_39e7a1804c7c24 1-2395
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_util_AppointmentPdfParamsBuilderTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-80
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_SvcStatementInvoiceService.java.md
+  s_44a923cf9b57a4::t_3aed5cd4ff21c0 1-59
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_195133.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_113840.html
+  s_fbfe372877ccbc::t_222b4dd4469be5 1-2133
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194155.html
+  s_fbfe372877ccbc::t_efd0be53ca0ec6 1-2127
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaSendPipaSmsTest.java.md
+  s_44a923cf9b57a4::t_c423c49fc733eb 1-30
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_helper_ExportSvcStatementExtHelper.java.md
+  s_44a923cf9b57a4::t_d66715edccb1f4 1-54
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194517.html
+  s_fbfe372877ccbc::t_831b69dec94566 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_093405.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1-2004
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_093342.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1-2395
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaQueryPrivacyPoliciesTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-52
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195131.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_095740.html
+  s_fbfe372877ccbc::t_62563e1ed09a50 1-2108
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_helper_StatementHelper.java.md
+  s_44a923cf9b57a4::t_4af73da385a5e6 1-36
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_reception_enums_SvcStatementInvoiceTypeEnum.java.md
+  s_44a923cf9b57a4::t_12c4f220ca7ee6 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260825_091929.html
+  s_44a923cf9b57a4::t_d59f42d1d6a001 1-2005
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_reception_helper_PriceContext.java.md
+  s_44a923cf9b57a4::t_071c9f297316c9 1-60
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194603.html
+  s_fbfe372877ccbc::t_e743626c451c2a 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_095731.html
+  s_fbfe372877ccbc::t_62563e1ed09a50 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194311.html
+  s_fbfe372877ccbc::t_3b7ebcef984ea0 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_200004.html
+  s_fbfe372877ccbc::t_449ed55559c432 1-1999
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_201311.html
+  s_fbfe372877ccbc::t_d1c8430c10ebff 1-2395
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_job_SyncPrivacyPoliciesJobTest.java.md
+  s_44a923cf9b57a4::t_1167b6059c208d 1-32
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_SvcStatementPayRecordService.java.md
+  s_44a923cf9b57a4::t_90031fa60afb61 1-45
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_main_java_svc_core_inc_job_SvcAppointmentMessageSaveJob.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-39
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_200004.html
+  s_fbfe372877ccbc::t_449ed55559c432 1-2103
+.tmp-review/reviews/C03-svc-reception_svc-core-reception_src_main_java_svc_core_reception_helper_SvcServiceProxyHelper.java.md
+  s_44a923cf9b57a4::t_74979a76c7b285 1-36
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_195324.html
+  s_fbfe372877ccbc::t_6eeae93717ada5 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195010.html
+  s_fbfe372877ccbc::t_1182ac61a605da 1-2127
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_195314.html
+  s_fbfe372877ccbc::t_6eeae93717ada5 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194301.html
+  s_fbfe372877ccbc::t_3b7ebcef984ea0 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_104421.html
+  s_fbfe372877ccbc::t_909e9185825e06 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194854.html
+  s_fbfe372877ccbc::t_fa198c971f5062 1-2127
+.tmp-review/chunks/C03-svc-reception_svc-core-reception_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-58
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194623.html
+  s_fbfe372877ccbc::t_e743626c451c2a 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_104625.html
+  s_fbfe372877ccbc::t_4655b22b6776ca 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_104421.html
+  s_fbfe372877ccbc::t_909e9185825e06 1-2004
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/reviews/C03-svc-reception_svc-core-reception_src_test_java_svc_core_reception_helper_SvcServiceProxyHelperSendSmsTest.java.md
+  s_44a923cf9b57a4::t_ef1034b34673a3 1-30
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_194626.html
+  s_fbfe372877ccbc::t_e743626c451c2a 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_201320.html
+  s_fbfe372877ccbc::t_d1c8430c10ebff 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194952.html
+  s_fbfe372877ccbc::t_1182ac61a605da 1-2103
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_service_RepairPackageServiceV2Test.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-92
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceNegativeGenerateTest.java.md
+  s_44a923cf9b57a4::t_fb5823a66b6b2f 1-58
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_104631.html
+  s_fbfe372877ccbc::t_4655b22b6776ca 1-2132
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_201332.html
+  s_fbfe372877ccbc::t_d1c8430c10ebff 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260824_180531.html
+  s_fbfe372877ccbc::t_39e7a1804c7c24 1-2109
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_111730.html
+  s_fbfe372877ccbc::t_fc488aa43de07d 1-2395
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_client_SvcPrivacyCenterServiceTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-64
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaServiceImplSubmitConsentTest.java.md
+  s_44a923cf9b57a4::t_32db0b5c0c001c 1-27
+.tmp-review/chunks/C01-svc-config_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_111319.html
+  s_fbfe372877ccbc::t_b8410d744490e3 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195536.html
+  s_fbfe372877ccbc::t_2311e429e73639 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_194313.html
+  s_fbfe372877ccbc::t_3b7ebcef984ea0 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260824_180529.html
+  s_fbfe372877ccbc::t_39e7a1804c7c24 1-2133
+C06-svc-delivery/svc-core-delivery/data/KrInvoiceNegative_2026-06-02.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1973-1977
+  s_fbfe372877ccbc::t_b8410d744490e3 1877-1878
+  s_fbfe372877ccbc::t_c96ea36e200330 1-1876,1879-1972,1978-2048
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_base_service_data_mdm_employess_EmployeeConverter.java.md
+  s_44a923cf9b57a4::t_c110ca5cb5ce6b 1-48
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_config_mapper_SvcInsuranceCompanyMapper.java.md
+  s_44a923cf9b57a4::t_1966d3b777f810 1-41
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194955.html
+  s_fbfe372877ccbc::t_1182ac61a605da 1-2103
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_ExportDynamicQuerySvcStatementOutput.java.md
+  s_44a923cf9b57a4::t_b2d7d059d89763 1-39
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_195949.html
+  s_fbfe372877ccbc::t_449ed55559c432 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194626.html
+  s_fbfe372877ccbc::t_e743626c451c2a 1-2042
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194126.html
+  s_fbfe372877ccbc::t_efd0be53ca0ec6 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_195340.html
+  s_fbfe372877ccbc::t_6eeae93717ada5 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_195155.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2103
+.tmp-review/reviews/C04-svc-maintain_svc-core-maintain_src_test_java_svc_core_maintain_helper_RepairTaskDetailExportHelperTest.java.md
+  s_44a923cf9b57a4::t_42c837ba9cc215 1-32
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_104413.html
+  s_fbfe372877ccbc::t_909e9185825e06 1-2108
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_195944.html
+  s_fbfe372877ccbc::t_449ed55559c432 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194529.html
+  s_fbfe372877ccbc::t_831b69dec94566 1-2127
+.tmp-review/chunks/C06-svc-delivery_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/chunks/D03-deploy_svc-standard-api_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_113844.html
+  s_fbfe372877ccbc::t_222b4dd4469be5 1-2109
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_service_RepairPackageServiceV2Test.java.md
+  s_44a923cf9b57a4::t_13dbc3966c139f 1-32
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_service_SvcStatementInvoiceServiceTest.java.md
+  s_44a923cf9b57a4::t_06cff0b0c83445 1-52
+.tmp-review/reviews/Model_Output_Export_KrExcel.md
+  s_fbfe372877ccbc::t_e3ad1c9373dc8b 1-25
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_delivery_entity_SvcStatementEnt.java.md
+  s_44a923cf9b57a4::t_6899fa411aa036 1-46
+.tmp-review/chunks/C03-svc-reception_svc-core-reception_src_main_java_svc_core_reception_service_SvcServiceProxyService.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-66
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_110718.html
+  s_fbfe372877ccbc::t_833ec0adf9cdea 1-2132
+.tmp-review/chunks/C04-svc-maintain_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-43
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_115535.html
+  s_fbfe372877ccbc::t_b21341a5831dd2 1-2133
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194901.html
+  s_fbfe372877ccbc::t_fa198c971f5062 1-2042
+.tmp-review/diff_java_mine.json
+  s_44a923cf9b57a4::t_6151d3a4d43906 1-20578
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_invoice_GetSvcStatementInvoiceKrEmInput.java.md
+  s_44a923cf9b57a4::t_37b16a3b9af281 1-12,14-24,26-33
+  s_44a923cf9b57a4::t_0bc9f0bfa4641b 13
+  s_44a923cf9b57a4::t_7ff34d648ab31b 25
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_GetSvcStatementOutput.java.md
+  s_44a923cf9b57a4::t_f683ec85751da1 1-35
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194251.html
+  s_fbfe372877ccbc::t_3b7ebcef984ea0 1-2395
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_job_SvcPipaSyncJobTest.java.md
+  s_44a923cf9b57a4::t_1ef144a19c4284 1-32
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_110713.html
+  s_fbfe372877ccbc::t_833ec0adf9cdea 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_194626.html
+  s_fbfe372877ccbc::t_e743626c451c2a 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_111758.html
+  s_fbfe372877ccbc::t_fc488aa43de07d 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_200006.html
+  s_fbfe372877ccbc::t_449ed55559c432 1-2042
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_cache_SvcPrivacyPolicyCacheTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-59
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260821_105004.html
+  s_5250e48b088da7::t_8e29ce8971c347 1-2109
+.tmp-review/chunks/C06-svc-delivery_svc-cloud-delivery_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaReplaceBindIdTest.java.md
+  s_44a923cf9b57a4::t_55873bf4678da3 1-26
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_113845.html
+  s_fbfe372877ccbc::t_222b4dd4469be5 1-2048
+.tmp-review/chunks/C00-svc-base_svc-core-base_src_test_java_svc_core_base_helper_ESignatureHelperTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-77
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_job_SyncPrivacyPoliciesJobTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-52
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_113822.html
+  s_fbfe372877ccbc::t_222b4dd4469be5 1-2109
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_util_KoreaSmsPredicateTest.java.md
+  s_44a923cf9b57a4::t_f3d9cc0939db73 1-31
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_entity_SvcStatementView.java.md
+  s_44a923cf9b57a4::t_cce7db4085f197 1-45
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_util_AppointmentEmailRecipientFilterTest.java.md
+  s_44a923cf9b57a4::t_516f86f2249e62 1-31
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_110721.html
+  s_fbfe372877ccbc::t_833ec0adf9cdea 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_111758.html
+  s_fbfe372877ccbc::t_fc488aa43de07d 1-2005
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceExcelService.java.md
+  s_44a923cf9b57a4::t_3425e6eec5d24c 1-2,4,8,13,18,20-21,23-24,30,34-35
+  s_44a923cf9b57a4::t_560acb496074db 3,5-7,9-12,14-17,19,22,25-29,31-33,36-39
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_195123.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_195340.html
+  s_fbfe372877ccbc::t_6eeae93717ada5 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_193851.html
+  s_fbfe372877ccbc::t_c96ea36e200330 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_194313.html
+  s_fbfe372877ccbc::t_3b7ebcef984ea0 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_194626.html
+  s_fbfe372877ccbc::t_e743626c451c2a 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_093351.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1-2108
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceNegativeTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-122
+doc/八月需求/5.8-反向PRD-代码实现-v3.md
+  s_822fe3e984c997::t_6f06a569ef0fe6 1-472
+.tmp-review/chunks/C04-svc-maintain_svc-cloud-maintain_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-43
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_194859.html
+  s_fbfe372877ccbc::t_fa198c971f5062 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_194432.html
+  s_fbfe372877ccbc::t_d30433f3485fde 1-2103
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_service_SvcStatementInvoiceServiceRedInvoiceSecurityTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-307
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_job_SvcPipaSyncJobTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-52
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_200004.html
+  s_fbfe372877ccbc::t_449ed55559c432 1-2103
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_base_entity_SvcItemCodeEnt.java.md
+  s_44a923cf9b57a4::t_f2ff0b70247efd 1-42
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_main_java_svc_core_inc_job_SvcAppointmentMessageSaveJob.java.md
+  s_44a923cf9b57a4::t_11c2ae2d3e1a1e 1-29
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195342.html
+  s_fbfe372877ccbc::t_6eeae93717ada5 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_195122.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2103
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_invoice_GetSvcStatementInvoiceOutput.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-51
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_093348.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1-2108
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194356.html
+  s_fbfe372877ccbc::t_d30433f3485fde 1-2395
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceExcelService.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-41
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195017.html
+  s_fbfe372877ccbc::t_1182ac61a605da 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_195205.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_194158.html
+  s_fbfe372877ccbc::t_efd0be53ca0ec6 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260824_180525.html
+  s_fbfe372877ccbc::t_39e7a1804c7c24 1-2109
+.tmp-review/chunks/C02-svc-appointment_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceNegativeGenerateTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-184
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_service_EmailSendIntegrationTest.java.md
+  s_44a923cf9b57a4::t_ed85cda72a0dc6 1-31
+.tmp-review/reviews/C03-svc-reception_svc-core-reception_src_main_java_svc_core_reception_service_SvcServiceProxyService.java.md
+  s_44a923cf9b57a4::t_3b80a9094cb2f3 1-37
+.tmp-review/reviews/SUMMARY.json
+  s_44a923cf9b57a4::t_3a032c4590e132 1-17
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_201329.html
+  s_fbfe372877ccbc::t_d1c8430c10ebff 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_195016.html
+  s_fbfe372877ccbc::t_1182ac61a605da 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_201332.html
+  s_fbfe372877ccbc::t_d1c8430c10ebff 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_195205.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260821_105002.html
+  s_5250e48b088da7::t_8e29ce8971c347 1-2133
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194704.html
+  s_fbfe372877ccbc::t_92f3d2351771ba 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194303.html
+  s_fbfe372877ccbc::t_3b7ebcef984ea0 1-2103
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_test_java_svc_core_base_helper_ESignatureHelperTest.java.md
+  s_44a923cf9b57a4::t_430d7983e9430e 1-32
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_base_service_UcdCarService.java.md
+  s_44a923cf9b57a4::t_e08d39c87ace30 1-49
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_194716.html
+  s_fbfe372877ccbc::t_92f3d2351771ba 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260825_091930.html
+  s_44a923cf9b57a4::t_d59f42d1d6a001 1-2109
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260821_104947.html
+  s_5250e48b088da7::t_8e29ce8971c347 1-2395
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_SvcStatementInvoiceKrEmService.java.md
+  s_44a923cf9b57a4::t_d2ea52b6b7dcc6 1-34
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_DynamicQuerySvcStatementOutput.java.md
+  s_44a923cf9b57a4::t_155a362054faec 1-35
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_193853.html
+  s_fbfe372877ccbc::t_c96ea36e200330 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_111758.html
+  s_fbfe372877ccbc::t_fc488aa43de07d 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_193914.html
+  s_fbfe372877ccbc::t_c96ea36e200330 1-1999
+.tmp-review/reviews/SvcStatementInvoiceService.md
+  s_fbfe372877ccbc::t_9dc302b5620c8d 1-43
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_report_config_ReportProxyIntegrationTest.java.md
+  s_44a923cf9b57a4::t_c831b0e44b507b 1-30
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_110721.html
+  s_fbfe372877ccbc::t_833ec0adf9cdea 1-2004
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194511.html
+  s_fbfe372877ccbc::t_831b69dec94566 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195337.html
+  s_fbfe372877ccbc::t_6eeae93717ada5 1-2127
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_104623.html
+  s_fbfe372877ccbc::t_4655b22b6776ca 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_104419.html
+  s_fbfe372877ccbc::t_909e9185825e06 1-2132
+.tmp-review/diff.patch
+  s_fbfe372877ccbc::t_2fd4655a185e2c 528-824,838-1980,1982-1983,1990-1996,2000,2003-2012,2038-2044,2062-2066,2068-2070,2072-2075,2078-2079,2081-2082,2091-2107,2110-2157,2159-2199,2243-2703,2737,2748-2749,2752,2761,2763,2782-2783,2787,2790,2806,2808,2816-2818,2820,2824,2847-2848,2851-2852,2855-2856,2859-2860,2863-2864,2867-2868,2871,2900,2911,2913,2917,2921,2924,2933,2965-2966,2969,2973-2974,2977-2978,2981-2982,2985-2986,2989-2990,2993-2994,2997-2998,3001-3002,3006,3010,3014,3018,3021-3022,3026,3030,3034,3038,3041-3042,3045-3046,3049-3050,3053-3054,3058,3103-3104,3106,3108,3110,3112,3114,3131-3132,3135-3136,3139-3140,3143-3144,3147-3148,3151-3152,3155-3156,3159-3160,3163-3164,3167-3168,3171-3172,3175-3176,3180,3183-3184,3187-3188,3191-3192,3195-3196,3200,3203-3204,3207-3208,3211-3212,3215-3216,3220,3223-3224,3227-3228,3231,3240,3262-3263,3267,3270-3271,3274-3275,3279,3282-3283,3286-3287,3290,3299,3301,3304,3306,3308,3310,3312,3314,3316,3318,3320,3322,3324,3326,3328,3330,3333-3334,3337-3338,3341-3342,3345-3346,3349-3350,3353-3354,3357-3358,3362,3366,3370,3374,3378,3381-3382,3385-3386,3389-3390,3393-3394,3397-3398,3401-3402,3406,3410,3413-3414,3418,3422,3426,3430,3434,3437-3438,3453,3455,3459,3462,3465,3477-3478,3482,3486,3490,3494,3497-3498,3502,3506,3510,3514,3517-3518,3530,3532,3534,3537,3540,3544,3548,3552,3555-3556,3571,3573,3577,3585,3591,3595,3599,3603,3607,3611,3615,3619,3623,3627,3631,3635,3639,3642-3643,3647,3651,3655,3659,3663,3667,3671,3675,3679,3682-3683,3687,3691,3695,3699,3703,3706-3707,3711,3715,3719,3742,3769,3807,3814,3839,3861,3868,3885,3891,3893,3897,3921,3925,3928,3931,3936,3939,3941,3945,3978-3979,3999-4000,4012,4016,4036-4037,4065,4129-4130,4167,4219,4222,4359,4384,4418-4419,4444,4488-4489,4492,4546,4553,4556-4557,4559,4561-4562,4566,4578-4580,4592-4593,4674-4675,4726,4739-4740,4764-4765,4790,4829,4909,4918,4921,4925,4927,4929,4932,4943,4945,4947,4949,4952,4955,4958,4961,4964,4967,4970,4973,4976,4979,4982,4985,4988,4991,4994,4997,5000,5011,5013,5015,5018,5029,5031,5034,5036,5039,5042,5045,5048,5051,5054,5057,5060,5063,5066,5069,5072,5075,5078,5081,5092,5094,5096,5098,5101,5112,5114,5116,5118,5121,5124,5127,5130,5133,5136,5139,5142,5145,5148,5151,5154,5157,5168,5170,5173,5175,5178,5181,5184,5187,5190,5193,5196,5199,5463,5504,5700,5948,5963,5982,29310,29312,29316,29318,29321,29337,29342,29346,29387-29388,29398,29963
+  s_44a923cf9b57a4::t_be910306dd69b9 1-527,825-837,1981,1984-1989,1997-1999,2001-2002,2013-2037,2045-2061,2067,2071,2076-2077,2080,2083-2090,2108-2109,2158,2200-2242,2704-2736,2738-2747,2750-2751,2753-2760,2762,2764-2781,2784-2786,2788-2789,2791-2805,2807,2809-2815,2819,2821-2823,2825-2846,2849-2850,2853-2854,2857-2858,2861-2862,2865-2866,2869-2870,2872-2899,2901-2910,2912,2914-2916,2918-2920,2922-2923,2925-2932,2934-2964,2967-2968,2970-2972,2975-2976,2979-2980,2983-2984,2987-2988,2991-2992,2995-2996,2999-3000,3003-3005,3007-3009,3011-3013,3015-3017,3019-3020,3023-3025,3027-3029,3031-3033,3035-3037,3039-3040,3043-3044,3047-3048,3051-3052,3055-3057,3059-3102,3105,3107,3109,3111,3113,3115-3130,3133-3134,3137-3138,3141-3142,3145-3146,3149-3150,3153-3154,3157-3158,3161-3162,3165-3166,3169-3170,3173-3174,3177-3179,3181-3182,3185-3186,3189-3190,3193-3194,3197-3199,3201-3202,3205-3206,3209-3210,3213-3214,3217-3219,3221-3222,3225-3226,3229-3230,3232-3239,3241-3261,3264-3266,3268-3269,3272-3273,3276-3278,3280-3281,3284-3285,3288-3289,3291-3298,3300,3302-3303,3305,3307,3309,3311,3313,3315,3317,3319,3321,3323,3325,3327,3329,3331-3332,3335-3336,3339-3340,3343-3344,3347-3348,3351-3352,3355-3356,3359-3361,3363-3365,3367-3369,3371-3373,3375-3377,3379-3380,3383-3384,3387-3388,3391-3392,3395-3396,3399-3400,3403-3405,3407-3409,3411-3412,3415-3417,3419-3421,3423-3425,3427-3429,3431-3433,3435-3436,3439-3452,3454,3456-3458,3460-3461,3463-3464,3466-3476,3479-3481,3483-3485,3487-3489,3491-3493,3495-3496,3499-3501,3503-3505,3507-3509,3511-3513,3515-3516,3519-3529,3531,3533,3535-3536,3538-3539,3541-3543,3545-3547,3549-3551,3553-3554,3557-3570,3572,3574-3576,3578-3584,3586-3590,3592-3594,3596-3598,3600-3602,3604-3606,3608-3610,3612-3614,3616-3618,3620-3622,3624-3626,3628-3630,3632-3634,3636-3638,3640-3641,3644-3646,3648-3650,3652-3654,3656-3658,3660-3662,3664-3666,3668-3670,3672-3674,3676-3678,3680-3681,3684-3686,3688-3690,3692-3694,3696-3698,3700-3702,3704-3705,3708-3710,3712-3714,3716-3718,3720-3741,3743-3768,3770-3806,3808-3813,3815-3838,3840-3860,3862-3867,3869-3884,3886-3890,3892,3894-3896,3898-3920,3922-3924,3926-3927,3929-3930,3932-3935,3937-3938,3940,3942-3944,3946-3977,3980-3998,4001-4011,4013-4015,4017-4035,4038-4064,4066-4128,4131-4166,4168-4218,4220-4221,4223-4358,4360-4383,4385-4417,4420-4443,4445-4487,4490-4491,4493-4545,4547-4552,4554-4555,4558,4560,4563-4565,4567-4577,4581-4591,4594-4673,4676-4725,4727-4738,4741-4763,4766-4789,4791-4828,4830-4908,4910-4917,4919-4920,4922-4924,4926,4928,4930-4931,4933-4942,4944,4946,4948,4950-4951,4953-4954,4956-4957,4959-4960,4962-4963,4965-4966,4968-4969,4971-4972,4974-4975,4977-4978,4980-4981,4983-4984,4986-4987,4989-4990,4992-4993,4995-4996,4998-4999,5001-5010,5012,5014,5016-5017,5019-5028,5030,5032-5033,5035,5037-5038,5040-5041,5043-5044,5046-5047,5049-5050,5052-5053,5055-5056,5058-5059,5061-5062,5064-5065,5067-5068,5070-5071,5073-5074,5076-5077,5079-5080,5082-5091,5093,5095,5097,5099-5100,5102-5111,5113,5115,5117,5119-5120,5122-5123,5125-5126,5128-5129,5131-5132,5134-5135,5137-5138,5140-5141,5143-5144,5146-5147,5149-5150,5152-5153,5155-5156,5158-5167,5169,5171-5172,5174,5176-5177,5179-5180,5182-5183,5185-5186,5188-5189,5191-5192,5194-5195,5197-5198,5200-5462,5464-5503,5505-5699,5701-5947,5949-5962,5964-5981,5983-29309,29311,29313-29315,29317,29319-29320,29322-29336,29338-29341,29343-29345,29347-29386,29389-29397,29399-29962,29964-29988
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260821_104954.html
+  s_5250e48b088da7::t_8e29ce8971c347 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_111754.html
+  s_fbfe372877ccbc::t_fc488aa43de07d 1-2133
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_195205.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_194313.html
+  s_fbfe372877ccbc::t_3b7ebcef984ea0 1-1999
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_client_SvcPrivacyCenterServiceUnitTest.java.md
+  s_44a923cf9b57a4::t_4ec156bbcfb570 1-32
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_SvcStatementInvoiceService.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-257
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_194533.html
+  s_fbfe372877ccbc::t_831b69dec94566 1-2103
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194832.html
+  s_fbfe372877ccbc::t_fa198c971f5062 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194714.html
+  s_fbfe372877ccbc::t_92f3d2351771ba 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195532.html
+  s_fbfe372877ccbc::t_2311e429e73639 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_193914.html
+  s_fbfe372877ccbc::t_c96ea36e200330 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_111317.html
+  s_fbfe372877ccbc::t_b8410d744490e3 1-2133
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_201319.html
+  s_fbfe372877ccbc::t_d1c8430c10ebff 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_104633.html
+  s_fbfe372877ccbc::t_4655b22b6776ca 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_093406.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1-2108
+doc/八月需求/5.8-反向PRD-代码实现-v2.md
+  s_fbfe372877ccbc::t_c40d74abf14ea9 1,3-7,11,13-87
+  s_5250e48b088da7::t_10e2ba2d534d13 2,8-10,12,88-89
+  s_fbfe372877ccbc::t_e5de7ba2584a9c 90-558
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-49
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_service_SvcInvoiceInfoCloudServiceImplTest.java.md
+  s_44a923cf9b57a4::t_1e373baa50dddb 1-33
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaDownloadTemplateTest.java.md
+  s_44a923cf9b57a4::t_6c22d1fd593628 1-34
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_111258.html
+  s_fbfe372877ccbc::t_b8410d744490e3 1-2395
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_util_KoreanAppointmentTypeMapperTest.java.md
+  s_44a923cf9b57a4::t_987e9dda9406cc 1-29
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_195505.html
+  s_fbfe372877ccbc::t_2311e429e73639 1-2395
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_util_KoreaSmsPredicateTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-67
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_194716.html
+  s_fbfe372877ccbc::t_92f3d2351771ba 1-2103
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_strategy_statement_impl_EmStatementHandlerImpl.java.md
+  s_44a923cf9b57a4::t_f21cedd240c23e 1-58
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaQueryPrivacyPoliciesTest.java.md
+  s_44a923cf9b57a4::t_39ec6ea114997e 1-29
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_config_entity_SvcInsuranceCompanyEnt.java.md
+  s_44a923cf9b57a4::t_117a1b1e061770 1-44
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_093402.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1-2132
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceGenerateTest.java.md
+  s_44a923cf9b57a4::t_4ef3c7785292ec 1-51
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_110709.html
+  s_fbfe372877ccbc::t_833ec0adf9cdea 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_195947.html
+  s_fbfe372877ccbc::t_449ed55559c432 1-2103
+.tmp-review/chunks/C03-svc-reception_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_194859.html
+  s_fbfe372877ccbc::t_fa198c971f5062 1-1999
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceForwardTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-79
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_main_java_svc_core_inc_service_SmsNotifyServiceImpl.java.md
+  s_44a923cf9b57a4::t_ed00bef7cab3c2 1-29
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_GetSvcStatementOrderItem.java.md
+  s_44a923cf9b57a4::t_7ed92f8b40c5cd 1-33
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194534.html
+  s_fbfe372877ccbc::t_831b69dec94566 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_110721.html
+  s_fbfe372877ccbc::t_833ec0adf9cdea 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260821_104953.html
+  s_5250e48b088da7::t_8e29ce8971c347 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194841.html
+  s_fbfe372877ccbc::t_fa198c971f5062 1-2103
+.tmp-review/reviews/C03-svc-reception_svc-core-reception_src_main_java_svc_core_reception_service_data_svc_service_proxy_GetSvcStatementInvoiceKrEmOutput.java.md
+  s_44a923cf9b57a4::t_598c21269c0a35 1-38
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_impl_SvcStatementInvoiceKrEmServiceImpl.java.md
+  s_44a923cf9b57a4::t_311fad919f81d8 1-34
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_GetSvcStatementAdditionalItem.java.md
+  s_44a923cf9b57a4::t_cfd06d03f1ba8e 1-32
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_115521.html
+  s_fbfe372877ccbc::t_b21341a5831dd2 1-2395
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194653.html
+  s_fbfe372877ccbc::t_92f3d2351771ba 1-2395
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_invoice_GetSvcStatementInvoiceKrEmOutput.java.md
+  s_44a923cf9b57a4::t_e4ab782e7297e0 1-32
+  s_44a923cf9b57a4::t_c267b16e0926ec 33
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_base_enums_ExportTypeEnum.java.md
+  s_44a923cf9b57a4::t_91f6e893ba9c84 1-41
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_193843.html
+  s_fbfe372877ccbc::t_c96ea36e200330 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194717.html
+  s_fbfe372877ccbc::t_92f3d2351771ba 1-2042
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_service_EmailSendIntegrationTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-47
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194434.html
+  s_fbfe372877ccbc::t_d30433f3485fde 1-2042
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_impl_EmStatementHandlerImplKrModelTest.java.md
+  s_44a923cf9b57a4::t_c6092b3e9c5f34 1-57
+.tmp-review/reviews/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_util_AppointmentPdfParamsBuilderTest.java.md
+  s_44a923cf9b57a4::t_6a4ea61bef8010 1-33
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_SvcStatementService.java.md
+  s_44a923cf9b57a4::t_d42938c088ccd0 1-60
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaServiceImplSubmitConsentTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-52
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_095742.html
+  s_fbfe372877ccbc::t_62563e1ed09a50 1-2047
+.tmp-review/chunks/C00-svc-base_svc-core-base_src_main_java_svc_core_reception_helper_PriceContext.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-219
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_111738.html
+  s_fbfe372877ccbc::t_fc488aa43de07d 1-2109
+.tmp-review/chunks/C01-svc-config_svc-core-config_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260824_180531.html
+  s_fbfe372877ccbc::t_39e7a1804c7c24 1-2048
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_115538.html
+  s_fbfe372877ccbc::t_b21341a5831dd2 1-2048
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194515.html
+  s_fbfe372877ccbc::t_831b69dec94566 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_195016.html
+  s_fbfe372877ccbc::t_1182ac61a605da 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_115537.html
+  s_fbfe372877ccbc::t_b21341a5831dd2 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_110722.html
+  s_fbfe372877ccbc::t_833ec0adf9cdea 1-2047
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_115528.html
+  s_fbfe372877ccbc::t_b21341a5831dd2 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260824_180531.html
+  s_fbfe372877ccbc::t_39e7a1804c7c24 1-2109
+.tmp-review/chunks/C02-svc-appointment_svc-cloud-appointment_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/chunks/C03-svc-reception_svc-cloud-reception_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_195133.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194136.html
+  s_fbfe372877ccbc::t_efd0be53ca0ec6 1-2103
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_main_java_svc_core_inc_util_KoreaSmsPredicate.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_195322.html
+  s_fbfe372877ccbc::t_6eeae93717ada5 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_095740.html
+  s_fbfe372877ccbc::t_62563e1ed09a50 1-2004
+.tmp-review/chunks/C02-svc-appointment_svc-core-appointment_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_client_SvcPrivacyCenterServiceLatestTest.java.md
+  s_44a923cf9b57a4::t_8302d0238c25c9 1-37
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaQueryPipaStatusTest.java.md
+  s_44a923cf9b57a4::t_885d4c243f2423 1-38
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_194432.html
+  s_fbfe372877ccbc::t_d30433f3485fde 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_194432.html
+  s_fbfe372877ccbc::t_d30433f3485fde 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195134.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2042
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194944.html
+  s_fbfe372877ccbc::t_1182ac61a605da 1-2395
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_data_svc_statement_invoice_SvcStatementInvoiceModel.java.md
+  s_44a923cf9b57a4::t_c871fc5043fcc8 1-46
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_195154.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2103
+.tmp-review/chunks/C04-svc-maintain_svc-core-maintain_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-43
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_093406.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_111307.html
+  s_fbfe372877ccbc::t_b8410d744490e3 1-2109
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_195150.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2395
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaQueryPipaStatusTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-213
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_115537.html
+  s_fbfe372877ccbc::t_b21341a5831dd2 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195203.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2127
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_strategy_statement_impl_EmStatementHandlerImpl.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-791
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_service_SvcStatementInvoiceServiceTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-291
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_201332.html
+  s_fbfe372877ccbc::t_d1c8430c10ebff 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260825_091930.html
+  s_44a923cf9b57a4::t_d59f42d1d6a001 1-2048
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195206.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_093407.html
+  s_fbfe372877ccbc::t_0368b9414e1213 1-2047
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194314.html
+  s_fbfe372877ccbc::t_3b7ebcef984ea0 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_115527.html
+  s_fbfe372877ccbc::t_b21341a5831dd2 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_111320.html
+  s_fbfe372877ccbc::t_b8410d744490e3 1-2048
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_111740.html
+  s_fbfe372877ccbc::t_fc488aa43de07d 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_115537.html
+  s_fbfe372877ccbc::t_b21341a5831dd2 1-2005
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_104633.html
+  s_fbfe372877ccbc::t_4655b22b6776ca 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_195535.html
+  s_fbfe372877ccbc::t_2311e429e73639 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_195959.html
+  s_fbfe372877ccbc::t_449ed55559c432 1-2127
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_095727.html
+  s_fbfe372877ccbc::t_62563e1ed09a50 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_111319.html
+  s_fbfe372877ccbc::t_b8410d744490e3 1-2109
+.tmp-review/reviews/C01-svc-config_svc-core-config_src_test_java_svc_core_config_client_SvcPrivacyCenterServiceTest.java.md
+  s_44a923cf9b57a4::t_f12ba060029fc2 1-32
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_193914.html
+  s_fbfe372877ccbc::t_c96ea36e200330 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_113844.html
+  s_fbfe372877ccbc::t_222b4dd4469be5 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_104422.html
+  s_fbfe372877ccbc::t_909e9185825e06 1-2047
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaReplaceBindIdTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-52
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_095730.html
+  s_fbfe372877ccbc::t_62563e1ed09a50 1-2108
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_util_KoreanAppointmentTypeMapperTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-59
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_base_helper_UcdCarVinOrPlateHelper.java.md
+  s_44a923cf9b57a4::t_bbd79f93a55bd4 1-49
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_service_SvcStatementInvoiceServiceKrEmPriceContextTest.java.md
+  s_44a923cf9b57a4::t_1a553f9a6d26fa 1-49
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_104633.html
+  s_fbfe372877ccbc::t_4655b22b6776ca 1-2004
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_193909.html
+  s_fbfe372877ccbc::t_c96ea36e200330 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_194859.html
+  s_fbfe372877ccbc::t_fa198c971f5062 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_095738.html
+  s_fbfe372877ccbc::t_62563e1ed09a50 1-2132
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_helper_ExportSvcStatementExtHelper.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_113844.html
+  s_fbfe372877ccbc::t_222b4dd4469be5 1-2005
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260824_180526.html
+  s_fbfe372877ccbc::t_39e7a1804c7c24 1-2109
+.tmp-review/chunks/C09-svc-pdi_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260825_091930.html
+  s_44a923cf9b57a4::t_d59f42d1d6a001 1-2109
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceForwardTest.java.md
+  s_44a923cf9b57a4::t_b9d0aae0c8f133 21
+  s_44a923cf9b57a4::t_67bfd9007d02a6 1-20,22-37
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_main_java_svc_core_delivery_service_GetSvcStatementKrEmCalculator.java.md
+  s_44a923cf9b57a4::t_1da1be6148592c 1-51
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_report_config_ReportProxyIntegrationTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_195117.html
+  s_fbfe372877ccbc::t_9580276e7f9d6b 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_193915.html
+  s_fbfe372877ccbc::t_c96ea36e200330 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_194533.html
+  s_fbfe372877ccbc::t_831b69dec94566 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194139.html
+  s_fbfe372877ccbc::t_efd0be53ca0ec6 1-2103
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaSendPipaSmsTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-66
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceGenerateTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-151
+.tmp-review/prd-content.md
+  s_44a923cf9b57a4::t_5717a6031ce957 1-6,96-414
+  s_fbfe372877ccbc::t_8b73d48982e1bb 7-95
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_194533.html
+  s_fbfe372877ccbc::t_831b69dec94566 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_201334.html
+  s_fbfe372877ccbc::t_d1c8430c10ebff 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194200.html
+  s_fbfe372877ccbc::t_efd0be53ca0ec6 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_195016.html
+  s_fbfe372877ccbc::t_1182ac61a605da 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194839.html
+  s_fbfe372877ccbc::t_fa198c971f5062 1-2103
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceNegativeTest.java.md
+  s_44a923cf9b57a4::t_47d6b928f84f6f 22
+  s_44a923cf9b57a4::t_faf825330cada3 1-21,23-42
+.tmp-review/reviews/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_invoice_KrInvoiceNegativePdfGenTest.java.md
+  s_44a923cf9b57a4::t_3546301918c9db 1-33
+.tmp-review/reviews/C00-svc-base_svc-core-base_src_main_java_svc_core_base_helper_dto_ucd_VehicleInput.java.md
+  s_44a923cf9b57a4::t_297068627c7684 1-49
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_104634.html
+  s_fbfe372877ccbc::t_4655b22b6776ca 1-2047
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260821_105005.html
+  s_5250e48b088da7::t_8e29ce8971c347 1-2048
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_service_SvcStatementInvoiceServiceKrEmPriceContextTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-350
+.tmp-review/chunks/C01-svc-config_svc-cloud-config_pom.xml.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-40
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_195515.html
+  s_fbfe372877ccbc::t_2311e429e73639 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_195340.html
+  s_fbfe372877ccbc::t_6eeae93717ada5 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_194158.html
+  s_fbfe372877ccbc::t_efd0be53ca0ec6 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194611.html
+  s_fbfe372877ccbc::t_e743626c451c2a 1-2103
+.tmp-review/reviews/PriceContext.md
+  s_fbfe372877ccbc::t_0e631f220326ed 1-29
+.tmp-review/chunks/C04-svc-maintain_svc-core-maintain_src_test_java_svc_core_maintain_helper_RepairTaskDetailExportHelperTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-113
+doc/八月需求/5.8-PRD-vs-代码对比.md
+  s_fbfe372877ccbc::t_69770daf25c928 1-194
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_110712.html
+  s_fbfe372877ccbc::t_833ec0adf9cdea 1-2108
+.tmp-review/chunks/C01-svc-config_svc-core-config_src_test_java_svc_core_config_service_SvcPipaDownloadTemplateTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-103
+.tmp-review/chunks/C03-svc-reception_svc-core-reception_src_main_java_svc_core_reception_helper_SvcServiceProxyHelper.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-49
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194701.html
+  s_fbfe372877ccbc::t_92f3d2351771ba 1-2103
+doc/八月需求/5.8-开发文档.md
+  s_fbfe372877ccbc::t_1f2cdd98a6de96 1-315
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_111319.html
+  s_fbfe372877ccbc::t_b8410d744490e3 1-2005
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_104626.html
+  s_fbfe372877ccbc::t_4655b22b6776ca 1-2108
+.tmp-review/chunks/C10-svc-inc_svc-core-inc_src_test_java_svc_core_inc_util_AppointmentEmailRecipientFilterTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-82
+.tmp-review/chunks/C06-svc-delivery_svc-core-delivery_src_test_java_svc_core_delivery_strategy_statement_impl_EmStatementHandlerImplKrModelTest.java.md
+  s_44a923cf9b57a4::t_281ff073932b9b 1-877
+.gsd/dispatch-isolation-sentinel.json
+  s_0f2c5540d046df::t_36d92169a30ec8 1
+.tmp-review/diff_java.json
+  s_44a923cf9b57a4::t_f82878b66b201e 1-108312
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260812_162234.html
+  s_c0eba79ae28fc5::t_b99a6b29381b8a 1-2395
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260814_194004.html
+  s_7ecfdcd69e3e2d::t_404653822841cb 1-2395
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260825_091920.html
+  s_fbfe372877ccbc::t_b3c6a5815e91e3 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260812_162242.html
+  s_c0eba79ae28fc5::t_3ba82d945ac96f 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_194017.html
+  s_7ecfdcd69e3e2d::t_242de217fe3e45 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_121107.html
+  s_7ecfdcd69e3e2d::t_a8f74c9ea8377e 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260825_091922.html
+  s_fbfe372877ccbc::t_41a916c21cdc82 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260812_162257.html
+  s_c0eba79ae28fc5::t_16fcd127db021a 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_101656.html
+  s_0ba0a0fd6df46f::t_8baeff1b7d0335 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260812_162257.html
+  s_c0eba79ae28fc5::t_fd123f027c9ddc 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_101656.html
+  s_0ba0a0fd6df46f::t_8e770b0ef0e4d2 1-2004
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260812_162257.html
+  s_c0eba79ae28fc5::t_20b907195fb5b2 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_101656.html
+  s_0ba0a0fd6df46f::t_dd86e34d9931d6 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260812_162255.html
+  s_c0eba79ae28fc5::t_2bf204266a4666 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260812_162259.html
+  s_c0eba79ae28fc5::t_97dcba85c4bc87 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_101654.html
+  s_0ba0a0fd6df46f::t_dee807e53a8dfd 1-2132
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_121116.html
+  s_fbfe372877ccbc::t_b46529feee51cd 1-2133
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260825_091928.html
+  s_44a923cf9b57a4::t_1fdc60b8c7e713 1-2133
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260812_162244.html
+  s_c0eba79ae28fc5::t_8c07a3b6a6e090 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_101646.html
+  s_fbfe372877ccbc::t_f9c3915ef84960 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260816_121109.html
+  s_7ecfdcd69e3e2d::t_baf6c0f2b19a98 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260825_091923.html
+  s_fbfe372877ccbc::t_b1d3cdd6e01c12 1-2109
+opencode.jsonc
+  s_fbfe372877ccbc::t_b081f9e2afd345 1-16
+C00-svc-base/svc-core-base/cp.txt
+  s_8fbaae99a46ae6::t_f96656938c47ea 1
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_101639.html
+  s_1dadf5fb32646d::t_71e4b8603530fc 1-2395
+C06-svc-delivery/svc-core-delivery/data/em-invoice-forward-20260816_121103.html
+  s_8069a1b15ed9d1::t_b24bdf2d6b735b 1-2395
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260814_160621.html
+  s_c6678b5f9cefc7::t_55c90b6b8e4282 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-20260816_101644.html
+  s_1dadf5fb32646d::t_8748fef4fca590 1-2108
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_160639.html
+  s_362bfed6931d71::t_510ec411645d9a 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260814_194040.html
+  s_fb4c473565bdde::t_740d57d8439bc1 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-COPY-20260816_121119.html
+  s_8069a1b15ed9d1::t_5446fd50d3fb0c 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_160639.html
+  s_362bfed6931d71::t_0298bf3bdf9e57 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260814_194040.html
+  s_fb4c473565bdde::t_d714e49a7d8bfb 1-1999
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-MINIMAL-20260816_121119.html
+  s_8069a1b15ed9d1::t_b0588e500a7f14 1-2005
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_160639.html
+  s_362bfed6931d71::t_2e5559ecf3f2b2 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260814_194040.html
+  s_fb4c473565bdde::t_b8471e82b054e3 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-forward-ORIGINAL-20260816_121119.html
+  s_8069a1b15ed9d1::t_64f3b9964603ac 1-2109
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_160637.html
+  s_9dafdc0feea31c::t_18faf5f0d0ef1c 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_160640.html
+  s_362bfed6931d71::t_5746ad761eb5d1 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194037.html
+  s_fb4c473565bdde::t_a16c47f4703aa7 1-2127
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260814_194041.html
+  s_fb4c473565bdde::t_800891c7cee672 1-2042
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_101658.html
+  s_1dadf5fb32646d::t_76c74f7e5fbf6b 1-2047
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-negative-20260816_121121.html
+  s_6eb14ed48586be::t_bcf78e1a32302b 1-2048
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_160625.html
+  s_c6678b5f9cefc7::t_cf068db084678b 1-2103
+C06-svc-delivery/svc-core-delivery/data/kr-invoice-words-20260814_194021.html
+  s_fb4c473565bdde::t_cb50c25e575a65 1-2103
+doc/八月需求/韩国开票需求梳理与疑问清单.md.txt
+  s_362bfed6931d71::t_dcad6217462541 1-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "df4882eeb080ec0e8402283bdf19b33c7a7810b2",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_1dadf5fb32646d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ae5a5a971a449079d",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_362bfed6931d71": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9a4993e1-9383-48a3-83f8-e749d86c643c",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_44a923cf9b57a4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3a5c05ad-c92a-4d46-b003-46fe56f0298d",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_5250e48b088da7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "65bacbd3-1eeb-49f9-a792-5dfe19003b67",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_6eb14ed48586be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a5df5efb6bc123953",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_7ecfdcd69e3e2d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb8c23e4-bc36-4bac-94f0-e79eaaa51246",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8069a1b15ed9d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a1a743bf4e3e2dace",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_822fe3e984c997": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9397ff91-7b1a-4d56-9dc3-7684f4916b19",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8fbaae99a46ae6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0e1262a8-1eda-4920-902c-9fcc93164671",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_9dafdc0feea31c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8778377b-d918-4c57-892c-33c0392fba7e",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_c0eba79ae28fc5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e203767-bba6-4f0f-8bae-45ee460671e3",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_c6678b5f9cefc7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0e916530-a51b-4882-a35a-5674a1a516de",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fb4c473565bdde": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-adda9e80d2565812b",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

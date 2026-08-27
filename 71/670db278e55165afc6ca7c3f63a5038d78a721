@@ -1,0 +1,19 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.en-US.properties
+  s_55ee644e367d6d::t_ef89480e124dc5 16-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "71670db278e55165afc6ca7c3f63a5038d78a721",
+  "prompts": {},
+  "sessions": {
+    "s_55ee644e367d6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e23364f5-d938-4057-b5c3-f75ede5f047d",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

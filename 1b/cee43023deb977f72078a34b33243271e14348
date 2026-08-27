@@ -1,0 +1,35 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/event/ServiceOrderMessageListener.java
+  s_2e8473776a1634::t_7945a07c923584 161-164
+  s_2e8473776a1634::t_711f55e4d47962 166-169
+  s_2e8473776a1634::t_bb609a641ad721 5,9-11,15,17,20
+  s_2e8473776a1634::t_117ed5a98c7969 152-160,165
+  s_2e8473776a1634::t_5025b6022858cf 50-51
+  s_2e8473776a1634::t_612de9e0f5670f 233-268
+  s_2e8473776a1634::t_d39d3c285829b2 269
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_7b9488bd8cbcf8::t_27efd8625466bf 81-83,88-91,105-107
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1bcee43023deb977f72078a34b33243271e14348",
+  "prompts": {},
+  "sessions": {
+    "s_2e8473776a1634": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "86d59485-ba19-4397-8ad7-8cd364d720cc",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_7b9488bd8cbcf8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0a2fa78e-0a3a-4d50-8609-181d88ee68fa",
+        "model": "unknown"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

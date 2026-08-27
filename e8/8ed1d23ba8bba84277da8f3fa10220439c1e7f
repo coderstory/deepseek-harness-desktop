@@ -1,0 +1,36 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_95523bc37978d8::t_3ce88ccc8e9abb 302
+  s_95523bc37978d8::t_1b3fd46cb0d666 29
+  s_95523bc37978d8::t_bcf7dc85e373a7 297
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_95523bc37978d8::t_da9140488613a2 59
+  s_95523bc37978d8::t_72962464e12db0 95
+  s_95523bc37978d8::t_2608cd9576e9b5 282
+  s_95523bc37978d8::t_a667f32c313583 320
+.gitignore
+  s_95523bc37978d8::t_9c1b96c32b491c 57-94
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/CountryVatItemFilter.java
+  s_95523bc37978d8::t_406ac292669087 1-30
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_95523bc37978d8::t_be4ba88e1836d9 80
+  s_95523bc37978d8::t_a89658e60518b6 724
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_95523bc37978d8::t_f0540eb75ff6ea 1510
+  s_95523bc37978d8::t_382604e2325132 1514
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e88ed1d23ba8bba84277da8f3fa10220439c1e7f",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": null
+    }
+  }
+}

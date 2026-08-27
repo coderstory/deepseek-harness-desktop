@@ -1,0 +1,32 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_f3e84b85d642ad::t_7204f921156319 78
+  s_f3e84b85d642ad::t_00eb6d9e505c40 117-125
+  s_f3e84b85d642ad::t_e3ae1c712d91a9 457-487
+  s_f3e84b85d642ad::t_3fbfaef3f8226b 290,292
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_f3e84b85d642ad::t_b4f54fc4feee4b 215,219
+  s_f3e84b85d642ad::t_990dd2f9937069 61,63
+  s_f3e84b85d642ad::t_c1e7d682be429a 390-391,399
+  s_f3e84b85d642ad::t_695a316ea00a83 194,197,208
+  s_f3e84b85d642ad::t_3ed55c85342aa2 239
+  s_f3e84b85d642ad::t_57db33bc482c4b 71-73
+  s_f3e84b85d642ad::t_516b49c883f762 118-131
+  s_f3e84b85d642ad::t_be986801aa061c 262
+  s_f3e84b85d642ad::t_5d869308e8d98d 521-560
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5f31b5754b42558e85266262a6d9cad647100d76",
+  "prompts": {},
+  "sessions": {
+    "s_f3e84b85d642ad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f7450ce7-fd50-4897-8107-4b289db06996",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

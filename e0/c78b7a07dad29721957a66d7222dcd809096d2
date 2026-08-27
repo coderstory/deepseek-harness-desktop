@@ -1,0 +1,21 @@
+.planning/phases/05.8-korea-invoice/05.8-DISCUSS-CHECKPOINT.json
+  s_362bfed6931d71::t_a0c6f77d0c31be 1-71
+.planning/ROADMAP.md
+  s_362bfed6931d71::t_720793876568c0 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e0c78b7a07dad29721957a66d7222dcd809096d2",
+  "prompts": {},
+  "sessions": {
+    "s_362bfed6931d71": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9a4993e1-9383-48a3-83f8-e749d86c643c",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
