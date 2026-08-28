@@ -1,0 +1,20 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_0c895ac4db2144::t_9a164e9e69863c 401,475-499
+  s_0c895ac4db2144::t_966c00977709f7 500-501
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a322eb269d34198895e87e2105ef060a28d905f3",
+  "prompts": {},
+  "sessions": {
+    "s_0c895ac4db2144": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b4922abe-1048-4d83-86ed-bec56e63969d",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
