@@ -1,0 +1,21 @@
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/em/InvoiceTmpForward.ftl
+  s_3f444856ceb31a::t_06d42846bd5d76 1988,2376,2983,3438,3893,4642
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/em/InvoiceTmpNegative.ftl
+  s_3f444856ceb31a::t_81ec836740f387 1984,2373,2977,3429,3883,4627
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a0f06f30818a6fff80fab3dc39fc380890186a6d",
+  "prompts": {},
+  "sessions": {
+    "s_3f444856ceb31a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8cb2dc7d-3edf-4bc2-8268-4de73a722e74",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}
