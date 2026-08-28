@@ -1,6 +1,8 @@
 C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
   s_0c895ac4db2144::t_9a164e9e69863c 401,475-499
   s_0c895ac4db2144::t_966c00977709f7 500-501
+  s_ac010c8b41ca46::t_bebba1e5b1e5df 475-501
+  s_ac010c8b41ca46::t_a7b25e7a94f609 401
 ---
 {
   "schema_version": "authorship/3.0.0",
@@ -12,6 +14,14 @@ C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/Sv
       "agent_id": {
         "tool": "claude",
         "id": "b4922abe-1048-4d83-86ed-bec56e63969d",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    },
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
         "model": "glm-5.2"
       },
       "human_author": "裘人杰 <renjie.qiu@geely.com>"
