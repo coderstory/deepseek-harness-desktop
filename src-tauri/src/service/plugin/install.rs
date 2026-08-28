@@ -397,7 +397,148 @@ pub(crate) fn build_plugin_envs(
     if let Ok(joined) = std::env::join_paths(paths) {
         envs.insert("PATH".to_string(), joined.to_string_lossy().into_owned());
     }
+    // 用户 git 配置若把 GitHub HTTPS 改写为 SSH（url.<base>.insteadOf），pnpm 的
+    // git 传输会落进 SSH 而硬失败；按需隔离子进程 git 配置强制 HTTPS
+    // （见 [`git_https_isolation_env`]，未命中改写规则时返回空 map，零影响）。
+    envs.extend(git_https_isolation_env(app_handle));
     envs
+}
+
+/// 检测用户 git 配置中「把 GitHub HTTPS 改写为 SSH」的 `url.<base>.insteadOf`
+/// 规则，命中时返回隔离子进程 git 配置所需的环境变量，强制插件安装走 HTTPS。
+///
+/// 背景：不少用户按 GitHub 官方文档配置过
+/// `git config --global url."git@github.com:".insteadOf "https://github.com/"`
+/// 让个人 git 操作走 SSH。pnpm 解析 `git+https://github.com/...` 插件时同样调用
+/// git，URL 被该规则改写后实际走 SSH；桌面机通常没有 SSH 密钥（非交互子进程也
+/// 无法应答 known_hosts 询问），于是 `Permission denied (publickey)` /
+/// `Host key verification failed` 硬失败（用户可见提示见 [`git_transport_hint`]）。
+/// 检测到该类规则后，把子进程的 git 配置隔离为空文件（`GIT_CONFIG_GLOBAL`）或
+/// 关闭系统配置（`GIT_CONFIG_NOSYSTEM`），让 HTTPS 地址原样生效——公开仓库无需
+/// 任何凭据即可克隆。
+///
+/// 未命中时返回空 map：普通用户（含只配代理/凭据助手、无 SSH 改写者）的子进程
+/// git 配置原样保留，零影响。探测全部为最佳努力——git 缺失、命令失败或输出异常
+/// 都视为「无需隔离」，不阻断安装。
+///
+/// 仅用于桌面端驱动的 `dsh plugin` 子进程（`build_plugin_envs`）：不注入长驻服务
+/// 进程的环境——那里会被 agent 子进程继承，隔离 git 配置会让 agent 的 git 操作
+/// 丢失 user.name/凭据助手/代理等用户配置。
+fn git_https_isolation_env(app_handle: &AppHandle) -> HashMap<String, String> {
+    let Some(git) = plugin_git_binary(app_handle) else {
+        return HashMap::new();
+    };
+    let mut envs = HashMap::new();
+    if git_scope_has_github_ssh_rewrite(&git, &["--global"]) {
+        if let Some(config) = empty_git_config_file() {
+            log::info!(
+                "git config rewrites GitHub HTTPS to SSH (global); isolating GIT_CONFIG_GLOBAL to force HTTPS"
+            );
+            envs.insert(
+                "GIT_CONFIG_GLOBAL".to_string(),
+                config.to_string_lossy().into_owned(),
+            );
+        }
+    }
+    if git_scope_has_github_ssh_rewrite(&git, &["--system"]) {
+        log::info!(
+            "git config rewrites GitHub HTTPS to SSH (system); disabling system git config to force HTTPS"
+        );
+        envs.insert("GIT_CONFIG_NOSYSTEM".to_string(), "1".to_string());
+    }
+    envs
+}
+
+/// 解析插件子进程将使用的 git 可执行文件：Windows 用桌面端已选 Git（系统 Git 或
+/// 捆绑 MinGit，见 [`config::get_git_cmd_dir`]，与注入子进程 PATH 的目录一致），
+/// Unix 直接用 PATH 上的 `git`。
+fn plugin_git_binary(app_handle: &AppHandle) -> Option<PathBuf> {
+    #[cfg(windows)]
+    {
+        config::get_git_cmd_dir(app_handle).map(|dir| dir.join("git.exe"))
+    }
+    #[cfg(not(windows))]
+    {
+        Some(PathBuf::from("git"))
+    }
+}
+
+/// 运行 `git config <scope> --get-regexp '^url\.'`，判断该作用域的配置里是否存在
+/// 把 GitHub HTTP(S) 改写为 SSH 的 insteadOf 规则。无匹配（git 返回 1）或命令
+/// 失败都视为不存在。
+fn git_scope_has_github_ssh_rewrite(git: &Path, scope: &[&str]) -> bool {
+    let mut cmd = std::process::Command::new(git);
+    cmd.args(scope).args(["--get-regexp", "^url\\."]);
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        // CREATE_NO_WINDOW：GUI 进程下禁止闪现控制台窗口
+        cmd.creation_flags(0x0800_0000);
+    }
+    let Ok(output) = cmd.output() else {
+        return false;
+    };
+    if !output.status.success() {
+        return false;
+    }
+    has_github_ssh_rewrite_in_output(&String::from_utf8_lossy(&output.stdout))
+}
+
+/// 从 `git config --get-regexp '^url\.'` 的输出文本中判定是否存在把 GitHub
+/// HTTP(S) 改写为 SSH 的规则（纯函数，便于单测）。
+fn has_github_ssh_rewrite_in_output(output: &str) -> bool {
+    output.lines().any(rewrite_rule_targets_ssh_github)
+}
+
+/// 判定单条 `url.<base>.insteadOf <value>` 输出行是否为「把 GitHub HTTP(S) 地址
+/// 改写为 SSH」的有害规则。git 会把 section/key 名小写化（实际形如
+/// `url.git@github.com:.insteadof`），subsection 与 value 大小写保留；
+/// pushInsteadOf（`.pushinsteadof`）不会命中 `.insteadof` 后缀剥离，天然排除
+/// （只影响 push，不影响拉取）。
+fn rewrite_rule_targets_ssh_github(line: &str) -> bool {
+    let mut parts = line.splitn(2, ' ');
+    let (key, value) = match (parts.next(), parts.next()) {
+        (Some(k), Some(v)) => (k.to_ascii_lowercase(), v.trim()),
+        _ => return false,
+    };
+    let Some(base) = key
+        .strip_prefix("url.")
+        .and_then(|k| k.strip_suffix(".insteadof"))
+    else {
+        return false;
+    };
+    let ssh_base = base.starts_with("git@")
+        || base.starts_with("ssh://")
+        || base.starts_with("git+ssh://");
+    ssh_base && github_http_host(value)
+}
+
+/// value 是否为 GitHub 的 HTTP(S) URL 前缀（如 `https://github.com/`、
+/// `https://github.com`、`http://github.com/`）。
+fn github_http_host(value: &str) -> bool {
+    let value = value.trim();
+    let scheme_end = value.find("://").map(|i| i + 3).unwrap_or(0);
+    let host = value[scheme_end..]
+        .split('/')
+        .next()
+        .unwrap_or(&value[scheme_end..]);
+    host == "github.com" || host == "www.github.com"
+}
+
+/// 在系统临时目录创建一个空配置文件，作为隔离后的 `GIT_CONFIG_GLOBAL`。
+/// 文件名带进程号与纳秒时间戳防碰撞（0 字节文件由 OS 临时目录回收，无需主动
+/// 清理；GIT_CONFIG_GLOBAL 语义为「仅读取该文件」，空文件即无任何全局配置）。
+fn empty_git_config_file() -> Option<PathBuf> {
+    let nanos = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map(|d| d.as_nanos())
+        .unwrap_or(0);
+    let path = std::env::temp_dir().join(format!(
+        "dsh-gitconfig-{}-{nanos:x}.empty",
+        std::process::id()
+    ));
+    std::fs::write(&path, "").ok()?;
+    Some(path)
 }
 
 /// 运行 `dsh plugin` 子命令并应用 `allowBuilds` 重试：
@@ -1340,7 +1481,7 @@ fn git_transport_hint(output: &str) -> Option<&'static str> {
         ),
         (
             "permission denied (publickey)",
-            "git fell back to SSH but no GitHub SSH key is configured (Permission denied (publickey)). Reach GitHub over HTTPS instead.",
+            "git reached GitHub over SSH instead of HTTPS (Permission denied (publickey)) — usually your git config rewrites GitHub HTTPS to SSH (url.<base>.insteadOf) while no SSH key is configured. The desktop app isolates git config to force HTTPS for plugin installs; if you still see this, remove that rewrite (git config --global --unset-all 'url.git@github.com:.insteadOf') or configure an SSH key.",
         ),
         (
             "could not read from remote repository",
@@ -1394,9 +1535,10 @@ mod tests {
     use super::{
         append_command_output, apply_allow_build_keys, collapse_allow_builds_duplicates,
         dep_path_to_name, diagnostic_suffix, extract_allow_line_key, extract_only_builds_git_name,
-        git_transport_hint, normalize_git_spec, parse_allowlist_keys,
-        parse_store_major_from_modules_yaml, preset_spec_for_install, shell_quote_spec,
-        silent_install_failure_detail, PreinstallPluginInfo,
+        git_transport_hint, has_github_ssh_rewrite_in_output, normalize_git_spec,
+        parse_allowlist_keys, parse_store_major_from_modules_yaml, preset_spec_for_install,
+        rewrite_rule_targets_ssh_github, shell_quote_spec, silent_install_failure_detail,
+        PreinstallPluginInfo,
     };
     use std::path::PathBuf;
 
@@ -2033,5 +2175,57 @@ onlyBuiltDependencies:
         // allowBuilds 场景（prepare 构建被拦）不应误判为传输层错误
         let out = "[ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED] ...\nallowBuilds:\n  node-pty: true\n";
         assert!(git_transport_hint(out).is_none());
+    }
+
+    #[test]
+    fn rewrite_rule_targets_ssh_github_detects_common_rewrites() {
+        // GitHub 官方文档的经典写法：HTTPS -> SSH（scp 风格与 ssh:// 风格）
+        assert!(rewrite_rule_targets_ssh_github(
+            "url.git@github.com:.insteadof https://github.com/"
+        ));
+        assert!(rewrite_rule_targets_ssh_github(
+            "url.ssh://git@github.com/.insteadof https://github.com/"
+        ));
+        assert!(rewrite_rule_targets_ssh_github(
+            "url.git+ssh://git@github.com/.insteadof https://github.com"
+        ));
+        // http 同样属于被改写对象；value 无尾斜杠也能命中
+        assert!(rewrite_rule_targets_ssh_github(
+            "url.git@github.com:.insteadof http://github.com"
+        ));
+        // subsection 大小写保留、key 小写化后仍可识别
+        assert!(rewrite_rule_targets_ssh_github(
+            "url.git@Github.com:.insteadOf https://github.com/"
+        ));
+    }
+
+    #[test]
+    fn rewrite_rule_targets_ssh_github_ignores_harmless_rules() {
+        // 反向规则（ssh -> https）、非 GitHub 主机、https base 都不隔离
+        assert!(!rewrite_rule_targets_ssh_github(
+            "url.https://github.com/.insteadof git@github.com:"
+        ));
+        assert!(!rewrite_rule_targets_ssh_github(
+            "url.git@gitlab.example.com:.insteadof https://gitlab.example.com/"
+        ));
+        assert!(!rewrite_rule_targets_ssh_github(
+            "url.ssh://git@github.com/.pushinsteadof https://github.com/"
+        ));
+        assert!(!rewrite_rule_targets_ssh_github(
+            "url.file:///c:/git/.insteadof https://github.com/"
+        ));
+        // 非 url 键与空行
+        assert!(!rewrite_rule_targets_ssh_github("core.autocrlf true"));
+        assert!(!rewrite_rule_targets_ssh_github(""));
+        assert!(!rewrite_rule_targets_ssh_github("   "));
+    }
+
+    #[test]
+    fn has_github_ssh_rewrite_in_output_checks_all_lines() {
+        let harmful = "core.autocrlf true\nuser.name=x\nurl.git@github.com:.insteadof https://github.com/\n";
+        assert!(has_github_ssh_rewrite_in_output(harmful));
+        let clean = "core.autocrlf true\nuser.name=x\nurl.https://github.com/.insteadof git@github.com:\n";
+        assert!(!has_github_ssh_rewrite_in_output(clean));
+        assert!(!has_github_ssh_rewrite_in_output(""));
     }
 }
