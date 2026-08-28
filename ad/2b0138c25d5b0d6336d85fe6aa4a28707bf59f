@@ -1,0 +1,25 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_82840f4c97ff22::t_44b4b2d63e5fcf 289-290
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_82840f4c97ff22::t_dff5b92f21039f 8
+  s_82840f4c97ff22::t_b5ba835dafdb1b 155-161
+  s_82840f4c97ff22::t_8b040fa90b22e5 284-285,290-293
+  s_82840f4c97ff22::t_88e92f0d448ecd 543-568
+  s_82840f4c97ff22::t_f80adabf9c640e 569-570,572-574,589-615,617-619
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ad2b0138c25d5b0d6336d85fe6aa4a28707bf59f",
+  "prompts": {},
+  "sessions": {
+    "s_82840f4c97ff22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5c2a577e-3511-4144-acef-cd0acbf5654c",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
