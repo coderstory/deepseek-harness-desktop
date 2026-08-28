@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_7b573b4303bd38::t_ba655319ef1463 55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "04ec88fe000de03d139aaf345d5b6dae88f5f8f8",
+  "prompts": {},
+  "sessions": {
+    "s_7b573b4303bd38": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71536071-52f0-4ca1-9548-1ab4be6765f7",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

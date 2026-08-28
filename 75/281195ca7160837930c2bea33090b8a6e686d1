@@ -1,0 +1,77 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_82840f4c97ff22::t_c9d43cf4e6f67d 103,110
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartEnt.java
+  s_82840f4c97ff22::t_af290ebde3332c 8,126-127,131-132,579-580,583-584,587-588,591-592
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartView.java
+  s_82840f4c97ff22::t_6002c17f0ed3b9 6,111-112,116-117,551-552,555-556,559-560,563-564
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_82840f4c97ff22::t_ab2cbe8820ea7c 76-77,95-96
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_82840f4c97ff22::t_e5d0437eaac86e 1160
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_82840f4c97ff22::t_fb505572e6fbff 252-253,283-287
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_part/CreateSvcAppointmentPartInput.java
+  s_82840f4c97ff22::t_a5e820adcde52b 7,47-48,52-53,224-225,228-229,232-233,236-237
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartEnt.java
+  s_82840f4c97ff22::t_001eec3f466418 8,67-68,72-73,366-367,370-371,374-375,378-379
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartView.java
+  s_82840f4c97ff22::t_f9205b34732e9f 5,62-71,188-203
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_82840f4c97ff22::t_c061a2c7540b13 1007-1008,1071-1073,1160,1162,1165-1166,1170-1197,1199-1207,1280,2217-2218,2244,2246-2248,2278,2280,2283-2298
+C02-svc-appointment/svc-core-appointment/src/main/resources/mybatis/mapper/svc/core/appointment/SvcAppointmentPartViewMapper.xml
+  s_82840f4c97ff22::t_982cff11b9ed1f 24-25,47-48,93-94
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_82840f4c97ff22::t_2aa1a57bd9a954 171-172,184
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_order_part/GetSvcServiceOrderPartOutput.java
+  s_82840f4c97ff22::t_9be5f6db63c3fe 7,22-24,28-29,767-768,771-772,775-776,779-780
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_82840f4c97ff22::t_82b9a3dfee24ed 55,490,499-501,503
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_82840f4c97ff22::t_8c768e02c9e0f7 1197-1202,1234
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_82840f4c97ff22::t_8a0a9945ed53aa 662-665,705,709,714,804,806,813,815-817
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/SvcServiceOrderPartPut.java
+  s_82840f4c97ff22::t_7effd3a70961a4 6,45-46,49-50,171-172,175-176,179-180,183-184
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_82840f4c97ff22::t_f87b2c23f32f3e 19-20,232-233,283,290-291,303-304,306,308,310-334,339,401-423
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_82840f4c97ff22::t_df58e063576b44 327-328
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceOrderPartMapper.xml
+  s_82840f4c97ff22::t_97e099a29004c5 10,75,81
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceQbWarrantyTest.java
+  s_82840f4c97ff22::t_5a077236f707ce 43-44,57,247-248,252-253,255-258,298-299,303-304,306-308
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_82840f4c97ff22::t_caa145c1d641ff 9,48,61,64,165,232-233,245,250,262,266-267,270,277,299-301,305,308-309,311-314,318-320,326-327,329-331,335-337,344-345,347-349,356,364,369,374-375,384,391,396-400,403
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_82840f4c97ff22::t_ffc9f268a4351a 8,155-161,274,284-285,290-293,295-297,543-570,572-574,589-615,617-619
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/InfomediaVehicleInfoDataUploadService.java
+  s_82840f4c97ff22::t_f1e490dabd29c9 392
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/SvcAmsOperationService.java
+  s_82840f4c97ff22::t_7dd03177f668c1 261
+C12-svc-estimate/svc-cloud-estimate/src/main/java/svc/cloud/estimate/service/data/svc_estimate_order/CreateEstimateOrderPartInput.java
+  s_82840f4c97ff22::t_39ad225eb88a0a 7,43-44,48-49,218-219,222-223,226-227,230-231
+C12-svc-estimate/svc-core-estimate/src/main/java/svc/core/estimate/entity/SvcEstimateOrderPartEnt.java
+  s_82840f4c97ff22::t_6bd5c9084117e4 8,69-70,74-75,349-350,353-354,357-358,361-362
+CLAUDE.md
+  s_82840f4c97ff22::t_77d61164581ebe 78
+doc/八月需求/八月需求上线操作清单.md
+  s_82840f4c97ff22::t_a5eada4b798371 16-17,20-21,24-25
+doc/需求评审/iRepair-九月迭代PRD-缺陷分析-20260826.md
+  s_82840f4c97ff22::t_6de808fdc28027 1-659
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "75281195ca7160837930c2bea33090b8a6e686d1",
+  "prompts": {},
+  "sessions": {
+    "s_82840f4c97ff22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5c2a577e-3511-4144-acef-cd0acbf5654c",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
