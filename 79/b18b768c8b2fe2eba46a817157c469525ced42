@@ -1,0 +1,140 @@
+.planning/STATE.md
+  s_c6678b5f9cefc7::t_9b98f166299479 51-53
+  s_c6678b5f9cefc7::t_f20cdc16aa347f 9-11
+  s_c6678b5f9cefc7::t_b6df008c7a18d0 27,33,46-49
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileHelperQuietTest.java
+  s_c6678b5f9cefc7::t_f901e29c1ea0a6 126-127,130,133,141,146-192
+  s_c6678b5f9cefc7::t_471bc83b2cd789 37-41
+  s_4ed2853dfb43b3::t_fa55d1f6be5c70 193
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/CustomerProfileHelper.java
+  s_c6678b5f9cefc7::t_eeb4b7160b9efc 199,201,208,213,217,254,258,313-314,317-326,330-331,342-362
+  s_8fbaae99a46ae6::t_dd2cf5006a5178 225
+  s_8fbaae99a46ae6::t_79ed136442db8b 202-205
+  s_c6678b5f9cefc7::t_d851ebc2440409 147
+  s_c6678b5f9cefc7::t_d8e6b6bd922741 290-292,295-296
+  s_2885989fad5127::t_b70f00450b444f 10-11,21,98,119,163-165,179,200,206-207,209-212,214-216,218-224,226-253,255-257,259-261,309,363
+doc/直营模式_vs_非直营模式_对比.html
+  s_8fbaae99a46ae6::t_102b9d039366f4 1-469
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileHelperSaveTest.java
+  s_c6678b5f9cefc7::t_e1ceacbb8a4f53 81
+  s_c6678b5f9cefc7::t_be40791dbbd5dc 12,14-19
+  s_4ed2853dfb43b3::t_9ab8a337bed476 84,87-88,94,97-98,104,114,117-118,134,137-138
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/customer_profile/SceneQueryInput.java
+  s_8fbaae99a46ae6::t_a135f62802d5ab 10
+  s_8fbaae99a46ae6::t_860404752874c5 18-19
+  s_8fbaae99a46ae6::t_1bdd53d54d9702 30-31
+  s_8fbaae99a46ae6::t_356fcb233ee379 7-9
+  s_8fbaae99a46ae6::t_3ded18e8bc8582 11-13,15-17
+  s_8fbaae99a46ae6::t_90d10b0dce8fc3 20-22,27-29
+  s_8fbaae99a46ae6::t_604def6c4fb082 32-34
+  s_8fbaae99a46ae6::t_95caca42bd118b 1-6,14,23-26,35-38
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileSceneSaveProbeTest.java
+  s_0f2c5540d046df::t_739ef63d65f469 82-85
+  s_0f2c5540d046df::t_bcc2441fc7cadb 1-28,30-81,86-108,110,112,114-194
+  s_0f2c5540d046df::t_d39c96871bbe13 29
+  s_0f2c5540d046df::t_6f52d2fce63704 109
+  s_0f2c5540d046df::t_437a9751537099 111
+  s_0f2c5540d046df::t_3d39bb7147c26e 113
+doc/直营模式_vs_非直营模式_业务差异.html
+  s_8fbaae99a46ae6::t_7aa86441180e43 1-392
+doc/八月需求/5.3上线操作清单.md
+  s_c6678b5f9cefc7::t_1b1f97f7a2cb22 110
+  s_c6678b5f9cefc7::t_b33a50541a6496 102
+  s_c6678b5f9cefc7::t_52348178ae86d9 95
+  s_c6678b5f9cefc7::t_d1d335eb3ee831 42-45
+doc/八月需求/5.3技术方案-客户隐私信息存客档.md
+  s_c6678b5f9cefc7::t_7d9c4568ca35fe 154-155
+  s_c6678b5f9cefc7::t_8970a504652d72 239
+  s_c6678b5f9cefc7::t_e841b5ed3f1717 88
+  s_c6678b5f9cefc7::t_1d2def9b7e58c1 160
+  s_c6678b5f9cefc7::t_836d241228b546 163
+  s_c6678b5f9cefc7::t_52b63b57390895 7
+  s_c6678b5f9cefc7::t_ddc2041a579245 63
+  s_c6678b5f9cefc7::t_3a6d48f48c05c4 162
+  s_c6678b5f9cefc7::t_f8a539debade3f 28
+  s_c6678b5f9cefc7::t_daeb9985b65d5f 58-60,167,174,178-179
+doc/八月需求/八月需求上线操作清单.md
+  s_c6678b5f9cefc7::t_b089507f5d6d5c 156
+  s_c6678b5f9cefc7::t_fe172283c72e97 163
+  s_c6678b5f9cefc7::t_55d7cd8103325f 120-123
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/customer_profile/SceneRecordOutput.java
+  s_c0eba79ae28fc5::t_94f818fba13e4a 1-102
+.claude/settings.json
+  s_27b7aa058c6976::t_e52e3b56e9f21a 3-17,19-29
+.gitignore
+  s_27b7aa058c6976::t_0530f188292245 54-55
+.mcp.json
+  s_27b7aa058c6976::t_23b594e27d21eb 6-15
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/CustomerProfileClient.java
+  s_0f2c5540d046df::t_4c63dc7441b6d2 30
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileQueryProbeTest.java
+  s_0f2c5540d046df::t_636d8f7b8f060c 1-147
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/CustomerProfileSceneQueryProbeTest.java
+  s_0f2c5540d046df::t_4afb952582a21d 1-157
+CLAUDE.md
+  s_27b7aa058c6976::t_8e51ad1180bdf5 78-116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "79b18b768c8b2fe2eba46a817157c469525ced42",
+  "prompts": {},
+  "sessions": {
+    "s_0f2c5540d046df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f63b7a1e-3bab-4aad-9701-6cc7d0189f6b",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_27b7aa058c6976": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42ea169e-06f8-4ff2-9ce5-1f2688b080c9",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_2885989fad5127": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da36d6ee-7183-456d-9d50-513c2556405e",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_4ed2853dfb43b3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cf8fb2f2-45fb-490f-ba74-1c8db8b740d3",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_8fbaae99a46ae6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0e1262a8-1eda-4920-902c-9fcc93164671",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_c0eba79ae28fc5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e203767-bba6-4f0f-8bae-45ee460671e3",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_c6678b5f9cefc7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0e916530-a51b-4882-a35a-5674a1a516de",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

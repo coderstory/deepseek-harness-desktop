@@ -1,0 +1,68 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_95523bc37978d8::t_1b3fd46cb0d666 29
+  s_95523bc37978d8::t_bcf7dc85e373a7 297
+  s_95523bc37978d8::t_3ce88ccc8e9abb 302
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_95523bc37978d8::t_382604e2325132 1514
+  s_95523bc37978d8::t_f0540eb75ff6ea 1510
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_95523bc37978d8::t_be4ba88e1836d9 80
+  s_95523bc37978d8::t_a89658e60518b6 734
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_95523bc37978d8::t_da9140488613a2 59
+  s_95523bc37978d8::t_2608cd9576e9b5 282
+  s_95523bc37978d8::t_a667f32c313583 320
+  s_95523bc37978d8::t_72962464e12db0 95
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/CountryVatItemFilter.java
+  s_95523bc37978d8::t_406ac292669087 1-30
+.codebuddy/settings.json
+  s_95523bc37978d8::t_2f678580df4948 1-28
+.codebuddy/skills/debug-issue/SKILL.md
+  s_95523bc37978d8::t_1c2da1a5c77d06 1-27
+.codebuddy/skills/explore-codebase/SKILL.md
+  s_95523bc37978d8::t_430092fbf95765 1-28
+.codebuddy/skills/refactor-safely/SKILL.md
+  s_95523bc37978d8::t_64cbd6637fd155 1-28
+.codebuddy/skills/review-changes/SKILL.md
+  s_95523bc37978d8::t_213f060baa040e 1-29
+.cursorrules
+  s_95523bc37978d8::t_f8b0ae81c159f2 1-38
+.gemini/hooks/crg-session-start.sh
+  s_95523bc37978d8::t_5de2d4088925cc 1-15
+.gemini/hooks/crg-update.sh
+  s_95523bc37978d8::t_74083cdf936da2 1-10
+.gemini/settings.json
+  s_95523bc37978d8::t_7669bcb35d2267 1-30
+.gemini/skills/debug-issue/SKILL.md
+  s_95523bc37978d8::t_1c6ddee365f9c0 1-27
+.gemini/skills/explore-codebase/SKILL.md
+  s_95523bc37978d8::t_dd64127072371c 1-28
+.gemini/skills/refactor-safely/SKILL.md
+  s_95523bc37978d8::t_4ba975814f1718 1-28
+.gemini/skills/review-changes/SKILL.md
+  s_95523bc37978d8::t_800f6851861b73 1-29
+.github/code-review-graph.instruction.md
+  s_95523bc37978d8::t_d2554fe2ca309f 1-46
+.qoder/mcp.json
+  s_95523bc37978d8::t_d9fb1402838513 1-14
+.qoder/settings.json
+  s_95523bc37978d8::t_eaa17b0125b07a 1-28
+.windsurfrules
+  s_95523bc37978d8::t_84af6a2f93474a 1-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "53f57d57fd59486429451f0f2682bf2af895186d",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/SvcAmsOperationService.java
+  s_d0a8ef0d97b719::t_dea0f8c05e2f27 261
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "880fc02e383991340228526f699310c399a80efc",
+  "prompts": {},
+  "sessions": {
+    "s_d0a8ef0d97b719": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a87673e1c28b04819",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

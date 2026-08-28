@@ -1,0 +1,40 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsTokenCache.java
+  s_0ba0a0fd6df46f::t_03600ba1d52fa1 52
+  s_0ba0a0fd6df46f::t_7630c35fba8106 38
+  s_0ba0a0fd6df46f::t_282be8e90927a5 67
+  s_0ba0a0fd6df46f::t_c76bac937edeb1 81
+"doc/八月需求/维修项目迭代月八技术方案 .md"
+  s_0ba0a0fd6df46f::t_f02710a3ae0cc0 1207
+  s_0ba0a0fd6df46f::t_53a021746bdd3f 1204-1206
+  s_0ba0a0fd6df46f::t_bbb0a88c165a77 1208-1210
+  s_5384452893658f::t_b76d35b3a96bc0 1-1203,1211-1331
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsClient.java
+  s_0ba0a0fd6df46f::t_9c57ad75f69f07 340-348
+  s_0ba0a0fd6df46f::t_21b84e94b57f79 56
+  s_0ba0a0fd6df46f::t_89d240d3fdd132 207-209,212,218-221
+  s_0ba0a0fd6df46f::t_ccfaf5c4493925 151,155-160
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "faa55e2df69eeff7878d1fc8dfe5f8d8411235dc",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_5384452893658f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a13ce2300a29aa8d1",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

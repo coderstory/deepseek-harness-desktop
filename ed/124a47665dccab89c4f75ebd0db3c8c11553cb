@@ -1,0 +1,47 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_301f860b124fa4::t_ee5284d8e3b123 2112-2114,2142,2147-2149,2151-2153,2171-2180
+  s_301f860b124fa4::t_9a6b6c8332f233 2181,2275,2283-2293
+  s_301f860b124fa4::t_bf2c8930464220 2051
+  s_301f860b124fa4::t_e07a1d79293b02 2294-2295
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_3839a9d4e7d6f3::t_a7e5eb49b6adf4 713-715,719-720
+  s_3839a9d4e7d6f3::t_b6cffd1ead6ba3 126-127
+  s_3839a9d4e7d6f3::t_ee031d3cc6ecf3 765-767,769-778,780,782,785-822,824
+  s_3839a9d4e7d6f3::t_b6f9d004ed468c 906-909
+  s_3839a9d4e7d6f3::t_7ff2796da22e96 990,1005-1010,1042-1043
+  s_3839a9d4e7d6f3::t_f5e82fd2c53249 991-994,1002-1004
+  s_3839a9d4e7d6f3::t_e81d1505fa21df 995-1001
+  s_3839a9d4e7d6f3::t_b7a3921755e344 696-697
+  s_3839a9d4e7d6f3::t_3a0599884f426c 937-939
+  s_3839a9d4e7d6f3::t_c2f05d23e0b0c4 986-987
+  s_3839a9d4e7d6f3::t_aa8585f8f2ab00 86-94
+  s_3839a9d4e7d6f3::t_d6fcfd23dd8199 1011-1019,1022-1041
+  s_3839a9d4e7d6f3::t_4e6dc7f41c60a4 839-904,910-928,931-936,940-942,945-985,988-989,1044-1047,1049-1053
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/temp_settle/InsuranceMergeItem.java
+  s_301f860b124fa4::t_617a383145c175 8-11,18-20,24-26,30-32,39-41,45-47,51-52
+  s_301f860b124fa4::t_878666f07775ed 53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ed124a47665dccab89c4f75ebd0db3c8c11553cb",
+  "prompts": {},
+  "sessions": {
+    "s_301f860b124fa4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2c0e08cd-f5c7-4e2d-9fb5-020e2ddaf0b9",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    },
+    "s_3839a9d4e7d6f3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8a506fba-40e4-4185-aff6-da44e8b03df8",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

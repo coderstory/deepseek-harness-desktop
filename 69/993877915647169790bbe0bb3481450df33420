@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/GetSvcServiceProxyPdfOutput.java
+  s_55ee644e367d6d::t_a8bc8670bf5374 481-482
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "69993877915647169790bbe0bb3481450df33420",
+  "prompts": {},
+  "sessions": {
+    "s_55ee644e367d6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e23364f5-d938-4057-b5c3-f75ede5f047d",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_95523bc37978d8::t_eebc56155a4fbc 422,699
+D01-dependence/svc-dependency-all/pom.xml
+  s_1c455ba6e8628e::t_5bdbc1ead0e62b 19-28,85-94
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_95523bc37978d8::t_c631d61bec3662 39-40
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_1c455ba6e8628e::t_4aace790a54ecb 1-7,10-23
+C00-svc-base/svc-core-base/cp.txt
+  s_95523bc37978d8::t_c066f05e67a115 1
+CODEBUDDY.md
+  s_95523bc37978d8::t_ee78c51fed7f11 1-38
+GEMINI.md
+  s_95523bc37978d8::t_6a7f824fe4637c 1-38
+QODER.md
+  s_95523bc37978d8::t_5ea415fa693644 1-38
+opencode.jsonc
+  s_95523bc37978d8::t_ad71e5ac47982f 1-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cef38bdceefdb94e38704975235869c33a9a9352",
+  "prompts": {},
+  "sessions": {
+    "s_1c455ba6e8628e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "966dc594-ca7d-408e-8a53-de2fda1a71b5",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

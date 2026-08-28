@@ -1,0 +1,191 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_b2f198fe3e461f::t_37ae7f09f1c52f 913,916
+  s_b2f198fe3e461f::t_5fea3af66e8f63 1085-1086
+  s_b2f198fe3e461f::t_5c8165aeb1ca3b 1080
+  s_b2f198fe3e461f::t_0f1aaddc1592d6 1092
+  s_b2f198fe3e461f::t_74bc325135d1be 1176-1177
+  s_b2f198fe3e461f::t_2d6ca817528306 1223
+  s_b2f198fe3e461f::t_01683f63bc7b72 2313
+  s_b2f198fe3e461f::t_7b8d79c1488da4 1206
+  s_b2f198fe3e461f::t_3de8b1c60874ef 1012-1014
+  s_b2f198fe3e461f::t_8fb609f678e261 1070
+  s_b2f198fe3e461f::t_56b79a2c6cc217 1068
+  s_b2f198fe3e461f::t_16ed6aecc13d86 1199
+  s_b2f198fe3e461f::t_1f2ca27fa2943a 769-770,772
+  s_b2f198fe3e461f::t_7e58731d2b8ef7 2154-2156
+  s_b2f198fe3e461f::t_dfbe474eb3d69f 1203
+  s_b2f198fe3e461f::t_09e6ba787c701b 1029
+  s_b2f198fe3e461f::t_49f54b2ea511e7 1020
+  s_b2f198fe3e461f::t_791d90d3ff0204 2222,2227,2252,2265,2298
+  s_b2f198fe3e461f::t_6b20d2efdaf1fc 1217-1218
+  s_b2f198fe3e461f::t_6a4902d93c02b7 1309-1310
+  s_b2f198fe3e461f::t_efadcd2da16ee3 779
+  s_b2f198fe3e461f::t_6d3216d65e9ced 1211
+  s_b2f198fe3e461f::t_192d9546152afe 2311
+  s_b2f198fe3e461f::t_5d4b85f6cd9d18 1165,1195
+  s_b2f198fe3e461f::t_04f3259c54f7c1 551-552
+  s_fbfe372877ccbc::t_de49f93657cf2d 2221,2258-2259,2304-2305
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_b2f198fe3e461f::t_1896a20ba353f9 16,20-21
+  s_b2f198fe3e461f::t_58b0515362bdb6 87,89
+  s_b2f198fe3e461f::t_1418be45e20803 35
+  s_b2f198fe3e461f::t_ca14d3c4f40d35 53
+  s_b2f198fe3e461f::t_1245a4a036d96f 76-77
+  s_b2f198fe3e461f::t_430bf660566f02 119
+  s_b2f198fe3e461f::t_daeb2aad7e7386 56
+  s_b2f198fe3e461f::t_764760523823aa 66-67
+  s_b2f198fe3e461f::t_367a3a7b057534 38
+  s_b2f198fe3e461f::t_032f8ed754f26e 32
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_b2f198fe3e461f::t_155270e7ab69d1 112-117
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/config/service/data/svc_labour_hour_type_price/QueryLabourHourTypeCodeByDealerCodeInput.java
+  s_b2f198fe3e461f::t_f05ba563a1120e 34
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_b2f198fe3e461f::t_88fb6dde9be911 659
+  s_b2f198fe3e461f::t_34f3cbe493d428 715-716
+  s_b2f198fe3e461f::t_fee316290b0925 613
+  s_b2f198fe3e461f::t_5e2704df8e65ab 623
+  s_b2f198fe3e461f::t_308d809db24f61 574
+  s_b2f198fe3e461f::t_c69cd9991fc155 640
+  s_b2f198fe3e461f::t_252f38b2c07856 653
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_b2f198fe3e461f::t_a18e0d6969e438 71-76
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_b2f198fe3e461f::t_73ebce4b80b73f 68-71
+  s_b2f198fe3e461f::t_878653c9221d51 172,174
+  s_b2f198fe3e461f::t_9af2ab465aca9a 212
+  s_b2f198fe3e461f::t_7daa3937c1d63e 225-226
+  s_b2f198fe3e461f::t_b9d131be7a839d 203
+  s_b2f198fe3e461f::t_8a7c3d7967191b 241
+  s_160279fb2348fc::t_dbecc0cbae8a8a 101,103
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_b2f198fe3e461f::t_d7fd7ad7a9c62a 1295
+  s_b2f198fe3e461f::t_36c987ff08d633 634
+  s_b2f198fe3e461f::t_4927a68c8adddd 751
+  s_b2f198fe3e461f::t_49227e713a83e6 730
+  s_b2f198fe3e461f::t_664d93610757f4 1310
+  s_b2f198fe3e461f::t_a386f55d3aefe4 721
+  s_b2f198fe3e461f::t_259fb2f0570726 735
+  s_b2f198fe3e461f::t_e7dcd75b173466 582
+  s_b2f198fe3e461f::t_db5d96836e9628 715-716
+  s_b2f198fe3e461f::t_dfe8125343fae9 745
+  s_b2f198fe3e461f::t_b8b922f61bc1e7 778,1148-1149,1188,1253,1264,1292
+  s_e2ef761721307f::t_71e293a3f76f53 811
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_b2f198fe3e461f::t_04c7927adb056c 19
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_b2f198fe3e461f::t_4eb07147218329 685,1004,1165
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_b2f198fe3e461f::t_f4385224cde5b0 98
+  s_b2f198fe3e461f::t_a9ddebdedafa91 180
+  s_b2f198fe3e461f::t_6317d114339152 281-282
+  s_b2f198fe3e461f::t_221d2dc2aea4dc 327
+  s_b2f198fe3e461f::t_acbfca95b42e98 239
+  s_b2f198fe3e461f::t_d03f8818acbe49 227-231
+  s_b2f198fe3e461f::t_33ccec7d9d8ca8 268
+  s_b2f198fe3e461f::t_ea1a565bea3fca 319-320
+  s_b2f198fe3e461f::t_415d620034086f 322
+  s_b2f198fe3e461f::t_96a102800ce68c 170-172
+  s_9ec435559520ed::t_83f9fc9c29da76 333-334,412,417-418,424-425
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetSvcDealerHourPriceResp.java
+  s_b2f198fe3e461f::t_0a78a02836c02e 57,59-60
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_b2f198fe3e461f::t_3fff4376670fd0 112
+  s_b2f198fe3e461f::t_142680ddb75e78 91
+  s_b2f198fe3e461f::t_0065351c428b67 146
+  s_b2f198fe3e461f::t_ab075518078263 109-110
+  s_194834707011d1::t_903b9bbfe8f988 76-77,79-80,82-83
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_b2f198fe3e461f::t_13b01caba79716 28
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_b2f198fe3e461f::t_c63e525a855eff 274
+  s_b2f198fe3e461f::t_f56c24e78100ca 421-422
+  s_b2f198fe3e461f::t_b4d652a65c3b31 153-159
+  s_b2f198fe3e461f::t_8b2fb760416ff0 348
+  s_b2f198fe3e461f::t_8dfd63bbd3288e 169
+  s_b2f198fe3e461f::t_52bb740eff9213 339-340
+  s_b2f198fe3e461f::t_97ef53b4447aa7 259-260
+  s_b2f198fe3e461f::t_63e8550fc1584b 410
+  s_b2f198fe3e461f::t_c15594f622cc65 416
+  s_b2f198fe3e461f::t_d8b8f64aabf6b3 325,327
+  s_b2f198fe3e461f::t_65bfdca3f151b5 333
+  s_b2f198fe3e461f::t_5b174574c4ebd5 79
+  s_b2f198fe3e461f::t_4b01f946304dd3 428-429
+  s_b6f99c8bcc7f15::t_ddfde617cc023d 297
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/SparePartHelper.java
+  s_814fedcbe9b869::t_04477b83da0c14 57
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_814fedcbe9b869::t_13189e0ab77ad3 60-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f6e6f1637d7ad3b8510f6c1fb5bbc7665dc60238",
+  "prompts": {},
+  "sessions": {
+    "s_160279fb2348fc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a02a19a674968dec8",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_194834707011d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a8026ae83f254ad59",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_814fedcbe9b869": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-afd425d8dc2fafb6a",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_9ec435559520ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a4e795c2be07088e4",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_b2f198fe3e461f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "386810c1-67e7-4503-b0fa-2fa320c4ba8b",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_b6f99c8bcc7f15": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a7e94195310812c9a",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_e2ef761721307f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a941b36cb291801b6",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_fbfe372877ccbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "beed1329-1979-4fd9-8d61-878cf375ca91",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

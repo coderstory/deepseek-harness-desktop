@@ -1,0 +1,21 @@
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/RoadRescueProbeTest.java
+  s_0ba0a0fd6df46f::t_9bd5189f1344dc 5-6,8,20-23,26,28-29,31,34,36-46,50,54-56,63-85,118,128-199,207-212,214-215,222-223,229,235,238-239,241,243-244,246,257-356,362-420
+  s_0ba0a0fd6df46f::t_825543464c6405 200-206,213,216-221,224-228,230-234,236-237,240,242,245,247-256
+  s_0ba0a0fd6df46f::t_b826e81b2c6123 357-361
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "049ab51425138c1191c85d6b92e80d0bfb92cc42",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

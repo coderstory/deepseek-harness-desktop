@@ -1,0 +1,33 @@
+C01-svc-config/svc-core-config/src/main/resources/mybatis/mapper/svc/core/config/MdmStandardHourMapper.xml
+  s_70fc6fca65797e::t_aee6e26ff66fbb 96-101
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/data/mdm_standard_hour/QueryMdmStandardHourInput.java
+  s_70fc6fca65797e::t_463489caed794a 20-22,66-73
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/standard_hour/StandardHourInput.java
+  s_70fc6fca65797e::t_36c9a5826d9850 20-22,46-53
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/StandardHourServiceImpl.java
+  s_663097a95c4058::t_7884bc506da068 53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6593c3d107d4011b813235b38d4934e8f5be7cea",
+  "prompts": {},
+  "sessions": {
+    "s_663097a95c4058": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "83ee1ce7-7075-4f89-a84e-e9707b82c8ee",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_70fc6fca65797e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c3426b13-6d90-426f-aefe-821333dbecb1",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}

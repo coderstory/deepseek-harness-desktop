@@ -1,0 +1,20 @@
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/helper/AppMqSyncHelperTest.java
+  s_7646f5152e2e4f::t_106a1f9738632b 243-302
+  s_7646f5152e2e4f::t_5d258b5c43d24e 9-12,15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d5e363f3d46878807d2f7860a3c90871cfcc3dcf",
+  "prompts": {},
+  "sessions": {
+    "s_7646f5152e2e4f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78718596-dbab-4988-834a-416e36d80c18",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

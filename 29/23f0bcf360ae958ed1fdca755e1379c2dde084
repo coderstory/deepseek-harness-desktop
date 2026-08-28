@@ -1,0 +1,25 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/VehicleClient.java
+  s_0ba0a0fd6df46f::t_e423e19cf8c821 18-20
+  s_0ba0a0fd6df46f::t_188eb91fa2c90b 71-118
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/RoadRescueDataPushService.java
+  s_0ba0a0fd6df46f::t_01a9389eb456bf 74-76
+  s_0ba0a0fd6df46f::t_bd00f629b1da1d 676-681,687
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/service/RoadRescueDataPushServiceTest.java
+  s_0ba0a0fd6df46f::t_8fc79632808571 713-734
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "2923f0bcf360ae958ed1fdca755e1379c2dde084",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_013544e2545ef8::t_a4d0a777d57162 50
+  s_013544e2545ef8::t_72a68aabd172dd 803-831
+  s_013544e2545ef8::t_0c9b27e64fd548 702-705
+  s_013544e2545ef8::t_a9adee3b42a7a8 928-931
+  s_013544e2545ef8::t_2a1323ec758aa5 802
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/GetSvcStatementKrEmCalculatorVatMergeTest.java
+  s_013544e2545ef8::t_cb48dc04aa3f70 1-103
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/GenTwoScenariosTest.java
+  s_95523bc37978d8::t_086d86264f5faf 500
+  s_95523bc37978d8::t_1a11fd52c12f32 436
+  s_013544e2545ef8::t_0abe1a8ef380f3 42
+  s_95523bc37978d8::t_a4239f248b5a98 81,87,97,99,659-660,682-686,716-717
+  s_95523bc37978d8::t_fffbd6ce77abbd 680-681,687-715
+  s_013544e2545ef8::t_f49efec171f27c 241-246,251
+  s_95523bc37978d8::t_f6c9264315560a 3-4,7-8,10-25,28-41,43-53,57-77,80,82-86,88-94,96,100-124,127-167,169-170,182-201,203,205,211-216,218-240,247-250,252-435,437-499,501-505,561-592,594-606,608-609,611,624,626-633,642,645-647,652-653,665,670
+  s_013544e2545ef8::t_2aff8d9eb7d361 125-126
+  s_013544e2545ef8::t_b75e271042de94 506-560
+  s_013544e2545ef8::t_02ab3b9eb32f9d 168,171-181,202,204,206-210,217
+  s_95523bc37978d8::t_ca10b2150e3769 1-2,5-6,9,26-27,54-56,78-79,95,98,593,607,610,612-623,625,634-641,643-644,648-651,654-658,661-664,666-669,671-679
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_013544e2545ef8::t_b9fa72eda15614 3-4,6,29,31
+  s_013544e2545ef8::t_43f7b8bb08f23c 73-83
+  s_013544e2545ef8::t_367e27506bed1d 72
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_013544e2545ef8::t_3f0043b35b3812 105-108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5756acfbce3adece20aadc330e7b8776d0c92fdc",
+  "prompts": {},
+  "sessions": {
+    "s_013544e2545ef8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e1b496f3-f04c-40bc-bbe3-2ded99737e30",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

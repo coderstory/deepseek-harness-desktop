@@ -1,0 +1,29 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_ac010c8b41ca46::t_56091d2de4a126 333-337
+  s_ac010c8b41ca46::t_e416a83e709089 312-316
+  s_ac010c8b41ca46::t_3a95c496ae02c9 393
+  s_ac010c8b41ca46::t_49f029daf9a29c 353-357
+  s_ac010c8b41ca46::t_948d71e19c19a0 2303,2307
+  s_ac010c8b41ca46::t_f4734f00aeed82 297-300
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/TempSettleCalculator.java
+  s_ac010c8b41ca46::t_3c56afc1a2481b 61-62
+  s_ac010c8b41ca46::t_b521a2826466b2 69
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/TempSettleLogicTest.java
+  s_ac010c8b41ca46::t_bb4308bc626d3e 94-142
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3f2866438fa1d25574a5b0e505235f627df42ada",
+  "prompts": {},
+  "sessions": {
+    "s_ac010c8b41ca46": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5168ec05-7a09-4c13-8d43-021de166b065",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

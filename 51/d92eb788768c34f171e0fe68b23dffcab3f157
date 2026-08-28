@@ -1,0 +1,19 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarHelper.java
+  s_f3e84b85d642ad::t_d07c13ee98a108 382-383,396
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "51d92eb788768c34f171e0fe68b23dffcab3f157",
+  "prompts": {},
+  "sessions": {
+    "s_f3e84b85d642ad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f7450ce7-fd50-4897-8107-4b289db06996",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

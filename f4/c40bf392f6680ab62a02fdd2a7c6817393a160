@@ -1,0 +1,21 @@
+.planning/v1.6-SIT-E2E-TEST-CASES.md
+  s_8bbde6e3cbd03b::t_0adffca2f2b2aa 64-67,69,72,74,76-77
+  s_8bbde6e3cbd03b::t_cb53947adfbefb 96-97,99
+  s_8bbde6e3cbd03b::t_28155a48989542 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f4c40bf392f6680ab62a02fdd2a7c6817393a160",
+  "prompts": {},
+  "sessions": {
+    "s_8bbde6e3cbd03b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "43bd843d-a66d-4339-881a-a3459fdd4f27",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_95523bc37978d8::t_f963a09800864b 59-60,86-89,95-96,282,285,289,291,296,298,314,317,320-322,341-342
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/VatItemFilter.java
+  s_95523bc37978d8::t_4c23f3846ef689 1-27
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/KrEmVatItemFilter.java
+  s_95523bc37978d8::t_feaad5acdaa601 1-26
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_95523bc37978d8::t_bedaf0ee4cef9e 234,236-240,253,256,289,296,301
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_95523bc37978d8::t_a484397938b133 723-726,774
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/GetSvcStatementInvoiceOutput.java
+  s_95523bc37978d8::t_ba64e19774419d 8,106,108,112
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/SystemOrderInput.java
+  s_95523bc37978d8::t_74e66e16693680 3,12
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_95523bc37978d8::t_7068dc57f9a4ed 757-759,1510,1514
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceKrEmPriceContextTest.java
+  s_95523bc37978d8::t_3c6e117d6a4cb1 6,51,140,158,195-196,203,315
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceTest.java
+  s_95523bc37978d8::t_fa7e2337b3af17 34,127,130-131,173,175,239
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_95523bc37978d8::t_fa092968c342d1 314-316,420-422,490,567,572,648,816
+doc/八月需求/5.8-PRD-vs-代码对比.md
+  s_95523bc37978d8::t_9270e5c6054258 1-194
+doc/八月需求/5.8-反向PRD-代码实现-v2.md
+  s_95523bc37978d8::t_1eae66185a94fb 1-558
+doc/八月需求/5.8-反向PRD-代码实现-v3.md
+  s_95523bc37978d8::t_4ceb6655b79dda 1-472
+doc/八月需求/5.8-反向PRD-代码实现.md
+  s_95523bc37978d8::t_64faf7808b737e 1-499
+doc/八月需求/5.8-开发文档.md
+  s_95523bc37978d8::t_c05ab7e54257fc 1-315
+doc/八月需求/PRD-할인-소계-口径确认.md
+  s_95523bc37978d8::t_cf7b4e6c18469e 1-18
+doc/八月需求/韩国开票需求梳理与疑问清单.md.txt
+  s_95523bc37978d8::t_10f079be60286b 1-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b5bfe4330bf910018699ae16b973afc1ea7c289b",
+  "prompts": {},
+  "sessions": {
+    "s_95523bc37978d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d822d09b-7020-4c4e-9d34-6321dc2e3af4",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

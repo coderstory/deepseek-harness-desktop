@@ -1,0 +1,23 @@
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsClient.java
+  s_0ba0a0fd6df46f::t_60eedfca28fcf4 249-256
+  s_0ba0a0fd6df46f::t_04211376f26154 231-233
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsClientTest.java
+  s_0ba0a0fd6df46f::t_91e98d6c0f404f 8
+  s_0ba0a0fd6df46f::t_ea86e13c88c5cb 357-387
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1faea598fdab47051b95d28ac02665d3229f1903",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

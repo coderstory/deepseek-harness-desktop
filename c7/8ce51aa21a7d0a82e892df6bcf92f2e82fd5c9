@@ -1,0 +1,20 @@
+C04-svc-maintain/svc-core-maintain/src/main/java/svc/core/maintain/helper/MaintainOperationHelper.java
+  s_4f71bb37ce9091::t_636075e7077828 28,30
+  s_4f71bb37ce9091::t_e1b2a8e2acaaf5 83-108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c78ce51aa21a7d0a82e892df6bcf92f2e82fd5c9",
+  "prompts": {},
+  "sessions": {
+    "s_4f71bb37ce9091": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1dd88601-aae7-433b-98d5-15d7821f7e26",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/event/ServiceOrderMessageEvent.java
+  s_83f5788a167614::t_160880a073692f 80-83
+  s_83f5788a167614::t_e3ad520ca136b0 32-33,37,46
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.appserver.properties
+  s_7b9488bd8cbcf8::t_d122796b9d3336 101
+  s_7b9488bd8cbcf8::t_43def617d31890 102-104
+  s_7b9488bd8cbcf8::t_8bfb09a6a5f09e 69-75,77-80,84-87,92-99,109-111,117-119
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppMqSyncHelper.java
+  s_83f5788a167614::t_379971c2ad7b09 226
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppOrderTransitionHelper.java
+  s_83f5788a167614::t_0b80a5515d5050 183
+  s_83f5788a167614::t_3cae42b86da8b7 216
+  s_83f5788a167614::t_f2b1b1ab7210b9 155
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/event/ServiceOrderMessageListener.java
+  s_83f5788a167614::t_aab5517ffcf9d6 4,8,19-21,30,34-42,50-55,57-66,68-79,86,88-89,91-92,94-95,98-99,104,106-107,109-110,112-113,116-117,122,124-134,136-138,140,144,155-156,158,161-162,166-167,174,177-178,184-185,187,206
+  s_7b9488bd8cbcf8::t_a4dd50dcdd73ad 159,163,168,171-173,175-176,179-183
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6e3a9fd1908b404d0966a1b695c1c865320013fc",
+  "prompts": {},
+  "sessions": {
+    "s_7b9488bd8cbcf8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0a2fa78e-0a3a-4d50-8609-181d88ee68fa",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    },
+    "s_83f5788a167614": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "816b3183-0eea-484b-a3eb-c4be1f2f1fb8",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
