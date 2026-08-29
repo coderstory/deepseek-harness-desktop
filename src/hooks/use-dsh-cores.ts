@@ -23,6 +23,8 @@ export interface HarnessCore {
   present: boolean
   /** 当前是否使用中 */
   active: boolean
+  /** 是否预览版（GitHub Pre-release label 或 tag 命名判定）：预览版不参与更新提示，仅列表展示 */
+  preview: boolean
   error?: string | null
 }
 

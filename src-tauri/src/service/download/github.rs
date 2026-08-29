@@ -4,6 +4,11 @@
 //! 所有访问 api.github.com 的调用统一经 `download::utils::github_api` 冷却器收敛；
 //! API 限流/不可用时逐级兜底到 releases.atom / expanded_assets HTML /
 //! tag 内嵌 build-id，保证更新提示与完整性校验不因 403 而失效。
+//!
+//! 预览版（GitHub Release 标记 Pre-release、或 tag 命名含预览标记，见
+//! [`is_preview_tag`]）**不参与更新判定**：`/releases/latest` 按 label 自动排除，
+//! releases.atom 兜底按 tag 命名跳过；但核心列表（`fetch_dsh_pkg_releases`）
+//! 仍会列出预览版供用户手动下载安装。
 
 use crate::config;
 
@@ -84,9 +89,43 @@ fn commit_fallback_from_tag(tag: &str) -> String {
     tag.rsplit('-').next().unwrap_or(tag).to_string()
 }
 
-/// 从 releases.atom（github.com，非 api.github.com）解析最新 release tag。
+/// 从 releases.atom 正文中取出**第一条非预览版** release tag。
 ///
-/// 用作 API 限流/不可用时的兜底来源，仅在 API 完全不可达时调用。
+/// GitHub 的 releases.atom（github.com，非 api.github.com，不受未认证限流约束）
+/// 会包含 Pre-release 与手动测试 release，但 entry 里不含 Pre-release label——
+/// 只能按 tag 命名兜底（[`is_preview_tag`]）跳过预览版，取最新一条非预览版作为
+/// 「最新可用 release」。纯函数，便于单元测试。
+fn first_non_preview_tag_from_atom(body: &str) -> Option<String> {
+    let mut rest = body;
+    while let Some(start) = rest.find("<entry>") {
+        let end = rest[start..]
+            .find("</entry>")
+            .map(|e| start + e)
+            .unwrap_or(rest.len());
+        let entry = &rest[start..end];
+        let tag = entry
+            .split("releases/tag/")
+            .nth(1)
+            .and_then(|s| s.split('"').next())
+            .filter(|t| !t.is_empty());
+        if let Some(tag) = tag {
+            if is_preview_tag(tag) {
+                log::debug!("DSH_ATOM: skip preview release {tag}");
+            } else {
+                return Some(tag.to_string());
+            }
+        }
+        rest = &rest[end..];
+    }
+    None
+}
+
+/// 从 releases.atom（github.com，非 api.github.com）解析最新**非预览版** release tag。
+///
+/// 用作 API 限流/不可用时的兜底来源，仅在 API 完全不可达时调用。逐条扫描
+/// atom 条目：预览版（Pre-release label 发布、tag 命名含预览标记）一律跳过，
+/// 只取最新一条非预览版——避免限流窗口内把预览版误当「最新 release」推给用户
+/// （见 [`is_preview_tag`]）。
 async fn fetch_latest_dsh_tag_from_atom() -> Result<String, String> {
     let client = github_client()?;
     let body = client
@@ -99,18 +138,8 @@ async fn fetch_latest_dsh_tag_from_atom() -> Result<String, String> {
         .text()
         .await
         .map_err(|e| format!("DSH_ATOM: {e}"))?;
-    // 取第一条 <entry> 作为最新 release，从中提取 releases/tag/<TAG>
-    let entry = body
-        .find("<entry>")
-        .and_then(|p| body[p..].find("</entry>").map(|e| &body[p..p + e]))
-        .unwrap_or(&body);
-    entry
-        .split("releases/tag/")
-        .nth(1)
-        .and_then(|s| s.split('"').next())
-        .filter(|t| !t.is_empty())
-        .map(|t| t.to_string())
-        .ok_or_else(|| "DSH_ATOM: missing tag in atom feed".to_string())
+    first_non_preview_tag_from_atom(&body)
+        .ok_or_else(|| "DSH_ATOM: no non-preview release in atom feed".to_string())
 }
 
 /// 从 expanded_assets HTML 片段中解析指定资产文件名后的 `sha256:<64hex>` 摘要。
@@ -173,6 +202,9 @@ async fn fetch_dsh_digest_from_expanded_assets(
 ///
 /// 修复前：api.github.com 一限流 `fetch_latest_dsh_pkg_info` 直接返回 Err，
 /// `check_dsh_update` 静默跳过，导致上游 rc.8 发布后桌面端迟迟不出现更新提示。
+///
+/// 预览版（Pre-release label 或 tag 命名，见 [`is_preview_tag`]）不返回：
+/// 返回 Err 由调用方保持本地安装、不提示更新，避免把预览版推给用户自动更新。
 pub async fn fetch_latest_dsh_pkg_info() -> Result<LatestDshPkg, String> {
     let client = github_client()?;
     let expected_name = config::get_dsh_download_url()?
@@ -209,6 +241,19 @@ pub async fn fetch_latest_dsh_pkg_info() -> Result<LatestDshPkg, String> {
             .to_string(),
         None => fetch_latest_dsh_tag_from_atom().await?,
     };
+
+    // 2b. 预览版不参与更新判定：`/releases/latest` 已按 label 排除 Pre-release，
+    //     这里按 tag 命名再兜底拦一道（发布时漏标 Pre-release label 的预览版
+    //     同样不会推给用户自动更新）。返回 Err 由调用方保持本地安装、不提示。
+    if is_preview_tag(&tag_name) {
+        log::info!(
+            "DSH_SKIP_PREVIEW: latest release {} is a preview, ignoring for update",
+            tag_name
+        );
+        return Err(format!(
+            "DSH_PREVIEW_RELEASE: {tag_name} is a preview release, not an update"
+        ));
+    }
 
     // 3. commit：优先 API /commits/{tag}，失败用 tag 内嵌 build-id 兜底
     let commit = match fetch_tag_commit(&client, &tag_name).await {
@@ -380,6 +425,29 @@ pub fn parse_version_from_tag(tag: &str) -> Option<String> {
     (!version.is_empty()).then(|| version.to_string())
 }
 
+/// 是否「预览版」tag：预览版不参与自动更新判定（不提示用户更新），但核心列表
+/// 仍会列出、可手动下载安装（见 [`fetch_dsh_pkg_releases`]）。
+///
+/// GitHub API 的 `/releases/latest` 已按 label 排除 Pre-release；但 releases.atom
+/// 兜底（feed 无 label 字段）与核心列表的 git tags 兜底需要按 tag 命名判定。
+/// 判定规则：tag 版本解析成功（`dsh-<version>-<build-id>`）且版本号的 pre-release
+/// 段含**非 rc** 的预览标记（`preview`/`beta`/`alpha`/`canary`/`next`）→ 预览版。
+/// rc（如 `0.1.1-rc.2`）不算预览版：pkg 仓库的 rc 发布会正常推送用户更新。
+pub fn is_preview_tag(tag: &str) -> bool {
+    let Some(version) = parse_version_from_tag(tag) else {
+        return false;
+    };
+    let Ok(parsed) = semver::Version::parse(&version) else {
+        return false;
+    };
+    const PREVIEW_MARKERS: [&str; 5] = ["preview", "beta", "alpha", "canary", "next"];
+    parsed
+        .pre
+        .as_str()
+        .split('.')
+        .any(|id| PREVIEW_MARKERS.iter().any(|m| id.starts_with(m)))
+}
+
 /// 安装记录（`dsh_pkg_commit` / `dsh_pkg_tag`）是否对应「最新 release 的同一发布」。
 ///
 /// commit 存在两种合法形态：完整 git SHA（api.github.com 正常时解析，如
@@ -498,6 +566,47 @@ pub fn resolve_update(
     }
 }
 
+/// 单个 pkg release 的列表元数据（核心面板多版本列表用）。
+#[derive(Debug, Clone)]
+pub struct DshPkgReleaseMeta {
+    pub tag: String,
+    /// GitHub Release 是否标记为 Pre-release（预览版）
+    pub prerelease: bool,
+}
+
+/// 拉取 pkg 仓库的 release 列表（最新在前），含 GitHub 的 Pre-release label。
+///
+/// 核心面板的多版本列表以此作为远程数据源（替代 git tags）：git tags 不含
+/// Pre-release label，无法区分预览版；releases 列表还能天然排除 draft（未发布
+/// 对匿名请求不可见）。失败时调用方回退 git tags，预览标记按 tag 命名
+/// （[`is_preview_tag`]）兜底。
+pub async fn fetch_dsh_pkg_releases() -> Result<Vec<DshPkgReleaseMeta>, String> {
+    let client = github_client()?;
+    let releases: serde_json::Value = github_api_get(
+        &client,
+        &format!("{DSH_PKG_GITHUB_API}/releases?per_page=100"),
+    )
+    .await
+    .map_err(|e| format!("Release list request failed: {e}"))?
+    .json()
+    .await
+    .map_err(|e| format!("Failed to parse release list response: {e}"))?;
+
+    Ok(releases
+        .as_array()
+        .into_iter()
+        .flatten()
+        .filter_map(|entry| {
+            let tag = entry.get("tag_name")?.as_str()?.to_string();
+            let prerelease = entry
+                .get("prerelease")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false);
+            Some(DshPkgReleaseMeta { tag, prerelease })
+        })
+        .collect())
+}
+
 /// 拉取 pkg 仓库的 release tag 列表（tag, commit），用于反查历史记录对应的版本。
 ///
 /// 仅在更新判定需要反查“无 tag 的老记录”时调用，失败时由调用方回退到
@@ -609,6 +718,48 @@ mod tests {
         assert_eq!(parse_version_from_tag("dsh-0.2.0"), None);
         assert_eq!(parse_version_from_tag("0.1.0-rc.7-abc"), None);
         assert_eq!(parse_version_from_tag(""), None);
+    }
+
+    #[test]
+    fn preview_tag_detection_by_version_marker() {
+        // 预览标记：preview/beta/alpha/canary/next → 预览版
+        assert!(is_preview_tag("dsh-0.2.0-preview.1-32490000001"));
+        assert!(is_preview_tag("dsh-0.2.0-beta.1-32490000002"));
+        assert!(is_preview_tag("dsh-0.2.0-alpha.2-32490000003"));
+        assert!(is_preview_tag("dsh-0.2.0-canary.1-32490000004"));
+        assert!(is_preview_tag("dsh-0.2.0-next.3-32490000005"));
+        // rc 不算预览版：pkg 仓库的 rc 发布会正常推送用户更新
+        assert!(!is_preview_tag("dsh-0.1.1-rc.2-32485170079"));
+        assert!(!is_preview_tag("dsh-0.1.0-rc.8-32342588166"));
+        // 正式版 / 无法解析的 tag 均不算预览版
+        assert!(!is_preview_tag("dsh-0.2.0-32490000006"));
+        assert!(!is_preview_tag("dsh-0.2.0"));
+        assert!(!is_preview_tag(""));
+    }
+
+    #[test]
+    fn atom_fallback_skips_preview_and_picks_next_non_preview() {
+        // 最新条目是预览版 → 必须跳过，取下一条非预览版（rc）
+        let feed = concat!(
+            "<feed>",
+            "<entry><link rel=\"alternate\" href=\"/x/deepseek-harness-pkg/releases/tag/dsh-0.2.0-preview.1-32490000001\"/></entry>",
+            "<entry><link rel=\"alternate\" href=\"/x/deepseek-harness-pkg/releases/tag/dsh-0.1.1-rc.2-32485170079\"/></entry>",
+            "</feed>"
+        );
+        assert_eq!(
+            first_non_preview_tag_from_atom(feed).as_deref(),
+            Some("dsh-0.1.1-rc.2-32485170079")
+        );
+        // 全部是预览版 → None（调用方按「无可用 release」处理，不推更新）
+        let all_preview = concat!(
+            "<feed>",
+            "<entry><link rel=\"alternate\" href=\"/x/deepseek-harness-pkg/releases/tag/dsh-0.2.0-preview.1-32490000001\"/></entry>",
+            "<entry><link rel=\"alternate\" href=\"/x/deepseek-harness-pkg/releases/tag/dsh-0.2.0-beta.1-32490000002\"/></entry>",
+            "</feed>"
+        );
+        assert_eq!(first_non_preview_tag_from_atom(all_preview), None);
+        // 空 feed → None
+        assert_eq!(first_non_preview_tag_from_atom(""), None);
     }
 
     #[test]

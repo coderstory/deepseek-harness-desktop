@@ -172,6 +172,7 @@
   "core.remove_confirm_title": "Uninstall version",
   "core.remove_confirm_desc": "Uninstall {{version}}? The engine copy will be removed from this device (other copies are unaffected).",
   "core.app": "Bundled",
+  "core.preview": "Preview",
   "core.update_local": "Update Local Core",
   "core.updated_toast": "Local core updated: {{version}}",
   "core.update_failed": "Failed to update the local core",
