@@ -299,20 +299,32 @@ pub async fn fetch_dsh_pkg_asset(tag: &str) -> Result<LatestDshPkg, String> {
         .ok_or_else(|| "Missing DSH asset filename".to_string())?
         .to_string();
 
-    // 1. 优先 API 拉该 tag 的 release（含资产 + 可信摘要）
-    let release = github_api_get(
+    // 1. 优先 API 拉该 tag 的 release（含资产 + 可信摘要）；API 失败/限流或响应
+    //    不可解析时不整体失败：资产 URL 回退到平台确定性推导（latest 地址的
+    //    tag 位替换）、摘要走 expanded_assets HTML（github.com，不受未认证限流
+    //    约束），保证按版本下载不因一次 API 错误而中断。
+    let json: Option<serde_json::Value> = match github_api_get(
         &client,
         &format!("{DSH_PKG_GITHUB_API}/releases/tags/{tag}"),
     )
     .await
-    .map_err(|e| format!("Release {tag} request failed: {e}"))?;
-    let json: serde_json::Value = release
-        .json()
-        .await
-        .map_err(|e| format!("Failed to parse release {tag} response: {e}"))?;
+    {
+        Ok(release) => match release.json().await {
+            Ok(json) => Some(json),
+            Err(e) => {
+                log::warn!("Failed to parse release {tag} response: {e}");
+                None
+            }
+        },
+        Err(e) => {
+            log::warn!("Release {tag} request failed ({e}), using deterministic asset URL");
+            None
+        }
+    };
 
     let asset = json
-        .get("assets")
+        .as_ref()
+        .and_then(|json| json.get("assets"))
         .and_then(|value| value.as_array())
         .and_then(|assets| {
             assets.iter().find(|asset| {
@@ -439,7 +451,16 @@ pub fn resolve_update(
     // 不能先看 commit 相等就跳过：dsh 仓库的 rc 发布可能重打同一 git commit
     // （build-id 不同但 underlying commit 相同），此时 commit 不是可分辨信号，
     // 只有 tag 里的版本号才能正确识别 rc.8 之于 rc.7 是更新。
-    if installed != latest_version {
+    // 版本号按语义化比较：字符串序会把 rc.9 误判为大于 rc.10（'9' > '1'）。
+    let same_version = match (
+        semver::Version::parse(installed).ok(),
+        semver::Version::parse(&latest_version).ok(),
+    ) {
+        (Some(installed), Some(latest)) => installed == latest,
+        // 任一无法解析 → 回退字符串比较（保持旧行为）
+        _ => installed == latest_version,
+    };
+    if !same_version {
         return UpdateCheck::UpdateAvailable;
     }
     // 版本相同 → 确认是否「同一发布」再判免打扰：记录与最新 release 对应
@@ -447,16 +468,25 @@ pub fn resolve_update(
     if record_matches_latest_release(record_commit, record_tag, latest) {
         return UpdateCheck::UpToDate;
     }
-    // 文件已经是“最新版本”，此时需要甄别记录是否滞后
+    // 文件已经是“最新版本”，此时需要甄别记录是否滞后（同样按语义化版本比较）
+    let record_behind_latest = |record_version: &str| -> bool {
+        match (
+            semver::Version::parse(record_version).ok(),
+            semver::Version::parse(&latest_version).ok(),
+        ) {
+            (Some(record), Some(latest)) => record < latest,
+            _ => record_version < latest_version.as_str(),
+        }
+    };
     match record_tag.and_then(parse_version_from_tag) {
-        Some(record_version) if record_version < latest_version => UpdateCheck::HealUpToDate,
+        Some(record_version) if record_behind_latest(&record_version) => UpdateCheck::HealUpToDate,
         Some(_) => UpdateCheck::UpdateAvailable,
         None => match legacy_tags
             .iter()
             .find(|(_, commit)| Some(commit.as_str()) == record_commit)
         {
             Some((tag, _)) => match parse_version_from_tag(tag) {
-                Some(record_version) if record_version < latest_version => {
+                Some(record_version) if record_behind_latest(&record_version) => {
                     UpdateCheck::HealUpToDate
                 }
                 // 反查到的版本与最新版本相同（或解析失败）→ 视为同版本热修
@@ -758,5 +788,23 @@ mod tests {
             &[],
         );
         assert_eq!(decision, UpdateCheck::UpdateAvailable);
+    }
+
+    #[test]
+    fn resolve_rc9_record_behind_rc10_heals() {
+        // 回归（CodeRabbit）：字符串序会把 rc.9 判为大于 rc.10（'9' > '1'），
+        // 从而把「记录滞后于 rc.10」误判成同版本热修。语义化比较应识别为滞后。
+        let latest = latest(
+            "dsh-0.1.0-rc.10-40000000000",
+            "aabbccddeeff00112233445566778899aabbccdd",
+        );
+        let decision = resolve_update(
+            Some("112233445566778899aabbccddeeff0011223344"),
+            Some("dsh-0.1.0-rc.9-39000000000"),
+            Some("0.1.0-rc.10"),
+            &latest,
+            &[],
+        );
+        assert_eq!(decision, UpdateCheck::HealUpToDate);
     }
 }

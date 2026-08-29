@@ -44,13 +44,20 @@ fn is_dangling_symlink(path: &Path) -> bool {
     }
 }
 
-/// 判断路径是否为本应用生成的 shim（内容含生成标记）。
+/// 判断路径是否为本应用生成的 shim（生成标记出现在文件头部固定位置）。
 ///
 /// 用于在本地 dsh 探测中区分"本应用 shim"与"用户自行放置的同名文件"：
 /// 前者应被排除（它转发到捆绑 dsh，不构成用户本地核心），后者应被识别。
+///
+/// 标记只在前两行匹配：所有生成的 shim 都在头部第一行（cmd 是 @echo off
+/// 后的第二行）写 #/rem DeepSeek Harness Desktop - ...；用户文件即使正文
+/// 提到同样的短语（如 README 引用）也不应被误判为本应用 shim。
 pub fn is_generated_shim(path: &Path) -> bool {
     match std::fs::read_to_string(path) {
-        Ok(content) => content.contains(GENERATED_MARKER),
+        Ok(content) => content
+            .lines()
+            .take(2)
+            .any(|line| line.contains(GENERATED_MARKER)),
         Err(_) => false,
     }
 }
@@ -66,8 +73,12 @@ fn write_shim_file(target: &Path, content: &str) -> Result<(), String> {
             "Removing dangling symlink {:?} before writing shim (its target is gone)",
             target
         );
-        fs::remove_file(target)
-            .map_err(|e| format!("remove dangling symlink {} failed: {e}", target.display()))?;
+        fs::remove_file(target).map_err(|e| {
+            format!(
+                "SHIM_REMOVE_LINK_FAILED: remove dangling symlink {} failed: {e}",
+                target.display()
+            )
+        })?;
     }
     if target.exists() && is_foreign_file(target) {
         log::warn!(
@@ -76,7 +87,8 @@ fn write_shim_file(target: &Path, content: &str) -> Result<(), String> {
         );
         return Ok(());
     }
-    fs::write(target, content).map_err(|e| format!("write {} failed: {e}", target.display()))
+    fs::write(target, content)
+        .map_err(|e| format!("SHIM_WRITE_FAILED: write {} failed: {e}", target.display()))
 }
 
 /// 主 `dsh` shim 路径下是否保留了用户自行安装的同名文件（用于状态展示）。
@@ -102,7 +114,8 @@ pub fn user_dsh_preserved(bin_dir: &Path) -> bool {
 /// 同名 `dsh`/`pnpm` 一律保留不动，避免覆盖用户自己的安装与配置。
 pub fn write_shims(app_handle: &AppHandle, bin_dir: &Path) -> Result<(), String> {
     let app_dir = config::get_base_dir(app_handle);
-    fs::create_dir_all(bin_dir).map_err(|e| format!("create bin dir failed: {e}"))?;
+    fs::create_dir_all(bin_dir)
+        .map_err(|e| format!("SHIM_MKDIR_FAILED: create bin dir failed: {e}"))?;
 
     // 写入单个 shim：若目标已存在且非本应用生成，则跳过不覆盖（保留用户文件）。
     macro_rules! write_if_ours {
@@ -154,7 +167,7 @@ pub fn write_shims(app_handle: &AppHandle, bin_dir: &Path) -> Result<(), String>
             if path.is_file() && !is_foreign_file(&path) {
                 use std::os::unix::fs::PermissionsExt;
                 fs::set_permissions(&path, fs::Permissions::from_mode(0o755))
-                    .map_err(|e| format!("chmod shim failed: {e}"))?;
+                    .map_err(|e| format!("SHIM_CHMOD_FAILED: chmod shim failed: {e}"))?;
             }
         }
     }
@@ -267,6 +280,27 @@ mod tests {
         assert_eq!(
             std::fs::read_to_string(&real).unwrap(),
             "#!/bin/sh\necho my real dsh\n"
+        );
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    /// 用户文件只在正文提到生成短语（非头部）→ 仍视为 foreign，不得覆盖
+    #[test]
+    fn generated_phrase_outside_header_is_not_generated_shim() {
+        let dir =
+            std::env::temp_dir().join(format!("dsh-shim-header-marker-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        let target = dir.join(if cfg!(windows) { "dsh.cmd" } else { "dsh" });
+        // 前两行不是标记（用户脚本），正文（第三行）却提到"DeepSeek Harness Desktop - "
+        std::fs::write(
+            &target,
+            "@echo off\necho user shim\necho see DeepSeek Harness Desktop - readme note here\n",
+        )
+        .unwrap();
+        assert!(
+            is_foreign_file(&target),
+            "phrase outside the header must not mark a user file as generated"
         );
         let _ = std::fs::remove_dir_all(&dir);
     }

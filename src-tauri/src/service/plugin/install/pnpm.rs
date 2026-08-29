@@ -634,13 +634,10 @@ pub(crate) fn bundled_pnpm_major(app_handle: &AppHandle) -> Option<u32> {
         .ok()
 }
 
-/// 从 pnpm 失败输出中解析需写入构建放行白名单的包名/键集合。
-///
-/// 兼容 pnpm 10 与 11 的两套输出形式（两者对 git 托管插件 prepare 门禁的提示不同）：
-/// - pnpm 11（捆绑版）提示 `allowBuilds:\n  <key>: true`（map 形式），原样采纳 `<key>`；
-/// - pnpm 10（旧 store 复用用户版）提示 `onlyBuiltDependencies:\n  - "<name>"`
-///   （list 形式）与报错文本里的包名，二者归并取包名；
-
+/// 服务启动阶段的 `DSH_PREFER_BUNDLED_PNPM` 决策：store 主版本已知时只在捆绑版
+/// 匹配且用户版不匹配时强制捆绑版（否则用户版会 `ERR_PNPM_UNEXPECTED_STORE`）；
+/// store 未知时用户 pnpm ≥ 10 优先，否则强制捆绑版。启动阶段绝不触发下载，
+/// 捆绑版未安装即返回 false（交由用户 pnpm）。
 pub(crate) fn harness_prefer_bundled_pnpm(app_handle: &AppHandle) -> bool {
     let store_major = profile_store_major(app_handle);
     let user_major = user_pnpm_major_version(app_handle);

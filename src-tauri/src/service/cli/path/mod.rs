@@ -136,8 +136,12 @@ pub fn register_path(app_handle: &AppHandle) -> Result<(), String> {
         let bin_dir = get_bin_dir(app_handle);
         let bin_str = bin_dir
             .to_str()
-            .ok_or_else(|| "bin dir is not valid UTF-8".to_string())?;
-        let current = read_user_path().unwrap_or_default();
+            .ok_or_else(|| "PATH_BIN_DIR_NOT_UTF8: bin dir is not valid UTF-8".to_string())?;
+        // 注册表读取失败（None）时中止，绝不把失败当成空 PATH 写回（那会清空
+        // 用户 PATH 其它条目）；`Path` 值缺失（ERROR_FILE_NOT_FOUND）返回的
+        // Some("") 才按空串处理。
+        let current = read_user_path()
+            .ok_or_else(|| "PATH_REG_READ_FAILED: failed to read user PATH".to_string())?;
         let new_value = if current.trim().is_empty() {
             bin_str.to_string()
         } else {

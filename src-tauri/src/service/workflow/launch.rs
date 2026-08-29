@@ -250,7 +250,8 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
 
     // 构造环境变量：隔离的 $DSH_HOME + 隐私默认（关闭遥测）
     let dsh_home = config::get_dsh_data_path(&app_handle);
-    fs::create_dir_all(&dsh_home).map_err(|e| format!("create dsh home failed: {e}"))?;
+    fs::create_dir_all(&dsh_home)
+        .map_err(|e| format!("DSH_HOME_MKDIR_FAILED: create dsh home failed: {e}"))?;
 
     // Linux 起步前探测 inotify 监视上限：harness 服务（dsh web）用 chokidar 递归
     // 监视 profile 目录，上限过低会在启动一瞬间抛 ENOSPC 直接退出（issue #116）。
@@ -398,7 +399,7 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
     // `dsh-web.log.1` / `dsh-web.log.2`，避免单文件随多次启动无限增长。
     let log_path = config::get_service_log_path(&app_handle);
     fs::create_dir_all(log_path.parent().unwrap_or(std::path::Path::new(".")))
-        .map_err(|e| format!("create log dir failed: {e}"))?;
+        .map_err(|e| format!("LOG_DIR_MKDIR_FAILED: create log dir failed: {e}"))?;
     rotate_service_log(&log_path, 3);
 
     // rc.8 起 `dsh web` 默认在系统浏览器打开 UI；桌面端内嵌 WebView，不需要

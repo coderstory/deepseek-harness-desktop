@@ -131,10 +131,10 @@ fn git_https_isolation_env(app_handle: &AppHandle) -> HashMap<String, String> {
 /// 解析插件子进程将使用的 git 可执行文件：Windows 用桌面端已选 Git（系统 Git 或
 /// 捆绑 MinGit，见 [`config::get_git_cmd_dir`]，与注入子进程 PATH 的目录一致），
 /// Unix 直接用 PATH 上的 `git`。
-fn plugin_git_binary(app_handle: &AppHandle) -> Option<PathBuf> {
+fn plugin_git_binary(_app_handle: &AppHandle) -> Option<PathBuf> {
     #[cfg(windows)]
     {
-        config::get_git_cmd_dir(app_handle).map(|dir| dir.join("git.exe"))
+        config::get_git_cmd_dir(_app_handle).map(|dir| dir.join("git.exe"))
     }
     #[cfg(not(windows))]
     {

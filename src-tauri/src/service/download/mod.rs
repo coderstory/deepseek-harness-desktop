@@ -17,7 +17,7 @@ pub use github::{
 pub(crate) use core::{remove_dir_with_retry, rename_with_retry};
 #[cfg(windows)]
 pub use installable::Git;
-pub use installable::{Dsh, Installable, Nodejs, Pnpm};
+pub use installable::{Dsh, InstallKind, Installable, Nodejs, Pnpm};
 pub use progress::ProgressTracker;
 // GitHub API 限流冷却器：任何访问 api.github.com 的服务都应收敛到这一个入口
 pub use utils::github_api;

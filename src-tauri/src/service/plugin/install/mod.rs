@@ -244,7 +244,8 @@ async fn install_with_cancel(
                     line: format!("[network] {network_hint}"),
                 },
             );
-            return Err(format!("NETWORK_ERROR: {network_hint}"));
+            // network_hint 已带 NETWORK_ERROR: 前缀，直接返回避免双重前缀
+            return Err(network_hint.to_string());
         }
         if let Some(hint) = hint {
             log::warn!("git transport failure detected during plugin install: {hint}");

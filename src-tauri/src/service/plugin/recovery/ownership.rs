@@ -143,14 +143,26 @@ fn plugin_declares_loader_entry(profile: &Path, plugin: &str, entry_id: &str) ->
 }
 
 /// 判断某个根插件的文件是否包含给定槽位名。
+///
+/// `package.json` 不做整文件子串匹配：description / 依赖名里出现槽位短名
+/// （如 `sidebar`）会造成误归属；只解析它并在 `dsh` 声明段里递归匹配槽位，
+/// 无 `dsh` 段即不命中。其余文件保持内容匹配。
 fn plugin_matches_slot(profile: &Path, plugin: &str, slot: &str) -> bool {
     let dir = profile.join("node_modules").join(plugin);
+    if let Ok(content) = fs::read_to_string(dir.join("package.json")) {
+        if let Ok(manifest) = serde_json::from_str::<serde_json::Value>(&content) {
+            if let Some(dsh) = manifest.get("dsh") {
+                if value_contains_slot(dsh, slot) {
+                    return true;
+                }
+            }
+        }
+    }
     for file in [
         "cordis.patch.yml",
         "client.js",
         "lib/client.js",
         "dist/client.js",
-        "package.json",
         "index.js",
         "lib/index.js",
         "dist/index.js",
@@ -162,6 +174,16 @@ fn plugin_matches_slot(profile: &Path, plugin: &str, slot: &str) -> bool {
         }
     }
     false
+}
+
+/// `dsh` 声明段里是否包含槽位名（递归扫描所有字符串值）。
+fn value_contains_slot(value: &serde_json::Value, slot: &str) -> bool {
+    match value {
+        serde_json::Value::String(s) => s.contains(slot),
+        serde_json::Value::Array(items) => items.iter().any(|v| value_contains_slot(v, slot)),
+        serde_json::Value::Object(map) => map.values().any(|v| value_contains_slot(v, slot)),
+        _ => false,
+    }
 }
 
 /// 提供某槽位的官方 UI 客户端包（用于槽位冲突归属）。

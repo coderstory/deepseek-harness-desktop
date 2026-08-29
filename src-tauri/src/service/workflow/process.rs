@@ -54,8 +54,8 @@ pub(super) fn set_owned_process_with_handle(pid: u32, handle: usize) {
     *guard = Some(OwnedProcess { pid, handle });
 }
 
-/// 原子取出持有的进程（PID+句柄一起）。Whoever takes it is responsible for
-/// closing the Windows handle. 无条件取出（停止/退出路径）。
+/// 原子取出持有的进程（PID+句柄一起）。取走者负责关闭 Windows 句柄；
+/// 无条件取出（停止/退出路径）。
 fn take_owned_process() -> Option<OwnedProcess> {
     owned_process_lock()
         .lock()
@@ -95,11 +95,13 @@ impl Drop for LaunchGuard {
     }
 }
 
+/// 是否持有 Harness 进程。与其它访问器一致：锁被毒化（panic 残留）时取回
+/// 毒化守卫继续读取，而不是把「已登记进程」误报为「无」。
 pub fn has_owned_process() -> bool {
     owned_process_lock()
         .lock()
-        .map(|g| g.is_some())
-        .unwrap_or(false)
+        .unwrap_or_else(|e| e.into_inner())
+        .is_some()
 }
 
 /// 处理「持有的 dsh 进程退出」这一事实（由退出监视线程与健康检查 tick 共用）：
@@ -288,9 +290,11 @@ pub fn terminate_stale_harness_processes(app_handle: &tauri::AppHandle) {
         };
         // 进程名过滤保证 PowerShell 自身（其命令行同样包含该路径）不被误杀；
         // 路径中的单引号按 PS 字符串字面量规则转义，避免用户目录含 `'` 时语法错误。
+        // 与 is_harness_command_line 一致，额外要求服务参数（--host 127.0.0.1
+        // 与 --port），避免误伤用户并行执行的 `dsh plugin` 等短命令。
         let escaped = dsh_bin.replace('\'', "''");
         let script = format!(
-            "Get-CimInstance Win32_Process -Filter \"Name = 'node.exe'\" | Where-Object {{ $_.CommandLine -like '*{escaped}*' }} | Select-Object -ExpandProperty ProcessId"
+            "Get-CimInstance Win32_Process -Filter \"Name = 'node.exe'\" | Where-Object {{ $_.CommandLine -like '*{escaped}*' -and $_.CommandLine -like '*--host 127.0.0.1*' -and $_.CommandLine -like '*--port*' }} | Select-Object -ExpandProperty ProcessId"
         );
         let Ok(output) = Command::new("powershell")
             .args(["-NoProfile", "-NonInteractive", "-Command", &script])

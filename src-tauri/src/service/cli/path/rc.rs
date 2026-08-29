@@ -28,7 +28,7 @@ pub(super) fn inject_shell_rc(app_handle: &AppHandle) -> Result<(), String> {
     let home = app_handle
         .path()
         .home_dir()
-        .map_err(|_| "failed to resolve home directory".to_string())?;
+        .map_err(|_| "RC_HOME_RESOLVE_FAILED: failed to resolve home directory".to_string())?;
     let block = format!("{RC_MARK_START}\nexport PATH=\"$HOME/.local/bin:$PATH\"\n{RC_MARK_END}\n");
 
     for name in RC_FILES {
@@ -59,7 +59,7 @@ pub(super) fn strip_shell_rc(app_handle: &AppHandle) -> Result<(), String> {
     let home = app_handle
         .path()
         .home_dir()
-        .map_err(|_| "failed to resolve home directory".to_string())?;
+        .map_err(|_| "RC_HOME_RESOLVE_FAILED: failed to resolve home directory".to_string())?;
     for name in RC_FILES {
         let rc_path = home.join(name);
         let original = match fs::read_to_string(&rc_path) {

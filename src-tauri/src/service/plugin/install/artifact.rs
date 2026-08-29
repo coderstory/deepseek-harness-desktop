@@ -75,13 +75,12 @@ fn silent_install_failure_detail(missing: &[(String, PathBuf)], command_output: 
     )
 }
 
-/// 构建 `dsh plugin` 子进程的环境变量：隔离 $DSH_HOME、关闭遥测与颜色、
-/// 注入预检解析出的 node 路径（`DSH_NODE`，shim 优先采用，见 shim.rs）、
-/// PATH 前置 shim、node 与桌面端自动配置的 Git 目录；用户 pnpm 过旧时强制
-/// 捆绑版（见 ensure_pnpm）。
-///
-/// 供本模块的安装/升级/卸载与 [`super::verify`] 的完整性修复共用：子进程（dsh
-
+/// 解析插件包声明的主入口（与 cordis 加载器实际读取的字段一致）：
+/// 优先 `dsh.plugin.json` 的 `main`（加载器入口，见 loader 报错路径），
+/// 回落 `package.json` 的 `main` / `exports["."]`（字符串简写 → 对象
+/// `default` → `import` → `require`）。
+/// 仅负责解析声明，不校验产物是否存在；入口越界（`../` 逃逸/绝对路径）
+/// 或无可解析入口时返回 None。
 fn declared_main_entry(pkg_dir: &Path) -> Option<PathBuf> {
     /// 拼接声明入口并拒绝越界：绝对路径会被 `join` 整体替换基路径，`../`
     /// 逃逸在 `starts_with` 的词法比较下不会被解析——两者都会让核验目标指向
@@ -316,8 +315,7 @@ mod tests {
         assert!(!detail.contains("produced no output"));
     }
 
-    /// 验证最终重试无输出时，早期尝试产生的诊断不会被覆盖丢失。
-
+    /// 构造独立的临时插件包目录（含 `package.json`），供入口解析用例使用。
     fn tmp_pkg_dir(name: &str) -> PathBuf {
         let dir =
             std::env::temp_dir().join(format!("dsh-entry-test-{name}-{}", std::process::id()));

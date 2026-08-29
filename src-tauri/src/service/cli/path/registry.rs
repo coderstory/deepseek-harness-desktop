@@ -1,7 +1,7 @@
 //! Windows 注册表辅助：`HKCU\Environment\Path` 读写、`WM_SETTINGCHANGE` 广播
 //! 与 PATH token 展开/匹配。仅 Windows 编译（`mod registry` 已在 mod.rs 门控）。
 
-/// Windows 下 shim 根目录名（`%LOCALAPPDATA%\<此目录>\bin`）
+/// 将 Rust 字符串转为 Win32 API 需要的 NUL 结尾 UTF-16 缓冲
 #[inline]
 pub(super) fn to_wide_null(s: &str) -> Vec<u16> {
     s.encode_utf16().chain(std::iter::once(0)).collect()
@@ -87,7 +87,9 @@ pub(super) fn write_user_path(new_value: &str) -> Result<(), String> {
             &mut hkey,
         );
         if ret != 0 {
-            return Err(format!("failed to open HKCU\\Environment (error {ret})"));
+            return Err(format!(
+                "REG_OPEN_FAILED: failed to open HKCU\\Environment (error {ret})"
+            ));
         }
 
         let value_name = to_wide_null("Path");
@@ -119,7 +121,7 @@ pub(super) fn write_user_path(new_value: &str) -> Result<(), String> {
 
         if ret != 0 {
             return Err(format!(
-                "failed to write HKCU\\Environment\\Path (error {ret})"
+                "REG_WRITE_FAILED: failed to write HKCU\\Environment\\Path (error {ret})"
             ));
         }
         Ok(())

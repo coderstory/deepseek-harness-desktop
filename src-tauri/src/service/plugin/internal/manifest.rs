@@ -62,10 +62,7 @@ pub(super) fn write_profile_manifest(
         let _ = std::fs::remove_file(&temp);
         return Err(format!("INTERNAL_PLUGIN_MANIFEST_WRITE_FAILED: {e}"));
     }
-    log::info!(
-        "Removed stale internal plugin declarations from profile manifest: {}",
-        path.display()
-    );
+    log::info!("Profile manifest rewritten: {}", path.display());
     Ok(())
 }
 

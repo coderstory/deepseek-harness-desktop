@@ -86,7 +86,8 @@ fn port_owner_pid(port: u16) -> Option<u32> {
             .output()
             .ok()?;
         let text = String::from_utf8_lossy(&output.stdout);
-        let needle = format!(":{port} ");
+        // `fields[1]` 来自 split_whitespace，已无尾随空格：needle 只带端口后缀
+        let needle = format!(":{port}");
         for line in text.lines() {
             let fields: Vec<&str> = line.split_whitespace().collect();
             if fields.len() < 5 || fields[0] != "TCP" {

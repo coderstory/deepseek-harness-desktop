@@ -21,7 +21,8 @@ pub(super) fn bundled_dir_of(
 }
 
 /// 解析某预设的安装 spec（纯函数，便于单测）：内置插件固定为随包捆绑目录的
-/// `file:` 本地依赖（路径正确性由 [`crate::service::plugin::internal::ensure`] 启动自愈核对）；
+/// `link:` 本地依赖（pnpm 对 `file:` 的盘符绝对路径会按相对解析，故用 `link:`；
+/// 路径正确性由 [`crate::service::plugin::internal::ensure`] 启动自愈核对）；
 /// 普通插件沿用清单声明。
 ///
 /// 捆绑目录缺失时返回错误：内置插件缺失意味着构建期 prebuild 未执行或产物被

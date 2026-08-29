@@ -65,6 +65,11 @@ pub async fn remove(app_handle: &AppHandle, id: &str) -> Result<(), String> {
                 "dsh plugin remove {outcome} but {id} is still referenced by profile manifest; forcing offline uninstall"
             );
             uninstall_recovery(app_handle, id)?;
+            // 离线兜底成功：插件已真正从 profile 移除，清除历史错误，避免前端
+            // 残留异常标记（best-effort）。
+            if let Err(e) = errors::clear(app_handle, id) {
+                log::warn!("failed to clear plugin error for {id}: {e}");
+            }
         } else {
             // 受保护包：命令失败则如实上报（不要把失败误报为成功），成功则仅告警。
             command_result?;
@@ -122,7 +127,10 @@ pub(crate) async fn uninstall_deprecated_plugins(app_handle: &AppHandle) -> Resu
     if failures.is_empty() {
         Ok(())
     } else {
-        Err(failures.join("; "))
+        Err(format!(
+            "DEPRECATED_PLUGIN_UNINSTALL_FAILED: {}",
+            failures.join("; ")
+        ))
     }
 }
 

@@ -43,10 +43,11 @@ pub(crate) const RECOVERY_REQUIRED_EVENT: &str = "plugin-recovery-required";
 /// 卸载。若把它列入保护名单，用户从插件面板点「卸载」时，`dsh plugin remove`
 /// 因 dshmarket 属于 in-box bundle（`pnpm remove` 不动它）会返回成功但插件仍在，
 /// 桌面端又因 protection 跳过离线卸载兜底，最终「提示成功但插件仍在」。
+///
+/// `@deepseek-ai/dsh-base` / `@deepseek-ai/dsh-web-app` 等核心包都被
+/// `@deepseek-ai/` 前缀覆盖，无需逐个点名。
 fn is_core_package(name: &str) -> bool {
-    name == "@deepseek-ai/dsh-base"
-        || name == "@deepseek-ai/dsh-web-app"
-        || name.starts_with("@deepseek-ai/")
+    name.starts_with("@deepseek-ai/")
 }
 
 /// 是否为合法的 npm 包名（可带 scope）。用于过滤日志里提取到的候选引用。

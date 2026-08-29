@@ -35,7 +35,8 @@ pub(super) fn remove_plugin_from_manifest(manifest: &mut serde_json::Value, id: 
     modified
 }
 
-/// 删除插件入口：符号链接或 junction 只删除入口本身，普通目录递归删除。
+/// 删除插件入口：符号链接或 junction 只删除入口本身；普通目录递归删除，
+/// 普通文件用 `remove_file`（`remove_dir_all` 对文件会报 ENOTDIR）。
 fn remove_plugin_entry(entry: &Path) -> std::io::Result<()> {
     let file_type = fs::symlink_metadata(entry)?.file_type();
     #[cfg(windows)]
@@ -45,7 +46,10 @@ fn remove_plugin_entry(entry: &Path) -> std::io::Result<()> {
     if file_type.is_symlink() {
         return fs::remove_file(entry);
     }
-    fs::remove_dir_all(entry)
+    if file_type.is_dir() {
+        return fs::remove_dir_all(entry);
+    }
+    fs::remove_file(entry)
 }
 
 /// 删除 `node_modules/<id>`；scoped 目录删除后若 scope 空则一并清理。

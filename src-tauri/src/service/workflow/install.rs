@@ -17,7 +17,7 @@ pub async fn install(
     mut dsh_latest: Option<download::LatestDshPkg>,
 ) -> Result<bool, String> {
     log::info!("Starting installation process");
-    // dsh 任务（index==1）实际下载解压时置 true
+    // dsh 任务实际下载解压时置 true
     let mut dsh_updated = false;
 
     // 安装前先停止本应用持有的 Harness 服务：运行中的 node 进程会把
@@ -60,13 +60,14 @@ pub async fn install(
     log::info!("Task list created, {} tasks total", tasks.len());
 
     for (index, task) in tasks.iter().enumerate() {
+        let kind = task.kind();
         log::debug!("Processing task {}/{}", index + 1, tasks.len());
         // 已安装但版本/commit 与最新 release 不一致时强制重新下载。
         // 版本优先（与 resolve_update 的判定完全一致）：dsh 的 rc 发布会复用
         // 同一 git commit（record_commit 不变），只比 commit 会把 rc.8 之于
         // rc.7 误判为"已最新"而跳过下载——日志表现为"All installation tasks
         // completed"但实际什么都没下载，重启后仍是旧版，且前端丢掉更新提示。
-        let outdated = index == 1
+        let outdated = kind == download::InstallKind::Dsh
             && dsh_latest.as_ref().is_some_and(|info| {
                 let installed_version = config::get_dsh_version(app_handle);
                 let latest_version = download::parse_version_from_tag(&info.tag);
@@ -112,7 +113,7 @@ pub async fn install(
         // （mac 首次启动常见）仍能拿到真实下载地址，避免整次安装被瞬时失败卡死。
         // dsh 核心默认先走 GitHub 官方直连，失败自动切换 ghfast.top 镜像兜底
         // （下载层会在界面上告知用户）；其余任务保持单一官方源。
-        let (urls, name) = if index == 1 {
+        let (urls, name) = if kind == download::InstallKind::Dsh {
             let urls = config::get_dsh_download_urls()?;
             let name = urls
                 .first()
@@ -132,9 +133,11 @@ pub async fn install(
         log::debug!("File name: {}", name);
         let buffer = download::download_file_from_sources(&tracker, urls).await?;
         log::info!("Download completed, file size: {} bytes", buffer.len());
-        let expected_digest = match index {
-            0 => download::fetch_node_sha256(task.get_download_url()?.as_str()).await?,
-            1 => {
+        let expected_digest = match kind {
+            download::InstallKind::Node => {
+                download::fetch_node_sha256(task.get_download_url()?.as_str()).await?
+            }
+            download::InstallKind::Dsh => {
                 // dsh 的 SHA-256 digest 只能来自 GitHub release asset 元数据
                 // （安全设计，见 dsh_INTEGRITY_UNAVAILABLE）。首次安装时该元数据
                 // 可能因 api.github.com 限流/网络抖动而缺失（mac 首次启动常见，
@@ -173,10 +176,15 @@ pub async fn install(
                         "DSH_INTEGRITY_UNAVAILABLE: trusted release digest is required".to_string()
                     })?
             }
-            2 => config::PNPM_SHA256.to_string(),
+            download::InstallKind::Pnpm => config::PNPM_SHA256.to_string(),
             #[cfg(windows)]
-            3 => config::get_mingit_sha256()?.to_string(),
-            _ => return Err("INSTALL_TASK_INVALID: unknown install task".to_string()),
+            download::InstallKind::Git => config::get_mingit_sha256()?.to_string(),
+            #[cfg(not(windows))]
+            download::InstallKind::Git => {
+                return Err(
+                    "INSTALL_TASK_INVALID: Git task not supported on this platform".to_string(),
+                )
+            }
         };
         download::verify_sha256(&buffer, &expected_digest)?;
         log::info!("Download integrity verified for task {}", index + 1);
@@ -194,7 +202,7 @@ pub async fn install(
         tracker.end_phase();
 
         // 记录本次安装对应的 release tag 与 commit，供下次启动比对
-        if index == 1 {
+        if kind == download::InstallKind::Dsh {
             dsh_updated = true;
             if let Some(info) = &dsh_latest {
                 config::set_dsh_pkg_commit(app_handle, info.commit.clone());

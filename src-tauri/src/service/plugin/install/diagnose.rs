@@ -2,9 +2,7 @@
 //! （HTTPS→SSH 回退提示），并从输出中挑选可展示的错误消息（ANSI 清洗、
 //! 命中错误标记的行优先、截断）。
 
-/// 从 dsh/pnpm 失败输出中提取可展示的错误消息：优先 git 传输层提示；
-/// 否则挑出命中错误标记的行（最多 8 行），没有则取输出尾部，ANSI 清洗后
-/// 截断到 2000 字符。
+/// 给非空诊断文本加 `: ` 前缀，便于直接拼进错误消息（空文本返回空串）。
 pub(super) fn diagnostic_suffix(detail: &str) -> String {
     if detail.is_empty() {
         String::new()
@@ -13,6 +11,9 @@ pub(super) fn diagnostic_suffix(detail: &str) -> String {
     }
 }
 
+/// 从 dsh/pnpm 失败输出中提取可展示的错误消息：优先 git 传输层提示；
+/// 否则挑出命中错误标记的行（最多 8 行），没有则取输出尾部，ANSI 清洗后
+/// 截断到 2000 字符。
 pub(super) fn pick_error_message(output: &str, hint: Option<&str>) -> String {
     if let Some(hint) = hint {
         return hint.to_string();
