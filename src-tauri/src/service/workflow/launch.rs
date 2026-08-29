@@ -17,7 +17,10 @@ use super::process::set_owned_process;
 use super::process::set_owned_process_with_handle;
 #[cfg(unix)]
 use super::process::warn_if_inotify_watch_limit_low;
-use super::process::{has_owned_process, on_owned_process_exit, stop, LaunchGuard, LAUNCH_GUARD};
+use super::process::{
+    has_owned_process, on_owned_process_exit, stop, terminate_stale_harness_processes, LaunchGuard,
+    LAUNCH_GUARD,
+};
 use super::status;
 use super::sweep::persist_harness_pid;
 #[cfg(windows)]
@@ -184,6 +187,27 @@ pub async fn restart(app_handle: tauri::AppHandle) -> Result<(), String> {
 
 /// 启动 Harness 服务进程
 pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
+    // 核心切换（`dependencies/dsh` 版本目录互换）期间禁止拉起新进程：新进程会
+    // 以 `dependencies/dsh` 为 cwd 并加载原生模块 DLL（如 sharp 的 libvips）
+    // 进内存，目录被锁后互换重命名必然失败（CORE_SWITCH_FAILED, os error 32）。
+    // 切换是秒级操作：短暂等待其完成再继续，超时才报错（调用方稍后重试即可，
+    // 见 service::workflow::process::core_switch_in_progress）。
+    if super::process::core_switch_in_progress() {
+        const CORE_SWITCH_WAIT: std::time::Duration = std::time::Duration::from_secs(15);
+        let deadline = tokio::time::Instant::now() + CORE_SWITCH_WAIT;
+        while super::process::core_switch_in_progress()
+            && tokio::time::Instant::now() < deadline
+        {
+            tokio::time::sleep(std::time::Duration::from_millis(100)).await;
+        }
+        if super::process::core_switch_in_progress() {
+            return Err(
+                "CORE_SWITCH_IN_PROGRESS: core version switch still in progress, retry shortly"
+                    .to_string(),
+            );
+        }
+    }
+
     let mut setting = config::get_store_dat_setting(&app_handle);
     let node_binary_path = config::get_node_binary_path(&app_handle);
     // 活动核心的 dsh 入口（本地核心优先，未检测到走预打包）
@@ -213,6 +237,23 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
         return Ok(());
     }
     let _launch_guard = LaunchGuard;
+
+    // 只有持有启动守卫的这条路径清扫残留：并发启动的其它调用已在守卫处返回，
+    // 不会误杀刚拉起的进程。崩溃/强杀残留的孤儿 Harness 实例（不在
+    // .harness.pid 标记中）持续占用配置端口与 dependencies/dsh 的文件句柄，
+    // 不清扫会导致端口一路漂移（3080→…→3085，issue #91）并让后续目录互换
+    // 失败（os error 32）。按命令行路径精确匹配本应用 dsh 服务，不会误杀
+    // 用户其它 node 程序（debug 构建为 no-op，见 terminate_stale_harness_processes）。
+    {
+        let handle = app_handle.clone();
+        if let Err(e) = tauri::async_runtime::spawn_blocking(move || {
+            terminate_stale_harness_processes(&handle);
+        })
+        .await
+        {
+            log::warn!("failed to sweep stale harness processes before launch: {e}");
+        }
+    }
 
     // 端口自愈：自动避让递增（配置端口被占 → 逐级顶高）遗留的非默认端口，
     // 在回落目标（用户手动端口 manual_port，否则默认端口）空闲时回落，避免

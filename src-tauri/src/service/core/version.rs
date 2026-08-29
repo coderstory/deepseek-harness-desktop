@@ -307,7 +307,9 @@ pub async fn set_active(app_handle: &AppHandle, id: &str) -> Result<HarnessCore,
 /// 磁盘布局：激活版本固定为 `dependencies/dsh`（既有代码全部依赖该路径），
 /// 已下载的历史版本存放在 `dependencies/<tag>`（tag 以 `dsh-` 开头）。切换 = 目录
 /// 互换：先把当前激活目录改名为自己的 tag 槽位（清理残留同名槽位），再把目标槽位
-/// 改名为激活目录；任一步失败回滚。切换前先停服务，避免目录被进程句柄锁定（Windows DLL 锁）。
+/// 改名为激活目录；任一步失败回滚。切换前先停服务并清扫残留进程，避免目录被进程
+/// 句柄锁定（Windows DLL 锁）；切换期间持有核心切换守卫（`workflow::core_switch_guard`），
+/// 阻止并发 `launch` 在互换窗口内重新拉起进程锁死目录（CORE_SWITCH_FAILED, os error 32）。
 async fn switch_app_version(app_handle: &AppHandle, tag: &str) -> Result<(), String> {
     let deps = dependencies_dir(app_handle);
     let active_dir = config::get_dsh_install_path(app_handle);
@@ -324,11 +326,29 @@ async fn switch_app_version(app_handle: &AppHandle, tag: &str) -> Result<(), Str
         return Ok(());
     }
 
+    // 进入切换临界区：期间 `workflow::launch` 会等待/拒绝拉起新进程（新进程
+    // 从 `dependencies/dsh` 加载原生 DLL 锁住目录，互换重命名必然 os error 32）。
+    // 秒级窗口，`_switch_guard` 在函数返回（含失败路径）时自动复位。
+    let _switch_guard = workflow::core_switch_guard();
+
     // 切换前停止运行中的服务，避免目录被进程句柄锁定
     if workflow::has_owned_process() {
         if let Err(e) = workflow::stop(app_handle.clone()).await {
             log::warn!("failed to stop harness before core switch: {e}");
         }
+    }
+    // 只停本应用持有的进程还不够：崩溃/强杀残留的孤儿 Harness 实例（不在
+    // .harness.pid 标记中）同样从 dependencies/dsh 启动、占用目录文件句柄，
+    // 会导致切换重命名失败（os error 32）。与安装流程一致，按命令行路径精确
+    // 清扫所有本应用 dsh 安装目录启动的进程。枚举/结束涉及 powershell 枚举与
+    // taskkill（同步阻塞），移出 Tokio 线程。
+    {
+        let handle = app_handle.clone();
+        tauri::async_runtime::spawn_blocking(move || {
+            workflow::terminate_stale_harness_processes(&handle);
+        })
+        .await
+        .map_err(|e| format!("CORE_SWITCH_STOP_FAILED: {e}"))?;
     }
 
     // 1. 当前激活目录让出激活位：改名为自己的 tag 槽位（残留槽位先清理）

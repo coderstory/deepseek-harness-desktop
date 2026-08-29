@@ -107,6 +107,35 @@ impl Drop for LaunchGuard {
     }
 }
 
+/// 核心切换守卫：切换（`dependencies/dsh` 版本目录互换）期间禁止 `launch`
+/// 拉起新的 Harness 进程。
+///
+/// 竞态根因：切换流程先 `stop` 停掉自有进程、再重命名互换目录，而 `stop` 会
+/// 把 `LAUNCH_GUARD` 复位；若此刻前端（启动重试/自动恢复）又发起 `launch`，
+/// 新进程会以 `dependencies/dsh` 为 cwd 并加载原生模块 DLL（如 sharp 的
+/// libvips-42.dll）进内存，目录被锁后互换重命名必然失败
+/// （CORE_SWITCH_FAILED, os error 32，重试 60 次/30 秒仍失败）。
+pub(crate) static CORE_SWITCH_GUARD: AtomicBool = AtomicBool::new(false);
+
+/// 进入核心切换临界区：置位守卫，返回的 RAII 守卫在切换结束时（drop）复位。
+pub fn core_switch_guard() -> CoreSwitchGuard {
+    CORE_SWITCH_GUARD.store(true, Ordering::SeqCst);
+    CoreSwitchGuard
+}
+
+/// 核心切换是否进行中（切换期间 `launch` 应等待/拒绝拉起新进程）。
+pub fn core_switch_in_progress() -> bool {
+    CORE_SWITCH_GUARD.load(Ordering::SeqCst)
+}
+
+pub struct CoreSwitchGuard;
+
+impl Drop for CoreSwitchGuard {
+    fn drop(&mut self) {
+        CORE_SWITCH_GUARD.store(false, Ordering::SeqCst);
+    }
+}
+
 /// 是否持有 Harness 进程。与其它访问器一致：锁被毒化（panic 残留）时取回
 /// 毒化守卫继续读取，而不是把「已登记进程」误报为「无」。
 pub fn has_owned_process() -> bool {
@@ -489,6 +518,18 @@ mod tests {
             without_code,
             serde_json::json!({ "pid": 43, "exitCode": null })
         );
+    }
+
+    /// 核心切换守卫：持有期间 `core_switch_in_progress` 为 true（launch 需等待/
+    /// 拒绝），drop 后立即复位，保证切换窗口不被泄漏到下一次启动。
+    #[test]
+    fn core_switch_guard_set_while_held_and_cleared_on_drop() {
+        assert!(!core_switch_in_progress());
+        {
+            let _guard = core_switch_guard();
+            assert!(core_switch_in_progress());
+        }
+        assert!(!core_switch_in_progress());
     }
 
     /// `ps -axo pid=,command=` 行解析：首列 PID，其余为命令行。
