@@ -19,7 +19,8 @@
 //! - [`installed`]：profile 内已安装插件检测（解析 package.json 的依赖与 bundles）
 //! - [`internal`]：内置插件启动自愈（随包分发产物缺失/路径变更时强制重装）
 //! - [`verify`]：预装插件完整性自检（清单引用但 node_modules 产物缺失时 `pnpm install` 修复）
-//! - [`install`]：对外安装/升级/卸载编排（校验、环境准备、调用 dsh 子进程），
+//! - [`install`]：对外安装/升级/卸载编排（目录模块 `install/`：编排入口、spec 准备、
+//!   子进程环境、pnpm 选版、allowBuilds 白名单、错误诊断与产物核验），
 //!   以及启动时对清单中带 `deprecated` 标记的社区插件自动卸载
 //! - [`errors`]：插件错误记录（安装/升级/卸载失败 + 页面运行期上报，持久化）
 //! - [`process`]：dsh 子进程启动与输出流逐行转发
@@ -40,8 +41,8 @@ pub mod watch;
 
 pub use cancel::cancel;
 pub(crate) use install::harness_prefer_bundled_pnpm;
-pub use install::{install, remove, update};
 pub(crate) use install::uninstall_deprecated_plugins;
+pub use install::{install, remove, update};
 pub(crate) use installed::ensure_profile_npmrc;
 pub use installed::{list, PreinstallPlugin};
 pub(crate) use internal::cancel as cancel_internal_plugins;

@@ -38,5 +38,13 @@
     "description": "Skills and MCP management in the DeepSeek Harness desktop extension panel.",
     "repoUrl": "https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-panel-extension",
     "recommended": true
+  },
+  {
+    "id": "dsh-tauri-session",
+    "spec": "dsh-tauri-session",
+    "name": "DSH Tauri Session",
+    "description": "Session archive for the desktop: rewrites the workspace browser's 'delete workspace' action into 'archive workspace', and adds an 'Archived chats' settings page with search, sort, grouping, project filter and unarchive.",
+    "repoUrl": "https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-session",
+    "recommended": true
   }
 ]
