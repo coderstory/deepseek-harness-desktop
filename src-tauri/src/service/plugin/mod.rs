@@ -44,6 +44,7 @@ pub use install::{install, remove, update};
 pub(crate) use install::uninstall_deprecated_plugins;
 pub(crate) use installed::ensure_profile_npmrc;
 pub use installed::{list, PreinstallPlugin};
+pub(crate) use internal::cancel as cancel_internal_plugins;
 pub(crate) use internal::ensure as ensure_internal_plugins;
 pub use preset::repo_url_of;
 pub(crate) use preset::{current_preset_hash, preinstall_pending, remove_legacy_bundled_plugins};

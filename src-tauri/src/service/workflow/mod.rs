@@ -1,11 +1,8 @@
-pub(crate) mod client_hmr_patch;
-pub(crate) mod renderer_patch;
 pub mod status;
 pub mod utils;
 pub(crate) mod win_inspector;
 #[cfg(windows)]
 pub(crate) mod win_spawn;
-pub(crate) mod workspace_patch;
 
 use crate::config;
 use crate::service::download;
@@ -790,17 +787,22 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
     // 活动核心的 dsh-client-ui-renderer lib/client.js，已含导出即跳过（幂等；核心
     // 换版本后自动重打，上游官方导出后自动退休）。最佳努力：失败只告警，不阻断
     // 启动——未打补丁时插件侧降级，官方设置 dialog 照常工作，绝不白屏。
-    if let Err(e) = renderer_patch::apply(&app_handle) {
+    if let Err(e) = crate::service::patch::renderer::apply(&app_handle) {
         log::warn!("renderer SlotOutlet patch failed: {e}");
+    }
+    // Expose an id-based SessionStore.remove facade so plugins can perform a
+    // real in-memory teardown instead of leaving deleted sessions ungrouped.
+    if let Err(e) = crate::service::patch::session::apply(&app_handle) {
+        log::warn!("SessionStore.remove patch failed: {e}");
     }
     // worktree 会话以隔离 cwd 执行，但产品归属仍是源 Workspace；放宽上游显式
     // attach 的 cwd 相等约束，其他 cwd 有效性校验保持不变。最佳努力且幂等。
-    if let Err(e) = workspace_patch::apply(&app_handle) {
+    if let Err(e) = crate::service::patch::workspace::apply(&app_handle) {
         log::warn!("workspace worktree membership patch failed: {e}");
     }
     // 当前 DSH client-HMR 会卸载第三方插件却不重新挂载。debug 直接联接本地
     // 插件源码，故将 rebuilt 降级为自动刷新页面；release 保持上游行为。
-    if let Err(e) = client_hmr_patch::apply(&app_handle) {
+    if let Err(e) = crate::service::patch::client_hmr::apply(&app_handle) {
         log::warn!("debug client plugin reload fallback patch failed: {e}");
     }
     // 预防性处理：pnpm 在无 TTY 环境（dsh-market 等子进程）下重装/更新插件时，
@@ -1304,6 +1306,10 @@ fn not_owned_probe_signal(launch_in_progress: bool) -> &'static str {
     }
 }
 
+fn all_client_modules_ready(ready: usize, total: usize) -> bool {
+    total > 0 && ready == total
+}
+
 /// 健康检查（通过 Rust 代理，避免 WebView CORS 问题）
 pub async fn proxy_health_check(port: u16) -> Result<String, String> {
     if !has_owned_process() {
@@ -1311,18 +1317,19 @@ pub async fn proxy_health_check(port: u16) -> Result<String, String> {
     }
     let client = utils::loopback_http_client(config::HEALTH_CHECK_TIMEOUT)
         .map_err(|e| format!("HARNESS_HEALTH_CLIENT_FAILED: {e}"))?;
-    let mut failures = Vec::with_capacity(2);
+    let endpoints = utils::health_probe_plugin_urls(port);
+    let total = endpoints.len();
+    let mut ready = 0usize;
+    let mut failures = Vec::with_capacity(total);
 
-    for endpoint in utils::health_probe_plugin_urls(port) {
+    for endpoint in endpoints {
         match client.get(&endpoint).send().await {
             Ok(response) => {
                 let status = response.status();
                 let body = response.text().await.unwrap_or_default();
                 if utils::looks_like_plugin_bundle(status.is_success(), &body) {
-                    return Ok(format!(
-                        "healthy - {status} - {}",
-                        body.chars().take(80).collect::<String>()
-                    ));
+                    ready += 1;
+                    continue;
                 }
                 let failure = format!("{endpoint} returned {status} (not a plugin bundle)");
                 log::debug!("Health check failed: {failure}");
@@ -1334,8 +1341,11 @@ pub async fn proxy_health_check(port: u16) -> Result<String, String> {
             }
         }
     }
+    if all_client_modules_ready(ready, total) {
+        return Ok(format!("healthy - {ready}/{total} client modules ready"));
+    }
     Err(format!(
-        "HARNESS_NOT_READY: Harness client plugins are not ready ({})",
+        "HARNESS_NOT_READY: Harness client modules are not ready ({ready}/{total} ready; {})",
         failures.join("; ")
     ))
 }
@@ -1375,6 +1385,13 @@ mod tests {
         assert!(not_owned_probe_signal(false).starts_with("HARNESS_NOT_OWNED"));
     }
 
+    #[test]
+    fn readiness_requires_every_client_module() {
+        assert!(!all_client_modules_ready(1, 2));
+        assert!(all_client_modules_ready(2, 2));
+        assert!(!all_client_modules_ready(0, 0));
+    }
+
     /// 模拟“上个会话残留进程刚被杀、端口仍在释放”的场景：先占用端口，随后在
     /// 另一线程释放。验证 `wait_for_port_release` 在端口回落后立即返回，而不是
     /// 等到完整等待窗口——这正是避免端口永久顶高（dev 热更新下 3081→3082→…）
@@ -1386,7 +1403,7 @@ mod tests {
 
         // 端口此刻确实被占用（模拟残留进程仍在监听）
         assert!(is_port_in_use(held));
-        std::thread::spawn(move || {
+        let releaser = std::thread::spawn(move || {
             std::thread::sleep(std::time::Duration::from_millis(150));
             drop(listener);
         });
@@ -1398,7 +1415,7 @@ mod tests {
             started.elapsed() < std::time::Duration::from_millis(800),
             "wait_for_port_release should return shortly after the port is released, not wait the full window"
         );
-        assert!(!is_port_in_use(held));
+        releaser.join().expect("port releaser thread");
     }
 
     #[test]

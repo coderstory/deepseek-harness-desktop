@@ -23,9 +23,24 @@ export interface PreinstallLogPayload {
   line: string
 }
 
-/** Rust 侧 internal-plugins-phase 事件载荷（内置插件核对阶段：loading / done） */
+/** Rust 侧 internal-plugins-phase 事件载荷（内置插件核对/安装进度与 heartbeat） */
+export const INTERNAL_PLUGIN_PHASE_DETAILS = [
+  'waiting',
+  'checking',
+  'installing',
+  'heartbeat',
+  'done',
+  'timeout',
+  'cancelled',
+] as const
+
+export type InternalPluginPhaseDetail = typeof INTERNAL_PLUGIN_PHASE_DETAILS[number]
+
 export interface InternalPluginsPhasePayload {
-  phase: 'loading' | 'done'
+  phase: 'loading' | 'progress' | 'done'
+  detail: InternalPluginPhaseDetail
+  completed: number
+  total: number
 }
 
 /** 安装器展示状态 */
