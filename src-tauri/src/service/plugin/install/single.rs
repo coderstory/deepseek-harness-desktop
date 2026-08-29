@@ -171,6 +171,9 @@ async fn run_single_plugin_command(
     let prefer_bundled_pnpm = ensure_pnpm(app_handle, &window, owner).await?;
     // `.npmrc` 可能在服务启动后被删除；升级/卸载同样可能触发 pnpm 非交互清理。
     super::ensure_profile_npmrc(app_handle)?;
+    // 与批量安装保持一致：旧档案也必须具备精确的 release-age 例外，
+    // 否则升级/卸载触发 pnpm lockfile 校验时同样会被 issue #222 的问题阻断。
+    super::ensure_profile_pnpm_policy(app_handle)?;
 
     // 插件操作会改写 profile，先停止运行中的服务（与安装一致）
     if workflow::has_owned_process() {
@@ -287,7 +290,11 @@ mod tests {
 
         // 命中：登记且已安装 → 返回实际安装包名（dsh-ok 未声明 package，回落 id）
         assert_eq!(
-            deprecated_installed_names(&[preset("dsh-ok", "dshmarket", false)], &deprecated, installed),
+            deprecated_installed_names(
+                &[preset("dsh-ok", "dshmarket", false)],
+                &deprecated,
+                installed
+            ),
             vec!["dsh-ok".to_string()]
         );
 
@@ -310,8 +317,11 @@ mod tests {
         // 内部插件即使登记弃用也不命中（内部插件由启动自愈强制安装）
         let internal = preset("dsh-internal", "dsh-tauri@0.2.0", true);
         assert!(
-            deprecated_installed_names(&[internal], &deprecated, |name| matches!(name, "dsh-internal"))
-                .is_empty()
+            deprecated_installed_names(&[internal], &deprecated, |name| matches!(
+                name,
+                "dsh-internal"
+            ))
+            .is_empty()
         );
     }
 }

@@ -54,6 +54,7 @@ pub(crate) use super::process::{
 };
 pub(crate) use super::recovery::is_actionable_plugin_ref;
 pub(crate) use super::uninstall_recovery;
+pub(crate) use crate::service::profile::ensure_profile_pnpm_policy;
 
 mod allowlist;
 mod artifact;
@@ -163,6 +164,9 @@ async fn install_with_cancel(
     // 首次安装可能早于服务启动；提前写入非交互清理配置，避免 pnpm 在无 TTY
     // 环境以 ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY 中止（issue #130）。
     super::ensure_profile_npmrc(app_handle)?;
+    // 旧档案可能由早期版本创建，没有同步 Harness 的最小发布时间例外；补齐
+    // 精确的已审查 zod 版本，避免 registry 元数据瞬时失败阻断插件安装（issue #222）。
+    super::ensure_profile_pnpm_policy(app_handle)?;
 
     // 安装前停止运行中的服务，避免资源冲突
     if workflow::has_owned_process() {
