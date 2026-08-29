@@ -205,7 +205,7 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
 
     // 从这里开始持有与核心切换共用的互斥锁：最终状态检查、启动守卫、残留清扫
     // 及新进程登记必须处于同一临界区，避免切换在检查后插入。
-    let _transition_guard = super::process::acquire_core_transition().await;
+    let _transition_guard = super::process::acquire_core_transition().await?;
 
     // 避免重复启动（配合启动守卫，确保并发调用只拉起一个进程）
     if has_owned_process() {

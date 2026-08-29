@@ -118,12 +118,25 @@ fn core_transition_lock() -> &'static Arc<tokio::sync::Mutex<()>> {
     LOCK.get_or_init(|| Arc::new(tokio::sync::Mutex::new(())))
 }
 
-/// 获取核心目录操作互斥锁。
+/// 获取核心目录操作互斥锁，最长等待 15 秒。
 ///
 /// 调用方必须从获取锁开始，持续持有到目录切换完成或 Harness 进程登记完成；
-/// RAII guard 会在所有成功/失败路径自动释放。
-pub async fn acquire_core_transition() -> tokio::sync::OwnedMutexGuard<()> {
-    Arc::clone(core_transition_lock()).lock_owned().await
+/// RAII guard 会在所有成功/失败路径自动释放。超时必须失败返回，避免切换或启动
+/// 卡死后永久阻塞后续所有核心操作。
+pub async fn acquire_core_transition(
+) -> Result<tokio::sync::OwnedMutexGuard<()>, String> {
+    const CORE_TRANSITION_TIMEOUT: std::time::Duration = std::time::Duration::from_secs(15);
+    tokio::time::timeout(
+        CORE_TRANSITION_TIMEOUT,
+        Arc::clone(core_transition_lock()).lock_owned(),
+    )
+    .await
+    .map_err(|error| {
+        format!(
+            "CORE_TRANSITION_TIMEOUT: timed out after {} seconds waiting for core transition lock: {error}",
+            CORE_TRANSITION_TIMEOUT.as_secs()
+        )
+    })
 }
 
 /// 是否持有 Harness 进程。与其它访问器一致：锁被毒化（panic 残留）时取回
@@ -513,7 +526,9 @@ mod tests {
     /// 核心转换锁可被多个异步操作按顺序获取，避免两个切换重叠。
     #[tokio::test]
     async fn core_transition_lock_serializes_operations() {
-        let first = acquire_core_transition().await;
+        let first = acquire_core_transition()
+            .await
+            .expect("first transition lock should be acquired");
         let second = tokio::time::timeout(
             std::time::Duration::from_millis(20),
             acquire_core_transition(),
@@ -526,13 +541,16 @@ mod tests {
             acquire_core_transition()
         )
         .await
+        .expect("transition lock should be available after release")
         .is_ok());
     }
 
     /// 两个切换请求不能重叠：第一个释放转换锁后，第二个才可进入。
     #[tokio::test]
     async fn overlapping_switches_are_serialized() {
-        let first = acquire_core_transition().await;
+        let first = acquire_core_transition()
+            .await
+            .expect("first transition lock should be acquired");
         let (entered_tx, mut entered_rx) = tokio::sync::mpsc::channel(1);
         let waiter = tokio::spawn(async move {
             let _second = acquire_core_transition().await;
@@ -557,7 +575,9 @@ mod tests {
     /// 启动请求不能在切换持锁期间进入：切换完成后启动才可进入并完成登记阶段。
     #[tokio::test]
     async fn launch_and_switch_overlap_is_serialized() {
-        let switch_guard = acquire_core_transition().await;
+        let switch_guard = acquire_core_transition()
+            .await
+            .expect("switch transition lock should be acquired");
         let (entered_tx, mut entered_rx) = tokio::sync::mpsc::channel(1);
         let launcher = tokio::spawn(async move {
             let _launch_guard = acquire_core_transition().await;

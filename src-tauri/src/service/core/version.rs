@@ -309,7 +309,7 @@ pub async fn set_active(app_handle: &AppHandle, id: &str) -> Result<HarnessCore,
 async fn switch_app_version(app_handle: &AppHandle, tag: &str) -> Result<(), String> {
     // 从切换开始到目录互换完成持续持有与 launch 共用的转换锁，避免两个切换
     // 重叠，也避免 launch 在状态检查后插入并从旧的 dependencies/dsh 加载 DLL。
-    let _transition_guard = workflow::acquire_core_transition().await;
+    let _transition_guard = workflow::acquire_core_transition().await?;
     let deps = dependencies_dir(app_handle);
     let active_dir = config::get_dsh_install_path(app_handle);
     fs_guard::validate_id(tag)?;
