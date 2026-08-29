@@ -8,7 +8,7 @@ use std::process::Command;
 #[cfg(windows)]
 use std::process::Stdio;
 use std::sync::atomic::{AtomicBool, Ordering};
-use std::sync::{Mutex, OnceLock};
+use std::sync::{Arc, Mutex, OnceLock};
 use tauri::{AppHandle, Emitter};
 
 use super::status;
@@ -107,33 +107,23 @@ impl Drop for LaunchGuard {
     }
 }
 
-/// 核心切换守卫：切换（`dependencies/dsh` 版本目录互换）期间禁止 `launch`
-/// 拉起新的 Harness 进程。
+/// 核心目录操作互斥锁：统一串行化「切换目录」与「启动并登记进程」两个临界区。
 ///
-/// 竞态根因：切换流程先 `stop` 停掉自有进程、再重命名互换目录，而 `stop` 会
-/// 把 `LAUNCH_GUARD` 复位；若此刻前端（启动重试/自动恢复）又发起 `launch`，
-/// 新进程会以 `dependencies/dsh` 为 cwd 并加载原生模块 DLL（如 sharp 的
-/// libvips-42.dll）进内存，目录被锁后互换重命名必然失败
-/// （CORE_SWITCH_FAILED, os error 32，重试 60 次/30 秒仍失败）。
-pub(crate) static CORE_SWITCH_GUARD: AtomicBool = AtomicBool::new(false);
-
-/// 进入核心切换临界区：置位守卫，返回的 RAII 守卫在切换结束时（drop）复位。
-pub fn core_switch_guard() -> CoreSwitchGuard {
-    CORE_SWITCH_GUARD.store(true, Ordering::SeqCst);
-    CoreSwitchGuard
+/// 不能只用一个布尔守卫：两个并发切换可能互相覆盖/清除状态，且 launch 在检查
+/// 守卫与登记进程之间仍存在窗口。使用同一把 Tokio mutex 后，切换从停服到目录
+/// 互换完成、launch 从最终状态检查到进程登记均保持互斥，避免 Harness 进程在
+/// `dependencies/dsh` 目录交换期间加载 DLL 并产生 Windows os error 32。
+fn core_transition_lock() -> &'static Arc<tokio::sync::Mutex<()>> {
+    static LOCK: OnceLock<Arc<tokio::sync::Mutex<()>>> = OnceLock::new();
+    LOCK.get_or_init(|| Arc::new(tokio::sync::Mutex::new(())))
 }
 
-/// 核心切换是否进行中（切换期间 `launch` 应等待/拒绝拉起新进程）。
-pub fn core_switch_in_progress() -> bool {
-    CORE_SWITCH_GUARD.load(Ordering::SeqCst)
-}
-
-pub struct CoreSwitchGuard;
-
-impl Drop for CoreSwitchGuard {
-    fn drop(&mut self) {
-        CORE_SWITCH_GUARD.store(false, Ordering::SeqCst);
-    }
+/// 获取核心目录操作互斥锁。
+///
+/// 调用方必须从获取锁开始，持续持有到目录切换完成或 Harness 进程登记完成；
+/// RAII guard 会在所有成功/失败路径自动释放。
+pub async fn acquire_core_transition() -> tokio::sync::OwnedMutexGuard<()> {
+    Arc::clone(core_transition_lock()).lock_owned().await
 }
 
 /// 是否持有 Harness 进程。与其它访问器一致：锁被毒化（panic 残留）时取回
@@ -520,16 +510,74 @@ mod tests {
         );
     }
 
-    /// 核心切换守卫：持有期间 `core_switch_in_progress` 为 true（launch 需等待/
-    /// 拒绝），drop 后立即复位，保证切换窗口不被泄漏到下一次启动。
-    #[test]
-    fn core_switch_guard_set_while_held_and_cleared_on_drop() {
-        assert!(!core_switch_in_progress());
-        {
-            let _guard = core_switch_guard();
-            assert!(core_switch_in_progress());
-        }
-        assert!(!core_switch_in_progress());
+    /// 核心转换锁可被多个异步操作按顺序获取，避免两个切换重叠。
+    #[tokio::test]
+    async fn core_transition_lock_serializes_operations() {
+        let first = acquire_core_transition().await;
+        let second = tokio::time::timeout(
+            std::time::Duration::from_millis(20),
+            acquire_core_transition(),
+        )
+        .await;
+        assert!(second.is_err());
+        drop(first);
+        assert!(tokio::time::timeout(
+            std::time::Duration::from_millis(100),
+            acquire_core_transition()
+        )
+        .await
+        .is_ok());
+    }
+
+    /// 两个切换请求不能重叠：第一个释放转换锁后，第二个才可进入。
+    #[tokio::test]
+    async fn overlapping_switches_are_serialized() {
+        let first = acquire_core_transition().await;
+        let (entered_tx, mut entered_rx) = tokio::sync::mpsc::channel(1);
+        let waiter = tokio::spawn(async move {
+            let _second = acquire_core_transition().await;
+            entered_tx
+                .send(())
+                .await
+                .expect("notify second switch entry");
+        });
+
+        assert!(
+            tokio::time::timeout(std::time::Duration::from_millis(20), entered_rx.recv())
+                .await
+                .is_err()
+        );
+        drop(first);
+        tokio::time::timeout(std::time::Duration::from_millis(100), waiter)
+            .await
+            .expect("second switch should enter after first releases")
+            .expect("second switch task should complete");
+    }
+
+    /// 启动请求不能在切换持锁期间进入：切换完成后启动才可进入并完成登记阶段。
+    #[tokio::test]
+    async fn launch_and_switch_overlap_is_serialized() {
+        let switch_guard = acquire_core_transition().await;
+        let (entered_tx, mut entered_rx) = tokio::sync::mpsc::channel(1);
+        let launcher = tokio::spawn(async move {
+            let _launch_guard = acquire_core_transition().await;
+            // 模拟启动完成进程登记后才释放转换锁。
+            entered_tx
+                .send(())
+                .await
+                .expect("notify launch registration");
+        });
+
+        assert!(
+            tokio::time::timeout(std::time::Duration::from_millis(20), entered_rx.recv())
+                .await
+                .is_err()
+        );
+        drop(switch_guard);
+        tokio::time::timeout(std::time::Duration::from_millis(100), launcher)
+            .await
+            .expect("launch should enter after switch releases")
+            .expect("launch task should complete");
     }
 
     /// `ps -axo pid=,command=` 行解析：首列 PID，其余为命令行。
