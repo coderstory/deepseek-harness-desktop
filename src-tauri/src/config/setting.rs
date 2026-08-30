@@ -56,6 +56,9 @@ pub struct Setting {
     /// 默认，严格 enum 的一个意外值会连带清空端口/语言/档案等全部设置。
     #[serde(default = "default_close_action")]
     pub close_action: String,
+    /// 主界面 iframe 字体。空字符串 = 使用 dsh 默认字体栈（不注入覆盖）。
+    #[serde(default = "default_font_family")]
+    pub font_family: String,
 }
 
 pub const ZOOM_FACTOR_MIN: f64 = 0.5;
@@ -80,6 +83,25 @@ pub fn default_zoom_factor() -> f64 {
 /// 默认关闭行为：隐藏到托盘继续驻留（D-09）。
 pub fn default_close_action() -> String {
     "tray".to_string()
+}
+
+/// 默认界面字体：空字符串 = 不注入字体覆盖，使用 dsh 默认字体栈。
+pub fn default_font_family() -> String {
+    String::new()
+}
+
+/// 归一化字体值：trim 后若为空则回落默认（空字符串 = 不注入字体覆盖）；
+/// 拒绝含 CSS 注入特殊字符的输入，兜底为空字符串。
+pub fn normalize_font_family(value: &str) -> String {
+    let trimmed = value.trim();
+    if trimmed.is_empty() {
+        return default_font_family();
+    }
+    const FORBIDDEN: &[char] = &['{', '}', ';', '(', ')', '<', '>', '\\'];
+    if trimmed.chars().any(|c| FORBIDDEN.contains(&c)) {
+        return default_font_family();
+    }
+    trimmed.to_string()
 }
 
 /// 把外部或旧存储中的关闭行为收敛到白名单，未知值一律回落到默认行为。
@@ -130,6 +152,7 @@ impl Default for Setting {
             manual_port: None,
             zoom_factor: default_zoom_factor(),
             close_action: default_close_action(),
+            font_family: default_font_family(),
         }
     }
 }
@@ -190,6 +213,7 @@ fn emit_setting(app_handle: &AppHandle, value: &serde_json::Value) {
 fn preserve_persisted_fields(mut replacement: Setting, current: &Setting) -> Setting {
     replacement.zoom_factor = normalize_zoom_factor(current.zoom_factor);
     replacement.close_action = normalize_close_action(&current.close_action);
+    replacement.font_family = normalize_font_family(&current.font_family);
     replacement
 }
 
@@ -221,6 +245,7 @@ where
         setting.zoom_factor = normalize_zoom_factor(setting.zoom_factor);
         // 落盘前的第二道闸：调用方（含前端 invoke）写入的不可信取值不以原始形态进 store
         setting.close_action = normalize_close_action(&setting.close_action);
+        setting.font_family = normalize_font_family(&setting.font_family);
         let value = write_store_dat_setting(app_handle, &setting);
         (setting, value)
     };
@@ -270,9 +295,61 @@ pub fn set_dsh_pkg_tag(app_handle: &AppHandle, tag: String) {
 #[cfg(test)]
 mod tests {
     use super::{
-        default_close_action, default_zoom_factor, normalize_close_action, normalize_zoom_factor,
-        preserve_persisted_fields, Setting, ZOOM_FACTOR_MAX, ZOOM_FACTOR_MIN,
+        default_close_action, default_font_family, default_zoom_factor, normalize_close_action,
+        normalize_font_family, normalize_zoom_factor, preserve_persisted_fields, Setting,
+        ZOOM_FACTOR_MAX, ZOOM_FACTOR_MIN,
     };
+
+    #[test]
+    fn font_family_defaults_for_legacy_settings() {
+        let setting: Setting = serde_json::from_value(serde_json::json!({
+            "installed": true,
+            "port": 3080,
+            "auto_start": true,
+            "language": "en-US"
+        }))
+        .expect("legacy setting should deserialize");
+
+        assert_eq!(setting.font_family, default_font_family());
+        assert_eq!(setting.port, 3080, "缺失 font_family 不应影响其余字段");
+    }
+
+    #[test]
+    fn font_family_normalizes_empty_and_whitespace() {
+        assert_eq!(normalize_font_family(""), "");
+        assert_eq!(normalize_font_family("   "), "");
+        assert_eq!(normalize_font_family("\t\n"), "");
+    }
+
+    #[test]
+    fn font_family_rejects_css_injection_chars() {
+        for raw in ["{", "}", ";", "(", ")", "<", "\\", "a{b}", "x;y", "font\\"] {
+            assert_eq!(
+                normalize_font_family(raw),
+                default_font_family(),
+                "含 CSS 元字符的输入 {raw} 应回落默认"
+            );
+        }
+    }
+
+    #[test]
+    fn font_family_keeps_valid_value() {
+        assert_eq!(normalize_font_family("PingFang SC"), "PingFang SC");
+        assert_eq!(normalize_font_family("SF Mono"), "SF Mono");
+        assert_eq!(normalize_font_family("  PingFang SC  "), "PingFang SC");
+    }
+
+    #[test]
+    fn font_family_round_trip() {
+        let setting = Setting {
+            font_family: "PingFang SC".to_string(),
+            ..Default::default()
+        };
+        let json = serde_json::to_string(&setting).expect("setting should serialize");
+        let restored: Setting = serde_json::from_str(&json).expect("setting should deserialize");
+
+        assert_eq!(restored.font_family, "PingFang SC", "序列化→反序列化后 font_family 应保持不变");
+    }
 
     #[test]
     fn zoom_factor_defaults_for_legacy_settings() {
