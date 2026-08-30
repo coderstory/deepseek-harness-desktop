@@ -609,10 +609,11 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
                 {
                     crate::desktop::activation::on_window_hidden(window, &close_action);
                     if let Err(error) = window.app_handle().hide() {
-                        // 应用级 hide 失败（理论不发生）才退回窗口级隐藏，
-                        // 驻留能力优先于系统的窗口回收行为
-                        log::warn!("[activation] APP_HIDE_FAILED: {error}");
-                        let _ = window.hide();
+                        // 应用级 hide 失败（理论不发生）时**保持窗口可见**：
+                        // 窗口级 hide() 是 orderOut，会落入 macOS 26/27 对
+                        // 「无可见窗口」应用的 ~1.5s quit 回收 —— 比可见窗口
+                        // 更糟。可见窗口是严格更安全的降级态。
+                        log::error!("[activation] APP_HIDE_FAILED: {error}");
                     }
                 }
                 #[cfg(not(target_os = "macos"))]
