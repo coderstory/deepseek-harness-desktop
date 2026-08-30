@@ -7,7 +7,7 @@ describe('navbar arrow hide (SYST-02)', () => {
       new URL('../src/layout/components/navbar.tsx', import.meta.url),
       'utf8',
     )
-    expect(source).toMatch(/<If[^>]*cond=\{IS_MACOS\s*&&\s*canGoBack\}[^>]*>/)
+    expect(source).toMatch(/<If[^>]*cond=\{IS_MACOS\s*&&\s*canGoBack\}[^>]*>[\s\S]*?aria-label=\{t\('nav.back'\)\}/)
   })
 
   it('conditionally renders forward button only when canGoForward on macOS', () => {
@@ -15,7 +15,7 @@ describe('navbar arrow hide (SYST-02)', () => {
       new URL('../src/layout/components/navbar.tsx', import.meta.url),
       'utf8',
     )
-    expect(source).toMatch(/<If[^>]*cond=\{IS_MACOS\s*&&\s*canGoForward\}[^>]*>/)
+    expect(source).toMatch(/<If[^>]*cond=\{IS_MACOS\s*&&\s*canGoForward\}[^>]*>[\s\S]*?aria-label=\{t\('nav.forward'\)\}/)
   })
 
   it('removes isDisabled from arrow buttons (hide, not disable)', () => {
