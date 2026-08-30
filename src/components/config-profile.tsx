@@ -208,14 +208,14 @@ export function ConfigProfile() {
                   </Checkbox>
                   <If cond={!profile.default}>
                     <Chip
-                      className="rounded-md"
+                      className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
                       variant="primary"
                       color="accent"
                       size="sm"
-                      isDisabled={busy}
                       onClick={(event) => {
                         event.stopPropagation()
-                        openCloneDialog(profile)
+                        if (!busy)
+                          openCloneDialog(profile)
                       }}
                     >
                       {t('profiles.clone')}
@@ -223,14 +223,14 @@ export function ConfigProfile() {
                   </If>
                   <If cond={!profile.default}>
                     <Chip
-                      className="rounded-md"
+                      className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
                       variant="primary"
                       color="danger"
                       size="sm"
-                      isDisabled={busy}
                       onClick={(event) => {
                         event.stopPropagation()
-                        remove(profile.id)
+                        if (!busy)
+                          remove(profile.id)
                       }}
                     >
                       {t('profiles.remove')}

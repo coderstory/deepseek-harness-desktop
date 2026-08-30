@@ -35,15 +35,15 @@ describe('cloneProfile mutation shape', () => {
   })
 })
 
-describe('Clone Chip + naming dialog in ConfigProfile', () => {
+describe('clone Chip + naming dialog in ConfigProfile', () => {
   it('renders a Clone Chip on non-default rows with profiles.clone label', () => {
     const source = readFileSync(new URL('../src/components/config-profile.tsx', import.meta.url), 'utf8')
 
     expect(source).toMatch(/profiles\.clone['"]/)
     expect(source).toMatch(/cond=\{!profile\.default\}/)
     // Chip positioned before delete Chip
-    const cloneIdx = source.indexOf("profiles.clone")
-    const removeIdx = source.indexOf("profiles.remove")
+    const cloneIdx = source.indexOf('profiles.clone')
+    const removeIdx = source.indexOf('profiles.remove')
     expect(cloneIdx).toBeGreaterThan(-1)
     expect(removeIdx).toBeGreaterThan(-1)
     expect(cloneIdx).toBeLessThan(removeIdx)
@@ -52,7 +52,7 @@ describe('Clone Chip + naming dialog in ConfigProfile', () => {
   it('disables the Clone Chip while busy', () => {
     const source = readFileSync(new URL('../src/components/config-profile.tsx', import.meta.url), 'utf8')
 
-    expect(source).toMatch(/isDisabled=\{busy\}/)
+    expect(source).toMatch(/cursor-not-allowed opacity-50/)
   })
 
   it('provides a naming dialog with description, editable Input, and confirm button', () => {
@@ -73,7 +73,7 @@ describe('Clone Chip + naming dialog in ConfigProfile', () => {
     // clone success branch must NOT include a restart action (distinct from activate)
     const cloneSuccessIdx = source.indexOf('profiles.clone_success')
     expect(cloneSuccessIdx).toBeGreaterThan(-1)
-    const afterSuccess = source.slice(cloneSuccessIdx, cloneSuccessIdx + 400)
+    const afterSuccess = source.slice(cloneSuccessIdx, cloneSuccessIdx + 500)
     expect(afterSuccess).not.toMatch(/actionProps/)
     expect(afterSuccess).not.toMatch(/restart/)
   })
