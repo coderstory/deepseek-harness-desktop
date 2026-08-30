@@ -1,12 +1,13 @@
 /* eslint-disable react/dom-no-unsafe-iframe-sandbox */
 import { CircleExclamation } from '@gravity-ui/icons'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { If } from 'react-if-lite'
 import { useStore } from 'valtio-define'
 import { PluginRecovery } from '@/components/plugin-recovery'
 import { useDesktopZoom } from '@/hooks/use-desktop-zoom'
 import { useIframeShim } from '@/hooks/use-iframe-shim'
+import { getIframeOrigin } from '@/utils/iframe'
 import { store } from '@/store'
 import { Loadable } from './loadable'
 import { Navbar } from './navbar'
@@ -42,6 +43,27 @@ export function Webview() {
 
   useDesktopZoom(iframeRef)
   useIframeShim(iframeRef)
+
+  // 监听字体变更事件，经 postMessage 转发到 iframe 实时生效（无需 reload）
+  useEffect(() => {
+    function handleFontChange(event: CustomEvent<string>) {
+      const cssFamily = event.detail
+      if (!iframeRef.current?.contentWindow)
+        return
+      const origin = getIframeOrigin(iframeRef)
+      if (!origin)
+        return
+      const css = cssFamily
+        ? `*, *::before, *::after { font-family: "${cssFamily.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}" !important; }`
+        : ''
+      iframeRef.current.contentWindow.postMessage(
+        { source: 'dsh-desktop', type: 'dsh://font-family:update', css },
+        origin,
+      )
+    }
+    window.addEventListener('dsh-font-family-change', handleFontChange as EventListener)
+    return () => window.removeEventListener('dsh-font-family-change', handleFontChange as EventListener)
+  }, [])
 
   if (status === 'error') {
     return (
