@@ -1,5 +1,7 @@
 import { ArrowRotateRight, ArrowUpRightFromSquare, ChevronRight, Copy, Folder, Power, TrashBin } from '@gravity-ui/icons'
 import { Button, Chip, Description, Input, Link, ListBox, Select, Spinner, Surface, Switch } from '@heroui/react'
+import type { AppConfig } from '@/hooks/use-app-config'
+import { useAppConfig } from '@/hooks/use-app-config'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { invoke } from '@tauri-apps/api/core'
 import { listen } from '@tauri-apps/api/event'
@@ -35,13 +37,6 @@ export interface CliLinkStatus {
   bin_dir: string
   shim_path: string
 }
-export interface AppConfig {
-  port: number
-  auto_start: boolean
-  cli_link_enabled: boolean
-  zoom_factor: number
-  close_action: string
-}
 
 export function ConfigDebug() {
   const { t, i18n } = useTranslation()
@@ -75,10 +70,7 @@ export function ConfigDebug() {
     }
   }, [refreshInfo])
 
-  const { data: config, refetch: refreshConfig } = useQuery({
-    queryKey: ['config'],
-    queryFn: () => invoke<AppConfig>('get_app_config'),
-  })
+  const { data: config, refetch: refreshConfig } = useAppConfig()
   const port = portInput ?? config?.port ?? 3080
 
   const { data: cliStatus, refetch: refreshCliStatus } = useQuery({

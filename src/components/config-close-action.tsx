@@ -1,10 +1,11 @@
-import type { AppConfig } from './config-debug'
+import type { AppConfig } from '@/hooks/use-app-config'
 import { Description, ListBox, Select } from '@heroui/react'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import { invoke } from '@tauri-apps/api/core'
 import { useTranslation } from 'react-i18next'
 import { toast } from '@/utils/toast'
 import { CLOSE_ACTION_OPTIONS, normalizeCloseAction } from '../utils/close-action'
+import { useAppConfig } from '@/hooks/use-app-config'
 
 const CLOSE_ACTION_LABEL_KEYS = {
   tray: 'ui.close_action_tray',
@@ -13,10 +14,7 @@ const CLOSE_ACTION_LABEL_KEYS = {
 
 export function ConfigCloseAction() {
   const { t } = useTranslation()
-  const { data: config, refetch, isFetching } = useQuery({
-    queryKey: ['config'],
-    queryFn: () => invoke<AppConfig>('get_app_config'),
-  })
+  const { data: config, refetch, isFetching } = useAppConfig()
   const { mutate: setCloseAction, isPending } = useMutation({
     mutationFn: async (closeAction: string) => {
       const next = normalizeCloseAction(closeAction)
