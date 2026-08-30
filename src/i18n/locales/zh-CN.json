@@ -92,7 +92,7 @@
   "ui.launch_on_login": "开机自启动",
   "ui.launch_on_login_hint": "登录系统后启动桌面应用；Harness 服务的自动运行配置与此项相互独立。",
   "ui.close_action": "关闭行为",
-  "ui.close_action_hint": "关闭主窗口时的行为；选择「隐藏到托盘」后应用继续在后台运行，可点击菜单栏托盘图标重新打开。后台运行期间不会出现在 ⌘-Tab 应用切换器中。",
+  "ui.close_action_hint": "关闭主窗口时的行为；选择「隐藏到托盘」后应用继续在后台运行，可点击菜单栏托盘图标重新打开。macOS 上后台运行期间不会出现在 ⌘-Tab 应用切换器中。",
   "ui.close_action_tray": "隐藏到托盘",
   "ui.close_action_quit": "退出应用",
   "ui.cli_link": "命令行集成",
