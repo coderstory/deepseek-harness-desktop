@@ -579,11 +579,21 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
             }
             _ => {}
         })
+        // 关窗后由 activation 模块切 Accessory 隐藏 Dock 图标；close_action 设置项
+        // （tray/quit 分叉）由 01-04 在此处接入，当前固定为驻留托盘。
+        // 该分支只加 macOS 门控：非 macOS 上是空实现，关窗隐藏行为不变。
+        // 注意 01-04 接入的 quit 退出分支故意不加该门控 —— 「关闭窗口＝退出应用」
+        // 是可选项，语义上应当三平台一致，不是 macOS 专属。
         // 点击关闭按钮时隐藏到托盘而不是退出程序
         .on_window_event(|window, event| match event {
             tauri::WindowEvent::CloseRequested { api, .. } => {
                 api.prevent_close();
                 let _ = window.hide();
+                #[cfg(target_os = "macos")]
+                crate::desktop::activation::on_window_hidden(
+                    window,
+                    crate::desktop::activation::CLOSE_ACTION_TRAY,
+                );
             }
             // 移动/缩放主窗口时记录几何，重启后据此恢复（见 config::window_state）
             tauri::WindowEvent::Moved(_) => {
@@ -593,6 +603,9 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
                 crate::config::save_geometry(window);
                 #[cfg(target_os = "macos")]
                 sync_macos_fullscreen_menu(window);
+                // 退出全屏后补做全屏期间被推迟的 Accessory 切换
+                #[cfg(target_os = "macos")]
+                crate::desktop::activation::on_window_resized(window);
             }
             _ => {}
         });

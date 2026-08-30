@@ -77,6 +77,11 @@ pub fn show_window<R: Runtime>(window: &WebviewWindow<R>) {
 /// 若窗口确实不存在（非预期路径），仅记录日志，不重建。
 pub fn show_main_window<R: Runtime>(app: &AppHandle<R>) {
     if let Some(window) = app.get_webview_window("main") {
+        // Accessory 下 window.show() 有历史问题（tauri #5122），必须先切回
+        // regular 再 show；放在这里可一次覆盖托盘菜单「打开面板」、托盘左键、
+        // RunEvent::Reopen、release single-instance 四条恢复路径。
+        #[cfg(target_os = "macos")]
+        crate::desktop::activation::set_regular_policy(app);
         show_window(&window);
     } else {
         log::warn!("[window] main window not found, skip show");
