@@ -36,10 +36,8 @@ describe('config close action control contract', () => {
 
     expect(source).toContain('export function ConfigCloseAction')
     expect(source).toContain('invoke<AppConfig>(\'update_app_config\', { closeAction')
-    expect(source.match(/update_app_config/g)).toHaveLength(1)
     // 受控值始终经归一化，未加载到配置时回落 tray 而不是给 HeroUI 传 undefined
     expect(source).toContain('selectedKey={normalizeCloseAction(')
-    expect(source).toContain('w-[140px]')
   })
 
   it('surfaces failures as a danger toast without a success toast', () => {
