@@ -4,12 +4,17 @@
 //! 支持手动创建 / 还原（覆盖或新建）/ 列表 / 删除，以及自动备份调度与保留份数裁剪。
 
 pub mod archive;
+pub mod retention;
+pub mod schedule;
 
 use std::fs;
 use std::path::{Path, PathBuf};
 use tauri::AppHandle;
 
 use crate::config;
+
+pub use schedule::check_and_trigger;
+pub use schedule::mark_config_changed;
 
 /// 备份选项。
 #[derive(Debug, Clone)]
@@ -222,29 +227,7 @@ pub fn restore_backup(
 /// 按保留份数裁剪旧备份（超出时删除最旧的）。
 pub fn prune_if_needed(app_handle: &AppHandle) -> Result<(), String> {
     let setting = config::get_store_dat_setting(app_handle);
-    let retention = setting.backup_retention_count;
-    if retention == 0 {
-        return Ok(());
-    }
-    let backup_dir = get_backup_dir(app_handle);
-    let mut manifest = read_manifest(&backup_dir);
-    if manifest.backups.len() <= retention as usize {
-        return Ok(());
-    }
-    // 按时间戳升序，保留最新的 retention 份
-    manifest
-        .backups
-        .sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
-    let remove_count = manifest.backups.len() - retention as usize;
-    let to_remove: Vec<ManifestEntry> = manifest.backups.drain(..remove_count).collect();
-    for entry in &to_remove {
-        let file = backup_dir.join(archive_filename(&entry.timestamp));
-        if file.exists() {
-            fs::remove_file(&file).map_err(|e| format!("BACKUP_PRUNE_FILE: {e}"))?;
-        }
-    }
-    write_manifest(&backup_dir, &manifest)?;
-    Ok(())
+    retention::prune_old_backups(app_handle, setting.backup_retention_count)
 }
 
 #[cfg(test)]
