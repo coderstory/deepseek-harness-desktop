@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
-describe('ConfigFontFamily component contract', () => {
+describe('configFontFamily component contract', () => {
   it('exports the ConfigFontFamily function', () => {
     const source = readFileSync(new URL('../src/components/config-font-family.tsx', import.meta.url), 'utf8')
     expect(source).toContain('export function ConfigFontFamily')

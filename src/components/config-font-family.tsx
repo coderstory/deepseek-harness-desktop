@@ -4,9 +4,9 @@ import { useMutation } from '@tanstack/react-query'
 import { invoke } from '@tauri-apps/api/core'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { toast } from '@/utils/toast'
 import { useAppConfig } from '@/hooks/use-app-config'
 import { normalizeFontFamily } from '@/utils/font-family'
+import { toast } from '@/utils/toast'
 
 export function ConfigFontFamily() {
   const { t } = useTranslation()
