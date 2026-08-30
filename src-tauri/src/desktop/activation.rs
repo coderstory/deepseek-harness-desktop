@@ -166,32 +166,6 @@ pub fn set_regular_policy<R: Runtime>(app: &AppHandle<R>) {
     }
 }
 
-/// 托盘恢复后窗口仍处于全屏时，重新挂上被 `set_regular_policy`
-/// 无条件清掉的推迟标志。
-///
-/// 恢复路径不改变全屏状态：全屏关窗（pending 置位后隐藏）→ 托盘恢复
-/// （pending 被清、窗口依旧全屏）→ 用户退出全屏时若 pending 未挂回，
-/// `on_window_resized` 找不到标志，Accessory 永不生效 —— Dock 与
-/// ⌘-Tab 将在整个托盘驻留期间保持可见，与 `ui.close_action_hint`
-/// 的承诺矛盾。仅当关窗动作是 `tray` 时挂起。
-#[cfg_attr(not(target_os = "macos"), allow(unused_variables))]
-pub fn rearm_pending_accessory_if_fullscreen<R: Runtime>(window: &WebviewWindow<R>) {
-    #[cfg(target_os = "macos")]
-    {
-        let Ok(is_fullscreen) = window.is_fullscreen() else {
-            return;
-        };
-        if !is_fullscreen {
-            return;
-        }
-        let close_action =
-            crate::config::get_store_dat_setting(&window.app_handle()).close_action;
-        if should_switch_to_accessory(false, &close_action) {
-            set_pending_accessory(true);
-        }
-    }
-}
-
 #[cfg(test)]
 mod tests {
     use super::{should_switch_to_accessory, CLOSE_ACTION_QUIT, CLOSE_ACTION_TRAY};
