@@ -77,6 +77,12 @@ pub fn show_window<R: Runtime>(window: &WebviewWindow<R>) {
 /// 若窗口确实不存在（非预期路径），仅记录日志，不重建。
 pub fn show_main_window<R: Runtime>(app: &AppHandle<R>) {
     if let Some(window) = app.get_webview_window("main") {
+        // 关窗驻留用的是应用级 hide（NSApp hide:，见 builder 的 CloseRequested），
+        // 恢复前必须先 unhide 整个应用，否则 window.show() 在隐藏态应用上不可见。
+        #[cfg(target_os = "macos")]
+        if let Err(error) = app.show() {
+            log::warn!("[window] APP_SHOW_FAILED: {error}");
+        }
         // Accessory 下 window.show() 有历史问题（tauri #5122），必须先切回
         // regular 再 show；放在这里可一次覆盖托盘菜单「打开面板」、托盘左键、
         // RunEvent::Reopen、release single-instance 四条恢复路径。
