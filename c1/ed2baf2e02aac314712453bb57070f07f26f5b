@@ -1,0 +1,19 @@
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordFullChainTest.java
+  s_15d702f564906c::t_53da9e32a16ceb 90-91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c1ed2baf2e02aac314712453bb57070f07f26f5b",
+  "prompts": {},
+  "sessions": {
+    "s_15d702f564906c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "44903590-944d-43d2-8ab6-fbe45eec2be0",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
