@@ -3,6 +3,7 @@ import type { SetupStatus } from '@/store/modules/harness'
 import { ArrowDownToLine, CircleCheck, CircleExclamation, CircleInfo, Copy, Magnifier, Rocket } from '@gravity-ui/icons'
 import { invoke } from '@tauri-apps/api/core'
 import { useTranslation } from 'react-i18next'
+import { If, Then } from 'react-if-lite'
 import { useStore } from 'valtio-define'
 import { button } from '@/components/primitives'
 import { store } from '@/store'
@@ -72,15 +73,17 @@ export function Setup() {
       {hint && (
         <p className="m-0 text-xs leading-[18px] break-all text-load-muted">{hint}</p>
       )}
-      {error && (
-        <button
-          className={button({ tone: 'ghost', size: 'sm' })}
-          onClick={() => copyLogsHandler(t)}
-        >
-          <Copy className="size-4" />
-          {t('buttons.copy_logs')}
-        </button>
-      )}
+      <If cond={error}>
+        <Then>
+          <button
+            className={button({ tone: 'ghost', size: 'sm' })}
+            onClick={() => copyLogsHandler(t)}
+          >
+            <Copy className="size-4" />
+            {t('buttons.copy_logs')}
+          </button>
+        </Then>
+      </If>
     </Loadable>
   )
 }
