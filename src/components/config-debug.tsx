@@ -10,6 +10,7 @@ import { useStore } from 'valtio-define'
 import { store } from '@/store'
 import { writeClipboardText } from '@/utils/clipboard'
 import { toast } from '@/utils/toast'
+import { ConfigCloseAction } from './config-close-action'
 import { ConfigLaunchOnLogin } from './config-launch-on-login'
 import { Info } from './info'
 
@@ -302,6 +303,7 @@ export function ConfigDebug() {
       <div className="border-t border-line/30" />
       <div className="space-y-1.5">
         <ConfigLaunchOnLogin />
+        <ConfigCloseAction />
         <div>
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-ink">{t('ui.cli_link_enabled')}</span>
