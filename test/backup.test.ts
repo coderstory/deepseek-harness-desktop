@@ -52,14 +52,14 @@ describe('backup settings normalization', () => {
   it('normalizes a full settings object', () => {
     const settings: BackupSettings = {
       autoBackupEnabled: true,
-      autoBackupIntervalDays: 5,
+      autoBackupIntervalDays: normalizeIntervalDays(5),
       autoBackupOnStartup: false,
       autoBackupOnChange: false,
-      backupRetentionCount: 3,
+      backupRetentionCount: normalizeRetentionCount(999),
       backupIncludeCredentials: false,
     }
     expect(settings.autoBackupIntervalDays).toBe(5)
-    expect(settings.backupRetentionCount).toBe(3)
+    expect(settings.backupRetentionCount).toBe(10)
   })
 })
 

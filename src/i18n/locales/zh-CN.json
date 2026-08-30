@@ -271,5 +271,6 @@
   "recovery.reason.runtime.title": "插件运行异常",
   "recovery.reason.runtime.detail": "该插件运行期上报了错误。卸载它并继续可能解决问题。",
   "recovery.reason.unknown.title": "插件启动失败",
-  "recovery.reason.unknown.detail": "Harness 在加载插件时发生错误，但暂时无法自动判断更具体的原因。"
+  "recovery.reason.unknown.detail": "Harness 在加载插件时发生错误，但暂时无法自动判断更具体的原因。",
+  "backup.size_unit": "MB"
 }

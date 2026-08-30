@@ -155,6 +155,14 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
                 path
             ));
         }
+        // 拒绝符号链接和硬链接：link_name 的目标不受 path 校验约束，可能跳出目标目录
+        let entry_type = entry.header().entry_type();
+        if entry_type.is_symlink() || entry_type.is_hard_link() {
+            return Err(format!(
+                "BACKUP_EXTRACT_UNSUPPORTED_LINK: entry {:?} is a symlink or hard link",
+                path
+            ));
+        }
         entry
             .unpack(&joined_real)
             .map_err(|e| format!("BACKUP_EXTRACT_UNPACK: {e}"))?;

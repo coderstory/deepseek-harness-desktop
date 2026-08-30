@@ -271,5 +271,6 @@
   "recovery.reason.runtime.title": "A plugin is running abnormally",
   "recovery.reason.runtime.detail": "The plugin reported a runtime error. Removing it and continuing may resolve the issue.",
   "recovery.reason.unknown.title": "A plugin failed during startup",
-  "recovery.reason.unknown.detail": "Harness reported an error while loading a plugin, but the exact cause could not be determined automatically."
+  "recovery.reason.unknown.detail": "Harness reported an error while loading a plugin, but the exact cause could not be determined automatically.",
+  "backup.size_unit": "MB"
 }

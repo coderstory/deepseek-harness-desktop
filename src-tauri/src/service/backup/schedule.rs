@@ -95,7 +95,8 @@ pub fn check_and_trigger(app_handle: &AppHandle) {
     if !should_trigger_auto_backup(app_handle, now) {
         return;
     }
-    // 先更新时间，避免 spawn_blocking 启动前再次命中（防并发重复）
+    // 先占位防并发重复；失败后回滚，避免一次失败吞掉启动 / 配置变化触发
+    let previous = backup_state().clone();
     record_backup_time(now);
 
     let app = app_handle.clone();
@@ -105,6 +106,8 @@ pub fn check_and_trigger(app_handle: &AppHandle) {
         };
         if let Err(e) = backup::create_backup(&app, options) {
             log::error!("[backup] auto backup failed: {e}");
+            let mut state = backup_state();
+            *state = previous;
             return;
         }
         if let Err(e) = backup::prune_if_needed(&app) {

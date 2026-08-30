@@ -73,11 +73,46 @@ fn archive_filename(timestamp: &str) -> String {
     format!("{timestamp}.tar.gz")
 }
 
-/// 读取备份清单，不存在时返回空。
-fn read_manifest(backup_dir: &Path) -> BackupManifest {
+/// 清单读取错误。
+#[derive(Debug)]
+enum ManifestError {
+    /// 清单文件存在但无法解析（损坏），已另存为 .corrupt 以便人工恢复。
+    ParseError(String),
+}
+
+impl std::fmt::Display for ManifestError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            ManifestError::ParseError(e) => write!(f, "manifest parse error: {e}"),
+        }
+    }
+}
+
+impl std::error::Error for ManifestError {}
+
+/// 读取备份清单。
+///
+/// - 清单不存在 → 返回空（首次备份的合法空状态）。
+/// - 清单存在但损坏 → 另存为 `.corrupt` 以便人工恢复，并返回错误，避免
+///   `create_backup` / `delete_backup` 用空清单覆盖导致既有索引丢失。
+fn read_manifest(backup_dir: &Path) -> Result<BackupManifest, ManifestError> {
     let path = backup_dir.join(".manifest.json");
-    let content = fs::read_to_string(&path).unwrap_or_default();
-    serde_json::from_str(&content).unwrap_or(BackupManifest { backups: vec![] })
+    let content = match fs::read_to_string(&path) {
+        Ok(c) => c,
+        // 清单不存在 → 首次备份的合法空状态，返回空清单
+        Err(_) => return Ok(BackupManifest { backups: vec![] }),
+    };
+    if content.trim().is_empty() {
+        return Err(ManifestError::ParseError("empty manifest".into()));
+    }
+    match serde_json::from_str(&content) {
+        Ok(manifest) => Ok(manifest),
+        Err(e) => {
+            log::error!("BACKUP_MANIFEST_PARSE: {} {e}", path.display());
+            let _ = fs::rename(&path, path.with_extension("corrupt"));
+            Err(ManifestError::ParseError(e.to_string()))
+        }
+    }
 }
 
 /// 原子写入备份清单。
@@ -91,7 +126,7 @@ fn write_manifest(backup_dir: &Path, manifest: &BackupManifest) -> Result<(), St
     Ok(())
 }
 
-/// 生成时间戳（本地时间，格式 `2026-08-30T12-00-00`）。
+/// 生成时间戳（UTC，格式 `2026-08-30T12-00-00`）。
 fn now_timestamp() -> String {
     use time::OffsetDateTime;
     let now = OffsetDateTime::now_utc();
@@ -136,8 +171,9 @@ pub fn create_backup(
         include_credentials: options.include_credentials,
     };
 
-    // 更新清单
-    let mut manifest = read_manifest(&backup_dir);
+    // 更新清单：清单损坏时中止写入，避免用空清单覆盖导致既有索引丢失
+    let mut manifest = read_manifest(&backup_dir)
+        .map_err(|e| format!("BACKUP_MANIFEST_CORRUPT: {e}"))?;
     manifest.backups.push(ManifestEntry {
         timestamp: info.timestamp.clone(),
         path: info.path.clone(),
@@ -155,7 +191,14 @@ pub fn create_backup(
 /// 列出所有备份（按时间戳升序）。
 pub fn list_backups(app_handle: &AppHandle) -> Vec<BackupInfo> {
     let backup_dir = get_backup_dir(app_handle);
-    let manifest = read_manifest(&backup_dir);
+    // 清单损坏时返回空列表（不抛错），避免影响页面其余部分；写入路径会另行中止
+    let manifest = match read_manifest(&backup_dir) {
+        Ok(m) => m,
+        Err(e) => {
+            log::error!("[backup] list_backups: manifest unreadable: {e}");
+            return vec![]
+        }
+    };
     manifest
         .backups
         .into_iter()
@@ -179,7 +222,11 @@ pub fn delete_backup(app_handle: &AppHandle, timestamp: &str) -> Result<(), Stri
     if file.exists() {
         fs::remove_file(&file).map_err(|e| format!("BACKUP_DELETE_FILE: {e}"))?;
     }
-    let mut manifest = read_manifest(&backup_dir);
+    // 清单损坏时中止写入，避免用空清单覆盖导致既有索引丢失
+    let mut manifest = match read_manifest(&backup_dir) {
+        Ok(m) => m,
+        Err(e) => return Err(format!("BACKUP_MANIFEST_CORRUPT: {e}")),
+    };
     manifest.backups.retain(|e| e.timestamp != timestamp);
     write_manifest(&backup_dir, &manifest)?;
     Ok(())
@@ -259,7 +306,7 @@ mod tests {
             }],
         };
         write_manifest(&dir, &manifest).unwrap();
-        let read = read_manifest(&dir);
+        let read = read_manifest(&dir).unwrap();
         assert_eq!(read.backups.len(), 1);
         assert_eq!(read.backups[0].timestamp, "2026-08-30T12-00-00");
         assert_eq!(read.backups[0].size, 100);

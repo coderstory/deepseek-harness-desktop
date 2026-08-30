@@ -191,7 +191,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
                       <Description className="text-xs font-mono text-muted">
                         {formatSize(backup.size)}
                         {' '}
-                        MB
+                        {t('backup.size_unit')}
                       </Description>
                     </>
                   )}
@@ -249,6 +249,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
             <span className="ml-1 text-muted">{t('backup.auto_interval_suffix')}</span>
           </span>
           <Input
+            key={config ? String(config.auto_backup_interval_days) : 'loading-interval'}
             type="number"
             variant="secondary"
             min={1}
@@ -292,6 +293,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
             <span className="ml-1 text-muted">{t('backup.auto_retention_suffix')}</span>
           </span>
           <Input
+            key={config ? String(config.backup_retention_count) : 'loading-retention'}
             type="number"
             variant="secondary"
             min={1}

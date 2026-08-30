@@ -149,6 +149,16 @@ pub fn normalize_backup_settings(interval_days: u32, retention_count: u32) -> (u
     (interval, retention)
 }
 
+/// 把 Setting 的备份字段归一化到有效范围。
+fn normalize_backup_fields(setting: &mut Setting) {
+    let (interval, retention) = normalize_backup_settings(
+        setting.auto_backup_interval_days,
+        setting.backup_retention_count,
+    );
+    setting.auto_backup_interval_days = interval;
+    setting.backup_retention_count = retention;
+}
+
 /// 默认服务端口：debug 构建与生产隔离，避免开发时与已运行的桌面端争用 3080。
 pub fn default_port() -> u16 {
     if cfg!(debug_assertions) {
@@ -220,6 +230,7 @@ fn read_store_dat_setting<R: Runtime>(app_handle: &AppHandle<R>) -> Setting {
         .unwrap_or_else(Setting::default);
     setting.zoom_factor = normalize_zoom_factor(setting.zoom_factor);
     setting.close_action = normalize_close_action(&setting.close_action);
+    normalize_backup_fields(&mut setting);
     setting
 }
 
@@ -247,13 +258,14 @@ fn preserve_persisted_fields(mut replacement: Setting, current: &Setting) -> Set
 
 /// 兼容旧调用方的整对象写入，但始终保留锁内读到的最新缩放与关窗动作，避免
 /// 长流程用陈旧 `Setting` 覆盖刚刚由快捷键 / 设置界面写入的值（丢更新）。
-pub fn set_store_dat_setting(app_handle: &AppHandle, setting: Setting) {
+pub fn set_store_dat_setting(app_handle: &AppHandle, mut setting: Setting) {
     let value = {
         let _guard = setting_write_lock()
             .lock()
             .unwrap_or_else(|error| error.into_inner());
         let current = read_store_dat_setting(app_handle);
-        let setting = preserve_persisted_fields(setting, &current);
+        setting = preserve_persisted_fields(setting, &current);
+        normalize_backup_fields(&mut setting);
         write_store_dat_setting(app_handle, &setting)
     };
     emit_setting(app_handle, &value);
@@ -273,6 +285,7 @@ where
         setting.zoom_factor = normalize_zoom_factor(setting.zoom_factor);
         // 落盘前的第二道闸：调用方（含前端 invoke）写入的不可信取值不以原始形态进 store
         setting.close_action = normalize_close_action(&setting.close_action);
+        normalize_backup_fields(&mut setting);
         let value = write_store_dat_setting(app_handle, &setting);
         (setting, value)
     };
