@@ -29,8 +29,11 @@ describe('menu restart backend contract', () => {
   })
 
   it('provides menu.restart i18n key with zh/en translations', () => {
-    expect(i18nSource).toContain('"menu.restart"')
-    expect(i18nSource).toContain('"重启"')
+    // 断言键→值的关系，而非孤立 token：要求 "menu.restart" 同时映射到
+    // 中文 "重启" 与英文 "Restart"，避免 token 出现在无关代码中时仍能通过。
+    expect(i18nSource).toMatch(
+      /"menu\.restart"\s*=>\s*\("重启",\s*"Restart"\)/,
+    )
   })
 })
 
@@ -40,8 +43,12 @@ describe('menu restart frontend contract', () => {
   })
 
   it('dispatches desktop-restart to actionsRef.current.restartHarness()', () => {
-    expect(hookSource).toContain('desktop-restart')
-    expect(hookSource).toContain('actionsRef.current.restartHarness()')
+    // 断言 menu-event case 到 restartHarness() 的分发关系，而非孤立 token：
+    // 要求 'desktop-restart' 分支精确调用 actionsRef.current.restartHarness()，
+    // 避免 token 出现在无关代码中时仍能通过。
+    expect(hookSource).toMatch(
+      /case 'desktop-restart':\s*actionsRef\.current\.restartHarness\(\)/,
+    )
   })
 
   it('wires restartHarness to store.harness.restart in navbar', () => {

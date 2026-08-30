@@ -621,6 +621,10 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
                         // 窗口级 hide() 是 orderOut，会落入 macOS 26/27 对
                         // 「无可见窗口」应用的 ~1.5s quit 回收 —— 比可见窗口
                         // 更糟。可见窗口是严格更安全的降级态。
+                        // 同时回退到 Regular 策略：on_window_hidden 已切到 Accessory，
+                        // hide 失败意味着应用实际未隐藏，若不恢复 Regular 会丢失 Dock
+                        // 与 Cmd-Tab 入口。
+                        crate::desktop::activation::set_regular_policy(window.app_handle());
                         log::error!("[activation] APP_HIDE_FAILED: {error}");
                     }
                 }
