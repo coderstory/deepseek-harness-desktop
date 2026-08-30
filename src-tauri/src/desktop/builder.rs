@@ -221,6 +221,13 @@ pub fn install_macos_menu(app: &tauri::AppHandle<Wry>) -> tauri::Result<()> {
         true,
         None::<&str>,
     )?;
+    let restart = MenuItem::with_id(
+        app,
+        "desktop-restart",
+        crate::config::i18n::t("menu.restart"),
+        true,
+        None::<&str>,
+    )?;
     let check_update = MenuItem::with_id(
         app,
         "desktop-check-update",
@@ -241,7 +248,7 @@ pub fn install_macos_menu(app: &tauri::AppHandle<Wry>) -> tauri::Result<()> {
         "desktop-help-menu",
         crate::config::i18n::t("menu.help"),
         true,
-        &[&run_logs, &check_update, &help_separator, &about],
+        &[&run_logs, &restart, &check_update, &help_separator, &about],
     )?;
 
     // 编辑菜单：macOS 设置了主菜单后，⌘X/⌘C/⌘V/⌘A 等组合键会先经菜单的
@@ -572,7 +579,8 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
             "desktop-config"
             | "desktop-about"
             | "desktop-copy-run-logs"
-            | "desktop-check-update" => {
+            | "desktop-check-update"
+            | "desktop-restart" => {
                 if let Err(error) = app.emit("macos-menu-action", event.id().as_ref()) {
                     log::warn!("[menu] failed to emit macOS menu action: {error}");
                 }
