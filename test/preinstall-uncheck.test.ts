@@ -1,0 +1,72 @@
+import { readFileSync } from 'node:fs'
+import { type Event } from '@tauri-apps/api/event'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+
+// ── Suite A — i18n keys exist (source assertion on JSON) ─────────────────────
+describe('preinstall can-uncheck hint i18n keys', () => {
+  it('provides preinstall.can_uncheck_hint in en-US', () => {
+    const source = readFileSync(new URL('../src/i18n/locales/en-US.json', import.meta.url), 'utf8')
+    const messages = JSON.parse(source) as Record<string, string>
+    expect(messages).toHaveProperty('preinstall.can_uncheck_hint')
+    expect(messages['preinstall.can_uncheck_hint']).toContain('Unchecked plugins won\'t be installed')
+  })
+
+  it('provides preinstall.can_uncheck_hint in zh-CN', () => {
+    const source = readFileSync(new URL('../src/i18n/locales/zh-CN.json', import.meta.url), 'utf8')
+    const messages = JSON.parse(source) as Record<string, string>
+    expect(messages).toHaveProperty('preinstall.can_uncheck_hint')
+    expect(messages['preinstall.can_uncheck_hint']).toContain('取消后不会安装')
+  })
+})
+
+// ── Suite B — component references the hint key (source assertion) ───────────
+describe('PreinstallSetup hint text', () => {
+  it('renders the can_uncheck_hint key', () => {
+    const source = readFileSync(new URL('../src/layout/components/preinstall-setup.tsx', import.meta.url), 'utf8')
+    expect(source).toContain('preinstall.can_uncheck_hint')
+  })
+})
+
+// ── Suite C — component has dynamic button label (source assertion) ──────────
+describe('PreinstallSetup primary button morph', () => {
+  it('guards the label switch on selectedCount === 0', () => {
+    const source = readFileSync(new URL('../src/layout/components/preinstall-setup.tsx', import.meta.url), 'utf8')
+    expect(source).toContain('selectedCount === 0')
+  })
+
+  it('can render the Skip label', () => {
+    const source = readFileSync(new URL('../src/layout/components/preinstall-setup.tsx', import.meta.url), 'utf8')
+    expect(source).toContain('preinstall.skip')
+  })
+})
+
+// ── Suite D — store empty-selection guard (behavior, regression lock) ────────
+const eventListeners = new Map<string, (event: Event<unknown>) => void>()
+const invoke = vi.fn()
+
+vi.mock('@tauri-apps/api/core', () => ({ invoke }))
+vi.mock('@tauri-apps/api/event', () => ({
+  listen: vi.fn(async (event: string, callback: (payload: Event<unknown>) => void) => {
+    eventListeners.set(event, callback)
+    return vi.fn()
+  }),
+}))
+vi.mock('@hairy/react-lib', () => ({ emitter: { emit: vi.fn() } }))
+vi.mock('@/config/client', () => ({ queryClient: { invalidateQueries: vi.fn() } }))
+vi.mock('../src/store/modules/harness-updater', () => ({
+  harnessUpdater: { checkForUpdate: vi.fn() },
+}))
+
+const { harness } = await import('../src/store/modules/harness/store')
+
+beforeEach(() => {
+  eventListeners.clear()
+  invoke.mockReset()
+})
+
+describe('confirmPreinstall empty-selection guard', () => {
+  it('does not invoke the backend when ids is empty', async () => {
+    await harness.confirmPreinstall([])
+    expect(invoke).not.toHaveBeenCalled()
+  })
+})
