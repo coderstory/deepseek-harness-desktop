@@ -4,7 +4,7 @@ import { Button, Checkbox, Chip, Label, Spinner, Typography } from '@heroui/reac
 import { invoke } from '@tauri-apps/api/core'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { If } from 'react-if-lite'
+import { Else, If, Then } from 'react-if-lite'
 import { useStore } from 'valtio-define'
 import { Empty } from '@/components/empty'
 import { Item } from '@/components/item'
@@ -251,15 +251,30 @@ export function PreinstallSetup() {
                     <Button className="h-8 rounded-md" size="sm" variant="tertiary" onPress={handleSkip} isDisabled={installing}>
                       {t('preinstall.skip')}
                     </Button>
-                    <Button
-                      className="h-8 rounded-md"
-                      size="sm"
-                      variant="primary"
-                      onPress={selectedCount === 0 ? handleSkip : handleConfirm}
-                      isDisabled={installing || selectableCount === 0}
-                    >
-                      {selectedCount === 0 ? t('preinstall.skip') : t('preinstall.confirm')}
-                    </Button>
+                    <If cond={selectedCount === 0}>
+                      <Then>
+                        <Button
+                          className="h-8 rounded-md"
+                          size="sm"
+                          variant="primary"
+                          onPress={handleSkip}
+                          isDisabled={installing || selectableCount === 0}
+                        >
+                          {t('preinstall.skip')}
+                        </Button>
+                      </Then>
+                      <Else>
+                        <Button
+                          className="h-8 rounded-md"
+                          size="sm"
+                          variant="primary"
+                          onPress={handleConfirm}
+                          isDisabled={installing || selectableCount === 0}
+                        >
+                          {t('preinstall.confirm')}
+                        </Button>
+                      </Else>
+                    </If>
                   </div>
                 </>
               )}

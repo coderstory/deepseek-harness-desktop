@@ -41,8 +41,12 @@ describe('preinstallSetup primary button morph', () => {
 })
 
 // ── Suite D — store empty-selection guard (behavior, regression lock) ────────
-const eventListeners = new Map<string, (event: Event<unknown>) => void>()
-const invoke = vi.fn()
+// vi.mock 工厂会被提升到文件顶部，必须先经 vi.hoisted 声明模块级 mock 状态，
+// 否则工厂执行时引用未初始化的绑定（Vitest 4.x 语义）。
+const { eventListeners, invoke } = vi.hoisted(() => ({
+  eventListeners: new Map<string, (event: Event<unknown>) => void>(),
+  invoke: vi.fn(),
+}))
 
 vi.mock('@tauri-apps/api/core', () => ({ invoke }))
 vi.mock('@tauri-apps/api/event', () => ({
