@@ -39,6 +39,7 @@ export interface AppConfig {
   auto_start: boolean
   cli_link_enabled: boolean
   zoom_factor: number
+  close_action: string
 }
 
 export function ConfigDebug() {

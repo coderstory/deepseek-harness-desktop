@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import {
   CLOSE_ACTION_DEFAULT,
@@ -26,5 +27,35 @@ describe('close action normalization', () => {
     expect(normalizeCloseAction('TRAY')).toBe('tray')
     expect(normalizeCloseAction('bogus')).toBe('tray')
     expect(normalizeCloseAction({})).toBe('tray')
+  })
+})
+
+describe('config close action control contract', () => {
+  it('invokes update_app_config once with a camelCase closeAction payload', () => {
+    const source = readFileSync(new URL('../src/components/config-close-action.tsx', import.meta.url), 'utf8')
+
+    expect(source).toContain('export function ConfigCloseAction')
+    expect(source).toContain('invoke<AppConfig>(\'update_app_config\', { closeAction')
+    expect(source.match(/update_app_config/g)).toHaveLength(1)
+    expect(source).toContain('queryKey: [\'config\']')
+    // 受控值始终经归一化，未加载到配置时回落 tray 而不是给 HeroUI 传 undefined
+    expect(source).toContain('selectedKey={normalizeCloseAction(')
+    expect(source).toContain('w-[140px]')
+  })
+
+  it('surfaces failures as a danger toast without a success toast', () => {
+    const source = readFileSync(new URL('../src/components/config-close-action.tsx', import.meta.url), 'utf8')
+
+    expect(source).toContain('messages.close_action_failed')
+    expect(source).toContain('variant: \'danger\'')
+    expect(source).not.toContain('messages.close_action_saved')
+  })
+
+  it('stays within the shell conventions', () => {
+    const source = readFileSync(new URL('../src/components/config-close-action.tsx', import.meta.url), 'utf8')
+
+    expect(source).not.toContain('useCallback')
+    expect(source).not.toContain('useMemo')
+    expect(source).not.toContain('navigator.clipboard')
   })
 })
