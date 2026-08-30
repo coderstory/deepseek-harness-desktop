@@ -1,0 +1,36 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_8b1e689f8926ea::t_e9fe7acbc4ad5b 109-142
+  s_8b1e689f8926ea::t_1e68e503e5464a 550
+  s_8b1e689f8926ea::t_afb4a1ff3ff36e 602
+  s_8b1e689f8926ea::t_d346921acba2eb 535
+  s_8b1e689f8926ea::t_1345fb0ad4f45b 549
+  s_8b1e689f8926ea::t_ffadcc2825a849 605
+  s_8b1e689f8926ea::t_25900e91762898 606
+  s_8b1e689f8926ea::t_febb9d4c5b8f9d 967
+  s_8b1e689f8926ea::t_154197b06cf61c 994
+  s_8b1e689f8926ea::t_e2dfa55cf66aa0 1580
+  s_8b1e689f8926ea::t_c4125aee412dd7 1319
+  s_8b1e689f8926ea::t_445057aa9c2211 206
+  s_8b1e689f8926ea::t_218a39d9292168 1275
+  s_8b1e689f8926ea::t_65f2d42131a47b 1581
+  s_8b1e689f8926ea::t_873518fb3a19cf 559
+  s_8b1e689f8926ea::t_dda094af51bcfa 558
+  s_8b1e689f8926ea::t_af9d734a53a369 603
+  s_8b1e689f8926ea::t_99ebd52fdb6cd7 963
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6e5a39f06048d1c55081ea6ef322b49f1ad6a8eb",
+  "prompts": {},
+  "sessions": {
+    "s_8b1e689f8926ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "838e5af0-10ad-483d-b6db-9c2a59adb1e1",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

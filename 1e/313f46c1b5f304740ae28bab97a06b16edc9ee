@@ -1,0 +1,31 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_8b1e689f8926ea::t_da18440a6e11a4 235-240
+  s_8b1e689f8926ea::t_4bfec07ff18902 615-618,624,681-695,1097
+  s_8b1e689f8926ea::t_d9d3ba980a2a33 203-206,209-210,218
+  s_8b1e689f8926ea::t_74a9b18c544e07 124,179,696,698,1098-1122,1234,1239,1278,1283
+  s_8b1e689f8926ea::t_099f70bc4c81da 122-123
+  s_8b1e689f8926ea::t_7cba7ba371ec11 177-178
+  s_8b1e689f8926ea::t_0928fd5f558333 697
+  s_8b1e689f8926ea::t_82d41a2c614bfc 699
+  s_8b1e689f8926ea::t_37601a98152383 1232-1233
+  s_8b1e689f8926ea::t_8baeaaf6b59878 1237-1238
+  s_8b1e689f8926ea::t_0fae75556037ae 1276-1277
+  s_8b1e689f8926ea::t_349e29130aa12d 1281-1282
+  s_8b1e689f8926ea::t_c20dc6835f35f4 160,174,262,381
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "1e313f46c1b5f304740ae28bab97a06b16edc9ee",
+  "prompts": {},
+  "sessions": {
+    "s_8b1e689f8926ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "838e5af0-10ad-483d-b6db-9c2a59adb1e1",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
