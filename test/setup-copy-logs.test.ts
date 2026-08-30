@@ -1,12 +1,11 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
-describe('Setup error page copy-logs contract (SYST-04)', () => {
+describe('setup error page copy-logs contract (SYST-04)', () => {
   it('exposes a copyLogsHandler that fetches run logs via the Tauri command', () => {
     const source = readFileSync(new URL('../src/layout/components/setup.tsx', import.meta.url), 'utf8')
     expect(source).toContain('copyLogsHandler')
-    expect(source).toContain('read_run_logs')
-    expect(source).toContain('invoke(')
+    expect(source).toContain(`invoke<string>('read_run_logs')`)
   })
 
   it('routes the logs through the native clipboard helper, never navigator.clipboard', () => {
@@ -27,12 +26,12 @@ describe('Setup error page copy-logs contract (SYST-04)', () => {
     const failurePath = source.slice(nativeWrite, nativeWrite + 500)
     expect(failurePath).toContain('catch (err)')
     expect(failurePath).toContain('messages.logs_copy_failed')
-    expect(failurePath).toContain("variant: 'danger'")
+    expect(failurePath).toContain('variant: \'danger\'')
   })
 
   it('renders a ghost button labelled with the copy_logs i18n key', () => {
     const source = readFileSync(new URL('../src/layout/components/setup.tsx', import.meta.url), 'utf8')
-    expect(source).toContain("button({ tone: 'ghost'")
+    expect(source).toContain('button({ tone: \'ghost\'')
     expect(source).toContain('buttons.copy_logs')
   })
 

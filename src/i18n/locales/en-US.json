@@ -116,6 +116,7 @@
   "ui.install_log": "Installation log",
   "buttons.save": "Save",
   "buttons.copy": "Copy",
+  "buttons.copy_logs": "Copy Logs",
   "messages.copy_success": "URL copied to clipboard",
   "messages.log_copied": "Logs copied to clipboard",
   "messages.copy_failed": "Failed to copy URL",

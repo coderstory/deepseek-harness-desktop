@@ -116,6 +116,7 @@
   "ui.install_log": "安装日志",
   "buttons.save": "保存",
   "buttons.copy": "复制",
+  "buttons.copy_logs": "复制日志",
   "messages.copy_success": "地址已复制到剪贴板",
   "messages.log_copied": "日志已复制到剪贴板",
   "messages.copy_failed": "复制地址失败",
