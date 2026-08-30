@@ -50,6 +50,12 @@ pub struct Setting {
     /// 归一化到受支持的 50%–200% 范围和 10% 步长。
     #[serde(default = "default_zoom_factor")]
     pub zoom_factor: f64,
+    /// 点击窗口关闭按钮时的行为：`tray` = 隐藏到托盘继续驻留，`quit` = 直接退出应用。
+    /// 只接受 `tray` / `quit` 两个字面量，读取与写入时均归一化，未知值回落 `tray`；
+    /// 字段刻意用 `String` 而非 enum——任一字段反序列化失败会让整个 `Setting` 回落
+    /// 默认，严格 enum 的一个意外值会连带清空端口/语言/档案等全部设置。
+    #[serde(default = "default_close_action")]
+    pub close_action: String,
 }
 
 pub const ZOOM_FACTOR_MIN: f64 = 0.5;
@@ -69,6 +75,22 @@ fn default_cli_link_enabled() -> bool {
 /// 界面默认缩放为 100%。
 pub fn default_zoom_factor() -> f64 {
     1.0
+}
+
+/// 默认关闭行为：隐藏到托盘继续驻留（D-09）。
+pub fn default_close_action() -> String {
+    "tray".to_string()
+}
+
+/// 把外部或旧存储中的关闭行为收敛到白名单，未知值一律回落到默认行为。
+///
+/// 只做精确匹配：不做 `trim()`、不做大小写折叠——store 可被手工编辑、旧版本或其它
+/// 平台写入，宽松匹配会让 `"quit "` / `"TRAY"` 这类值以非预期形态进入下游判断。
+pub fn normalize_close_action(value: &str) -> String {
+    match value {
+        "tray" | "quit" => value.to_string(),
+        _ => default_close_action(),
+    }
 }
 
 /// 将外部或旧存储中的缩放值限制到桌面端支持的稳定步长。
@@ -107,6 +129,7 @@ impl Default for Setting {
             active_core: None,
             manual_port: None,
             zoom_factor: default_zoom_factor(),
+            close_action: default_close_action(),
         }
     }
 }
@@ -144,6 +167,7 @@ fn read_store_dat_setting(app_handle: &AppHandle) -> Setting {
         .and_then(|v| serde_json::from_value(v).ok())
         .unwrap_or_else(Setting::default);
     setting.zoom_factor = normalize_zoom_factor(setting.zoom_factor);
+    setting.close_action = normalize_close_action(&setting.close_action);
     setting
 }
 
@@ -194,6 +218,8 @@ where
         let mut setting = read_store_dat_setting(app_handle);
         update(&mut setting);
         setting.zoom_factor = normalize_zoom_factor(setting.zoom_factor);
+        // 落盘前的第二道闸：调用方（含前端 invoke）写入的不可信取值不以原始形态进 store
+        setting.close_action = normalize_close_action(&setting.close_action);
         let value = write_store_dat_setting(app_handle, &setting);
         (setting, value)
     };
