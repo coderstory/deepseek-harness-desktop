@@ -241,7 +241,12 @@ export function PreinstallSetup() {
                     </If>
                   </div>
 
-                  {/* 操作区：跳过 / 确定 */}
+                  {/* 可取消勾选提示：让用户知道预设插件可减选，取消后不会安装 */}
+                  <If cond={preinstall.plugins.length > 0 && !installing && preinstall.error === ''}>
+                    <p className="text-center text-xs text-muted">{t('preinstall.can_uncheck_hint')}</p>
+                  </If>
+
+                  {/* 操作区：跳过 / 确定（空选时主按钮蜕变为「跳过」） */}
                   <div className="flex items-center justify-end gap-2">
                     <Button className="h-8 rounded-md" size="sm" variant="tertiary" onPress={handleSkip} isDisabled={installing}>
                       {t('preinstall.skip')}
@@ -250,10 +255,10 @@ export function PreinstallSetup() {
                       className="h-8 rounded-md"
                       size="sm"
                       variant="primary"
-                      onPress={handleConfirm}
-                      isDisabled={installing || selectedCount === 0 || selectableCount === 0}
+                      onPress={selectedCount === 0 ? handleSkip : handleConfirm}
+                      isDisabled={installing || selectableCount === 0}
                     >
-                      {t('preinstall.confirm')}
+                      {selectedCount === 0 ? t('preinstall.skip') : t('preinstall.confirm')}
                     </Button>
                   </div>
                 </>

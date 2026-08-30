@@ -43,6 +43,7 @@
   "preinstall.settings_hint": "Reopen the preset wizard to re-select or install recommended plugins.",
   "preinstall.restarting_hint": "[harness] Restarting the service, please wait…",
   "preinstall.open_preset": "Open Preset",
+  "preinstall.can_uncheck_hint": "You can uncheck plugins you don't want. Unchecked plugins won't be installed.",
   "plugins.title": "Installed Plugins",
   "plugins.empty": "No plugins installed",
   "plugins.loading": "Loading plugins…",
