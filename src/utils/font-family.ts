@@ -8,7 +8,7 @@ export function normalizeFontFamily(value: unknown): string {
   const trimmed = value.trim()
   if (!trimmed)
     return FONT_FAMILY_DEFAULT
-  const forbidden = /[{}();<>\\_]/
+  const forbidden = /[{}();<>\\`$"'\x00-\x1F]/
   if (forbidden.test(trimmed))
     return FONT_FAMILY_DEFAULT
   return trimmed

@@ -13,6 +13,7 @@ export function ConfigFontFamily() {
   const { data: config, refetch, isFetching } = useAppConfig()
   const [fonts, setFonts] = useState<string[]>([])
   const [search, setSearch] = useState('')
+  const [draft, setDraft] = useState('')
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
@@ -41,6 +42,12 @@ export function ConfigFontFamily() {
       disposed = true
     }
   }, [])
+
+  // 与远端配置保持同步：仅在非编辑态（无草稿）或远端值真正变化时拉齐，
+  // 避免把用户正在输入的半段内容覆盖掉。
+  useEffect(() => {
+    setDraft(config?.font_family ?? '')
+  }, [config?.font_family])
 
   function postFontToIframe(cssFamily: string) {
     window.dispatchEvent(new CustomEvent('dsh-font-family-change', { detail: cssFamily }))
@@ -75,8 +82,12 @@ export function ConfigFontFamily() {
           <span className="text-xs font-medium text-ink">{t('ui.font_family')}</span>
           <Input
             variant="secondary"
-            value={config?.font_family ?? ''}
-            onChange={e => setFontFamily(e.target.value)}
+            value={draft}
+            onChange={e => setDraft(e.target.value)}
+            onBlur={() => {
+              if (draft !== (config?.font_family ?? ''))
+                setFontFamily(draft)
+            }}
             className="w-[200px]"
             aria-label={t('ui.font_family')}
           />
@@ -126,11 +137,11 @@ export function ConfigFontFamily() {
       <div className="mt-1">
         <Input
           variant="secondary"
-          placeholder="Search"
+          placeholder={t('ui.font_family_search')}
           value={search}
           onChange={e => setSearch(e.target.value)}
           className="w-[200px]"
-          aria-label="Search fonts"
+          aria-label={t('ui.font_family_search')}
         />
       </div>
       <Description className="text-[10px] text-muted/70">

@@ -9,6 +9,7 @@ describe('font family normalization', () => {
   it('keeps valid font family names', () => {
     expect(normalizeFontFamily('PingFang SC')).toBe('PingFang SC')
     expect(normalizeFontFamily('SF Mono')).toBe('SF Mono')
+    expect(normalizeFontFamily('My_Font')).toBe('My_Font')
   })
 
   it('trims surrounding whitespace', () => {
@@ -29,7 +30,7 @@ describe('font family normalization', () => {
   })
 
   it('rejects CSS injection characters', () => {
-    for (const raw of ['{', '}', ';', '(', ')', '<', '\\', 'a{b}', 'x;y', 'font\\']) {
+    for (const raw of ['{', '}', ';', '(', ')', '<', '\\', '`', '$', '"', "'", 'a{b}', 'x;y', 'font\\', 'a`b', 'x${y}']) {
       expect(normalizeFontFamily(raw), `含 CSS 元字符的输入 ${raw} 应回落默认`).toBe('')
     }
   })

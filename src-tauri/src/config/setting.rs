@@ -97,8 +97,8 @@ pub fn normalize_font_family(value: &str) -> String {
     if trimmed.is_empty() {
         return default_font_family();
     }
-    const FORBIDDEN: &[char] = &['{', '}', ';', '(', ')', '<', '>', '\\'];
-    if trimmed.chars().any(|c| FORBIDDEN.contains(&c)) {
+    const FORBIDDEN: &[char] = &['{', '}', ';', '(', ')', '<', '>', '\\', '`', '$', '"', '\''];
+    if trimmed.chars().any(|c| FORBIDDEN.contains(&c) || c.is_control()) {
         return default_font_family();
     }
     trimmed.to_string()
@@ -323,7 +323,7 @@ mod tests {
 
     #[test]
     fn font_family_rejects_css_injection_chars() {
-        for raw in ["{", "}", ";", "(", ")", "<", "\\", "a{b}", "x;y", "font\\"] {
+        for raw in ["{", "}", ";", "(", ")", "<", "\\", "`", "$", "\"", "'", "a{b}", "x;y", "font\\", "a`b", "x${y}", "font\tname"] {
             assert_eq!(
                 normalize_font_family(raw),
                 default_font_family(),

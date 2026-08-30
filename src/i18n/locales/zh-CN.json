@@ -94,6 +94,7 @@
   "ui.font_family": "界面字体",
   "ui.font_family_hint": "作用于主界面。终端、代码块、主题皮肤全部覆盖。",
   "ui.font_family_default": "系统默认",
+  "ui.font_family_search": "搜索",
   "ui.close_action": "关闭行为",
   "ui.close_action_hint": "关闭主窗口时的行为；选择「隐藏到托盘」后应用继续在后台运行，可点击菜单栏托盘图标重新打开。macOS 上后台运行期间不会出现在 ⌘-Tab 应用切换器中。",
   "ui.close_action_tray": "隐藏到托盘",

@@ -412,6 +412,7 @@ pub fn build_main_window(app: &tauri::AppHandle<Wry>) -> tauri::Result<tauri::We
     // 非 Windows（macOS/Linux）没有 WebView2 的 FrameCreated/ContentLoading 流程，
     // 直接用 Tauri 的 initialization_script_for_all_frames 把兼容桥、通知桥、导航桥、
     // 样式桥与缩放快捷键桥注入所有 frame（脚本均带幂等守卫，重复注入安全）。
+    #[cfg(not(windows))]
     let font_family = crate::config::get_store_dat_setting(app).font_family;
     #[cfg(not(windows))]
     let webview_builder = webview_builder
