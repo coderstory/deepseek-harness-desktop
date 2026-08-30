@@ -48,6 +48,10 @@ export interface UseDshPluginsResult {
   error: string
   /** 手动重新拉取（Rust 侧也会在插件文件变化时实时推送） */
   refresh: () => Promise<void>
+  /** 禁用指定插件（从 dsh.profile.bundles 移除，保留包体） */
+  disablePlugin: (id: string) => Promise<void>
+  /** 启用指定插件（加回 dsh.profile.bundles） */
+  enablePlugin: (id: string) => Promise<void>
 }
 
 /**
@@ -111,6 +115,13 @@ export function useDshPlugins(): UseDshPluginsResult {
     }
   }, [queryClient])
 
+  function disablePlugin(id: string) {
+    return invoke<void>('disable_dsh_plugin', { id })
+  }
+  function enablePlugin(id: string) {
+    return invoke<void>('enable_dsh_plugin', { id })
+  }
+
   return {
     plugins: data ?? [],
     loading: isLoading,
@@ -118,5 +129,7 @@ export function useDshPlugins(): UseDshPluginsResult {
     refresh: async () => {
       await refetch()
     },
+    disablePlugin,
+    enablePlugin,
   }
 }
