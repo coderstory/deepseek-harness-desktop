@@ -187,20 +187,21 @@ fn emit_setting(app_handle: &AppHandle, value: &serde_json::Value) {
         .expect("Failed to emit event");
 }
 
-fn preserve_persisted_zoom(mut replacement: Setting, persisted_zoom: f64) -> Setting {
-    replacement.zoom_factor = normalize_zoom_factor(persisted_zoom);
+fn preserve_persisted_fields(mut replacement: Setting, current: &Setting) -> Setting {
+    replacement.zoom_factor = normalize_zoom_factor(current.zoom_factor);
+    replacement.close_action = normalize_close_action(&current.close_action);
     replacement
 }
 
-/// 兼容旧调用方的整对象写入，但始终保留锁内读到的最新缩放，避免长流程用陈旧
-/// `Setting` 覆盖刚刚由快捷键写入的值。
+/// 兼容旧调用方的整对象写入，但始终保留锁内读到的最新缩放与关窗动作，避免
+/// 长流程用陈旧 `Setting` 覆盖刚刚由快捷键 / 设置界面写入的值（丢更新）。
 pub fn set_store_dat_setting(app_handle: &AppHandle, setting: Setting) {
     let value = {
         let _guard = setting_write_lock()
             .lock()
             .unwrap_or_else(|error| error.into_inner());
         let current = read_store_dat_setting(app_handle);
-        let setting = preserve_persisted_zoom(setting, current.zoom_factor);
+        let setting = preserve_persisted_fields(setting, &current);
         write_store_dat_setting(app_handle, &setting)
     };
     emit_setting(app_handle, &value);
@@ -270,7 +271,7 @@ pub fn set_dsh_pkg_tag(app_handle: &AppHandle, tag: String) {
 mod tests {
     use super::{
         default_close_action, default_zoom_factor, normalize_close_action, normalize_zoom_factor,
-        preserve_persisted_zoom, Setting, ZOOM_FACTOR_MAX, ZOOM_FACTOR_MIN,
+        preserve_persisted_fields, Setting, ZOOM_FACTOR_MAX, ZOOM_FACTOR_MIN,
     };
 
     #[test]
@@ -303,13 +304,22 @@ mod tests {
     }
 
     #[test]
-    fn legacy_full_setting_write_preserves_latest_zoom() {
+    fn legacy_full_setting_write_preserves_latest_fields() {
         let mut stale = Setting::default();
         stale.zoom_factor = 0.8;
+        stale.close_action = "quit".to_string();
 
-        let merged = preserve_persisted_zoom(stale, 1.6);
+        let mut current = Setting::default();
+        current.zoom_factor = 1.6;
+        current.close_action = "tray".to_string();
+
+        let merged = preserve_persisted_fields(stale, &current);
 
         assert_eq!(merged.zoom_factor, 1.6);
+        assert_eq!(
+            merged.close_action, "tray",
+            "整对象写入不得用陈旧值覆盖锁内读到的最新关窗动作"
+        );
     }
 
     #[test]
