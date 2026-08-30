@@ -323,6 +323,125 @@ fn init_profile_dir(dir: &Path, id: &str) -> Result<(), String> {
 }
 
 #[cfg(test)]
+mod clone_tests {
+    use super::*;
+    use std::path::PathBuf;
+
+    /// 在 profiles 根目录下构造一个最小源档案目录，返回其路径。
+    fn scaffold_source(root: &PathBuf, id: &str) -> PathBuf {
+        let dir = root.join(id);
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(
+            dir.join("package.json"),
+            format!(r#"{{"name":"dsh-profile-{id}","private":true}}"#),
+        )
+        .unwrap();
+        std::fs::write(dir.join("cordis.patch.yml"), "# patch\n[]\n").unwrap();
+        std::fs::create_dir_all(dir.join("sub")).unwrap();
+        std::fs::write(dir.join("sub/deep.txt"), "nested content").unwrap();
+        dir
+    }
+
+    #[test]
+    fn clone_produces_independent_copy_with_incremented_name() {
+        let tmp = std::env::temp_dir().join(format!("dsh-clone-ok-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        let root = tmp.join("profiles");
+        scaffold_source(&root, "web");
+
+        let profile = clone_with_root(&root, "web", None).unwrap();
+        assert_eq!(profile.id, "web-1");
+        assert!(!profile.default);
+        assert!(!profile.active);
+
+        let dst = root.join("web-1");
+        assert!(dst.is_dir(), "cloned dir must exist");
+        assert!(dst.join("package.json").is_file());
+        assert!(dst.join("cordis.patch.yml").is_file());
+        assert!(dst.join("sub/deep.txt").is_file());
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn clone_skips_taken_names() {
+        let tmp = std::env::temp_dir().join(format!("dsh-clone-skip-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        let root = tmp.join("profiles");
+        scaffold_source(&root, "web");
+        std::fs::create_dir_all(root.join("web-1")).unwrap();
+        std::fs::write(root.join("web-1/package.json"), r#"{"name":"dsh-profile-web-1"}"#).unwrap();
+
+        let profile = clone_with_root(&root, "web", None).unwrap();
+        assert_eq!(profile.id, "web-2");
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn clone_rewrites_manifest_name() {
+        let tmp = std::env::temp_dir().join(format!("dsh-clone-manifest-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        let root = tmp.join("profiles");
+        scaffold_source(&root, "web");
+
+        let profile = clone_with_root(&root, "web", None).unwrap();
+        let dst = root.join(&profile.id);
+        let manifest: serde_json::Value =
+            serde_json::from_str(&std::fs::read_to_string(dst.join("package.json")).unwrap()).unwrap();
+        assert_eq!(manifest["name"], format!("dsh-profile-{}", profile.id));
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn clone_rejects_traversal_id() {
+        let tmp = std::env::temp_dir().join(format!("dsh-clone-traversal-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        let root = tmp.join("profiles");
+        scaffold_source(&root, "web");
+
+        let err = clone_with_root(&root, "..", None).unwrap_err();
+        assert!(
+            err.contains("INVALID_ID") || err.contains("INVALID"),
+            "expected traversal rejection, got: {err}"
+        );
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn clone_of_missing_source_returns_not_found() {
+        let tmp = std::env::temp_dir().join(format!("dsh-clone-missing-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        let root = tmp.join("profiles");
+
+        let err = clone_with_root(&root, "nonexistent", None).unwrap_err();
+        assert!(err.contains("PROFILE_NOT_FOUND"), "expected PROFILE_NOT_FOUND, got: {err}");
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn clone_purges_carried_pnpm_metadata() {
+        let tmp = std::env::temp_dir().join(format!("dsh-clone-pnpm-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        let root = tmp.join("profiles");
+        scaffold_source(&root, "web");
+        let nm = root.join("web/node_modules");
+        std::fs::create_dir_all(&nm).unwrap();
+        std::fs::write(nm.join(".modules.yaml"), "lockfileVersion: '9.0'\nstoreDir: /old/store\n").unwrap();
+
+        let profile = clone_with_root(&root, "web", None).unwrap();
+        let dst_nm = root.join(&profile.id).join("node_modules");
+        assert!(dst_nm.is_dir(), "node_modules should be copied");
+        assert!(!dst_nm.join(".modules.yaml").exists(), "carried .modules.yaml must be purged");
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+}
+
+#[cfg(test)]
 mod tests {
     use super::*;
 
