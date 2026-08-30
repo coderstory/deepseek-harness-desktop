@@ -241,28 +241,30 @@ export function Navbar({ iframeRef }: NavbarProps) {
           />
         </Button>
 
-        <Button
-          className="rounded-lg size-7"
-          isIconOnly
-          size="sm"
-          variant="ghost"
-          aria-label={t('nav.back')}
-          isDisabled={!canGoBack}
-          onPress={() => { sendNav('page:prev') }}
-        >
-          <ArrowLeft />
-        </Button>
-        <Button
-          className="rounded-lg size-7"
-          isIconOnly
-          size="sm"
-          variant="ghost"
-          aria-label={t('nav.forward')}
-          isDisabled={!canGoForward}
-          onPress={() => { sendNav('page:next') }}
-        >
-          <ArrowRight />
-        </Button>
+        <If cond={IS_MACOS && canGoBack}>
+          <Button
+            className="rounded-lg size-7"
+            isIconOnly
+            size="sm"
+            variant="ghost"
+            aria-label={t('nav.back')}
+            onPress={() => { sendNav('page:prev') }}
+          >
+            <ArrowLeft />
+          </Button>
+        </If>
+        <If cond={IS_MACOS && canGoForward}>
+          <Button
+            className="rounded-lg size-7"
+            isIconOnly
+            size="sm"
+            variant="ghost"
+            aria-label={t('nav.forward')}
+            onPress={() => { sendNav('page:next') }}
+          >
+            <ArrowRight />
+          </Button>
+        </If>
       </If>
       <If cond={!IS_MACOS}>
         <div className="ml-1">

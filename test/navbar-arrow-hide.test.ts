@@ -43,7 +43,12 @@ describe('navbar arrow hide (SYST-02)', () => {
       'utf8',
     )
     expect(source).toMatch(/onPress=\{\(\) => \{ sendNav\('sidebar:toggle'\) \}\}/)
-    expect(source).not.toMatch(/canGoBack.*sidebar|sidebar.*canGoBack/)
+    // Sidebar toggle must NOT be wrapped in an <If> gated by canGoBack/canGoForward.
+    // (The naive /canGoBack.*sidebar|sidebar.*canGoBack/ regex falsely matches
+    // the `sidebarCollapsed, canGoBack` destructuring line, so we check the
+    // actual wrapping pattern instead.)
+    expect(source).not.toMatch(/<If[^>]*cond=\{[^}]*\bcanGoBack\b[^}]*\}[^>]*>[\s\S]*?sendNav\('sidebar:toggle'\)/)
+    expect(source).not.toMatch(/<If[^>]*cond=\{[^}]*\bcanGoForward\b[^}]*\}[^>]*>[\s\S]*?sendNav\('sidebar:toggle'\)/)
   })
 
   it('stays within shell conventions', () => {
