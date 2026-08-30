@@ -272,6 +272,125 @@ pub fn remove(app_handle: &AppHandle, id: &str) -> Result<(), String> {
     fs::remove_dir_all(&dir).map_err(|e| format!("PROFILE_REMOVE_FAILED: {e}"))
 }
 
+/// 克隆档案：全量复制源档案目录，自动递增命名（web → web-1 → web-2）。
+///
+/// - `source_id` 经 `fs_guard::validate_id` 校验，拒绝路径穿越；
+/// - `name` 为 `None` 时按 source_id 自动递增；`Some` 时规范化并校验冲突；
+/// - 复制后清除搬入的 pnpm 元数据（`.modules.yaml`），并重写 manifest name 为
+///   `dsh-profile-<new-id>`。
+pub fn clone(app_handle: &AppHandle, source_id: &str, name: Option<&str>) -> Result<Profile, String> {
+    let profiles_root = config::get_dsh_data_path(app_handle).join("profiles");
+    clone_with_root(&profiles_root, source_id, name)
+}
+
+/// 克隆实现（以 `profiles_root` 为根，便于单测注入临时目录）。
+pub fn clone_with_root(profiles_root: &Path, source_id: &str, name: Option<&str>) -> Result<Profile, String> {
+    fs_guard::validate_id(source_id)?;
+    let src_dir = fs_guard::join_safe(profiles_root, source_id)?;
+    if !src_dir.is_dir() {
+        return Err(format!("PROFILE_NOT_FOUND: profile {source_id} does not exist"));
+    }
+
+    let new_id = match name {
+        Some(n) => {
+            let trimmed = n.trim();
+            if trimmed.is_empty() {
+                return Err("PROFILE_EMPTY_NAME: profile name is empty".to_string());
+            }
+            let id = normalize_profile_id(trimmed);
+            if id.is_empty() {
+                return Err("PROFILE_INVALID_NAME: profile name has no usable characters".to_string());
+            }
+            if id.len() > 64 {
+                return Err("PROFILE_NAME_TOO_LONG: profile id exceeds 64 characters".to_string());
+            }
+            if id == DEFAULT_PROFILE {
+                return Err("PROFILE_RESERVED: this name is reserved".to_string());
+            }
+            let target = profiles_root.join(&id);
+            if target.is_dir() {
+                return Err(format!("PROFILE_EXISTS: profile {id} already exists"));
+            }
+            id
+        }
+        None => next_profile_id(profiles_root, source_id)?,
+    };
+
+    let dst_dir = profiles_root.join(&new_id);
+    copy_dir_tree(&src_dir, &dst_dir)?;
+    crate::service::migrate::purge_carried_pnpm_metadata(&dst_dir);
+    rewrite_manifest_name(&dst_dir, &new_id)?;
+
+    Ok(Profile {
+        id: new_id.clone(),
+        name: manifest_display_name(&dst_dir, &new_id),
+        default: false,
+        active: false,
+    })
+}
+
+/// 解析下一个未占用的自动递增 id（base → base-1 → base-2 …，上限 1000）。
+fn next_profile_id(profiles_root: &Path, base: &str) -> Result<String, String> {
+    let mut n = 1;
+    loop {
+        if n > 1000 {
+            return Err("PROFILE_CLONE_EXHAUSTED: too many clones".to_string());
+        }
+        let candidate = format!("{base}-{n}");
+        if !profiles_root.join(&candidate).is_dir() {
+            return Ok(candidate);
+        }
+        n += 1;
+    }
+}
+
+/// 递归复制目录树到全新目标（跳过 profile 根下隐藏目录，保留 `.npmrc`）。
+fn copy_dir_tree(src: &Path, dst: &Path) -> Result<(), String> {
+    fs::create_dir_all(dst).map_err(|e| format!("COPY_MKDIR: {e}"))?;
+    for entry in fs::read_dir(src).map_err(|e| format!("COPY_READ: {e}"))? {
+        let entry = entry.map_err(|e| format!("COPY_ENTRY: {e}"))?;
+        let name = entry.file_name();
+        if let Some(s) = name.to_str() {
+            if s.starts_with('.') && s != ".npmrc" {
+                let path = entry.path();
+                // 跳过隐藏目录（如 .dsh、.pnpm 内部）
+                if path.is_dir() {
+                    continue;
+                }
+                // 隐藏文件（非 .npmrc）跳过
+                continue;
+            }
+        }
+        let src_path = entry.path();
+        let dst_path = dst.join(&name);
+        let ty = entry.file_type().map_err(|e| format!("COPY_TYPE: {e}"))?;
+        if ty.is_dir() {
+            copy_dir_tree(&src_path, &dst_path)?;
+        } else if ty.is_file() {
+            fs::copy(&src_path, &dst_path).map_err(|e| format!("COPY_FILE: {e}"))?;
+        }
+    }
+    Ok(())
+}
+
+/// 重写克隆档案 manifest 的 `name` 字段为 `dsh-profile-<new-id>`。
+fn rewrite_manifest_name(dir: &Path, new_id: &str) -> Result<(), String> {
+    let path = dir.join("package.json");
+    let content = fs::read_to_string(&path).map_err(|e| format!("MANIFEST_READ: {e}"))?;
+    let mut manifest: serde_json::Value =
+        serde_json::from_str(&content).map_err(|e| format!("MANIFEST_PARSE: {e}"))?;
+    if let Some(obj) = manifest.as_object_mut() {
+        obj.insert(
+            "name".to_string(),
+            serde_json::Value::String(format!("dsh-profile-{new_id}")),
+        );
+    }
+    let rendered = serde_json::to_string_pretty(&manifest)
+        .map_err(|e| format!("MANIFEST_RENDER: {e}"))?;
+    fs::write(&path, format!("{rendered}\n"))
+        .map_err(|e| format!("MANIFEST_WRITE: {e}"))
+}
+
 /// 初始化档案目录：与官方 `dsh-app-boot::initProfile` 的产物一致
 /// （web 模板 bundles；已有文件绝不覆盖，重跑为 no-op）。
 fn init_profile_dir(dir: &Path, id: &str) -> Result<(), String> {

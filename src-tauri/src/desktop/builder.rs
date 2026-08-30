@@ -519,6 +519,7 @@ pub fn handler() -> impl Fn(Invoke<Wry>) -> bool + Send + Sync + 'static {
         crate::bridge::create_profile,
         crate::bridge::set_active_profile,
         crate::bridge::remove_profile,
+        crate::bridge::clone_profile,
         crate::bridge::get_cores,
         crate::bridge::set_active_core,
         crate::bridge::download_core,
