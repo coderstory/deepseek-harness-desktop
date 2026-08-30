@@ -7,35 +7,50 @@
 //! 本脚本只负责把一段内置 CSS 以 `<style>` 元素注入 iframe 文档（幂等：按 id 去重）。
 //! 具体样式写在下方的 `IFRAME_CSS` 模板字符串里（当前是占位，按需填写/替换即可）。
 
-/// 注入 `<style>` 的脚本（带 `__dsh_iframe_styles__` 幂等守卫，重复注入安全）。
-/// 样式直接写在 `css` 模板字符串里，改这里即可。
-pub(crate) const IFRAME_STYLES_JS: &str = r#"(function () {
-  if (window.__dsh_iframe_styles__) return;
-  window.__dsh_iframe_styles__ = true;
-
-  var STYLE_ID = 'dsh-desktop-injected-styles';
-
-  // ══ 在这里按需填写注入到 dsh iframe 页面的自定义样式``` ════
-  var css = `
-    .nArs4W_toggleCluster {top:6px !important; right: 6px !important; gap: 2px !important;}
-    .nArs4W_toggleButton {border-radius: 8px !important;}
-  `;
-
-  function apply() {
-    if (document.getElementById(STYLE_ID)) return;
-    var root = document.head || document.documentElement;
-    if (!root) return;
-    var style = document.createElement('style');
-    style.id = STYLE_ID;
-    style.type = 'text/css';
-    style.textContent = css;
-    root.appendChild(style);
-  }
-
-  // 非 Windows 平台在 document-start 注入，head 可能尚未就绪，等 DOM ready 后再挂。
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', apply);
-  } else {
-    apply();
-  }
-})();"#;
+/// 动态生成注入 `<style>` 的脚本（带 `__dsh_iframe_styles__` 幂等守卫，重复注入安全）。
+///
+/// `font_family` 为空字符串时使用占位样式（不覆盖字体）；非空时以 `* !important`
+/// 硬覆盖 iframe 全部元素字体。脚本内含 postMessage 运行时更新监听器，
+/// 宿主可在设置变更后推送新字体，无需 reload iframe。
+pub(crate) fn iframe_styles_js(font_family: &str) -> String {
+    let css = if font_family.is_empty() {
+        r#".nArs4W_toggleCluster {top:6px !important; right: 6px !important; gap: 2px !important;}
+.nArs4W_toggleButton {border-radius: 8px !important;}"#.to_string()
+    } else {
+        format!(
+            r#"*,
+            *::before,
+            *::after {{
+              font-family: "{}" !important;
+            }}"#,
+            font_family.replace('\\', "\\\\").replace('"', "\\\"")
+        )
+    };
+    format!(r#"(function () {{
+      if (window.__dsh_iframe_styles__) return;
+      window.__dsh_iframe_styles__ = true;
+      var STYLE_ID = 'dsh-desktop-injected-styles';
+      var css = `{css}`;
+      function apply() {{
+        if (document.getElementById(STYLE_ID)) return;
+        var root = document.head || document.documentElement;
+        if (!root) return;
+        var style = document.createElement('style');
+        style.id = STYLE_ID;
+        style.type = 'text/css';
+        style.textContent = css;
+        root.appendChild(style);
+      }}
+      window.addEventListener('message', function (e) {{
+        if (!e.data || e.data.source !== 'dsh-desktop') return;
+        if (e.data.type !== 'dsh://font-family:update') return;
+        var s = document.getElementById(STYLE_ID);
+        if (s && e.data.css) s.textContent = e.data.css;
+      }});
+      if (document.readyState === 'loading') {{
+        document.addEventListener('DOMContentLoaded', apply);
+      }} else {{
+        apply();
+      }}
+    }})();"#)
+}

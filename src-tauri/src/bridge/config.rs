@@ -71,6 +71,7 @@ pub async fn update_app_config(
     auto_start: Option<bool>,
     cli_link_enabled: Option<bool>,
     close_action: Option<String>,
+    font_family: Option<String>,
 ) -> Result<config::Setting, String> {
     if let Some(port) = port {
         if port == 0 {
@@ -101,6 +102,9 @@ pub async fn update_app_config(
         }
         if let Some(action) = close_action {
             setting.close_action = action;
+        }
+        if let Some(font) = font_family {
+            setting.font_family = config::normalize_font_family(&font);
         }
     });
     Ok(setting)
