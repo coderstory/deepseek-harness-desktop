@@ -579,21 +579,28 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
             }
             _ => {}
         })
-        // 关窗后由 activation 模块切 Accessory 隐藏 Dock 图标；close_action 设置项
-        // （tray/quit 分叉）由 01-04 在此处接入，当前固定为驻留托盘。
-        // 该分支只加 macOS 门控：非 macOS 上是空实现，关窗隐藏行为不变。
-        // 注意 01-04 接入的 quit 退出分支故意不加该门控 —— 「关闭窗口＝退出应用」
-        // 是可选项，语义上应当三平台一致，不是 macOS 专属。
-        // 点击关闭按钮时隐藏到托盘而不是退出程序
+        // 关闭行为由设置项 `setting.close_action` 控制（D-08 / D-09）：
+        // - quit：关窗即完整退出进程，不驻留托盘、不切 Accessory；
+        // - tray（默认）：阻止关闭并隐藏窗口，macOS 上再切 Accessory 隐藏 Dock。
+        // 退出分支**故意不加** `#[cfg(target_os = "macos")]` 门控 —— 「关闭窗口＝
+        // 退出应用」是用户可选项，语义上应当三平台一致，不是 macOS 专属；而
+        // `activation::on_window_hidden` 仅在 macOS 上有实现，故它保留 macOS 门控。
+        // 点击关闭按钮时按设置决定：隐藏到托盘驻留，还是完整退出程序
         .on_window_event(|window, event| match event {
             tauri::WindowEvent::CloseRequested { api, .. } => {
+                // get_store_dat_setting 内部已归一化，取值只可能是 tray 或 quit
+                let close_action =
+                    crate::config::get_store_dat_setting(&window.app_handle()).close_action;
+                if close_action == crate::desktop::activation::CLOSE_ACTION_QUIT {
+                    // 不 prevent_close、不 hide：直接退出。app.exit(0) 会走
+                    // RunEvent::ExitRequested，既有的几何保存逻辑照常触发
+                    window.app_handle().exit(0);
+                    return;
+                }
                 api.prevent_close();
                 let _ = window.hide();
                 #[cfg(target_os = "macos")]
-                crate::desktop::activation::on_window_hidden(
-                    window,
-                    crate::desktop::activation::CLOSE_ACTION_TRAY,
-                );
+                crate::desktop::activation::on_window_hidden(window, &close_action);
             }
             // 移动/缩放主窗口时记录几何，重启后据此恢复（见 config::window_state）
             tauri::WindowEvent::Moved(_) => {
