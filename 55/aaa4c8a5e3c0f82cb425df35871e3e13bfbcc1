@@ -1,0 +1,21 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_8b1e689f8926ea::t_db8320cac17751 1374-1383
+  s_8b1e689f8926ea::t_bbac270f1e2199 1384-1385
+  s_8b1e689f8926ea::t_48b2aef46b13f4 1349-1351,1354-1356
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "55aaa4c8a5e3c0f82cb425df35871e3e13bfbcc1",
+  "prompts": {},
+  "sessions": {
+    "s_8b1e689f8926ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "838e5af0-10ad-483d-b6db-9c2a59adb1e1",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
