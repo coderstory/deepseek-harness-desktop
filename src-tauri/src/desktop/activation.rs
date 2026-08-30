@@ -29,6 +29,10 @@ use tauri::{ActivationPolicy, Manager};
 /// 抽成不依赖 `AppHandle` 的纯函数，才能在非 macOS / CI 上直接断言判定逻辑。
 /// 只认精确的 `tray`，未知或大小写不符的值一律返回 false —— 保守降级为「不切」，
 /// 宁可留着 Dock 图标，也不要把应用切进用户无法从 Dock 唤回的形态。
+///
+/// 调用方契约：builder 的 CloseRequested 在 quit 分支已提前 `exit(0)`，不会走
+/// 到 `on_window_hidden`，故本函数对 `quit` 的拒绝在生产中属防御深度 —— 未来
+/// 调用方无需自行 gate quit，直接传原始动作即可。
 #[cfg(any(target_os = "macos", test))]
 pub fn should_switch_to_accessory(is_fullscreen: bool, close_action: &str) -> bool {
     // 全屏态切策略会让原生全屏空间闪一下 Dock，故等退出全屏后再补切（D-04）
