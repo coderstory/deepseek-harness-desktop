@@ -1,7 +1,7 @@
 use super::constants::*;
 use serde::{Deserialize, Serialize};
 use std::sync::{Mutex, OnceLock};
-use tauri::{AppHandle, Emitter};
+use tauri::{AppHandle, Emitter, Runtime};
 use tauri_plugin_store::StoreExt;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -153,7 +153,7 @@ fn setting_write_lock() -> &'static Mutex<()> {
     LOCK.get_or_init(|| Mutex::new(()))
 }
 
-fn read_store_dat_setting(app_handle: &AppHandle) -> Setting {
+fn read_store_dat_setting<R: Runtime>(app_handle: &AppHandle<R>) -> Setting {
     let store = app_handle
         .store(store_dat_file_name())
         .expect("Failed to load store");
@@ -233,7 +233,9 @@ pub fn set_store_dat_zoom_factor(app_handle: &AppHandle, zoom_factor: f64) -> Se
     })
 }
 
-pub fn get_store_dat_setting(app_handle: &AppHandle) -> Setting {
+/// 泛型 `Runtime`：允许从非 Wry 具体化的窗口句柄（如工具函数的
+/// `WebviewWindow<R>`）读取设置；具体类型调用方不受影响。
+pub fn get_store_dat_setting<R: Runtime>(app_handle: &AppHandle<R>) -> Setting {
     let _guard = setting_write_lock()
         .lock()
         .unwrap_or_else(|error| error.into_inner());

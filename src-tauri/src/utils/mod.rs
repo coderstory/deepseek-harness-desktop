@@ -89,6 +89,11 @@ pub fn show_main_window<R: Runtime>(app: &AppHandle<R>) {
         #[cfg(target_os = "macos")]
         crate::desktop::activation::set_regular_policy(app);
         show_window(&window);
+        // 恢复路径不改变全屏状态：全屏关窗后从托盘恢复，窗口依旧全屏，
+        // 而 set_regular_policy 已无条件清掉推迟标志。这里按需重新挂起，
+        // 否则用户退出全屏时 Accessory 永不生效（Dock / ⌘-Tab 整个驻留期可见）。
+        #[cfg(target_os = "macos")]
+        crate::desktop::activation::rearm_pending_accessory_if_fullscreen(&window);
     } else {
         log::warn!("[window] main window not found, skip show");
     }
