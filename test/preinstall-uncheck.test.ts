@@ -1,5 +1,5 @@
+import type { Event } from '@tauri-apps/api/event'
 import { readFileSync } from 'node:fs'
-import { type Event } from '@tauri-apps/api/event'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 // ── Suite A — i18n keys exist (source assertion on JSON) ─────────────────────
@@ -20,7 +20,7 @@ describe('preinstall can-uncheck hint i18n keys', () => {
 })
 
 // ── Suite B — component references the hint key (source assertion) ───────────
-describe('PreinstallSetup hint text', () => {
+describe('preinstallSetup hint text', () => {
   it('renders the can_uncheck_hint key', () => {
     const source = readFileSync(new URL('../src/layout/components/preinstall-setup.tsx', import.meta.url), 'utf8')
     expect(source).toContain('preinstall.can_uncheck_hint')
@@ -28,7 +28,7 @@ describe('PreinstallSetup hint text', () => {
 })
 
 // ── Suite C — component has dynamic button label (source assertion) ──────────
-describe('PreinstallSetup primary button morph', () => {
+describe('preinstallSetup primary button morph', () => {
   it('guards the label switch on selectedCount === 0', () => {
     const source = readFileSync(new URL('../src/layout/components/preinstall-setup.tsx', import.meta.url), 'utf8')
     expect(source).toContain('selectedCount === 0')

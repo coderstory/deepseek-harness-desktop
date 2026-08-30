@@ -189,6 +189,11 @@ export function ConfigPlugin() {
                           {plugin.version}
                         </code>
                       </If>
+                      <If cond={!plugin.internal && plugin.recommended}>
+                        <Chip size="sm" variant="soft" color="success" className="shrink-0 font-medium">
+                          {t('plugins.preset')}
+                        </Chip>
+                      </If>
                       <If cond={plugin.internal}>
                         <code className="shrink-0 rounded bg-default px-1.5 py-0.5 font-mono text-[10px] text-muted">
                           {t('plugins.builtin')}

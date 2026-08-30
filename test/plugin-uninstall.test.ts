@@ -31,20 +31,20 @@ describe('plugin preset chip i18n keys', () => {
 })
 
 // ── Suite B — component references the preset key + condition ────────────────
-describe('ConfigPlugin preset chip', () => {
+describe('configPlugin preset chip', () => {
   it('renders the plugins.preset key', () => {
     const source = readFileSync(new URL('../src/components/config-plugin.tsx', import.meta.url), 'utf8')
     expect(source).toContain('plugins.preset')
   })
 
-  it('guards the chip on recommended || defaultChecked', () => {
+  it('guards the chip on recommended (preset, non-internal)', () => {
     const source = readFileSync(new URL('../src/components/config-plugin.tsx', import.meta.url), 'utf8')
-    expect(source).toContain('plugin.recommended || plugin.defaultChecked')
+    expect(source).toContain('!plugin.internal && plugin.recommended')
   })
 })
 
 // ── Suite C — uninstall flow wires to remove_dsh_plugin + restart ────────────
-describe('ConfigPlugin uninstall flow', () => {
+describe('configPlugin uninstall flow', () => {
   it('calls remove_dsh_plugin', () => {
     const source = readFileSync(new URL('../src/components/config-plugin.tsx', import.meta.url), 'utf8')
     expect(source).toContain('remove_dsh_plugin')
