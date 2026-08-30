@@ -6,6 +6,7 @@ import { invoke } from '@tauri-apps/api/core'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { If } from 'react-if-lite'
+import { tv } from 'tailwind-variants'
 import { useStore } from 'valtio-define'
 import { store } from '@/store'
 import { toast } from '@/utils/toast'
@@ -16,6 +17,23 @@ import { Item } from './item'
 import { Modal } from './modal'
 import { PanelHeader } from './panel-header'
 import { PanelState } from './panel-state'
+
+/**
+ * 操作 chip 的样式变体：busy 时禁止点击并降低透明度，否则可点击。
+ * 统一各操作 chip 的 busy 样式，避免内联三元重复。
+ */
+const actionChip = tv({
+  base: 'rounded-md',
+  variants: {
+    busy: {
+      true: 'cursor-not-allowed opacity-50',
+      false: 'cursor-pointer',
+    },
+  },
+  defaultVariants: {
+    busy: false,
+  },
+})
 
 /**
  * 「插件」面板：展示已安装插件，作为「插件出问题时」的卸载/升级入口。
@@ -255,7 +273,7 @@ export function ConfigPlugin() {
                           {t('plugins.builtin')}
                         </code>
                       </If>
-                      <If cond={!plugin.bundled}>
+                      <If cond={plugin.disabled}>
                         <Chip size="sm" variant="soft" color="default">
                           {t('plugins.disabled_badge')}
                         </Chip>
@@ -274,7 +292,7 @@ export function ConfigPlugin() {
                         与文档 P1「对 dshmarket 点击升级」一致，且不会常驻——up-to-date 插件不显示升级按钮 */}
                     <If cond={plugin.updateAvailable || plugin.error != null}>
                       <Chip
-                        className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
+                        className={actionChip({ busy: !!busy })}
                         variant="primary"
                         color="accent"
                         size="sm"
@@ -291,9 +309,9 @@ export function ConfigPlugin() {
                       </Chip>
                     </If>
                     <If cond={!plugin.internal}>
-                      <If cond={!plugin.bundled}>
+                      <If cond={plugin.disabled}>
                         <Chip
-                          className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
+                          className={actionChip({ busy: !!busy })}
                           variant="primary"
                           color="accent"
                           size="sm"
@@ -305,9 +323,9 @@ export function ConfigPlugin() {
                           </span>
                         </Chip>
                       </If>
-                      <If cond={plugin.bundled}>
+                      <If cond={!plugin.disabled}>
                         <Chip
-                          className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
+                          className={actionChip({ busy: !!busy })}
                           variant="tertiary"
                           size="sm"
                           onClick={() => onDisable(plugin.id)}
@@ -319,7 +337,7 @@ export function ConfigPlugin() {
                         </Chip>
                       </If>
                       <Chip
-                        className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
+                        className={actionChip({ busy: !!busy })}
                         variant="primary"
                         color="danger"
                         size="sm"

@@ -28,6 +28,8 @@ export interface DshPlugin {
   repo_url: string
   /** 是否在 dsh.profile.bundles 中（启动时自动加载） */
   bundled: boolean
+  /** 是否在禁用清单（disabled-plugins.json）中，独立于 bundled */
+  disabled: boolean
   /** 预设清单中的「推荐」标记 */
   recommended: boolean
   /** 预设清单中的「修复」标记 */
@@ -122,13 +124,15 @@ export function useDshPlugins(): UseDshPluginsResult {
     return invoke<void>('enable_dsh_plugin', { id })
   }
 
+  async function refresh() {
+    await refetch()
+  }
+
   return {
     plugins: data ?? [],
     loading: isLoading,
     error: error ? String(error) : '',
-    refresh: async () => {
-      await refetch()
-    },
+    refresh,
     disablePlugin,
     enablePlugin,
   }

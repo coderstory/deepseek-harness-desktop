@@ -32,7 +32,7 @@ fn disabled_path(profile: &Path) -> PathBuf {
 }
 
 /// 读取禁用清单（缺失/损坏按空处理）。
-fn load_disabled(profile: &Path) -> HashMap<String, DisabledEntry> {
+pub(crate) fn load_disabled(profile: &Path) -> HashMap<String, DisabledEntry> {
     let Ok(content) = fs::read_to_string(disabled_path(profile)) else {
         return HashMap::new();
     };
@@ -106,15 +106,31 @@ fn now_seconds_string() -> String {
         .unwrap_or_default()
 }
 
+/// 回滚禁用清单到操作前的状态。
+///
+/// 当 manifest 写入失败时，把已加入禁用清单的条目移除，使两个持久化文件
+/// 恢复一致（插件仍在 bundles 中，禁用清单无记录），避免留下
+/// 「已从 bundles 移除但未记入禁用清单」的不可恢复状态。
+fn rollback_disable(profile: &Path, id: &str) {
+    let mut map = load_disabled(profile);
+    map.remove(id);
+    // 回滚写入也失败时，只能静默——此时清单多一条目但插件仍在 bundles，
+    // 下次禁用会覆盖该条目，不会阻塞用户操作。
+    let _ = save_disabled(profile, &map);
+}
+
 /// 禁用插件的纯逻辑（不依赖 AppHandle，便于单元测试）。
 ///
 /// 1. `fs_guard::validate_id(id)`（路径穿越防护）
 /// 2. 拒绝官方/核心包
 /// 3. 读取 profile package.json
 /// 4. 校验插件已安装（dependencies 中存在）
-/// 5. 仅从 bundles 移除（不动 dependencies）
-/// 6. 写回 manifest
-/// 7. 写入禁用清单
+/// 5. 先写入禁用清单（加入条目）
+/// 6. 仅从 bundles 移除（不动 dependencies）并写回 manifest
+///
+/// 写入顺序保证：若步骤 6 失败，通过回滚步骤 5 使两文件恢复一致，
+/// 避免插件从 bundles 移除却未记入禁用清单（否则启用会返回
+/// `ENABLE_NOT_DISABLED`，用户无法通过正常流程恢复）。
 pub(crate) fn disable_plugin_at(profile: &Path, id: &str) -> Result<(), String> {
     // 先做官方/核心包语义校验（优先级高于字符集校验）：官方包 id 含 `/`，
     // 必须先于 validate_id 拦截，否则会被字符集校验误判为 INVALID_ID。
@@ -134,11 +150,7 @@ pub(crate) fn disable_plugin_at(profile: &Path, id: &str) -> Result<(), String> 
             "DISABLE_NOT_INSTALLED: plugin {id} is not installed"
         ));
     }
-    remove_from_bundles(&mut manifest, id);
-    let rendered = serde_json::to_string_pretty(&manifest)
-        .map_err(|e| format!("DISABLE_RENDER_MANIFEST: {e}"))?;
-    fs::write(&manifest_path, format!("{rendered}\n"))
-        .map_err(|e| format!("DISABLE_WRITE_MANIFEST: {e}"))?;
+    // 先写禁用清单，确保 manifest 写入失败时可回滚该条目。
     let mut map = load_disabled(profile);
     map.insert(
         id.to_string(),
@@ -148,7 +160,28 @@ pub(crate) fn disable_plugin_at(profile: &Path, id: &str) -> Result<(), String> 
         },
     );
     save_disabled(profile, &map)?;
+    remove_from_bundles(&mut manifest, id);
+    let rendered = serde_json::to_string_pretty(&manifest)
+        .map_err(|e| format!("DISABLE_RENDER_MANIFEST: {e}"))?;
+    if let Err(e) = fs::write(&manifest_path, format!("{rendered}\n")) {
+        rollback_disable(profile, id);
+        return Err(format!("DISABLE_WRITE_MANIFEST: {e}"));
+    }
     Ok(())
+}
+
+/// 回滚启用前的禁用清单状态。
+///
+/// 当 manifest 写入失败时，把已移除的禁用条目加回，使两个持久化文件
+/// 恢复一致（插件仍在禁用清单中，bundles 未记录），避免留下
+/// 「已加回 bundles 但禁用清单仍缺条目」的不可恢复状态。
+fn rollback_enable(profile: &Path, id: &str) {
+    let mut map = load_disabled(profile);
+    map.entry(id.to_string()).or_insert_with(|| DisabledEntry {
+        disabled_at: now_seconds_string(),
+        reason: "user".to_string(),
+    });
+    let _ = save_disabled(profile, &map);
 }
 
 /// 启用插件的纯逻辑（不依赖 AppHandle，便于单元测试）。
@@ -157,9 +190,12 @@ pub(crate) fn disable_plugin_at(profile: &Path, id: &str) -> Result<(), String> 
 /// 2. 读取 manifest
 /// 3. 校验插件仍安装
 /// 4. 校验插件在禁用清单中
-/// 5. 加回 bundles
-/// 6. 写回 manifest
-/// 7. 从禁用清单移除
+/// 5. 先从禁用清单移除条目
+/// 6. 加回 bundles 并写回 manifest
+///
+/// 写入顺序保证：若步骤 6 失败，通过回滚步骤 5 使两文件恢复一致，
+/// 避免插件加回 bundles 后禁用清单缺条目（否则再次启用会返回
+/// `ENABLE_NOT_DISABLED`，用户无法通过正常流程恢复）。
 pub(crate) fn enable_plugin_at(profile: &Path, id: &str) -> Result<(), String> {
     fs_guard::validate_id(id)?;
     let manifest_path = profile.join("package.json");
@@ -178,13 +214,16 @@ pub(crate) fn enable_plugin_at(profile: &Path, id: &str) -> Result<(), String> {
             "ENABLE_NOT_DISABLED: plugin {id} is not in the disabled list"
         ));
     }
+    // 先从禁用清单移除，确保 manifest 写入失败时可回滚该条目。
+    map.remove(id);
+    save_disabled(profile, &map)?;
     add_to_bundles(&mut manifest, id);
     let rendered = serde_json::to_string_pretty(&manifest)
         .map_err(|e| format!("ENABLE_RENDER_MANIFEST: {e}"))?;
-    fs::write(&manifest_path, format!("{rendered}\n"))
-        .map_err(|e| format!("ENABLE_WRITE_MANIFEST: {e}"))?;
-    map.remove(id);
-    save_disabled(profile, &map)?;
+    if let Err(e) = fs::write(&manifest_path, format!("{rendered}\n")) {
+        rollback_enable(profile, id);
+        return Err(format!("ENABLE_WRITE_MANIFEST: {e}"));
+    }
     Ok(())
 }
 
