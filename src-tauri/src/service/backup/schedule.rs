@@ -15,8 +15,8 @@ use crate::service::backup;
 pub struct BackupState {
     /// 上次成功备份的时间。
     pub last_backup_time: Option<time::OffsetDateTime>,
-    /// 配置变化触发的待执行标志。
-    pub pending_change_backup: bool,
+    /// 启动时备份的待执行标志：每次进程启动由 `mark_startup_pending` 设置
+    pub pending_startup_backup: bool,
 }
 
 fn backup_state() -> std::sync::MutexGuard<'static, BackupState> {
@@ -38,12 +38,8 @@ pub fn should_trigger(
     if !setting.auto_backup_enabled {
         return false;
     }
-    // 启动触发：首次 tick（尚无备份记录）
-    if setting.auto_backup_on_startup && state.last_backup_time.is_none() {
-        return true;
-    }
-    // 配置变化触发：mark_config_changed 设置的待执行标志
-    if state.pending_change_backup && setting.auto_backup_on_change {
+    // 启动触发：每次进程启动时由 mark_startup_pending 设置的标志
+    if state.pending_startup_backup && setting.auto_backup_on_startup {
         return true;
     }
     // 周期触发：距上次备份已达到间隔天数
@@ -66,24 +62,23 @@ pub fn should_trigger_auto_backup(app_handle: &AppHandle, now: time::OffsetDateT
     should_trigger(&state, &setting, now)
 }
 
-/// 记录一次成功备份的时间，并清除配置变化待执行标志。
+/// 记录一次成功备份的时间，并清除启动待执行标志。
 pub fn record_backup_time(now: time::OffsetDateTime) {
     let mut state = backup_state();
     state.last_backup_time = Some(now);
-    state.pending_change_backup = false;
+    state.pending_startup_backup = false;
 }
 
-/// 标记配置已变化：若开启了「配置变化时备份」，设置待执行标志。
+/// 标记应用已启动：若开启了「启动时备份」，设置待执行标志。
 ///
-/// 由 `bridge::config::update_app_config` 在成功更新配置后调用。真正的备份
-/// 执行被推迟到下一次 tick，让 tick 轮询自然去抖（合并短时间内的多次变化）。
-pub fn mark_config_changed(app_handle: &AppHandle) {
+/// 由 setup() 在应用启动时调用。tick 检测到此标志即触发一次备份。
+pub fn mark_startup_pending(app_handle: &AppHandle) {
     let setting = config::get_store_dat_setting(app_handle);
-    if !setting.auto_backup_on_change {
+    if !setting.auto_backup_on_startup {
         return;
     }
     let mut state = backup_state();
-    state.pending_change_backup = true;
+    state.pending_startup_backup = true;
 }
 
 /// 调度器 tick 入口：判断是否应触发，命中则异步执行备份。
@@ -104,14 +99,12 @@ pub fn check_and_trigger(app_handle: &AppHandle) {
         let options = backup::BackupOptions {
             include_credentials: false,
         };
+        // create_backup 内部已调用 prune_if_needed（mod.rs:212），无需重复
         if let Err(e) = backup::create_backup(&app, options) {
             log::error!("[backup] auto backup failed: {e}");
             let mut state = backup_state();
             *state = previous;
             return;
-        }
-        if let Err(e) = backup::prune_if_needed(&app) {
-            log::warn!("[backup] auto backup prune failed: {e}");
         }
         log::info!("[backup] auto backup completed");
     });
@@ -143,11 +136,14 @@ mod tests {
 
     #[test]
     fn triggers_on_startup_when_enabled() {
-        let state = BackupState::default(); // last_backup_time = None
+        let state = BackupState {
+            last_backup_time: None,
+            pending_startup_backup: true,
+        };
         let setting = setting_with(true, 7, true, false);
         assert!(
             should_trigger(&state, &setting, time::OffsetDateTime::now_utc()),
-            "首次启动且 on_startup=true 应触发"
+            "pending_startup_backup + on_startup=true 应触发（首次启动）"
         );
     }
 
@@ -188,49 +184,56 @@ mod tests {
     }
 
     #[test]
-    fn triggers_on_change_when_enabled() {
+    fn triggers_on_startup_each_time_regardless_of_last_backup() {
+        // 即使有上次备份时间，启动时也应该触发（每次启动都备份）
         let state = BackupState {
             last_backup_time: Some(days_ago(1)),
-            pending_change_backup: true,
+            pending_startup_backup: true,
         };
-        let setting = setting_with(true, 7, false, true);
+        let setting = setting_with(true, 7, true, false);
         assert!(
             should_trigger(&state, &setting, time::OffsetDateTime::now_utc()),
-            "pending_change_backup + on_change=true 应触发"
+            "pending_startup_backup + on_startup=true 应触发（即使有 last_backup_time）"
         );
     }
 
     #[test]
-    fn does_not_trigger_on_change_when_disabled() {
+    fn does_not_trigger_on_startup_when_disabled() {
         let state = BackupState {
             last_backup_time: Some(days_ago(1)),
-            pending_change_backup: true,
+            pending_startup_backup: true,
         };
         let setting = setting_with(true, 7, false, false);
         assert!(
             !should_trigger(&state, &setting, time::OffsetDateTime::now_utc()),
-            "on_change=false 时即使 pending 也不应触发"
+            "on_startup=false 时即使 pending 也不应触发"
         );
     }
 
     #[test]
-    fn record_backup_time_prevents_immediate_retrigger() {
-        let mut state = BackupState::default();
+    fn record_backup_time_clears_startup_pending() {
+        // 验证 record_backup_time 同时清除 pending_startup_backup 标志
+        let state = BackupState {
+            pending_startup_backup: true,
+            ..Default::default()
+        };
         let setting = setting_with(true, 7, true, false);
 
-        // 启动触发前
+        // 启动 pending 时应触发
         assert!(should_trigger(&state, &setting, time::OffsetDateTime::now_utc()));
 
-        // 记录备份时间
+        // record_backup_time 写全局单例；本地状态手动同步
         record_backup_time(time::OffsetDateTime::now_utc());
-        // 注意：record_backup_time 写的是全局单例，这里同步更新本地状态以反映
-        state.last_backup_time = Some(time::OffsetDateTime::now_utc());
-        state.pending_change_backup = false;
+        // 全局 record_backup_time 已清掉 pending_startup_backup，本地 state 也同步
+        let state_after = BackupState {
+            last_backup_time: Some(time::OffsetDateTime::now_utc()),
+            pending_startup_backup: false,
+        };
 
-        // 记录后（距上次 0 天，未达 7 天间隔）不应再触发
+        // 记录后（pending 已清 + 未达 7 天间隔）不应再触发
         assert!(
-            !should_trigger(&state, &setting, time::OffsetDateTime::now_utc()),
-            "刚记录备份时间后不应立即再触发"
+            !should_trigger(&state_after, &setting, time::OffsetDateTime::now_utc()),
+            "record_backup_time 后 pending_startup_backup 应被清掉，不再触发"
         );
     }
 }
