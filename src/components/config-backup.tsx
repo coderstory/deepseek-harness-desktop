@@ -38,7 +38,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
     }
     catch (err) {
       console.error('[ConfigBackup] create failed:', err)
-      toast(t('backup.failed_toast'), { variant: 'danger' })
+      toast(`${t('backup.failed_toast')}: ${String(err)}`, { variant: 'danger' })
     }
   }
 
@@ -74,7 +74,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
     }
     catch (err) {
       console.error('[ConfigBackup] restore failed:', err)
-      toast(t('backup.restore_failed'), { variant: 'danger' })
+      toast(`${t('backup.restore_failed')}: ${String(err)}`, { variant: 'danger' })
     }
   }
 
@@ -99,7 +99,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
     }
     catch (err) {
       console.error('[ConfigBackup] restore as new failed:', err)
-      toast(t('backup.restore_failed'), { variant: 'danger' })
+      toast(`${t('backup.restore_failed')}: ${String(err)}`, { variant: 'danger' })
     }
   }
 
@@ -153,19 +153,21 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
             <span>{t('backup.now')}</span>
           </If>
         </Button>
-        <Checkbox
-          isSelected={includeCredentials}
-          onChange={(value: boolean) => setIncludeCredentials(value)}
-          aria-label={t('backup.include_credentials')}
-          className="shrink-0"
-        >
-          <Checkbox.Content>
-            <Checkbox.Control>
-              <Checkbox.Indicator />
-            </Checkbox.Control>
-          </Checkbox.Content>
-        </Checkbox>
-        <span className="text-xs text-ink">{t('backup.include_credentials')}</span>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <Checkbox
+            isSelected={includeCredentials}
+            onChange={(value: boolean) => setIncludeCredentials(value)}
+            aria-label={t('backup.include_credentials')}
+            className="shrink-0"
+          >
+            <Checkbox.Content>
+              <Checkbox.Control>
+                <Checkbox.Indicator />
+              </Checkbox.Control>
+            </Checkbox.Content>
+          </Checkbox>
+          <span className="text-xs text-ink">{t('backup.include_credentials')}</span>
+        </label>
         <If cond={includeCredentials}>
           <Description className="text-[10px] text-danger">
             {t('backup.credentials_warning')}
@@ -197,18 +199,33 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
                   )}
                   right={(
                     <>
-                      <Button size="sm" variant="tertiary" className="h-7 rounded-md" onPress={() => handleRestore(backup.timestamp)}>
+                      <Button
+                        size="sm"
+                        variant="tertiary"
+                        className="h-7 rounded-md"
+                        isDisabled={busy}
+                        onPress={() => handleRestore(backup.timestamp)}
+                      >
                         {t('backup.restore')}
                       </Button>
-                      <Button size="sm" variant="tertiary" className="h-7 rounded-md" onPress={() => handleRestoreAsNew(backup.timestamp)}>
+                      <Button
+                        size="sm"
+                        variant="tertiary"
+                        className="h-7 rounded-md"
+                        isDisabled={busy}
+                        onPress={() => handleRestoreAsNew(backup.timestamp)}
+                      >
                         {t('backup.restore_as_new')}
                       </Button>
                       <Chip
-                        className="rounded-md"
+                        className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
                         variant="primary"
                         color="danger"
                         size="sm"
-                        onClick={() => handleDelete(backup.timestamp)}
+                        onClick={() => {
+                          if (!busy)
+                            handleDelete(backup.timestamp)
+                        }}
                       >
                         <Delete className="size-3" />
                       </Chip>
@@ -245,8 +262,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
         </div>
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-ink">
-            {t('backup.auto_interval')}
-            <span className="ml-1 text-muted">{t('backup.auto_interval_suffix')}</span>
+            {t('backup.auto_interval_label')}
           </span>
           <Input
             key={config ? String(config.auto_backup_interval_days) : 'loading-interval'}
@@ -259,9 +275,6 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
             className="w-[80px]"
           />
         </div>
-        <Description className="text-[10px] text-muted">
-          {t('backup.auto_interval_help')}
-        </Description>
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-ink">{t('backup.auto_startup')}</span>
           <Switch
