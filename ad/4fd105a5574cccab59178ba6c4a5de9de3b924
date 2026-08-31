@@ -1,0 +1,25 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_8a57d64d03fd1b::t_d9cd0cf92a90a5 157-167
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_8a57d64d03fd1b::t_4097a4522043fb 49-52
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/StatementExportCalcHelper.java
+  s_8a57d64d03fd1b::t_fa2ecfaa35aa28 54-59
+  s_8a57d64d03fd1b::t_50bc4284ef9528 4
+  s_8a57d64d03fd1b::t_d18cdf06eea823 53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ad4fd105a5574cccab59178ba6c4a5de9de3b924",
+  "prompts": {},
+  "sessions": {
+    "s_8a57d64d03fd1b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ce9f298e-e0b3-485a-a5b9-2621a254c718",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}
