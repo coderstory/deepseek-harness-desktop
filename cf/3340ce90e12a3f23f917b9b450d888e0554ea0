@@ -1,0 +1,19 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_8b1e689f8926ea::t_096933c4627aa8 151-167,169-172
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cf3340ce90e12a3f23f917b9b450d888e0554ea0",
+  "prompts": {},
+  "sessions": {
+    "s_8b1e689f8926ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "838e5af0-10ad-483d-b6db-9c2a59adb1e1",
+        "model": "unknown"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}

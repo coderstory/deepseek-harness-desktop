@@ -1,0 +1,46 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/UpdateMaintenanceRecordInput.java
+  s_15d702f564906c::t_a2fbbb0de8d9ab 23-25,28-30
+  s_15d702f564906c::t_ad4b63944c0090 79-86
+  s_15d702f564906c::t_c9f2a0ef3ac9f4 31
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordQueryHelper.java
+  s_15d702f564906c::t_3cb7d6a8b46f96 19
+  s_15d702f564906c::t_2bebb1a0997ad4 99-136
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_15d702f564906c::t_7f9df93a28f1e2 372,381-382
+  s_15d702f564906c::t_b9eb74d173721b 575-576
+  s_15d702f564906c::t_4d78eb4c9b420b 413
+  s_15d702f564906c::t_3f9de2595c436e 87-88
+  s_15d702f564906c::t_7d783575543a4b 150-163
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_15d702f564906c::t_9b6c56abfc6910 5
+  s_15d702f564906c::t_03fc54afe768b3 9
+  s_15d702f564906c::t_70ef542dcce1b3 43
+  s_15d702f564906c::t_9cbbaa5b54f66e 645-646,648-656,658-659,662,669-680
+  s_15d702f564906c::t_1e7715d05f6f89 123-124,126-138,205,209,232-233
+  s_15d702f564906c::t_dfcc305e005d02 772-779
+  s_15d702f564906c::t_9c99c3c33df854 22,27
+  s_15d702f564906c::t_82b202d9aa247a 917-923
+  s_15d702f564906c::t_813216e1ee9657 792-803
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/enums/QuickMaintenanceRecordEnum.java
+  s_15d702f564906c::t_056c61d98536ff 1-72
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/utils/MaintenanceRecordValidatorTest.java
+  s_15d702f564906c::t_a3999821c4d4c8 285-286
+  s_15d702f564906c::t_4670ba9c8e33ca 389-439
+  s_15d702f564906c::t_d1c80625398452 345-347
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "501f753877e8d967898f824906b7949a9bcb308a",
+  "prompts": {},
+  "sessions": {
+    "s_15d702f564906c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "44903590-944d-43d2-8ab6-fbe45eec2be0",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
