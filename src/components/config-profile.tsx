@@ -350,6 +350,7 @@ export function ConfigProfile() {
                   className="rounded-md"
                   variant="primary"
                   isDisabled={!cloneName.trim() || busy}
+                  isLoading={busy}
                   onPress={commitClone}
                 >
                   {t('profiles.clone_confirm')}
