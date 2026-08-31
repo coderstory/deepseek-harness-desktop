@@ -206,7 +206,7 @@
   "backup.auto_startup": "每次启动时备份",
   "backup.auto_change": "配置变化时备份",
   "backup.auto_retention": "最大备份次数",
-  "backup.auto_retention_suffix": "次",
+  "backup.auto_retention_suffix": "",
   "backup.settings_saved": "备份设置已保存",
   "backup.settings_failed": "备份设置保存失败",
   "plugins.panel_tooltip": "已安装插件。预设插件可在此卸载。",

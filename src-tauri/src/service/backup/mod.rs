@@ -9,9 +9,14 @@ pub mod schedule;
 
 use std::fs;
 use std::path::{Path, PathBuf};
+use std::sync::Mutex;
 use tauri::AppHandle;
 
 use crate::config;
+
+/// 备份操作全局互斥锁：序列化同一数据目录下的并发创建/删除，避免清单
+/// 读写竞争导致条目丢失或归档文件覆盖。
+static BACKUP_LOCK: Mutex<()> = Mutex::new(());
 
 /// 备份选项。
 #[derive(Debug, Clone)]
@@ -112,10 +117,12 @@ fn read_manifest(backup_dir: &Path) -> Result<BackupManifest, ManifestError> {
     }
 }
 
-/// 原子写入备份清单。
+/// 原子写入备份清单（唯一临时文件名，避免并发写入覆盖）。
 fn write_manifest(backup_dir: &Path, manifest: &BackupManifest) -> Result<(), String> {
     let path = backup_dir.join(".manifest.json");
-    let tmp = path.with_extension("tmp");
+    // 唯一临时文件名：PID + 纳秒时间戳，并发写入互不覆盖
+    let tmp_name = format!(".manifest.{}.{}.tmp", std::process::id(), timestamp_nanos());
+    let tmp = backup_dir.join(tmp_name);
     let content = serde_json::to_string_pretty(manifest)
         .map_err(|e| format!("BACKUP_MANIFEST_SERIALIZE: {e}"))?;
     fs::write(&tmp, content).map_err(|e| format!("BACKUP_MANIFEST_WRITE: {e}"))?;
@@ -123,11 +130,18 @@ fn write_manifest(backup_dir: &Path, manifest: &BackupManifest) -> Result<(), St
     Ok(())
 }
 
-/// 生成时间戳（UTC，格式 `2026-08-30T12-00-00`）。
+/// 当前纳秒时间戳（用于生成唯一临时文件名）。
+fn timestamp_nanos() -> u128 {
+    std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_nanos()
+}
+
+/// 生成基础时间戳（UTC，格式 `2026-08-30T12-00-00`）。
 fn now_timestamp() -> String {
     use time::OffsetDateTime;
     let now = OffsetDateTime::now_utc();
-    // 格式：YYYY-MM-DDTHH-MM-SS
     let date = now.date();
     let time = now.time();
     format!(
@@ -141,6 +155,19 @@ fn now_timestamp() -> String {
     )
 }
 
+/// 生成碰撞安全的归档路径：若同名文件已存在，追加 `-2`、`-3`… 直到空闲。
+/// 调用方需持有 `BACKUP_LOCK` 以保证检查-创建的原子性。
+fn collision_safe_path(backup_dir: &Path, timestamp: &str) -> PathBuf {
+    let mut candidate = backup_dir.join(archive_filename(timestamp));
+    let mut counter = 1;
+    while candidate.exists() {
+        counter += 1;
+        let ts = format!("{timestamp}-{counter}");
+        candidate = backup_dir.join(archive_filename(&ts));
+    }
+    candidate
+}
+
 /// 创建备份。
 ///
 /// 把 `$DSH_HOME` 打包到 `$DSH_HOME/.backups/<timestamp>.tar.zst`，更新清单，
@@ -149,10 +176,12 @@ pub fn create_backup(
     app_handle: &AppHandle,
     options: BackupOptions,
 ) -> Result<BackupInfo, String> {
+    // 序列化并发创建：避免同一秒内归档文件名碰撞 + 清单读写竞争
+    let _guard = BACKUP_LOCK.lock().unwrap_or_else(|e| e.into_inner());
     let backup_dir = get_backup_dir(app_handle);
     let timestamp = now_timestamp();
-    let filename = archive_filename(&timestamp);
-    let dest = backup_dir.join(&filename);
+    // 碰撞安全：同名文件已存在时追加 -2、-3…（锁内检查-创建保证原子性）
+    let dest = collision_safe_path(&backup_dir, &timestamp);
     let source = config::get_dsh_data_path(app_handle);
 
     archive::create_archive(&source, &dest, options.include_credentials)?;
@@ -213,6 +242,8 @@ pub fn list_backups(app_handle: &AppHandle) -> Vec<BackupInfo> {
 /// `timestamp` 会经过 `fs_guard::validate_id` 校验，防路径穿越。
 pub fn delete_backup(app_handle: &AppHandle, timestamp: &str) -> Result<(), String> {
     crate::service::fs_guard::validate_id(timestamp)?;
+    // 序列化：与 create_backup 共用锁，避免删除与创建并发时清单竞争
+    let _guard = BACKUP_LOCK.lock().unwrap_or_else(|e| e.into_inner());
     let backup_dir = get_backup_dir(app_handle);
     let filename = archive_filename(timestamp);
     let file = backup_dir.join(&filename);
