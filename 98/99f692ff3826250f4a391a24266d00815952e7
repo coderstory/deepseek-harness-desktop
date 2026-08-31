@@ -1,0 +1,25 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/DynamicQueryMaintenanceRecordOutput.java
+  s_db1b26e590bf21::t_a8a4fb6f17e547 95-96,99-100
+  s_db1b26e590bf21::t_788a77e66a7230 22
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordQueryHelper.java
+  s_db1b26e590bf21::t_c6e2793b93464a 281
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_db1b26e590bf21::t_77d98c9601406a 791-795
+  s_db1b26e590bf21::t_c72b6d4d75d14b 38-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9899f692ff3826250f4a391a24266d00815952e7",
+  "prompts": {},
+  "sessions": {
+    "s_db1b26e590bf21": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3ab0b02a-ad6b-4306-98b4-2cb90ed3dbc0",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
