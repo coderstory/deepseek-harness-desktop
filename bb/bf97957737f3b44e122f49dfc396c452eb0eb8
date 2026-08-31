@@ -1,0 +1,23 @@
+D01-dependence/svc-dependency-all/pom.xml
+  s_7b573b4303bd38::t_35c655fcd768a4 19-28,85-94
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_7b573b4303bd38::t_19ec2a80e97a97 39-40
+D03-deploy/svc-standard-api/src/main/resources/svc-standard-api.app.properties
+  s_7b573b4303bd38::t_5fd0848a3f3099 1-6,9-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "bbbf97957737f3b44e122f49dfc396c452eb0eb8",
+  "prompts": {},
+  "sessions": {
+    "s_7b573b4303bd38": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71536071-52f0-4ca1-9548-1ab4be6765f7",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

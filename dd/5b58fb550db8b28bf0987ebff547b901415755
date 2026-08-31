@@ -1,0 +1,50 @@
+doc/grill-me-series-deep-dive.md
+  s_2685e5bb102c89::t_4c54c7578c4433 361-364,373
+  s_2685e5bb102c89::t_5a38b4ae0a23e7 1-360,365-372,374-393
+  s_2685e5bb102c89::t_de2209e3d3e66a 394
+doc/grill-me-series/user-manual.md
+  s_2685e5bb102c89::t_3179ed6cd0fe06 9-16
+  s_2685e5bb102c89::t_5554b8103e813c 1-8,17-446
+  s_2685e5bb102c89::t_50f428257d4ab3 447-449
+  s_2685e5bb102c89::t_96cb771e9af81e 450-496
+doc/grill-me-series/gen-user-manual.js
+  s_2685e5bb102c89::t_2337582ebd7af6 1-440
+doc/grill-me-series/gen-docx.js
+  s_2685e5bb102c89::t_9515e3b0db2da8 1-443
+edge_test2.html
+  s_700fae2d399fbe::t_47f8d1ff23b704 1-5
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_82840f4c97ff22::t_bca4e502dd4c73 320-321
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "dd5b58fb550db8b28bf0987ebff547b901415755",
+  "prompts": {},
+  "sessions": {
+    "s_2685e5bb102c89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3b9518a0-69db-428f-8977-0cc700c5791b",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_700fae2d399fbe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9ef15d2e-e371-40c3-96f5-2e2ddafbb1f9",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_82840f4c97ff22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5c2a577e-3511-4144-acef-cd0acbf5654c",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
