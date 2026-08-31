@@ -259,6 +259,9 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
             className="w-[80px]"
           />
         </div>
+        <Description className="text-[10px] text-muted">
+          {t('backup.auto_interval_help')}
+        </Description>
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-ink">{t('backup.auto_startup')}</span>
           <Switch
