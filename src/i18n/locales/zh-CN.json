@@ -203,7 +203,7 @@
   "core.local_missing_hint": "未检测到本地核心。通过 npm/pnpm 全局安装 @deepseek-ai/dsh 后，桌面端将自动优先使用它。",
   "app.dev_env": "开发环境",
   "app.config": "配置",
-  "config.debug": "调试",
+  "config.application": "应用",
   "config.profiles": "档案",
   "config.plugins": "插件",
   "config.harness": "核心",
