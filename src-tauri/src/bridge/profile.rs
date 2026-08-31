@@ -3,6 +3,7 @@
 //! 管理 `$DSH_HOME/profiles` 下的档案：列表、创建（web 模板）、切换当前使用中的
 //! 档案，以及删除（默认档案与使用中的档案不可删除）。
 
+use crate::config;
 use crate::service::profile;
 use tauri::AppHandle;
 
@@ -30,8 +31,21 @@ pub fn remove_profile(app_handle: AppHandle, id: String) -> Result<(), String> {
     profile::remove(&app_handle, &id)
 }
 
-/// 克隆档案（全量复制源档案目录，自动递增命名或指定名称）
+/// 克隆档案（全量复制源档案目录，自动递增命名或指定名称）。
+///
+/// 异步命令：把 CPU/IO 密集的目录树复制放到 `spawn_blocking` 线程池，
+/// 避免阻塞 Tauri 异步运行时导致 UI 卡顿。内部 `copy_dir_tree` 已用 rayon
+/// 并行处理同级条目。
 #[tauri::command]
-pub fn clone_profile(app_handle: AppHandle, source_id: String, name: Option<String>) -> Result<profile::Profile, String> {
-    profile::clone(&app_handle, &source_id, name.as_deref())
+pub async fn clone_profile(
+    app_handle: AppHandle,
+    source_id: String,
+    name: Option<String>,
+) -> Result<profile::Profile, String> {
+    let profiles_root = config::get_dsh_data_path(&app_handle).join("profiles");
+    tauri::async_runtime::spawn_blocking(move || {
+        profile::clone_with_root(&profiles_root, &source_id, name.as_deref())
+    })
+    .await
+    .map_err(|e| format!("PROFILE_CLONE_TASK: {e}"))?
 }

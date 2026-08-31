@@ -11,6 +11,7 @@
 
 use crate::config;
 use crate::service::fs_guard;
+use rayon::prelude::*;
 use serde::Serialize;
 use serde_yaml::Value;
 use std::fs;
@@ -345,20 +346,26 @@ fn next_profile_id(profiles_root: &Path, base: &str) -> Result<String, String> {
 }
 
 /// 递归复制目录树到全新目标（跳过 profile 根下隐藏目录，保留 `.npmrc`）。
+///
+/// 顶层目录串行创建后，同级条目用 rayon `par_iter` 并行处理：目录递归、文件
+/// `fs::copy` 并发执行，大幅加速大档案（含 node_modules）的克隆。
 fn copy_dir_tree(src: &Path, dst: &Path) -> Result<(), String> {
     fs::create_dir_all(dst).map_err(|e| format!("COPY_MKDIR: {e}"))?;
-    for entry in fs::read_dir(src).map_err(|e| format!("COPY_READ: {e}"))? {
-        let entry = entry.map_err(|e| format!("COPY_ENTRY: {e}"))?;
+    let read_dir = fs::read_dir(src).map_err(|e| format!("COPY_READ: {e}"))?;
+    let entries: Vec<_> = read_dir
+        .collect::<Result<Vec<_>, _>>()
+        .map_err(|e| format!("COPY_ENTRY: {e}"))?;
+    entries.par_iter().try_for_each(|entry| -> Result<(), String> {
         let name = entry.file_name();
         if let Some(s) = name.to_str() {
             if s.starts_with('.') && s != ".npmrc" {
                 let path = entry.path();
                 // 跳过隐藏目录（如 .dsh、.pnpm 内部）
                 if path.is_dir() {
-                    continue;
+                    return Ok(());
                 }
                 // 隐藏文件（非 .npmrc）跳过
-                continue;
+                return Ok(());
             }
         }
         let src_path = entry.path();
@@ -369,7 +376,8 @@ fn copy_dir_tree(src: &Path, dst: &Path) -> Result<(), String> {
         } else if ty.is_file() {
             fs::copy(&src_path, &dst_path).map_err(|e| format!("COPY_FILE: {e}"))?;
         }
-    }
+        Ok(())
+    })?;
     Ok(())
 }
 
