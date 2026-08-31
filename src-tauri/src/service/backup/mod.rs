@@ -1,6 +1,6 @@
 //! 档案备份与还原。
 //!
-//! 把 `$DSH_HOME` 打包为版本化的 `.tar.gz` 快照，存放在 `$DSH_HOME/.backups/`，
+//! 把 `$DSH_HOME` 打包为版本化的 `.tar.zst` 快照，存放在 `$DSH_HOME/.backups/`，
 //! 支持手动创建 / 还原（覆盖或新建）/ 列表 / 删除，以及自动备份调度与保留份数裁剪。
 
 pub mod archive;
@@ -67,7 +67,7 @@ pub fn get_backup_dir(app_handle: &AppHandle) -> PathBuf {
 
 /// 从时间戳推导归档文件名。
 fn archive_filename(timestamp: &str) -> String {
-    format!("{timestamp}.tar.gz")
+    format!("{timestamp}.tar.zst")
 }
 
 /// 清单读取错误。
@@ -143,7 +143,7 @@ fn now_timestamp() -> String {
 
 /// 创建备份。
 ///
-/// 把 `$DSH_HOME` 打包到 `$DSH_HOME/.backups/<timestamp>.tar.gz`，更新清单，
+/// 把 `$DSH_HOME` 打包到 `$DSH_HOME/.backups/<timestamp>.tar.zst`，更新清单，
 /// 并按保留份数裁剪。
 pub fn create_backup(
     app_handle: &AppHandle,

@@ -1,29 +1,38 @@
 //! 备份 / 还原 Tauri 命令。
 //!
 //! 薄封装：把 IPC 参数转成 `service::backup` 的调用，遵循 `bridge/profile.rs`
-//! → `service::profile` 的分层模式。
+//! → `service::profile` 的分层模式。备份 / 还原均为异步命令，IO 密集的
+//! 归档操作通过 `spawn_blocking` 脱离异步运行时，避免阻塞 UI。
 
 use tauri::AppHandle;
 
 use crate::service::backup;
 
-/// 创建备份（`$DSH_HOME` → `$DSH_HOME/.backups/<timestamp>.tar.gz`）。
+/// 创建备份（`$DSH_HOME` → `$DSH_HOME/.backups/<timestamp>.tar.zst`）。
+///
+/// 异步命令：zstd 多线程压缩 + 目录遍历在 `spawn_blocking` 线程池执行。
 #[tauri::command]
-pub fn backup_profile(
+pub async fn backup_profile(
     app_handle: AppHandle,
     include_credentials: bool,
 ) -> Result<backup::BackupInfo, String> {
-    backup::create_backup(
-        &app_handle,
-        backup::BackupOptions { include_credentials },
-    )
+    let app = app_handle.clone();
+    tauri::async_runtime::spawn_blocking(move || {
+        backup::create_backup(
+            &app,
+            backup::BackupOptions { include_credentials },
+        )
+    })
+    .await
+    .map_err(|e| format!("BACKUP_TASK: {e}"))?
 }
 
 /// 从指定备份还原。
 ///
 /// `as_new` = true 时创建新档案目录；false 时覆盖当前 `$DSH_HOME`。
+/// 异步命令：zstd 解压在 `spawn_blocking` 线程池执行。
 #[tauri::command]
-pub fn restore_profile(
+pub async fn restore_profile(
     app_handle: AppHandle,
     timestamp: String,
     as_new: bool,
@@ -33,7 +42,12 @@ pub fn restore_profile(
     } else {
         backup::RestoreMode::Overwrite
     };
-    backup::restore_backup(&app_handle, &timestamp, mode)
+    let app = app_handle.clone();
+    tauri::async_runtime::spawn_blocking(move || {
+        backup::restore_backup(&app, &timestamp, mode)
+    })
+    .await
+    .map_err(|e| format!("RESTORE_TASK: {e}"))?
 }
 
 /// 列出所有备份。

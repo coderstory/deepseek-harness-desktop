@@ -60,7 +60,7 @@ pub fn prune_backups_in_dir(
 
     // 删除文件
     for ts in &to_remove {
-        let file = backup_dir.join(format!("{ts}.tar.gz"));
+        let file = backup_dir.join(format!("{ts}.tar.zst"));
         if file.exists() {
             fs::remove_file(&file).map_err(|e| format!("BACKUP_PRUNE_FILE: {e}"))?;
         }
@@ -96,7 +96,7 @@ mod tests {
         for i in 0..count {
             // 时间戳按 i 递增，便于验证「最旧的被删」
             let ts = format!("2026-08-30T12-00-{:02}", i);
-            let file = dir.join(format!("{ts}.tar.gz"));
+            let file = dir.join(format!("{ts}.tar.zst"));
             let mut f = fs::File::create(&file).unwrap();
             f.write_all(b"dummy").unwrap();
             entries.push(serde_json::json!({
@@ -138,8 +138,8 @@ mod tests {
         assert!(!remaining.contains(&"2026-08-30T12-00-00".to_string()));
         assert!(!remaining.contains(&"2026-08-30T12-00-01".to_string()));
         // 文件也应被删除
-        assert!(!dir.join("2026-08-30T12-00-00.tar.gz").exists());
-        assert!(!dir.join("2026-08-30T12-00-01.tar.gz").exists());
+        assert!(!dir.join("2026-08-30T12-00-00.tar.zst").exists());
+        assert!(!dir.join("2026-08-30T12-00-01.tar.zst").exists());
         let _ = fs::remove_dir_all(&dir);
     }
 
@@ -152,7 +152,7 @@ mod tests {
         assert_eq!(remaining.len(), 3, "3 份备份 retention=10 应全部保留");
         for i in 0..3 {
             let ts = format!("2026-08-30T12-00-{:02}", i);
-            assert!(dir.join(format!("{ts}.tar.gz")).exists());
+            assert!(dir.join(format!("{ts}.tar.zst")).exists());
         }
         let _ = fs::remove_dir_all(&dir);
     }
@@ -165,9 +165,9 @@ mod tests {
         let remaining = read_manifest_backups(&dir);
         assert_eq!(remaining.len(), 1);
         // 最旧的被删
-        assert!(!dir.join("2026-08-30T12-00-00.tar.gz").exists());
+        assert!(!dir.join("2026-08-30T12-00-00.tar.zst").exists());
         // 较新的保留
-        assert!(dir.join("2026-08-30T12-00-01.tar.gz").exists());
+        assert!(dir.join("2026-08-30T12-00-01.tar.zst").exists());
         let _ = fs::remove_dir_all(&dir);
     }
 

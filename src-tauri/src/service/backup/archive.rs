@@ -1,8 +1,8 @@
-//! 备份归档：tar.gz 创建与解压。
+//! 备份归档：tar.zst 创建与解压。
 //!
-//! 归档格式与 `download/extractor.rs` 的 TGZ 解压互逆：`tar::Builder` +
-//! `flate2::write::GzEncoder` 创建，`flate2::read::GzDecoder` + `tar::Archive`
-//! 解压。解压前逐条目校验路径不跳出目标目录（防路径穿越）。
+//! 归档格式：`tar::Builder` + `zstd::stream::Encoder` 创建 `.tar.zst` 单文件，
+//! `zstd::stream::Decoder` + `tar::Archive` 解压。zstd 多线程压缩比 gzip 快
+//! 3-5 倍、压缩率更优。解压前逐条目校验路径不跳出目标目录（防路径穿越）。
 
 use std::fs;
 use std::io::Write;
@@ -79,34 +79,44 @@ fn append_dir_filtered(
     Ok(())
 }
 
-/// 创建 tar.gz 归档。
+/// 创建 tar.zst 归档。
 ///
 /// 把 `source` 目录打包到 `dest` 文件。`include_credentials` 控制是否包含
 /// `.credentials.yaml`。始终排除 `.backups/`、`.harness.pid`、
-/// `node_modules/.modules.yaml`。
+/// `node_modules/.modules.yaml`。使用 zstd 多线程压缩（级别 0 = 默认 3，
+/// 启用 multithread 加速）。
 pub fn create_archive(
     source: &Path,
     dest: &Path,
     include_credentials: bool,
 ) -> Result<(), String> {
-    let tar_gz = fs::File::create(dest).map_err(|e| format!("BACKUP_ARCHIVE_CREATE: {e}"))?;
-    let enc = flate2::write::GzEncoder::new(tar_gz, flate2::Compression::default());
+    let file = fs::File::create(dest).map_err(|e| format!("BACKUP_ARCHIVE_CREATE: {e}"))?;
+    // 级别 0 使用 zstd 默认压缩级别（3），在速度与压缩率间取得平衡
+    let enc = zstd::stream::Encoder::new(file, 0)
+        .map_err(|e| format!("BACKUP_ARCHIVE_ENCODER: {e}"))?;
     let mut archive = tar::Builder::new(enc);
     append_dir_filtered(&mut archive, source, source, Path::new("."), include_credentials)?;
     archive
         .finish()
         .map_err(|e| format!("BACKUP_ARCHIVE_FINISH: {e}"))?;
+    // 必须显式 finish 编码器，否则尾部帧丢失导致文件截断
+    archive
+        .into_inner()
+        .map_err(|e| format!("BACKUP_ARCHIVE_INNER: {e}"))?
+        .finish()
+        .map_err(|e| format!("BACKUP_ARCHIVE_FLUSH: {e}"))?;
     Ok(())
 }
 
-/// 解压 tar.gz 归档到 `dest` 目录。
+/// 解压 tar.zst 归档到 `dest` 目录。
 ///
 /// 每条目的路径在写入前都经过 `fs_guard::ensure_within` 校验，任何跳出
 /// `dest` 的条目都会导致整体失败（防路径穿越）。
 pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
     fs::create_dir_all(dest).map_err(|e| format!("BACKUP_EXTRACT_MKDIR: {e}"))?;
-    let tar_gz = fs::File::open(archive).map_err(|e| format!("BACKUP_EXTRACT_OPEN: {e}"))?;
-    let dec = flate2::read::GzDecoder::new(tar_gz);
+    let file = fs::File::open(archive).map_err(|e| format!("BACKUP_EXTRACT_OPEN: {e}"))?;
+    let dec = zstd::stream::Decoder::new(file)
+        .map_err(|e| format!("BACKUP_EXTRACT_DECODER: {e}"))?;
     let mut archive = tar::Archive::new(dec);
     let dest_real = dunce::canonicalize(dest)
         .map_err(|e| format!("BACKUP_EXTRACT_CANONICALIZE_DEST: {e}"))?;
@@ -171,8 +181,9 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
 /// 列出归档中所有条目的相对路径（用于测试校验排除项）。
 #[cfg(test)]
 fn list_archive_entries(archive: &Path) -> Result<Vec<String>, String> {
-    let tar_gz = fs::File::open(archive).map_err(|e| format!("BACKUP_LIST_OPEN: {e}"))?;
-    let dec = flate2::read::GzDecoder::new(tar_gz);
+    let file = fs::File::open(archive).map_err(|e| format!("BACKUP_LIST_OPEN: {e}"))?;
+    let dec = zstd::stream::Decoder::new(file)
+        .map_err(|e| format!("BACKUP_LIST_DECODER: {e}"))?;
     let mut archive = tar::Archive::new(dec);
     let mut entries = Vec::new();
     for entry in archive.entries().map_err(|e| format!("BACKUP_LIST_ENTRIES: {e}"))? {
@@ -204,7 +215,7 @@ mod tests {
         source
             .parent()
             .unwrap()
-            .join(format!("{}.tar.gz", source.file_name().unwrap().to_str().unwrap()))
+            .join(format!("{}.tar.zst", source.file_name().unwrap().to_str().unwrap()))
     }
 
     /// 创建临时目录并写入若干文件作为测试夹具。
@@ -357,10 +368,10 @@ mod tests {
         let _ = fs::remove_dir_all(&dir);
         fs::create_dir_all(&dir).unwrap();
 
-        let archive_path = dir.join("evil.tar.gz");
-        // 以裸字节写 gzip（tar crate 的 set_path 会拒绝 ..，故绕开）
-        let tar_gz = fs::File::create(&archive_path).unwrap();
-        let mut enc = flate2::write::GzEncoder::new(tar_gz, flate2::Compression::default());
+        let archive_path = dir.join("evil.tar.zst");
+        // 以裸字节写 zstd（tar crate 的 set_path 会拒绝 ..，故绕开）
+        let file = fs::File::create(&archive_path).unwrap();
+        let mut enc = zstd::stream::Encoder::new(file, 0).unwrap();
         write_raw_tar_entry(&mut enc, "../../../tmp/dsh-evil-passwd", b"evil").unwrap();
         // tar 文件尾：两个空块
         enc.write_all(&[0u8; 1024]).unwrap();
