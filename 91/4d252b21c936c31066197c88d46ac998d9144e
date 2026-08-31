@@ -1,0 +1,19 @@
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/enums/SvcUploadFileRelationServiceTypeEnum.java
+  s_15d702f564906c::t_28ff69914a2e01 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "914d252b21c936c31066197c88d46ac998d9144e",
+  "prompts": {},
+  "sessions": {
+    "s_15d702f564906c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "44903590-944d-43d2-8ab6-fbe45eec2be0",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

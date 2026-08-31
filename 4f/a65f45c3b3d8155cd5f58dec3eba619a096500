@@ -1,0 +1,21 @@
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_9342300bc30f40::t_1b20fb8f72baf5 22,46-47,50-51
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_9342300bc30f40::t_c1a56d3c6993be 335,434,440,486,645,665,707-708,720,734,749,763,831,900,975,997,1005-1006,1031,1048,1115
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4fa65f45c3b3d8155cd5f58dec3eba619a096500",
+  "prompts": {},
+  "sessions": {
+    "s_9342300bc30f40": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ad758d02fe4bd5351",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
