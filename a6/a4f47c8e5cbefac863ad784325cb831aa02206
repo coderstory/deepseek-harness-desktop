@@ -1,0 +1,25 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_db1b26e590bf21::t_93ee1c323c7611 703-705
+  s_db1b26e590bf21::t_430afb94dc88f0 728-732
+  s_db1b26e590bf21::t_ccfaa372990d18 141-142
+  s_db1b26e590bf21::t_a49c8ddabe8c11 190-281
+  s_db1b26e590bf21::t_902b8839e3f0b0 130-131
+  s_db1b26e590bf21::t_7a0ba88cacbc02 160
+  s_db1b26e590bf21::t_2d7ab06db16740 189
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a6a4f47c8e5cbefac863ad784325cb831aa02206",
+  "prompts": {},
+  "sessions": {
+    "s_db1b26e590bf21": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3ab0b02a-ad6b-4306-98b4-2cb90ed3dbc0",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
