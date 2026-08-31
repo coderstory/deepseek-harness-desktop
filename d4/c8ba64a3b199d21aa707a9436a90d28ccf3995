@@ -1,0 +1,83 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 303-311,325,346,366,405-407
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/UpdateMaintenanceRecordInput.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 4,8,23-25,28-31,50-58,68-70,79-86,135-158,174-181
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarHelper.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 390-392
+  s_82840f4c97ff22::t_0f95646551f08f 388-389
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/NotDirectModelGeelyStatementHandlerImpl.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 504
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/GenTwoScenariosTest.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 1-794
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 49,247-260,711-714,811-840,937-940
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/entity/SvcMaintenanceRecordEnt.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 73-76,81-84,251-258,267-273
+  s_82840f4c97ff22::t_cbd3c468c60c7d 274
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 84-85,88-89,106-109,134,136-137,146,172
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/enums/QuickMaintenanceRecordEnum.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 1-72
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/GetSvcStatementKrEmCalculatorVatMergeTest.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 1-103
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/utils/MaintenanceRecordValidatorTest.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 257-259,271,285-286,299,301,303,345-347,389-438
+  s_82840f4c97ff22::t_b5b3a8bbf2b169 439
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/CreateMaintenanceRecordInput.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 5,9,39-47,51-53,102-125,133-140
+C01-svc-config/svc-core-config/src/main/resources/mybatis/mapper/svc/core/config/MdmStandardHourMapper.xml
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 51-55,144-276
+  s_82840f4c97ff22::t_827a68c0f141b7 277
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/enums/SvcUploadFileRelationServiceTypeEnum.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 8
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/ExportMaintenanceRecordModel.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 35,46-51,112,116,144-158
+  s_82840f4c97ff22::t_5b6369bbf04c8e 159
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/DynamicQueryMaintenanceRecordOutput.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 22,51-55,95-96,99-100,183-197
+  s_82840f4c97ff22::t_34e35b45952bd0 198
+INVG3842_Zeekr_NominationsNewSales_Jul26.csv
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 1-2042
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementServiceKrEmDirectReadTest.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 1-178
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordFullChainTest.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 90-91,109-110,505-507,543
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 499,502-505,508,627,663-826
+  s_82840f4c97ff22::t_69e99b1d7ef7c2 827-832
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 61,63,71-75,87-88,122-186,249,252,263,270-300,304,324,347,372,381-382,404,406-408,413,479-480,488,569-573,575-576,616-655,771,789-791
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordQueryHelper.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 19-20,56-58,103-140,166-167,200-201,205-206,242,244,281,307
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/GetMaintenanceRecordOutput.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 3,55-57,60-62,96-98,318-325,334-341,437-444
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 5-6,9,20,22,24,27,31-32,34-35,38-39,45,88,93,114,117,125-187,189-205,212-232,246-258,264-266,268-269,271-274,276-279,350-377,399-406,432,434,599-613,689-690,692-700,702-705,708,715-731,765-787,801,823-830,840-844,847-858,877,910-926,972-978
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_82840f4c97ff22::t_1086c9a3d0d5e7 3-4,6,29,31,72-81
+  s_82840f4c97ff22::t_65987b74711225 82-83
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/em/InvoiceTmpForward.ftl
+  s_82840f4c97ff22::t_76404c0db84570 1988,2376,2983,3438,3893,4642
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/em/InvoiceTmpNegative.ftl
+  s_82840f4c97ff22::t_5bae460ac7a08b 1984,2373,2977,3429,3883,4627
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/za/ZaInvoiceForward.ftl
+  s_82840f4c97ff22::t_5aec6b9dcc3871 2442,2481,2492,2888,2936,2965,2991,3021,3034,3474,3488,3998,4049,4063,4544,4571,4575,4581,4587,4591,4595,4599,5158,5179,5183,5188,5196,5270,5294,5299,5303,5307,5311,5315,5344
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/za/ZaInvoiceNegative.ftl
+  s_82840f4c97ff22::t_98a7e4fe808c0e 2414,2451,2489,2501,2897,2925,2929,2934,2939,2943,2947,2951,4006,4549,4576,4580,4586,4592,4596,4600,4604,5155,5176,5180,5185,5192,5265,5289,5294,5298,5302,5306,5310,5339
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d4c8ba64a3b199d21aa707a9436a90d28ccf3995",
+  "prompts": {},
+  "sessions": {
+    "s_82840f4c97ff22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5c2a577e-3511-4144-acef-cd0acbf5654c",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
