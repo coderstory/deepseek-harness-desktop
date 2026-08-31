@@ -29,9 +29,9 @@ describe('preinstallSetup hint text', () => {
 
 // ── Suite C — component has dynamic button label (source assertion) ──────────
 describe('preinstallSetup primary button morph', () => {
-  it('guards the label switch on selectedCount === 0', () => {
+  it('guards the label switch on hasChanges', () => {
     const source = readFileSync(new URL('../src/layout/components/preinstall-setup.tsx', import.meta.url), 'utf8')
-    expect(source).toContain('selectedCount === 0')
+    expect(source).toContain('hasChanges')
   })
 
   it('can render the Skip label', () => {
