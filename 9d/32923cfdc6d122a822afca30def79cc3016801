@@ -1,0 +1,19 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/event/ServiceOrderMessageListener.java
+  s_8b1e689f8926ea::t_ab7905476c48dd 157-159
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "9d32923cfdc6d122a822afca30def79cc3016801",
+  "prompts": {},
+  "sessions": {
+    "s_8b1e689f8926ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "838e5af0-10ad-483d-b6db-9c2a59adb1e1",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
