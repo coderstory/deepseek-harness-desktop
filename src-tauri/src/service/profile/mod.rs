@@ -357,21 +357,21 @@ fn copy_dir_tree(src: &Path, dst: &Path) -> Result<(), String> {
         .map_err(|e| format!("COPY_ENTRY: {e}"))?;
     entries.par_iter().try_for_each(|entry| -> Result<(), String> {
         let name = entry.file_name();
+        // 仅跳过运行时产物（不随克隆迁移）
         if let Some(s) = name.to_str() {
-            if s.starts_with('.') && s != ".npmrc" {
-                let path = entry.path();
-                // 跳过隐藏目录（如 .dsh、.pnpm 内部）
-                if path.is_dir() {
-                    return Ok(());
-                }
-                // 隐藏文件（非 .npmrc）跳过
+            if s == ".harness.pid" || s == ".backups" {
                 return Ok(());
             }
         }
         let src_path = entry.path();
         let dst_path = dst.join(&name);
         let ty = entry.file_type().map_err(|e| format!("COPY_TYPE: {e}"))?;
-        if ty.is_dir() {
+        if ty.is_symlink() {
+            // 保留符号链接原样（如 node_modules/.bin 下的可执行链接）
+            let target = std::fs::read_link(&src_path)
+                .map_err(|e| format!("COPY_LINK_READ: {e}"))?;
+            copy_symlink(&target, &dst_path)?;
+        } else if ty.is_dir() {
             copy_dir_tree(&src_path, &dst_path)?;
         } else if ty.is_file() {
             fs::copy(&src_path, &dst_path).map_err(|e| format!("COPY_FILE: {e}"))?;
