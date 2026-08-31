@@ -370,7 +370,7 @@ pub fn build_main_window(app: &tauri::AppHandle<Wry>) -> tauri::Result<tauri::We
         // Windows 任务栏图标来源：窗口 .icon() > 可执行文件嵌入资源 > 系统默认。
         // 未调用 .icon() 时任务栏显示系统默认图标；显式设置 default_window_icon
         // 以在任务栏呈现与应用品牌一致的图标（macOS 用 TitleBar 无需此设置）。
-        .icon(app.default_window_icon()?.clone())?;
+        .icon(app.default_window_icon().ok_or_else(|| tauri::Error::WindowIcon(std::io::Error::new(std::io::ErrorKind::NotFound, "default window icon not set")))?.clone())?;
 
     // macOS 保留原生交通灯：绿色按钮由 AppKit 进入独立 Space 的原生全屏，
     // 同时用 Overlay 让 44px 壳层导航栏继续与窗口 chrome 融合。其他平台
