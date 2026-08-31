@@ -463,4 +463,81 @@ mod tests {
             "写入 store 再读回后关闭行为应保持不变"
         );
     }
+
+    #[test]
+    fn close_action_defaults_for_legacy_settings() {
+        let setting: Setting = serde_json::from_value(serde_json::json!({
+            "installed": true,
+            "port": 4099,
+            "auto_start": true,
+            "language": "en-US"
+        }))
+        .expect("legacy setting should deserialize");
+
+        assert_eq!(
+            setting.close_action,
+            default_close_action(),
+            "旧配置缺失 close_action 时应回落默认"
+        );
+        assert_eq!(setting.port, 4099, "缺失 close_action 不应影响其余字段");
+    }
+
+    #[test]
+    fn close_action_normalizes_unknown_values() {
+        assert_eq!(normalize_close_action("tray"), "tray");
+        assert_eq!(normalize_close_action("quit"), "quit");
+
+        for raw in ["", "TRAY", "bogus", "quit ", "tray;drop"] {
+            assert_eq!(
+                normalize_close_action(raw),
+                "tray",
+                "非法值 {raw} 应回落默认"
+            );
+        }
+
+        let setting: Setting = serde_json::from_value(serde_json::json!({
+            "installed": true,
+            "port": 4099,
+            "auto_start": true,
+            "language": "en-US",
+            "close_action": "bogus"
+        }))
+        .expect("tampered setting should deserialize");
+
+        assert_eq!(
+            normalize_close_action(&setting.close_action),
+            "tray",
+            "store 中的非法值应在读取路径被归一化"
+        );
+        assert_eq!(
+            setting.port, 4099,
+            "非法 close_action 不得触发 Setting 整体回落默认"
+        );
+    }
+
+    #[test]
+    fn close_action_default_is_tray() {
+        assert_eq!(
+            default_close_action(),
+            "tray",
+            "新用户默认关闭行为为隐藏到托盘"
+        );
+        assert_eq!(Setting::default().close_action, "tray");
+    }
+
+    #[test]
+    fn close_action_round_trip() {
+        let setting = Setting {
+            close_action: "quit".to_string(),
+            ..Default::default()
+        };
+        let json = serde_json::to_string(&setting).expect("setting should serialize");
+        let restored: Setting = serde_json::from_str(&json).expect("setting should deserialize");
+
+        assert_eq!(
+            normalize_close_action(&restored.close_action),
+            "quit",
+            "写入 store 再读回后关闭行为应保持不变"
+        );
+    }
 }
