@@ -6,9 +6,7 @@
 
 use std::fs;
 use std::io::Write;
-use std::path::{Path, PathBuf};
-
-use crate::service::fs_guard;
+use std::path::Path;
 
 /// 需要从归档中排除的相对路径组件（前缀匹配）。
 const EXCLUDED_NAMES: &[&str] = &[".backups", ".harness.pid"];
@@ -188,7 +186,7 @@ fn list_archive_entries(archive: &Path) -> Result<Vec<String>, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::io::Write as _;
+    use std::path::PathBuf;
 
     /// 全局递增计数器，保证并行测试使用互不冲突的临时目录。
     fn unique_suffix() -> String {

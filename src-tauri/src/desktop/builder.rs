@@ -221,6 +221,13 @@ pub fn install_macos_menu(app: &tauri::AppHandle<Wry>) -> tauri::Result<()> {
         true,
         None::<&str>,
     )?;
+    let restart = MenuItem::with_id(
+        app,
+        "desktop-restart",
+        crate::config::i18n::t("menu.restart"),
+        true,
+        None::<&str>,
+    )?;
     let check_update = MenuItem::with_id(
         app,
         "desktop-check-update",
@@ -241,7 +248,7 @@ pub fn install_macos_menu(app: &tauri::AppHandle<Wry>) -> tauri::Result<()> {
         "desktop-help-menu",
         crate::config::i18n::t("menu.help"),
         true,
-        &[&run_logs, &check_update, &help_separator, &about],
+        &[&run_logs, &restart, &check_update, &help_separator, &about],
     )?;
 
     // 编辑菜单：macOS 设置了主菜单后，⌘X/⌘C/⌘V/⌘A 等组合键会先经菜单的
@@ -512,6 +519,8 @@ pub fn handler() -> impl Fn(Invoke<Wry>) -> bool + Send + Sync + 'static {
         crate::bridge::refresh_plugin_updates,
         crate::bridge::update_dsh_plugin,
         crate::bridge::remove_dsh_plugin,
+        crate::bridge::disable_dsh_plugin,
+        crate::bridge::enable_dsh_plugin,
         crate::bridge::report_plugin_error,
         crate::bridge::detect_plugin_recovery,
         crate::bridge::recover_plugin,
@@ -576,7 +585,8 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
             "desktop-config"
             | "desktop-about"
             | "desktop-copy-run-logs"
-            | "desktop-check-update" => {
+            | "desktop-check-update"
+            | "desktop-restart" => {
                 if let Err(error) = app.emit("macos-menu-action", event.id().as_ref()) {
                     log::warn!("[menu] failed to emit macOS menu action: {error}");
                 }
@@ -617,6 +627,13 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
                         // 窗口级 hide() 是 orderOut，会落入 macOS 26/27 对
                         // 「无可见窗口」应用的 ~1.5s quit 回收 —— 比可见窗口
                         // 更糟。可见窗口是严格更安全的降级态。
+                        // 同时回退到 Regular 策略：on_window_hidden 已切到 Accessory，
+                        // hide 失败意味着应用实际未隐藏，若不恢复 Regular 会丢失 Dock
+                        // 与 Cmd-Tab 入口。
+                        // hide 失败意味着应用仍停留在 Accessory（on_window_hidden
+                        // 已提前切过去），可见窗口配合消失的 Dock/⌘-Tab 会让用户
+                        // 无法将应用拉回前台，故这里必须切回 regular 恢复 Dock。
+                        crate::desktop::activation::set_regular_policy(window.app_handle());
                         log::error!("[activation] APP_HIDE_FAILED: {error}");
                     }
                 }

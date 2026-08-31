@@ -13,9 +13,6 @@ use tauri::AppHandle;
 
 use crate::config;
 
-pub use schedule::check_and_trigger;
-pub use schedule::mark_config_changed;
-
 /// 备份选项。
 #[derive(Debug, Clone)]
 pub struct BackupOptions {

@@ -88,6 +88,11 @@ pub fn show_main_window<R: Runtime>(app: &AppHandle<R>) {
         // RunEvent::Reopen、release single-instance 四条恢复路径。
         #[cfg(target_os = "macos")]
         crate::desktop::activation::set_regular_policy(app);
+        // 恢复路径不改变全屏状态：全屏关窗后从托盘恢复，窗口依旧全屏。
+        // 不在此重新挂起 Accessory：窗口此时已可见，若挂起推迟标志，用户
+        // 退出全屏时 on_window_resized 会把可见应用切进 Accessory，导致 Dock
+        // 图标与 ⌘-Tab 在窗口仍打开时消失。Accessory 只在关窗驻留路径的
+        // hide 之后生效，前台可见态应保持 regular。
         show_window(&window);
         // 恢复路径不改变全屏状态：全屏关窗后从托盘恢复，窗口依旧全屏，
         // 而 set_regular_policy 已无条件清掉推迟标志。这里按需重新挂起，

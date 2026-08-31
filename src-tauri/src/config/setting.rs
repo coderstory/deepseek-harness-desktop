@@ -402,10 +402,7 @@ mod tests {
             default_close_action(),
             "旧配置缺失 close_action 时应回落默认"
         );
-        assert_eq!(
-            setting.port, 4099,
-            "缺失 close_action 不应影响其余字段"
-        );
+        assert_eq!(setting.port, 4099, "缺失 close_action 不应影响其余字段");
     }
 
     #[test]

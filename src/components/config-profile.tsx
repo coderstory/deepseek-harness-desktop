@@ -162,8 +162,8 @@ export function ConfigProfile() {
               right={(
                 <>
                   <Chip
-                    className="rounded-md"
-                    variant="primary"
+                    className="rounded-md mr-1"
+                    variant="secondary"
                     color="accent"
                     size="sm"
                     onClick={(event) => {
