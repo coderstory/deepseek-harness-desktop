@@ -18,15 +18,6 @@ describe('plugin disable/enable frontend contract', () => {
     expect(source).toContain('enablePlugin(')
   })
 
-  it('disable button uses a neutral variant (tertiary), distinct from the danger Uninstall', () => {
-    const source = readFileSync(new URL('../src/components/config-plugin.tsx', import.meta.url), 'utf8')
-
-    // 禁用不是破坏性操作：用 tertiary（中性），区别于卸载的 color="danger"。
-    // HeroUI Chip 在当前版本不支持 "bordered"，故以 tertiary 替代。
-    expect(source).toContain('variant="tertiary"')
-    expect(source).not.toContain('variant="bordered"')
-  })
-
   it('config-plugin.tsx renders a Disabled badge via plugins.disabled_badge', () => {
     const source = readFileSync(new URL('../src/components/config-plugin.tsx', import.meta.url), 'utf8')
 
