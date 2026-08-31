@@ -202,7 +202,7 @@
   "core.local_missing_hint": "No local core detected. Install @deepseek-ai/dsh globally via npm/pnpm and the desktop will prefer it automatically.",
   "app.dev_env": "Development",
   "app.config": "Config",
-  "config.debug": "Debug",
+  "config.application": "Application",
   "config.profiles": "Profiles",
   "config.plugins": "Plugins",
   "config.harness": "Harness",
