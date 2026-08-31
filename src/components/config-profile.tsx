@@ -8,11 +8,14 @@ import { If } from 'react-if-lite'
 import { store } from '@/store'
 import { toast } from '@/utils/toast'
 import { useDshProfiles } from '../hooks/use-dsh-profiles'
+import { ConfigBackup } from './config-backup'
 import { Ellipsis } from './ellipsis'
 import { Item } from './item'
 import { Modal } from './modal'
 import { PanelHeader } from './panel-header'
 import { PanelState } from './panel-state'
+
+type ProfileView = 'list' | { profile: string }
 
 export function ConfigProfile() {
   /**
@@ -30,6 +33,7 @@ export function ConfigProfile() {
   const { t } = useTranslation()
   const [creating, setCreating] = useState(false)
   const [name, setName] = useState('')
+  const [activeView, setActiveView] = useState<ProfileView>('list')
 
   // 克隆档案：命名对话框状态
   const [cloning, setCloning] = useState<{ sourceId: string, sourceName: string } | null>(null)
@@ -169,6 +173,13 @@ export function ConfigProfile() {
     }
   }
 
+  // 备份子视图：点击档案的「备份」芯片后进入
+  if (activeView !== 'list') {
+    return (
+      <ConfigBackup onBack={() => setActiveView('list')} />
+    )
+  }
+
   return (
     <div className="space-y-3">
       <PanelHeader title={t('profiles.title')} description={t('profiles.tooltip')} />
@@ -206,21 +217,28 @@ export function ConfigProfile() {
                       </Checkbox.Control>
                     </Checkbox.Content>
                   </Checkbox>
-                  <If cond={!profile.default}>
-                    <Chip
-                      className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
-                      variant="primary"
-                      color="accent"
-                      size="sm"
-                      onClick={(event) => {
-                        event.stopPropagation()
-                        if (!busy)
-                          openCloneDialog(profile)
-                      }}
-                    >
-                      {t('profiles.clone')}
-                    </Chip>
-                  </If>
+                  <Chip
+                    className="rounded-md"
+                    size="sm"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      setActiveView({ profile: profile.id })
+                    }}
+                  >
+                    {t('backup.manage')}
+                  </Chip>
+                  <Chip
+                    className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
+                    color="accent"
+                    size="sm"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      if (!busy)
+                        openCloneDialog(profile)
+                    }}
+                  >
+                    {t('profiles.clone')}
+                  </Chip>
                   <If cond={!profile.default}>
                     <Chip
                       className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
@@ -309,7 +327,7 @@ export function ConfigProfile() {
                 <Input
                   autoFocus
                   variant="secondary"
-                  className="h-8 rounded-md"
+                  className="h-8 rounded-md w-full my-2"
                   placeholder={t('profiles.clone_name_placeholder')}
                   value={cloneName}
                   onChange={e => setCloneName(e.target.value)}
