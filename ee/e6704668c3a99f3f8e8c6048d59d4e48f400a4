@@ -1,0 +1,23 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_fb52b699f7e50b::t_fcd2305c0ccb3e 789
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_fb52b699f7e50b::t_fcd2305c0ccb3e 406
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_fb52b699f7e50b::t_fcd2305c0ccb3e 1011
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "eee6704668c3a99f3f8e8c6048d59d4e48f400a4",
+  "prompts": {},
+  "sessions": {
+    "s_fb52b699f7e50b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36c350b9-be36-451b-856e-f1176b0f76e9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
