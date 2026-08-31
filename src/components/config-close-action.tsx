@@ -23,6 +23,7 @@ export function ConfigCloseAction() {
       // 避免回退到更新前的旧 close_action（refetch 默认不抛错，只保留旧数据）。
       const result = await invoke<AppConfig>('update_app_config', { closeAction: next })
       queryClient.setQueryData(['config'], result)
+      await invoke<AppConfig>('update_app_config', { closeAction: next })
       await refetch()
     },
     onError: (error: unknown) => {
