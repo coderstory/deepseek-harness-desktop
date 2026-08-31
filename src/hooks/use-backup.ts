@@ -89,7 +89,12 @@ export function useBackups(): UseBackupsResult {
       backupRetentionCount?: number
       backupIncludeCredentials?: boolean
     }) => invoke<void>('update_app_config', settings),
-    onSuccess: invalidate,
+    // 备份设置写入 store 后，同时失效 backups 列表与 config 查询，
+    // 使设置页开关/输入框立即反映最新值（否则需手动刷新）。
+    onSuccess: () => {
+      invalidate()
+      void queryClient.invalidateQueries({ queryKey: ['config'] })
+    },
   })
 
   return {
