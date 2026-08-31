@@ -381,6 +381,26 @@ fn copy_dir_tree(src: &Path, dst: &Path) -> Result<(), String> {
     Ok(())
 }
 
+/// 在目标位置重建一条符号链接（指向原链接相同的目标）。
+#[cfg(unix)]
+fn copy_symlink(target: &std::path::Path, dst: &Path) -> Result<(), String> {
+    std::os::unix::fs::symlink(target, dst)
+        .map_err(|e| format!("COPY_LINK_CREATE: {e}"))
+}
+
+/// 在目标位置重建一条符号链接（Windows 下需要权限，best-effort）。
+#[cfg(windows)]
+fn copy_symlink(target: &std::path::Path, dst: &Path) -> Result<(), String> {
+    // Windows 符号链接需要管理员权限，目录联接不需要但仅限目录。
+    // best-effort：失败不阻断克隆，仅记录告警。
+    if dst.parent().is_some() {
+        let _ = std::os::windows::fs::symlink_dir(target, dst)
+            .or_else(|_| std::os::windows::fs::symlink_file(target, dst))
+            .map_err(|e| log::warn!("copy_symlink failed for {}: {e}", dst.display()));
+    }
+    Ok(())
+}
+
 /// 重写克隆档案 manifest 的 `name` 字段为 `dsh-profile-<new-id>`。
 fn rewrite_manifest_name(dir: &Path, new_id: &str) -> Result<(), String> {
     let path = dir.join("package.json");

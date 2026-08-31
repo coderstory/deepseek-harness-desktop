@@ -162,6 +162,7 @@
   "profiles.clone_name_placeholder": "New profile name",
   "profiles.clone_default_hint": "Suggested: {{name}} (editable)",
   "profiles.clone_confirm": "Clone",
+  "profiles.clone_cloning": "Cloning…",
   "profiles.clone_cancel": "Cancel",
   "profiles.clone_success": "Cloned as \"{{name}}\"",
   "profiles.clone_success_hint": "The new profile is in the list — switch to it anytime.",

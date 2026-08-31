@@ -162,6 +162,7 @@
   "profiles.clone_name_placeholder": "新档案名称",
   "profiles.clone_default_hint": "建议名称：{{name}}（可修改）",
   "profiles.clone_confirm": "克隆",
+  "profiles.clone_cloning": "正在克隆…",
   "profiles.clone_cancel": "取消",
   "profiles.clone_success": "已克隆为「{{name}}」",
   "profiles.clone_success_hint": "新档案已加入列表，可切换使用",
