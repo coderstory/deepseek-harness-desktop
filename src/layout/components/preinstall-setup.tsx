@@ -187,10 +187,13 @@ export function PreinstallSetup() {
   }
 
   function handleConfirm() {
-    // diff：与初始勾选态（已安装 + 推荐默认勾选）比对，得出需安装/需卸载的两个集合
-    const originalSet = initialCheckedSet(preinstall.plugins)
-    const toInstall = [...effectiveSelected].filter(id => !originalSet.has(id))
-    const toUninstall = [...originalSet].filter(id => !effectiveSelected.has(id))
+    // 基于 plugin.installed 推导操作：选中且未安装 → 安装；已安装且未选中 → 卸载
+    const toInstall = preinstall.plugins
+      .filter(p => effectiveSelected.has(p.id) && !p.installed)
+      .map(p => p.id)
+    const toUninstall = preinstall.plugins
+      .filter(p => p.installed && !effectiveSelected.has(p.id))
+      .map(p => p.id)
     void store.harness.confirmPreinstall({ installIds: toInstall, uninstallIds: toUninstall })
   }
 
@@ -198,10 +201,9 @@ export function PreinstallSetup() {
     void store.harness.skipPreinstall()
   }
 
-  // 是否有变更（安装或卸载）：与初始勾选态比对，任一非空即启用"确定"
-  const originalSet = initialCheckedSet(preinstall.plugins)
-  const toInstallCount = [...effectiveSelected].filter(id => !originalSet.has(id)).length
-  const toUninstallCount = [...originalSet].filter(id => !effectiveSelected.has(id)).length
+  // 是否有变更：存在需安装或需卸载的插件时启用"确定"
+  const toInstallCount = preinstall.plugins.filter(p => effectiveSelected.has(p.id) && !p.installed).length
+  const toUninstallCount = preinstall.plugins.filter(p => p.installed && !effectiveSelected.has(p.id)).length
   const hasChanges = toInstallCount > 0 || toUninstallCount > 0
   const installing = preinstall.installing
 

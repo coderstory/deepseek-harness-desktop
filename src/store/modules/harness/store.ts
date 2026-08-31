@@ -943,8 +943,11 @@ export const harness = defineStore({
      * 前端传入 diff 结果（installIds = 新增勾选需安装；uninstallIds = 取消勾选需卸载），
      * 无变化时两者均为空，后端直接标记完成。
      */
-    async confirmPreinstall(ids: { installIds: string[], uninstallIds: string[] }) {
-      if (this.preinstall.installing || (ids.installIds.length === 0 && ids.uninstallIds.length === 0))
+    async confirmPreinstall(input: { installIds?: string[], uninstallIds?: string[] } | string[]) {
+      // 兼容旧调用方（直接传数组）与新调用方（传 {installIds, uninstallIds}）
+      const installIds = Array.isArray(input) ? input : (input.installIds ?? [])
+      const uninstallIds = Array.isArray(input) ? [] : (input.uninstallIds ?? [])
+      if (this.preinstall.installing || (installIds.length === 0 && uninstallIds.length === 0))
         return
       this.preinstall.installing = true
       this.preinstall.error = ''
@@ -952,7 +955,7 @@ export const harness = defineStore({
       let unlisten: UnlistenFn | null = null
       try {
         unlisten = await this.listenPreinstallLog()
-        await invoke('install_preinstall_plugins', { installIds: ids.installIds, uninstallIds: ids.uninstallIds })
+        await invoke('install_preinstall_plugins', { installIds, uninstallIds })
         // 后端装完已把服务停掉，这里在日志面板讲清接下来的重启（issue #48），
         // 避免用户把"插件安装后的自动重启"误认为崩溃/故障。
         this.preinstall.logs = [...this.preinstall.logs, i18next.t('preinstall.restarting_hint')].slice(-200)
