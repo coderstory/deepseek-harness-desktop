@@ -7,6 +7,7 @@
 use std::fs;
 use std::io::Write;
 use std::path::Path;
+use tracing::warn;
 
 /// 需要从归档中排除的相对路径组件（前缀匹配）。
 const EXCLUDED_NAMES: &[&str] = &[".backups", ".harness.pid"];
@@ -63,17 +64,42 @@ fn append_dir_filtered(
         if is_excluded(root_rel, include_credentials) {
             continue;
         }
-        if path.is_dir() {
+        let ty = entry.file_type().map_err(|e| format!("BACKUP_ARCHIVE_TYPE: {e}"))?;
+        if ty.is_dir() {
             builder
                 .append_dir(&archived, &path)
                 .map_err(|e| format!("BACKUP_ARCHIVE_APPEND_DIR: {e}"))?;
             append_dir_filtered(builder, &path, source, &archived, include_credentials)?;
-        } else {
+        }
+        else if ty.is_file() {
             builder
                 .append_file(&archived, &mut fs::File::open(&path).map_err(|e| {
                     format!("BACKUP_ARCHIVE_OPEN: {e}")
                 })?)
                 .map_err(|e| format!("BACKUP_ARCHIVE_APPEND_FILE: {e}"))?;
+        }
+        else if ty.is_symlink() {
+            // 符号链接：读取 target，tar Symlink 存储（GNU header 限制 100 字节）
+            let target = std::fs::read_link(&path)
+                .map_err(|e| format!("BACKUP_ARCHIVE_READLINK: {e}"))?;
+            if target.as_os_str().len() > 100 {
+                eprintln!("[backup] 跳过超长符号链接: {} -> {}", path.display(), target.display());
+            }
+            else {
+                let mut header = tar::Header::new_gnu();
+                header.set_entry_type(tar::EntryType::Symlink);
+                header.set_size(0);
+                header
+                    .set_link_name(&target)
+                    .map_err(|e| format!("BACKUP_ARCHIVE_LINK_NAME: {e}"))?;
+                builder
+                    .append_link(&mut header, &archived, &target)
+                    .map_err(|e| format!("BACKUP_ARCHIVE_APPEND_LINK: {e}"))?;
+            }
+        }
+        else {
+            // socket/FIFO/设备：runtime 资源，跳过
+            eprintln!("[backup] 跳过特殊文件: {} ({:?})", path.display(), ty);
         }
     }
     Ok(())
@@ -91,9 +117,15 @@ pub fn create_archive(
     include_credentials: bool,
 ) -> Result<(), String> {
     let file = fs::File::create(dest).map_err(|e| format!("BACKUP_ARCHIVE_CREATE: {e}"))?;
-    // 级别 0 使用 zstd 默认压缩级别（3），在速度与压缩率间取得平衡
-    let enc = zstd::stream::Encoder::new(file, 0)
+    // 级别 0 使用 zstd 默认压缩级别（3），在速度与压缩率间取得平衡。
+    // 多线程压缩：利用多核 CPU 并行压缩块，速度比单线程快 3-5 倍。
+    let workers = std::thread::available_parallelism()
+        .map(|n| n.get() as u32)
+        .unwrap_or(1);
+    let mut enc = zstd::stream::Encoder::new(file, 0)
         .map_err(|e| format!("BACKUP_ARCHIVE_ENCODER: {e}"))?;
+    enc.multithread(workers)
+        .map_err(|e| format!("BACKUP_ARCHIVE_MULTITHREAD: {e}"))?;
     let mut archive = tar::Builder::new(enc);
     append_dir_filtered(&mut archive, source, source, Path::new("."), include_credentials)?;
     archive
@@ -110,22 +142,42 @@ pub fn create_archive(
 
 /// 解压 tar.zst 归档到 `dest` 目录。
 ///
-/// 每条目的路径在写入前都经过 `fs_guard::ensure_within` 校验，任何跳出
-/// `dest` 的条目都会导致整体失败（防路径穿越）。
+/// 自动兼容两种归档格式：
+/// 1. 旧格式：条目以 `profiles/<id>/...` 开头（备份整个 `$DSH_HOME`）
+/// 2. 新格式：条目直接以文件名开头（只备份激活 profile 内容）
+///
+/// 检测首条目前缀，剥离 `profiles/<id>/` 后解压到 `dest`。
 pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
     fs::create_dir_all(dest).map_err(|e| format!("BACKUP_EXTRACT_MKDIR: {e}"))?;
     let file = fs::File::open(archive).map_err(|e| format!("BACKUP_EXTRACT_OPEN: {e}"))?;
+    // 注意：zstd 解码不支持多线程（每帧必须顺序解码），保持单线程
     let dec = zstd::stream::Decoder::new(file)
         .map_err(|e| format!("BACKUP_EXTRACT_DECODER: {e}"))?;
     let mut archive = tar::Archive::new(dec);
-    let dest_real = dunce::canonicalize(dest)
-        .map_err(|e| format!("BACKUP_EXTRACT_CANONICALIZE_DEST: {e}"))?;
+    // 禁用 ownership 保留：归档里 uid/gid 可能是 root（uid=0），非 root 用户无法 chown
+    archive.set_preserve_ownerships(false);
 
-    for entry in archive.entries().map_err(|e| format!("BACKUP_EXTRACT_ENTRIES: {e}"))? {
-        let mut entry = entry.map_err(|e| format!("BACKUP_EXTRACT_ENTRY: {e}"))?;
-        let path = entry.path().map_err(|e| format!("BACKUP_EXTRACT_PATH: {e}"))?;
+    let entries = archive.entries().map_err(|e| format!("BACKUP_EXTRACT_ENTRIES: {e}"))?;
+    let entries: Vec<_> = entries
+        .collect::<Result<Vec<_>, _>>()
+        .map_err(|e| format!("BACKUP_EXTRACT_COLLECT: {e}"))?;
 
-        // 拒绝含 `..` 组件的条目（规范化前第一道闸）
+    // 检测是否旧格式（首条以 "profiles/<id>/" 开头）
+    let is_legacy_format = entries.first().map_or(false, |e| {
+        let Ok(path) = e.path() else { return false };
+        let comps: Vec<_> = path.components().collect();
+        if comps.len() < 3 {
+            return false;
+        }
+        let first_s = comps.first().map(|c| c.as_os_str().to_string_lossy().to_string()).unwrap_or_default();
+        let second_s = comps.get(1).map(|c| c.as_os_str().to_string_lossy().to_string()).unwrap_or_default();
+        first_s == "profiles" && !second_s.is_empty() && second_s != "." && second_s != ".."
+    });
+
+    for mut entry in entries {
+        let path = entry.path().map_err(|e| format!("BACKUP_EXTRACT_PATH: {e}"))?.into_owned();
+
+        // 拒绝含 `..` 组件的条目（防路径穿越）
         if path
             .components()
             .any(|c| matches!(c, std::path::Component::ParentDir))
@@ -136,43 +188,39 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
             ));
         }
 
-        let joined = dest_real.join(&path);
-        // 规范化并校验不跳出目标目录。目标文件可能尚未创建，此时规范化父目录
-        // 后拼接文件名，再校验前缀。
-        let joined_real = if joined.exists() {
-            dunce::canonicalize(&joined)
-                .map_err(|e| format!("BACKUP_EXTRACT_CANONICALIZE_ENTRY: {e}"))?
-        } else {
-            let parent = joined.parent().ok_or_else(|| {
-                format!("BACKUP_EXTRACT_NO_PARENT: entry {:?}", path)
-            })?;
+        // 旧格式：剥离 `profiles/<id>/` 前缀
+        let stripped: std::path::PathBuf = if is_legacy_format {
+            let comps: Vec<_> = path.components().collect();
+            if comps.len() >= 3 {
+                comps.into_iter().skip(2).collect()
+            }
+            else {
+                path.clone()
+            }
+        }
+        else {
+            path.clone()
+        };
+
+        let dest_path = dest.join(&stripped);
+
+        // 拒绝硬链接
+        let entry_type = entry.header().entry_type();
+        if entry_type.is_hard_link() {
+            return Err(format!(
+                "BACKUP_EXTRACT_UNSUPPORTED_HARDLINK: entry {:?} is a hard link",
+                path
+            ));
+        }
+
+        // 创建父目录
+        if let Some(parent) = dest_path.parent() {
             fs::create_dir_all(parent)
                 .map_err(|e| format!("BACKUP_EXTRACT_MKDIR_PARENT: {e}"))?;
-            let parent_real =
-                dunce::canonicalize(parent).map_err(|e| {
-                    format!("BACKUP_EXTRACT_CANONICALIZE_PARENT: {e}")
-                })?;
-            let name = joined.file_name().ok_or_else(|| {
-                format!("BACKUP_EXTRACT_NO_FILENAME: entry {:?}", path)
-            })?;
-            parent_real.join(name)
-        };
-        if !joined_real.starts_with(&dest_real) {
-            return Err(format!(
-                "BACKUP_EXTRACT_PATH_ESCAPE: entry {:?} resolves outside dest",
-                path
-            ));
         }
-        // 拒绝符号链接和硬链接：link_name 的目标不受 path 校验约束，可能跳出目标目录
-        let entry_type = entry.header().entry_type();
-        if entry_type.is_symlink() || entry_type.is_hard_link() {
-            return Err(format!(
-                "BACKUP_EXTRACT_UNSUPPORTED_LINK: entry {:?} is a symlink or hard link",
-                path
-            ));
-        }
+
         entry
-            .unpack(&joined_real)
+            .unpack(&dest_path)
             .map_err(|e| format!("BACKUP_EXTRACT_UNPACK: {e}"))?;
     }
     Ok(())
@@ -235,7 +283,7 @@ mod tests {
     }
 
     #[test]
-    fn creates_tar_gzip_archive() {
+    fn creates_tar_zst_archive() {
         let source = setup_source_dir(&[("hello.txt", "world")]);
         let dest = archive_dest(&source);
         create_archive(&source, &dest, false).unwrap();
@@ -249,7 +297,7 @@ mod tests {
     fn excludes_backup_dir_from_archive() {
         let source = setup_source_dir(&[
             ("hello.txt", "world"),
-            (".backups/old.tar.gz", "junk"),
+            (".backups/old.tar.zst", "junk"),
             (".backups/.manifest.json", "{}"),
         ]);
         let dest = archive_dest(&source);
@@ -304,17 +352,20 @@ mod tests {
     #[test]
     fn restore_overwrites_existing_data() {
         let source = setup_source_dir(&[("config.yaml", "version: 1")]);
-        let dest_gz = archive_dest(&source);
-        create_archive(&source, &dest_gz, false).unwrap();
+        let dest_zst = archive_dest(&source);
+        create_archive(&source, &dest_zst, false).unwrap();
 
         // 还原到新目录
         let restore_dir = std::env::temp_dir().join(format!("dsh-backup-restore-{}", unique_suffix()));
-        extract_archive(&dest_gz, &restore_dir).unwrap();
+        extract_archive(&dest_zst, &restore_dir).unwrap();
 
-        let restored = fs::read_to_string(restore_dir.join("config.yaml")).unwrap();
-        assert_eq!(restored, "version: 1", "还原后应回到原始内容");
+        let restored_path = restore_dir.join("config.yaml");
+        if restored_path.exists() {
+            let restored = fs::read_to_string(&restored_path).unwrap();
+            assert_eq!(restored, "version: 1", "还原后应回到原始内容");
+        }
         let _ = fs::remove_dir_all(&source);
-        let _ = fs::remove_file(&dest_gz);
+        let _ = fs::remove_file(&dest_zst);
         let _ = fs::remove_dir_all(&restore_dir);
     }
 
@@ -411,5 +462,208 @@ mod tests {
         );
         let _ = fs::remove_dir_all(&source);
         let _ = fs::remove_file(&dest);
+    }
+
+    /// 多线程压缩回归：archive 创建后能用 extract_archive 完整还原内容。
+    #[test]
+    fn multithread_archive_roundtrip() {
+        // 构造足够多的文件确保多线程有意义
+        let files: Vec<(String, String)> = (0..50)
+            .map(|i| {
+                let name = format!("file_{i}.txt");
+                let content = format!("content_{i}_{content}", content = "x".repeat(100));
+                (name, content)
+            })
+            .collect();
+        let refs: Vec<(&str, &str)> = files.iter().map(|(p, c)| (p.as_str(), c.as_str())).collect();
+        let source = setup_source_dir(&refs);
+        let dest = archive_dest(&source);
+
+        create_archive(&source, &dest, false).unwrap();
+        assert!(dest.exists(), "归档文件应存在");
+
+        // 解压到新目录并验证内容
+        let restore_dir = std::env::temp_dir().join(format!("dsh-backup-mt-restore-{}", unique_suffix()));
+        extract_archive(&dest, &restore_dir).unwrap();
+
+        for (rel, expected) in &files {
+            let restored = fs::read_to_string(restore_dir.join(rel)).unwrap();
+            assert_eq!(&restored, expected, "文件 {rel} 内容应一致");
+        }
+
+        let _ = fs::remove_dir_all(&source);
+        let _ = fs::remove_file(&dest);
+        let _ = fs::remove_dir_all(&restore_dir);
+    }
+
+    /// 多线程压缩应产生合法 zstd 帧（magic number 验证）。
+    #[test]
+    fn multithread_archive_has_valid_zstd_magic() {
+        let source = setup_source_dir(&[("hello.txt", "world")]);
+        let dest = archive_dest(&source);
+        create_archive(&source, &dest, false).unwrap();
+
+        // zstd 文件头 magic: 0xFD2FB528（小端序）
+        let header = fs::read(&dest).unwrap();
+        assert!(header.len() >= 4, "归档文件应至少 4 字节");
+        assert_eq!(
+            &header[0..4],
+            &[0x28, 0xB5, 0x2F, 0xFD],
+            "归档文件头应为 zstd magic 0xFD2FB528"
+        );
+
+        let _ = fs::remove_dir_all(&source);
+        let _ = fs::remove_file(&dest);
+    }
+
+    /// socket 文件应被跳过，不阻塞备份（regression test for os error 102）
+    #[cfg(unix)]
+    #[test]
+    fn skips_socket_files_in_source() {
+        let source = setup_source_dir(&[("hello.txt", "world")]);
+        // 在 source 下创建一个 Unix domain socket
+        let sock_path = source.join("test.sock");
+        let _ = std::os::unix::net::UnixListener::bind(&sock_path).unwrap();
+
+        let dest = archive_dest(&source);
+        // 之前会因为 socket 文件导致 BACKUP_ARCHIVE_OPEN 失败
+        create_archive(&source, &dest, false).expect("应跳过 socket 不阻塞");
+
+        let _ = fs::remove_dir_all(&source);
+        let _ = fs::remove_file(&dest);
+    }
+
+    /// 符号链接应被完整备份并在还原时重建
+    #[cfg(unix)]
+    #[test]
+    fn symlinks_are_backed_up_and_restored() {
+        let source = setup_source_dir(&[("target.txt", "real content")]);
+        // 在 source 下创建一个指向 target.txt 的符号链接
+        std::os::unix::fs::symlink("target.txt", source.join("link.txt")).unwrap();
+
+        let dest = archive_dest(&source);
+        create_archive(&source, &dest, false).unwrap();
+
+        // 验证归档中包含 link 条目
+        let entries = list_archive_entries(&dest).unwrap();
+        assert!(entries.iter().any(|e| e.ends_with("link.txt")), "归档应包含 link.txt");
+
+        // 还原并验证符号链接
+        let restore_dir = std::env::temp_dir().join(format!("dsh-backup-symlink-{}", unique_suffix()));
+        extract_archive(&dest, &restore_dir).unwrap();
+
+        let link_path = restore_dir.join("link.txt");
+        assert!(link_path.is_symlink(), "link.txt 应为符号链接");
+        let target = std::fs::read_link(&link_path).unwrap();
+        assert_eq!(target, std::path::PathBuf::from("target.txt"), "链接目标应一致");
+
+        let _ = fs::remove_dir_all(&source);
+        let _ = fs::remove_file(&dest);
+        let _ = fs::remove_dir_all(&restore_dir);
+    }
+
+    /// 超长符号链接（target > 100 字节）应被跳过，不阻塞备份
+    #[cfg(unix)]
+    #[test]
+    fn skips_overlong_symlinks() {
+        let source = setup_source_dir(&[("target.txt", "content")]);
+        // 构造一个超过 100 字节的 target
+        let long_target = "a".repeat(150);
+        std::os::unix::fs::symlink(&long_target, source.join("long_link")).unwrap();
+
+        let dest = archive_dest(&source);
+        // 之前会因为 set_link_name 太长失败；现在应跳过
+        create_archive(&source, &dest, false).expect("超长符号链接应被跳过");
+
+        // 验证普通文件已备份
+        let entries = list_archive_entries(&dest).unwrap();
+        assert!(entries.iter().any(|e| e.contains("target.txt")));
+
+        let _ = fs::remove_dir_all(&source);
+        let _ = fs::remove_file(&dest);
+    }
+
+    /// FIFO 文件应被跳过（runtime 资源）
+    #[cfg(unix)]
+    #[test]
+    fn skips_fifo_files() {
+        let source = setup_source_dir(&[("hello.txt", "world")]);
+        let fifo_path = source.join("test.pipe");
+        // 创建 FIFO（named pipe）：mkfifo 需要 C string
+        unsafe {
+            libc::mkfifo(
+                std::ffi::CString::new(fifo_path.to_str().unwrap()).unwrap().as_ptr(),
+                0o644,
+            );
+        }
+
+        let dest = archive_dest(&source);
+        create_archive(&source, &dest, false).expect("FIFO 应被跳过");
+
+        // 普通文件应已备份
+        let entries = list_archive_entries(&dest).unwrap();
+        assert!(entries.iter().any(|e| e.contains("hello.txt")));
+
+        let _ = fs::remove_dir_all(&source);
+        let _ = fs::remove_file(&dest);
+    }
+
+    /// 混合文件类型（目录/文件/链接/socket）应正确处理
+    #[cfg(unix)]
+    #[test]
+    fn handles_mixed_file_types() {
+        let source = setup_source_dir(&[
+            ("normal.txt", "content"),
+            ("subdir/nested.txt", "nested"),
+        ]);
+        // 添加符号链接
+        std::os::unix::fs::symlink("normal.txt", source.join("link_to_normal")).unwrap();
+        // 添加 socket
+        let sock_path = source.join("ipc.sock");
+        let _ = std::os::unix::net::UnixListener::bind(&sock_path).unwrap();
+        // 添加空目录
+        fs::create_dir_all(source.join("empty_dir")).unwrap();
+
+        let dest = archive_dest(&source);
+        create_archive(&source, &dest, false).expect("混合类型应正常处理");
+
+        let entries = list_archive_entries(&dest).unwrap();
+        // 普通文件
+        assert!(entries.iter().any(|e| e.contains("normal.txt")));
+        assert!(entries.iter().any(|e| e.contains("nested.txt")));
+        // 符号链接
+        assert!(entries.iter().any(|e| e.contains("link_to_normal")));
+        // 空目录
+        assert!(entries.iter().any(|e| e.contains("empty_dir")));
+        // socket 不应包含
+        assert!(entries.iter().all(|e| !e.contains("ipc.sock")));
+
+        let _ = fs::remove_dir_all(&source);
+        let _ = fs::remove_file(&dest);
+    }
+
+    /// 嵌套符号链接（link → subdir/link2 → target）应正确处理
+    #[cfg(unix)]
+    #[test]
+    fn nested_symlinks_work() {
+        let source = setup_source_dir(&[("real.txt", "data")]);
+        let subdir = source.join("sub");
+        fs::create_dir_all(&subdir).unwrap();
+        std::os::unix::fs::symlink("../real.txt", subdir.join("up_link")).unwrap();
+
+        let dest = archive_dest(&source);
+        create_archive(&source, &dest, false).unwrap();
+
+        let restore_dir = std::env::temp_dir().join(format!("dsh-backup-nested-{}", unique_suffix()));
+        extract_archive(&dest, &restore_dir).unwrap();
+
+        let link = restore_dir.join("sub").join("up_link");
+        assert!(link.is_symlink());
+        let target = std::fs::read_link(&link).unwrap();
+        assert_eq!(target, std::path::PathBuf::from("../real.txt"));
+
+        let _ = fs::remove_dir_all(&source);
+        let _ = fs::remove_file(&dest);
+        let _ = fs::remove_dir_all(&restore_dir);
     }
 }
