@@ -70,6 +70,9 @@ pub fn setup(app_handle: tauri::AppHandle) {
     // 启动进程监控（tick 检测 dsh 服务状态）
     crate::service::scheduler::start(&app_handle);
 
+    // 应用启动：若开启了「启动时备份」，标记待执行
+    crate::service::backup::schedule::mark_startup_pending(&app_handle);
+
     // 开机自启动：已安装且开启 auto_start 时拉起服务
     let app_for_start = app_handle.clone();
     tauri::async_runtime::spawn(async move {

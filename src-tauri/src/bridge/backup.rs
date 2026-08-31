@@ -17,14 +17,19 @@ pub async fn backup_profile(
     include_credentials: bool,
 ) -> Result<backup::BackupInfo, String> {
     let app = app_handle.clone();
-    tauri::async_runtime::spawn_blocking(move || {
+    let result = tauri::async_runtime::spawn_blocking(move || {
         backup::create_backup(
             &app,
             backup::BackupOptions { include_credentials },
         )
     })
     .await
-    .map_err(|e| format!("BACKUP_TASK: {e}"))?
+    .map_err(|e| format!("BACKUP_TASK: {e}"))?;
+    match &result {
+        Ok(info) => log::info!("[backup] 创建成功: {} ({} bytes)", info.timestamp, info.size),
+        Err(e) => log::error!("[backup] 创建失败: {e}"),
+    }
+    result
 }
 
 /// 从指定备份还原。

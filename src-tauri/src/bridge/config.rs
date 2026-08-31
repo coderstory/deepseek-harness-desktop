@@ -133,8 +133,8 @@ pub async fn update_app_config(
             setting.backup_include_credentials = include;
         }
     });
-    // 配置变化后，若开启了「配置变化时备份」，标记待执行（由 scheduler tick 去抖后执行）
-    crate::service::backup::schedule::mark_config_changed(&app_handle);
+    // 注意：「配置变化时备份」不在此处触发——它在 clone_profile / restore_profile
+    // 真正修改 profile 内容时才触发（见 bridge/profile.rs）
     Ok(setting)
 }
 
