@@ -29,6 +29,7 @@
   "preinstall.recommend": "推荐",
   "preinstall.fix": "修复",
   "preinstall.installed": "已安装",
+  "preinstall.to_uninstall": "待卸载",
   "preinstall.confirm": "确定",
   "preinstall.skip": "跳过",
   "preinstall.installing": "正在安装插件...",
