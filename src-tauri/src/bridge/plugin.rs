@@ -19,12 +19,36 @@ pub async fn get_preinstall_plugins(
 
 /// 安装选中的预装插件（`dsh plugin --profile web add <ids...>`），
 /// 进程输出实时通过 `preinstall-log` 事件推送；成功后标记引导完成并记录预设指纹。
+///
+/// 同时支持卸载用户取消勾选的已安装插件（`uninstall_ids`）：走离线精准卸载
+/// （`plugin::uninstall_recovery`，直接改 profile 清单），不依赖网络。
 #[tauri::command]
 pub async fn install_preinstall_plugins(
     app_handle: AppHandle,
-    ids: Vec<String>,
+    install_ids: Vec<String>,
+    uninstall_ids: Vec<String>,
 ) -> Result<(), String> {
-    plugin::install(&app_handle, &ids).await?;
+    // 安装与卸载均为空：无需操作，直接标记完成
+    if install_ids.is_empty() && uninstall_ids.is_empty() {
+        let mut setting = config::get_store_dat_setting(&app_handle);
+        setting.preinstall_done = true;
+        if let Some(hash) = plugin::current_preset_hash(&app_handle) {
+            setting.preset_hash = Some(hash);
+        }
+        config::set_store_dat_setting(&app_handle, setting);
+        return Ok(());
+    }
+
+    // 先安装新勾选的插件（会停止服务、走 dsh plugin add）
+    if !install_ids.is_empty() {
+        plugin::install(&app_handle, &install_ids).await?;
+    }
+
+    // 再卸载取消勾选的已安装插件（离线精准，不依赖网络）
+    for id in &uninstall_ids {
+        plugin::uninstall_recovery(&app_handle, id)?;
+    }
+
     let mut setting = config::get_store_dat_setting(&app_handle);
     setting.preinstall_done = true;
     if let Some(hash) = plugin::current_preset_hash(&app_handle) {

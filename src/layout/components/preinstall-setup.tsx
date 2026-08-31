@@ -19,41 +19,58 @@ import { toast } from '@/utils/toast'
  * 或跳过；两者都会标记完成并继续启动服务。
  */
 
-/** 派生默认勾选集合：未安装的推荐/修复/默认勾选项（用户手动调整前的基础态） */
-function defaultSelectedSet(plugins: readonly PreinstallPlugin[]): Set<string> {
-  return new Set(plugins.filter(p => !p.installed && (p.recommended || p.fix || p.defaultChecked)).map(p => p.id))
+/**
+ * 初始勾选态 = 已安装 + 推荐/修复/默认勾选（进入页面时的完整勾选集合）。
+ * 用于和用户最终选择做 diff，得出 toInstall / toUninstall。
+ */
+function initialCheckedSet(plugins: readonly PreinstallPlugin[]): Set<string> {
+  return new Set(plugins.filter(p => p.installed || p.recommended || p.fix || p.defaultChecked).map(p => p.id))
 }
 
-/** 插件列表的一行：名称 + 推荐/已安装标签在左，勾选框 + 仓库跳转按钮在右 */
-function PluginRow({ plugin, checked, disabled, onToggle, onOpenRepo }: {
+/** 插件列表的一行：名称 + 推荐/已安装/待卸载标签在左，勾选框 + 仓库跳转按钮在右 */
+function PluginRow({ plugin, checked, toUninstall, disabled, onToggle, onOpenRepo }: {
   plugin: PreinstallPlugin
   checked: boolean
+  /** 已安装但被取消勾选 → 待卸载（删除线 + 警告 chip） */
+  toUninstall: boolean
   disabled: boolean
   onToggle: (id: string, checked: boolean) => void
   onOpenRepo: (id: string) => void
 }) {
   const { t } = useTranslation()
 
+  // 已安装且未被取消勾选 → 保持「已安装」样式；已安装但取消勾选 → 待卸载样式
+  const labelClass = toUninstall
+    ? 'text-muted line-through'
+    : plugin.installed
+      ? 'text-success'
+      : 'text-ink'
+
   return (
     <Item
       left={(
         <>
-          <Label className={`min-w-0 truncate text-sm font-medium ${plugin.installed ? 'text-muted line-through' : 'text-ink'}`}>
+          <Label className={`min-w-0 truncate text-sm font-medium ${labelClass}`}>
             {plugin.name}
           </Label>
-          <If cond={plugin.recommended && !plugin.installed}>
+          <If cond={plugin.recommended && !plugin.installed && !toUninstall}>
             <Chip size="sm" variant="soft" color="success" className="shrink-0 font-medium">
               {t('preinstall.recommend')}
             </Chip>
           </If>
-          <If cond={plugin.fix && !plugin.installed}>
+          <If cond={plugin.fix && !plugin.installed && !toUninstall}>
             <Chip size="sm" variant="soft" color="warning" className="shrink-0 font-medium">
               {t('preinstall.fix')}
             </Chip>
           </If>
-          <If cond={plugin.installed}>
+          <If cond={plugin.installed && !toUninstall}>
             <Chip size="sm" variant="soft" color="success" className="shrink-0 font-medium">
               {t('preinstall.installed')}
+            </Chip>
+          </If>
+          <If cond={toUninstall}>
+            <Chip size="sm" variant="soft" color="warning" className="shrink-0 font-medium">
+              {t('preinstall.to_uninstall')}
             </Chip>
           </If>
         </>
@@ -61,8 +78,8 @@ function PluginRow({ plugin, checked, disabled, onToggle, onOpenRepo }: {
       right={(
         <>
           <Checkbox
-            isSelected={checked || plugin.installed}
-            isDisabled={disabled || plugin.installed}
+            isSelected={checked}
+            isDisabled={disabled}
             onChange={isSelected => onToggle(plugin.id, isSelected)}
             className="shrink-0"
             aria-label={plugin.name}
@@ -138,18 +155,18 @@ export function PreinstallSetup() {
     void store.harness.loadPreinstallPlugins()
   }, [])
 
-  // 默认勾选：未安装的推荐插件 +「修复」类项 + 无 chip 但标记默认勾选的项（如 dsh-notification）。
+  // 默认勾选：已安装 + 未安装的推荐插件 +「修复」类项 + 无 chip 但标记默认勾选的项（如 dsh-notification）。
   // 派生计算而非在加载回调里 setState，避免与 store 的加载去重守卫竞争，
   // 保证插件到位后默认勾选必定生效（用户手动调整后以用户选择为准）。
   const effectiveSelected = !touched
-    ? defaultSelectedSet(preinstall.plugins)
+    ? initialCheckedSet(preinstall.plugins)
     : selected
 
   function toggle(id: string, checked: boolean) {
     // 首次交互以「当前默认勾选」为起点：selected 初始为空，若直接在其上增删，
-    // 取消一个会误把其余默认项一并取消。这里先以 defaultSelectedSet 播种，
+    // 取消一个会误把其余默认项一并取消。这里先以 initialCheckedSet 播种，
     // 再应用本次勾选，保证「取消一个 = 只取消这一个」。
-    const seed = !touched ? defaultSelectedSet(preinstall.plugins) : null
+    const seed = !touched ? initialCheckedSet(preinstall.plugins) : null
     setTouched(true)
     setSelected((prev) => {
       const next = new Set(seed ?? prev)
@@ -170,16 +187,22 @@ export function PreinstallSetup() {
   }
 
   function handleConfirm() {
-    void store.harness.confirmPreinstall([...effectiveSelected])
+    // diff：与初始勾选态（已安装 + 推荐默认勾选）比对，得出需安装/需卸载的两个集合
+    const originalSet = initialCheckedSet(preinstall.plugins)
+    const toInstall = [...effectiveSelected].filter(id => !originalSet.has(id))
+    const toUninstall = [...originalSet].filter(id => !effectiveSelected.has(id))
+    void store.harness.confirmPreinstall({ installIds: toInstall, uninstallIds: toUninstall })
   }
 
   function handleSkip() {
     void store.harness.skipPreinstall()
   }
 
-  // 可选中的插件（未安装项）勾选数，用于禁用"确定"
-  const selectableCount = preinstall.plugins.filter(p => !p.installed).length
-  const selectedCount = [...effectiveSelected].filter(id => preinstall.plugins.some(p => p.id === id && !p.installed)).length
+  // 是否有变更（安装或卸载）：与初始勾选态比对，任一非空即启用"确定"
+  const originalSet = initialCheckedSet(preinstall.plugins)
+  const toInstallCount = [...effectiveSelected].filter(id => !originalSet.has(id)).length
+  const toUninstallCount = [...originalSet].filter(id => !effectiveSelected.has(id)).length
+  const hasChanges = toInstallCount > 0 || toUninstallCount > 0
   const installing = preinstall.installing
 
   return (
@@ -227,16 +250,22 @@ export function PreinstallSetup() {
                           <Empty>{t('preinstall.empty')}</Empty>
                         )}
                       >
-                        {preinstall.plugins.map(plugin => (
-                          <PluginRow
-                            key={plugin.id}
-                            plugin={plugin}
-                            checked={effectiveSelected.has(plugin.id)}
-                            disabled={installing}
-                            onToggle={toggle}
-                            onOpenRepo={openRepo}
-                          />
-                        ))}
+                        {preinstall.plugins.map((plugin) => {
+                          const checked = effectiveSelected.has(plugin.id)
+                          // 已安装但用户取消勾选 → 待卸载
+                          const toUninstall = plugin.installed && !checked
+                          return (
+                            <PluginRow
+                              key={plugin.id}
+                              plugin={plugin}
+                              checked={checked}
+                              toUninstall={toUninstall}
+                              disabled={installing}
+                              onToggle={toggle}
+                              onOpenRepo={openRepo}
+                            />
+                          )
+                        })}
                       </If>
                     </If>
                   </div>
@@ -251,7 +280,7 @@ export function PreinstallSetup() {
                       size="sm"
                       variant="primary"
                       onPress={handleConfirm}
-                      isDisabled={installing || selectedCount === 0 || selectableCount === 0}
+                      isDisabled={installing || !hasChanges}
                     >
                       {t('preinstall.confirm')}
                     </Button>
@@ -277,7 +306,7 @@ export function PreinstallSetup() {
                     size="sm"
                     variant="primary"
                     onPress={handleConfirm}
-                    isDisabled={installing || selectedCount === 0 || selectableCount === 0}
+                    isDisabled={installing || !hasChanges}
                   >
                     {t('app.retry')}
                   </Button>
