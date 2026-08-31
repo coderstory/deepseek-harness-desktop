@@ -331,7 +331,6 @@ export function ConfigPlugin() {
                       <If cond={!plugin.disabled}>
                         <Chip
                           className={actionChip({ busy: !!busy })}
-                          variant="tertiary"
                           size="sm"
                           onClick={() => onDisable(plugin.id)}
                         >
