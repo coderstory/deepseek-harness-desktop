@@ -1,0 +1,20 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/GodpClient.java
+  s_9157f7d2adb1f2::t_976d9917bca69b 26-28
+  s_9157f7d2adb1f2::t_fe9f8d97c4e026 105,136
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "44ed3ae912853346992fdb4fbeb823590978a788",
+  "prompts": {},
+  "sessions": {
+    "s_9157f7d2adb1f2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2cb2f356-421e-4597-a578-a095b31d174c",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
