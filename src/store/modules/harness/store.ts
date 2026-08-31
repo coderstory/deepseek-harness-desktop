@@ -75,9 +75,11 @@ const restartFlight = new SingleFlight<void>()
 const iframeReloadGate = new BoundedReloadGate(3)
 let iframeRefreshTimer: ReturnType<typeof setTimeout> | undefined
 
-/** 构建带时间戳的 iframe URL，避免 WebView2 缓存旧页面。
+/**
+ * 构建带时间戳的 iframe URL，避免 WebView2 缓存旧页面。
  * alpha 鉴权由启动前的桌面端 patch 处理，iframe 永远不携带启动 token；旧核心
- * 同样继续使用原有的缓存查询参数。 */
+ * 同样继续使用原有的缓存查询参数。
+ */
 function generateTimestampedUrl(baseUrl: string): string {
   const timestamp = Date.now()
   const separator = baseUrl.includes('?') ? '&' : '?'

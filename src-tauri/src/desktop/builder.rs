@@ -624,6 +624,9 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
                         // 同时回退到 Regular 策略：on_window_hidden 已切到 Accessory，
                         // hide 失败意味着应用实际未隐藏，若不恢复 Regular 会丢失 Dock
                         // 与 Cmd-Tab 入口。
+                        // hide 失败意味着应用仍停留在 Accessory（on_window_hidden
+                        // 已提前切过去），可见窗口配合消失的 Dock/⌘-Tab 会让用户
+                        // 无法将应用拉回前台，故这里必须切回 regular 恢复 Dock。
                         crate::desktop::activation::set_regular_policy(window.app_handle());
                         log::error!("[activation] APP_HIDE_FAILED: {error}");
                     }
