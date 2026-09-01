@@ -225,9 +225,18 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
             let _ = fs::remove_file(&dest_path);
         }
 
-        entry
-            .unpack(&dest_path)
-            .map_err(|e| format!("BACKUP_EXTRACT_UNPACK: {e}"))?;
+        match entry.unpack(&dest_path) {
+            Ok(_) => {}
+            Err(e) => {
+                let dest_display = dest_path.display();
+                let path_display = path.display();
+                let entry_size = entry.header().size().unwrap_or(0);
+                let entry_type = entry.header().entry_type();
+                return Err(format!(
+                    "BACKUP_EXTRACT_UNPACK: {e} (path={path_display}, dest={dest_display}, size={entry_size}, type={entry_type:?})"
+                ));
+            }
+        }
     }
     Ok(())
 }
