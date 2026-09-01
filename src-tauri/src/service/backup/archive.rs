@@ -218,17 +218,45 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
                 .map_err(|e| format!("BACKUP_EXTRACT_MKDIR_PARENT: {e}"))?;
         }
 
-        // 手动 read_to_end + fs::write 替代 entry.unpack：
-        // 1. 避免 tar crate 的 set_perms/set_ownerships/set_mtime 等额外步骤失败
-        // 2. 文件被其他进程以读模式锁住时，unlink + write 能绕过（macOS 上 unlink 不要求文件关闭）
-        if dest_path.exists() && !dest_path.is_dir() {
-            let _ = fs::remove_file(&dest_path);
+        // 根据 entry type 分支处理（替代 entry.unpack 避免 macOS tar bug）
+        let entry_type = entry.header().entry_type();
+        if entry_type.is_dir() {
+            // 目录：直接创建
+            fs::create_dir_all(&dest_path)
+                .map_err(|e| format!("BACKUP_EXTRACT_MKDIR: {e} (path={})", path.display()))?;
         }
-        let mut content = Vec::new();
-        std::io::Read::read_to_end(&mut entry, &mut content)
-            .map_err(|e| format!("BACKUP_EXTRACT_READ: {e} (path={})", path.display()))?;
-        fs::write(&dest_path, &content)
-            .map_err(|e| format!("BACKUP_EXTRACT_WRITE: {e} (path={}, dest={})", path.display(), dest_path.display()))?;
+        else if entry_type.is_symlink() {
+            // 符号链接：读取 target 并创建链接
+            let target = entry
+                .link_name()
+                .map_err(|e| format!("BACKUP_EXTRACT_LINK_NAME: {e} (path={})", path.display()))?
+                .ok_or_else(|| format!("BACKUP_EXTRACT_NO_LINK_NAME: {path:?}"))?;
+            if let Some(parent) = dest_path.parent() {
+                let _ = fs::create_dir_all(parent);
+            }
+            if let Err(e) = std::os::unix::fs::symlink(&target, &dest_path) {
+                // 链接已存在则跳过（与原文件冲突）
+                if e.kind() != std::io::ErrorKind::AlreadyExists {
+                    return Err(format!(
+                        "BACKUP_EXTRACT_SYMLINK: {e} (target={}, dest={})",
+                        target.display(), dest_path.display()
+                    ));
+                }
+            }
+        }
+        else {
+            // 普通文件/其他：手动 read_to_end + fs::write
+            // 1. 避免 tar crate 的 set_perms/set_ownerships/set_mtime 在 macOS 上失败
+            // 2. 文件被其他进程读锁时，unlink + write 能绕过
+            if dest_path.exists() && !dest_path.is_dir() {
+                let _ = fs::remove_file(&dest_path);
+            }
+            let mut content = Vec::new();
+            std::io::Read::read_to_end(&mut entry, &mut content)
+                .map_err(|e| format!("BACKUP_EXTRACT_READ: {e} (path={})", path.display()))?;
+            fs::write(&dest_path, &content)
+                .map_err(|e| format!("BACKUP_EXTRACT_WRITE: {e} (path={}, dest={})", path.display(), dest_path.display()))?;
+        }
     }
     Ok(())
 }
