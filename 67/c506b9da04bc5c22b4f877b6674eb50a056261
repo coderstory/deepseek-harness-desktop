@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/cache/MolitAuthCache.java
+  s_0d93490fb79261::t_a620805861ca31 18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "67c506b9da04bc5c22b4f877b6674eb50a056261",
+  "prompts": {},
+  "sessions": {
+    "s_0d93490fb79261": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6214671f-717e-4a7a-8e10-d3aa95d0edbd",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
