@@ -1,5 +1,5 @@
 import { ArrowLeft, Delete } from '@gravity-ui/icons'
-import { Button, Checkbox, Chip, Description, Input, Label, Spinner, Switch } from '@heroui/react'
+import { Button, Checkbox, Chip, Description, Label, Spinner } from '@heroui/react'
 import { useOverlay } from '@overlastic/react'
 import { invoke } from '@tauri-apps/api/core'
 import { useState } from 'react'
@@ -8,8 +8,6 @@ import { If } from 'react-if-lite'
 import { store } from '@/store'
 import { toast } from '@/utils/toast'
 import { useBackups } from '../hooks/use-backup'
-import { normalizeIntervalDays, normalizeRetentionCount } from '../utils/backup-settings'
-import { useAppConfig } from './../hooks/use-app-config'
 import { Item } from './item'
 import { Modal } from './modal'
 import { PanelHeader } from './panel-header'
@@ -26,8 +24,7 @@ function formatSize(bytes: number): string {
 
 export function ConfigBackup({ onBack }: ConfigBackupProps) {
   const { t } = useTranslation()
-  const { backups, loading, error, createBackup, restoreBackup, deleteBackup, updateAutoBackupSettings, busy, creating, restoring, deleting } = useBackups()
-  const { data: config } = useAppConfig()
+  const { backups, loading, error, createBackup, restoreBackup, deleteBackup, busy, creating, restoring, deleting } = useBackups()
   const [dialogHolder, openDialog] = useOverlay(Modal, { type: 'holder' })
 
   const [includeCredentials, setIncludeCredentials] = useState(false)
@@ -257,84 +254,6 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
           </div>
         </If>
       </PanelState>
-
-      {/* 自动备份设置 */}
-      <PanelHeader title={t('backup.auto_section')} description="" />
-      <div className="flex flex-col gap-4">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-ink">{t('backup.auto_enable')}</span>
-          <Switch
-            isSelected={config?.auto_backup_enabled ?? false}
-            onChange={value => updateAutoBackupSettings({ autoBackupEnabled: value })}
-            size="sm"
-          >
-            <Switch.Content>
-              <Switch.Control>
-                <Switch.Thumb />
-              </Switch.Control>
-            </Switch.Content>
-          </Switch>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-ink">
-            {t('backup.auto_interval_label')}
-          </span>
-          <Input
-            key={config ? String(config.auto_backup_interval_days) : 'loading-interval'}
-            type="number"
-            variant="secondary"
-            min={1}
-            max={90}
-            defaultValue={String(config?.auto_backup_interval_days ?? 7)}
-            onBlur={e => updateAutoBackupSettings({ autoBackupIntervalDays: normalizeIntervalDays(e.target.value) })}
-            className="w-[80px]"
-          />
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-ink">{t('backup.auto_startup')}</span>
-          <Switch
-            isSelected={config?.auto_backup_on_startup ?? false}
-            onChange={value => updateAutoBackupSettings({ autoBackupOnStartup: value })}
-            size="sm"
-          >
-            <Switch.Content>
-              <Switch.Control>
-                <Switch.Thumb />
-              </Switch.Control>
-            </Switch.Content>
-          </Switch>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-ink">{t('backup.auto_change')}</span>
-          <Switch
-            isSelected={config?.auto_backup_on_change ?? false}
-            onChange={value => updateAutoBackupSettings({ autoBackupOnChange: value })}
-            size="sm"
-          >
-            <Switch.Content>
-              <Switch.Control>
-                <Switch.Thumb />
-              </Switch.Control>
-            </Switch.Content>
-          </Switch>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-ink">
-            {t('backup.auto_retention')}
-            <span className="ml-1 text-muted">{t('backup.auto_retention_suffix')}</span>
-          </span>
-          <Input
-            key={config ? String(config.backup_retention_count) : 'loading-retention'}
-            type="number"
-            variant="secondary"
-            min={1}
-            max={50}
-            defaultValue={String(config?.backup_retention_count ?? 10)}
-            onBlur={e => updateAutoBackupSettings({ backupRetentionCount: normalizeRetentionCount(e.target.value) })}
-            className="w-[80px]"
-          />
-        </div>
-      </div>
 
       {dialogHolder}
     </div>

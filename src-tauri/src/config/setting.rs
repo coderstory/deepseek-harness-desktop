@@ -56,19 +56,7 @@ pub struct Setting {
     /// 默认，严格 enum 的一个意外值会连带清空端口/语言/档案等全部设置。
     #[serde(default = "default_close_action")]
     pub close_action: String,
-    /// 是否启用自动备份。
-    #[serde(default)]
-    pub auto_backup_enabled: bool,
-    /// 自动备份间隔（天）。
-    #[serde(default = "default_auto_backup_interval_days")]
-    pub auto_backup_interval_days: u32,
-    /// 是否在每次启动时自动备份。
-    #[serde(default)]
-    pub auto_backup_on_startup: bool,
-    /// 是否在配置变化时自动备份。
-    #[serde(default)]
-    pub auto_backup_on_change: bool,
-    /// 最多保留备份份数。
+    /// 保留备份份数（手动备份触发裁剪）。
     #[serde(default = "default_backup_retention_count")]
     pub backup_retention_count: u32,
     /// 备份是否包含凭据文件（`.credentials.yaml`）。
@@ -100,11 +88,6 @@ pub fn default_close_action() -> String {
     "tray".to_string()
 }
 
-/// 自动备份默认间隔：7 天。
-pub fn default_auto_backup_interval_days() -> u32 {
-    7
-}
-
 /// 默认保留备份份数：10 份。
 pub fn default_backup_retention_count() -> u32 {
     10
@@ -131,32 +114,19 @@ pub fn normalize_zoom_factor(value: f64) -> f64 {
     (clamped * steps_per_unit).round() / steps_per_unit
 }
 
-/// 归一化自动备份设置：把间隔和保留份数限制在有效范围内。
-///
-/// - `interval_days` 限制在 [1, 90]，未知/越界回落默认 7。
-/// - `retention_count` 限制在 [1, 50]，未知/越界回落默认 10。
-pub fn normalize_backup_settings(interval_days: u32, retention_count: u32) -> (u32, u32) {
-    let interval = if interval_days == 0 || interval_days > 90 {
-        default_auto_backup_interval_days()
-    } else {
-        interval_days
-    };
-    let retention = if retention_count == 0 || retention_count > 50 {
+/// 归一化保留份数到有效范围 [1, 50]，未知/越界回落默认 10。
+pub fn normalize_backup_retention(retention_count: u32) -> u32 {
+    if retention_count == 0 || retention_count > 50 {
         default_backup_retention_count()
-    } else {
+    }
+    else {
         retention_count
-    };
-    (interval, retention)
+    }
 }
 
-/// 把 Setting 的备份字段归一化到有效范围。
+/// 把 Setting 的保留份数字段归一化到有效范围。
 fn normalize_backup_fields(setting: &mut Setting) {
-    let (interval, retention) = normalize_backup_settings(
-        setting.auto_backup_interval_days,
-        setting.backup_retention_count,
-    );
-    setting.auto_backup_interval_days = interval;
-    setting.backup_retention_count = retention;
+    setting.backup_retention_count = normalize_backup_retention(setting.backup_retention_count);
 }
 
 /// 默认服务端口：debug 构建与生产隔离，避免开发时与已运行的桌面端争用 3080。
@@ -186,10 +156,6 @@ impl Default for Setting {
             manual_port: None,
             zoom_factor: default_zoom_factor(),
             close_action: default_close_action(),
-            auto_backup_enabled: false,
-            auto_backup_interval_days: default_auto_backup_interval_days(),
-            auto_backup_on_startup: false,
-            auto_backup_on_change: false,
             backup_retention_count: default_backup_retention_count(),
             backup_include_credentials: false,
         }

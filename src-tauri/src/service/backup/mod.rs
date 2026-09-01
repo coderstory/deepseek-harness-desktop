@@ -5,7 +5,6 @@
 
 pub mod archive;
 pub mod retention;
-pub mod schedule;
 
 use std::fs;
 use std::path::{Path, PathBuf};

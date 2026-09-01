@@ -65,9 +65,8 @@ pub async fn get_app_config(app_handle: AppHandle) -> Result<config::Setting, St
 /// （`tray` = 隐藏到托盘，`quit` = 退出应用）；取值收敛由 `update_store_dat_setting`
 /// 内的 `normalize_close_action` 统一负责，此处不做二次校验以免白名单漂移。
 ///
-/// 备份字段（auto_backup_enabled / auto_backup_interval_days / auto_backup_on_startup /
-/// auto_backup_on_change / backup_retention_count / backup_include_credentials）由前端
-/// 设置页「自动备份」区写入，归一化由 `normalize_backup_fields` 统一负责。
+/// 备份字段（backup_retention_count / backup_include_credentials）由前端
+/// 设置页写入，归一化由 `normalize_backup_fields` 统一负责。
 #[tauri::command]
 pub async fn update_app_config(
     app_handle: AppHandle,
@@ -75,10 +74,6 @@ pub async fn update_app_config(
     auto_start: Option<bool>,
     cli_link_enabled: Option<bool>,
     close_action: Option<String>,
-    auto_backup_enabled: Option<bool>,
-    auto_backup_interval_days: Option<u32>,
-    auto_backup_on_startup: Option<bool>,
-    auto_backup_on_change: Option<bool>,
     backup_retention_count: Option<u32>,
     backup_include_credentials: Option<bool>,
 ) -> Result<config::Setting, String> {
@@ -112,20 +107,6 @@ pub async fn update_app_config(
         if let Some(action) = close_action {
             setting.close_action = action;
         }
-        // 备份字段：归一化（interval/retention 限幅）由 update_store_dat_setting
-        // 内部的 normalize_backup_fields 统一负责，此处原样写入。
-        if let Some(enabled) = auto_backup_enabled {
-            setting.auto_backup_enabled = enabled;
-        }
-        if let Some(days) = auto_backup_interval_days {
-            setting.auto_backup_interval_days = days;
-        }
-        if let Some(on_startup) = auto_backup_on_startup {
-            setting.auto_backup_on_startup = on_startup;
-        }
-        if let Some(on_change) = auto_backup_on_change {
-            setting.auto_backup_on_change = on_change;
-        }
         if let Some(count) = backup_retention_count {
             setting.backup_retention_count = count;
         }
@@ -133,8 +114,6 @@ pub async fn update_app_config(
             setting.backup_include_credentials = include;
         }
     });
-    // 注意：「配置变化时备份」不在此处触发——它在 clone_profile / restore_profile
-    // 真正修改 profile 内容时才触发（见 bridge/profile.rs）
     Ok(setting)
 }
 
