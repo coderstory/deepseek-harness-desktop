@@ -35,12 +35,13 @@ pub fn should_trigger(
     setting: &config::Setting,
     now: time::OffsetDateTime,
 ) -> bool {
-    if !setting.auto_backup_enabled {
-        return false;
-    }
     // 启动触发：每次进程启动时由 mark_startup_pending 设置的标志
+    // 独立判断——用户明确开启「启动时备份」时应生效，不受主开关阻塞
     if state.pending_startup_backup && setting.auto_backup_on_startup {
         return true;
+    }
+    if !setting.auto_backup_enabled {
+        return false;
     }
     // 周期触发：距上次备份已达到间隔天数
     if setting.auto_backup_interval_days > 0 {
