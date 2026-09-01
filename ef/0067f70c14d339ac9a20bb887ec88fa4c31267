@@ -1,0 +1,19 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_f36053c86daf47::t_3017d4afe2a2e1 210-213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ef0067f70c14d339ac9a20bb887ec88fa4c31267",
+  "prompts": {},
+  "sessions": {
+    "s_f36053c86daf47": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fc64a8ba-98bd-4c6e-9e28-918d9d8ed152",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
