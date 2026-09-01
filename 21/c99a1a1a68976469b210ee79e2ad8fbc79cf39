@@ -1,0 +1,280 @@
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+.claude/settings.json
+  s_fb52b699f7e50b::t_719704d947413a 3
+  s_fb52b699f7e50b::t_a355632d345cce 4
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/service/data/mdm_parts/GetMdmPartsInput.java
+  s_fb52b699f7e50b::t_719704d947413a 24-26,74-76
+doc/八月需求/客档API/场景客档_upsert_保存。YApi高效易用功能强大的可视化接口管理平台_20260811162141.md
+  s_fb52b699f7e50b::t_719704d947413a 1-191
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_fb52b699f7e50b::t_719704d947413a 1-155
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-456
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.zh-CN.properties
+  s_fb52b699f7e50b::t_e16c723fd44d4c 22
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/SparePartHelperTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-119
+doc/modules/07-C06-svc-delivery.md
+  s_fb52b699f7e50b::t_719704d947413a 58
+tc_test/runner.py
+  s_fb52b699f7e50b::t_719704d947413a 1-99
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_fb52b699f7e50b::t_719704d947413a 17,28-29,55,490-512,1001-1004
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceOrderPartMapper.xml
+  s_fb52b699f7e50b::t_719704d947413a 10,75,81
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-435
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsInput.java
+  s_fb52b699f7e50b::t_719704d947413a 20,22,25-36
+  s_fb52b699f7e50b::t_159ce5afe9a764 37
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ClaimLabourHourRateDTO.java
+  s_fb52b699f7e50b::t_719704d947413a 1-58
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+doc/八月需求/5.4-Nacos配置-UAT.md
+  s_fb52b699f7e50b::t_719704d947413a 1-100
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-319
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimClientTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-300
+C00-svc-base/svc-core-base/pom.xml
+  s_fb52b699f7e50b::t_719704d947413a 211-217
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetSvcDealerHourPriceResp.java
+  s_fb52b699f7e50b::t_719704d947413a 56-64,176-183
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_fb52b699f7e50b::t_719704d947413a 22,46-47,50-51,70-100
+  s_fb52b699f7e50b::t_5bd573f6623519 101
+AGENTS.md
+  s_fb52b699f7e50b::t_719704d947413a 38
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/error/appointment-common-error.zh-CN.properties
+  s_fb52b699f7e50b::t_719704d947413a 1-10
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/GetDealerPartPriceMapParam.java
+  s_fb52b699f7e50b::t_719704d947413a 21-23,32-38
+  s_fb52b699f7e50b::t_0517b01856398a 39
+doc/八月需求/5.3技术方案-客户隐私信息存客档.md
+  s_fb52b699f7e50b::t_719704d947413a 1-290
+doc/八月需求/swagger/5.4-swagger-merged.json
+  s_fb52b699f7e50b::t_719704d947413a 1-623
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_fb52b699f7e50b::t_719704d947413a 48-49
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.zh-CN.properties
+  s_fb52b699f7e50b::t_719704d947413a 14-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.th-TH.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/test/XstartupTestInitializer.java
+  s_fb52b699f7e50b::t_719704d947413a 1,3,5-6,9-12,14-16,18-20,22,24,26-33,35-43,45-46
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_fb52b699f7e50b::t_719704d947413a 8,15,21-25,342,441,447,493,652,672,683-685,717-720,732,746,761,775,843,912,971-975,992,1001-1002,1014-1024,1034-1037,1062,1079,1112-1137,1141-1175
+  s_fb52b699f7e50b::t_4d68c493e1bc79 1176-1177
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_fb52b699f7e50b::t_719704d947413a 200-206,263-265,272-275,279
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.fr-FR.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/SparePartHelper.java
+  s_fb52b699f7e50b::t_719704d947413a 57-60
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceQbWarrantyTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-342
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplQueryViewTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-187
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.uz-UZ.properties
+  s_fb52b699f7e50b::t_719704d947413a 17-18
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.en-US.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+doc/八月需求/PRD-v1.6-差距分析.md
+  s_fb52b699f7e50b::t_719704d947413a 1-227
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-607
+doc/八月需求/v1.6-Nacos新增配置清单-PROD.md
+  s_fb52b699f7e50b::t_719704d947413a 1-62
+doc/八月需求/客档API/场景客档分页查询无子表。YApi高效易用功能强大的可视化接口管理平台_20260811162821.md
+  s_fb52b699f7e50b::t_719704d947413a 1-165
+C03-svc-reception/svc-core-reception/pom.xml
+  s_fb52b699f7e50b::t_719704d947413a 147
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/DealerPartPriceDto.java
+  s_fb52b699f7e50b::t_719704d947413a 24-31,71-86
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-341
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+"doc/八月需求/5.3后端开发任务清单 (敏捷故事).md"
+  s_fb52b699f7e50b::t_719704d947413a 1-57
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_fb52b699f7e50b::t_719704d947413a 111-128
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_fb52b699f7e50b::t_719704d947413a 40,55-58
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/ESignatureHelperTest.java
+  s_fb52b699f7e50b::t_719704d947413a 34-35,41,89
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceParam.java
+  s_fb52b699f7e50b::t_719704d947413a 23-25,34-40
+  s_fb52b699f7e50b::t_a284660b805802 41
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/SvcServiceOrderPartPut.java
+  s_fb52b699f7e50b::t_719704d947413a 6,43-50,161-175
+  s_fb52b699f7e50b::t_8fe1c59e3094f3 176
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_fb52b699f7e50b::t_719704d947413a 75-92
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceGetMdmPartsTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1,3,5-15,17,20-27,30-34,36,38-50,53-70,72-88,90-100,103-106,108-113,115-119,121-125,128-131,133-142,146-148,150-153
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_fb52b699f7e50b::t_719704d947413a 6,12,15,18-19,22,31,35,75-83,91,97,108-162
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_fb52b699f7e50b::t_719704d947413a 11-12,19-20,34,100-101,171-195,227-233,238,263-265,275-277,283-284,291-328,331,388-410
+  s_fb52b699f7e50b::t_70b78e34a313a7 411
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-230
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-ES.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+C12-svc-estimate/svc-core-estimate/src/main/java/svc/core/estimate/entity/SvcEstimateOrderPartEnt.java
+  s_fb52b699f7e50b::t_719704d947413a 8,67-76,348-363
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceDto.java
+  s_fb52b699f7e50b::t_719704d947413a 20-27,67-82
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/dto/BeforeSaveOrUpdateCheckCxt.java
+  s_fb52b699f7e50b::t_719704d947413a 7-8,13,38-45
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sk-SK.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.hu-HU.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sv-SE.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-293
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceProxyEnt.java
+  s_fb52b699f7e50b::t_719704d947413a 471-474,1466-1472
+  s_fb52b699f7e50b::t_9a24f1f2f63bed 1473
+doc/八月需求/5.3上线操作清单.md
+  s_fb52b699f7e50b::t_719704d947413a 1-122
+doc/八月需求/v1.6-Nacos新增配置清单-UAT.md
+  s_fb52b699f7e50b::t_719704d947413a 1-60
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsOutput.java
+  s_fb52b699f7e50b::t_719704d947413a 14-15,20-25,66-81
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/InfomediaVehicleInfoDataUploadService.java
+  s_fb52b699f7e50b::t_719704d947413a 392
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-408
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_maintain_rule_part/QuerySvcMaintainRulePartOutput.java
+  s_fb52b699f7e50b::t_719704d947413a 34-36,202-208
+  s_fb52b699f7e50b::t_7547658b7a8976 209
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-266
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/SvcAmsOperationService.java
+  s_fb52b699f7e50b::t_719704d947413a 261
+doc/八月需求/八月需求上线操作清单.md
+  s_fb52b699f7e50b::t_719704d947413a 1-180
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/SvcBaseError.java
+  s_fb52b699f7e50b::t_719704d947413a 26-32
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/test/XstartupTestInitializer.java
+  s_fb52b699f7e50b::t_719704d947413a 1-49
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcServiceMaintainRuleServiceImpl.java
+  s_fb52b699f7e50b::t_719704d947413a 1078
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/AbstractPotdDealerPurchaseInfoAclHandler.java
+  s_fb52b699f7e50b::t_719704d947413a 103-104,117-120
+C00-svc-base/svc-core-base/src/test/java/svc/core/reception/helper/StatementHelperGetPriceContextTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-159
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartView.java
+  s_fb52b699f7e50b::t_719704d947413a 6,109-118,551-565
+  s_fb52b699f7e50b::t_d19e33efc34f5d 566
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/config/service/data/svc_labour_hour_type_price/QueryLabourHourTypeCodeByDealerCodeInput.java
+  s_fb52b699f7e50b::t_719704d947413a 34-36,100-102
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetSvcServiceProxyDetailOutput.java
+  s_fb52b699f7e50b::t_719704d947413a 7,131-133,535-541
+  s_fb52b699f7e50b::t_03611c12d8eee8 542
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_fb52b699f7e50b::t_719704d947413a 7,66-72,101,103,110,113-116,170-176,192,202-213,222-256
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_fb52b699f7e50b::t_719704d947413a 59-65,218-220
+C12-svc-estimate/svc-cloud-estimate/src/main/java/svc/cloud/estimate/service/data/svc_estimate_order/CreateEstimateOrderPartInput.java
+  s_fb52b699f7e50b::t_719704d947413a 4,7,41-50,217-232
+doc/八月需求/5.3前端开发配合文档.md
+  s_fb52b699f7e50b::t_719704d947413a 1-86
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartEnt.java
+  s_fb52b699f7e50b::t_719704d947413a 8,65-74,365-380
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ru-RU.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+doc/八月需求/5.4-Nacos配置-SIT.md
+  s_fb52b699f7e50b::t_719704d947413a 1-96
+doc/八月需求/客档API/场景客档详情单条查询含子表。YApi高效易用功能强大的可视化接口管理平台_20260811162603.md
+  s_fb52b699f7e50b::t_719704d947413a 1,3,5,7-13,15-20,22,24,26,28-56,58,60,62,64,66-84,86,88,90,92,94,96,98-100,102,104-106,108,110-116,118,120-138,140
+doc/需求评审/iRepair-九月迭代PRD-缺陷分析-20260826.md
+  s_fb52b699f7e50b::t_719704d947413a 1-659
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.id-ID.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+doc/八月需求/5.4接口Swagger对接说明.md
+  s_fb52b699f7e50b::t_719704d947413a 1,3-9,11,13-15,17-19,21-23,25,27-29,31,33-37,39-45,47-49,51,53-57,59,61,63-65,67,69,71-73,75,77,79-81,83,85,87-95
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_fb52b699f7e50b::t_719704d947413a 42,58-59,82,122,553-555,770-785,890-897,990-1019,1069-1080,1132-1133,1154-1197,1199-1207,1280-1289,2124-2130,2193-2197,2201-2220,2237-2244,2271-2294
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_fb52b699f7e50b::t_719704d947413a 19,42,582,634,715-716,721,730,735,745,751,778,811,965,1148-1162,1189-1203,1259-1260,1268-1276,1298-1302,1316-1318
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-538
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/spare_part/SparePartQueryPriceReq.java
+  s_fb52b699f7e50b::t_719704d947413a 12-15,22-24,50-65,81-88
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.cs-CZ.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+C02-svc-appointment/svc-core-appointment/src/main/resources/mybatis/mapper/svc/core/appointment/SvcAppointmentPartViewMapper.xml
+  s_fb52b699f7e50b::t_719704d947413a 24-25,46-48,93-94
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerEnforceTest.java
+  s_fb52b699f7e50b::t_719704d947413a 1-244
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartView.java
+  s_fb52b699f7e50b::t_719704d947413a 5,62-71,188-202
+  s_fb52b699f7e50b::t_5388bcd31e0f8a 203
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_part/CreateSvcAppointmentPartInput.java
+  s_fb52b699f7e50b::t_719704d947413a 4,7,45-54,224-238
+  s_fb52b699f7e50b::t_170b2bcc21f4e0 239
+doc/八月需求/八月迭代PRD.md
+  s_fb52b699f7e50b::t_719704d947413a 1-1574
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_fb52b699f7e50b::t_719704d947413a 1-142
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_fb52b699f7e50b::t_719704d947413a 28-33,73-78
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_fb52b699f7e50b::t_719704d947413a 14,16-18,30,40-41,75-80,85,151-162,168-173,257-290,298-333,392
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_fb52b699f7e50b::t_719704d947413a 19-24,96-101
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_order_part/GetSvcServiceOrderPartOutput.java
+  s_fb52b699f7e50b::t_719704d947413a 4,7,20-29,766-781
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.de-DE.properties
+  s_fb52b699f7e50b::t_719704d947413a 16-17
+"doc/八月需求/八月需求前端开发配合文档 (5.3-5.4-5.7).md"
+  s_fb52b699f7e50b::t_719704d947413a 1,3-8,10,12-16,18,20,22-24,26-38,40-54,56-57,59,61,63-65,67,69-71,73,75-82,84-88
+"doc/八月需求/八月需求后端开发任务清单 (敏捷故事).md"
+  s_fb52b699f7e50b::t_719704d947413a 1-93
+"doc/八月需求/维修项目迭代月八技术方案 .md"
+  s_fb52b699f7e50b::t_719704d947413a 1-1344
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_fb52b699f7e50b::t_719704d947413a 31,35-36,56,66-67,721,764-811,863-879
+tc_test/full_runner.py
+  s_fb52b699f7e50b::t_719704d947413a 1-145
+doc/八月需求/v1.6-Nacos新增配置清单-SIT.md
+  s_fb52b699f7e50b::t_719704d947413a 1-68
+doc/八月需求/5.4-Nacos配置-PROD.md
+  s_fb52b699f7e50b::t_719704d947413a 1-115
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartEnt.java
+  s_fb52b699f7e50b::t_719704d947413a 8,124-133,579-593
+  s_fb52b699f7e50b::t_53cc4f343397ca 594
+package.json
+  s_fb52b699f7e50b::t_719704d947413a 1-5
+doc/八月需求/iClaim测试数据申请文本.md
+  s_fb52b699f7e50b::t_719704d947413a 1-40
+.mcp.json
+  s_fb52b699f7e50b::t_bec0609d8bbc72 7
+CLAUDE.md
+  s_fb52b699f7e50b::t_360a47b2ea3f3c 61,78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "21c99a1a1a68976469b210ee79e2ad8fbc79cf39",
+  "prompts": {},
+  "sessions": {
+    "s_fb52b699f7e50b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36c350b9-be36-451b-856e-f1176b0f76e9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

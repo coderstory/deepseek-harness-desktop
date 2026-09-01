@@ -1,0 +1,33 @@
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_fb52b699f7e50b::t_f83bdf50f30657 22,46-47,50-51
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_fb52b699f7e50b::t_e159c576a5d250 964
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_fb52b699f7e50b::t_e159c576a5d250 625
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_fb52b699f7e50b::t_e159c576a5d250 405
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_fb52b699f7e50b::t_e159c576a5d250 1078,1128
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_fb52b699f7e50b::t_f14a40aa3f3b25 1011,1013,1075
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_fb52b699f7e50b::t_b38bc9e78d2e62 234
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_fb52b699f7e50b::t_002eefcebfcb00 159,530
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f6f21815699229524077e1f09855898fd29aead5",
+  "prompts": {},
+  "sessions": {
+    "s_fb52b699f7e50b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36c350b9-be36-451b-856e-f1176b0f76e9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
