@@ -178,6 +178,7 @@
   "backup.manual_section": "手动备份",
   "backup.now": "立即备份",
   "backup.in_progress": "正在备份…",
+  "backup.restoring": "正在还原…",
   "backup.include_credentials": "包含凭据",
   "backup.credentials_warning": "你的 API 密钥将存储在备份文件中，请妥善保管。",
   "backup.created_toast": "备份已创建",

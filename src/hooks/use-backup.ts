@@ -26,7 +26,14 @@ export interface UseBackupsResult {
     backupRetentionCount?: number
     backupIncludeCredentials?: boolean
   }) => Promise<void>
+  /** 任意操作进行中（统一禁用按钮用） */
   busy: boolean
+  /** 仅创建备份进行中（用于「立即备份」按钮显示 loading） */
+  creating: boolean
+  /** 仅还原进行中 */
+  restoring: boolean
+  /** 仅删除进行中 */
+  deleting: boolean
 }
 
 /**
@@ -119,5 +126,8 @@ export function useBackups(): UseBackupsResult {
       await refetch()
     },
     busy: create.isPending || restore.isPending || remove.isPending || updateSettings.isPending,
+    creating: create.isPending,
+    restoring: restore.isPending,
+    deleting: remove.isPending,
   }
 }

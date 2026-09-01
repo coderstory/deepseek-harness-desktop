@@ -178,6 +178,7 @@
   "backup.manual_section": "Manual Backup",
   "backup.now": "Backup Now",
   "backup.in_progress": "Backing up…",
+  "backup.restoring": "Restoring…",
   "backup.include_credentials": "Include credentials",
   "backup.credentials_warning": "Your API keys will be stored in the backup file. Keep it secure.",
   "backup.created_toast": "Backup created",

@@ -26,7 +26,7 @@ function formatSize(bytes: number): string {
 
 export function ConfigBackup({ onBack }: ConfigBackupProps) {
   const { t } = useTranslation()
-  const { backups, loading, error, createBackup, restoreBackup, deleteBackup, updateAutoBackupSettings, busy } = useBackups()
+  const { backups, loading, error, createBackup, restoreBackup, deleteBackup, updateAutoBackupSettings, busy, creating, restoring, deleting } = useBackups()
   const { data: config } = useAppConfig()
   const [dialogHolder, openDialog] = useOverlay(Modal, { type: 'holder' })
 
@@ -157,11 +157,11 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
           isDisabled={busy}
           onPress={handleCreate}
         >
-          <If cond={busy}>
+          <If cond={creating}>
             <Spinner size="sm" color="current" />
             <span>{t('backup.in_progress')}</span>
           </If>
-          <If cond={!busy}>
+          <If cond={!creating}>
             <span>{t('backup.now')}</span>
           </If>
         </Button>
@@ -218,7 +218,10 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
                         isDisabled={busy}
                         onPress={() => handleRestore(backup.timestamp)}
                       >
-                        {t('backup.restore')}
+                        <If cond={restoring}>
+                          <Spinner size="sm" color="current" />
+                        </If>
+                        {restoring ? t('backup.restoring') : t('backup.restore')}
                       </Button>
                       <Button
                         size="sm"
@@ -227,7 +230,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
                         isDisabled={busy}
                         onPress={() => handleRestoreAsNew(backup.timestamp)}
                       >
-                        {t('backup.restore_as_new')}
+                        {restoring ? t('backup.restoring') : t('backup.restore_as_new')}
                       </Button>
                       <Chip
                         className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
