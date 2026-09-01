@@ -1,6 +1,7 @@
 import { ArrowLeft, Delete } from '@gravity-ui/icons'
 import { Button, Checkbox, Chip, Description, Input, Label, Spinner, Switch } from '@heroui/react'
 import { useOverlay } from '@overlastic/react'
+import { invoke } from '@tauri-apps/api/core'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { If } from 'react-if-lite'
@@ -58,8 +59,19 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
       return
     }
     try {
+      // 先停止 DSH 服务（释放 profile 目录的文件锁）
       toast(t('backup.restored_stopped_toast'), { variant: 'accent' })
+      try {
+        await invoke('shutdown_harness')
+      }
+      catch (e) {
+        console.warn('[ConfigBackup] shutdown_harness failed (may already be stopped):', e)
+      }
       await restoreBackup(timestamp, false)
+      // 还原后自动启动 DSH 服务（后台异步，不阻塞 UI）
+      invoke('launch_harness').catch((e) => {
+        console.warn('[ConfigBackup] launch_harness failed:', e)
+      })
       const key = toast(t('backup.restored_toast'), {
         variant: 'accent',
         timeout: 10_000,
