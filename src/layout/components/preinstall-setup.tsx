@@ -22,9 +22,20 @@ import { toast } from '@/utils/toast'
 /**
  * 初始勾选态 = 已安装 + 推荐/修复/默认勾选（进入页面时的完整勾选集合）。
  * 用于和用户最终选择做 diff，得出 toInstall / toUninstall。
+ *
+ * 策略由 isFirstTime 决定：
+ * - 首次安装引导（isFirstTime=true）：已安装 + 推荐/修复/默认勾选均默认勾上
+ * - 手动打开（isFirstTime=false）：只有已安装的插件才默认勾上（已卸载的推荐项不勾）
  */
-function initialCheckedSet(plugins: readonly PreinstallPlugin[]): Set<string> {
-  return new Set(plugins.filter(p => p.installed || p.recommended || p.fix || p.defaultChecked).map(p => p.id))
+function initialCheckedSet(plugins: readonly PreinstallPlugin[], isFirstTime: boolean): Set<string> {
+  return new Set(plugins.filter(p => {
+    if (p.installed)
+      return true
+    // 非首次场景：不推荐未安装的插件，避免已卸载的推荐项仍默认勾着
+    if (!isFirstTime)
+      return false
+    return p.recommended || p.fix || p.defaultChecked
+  }).map(p => p.id))
 }
 
 /** 插件列表的一行：名称 + 推荐/已安装/待卸载标签在左，勾选框 + 仓库跳转按钮在右 */
@@ -159,14 +170,14 @@ export function PreinstallSetup() {
   // 派生计算而非在加载回调里 setState，避免与 store 的加载去重守卫竞争，
   // 保证插件到位后默认勾选必定生效（用户手动调整后以用户选择为准）。
   const effectiveSelected = !touched
-    ? initialCheckedSet(preinstall.plugins)
+    ? initialCheckedSet(preinstall.plugins, preinstall.isFirstTime)
     : selected
 
   function toggle(id: string, checked: boolean) {
     // 首次交互以「当前默认勾选」为起点：selected 初始为空，若直接在其上增删，
     // 取消一个会误把其余默认项一并取消。这里先以 initialCheckedSet 播种，
     // 再应用本次勾选，保证「取消一个 = 只取消这一个」。
-    const seed = !touched ? initialCheckedSet(preinstall.plugins) : null
+    const seed = !touched ? initialCheckedSet(preinstall.plugins, preinstall.isFirstTime) : null
     setTouched(true)
     setSelected((prev) => {
       const next = new Set(seed ?? prev)
@@ -188,9 +199,10 @@ export function PreinstallSetup() {
 
   function handleConfirm() {
     // diff：与初始勾选态（已安装 + 推荐默认勾选）比对，得出需安装/需卸载的两个集合
-    const originalSet = initialCheckedSet(preinstall.plugins)
+    const originalSet = initialCheckedSet(preinstall.plugins, preinstall.isFirstTime)
     const toInstall = [...effectiveSelected].filter(id => !originalSet.has(id))
     const toUninstall = [...originalSet].filter(id => !effectiveSelected.has(id))
+    console.log('[Preinstall] confirm:', { toInstall, toUninstall, effectiveSelected: [...effectiveSelected], originalSet: [...originalSet] })
     void store.harness.confirmPreinstall({ installIds: toInstall, uninstallIds: toUninstall })
   }
 
@@ -199,7 +211,7 @@ export function PreinstallSetup() {
   }
 
   // 是否有变更（安装或卸载）：与初始勾选态比对，任一非空即启用"确定"
-  const originalSet = initialCheckedSet(preinstall.plugins)
+  const originalSet = initialCheckedSet(preinstall.plugins, preinstall.isFirstTime)
   const toInstallCount = [...effectiveSelected].filter(id => !originalSet.has(id)).length
   const toUninstallCount = [...originalSet].filter(id => !effectiveSelected.has(id)).length
   const hasChanges = toInstallCount > 0 || toUninstallCount > 0
