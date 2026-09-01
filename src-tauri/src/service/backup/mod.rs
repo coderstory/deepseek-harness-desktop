@@ -286,9 +286,39 @@ pub fn restore_backup(
 
     match mode {
         RestoreMode::Overwrite => {
-            // 覆盖当前激活 profile 目录
+            // 重命名旧 profile → 备份目录（避开文件锁），解压到新目录，
+            // 成功后删除旧备份；失败则回滚（rename 旧目录回来）
             let dest = crate::service::profile::profile_dir_of(app_handle, &active);
-            archive::extract_archive(&archive_path, &dest)?;
+            let backup_old = std::path::PathBuf::from(format!(
+                "{}-{}.restore-bak",
+                dest.display(),
+                timestamp
+            ));
+            // 清理可能残留的旧备份目录
+            let _ = fs::remove_dir_all(&backup_old);
+            // 重命名旧 profile（即使有子进程在读，rename 也能成功）
+            fs::rename(&dest, &backup_old).map_err(|e| {
+                format!("BACKUP_RESTORE_RENAME_OLD: {e} (old={}, new={})",
+                    dest.display(), backup_old.display())
+            })?;
+            // 创建空的新目录
+            fs::create_dir_all(&dest).map_err(|e| {
+                format!("BACKUP_RESTORE_MKDIR_NEW: {e} (dest={})", dest.display())
+            })?;
+            // 解压到新目录
+            let extract_result = archive::extract_archive(&archive_path, &dest);
+            match extract_result {
+                Ok(()) => {
+                    // 成功：删除旧备份
+                    let _ = fs::remove_dir_all(&backup_old);
+                }
+                Err(e) => {
+                    // 失败：回滚（删除半成品新目录，把旧目录 rename 回来）
+                    let _ = fs::remove_dir_all(&dest);
+                    let _ = fs::rename(&backup_old, &dest);
+                    return Err(format!("BACKUP_RESTORE_EXTRACT_FAILED: {e}。已自动回滚到原状态。"));
+                }
+            }
         }
         RestoreMode::AsNew => {
             // 创建新档案目录：$DSH_HOME/profiles/<profile>-<timestamp>
@@ -469,5 +499,35 @@ mod tests {
 
 #[cfg(test)]
 mod debug_tests {
-    // 调试测试已清理
+    use super::*;
+    #[test]
+    fn debug_extract_package_json() {
+        let backup = std::path::Path::new("/Users/coderstory/.dsh/.backups/web-20260901115515.tar.zst");
+        if !backup.exists() { return; }
+        let dest = std::path::PathBuf::from("/tmp/debug-pkg-restore");
+        let _ = fs::remove_file(&dest);
+        let file = fs::File::open(backup).unwrap();
+        let dec = zstd::stream::Decoder::new(file).unwrap();
+        let mut archive = tar::Archive::new(dec);
+        archive.set_preserve_ownerships(false);
+        for entry in archive.entries().unwrap() {
+            let mut entry = entry.unwrap();
+            let path = entry.path().unwrap().into_owned();
+            if path.file_name().and_then(|n| n.to_str()) == Some("package.json")
+                && path.components().count() == 1
+            {
+                let header_size = entry.header().size().unwrap_or(0);
+                let mut content = Vec::new();
+                std::io::Read::read_to_end(&mut entry, &mut content).unwrap();
+                // 模拟 extract_archive 的 temp+rename 逻辑
+                let tmp = std::path::PathBuf::from(format!("/tmp/debug-pkg-restore.tmp.{}", std::process::id()));
+                fs::write(&tmp, &content).unwrap();
+                fs::rename(&tmp, &dest).unwrap();
+                let written = fs::metadata(&dest).unwrap().len();
+                panic!("DEBUG: path={:?} header_size={} read={} written={}",
+                    path, header_size, content.len(), written);
+            }
+        }
+        let _ = fs::remove_file(&dest);
+    }
 }
