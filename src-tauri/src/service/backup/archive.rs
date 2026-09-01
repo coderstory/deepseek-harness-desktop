@@ -219,6 +219,12 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
                 .map_err(|e| format!("BACKUP_EXTRACT_MKDIR_PARENT: {e}"))?;
         }
 
+        // 先删除已存在的目标文件：避免 tar truncate 时被其他进程以读模式锁住
+        // （如 pnpm-lock.yaml 被运行中的 DSH 服务锁住）
+        if dest_path.exists() && !dest_path.is_dir() {
+            let _ = fs::remove_file(&dest_path);
+        }
+
         entry
             .unpack(&dest_path)
             .map_err(|e| format!("BACKUP_EXTRACT_UNPACK: {e}"))?;
