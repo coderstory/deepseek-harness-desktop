@@ -156,24 +156,9 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
     // 禁用 ownership 保留：归档里 uid/gid 可能是 root（uid=0），非 root 用户无法 chown
     archive.set_preserve_ownerships(false);
 
-    let entries = archive.entries().map_err(|e| format!("BACKUP_EXTRACT_ENTRIES: {e}"))?;
-    let entries: Vec<_> = entries
-        .collect::<Result<Vec<_>, _>>()
-        .map_err(|e| format!("BACKUP_EXTRACT_COLLECT: {e}"))?;
-
-    // 检测是否旧格式（首条以 "profiles/<id>/" 开头）
-    let is_legacy_format = entries.first().map_or(false, |e| {
-        let Ok(path) = e.path() else { return false };
-        let comps: Vec<_> = path.components().collect();
-        if comps.len() < 3 {
-            return false;
-        }
-        let first_s = comps.first().map(|c| c.as_os_str().to_string_lossy().to_string()).unwrap_or_default();
-        let second_s = comps.get(1).map(|c| c.as_os_str().to_string_lossy().to_string()).unwrap_or_default();
-        first_s == "profiles" && !second_s.is_empty() && second_s != "." && second_s != ".."
-    });
-
-    for mut entry in entries {
+    // 单次遍历：避免重复调用 archive.entries() 导致 zstd decoder 状态错乱
+    for entry in archive.entries().map_err(|e| format!("BACKUP_EXTRACT_ENTRIES: {e}"))? {
+        let mut entry = entry.map_err(|e| format!("BACKUP_EXTRACT_ENTRY: {e}"))?;
         let path = entry.path().map_err(|e| format!("BACKUP_EXTRACT_PATH: {e}"))?.into_owned();
 
         // 拒绝含 `..` 组件的条目（防路径穿越）
@@ -187,19 +172,9 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
             ));
         }
 
-        // 旧格式：剥离 `profiles/<id>/` 前缀
-        let stripped: std::path::PathBuf = if is_legacy_format {
-            let comps: Vec<_> = path.components().collect();
-            if comps.len() >= 3 {
-                comps.into_iter().skip(2).collect()
-            }
-            else {
-                path.clone()
-            }
-        }
-        else {
-            path.clone()
-        };
+        // 不剥离 profiles/<id>/ 前缀——新格式备份不再含此前缀
+        // 旧格式备份需用户手动处理（先在 /tmp 解压再 rsync）
+        let stripped: std::path::PathBuf = path.clone();
 
         let dest_path = dest.join(&stripped);
 
