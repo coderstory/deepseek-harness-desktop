@@ -1,0 +1,22 @@
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_dd2d1137b5276a::t_b0c938c65cc363 8-9
+  s_dd2d1137b5276a::t_3981fa08b0bcae 81-82
+  s_dd2d1137b5276a::t_c166c3f951e0c1 153-156
+  s_dd2d1137b5276a::t_759612abcbb062 206-242
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cb5ed93a434b87f5be3741755ad0fa22c796dde1",
+  "prompts": {},
+  "sessions": {
+    "s_dd2d1137b5276a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "df210208-b51d-4d8b-9fbf-411765403415",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
