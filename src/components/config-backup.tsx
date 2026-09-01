@@ -139,7 +139,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 pl-4">
       <Button variant="tertiary" className="h-8 rounded-md" onPress={onBack}>
         <ArrowLeft className="size-3.5" />
         <span>{t('backup.back_to_profiles')}</span>
