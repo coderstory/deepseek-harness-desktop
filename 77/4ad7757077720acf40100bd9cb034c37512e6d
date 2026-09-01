@@ -1,0 +1,59 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_fb52b699f7e50b::t_2ef7c8bc3958df 1079,1129
+C11-svc-ams/svc-cloud-ams/src/main/java/svc/cloud/ams/service/data/svc_estimate_order/VehicleInput.java
+  s_fb52b699f7e50b::t_82c986c653b96e 26-31,103-118
+C11-svc-ams/svc-core-ams/pom.xml
+  s_fb52b699f7e50b::t_47d5e6b2160119 56-75,77-91
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueOperationLog.java
+  s_fb52b699f7e50b::t_24b03f9336784a 1-84
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueVehicleData.java
+  s_fb52b699f7e50b::t_a485d1904fffbc 1-78
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueVehicleInfo.java
+  s_fb52b699f7e50b::t_91db02d3451e6b 1-67
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/job/RoadRescueDataPushJob.java
+  s_fb52b699f7e50b::t_30f62b6b669709 1-140
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/job/param/RoadRescuePushJobParam.java
+  s_fb52b699f7e50b::t_c9f0d9d6777123 1-43
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/mapper/RoadRescueOperationLogMapper.java
+  s_fb52b699f7e50b::t_cc37fd0d115cd3 1-13
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/mapper/RoadRescueVehicleDataMapper.java
+  s_fb52b699f7e50b::t_8e03c5c010aab6 1-13
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/RoadRescueDataPushService.java
+  s_fb52b699f7e50b::t_cd2ca12e9639df 1-949
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsClient.java
+  s_fb52b699f7e50b::t_d9aab2bd48bfb2 1-431
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/PdmsTokenCache.java
+  s_fb52b699f7e50b::t_c31fc996f2a8b2 1-149
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/RoadRescuePolicyConverter.java
+  s_fb52b699f7e50b::t_ac32d16e761119 1-162
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/util/VehicleClient.java
+  s_fb52b699f7e50b::t_893012e6043ef5 18-20,71-118
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/RoadRescueProbeTest.java
+  s_fb52b699f7e50b::t_f459e7be0fb3a6 1-1114
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/job/RoadRescueDataPushJobTest.java
+  s_fb52b699f7e50b::t_27144e56a45400 1-63
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/service/RoadRescueDataPushServiceTest.java
+  s_fb52b699f7e50b::t_efc9e8602ed6c6 1-952
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsClientTest.java
+  s_fb52b699f7e50b::t_60c0870accd192 1-389
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/PdmsTokenCacheTest.java
+  s_fb52b699f7e50b::t_1315d97f5a8766 1-195
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/util/RoadRescuePolicyConverterTest.java
+  s_fb52b699f7e50b::t_fb057212c18120 1-402
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "774ad7757077720acf40100bd9cb034c37512e6d",
+  "prompts": {},
+  "sessions": {
+    "s_fb52b699f7e50b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36c350b9-be36-451b-856e-f1176b0f76e9",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

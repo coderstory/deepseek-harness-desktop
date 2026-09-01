@@ -1,0 +1,81 @@
+.gitignore
+  s_0ba0a0fd6df46f::t_e07017f9b71235 54-94
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/CountryVatItemFilter.java
+  s_0ba0a0fd6df46f::t_8d729b446b0d81 1-24
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_0ba0a0fd6df46f::t_f3ddc56f45da57 59-60,86-89,95-96,280-283,285-291,296,298,320,322,340,342
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/VatItemFilter.java
+  s_0ba0a0fd6df46f::t_ac6dbbe09e2b21 1-32
+C00-svc-base/svc-core-base/src/test/java/svc/core/reception/helper/PriceContextTest.java
+  s_0ba0a0fd6df46f::t_fe235d2f280b92 181-250
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_0ba0a0fd6df46f::t_dbdc5cdbf6631c 106-109
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_0ba0a0fd6df46f::t_723b7e6591eae8 10,27-29,32-33,48,58-60,97-98,140,149-150,157-176,179,202,222,244-305
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_0ba0a0fd6df46f::t_6bb41e60364ea4 67,723,816-826,830-832,888,903-1011,1087-1144
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/GetSvcStatementInvoiceOutput.java
+  s_0ba0a0fd6df46f::t_0ff411d5b3986f 8,104-115
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/SvcStatementInvoiceModel.java
+  s_0ba0a0fd6df46f::t_8c674e51949b0d 136-138,601-608
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_0ba0a0fd6df46f::t_381951393a7151 16,95-104,119-120,187-195,202-205,473,475-483,496,682-683,685-687,690-696,698-700
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_0ba0a0fd6df46f::t_f577f12c3b3dc1 1-952
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceExcelService.java
+  s_0ba0a0fd6df46f::t_0e86a95e4a022b 172-174
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/kr/KrInvoiceForward.ftl
+  s_0ba0a0fd6df46f::t_aae41444e1d3c2 1858-1862,1981-1985
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/kr/KrInvoiceNegative.ftl
+  s_0ba0a0fd6df46f::t_d1451b4cf1d92d 1879-1883,2002-2006
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/GetSvcStatementKrEmCalculatorVatMergeTest.java
+  s_0ba0a0fd6df46f::t_8f7e85c327b505 1-103
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceKrEmPriceContextTest.java
+  s_0ba0a0fd6df46f::t_92700dd0eb4a22 1-321
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceRedInvoiceSecurityTest.java
+  s_0ba0a0fd6df46f::t_c166f3015603a0 1-275
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceTest.java
+  s_0ba0a0fd6df46f::t_65075f52a18110 1-277
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementServiceKrEmDirectReadTest.java
+  s_0ba0a0fd6df46f::t_0463c758fbecba 1-178
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_0ba0a0fd6df46f::t_145852c695d7be 3-8,10-25,28-37,39-40,42,45-48,51-52,62,66-83,85,89,116-117,128,131-132,134-135,137,139-149,231-234,236-237,240-248,250-936,938-940
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/GenTwoScenariosTest.java
+  s_0ba0a0fd6df46f::t_87ab0550192718 1-794
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceForwardTest.java
+  s_0ba0a0fd6df46f::t_806c6837fc0ad9 714-756
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceGenerateTest.java
+  s_0ba0a0fd6df46f::t_8c3a538d6de207 506-630
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceNegativeTest.java
+  s_0ba0a0fd6df46f::t_4991284b9fed32 392-477
+doc/八月需求/5.8-PRD-vs-代码对比.md
+  s_0ba0a0fd6df46f::t_f575ef520de8a3 1-194
+doc/八月需求/5.8-反向PRD-代码实现-v2.md
+  s_0ba0a0fd6df46f::t_4fa08d5a156924 1-558
+doc/八月需求/5.8-反向PRD-代码实现-v3.md
+  s_0ba0a0fd6df46f::t_b9ee1021452fcc 1-472
+doc/八月需求/5.8-反向PRD-代码实现.md
+  s_0ba0a0fd6df46f::t_28a099471b2e15 1-499
+doc/八月需求/5.8-开发文档.md
+  s_0ba0a0fd6df46f::t_c323780a0b437e 1-315
+doc/八月需求/PRD-할인-소계-口径确认.md
+  s_0ba0a0fd6df46f::t_b8494069111067 1-18
+doc/八月需求/韩国开票需求梳理与疑问清单.md.txt
+  s_0ba0a0fd6df46f::t_5281d4ebf9f1b4 1-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "67dc5bf4070c8dd519691aa8c26a0765dbb231ad",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
