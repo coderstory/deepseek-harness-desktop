@@ -20,8 +20,9 @@ pub async fn get_preinstall_plugins(
 /// 安装选中的预装插件（`dsh plugin --profile web add <ids...>`），
 /// 进程输出实时通过 `preinstall-log` 事件推送；成功后标记引导完成并记录预设指纹。
 ///
-/// 同时支持卸载用户取消勾选的已安装插件（`uninstall_ids`）：走离线精准卸载
-/// （`plugin::uninstall_recovery`，直接改 profile 清单），不依赖网络。
+/// 同时支持卸载用户取消勾选的已安装插件（`uninstall_ids`）：走
+/// `dsh plugin remove`（与安装对称的命令行卸载），失败时自动回退离线精准卸载
+/// （`plugin::uninstall_recovery`，直接改 profile 清单），不依赖网络兜底。
 #[tauri::command]
 pub async fn install_preinstall_plugins(
     app_handle: AppHandle,
@@ -39,14 +40,22 @@ pub async fn install_preinstall_plugins(
         return Ok(());
     }
 
-    // 先安装新勾选的插件（会停止服务、走 dsh plugin add）
-    if !install_ids.is_empty() {
-        plugin::install(&app_handle, &install_ids).await?;
+    // 先卸载取消勾选的已安装插件（走 dsh plugin remove，与安装对称）
+    // 卸载在前：避免新装插件与待卸载插件冲突；remove 内部会先停服务再执行
+    log::info!("[preinstall] uninstall_ids={uninstall_ids:?}, install_ids={install_ids:?}");
+    for id in &uninstall_ids {
+        log::info!("[preinstall] removing plugin {id} via dsh plugin remove");
+        if let Err(e) = plugin::remove(&app_handle, id).await {
+            log::error!("[preinstall] failed to remove plugin {id}: {e}");
+            return Err(e);
+        }
+        log::info!("[preinstall] successfully removed plugin {id}");
     }
 
-    // 再卸载取消勾选的已安装插件（离线精准，不依赖网络）
-    for id in &uninstall_ids {
-        plugin::uninstall_recovery(&app_handle, id)?;
+    // 再安装新勾选的插件（会走 dsh plugin add）
+    if !install_ids.is_empty() {
+        log::info!("[preinstall] installing plugins {install_ids:?}");
+        plugin::install(&app_handle, &install_ids).await?;
     }
 
     let mut setting = config::get_store_dat_setting(&app_handle);
