@@ -245,17 +245,27 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
             }
         }
         else {
-            // 普通文件/其他：手动 read_to_end + fs::write
-            // 1. 避免 tar crate 的 set_perms/set_ownerships/set_mtime 在 macOS 上失败
-            // 2. 文件被其他进程读锁时，unlink + write 能绕过
-            if dest_path.exists() && !dest_path.is_dir() {
-                let _ = fs::remove_file(&dest_path);
-            }
+            // 普通文件：先写临时文件，再原子 rename（macOS 上 unlink + write 会被
+            // 读锁干扰成 0 字节；temp + rename 是原子的，原文件在成功前保持完好）
             let mut content = Vec::new();
             std::io::Read::read_to_end(&mut entry, &mut content)
                 .map_err(|e| format!("BACKUP_EXTRACT_READ: {e} (path={})", path.display()))?;
-            fs::write(&dest_path, &content)
-                .map_err(|e| format!("BACKUP_EXTRACT_WRITE: {e} (path={}, dest={})", path.display(), dest_path.display()))?;
+            // 临时文件路径：<dest>.tmp.<pid>.<nanos>
+            let tmp_name = format!(
+                "{}.tmp.{}.{}",
+                dest_path.file_name().and_then(|n| n.to_str()).unwrap_or("restore"),
+                std::process::id(),
+                std::time::SystemTime::now()
+                    .duration_since(std::time::UNIX_EPOCH)
+                    .unwrap_or_default()
+                    .as_nanos()
+            );
+            let tmp_path = dest_path.with_file_name(tmp_name);
+            fs::write(&tmp_path, &content)
+                .map_err(|e| format!("BACKUP_EXTRACT_WRITE_TMP: {e} (tmp={})", tmp_path.display()))?;
+            // 原子 rename 替换目标文件（macOS 上 rename 不要求目标文件关闭）
+            fs::rename(&tmp_path, &dest_path)
+                .map_err(|e| format!("BACKUP_EXTRACT_RENAME: {e} (tmp={}, dest={})", tmp_path.display(), dest_path.display()))?;
         }
     }
     Ok(())
