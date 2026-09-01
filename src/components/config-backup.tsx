@@ -233,7 +233,7 @@ export function ConfigBackup({ onBack }: ConfigBackupProps) {
                         {restoring ? t('backup.restoring') : t('backup.restore_as_new')}
                       </Button>
                       <Chip
-                        className={`rounded-md${busy ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
+                        className={`rounded-md${deleting ? ' cursor-not-allowed opacity-50' : ' cursor-pointer'}`}
                         variant="primary"
                         color="danger"
                         size="sm"
