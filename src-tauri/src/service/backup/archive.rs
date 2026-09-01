@@ -8,6 +8,21 @@ use std::fs;
 use std::io::Write;
 use std::path::Path;
 
+/// 创建符号链接（平台差异处理）。
+#[cfg(unix)]
+fn create_symlink(target: &Path, dst: &Path) -> std::io::Result<()> {
+    std::os::unix::fs::symlink(target, dst)
+}
+
+/// 创建符号链接（Windows：需要管理员权限，best-effort）。
+#[cfg(windows)]
+fn create_symlink(target: &Path, dst: &Path) -> std::io::Result<()> {
+    // Windows 符号链接需要管理员权限；目录联接不需要但仅限目录。
+    // best-effort：失败返回 AlreadyExists 让上层跳过。
+    std::os::windows::fs::symlink_dir(target, dst)
+        .or_else(|_| std::os::windows::fs::symlink_file(target, dst))
+}
+
 /// 需要从归档中排除的相对路径组件（前缀匹配）。
 const EXCLUDED_NAMES: &[&str] = &[".backups", ".harness.pid"];
 
@@ -209,7 +224,8 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
             if let Some(parent) = dest_path.parent() {
                 let _ = fs::create_dir_all(parent);
             }
-            if let Err(e) = std::os::unix::fs::symlink(&target, &dest_path) {
+            // 创建符号链接（平台差异：Unix 直接用 symlink，Windows 需要权限）
+            if let Err(e) = create_symlink(&target, &dest_path) {
                 // 链接已存在则跳过（与原文件冲突）
                 if e.kind() != std::io::ErrorKind::AlreadyExists {
                     return Err(format!(

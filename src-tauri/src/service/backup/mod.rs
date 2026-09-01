@@ -496,37 +496,3 @@ mod tests {
     }
 }
 
-#[cfg(test)]
-mod debug_tests {
-    use super::*;
-    #[test]
-    fn debug_extract_package_json() {
-        let backup = std::path::Path::new("/Users/coderstory/.dsh/.backups/web-20260901115515.tar.zst");
-        if !backup.exists() { return; }
-        let dest = std::path::PathBuf::from("/tmp/debug-pkg-restore");
-        let _ = fs::remove_file(&dest);
-        let file = fs::File::open(backup).unwrap();
-        let dec = zstd::stream::Decoder::new(file).unwrap();
-        let mut archive = tar::Archive::new(dec);
-        archive.set_preserve_ownerships(false);
-        for entry in archive.entries().unwrap() {
-            let mut entry = entry.unwrap();
-            let path = entry.path().unwrap().into_owned();
-            if path.file_name().and_then(|n| n.to_str()) == Some("package.json")
-                && path.components().count() == 1
-            {
-                let header_size = entry.header().size().unwrap_or(0);
-                let mut content = Vec::new();
-                std::io::Read::read_to_end(&mut entry, &mut content).unwrap();
-                // 模拟 extract_archive 的 temp+rename 逻辑
-                let tmp = std::path::PathBuf::from(format!("/tmp/debug-pkg-restore.tmp.{}", std::process::id()));
-                fs::write(&tmp, &content).unwrap();
-                fs::rename(&tmp, &dest).unwrap();
-                let written = fs::metadata(&dest).unwrap().len();
-                panic!("DEBUG: path={:?} header_size={} read={} written={}",
-                    path, header_size, content.len(), written);
-            }
-        }
-        let _ = fs::remove_file(&dest);
-    }
-}

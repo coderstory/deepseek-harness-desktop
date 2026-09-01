@@ -42,10 +42,8 @@ pub fn prune_backups_in_dir(
         a_ts.cmp(b_ts)
     });
     let remove_count = backups.len() - retention_count as usize;
-    let to_remove: Vec<String> = backups
-        .drain(..remove_count)
-        .filter_map(|v| v["timestamp"].as_str().map(String::from))
-        .collect();
+    // 收集要删除的条目（保留完整 JSON 以获取 path），然后从清单移除
+    let to_remove: Vec<serde_json::Value> = backups.drain(..remove_count).collect();
 
     // 写回清单（先写 tmp 再 rename，原子性）
     let tmp = manifest_path.with_extension("tmp");
@@ -55,14 +53,19 @@ pub fn prune_backups_in_dir(
             .map_err(|e| format!("BACKUP_PRUNE_SERIALIZE: {e}"))?,
     )
     .map_err(|e| format!("BACKUP_PRUNE_WRITE: {e}"))?;
-    fs::rename(&tmp, &manifest_path)
+    fs::rename(&tmp, manifest_path)
         .map_err(|e| format!("BACKUP_PRUNE_RENAME: {e}"))?;
 
-    // 删除文件
-    for ts in &to_remove {
-        let file = backup_dir.join(format!("{ts}.tar.zst"));
-        if file.exists() {
-            fs::remove_file(&file).map_err(|e| format!("BACKUP_PRUNE_FILE: {e}"))?;
+    // 删除文件：使用清单中存储的 path 字段（而非自行拼文件名）
+    for entry in &to_remove {
+        if let Some(path_str) = entry["path"].as_str() {
+            let file = Path::new(path_str);
+            if file.exists() {
+                if let Err(e) = fs::remove_file(file) {
+                    // 文件删除失败不阻断整体裁剪，仅记录警告
+                    log::warn!("[backup] 删除旧备份失败: {e} ({path_str})");
+                }
+            }
         }
     }
     Ok(())
@@ -95,12 +98,13 @@ mod tests {
         let mut entries = Vec::new();
         for i in 0..count {
             // 时间戳按 i 递增，便于验证「最旧的被删」
-            let ts = format!("2026-08-30T12-00-{:02}", i);
-            let file = dir.join(format!("{ts}.tar.zst"));
+            let ts = format!("2026{:010}", i); // 14 位紧凑格式，匹配生产代码
+            let file = dir.join(format!("web-{ts}.tar.zst")); // 匹配生产代码 {profile}-{ts} 格式
             let mut f = fs::File::create(&file).unwrap();
             f.write_all(b"dummy").unwrap();
             entries.push(serde_json::json!({
                 "timestamp": ts,
+                "profile": "web",
                 "path": file.to_string_lossy(),
                 "size": 5,
                 "includeCredentials": false
@@ -134,12 +138,12 @@ mod tests {
 
         let remaining = read_manifest_backups(&dir);
         assert_eq!(remaining.len(), 3, "5 份备份 retention=3 应剩 3 份");
-        // 最旧的 2 个（00, 01）应被删除
-        assert!(!remaining.contains(&"2026-08-30T12-00-00".to_string()));
-        assert!(!remaining.contains(&"2026-08-30T12-00-01".to_string()));
-        // 文件也应被删除
-        assert!(!dir.join("2026-08-30T12-00-00.tar.zst").exists());
-        assert!(!dir.join("2026-08-30T12-00-01.tar.zst").exists());
+        // 最旧的 2 个应被删除
+        assert!(!remaining.contains(&"20260000000000".to_string()));
+        assert!(!remaining.contains(&"20260000000001".to_string()));
+        // 文件也应被删除（使用 path 字段）
+        assert!(!dir.join("web-20260000000000.tar.zst").exists());
+        assert!(!dir.join("web-20260000000001.tar.zst").exists());
         let _ = fs::remove_dir_all(&dir);
     }
 
@@ -151,8 +155,8 @@ mod tests {
         let remaining = read_manifest_backups(&dir);
         assert_eq!(remaining.len(), 3, "3 份备份 retention=10 应全部保留");
         for i in 0..3 {
-            let ts = format!("2026-08-30T12-00-{:02}", i);
-            assert!(dir.join(format!("{ts}.tar.zst")).exists());
+            let ts = format!("2026{:010}", i);
+            assert!(dir.join(format!("web-{ts}.tar.zst")).exists());
         }
         let _ = fs::remove_dir_all(&dir);
     }
@@ -165,9 +169,9 @@ mod tests {
         let remaining = read_manifest_backups(&dir);
         assert_eq!(remaining.len(), 1);
         // 最旧的被删
-        assert!(!dir.join("2026-08-30T12-00-00.tar.zst").exists());
+        assert!(!dir.join("web-20260000000000.tar.zst").exists());
         // 较新的保留
-        assert!(dir.join("2026-08-30T12-00-01.tar.zst").exists());
+        assert!(dir.join("web-20260000000001.tar.zst").exists());
         let _ = fs::remove_dir_all(&dir);
     }
 
