@@ -1,0 +1,19 @@
+C09-svc-pdi/svc-core-pdi/src/main/resources/mybatis/mapper/svc/core/pdi/SvcMaintenanceRecordViewMapper.xml
+  s_25fcf6356443e6::t_096c132993ee8c 11,18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e2aec96d5c6a93848df1d429f0029221d2132f76",
+  "prompts": {},
+  "sessions": {
+    "s_25fcf6356443e6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "778572bf-8778-4532-a3e0-3d550af3d1b5",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
