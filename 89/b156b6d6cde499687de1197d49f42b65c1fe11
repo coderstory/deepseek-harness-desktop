@@ -1,0 +1,77 @@
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_7b15e52a51b6fc::t_f77a2f2463e81c 50
+edge_test2.html
+  s_700fae2d399fbe::t_94f4b29619dcad 1-5
+plugins/x-coding-tools/skills/sit-local-patches/patches/01-pom-exclude-job.patch
+  s_82840f4c97ff22::t_7baf931c2fddda 1-58
+plugins/x-coding-tools/skills/sit-local-patches/patches/02-disable-componentscan-job.patch
+  s_82840f4c97ff22::t_6e8c5cd5c73721 1-15
+plugins/x-coding-tools/skills/sit-local-patches/patches/03-em-config.patch
+  s_82840f4c97ff22::t_c3dd02693deb5d 1-53
+.claude/skills/prd-defect-analyzer/SKILL.md
+  s_97dad1635c2ec5::t_de47d950094d16 2-4,7,9,11,13,15,17-20,24,26,28,30,32,34-38,40-44,46-47,49-52,54,56,58-62,64-67,69-70,72-75,77,79,81-84,86-89,91,93-96,98,100,102,104-108,110-114,116-117,119-122,124,126,128-131,133-136,138-139,141-144,146,148,150-154,156-159,161-162,164-167,169,171,173,175-179,181-184,186,188-191,193,195,197-201,203-206,208,210-213,215,217,219,221-225,227-230,232-233,235-238,240,242,244-247,249-252,254,256-259,263,265-268,270-274,276-279,281,283,285-289,291-293,295,297,299-301,303-304,306-307,309-310,312-313,315-316,318-320,324,326-333,337,339,341,343-352,354,356-361,363,365,367
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_7b15e52a51b6fc::t_04ac9e431593ac 18-21,1108-1133
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_7b15e52a51b6fc::t_d7bea3798bd56c 1013,1015,1077
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_7b15e52a51b6fc::t_5ae92a7f92100e 234
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_7b15e52a51b6fc::t_9bb909ad288ebe 159,530
+doc/grill-me-series-deep-dive.md
+  s_2685e5bb102c89::t_c033b946925b4f 1,3,7,9-17,19,21,23,25-32,34,36,38,40,44,46,48,50-78,82,84-85,87,89,93,95,97,99-104,106,108-111,115-117,119-123,125,127,130-131,134,136-137,139-143,145,147-151,154,156-165,169,171,173-176,178-180,182-185,187-193,197,199,201,203,205-209,211,213-214,216,218,220-235,237,239-247,249-253,257-303,305,307,309-313,315-322,326-337,339,341-342,344,346,348,350-365,367,369-387,389-394
+doc/grill-me-series/gen-docx.js
+  s_2685e5bb102c89::t_a261d33825b90b 1-443
+doc/grill-me-series/gen-user-manual.js
+  s_2685e5bb102c89::t_c77998d23296c7 1-440
+doc/grill-me-series/user-manual.md
+  s_2685e5bb102c89::t_214cde23198ff8 1,3,7,9-17,21,23,25-29,31,33-35,38,41-43,45-46,49,51-56,59-74,77,80-86,89-91,94-108,111-119,121-132,135,138,140,143-159,162-167,170,172,175-183,186-187,189-199,201,203-206,210-283,285-292,296-304,306,309-319,321-323,326-351,354-390,394,396-414,417-450,454-492,494-496
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "89b156b6d6cde499687de1197d49f42b65c1fe11",
+  "prompts": {},
+  "sessions": {
+    "s_2685e5bb102c89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3b9518a0-69db-428f-8977-0cc700c5791b",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_700fae2d399fbe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9ef15d2e-e371-40c3-96f5-2e2ddafbb1f9",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_7b15e52a51b6fc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a3ac4891-c3c7-419b-9389-3d09b3dcd334",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_82840f4c97ff22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5c2a577e-3511-4144-acef-cd0acbf5654c",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_97dad1635c2ec5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a4063a75e9c25a02b",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

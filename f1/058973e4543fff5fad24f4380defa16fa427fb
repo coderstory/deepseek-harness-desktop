@@ -1,0 +1,44 @@
+C11-svc-ams/svc-core-ams/src/test/java/svc/core/ams/service/RoadRescueDataPushServiceTest.java
+  s_0ba0a0fd6df46f::t_1823455db40157 961,971,997,1025,1051,1074,1100,1149,1179,1227,1259,1289
+  s_0ba0a0fd6df46f::t_f7e9075ecd5a3d 1107-1148,1150-1178,1180-1206
+  s_0ba0a0fd6df46f::t_6d6326cfc796ec 1207-1226,1228-1258,1260-1288,1290-1297
+  s_0ba0a0fd6df46f::t_4a2184c24f4098 952-960,962-970,972-996,998-1024,1026-1050,1052-1073,1075-1099,1101-1106
+C11-svc-ams/svc-cloud-ams/src/main/java/svc/cloud/ams/service/data/svc_estimate_order/VehicleInput.java
+  s_0ba0a0fd6df46f::t_5002b82cb1ca02 32-34
+  s_0ba0a0fd6df46f::t_e3c4e3df41d5fd 122-129
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/entity/RoadRescueOperationLog.java
+  s_0ba0a0fd6df46f::t_fbf268263b918e 69-70
+  s_0ba0a0fd6df46f::t_b48993b2f20cd6 76
+  s_0ba0a0fd6df46f::t_9c771ccbb46a8f 3,5
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/RoadRescueDataPushService.java
+  s_0ba0a0fd6df46f::t_7d7970d4717f63 1052-1053
+  s_0ba0a0fd6df46f::t_536244e585cb74 1074-1079
+  s_0ba0a0fd6df46f::t_a9889597c4eaee 840,849-850,857,861,869-871,875,880,882
+  s_0ba0a0fd6df46f::t_ccee1ce2fe82b3 191-192,197-198
+  s_0ba0a0fd6df46f::t_b59cbf201a1114 699-711
+  s_0ba0a0fd6df46f::t_7e7f6556b8dbdc 915-948
+  s_0ba0a0fd6df46f::t_83283d762f58b0 1106-1111
+  s_0ba0a0fd6df46f::t_4bac89540617e9 844-846,851-856
+  s_0ba0a0fd6df46f::t_93b255e4f75c3b 194
+  s_0ba0a0fd6df46f::t_78e37125d15189 193,195-196
+  s_0ba0a0fd6df46f::t_d7a70b735aa807 804-810,812-814,820-829,833-839,841-843,847-848,858-860,862-868,872-874,876-879,881,883-914
+  s_0ba0a0fd6df46f::t_ec7ae3816090b6 815
+  s_0ba0a0fd6df46f::t_5c570d7950a740 811,816-819,830-832
+  s_0ba0a0fd6df46f::t_6f3b32df97373f 676
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "f1058973e4543fff5fad24f4380defa16fa427fb",
+  "prompts": {},
+  "sessions": {
+    "s_0ba0a0fd6df46f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "50f8c41e-0cc1-492e-9d53-5ecbd25d0915",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
