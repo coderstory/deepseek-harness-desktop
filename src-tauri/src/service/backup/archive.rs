@@ -7,7 +7,6 @@
 use std::fs;
 use std::io::Write;
 use std::path::Path;
-use tracing::warn;
 
 /// 需要从归档中排除的相对路径组件（前缀匹配）。
 const EXCLUDED_NAMES: &[&str] = &[".backups", ".harness.pid"];
@@ -219,24 +218,17 @@ pub fn extract_archive(archive: &Path, dest: &Path) -> Result<(), String> {
                 .map_err(|e| format!("BACKUP_EXTRACT_MKDIR_PARENT: {e}"))?;
         }
 
-        // 先删除已存在的目标文件：避免 tar truncate 时被其他进程以读模式锁住
-        // （如 pnpm-lock.yaml 被运行中的 DSH 服务锁住）
+        // 手动 read_to_end + fs::write 替代 entry.unpack：
+        // 1. 避免 tar crate 的 set_perms/set_ownerships/set_mtime 等额外步骤失败
+        // 2. 文件被其他进程以读模式锁住时，unlink + write 能绕过（macOS 上 unlink 不要求文件关闭）
         if dest_path.exists() && !dest_path.is_dir() {
             let _ = fs::remove_file(&dest_path);
         }
-
-        match entry.unpack(&dest_path) {
-            Ok(_) => {}
-            Err(e) => {
-                let dest_display = dest_path.display();
-                let path_display = path.display();
-                let entry_size = entry.header().size().unwrap_or(0);
-                let entry_type = entry.header().entry_type();
-                return Err(format!(
-                    "BACKUP_EXTRACT_UNPACK: {e} (path={path_display}, dest={dest_display}, size={entry_size}, type={entry_type:?})"
-                ));
-            }
-        }
+        let mut content = Vec::new();
+        std::io::Read::read_to_end(&mut entry, &mut content)
+            .map_err(|e| format!("BACKUP_EXTRACT_READ: {e} (path={})", path.display()))?;
+        fs::write(&dest_path, &content)
+            .map_err(|e| format!("BACKUP_EXTRACT_WRITE: {e} (path={}, dest={})", path.display(), dest_path.display()))?;
     }
     Ok(())
 }

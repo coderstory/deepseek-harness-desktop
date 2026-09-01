@@ -469,34 +469,5 @@ mod tests {
 
 #[cfg(test)]
 mod debug_tests {
-    use super::*;
-    #[test]
-    fn debug_extract_pnpm_lock_to_web() {
-        // 验证：解压到 ~/.dsh/profiles/web/ 目录能否成功
-        // 之前的 GUI 失败是因为 DSH 服务运行时锁定了 pnpm-lock.yaml
-        let backup = std::path::Path::new("/Users/coderstory/.dsh/.backups/2026-08-31T15-04-18.tar.zst");
-        if !backup.exists() { return; }
-        let dest = std::path::PathBuf::from("/Users/coderstory/.dsh/profiles/web/pnpm-lock.yaml");
-        let _ = fs::remove_file(&dest);
-        let file = fs::File::open(backup).unwrap();
-        let dec = zstd::stream::Decoder::new(file).unwrap();
-        let mut archive = tar::Archive::new(dec);
-        archive.set_preserve_ownerships(false);
-        for entry in archive.entries().unwrap() {
-            let mut entry = entry.unwrap();
-            let path = entry.path().unwrap().into_owned();
-            if path.file_name().and_then(|n| n.to_str()) == Some("pnpm-lock.yaml") {
-                match entry.unpack(&dest) {
-                    Ok(_) => {
-                        let size = fs::metadata(&dest).unwrap().len();
-                        assert!(size > 1024, "pnpm-lock.yaml 应远大于 1024 字节，实际 {size}");
-                        println!("✓ 解压成功：{} bytes", size);
-                    }
-                    Err(e) => panic!("解压失败: {} (kind: {:?}, os_error: {:?})", e, e.kind(), e.raw_os_error()),
-                }
-                break;
-            }
-        }
-        let _ = fs::remove_file(&dest);
-    }
+    // 调试测试已清理
 }
