@@ -1,0 +1,237 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsOutput.java
+  s_22891737236574::t_eca48eef121774 97
+  s_22891737236574::t_23e74c553e73ad 98-100
+  s_f852ee1194bce8::t_0ae6e70256c763 14-15,20-25,101-112
+.mcp.json
+  s_22891737236574::t_9affcb9872f29c 7
+AGENTS.md
+  s_22891737236574::t_96961b470b7d60 38
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/service/data/mdm_parts/GetMdmPartsInput.java
+  s_22891737236574::t_d9c89f48274baa 24-26,74-76
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/config/service/data/svc_labour_hour_type_price/QueryLabourHourTypeCodeByDealerCodeInput.java
+  s_22891737236574::t_3691b6cfc5caec 34-36,100-102
+C00-svc-base/svc-core-base/pom.xml
+  s_22891737236574::t_c8251843733766 211-217
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/error/SvcBaseError.java
+  s_22891737236574::t_555ff12690c503 26-32
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/IClaimHelper.java
+  s_22891737236574::t_f5cd9c2b2a8872 1-142
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/SparePartHelper.java
+  s_22891737236574::t_711de60c42359b 57-60
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/ClaimLabourHourRateDTO.java
+  s_22891737236574::t_31c205997334f8 1-58
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/spare_part/SparePartQueryPriceReq.java
+  s_22891737236574::t_b08dbe0061506d 12-15,22-24,50-65,81-88
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/AbstractPotdDealerPurchaseInfoAclHandler.java
+  s_22891737236574::t_c95cec92629bd1 103-104,117-120
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/DealerPartPriceDto.java
+  s_22891737236574::t_470019132b971c 24-31,71-86
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/GetDealerPartPriceMapParam.java
+  s_22891737236574::t_1ba88a91ebba67 21-23,32-39
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceDto.java
+  s_22891737236574::t_eb408e33e46772 20-27,67-82
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/dto/QueryPartPriceParam.java
+  s_22891737236574::t_b0e3707a29c776 23-25,34-41
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandler.java
+  s_22891737236574::t_beec1c0b9dc14f 6,12,15,18-19,22,31,35,75-83,91,97,108-162
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandler.java
+  s_22891737236574::t_69f6d5df27f2f3 7,66-72,101,103,110,113-116,170-176,192,202-213,222-256
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/IClaimClient.java
+  s_22891737236574::t_158eda929afca7 1-155
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartEnt.java
+  s_22891737236574::t_0e2b2f713bef02 8,124-133,579-594
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceOrderPartView.java
+  s_22891737236574::t_03dbdc2dbe039c 6,109-118,551-566
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceProxyEnt.java
+  s_22891737236574::t_a94c7a620f4b23 471-474,1466-1473
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/ESignatureHelperTest.java
+  s_22891737236574::t_b2d461c883af35 34-35,41,89
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/helper/SparePartHelperTest.java
+  s_22891737236574::t_c73b1f44eee5d0 1-119
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/EmPotdDealerPurchaseInfoAclHandlerTest.java
+  s_22891737236574::t_8940f304e9ab62 1-435
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyDealerPurchaseInfoAclHandlerTest.java
+  s_22891737236574::t_10c0066f5dba5c 1-341
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/strategy/dealer_purchase/impl/NotDirectModelGeelyQueryPartPriceTest.java
+  s_22891737236574::t_41430eb7311ac4 1-54,56-266
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/test/XstartupTestInitializer.java
+  s_22891737236574::t_c857c7cf3090d3 1,3-6,9-12,14-16,19-21,23-47,49
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimClientTest.java
+  s_22891737236574::t_769fcd5648fc99 1-300
+C00-svc-base/svc-core-base/src/test/java/svc/core/base/util/IClaimHelperTest.java
+  s_22891737236574::t_ba66679ebab493 1-230
+C00-svc-base/svc-core-base/src/test/java/svc/core/reception/helper/StatementHelperGetPriceContextTest.java
+  s_22891737236574::t_437231ea39c704 1-159
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/GetSvcDealerHourPriceResp.java
+  s_22891737236574::t_66cb99910eb972 56-64,176-183
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/mdm_standard_hour/QueryMdmStandardHourViewInput.java
+  s_22891737236574::t_4a2c9398bfc5e7 59-65,218-220
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceInput.java
+  s_22891737236574::t_6d287ae667d2c7 28-33,73-78
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetLatestDealerHourPriceOutput.java
+  s_22891737236574::t_153af74a80cf71 70-101
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeInput.java
+  s_22891737236574::t_03866f49a78704 19-24,96-101
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_dealer_hour/GetSvcDealerHourByDealerCodeOutput.java
+  s_22891737236574::t_87bf212294ac9d 111-128
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_maintain_rule_part/QuerySvcMaintainRulePartOutput.java
+  s_22891737236574::t_adef03000dd88e 34-36,202-209
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/MdmStandardHourServiceImpl.java
+  s_22891737236574::t_5461d67b02f95c 200-206,263-265,272-275,279
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcDealerHourServiceImpl.java
+  s_22891737236574::t_c1019250596bdd 8,15,21-24,341,440,446,492,651,671,682-684,716-719,731,745,760,774,842,911,970-974,991,1000-1001,1013-1023,1033-1036,1061,1111-1136,1140-1176
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcServiceMaintainRuleServiceImpl.java
+  s_22891737236574::t_80466f6a1f15e6 1078
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/MdmStandardHourServiceImplQueryViewTest.java
+  s_22891737236574::t_eb71efa663bf61 1-187
+C01-svc-config/svc-core-config/src/test/java/svc/core/config/service/SvcDealerHourServiceImplTest.java
+  s_22891737236574::t_9265a09dfafcef 1-29,32,36-37,39-56,58-67,69,73-74,76-77,79-80,82-83,85-86,88-89,91-102,105-120,123-129,132-168,170-197,199,201-248,250,252-287,289,291-293,295-300,302-305,307-308,310-311,313,315-317,319
+C02-svc-appointment/svc-cloud-appointment/src/main/java/svc/cloud/appointment/service/data/svc_appointment_part/CreateSvcAppointmentPartInput.java
+  s_22891737236574::t_a354fbc57953cc 4,7,45-54,224-239
+C02-svc-appointment/svc-core-appointment/pom.xml
+  s_22891737236574::t_d6530dbc602d92 75-92
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartEnt.java
+  s_22891737236574::t_69437aedefaec4 8,65-74,365-380
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/entity/SvcAppointmentPartView.java
+  s_22891737236574::t_7fa2f47b4b55e0 5,62-71,188-203
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/service/SvcAppointmentSerServiceImpl.java
+  s_22891737236574::t_e34098e13bbfbc 42,58-59,82,122,553-555,770-785,890-897,990-1019,1069-1080,1132-1133,1154-1197,1199-1207,1280-1289,2124-2130,2193-2197,2201-2220,2237-2244,2271-2294
+C02-svc-appointment/svc-core-appointment/src/main/resources/mybatis/mapper/svc/core/appointment/SvcAppointmentPartViewMapper.xml
+  s_22891737236574::t_356debc8f2b154 24-25,46-48,93-94
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTest.java
+  s_22891737236574::t_a60fc7444b7369 1-456
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/service/SvcAppointmentSerServiceImplTransferTest.java
+  s_22891737236574::t_cb97ac8da4a0b4 1-293
+C02-svc-appointment/svc-core-appointment/src/test/java/svc/core/appointment/test/XstartupTestInitializer.java
+  s_22891737236574::t_eda8a6717c8c8f 1,3,5-6,9-12,14-16,18-20,22,24,26-33,35-43,45-46
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_order_part/GetSvcServiceOrderPartOutput.java
+  s_22891737236574::t_3052306008705d 4,7,20-29,766-781
+C03-svc-reception/svc-core-reception/pom.xml
+  s_22891737236574::t_f635cdc31d68be 147
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_22891737236574::t_c647e24e55734b 40-41
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/helper/SvcServiceProxyHelper.java
+  s_22891737236574::t_0a2da294555e42 17,28-29,55,490-512,1001-1004
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_22891737236574::t_b9a9d4528b7d3c 20,30,34-35,66-67,562,605-652,704-720
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetMdmPartsInput.java
+  s_22891737236574::t_f388b041353e7d 20,22,25-37
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/GetSvcServiceProxyDetailOutput.java
+  s_22891737236574::t_8de0125ff39a2f 7,131-133,535-542
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/SvcServiceOrderPartPut.java
+  s_22891737236574::t_205e262f969b10 6,43-50,171-186
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_22891737236574::t_d1c89ada776fa2 11-12,19-20,34,101-102,172-196,228-234,239,264-266,276-278,284-285,292-329,332,389-412
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/dto/BeforeSaveOrUpdateCheckCxt.java
+  s_22891737236574::t_42f4b790de9c49 7-8,13,38-45
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandler.java
+  s_22891737236574::t_48d3b793483ed3 14,16-18,30,40-41,75-80,85,151-162,168-173,257-290,298-333,392
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceOrderPartMapper.xml
+  s_22891737236574::t_7fb17d5e53a58e 10,75,81
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceGetMdmPartsTest.java
+  s_22891737236574::t_b2a39fd770a3c6 1,3,5-15,17,20-27,30-34,36,38-50,53-70,72-88,90-100,103-106,108-113,115-119,121-125,128-131,133-142,146-148,150-153
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServicePickUpTaskServiceQbWarrantyTest.java
+  s_22891737236574::t_b38b36ea6c08aa 1-342
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/SvcServiceProxyServicePageBenefitTest.java
+  s_22891737236574::t_cf4f94a769254a 1,3-6,8-28,30-34,36-40,42-77,79-84,86,90-148,151-160,162,164-171,173-188,190-199,201-218,220-229,231-236,238-250,252-257,260-295,297-314,316-331,333-349,351-365,367-392,394-400,402-403,405
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerEnforceTest.java
+  s_22891737236574::t_9361381f1c255d 1-23,25-27,29-32,34-38,40-54,56-63,65-67,69-71,73-75,77-78,81-83,86-108,111-120,123,125-131,133-137,139-142,145-163,166-183,186-201,204-219,222-237,239-244
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandlerTest.java
+  s_22891737236574::t_44b374300beb4d 1-607
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/strategy/serviceproxy/impl/EuServiceProxyHandlerTest.java
+  s_22891737236574::t_2d15dc10ed74cc 1-538
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/InfomediaVehicleInfoDataUploadService.java
+  s_22891737236574::t_0bd4b7b12ecc82 392
+C11-svc-ams/svc-core-ams/src/main/java/svc/core/ams/service/SvcAmsOperationService.java
+  s_22891737236574::t_b65bdb19354ddd 261
+C12-svc-estimate/svc-cloud-estimate/src/main/java/svc/cloud/estimate/service/data/svc_estimate_order/CreateEstimateOrderPartInput.java
+  s_22891737236574::t_e9f7412487f4b9 4,7,41-50,217-232
+C12-svc-estimate/svc-core-estimate/src/main/java/svc/core/estimate/entity/SvcEstimateOrderPartEnt.java
+  s_22891737236574::t_c5494c5b8f4ace 8,67-76,348-363
+CLAUDE.md
+  s_22891737236574::t_d9933562f43933 61,78
+D03-deploy/svc-standard-api/src/main/java/app/SvcStandardApiApplication.java
+  s_22891737236574::t_423a54fba29639 40,55-58
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/appointment/error/appointment-common-error.zh-CN.properties
+  s_22891737236574::t_14b57d81b6233f 1-10
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.cs-CZ.properties
+  s_22891737236574::t_f7cd4689c6023b 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.de-DE.properties
+  s_22891737236574::t_1e23a9ccb6a562 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.en-US.properties
+  s_22891737236574::t_dbea8750ab57dd 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-ES.properties
+  s_22891737236574::t_d4a11fdf5e530e 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.es-MX.properties
+  s_22891737236574::t_6589772a8f59db 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.fr-FR.properties
+  s_22891737236574::t_4c49b2a9c04ff5 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.hu-HU.properties
+  s_22891737236574::t_3ce3ea532e5c07 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.id-ID.properties
+  s_22891737236574::t_8b285ee0bb7ae6 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ko-KR.properties
+  s_22891737236574::t_04e8cf9f31a2a1 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nb-NO.properties
+  s_22891737236574::t_46e63cda5f1d1c 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.nl-NL.properties
+  s_22891737236574::t_80b999428b9e81 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.ru-RU.properties
+  s_22891737236574::t_c4634a7cdb4880 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sk-SK.properties
+  s_22891737236574::t_7742c7e28c3527 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.sv-SE.properties
+  s_22891737236574::t_acdd89c3f6164b 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.th-TH.properties
+  s_22891737236574::t_98a5c915df2df3 16-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.uz-UZ.properties
+  s_22891737236574::t_d1bb17d131d6e4 17-18
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/base/error/svc-base-error.zh-CN.properties
+  s_22891737236574::t_26dec262adead6 14-17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.zh-CN.properties
+  s_22891737236574::t_3b45be30da7cf6 21
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.de-DE.properties
+  s_22891737236574::t_0f50ca593d58d2 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.en-US.properties
+  s_22891737236574::t_f8277ed7d3f306 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-ES.properties
+  s_22891737236574::t_12c143f48b1e9b 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-MX.properties
+  s_22891737236574::t_1a614efb02e6cb 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.fr-FR.properties
+  s_22891737236574::t_c790e7e43c66b8 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.hu-HU.properties
+  s_22891737236574::t_5028f24fd439dd 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.id-ID.properties
+  s_22891737236574::t_4a0ec69cc91085 32
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nl-NL.properties
+  s_22891737236574::t_415a471e53bc22 32
+package.json
+  s_22891737236574::t_f5022e942cfc30 2-3
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_f852ee1194bce8::t_3ad5f6a182eb38 20,584,636,717-718,723,732,737,747,753,780,813,1150-1164,1191-1205,1261-1262,1270-1278,1300-1304,1318-1320
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5bf6ca2162152ed28bf0359fd6da719bbfd020d8",
+  "prompts": {},
+  "sessions": {
+    "s_22891737236574": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1e92b51a-928a-45ce-ba4f-baa2b8b5788c",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_f852ee1194bce8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-accf0fda49cbebac8",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
