@@ -1,0 +1,27 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/CEndTokenConf.java
+  s_15d702f564906c::t_a6efc39f8f978a 109
+  s_15d702f564906c::t_2c30fad3274157 48
+  s_15d702f564906c::t_d78384ba856f84 87-108
+  s_15d702f564906c::t_d7d640868d62ca 27-28
+  s_15d702f564906c::t_cd817242d8184a 6-7
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/auth/CEndUserCenterClient.java
+  s_15d702f564906c::t_e2608848aa462d 75
+  s_15d702f564906c::t_89068232c1d639 166
+  s_15d702f564906c::t_f0fe8044b4ecba 114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6f63343505987c4e271008f1555e37fac899bfa8",
+  "prompts": {},
+  "sessions": {
+    "s_15d702f564906c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "44903590-944d-43d2-8ab6-fbe45eec2be0",
+        "model": "qwen3.7-plus"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

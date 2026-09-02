@@ -1,0 +1,308 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_22891737236574::t_aa502477e36d0a 39
+  s_f852ee1194bce8::t_85e7324df4868f 42-49
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/SvcSystemOrderInput.java
+  s_22891737236574::t_74c4b1e2616558 57
+  s_22891737236574::t_15d63dc2c2976c 58-60
+  s_f852ee1194bce8::t_ec4bd519d947c2 23-25,61-64
+.gitignore
+  s_22891737236574::t_dadb5602dab7f2 54-94
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/constant/GlobalParamsConfig.java
+  s_22891737236574::t_72b945646937d7 130-134
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/PermissionDict.java
+  s_22891737236574::t_6feb9c8e9c6e37 149
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/delivery/service/SvcStateAmountDetailService.java
+  s_22891737236574::t_ed9eb82b7c2823 1-20
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/delivery/service/data/svc_state_amount_detail/QuerySvcStateAmountDetailInput.java
+  s_22891737236574::t_18b766a81f41e8 1-12
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/delivery/service/data/svc_state_amount_detail/QuerySvcStateAmountDetailOutput.java
+  s_22891737236574::t_81c738ec66e864 1-62
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/delivery/service/data/svc_state_amount_detail/SaveSvcStateAmountDetailInput.java
+  s_22891737236574::t_162c47e85f1cd6 1-14
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/delivery/service/data/svc_state_amount_detail/SvcStateAmountDetailItem.java
+  s_22891737236574::t_c6b184cff90974 1-44
+C00-svc-base/svc-core-base/src/main/java/svc/core/delivery/entity/SvcStateAmountDetailEnt.java
+  s_22891737236574::t_2194b7b30849fa 1-98
+C00-svc-base/svc-core-base/src/main/java/svc/core/delivery/entity/SvcStatementEnt.java
+  s_22891737236574::t_e4ab8cc14443da 46-53,66-69,302-317,342-349
+C00-svc-base/svc-core-base/src/main/java/svc/core/delivery/mapper/SvcStateAmountDetailMapper.java
+  s_22891737236574::t_c9453a435061b6 1-23
+C00-svc-base/svc-core-base/src/main/java/svc/core/delivery/service/SvcStateAmountDetailServiceImpl.java
+  s_22891737236574::t_f5565f8b5c1aa4 1-80
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceMergeDetailEnt.java
+  s_22891737236574::t_63ad25ccb5ed23 1-112
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceRepairItemEnt.java
+  s_22891737236574::t_0c8e1ba92ca041 51-58,230-245
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/entity/SvcServiceRepairItemMergeEnt.java
+  s_22891737236574::t_ca3a067461b861 1-98
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/enums/SvcServiceVatTaxTypeEnum.java
+  s_22891737236574::t_93a2c4600ff32f 1-46
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/CountryVatItemFilter.java
+  s_22891737236574::t_a0fa241b2a47a0 1-24
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/PriceContext.java
+  s_22891737236574::t_af64f2426fb9be 11,59-60,86-89,95-96,280-283,285-291,296,298,313-386
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/VatItemFilter.java
+  s_22891737236574::t_e54e959fba0b8f 1-32
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/dto/PriceInfo.java
+  s_22891737236574::t_2b444cc86136d3 14-15,91-98
+C00-svc-base/svc-core-base/src/main/resources/mybatis/mapper/svc/core/delivery/SvcStateAmountDetailMapper.xml
+  s_22891737236574::t_630146fb4f4aec 1-37
+C00-svc-base/svc-core-base/src/test/java/svc/core/reception/helper/PriceContextTest.java
+  s_22891737236574::t_80e51721150589 1-251
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/CreateSvcInsuranceCompanyInput.java
+  s_22891737236574::t_8eada82a7b282d 1-90
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/GetSvcInsuranceCompanyInput.java
+  s_22891737236574::t_620d021e41ee03 1-19
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/GetSvcInsuranceCompanyOutput.java
+  s_22891737236574::t_6da3249a1a4288 1-135
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/ListSvcInsuranceCompanyInput.java
+  s_22891737236574::t_af619a0f02ead1 1-19
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/ListSvcInsuranceCompanyOutput.java
+  s_22891737236574::t_1c413e3846db30 1-135
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/QuerySvcInsuranceCompanyInput.java
+  s_22891737236574::t_fe610610f92333 1-53
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/QuerySvcInsuranceCompanyOutput.java
+  s_22891737236574::t_10b5ed2b9eda55 1-145
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/UpdateSvcInsuranceCompanyInput.java
+  s_22891737236574::t_f6b5b887730c13 1-74
+C01-svc-config/svc-cloud-config/src/main/java/svc/cloud/config/service/data/svc_insurance_company/UpdateSvcInsuranceCompanyStatusInput.java
+  s_22891737236574::t_ba1ede61210629 1-28
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/entity/SvcInsuranceCompanyEnt.java
+  s_22891737236574::t_1d3cbca8a4e586 1-168
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/mapper/SvcInsuranceCompanyMapper.java
+  s_22891737236574::t_378cfe0744833d 1-9
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcInsuranceCompanyService.java
+  s_22891737236574::t_cdfcf3d5f3249e 1-193
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/SvcServiceRepairItemMergeService.java
+  s_22891737236574::t_352de2f1dfe7fa 1-28
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/QuerySvcServiceMergeDetailOutput.java
+  s_22891737236574::t_f4ba3a331b6da7 1-62
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/QuerySvcServiceRepairItemMergeInput.java
+  s_22891737236574::t_a3a97483564d7b 1-12
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/QuerySvcServiceRepairItemMergeOutput.java
+  s_22891737236574::t_e1779c90379e4b 1-57
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/SaveSvcServiceRepairItemMergeInput.java
+  s_22891737236574::t_522fb357d201ba 1-14
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/SvcServiceMergeDetailItem.java
+  s_22891737236574::t_5b07c31852cb3d 1-50
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item_merge/SvcServiceRepairItemMergeItem.java
+  s_22891737236574::t_3fe26c0e08b52a 1-51
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/temp_settle/InsuranceMergeItem.java
+  s_22891737236574::t_91cd277a6ac077 1-56
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/temp_settle/InsuranceSplitDetail.java
+  s_22891737236574::t_dabb2ee45b58e6 1-65
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/temp_settle/TempDiscountItem.java
+  s_22891737236574::t_c7b9c315bd18bd 1-36
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/entity/SvcServiceRepairItemView.java
+  s_22891737236574::t_c0c630c34ed64a 38-45,150-165
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/enums/SubItemType.java
+  s_22891737236574::t_42450df4348cf5 1-5
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/mapper/SvcServiceMergeDetailMapper.java
+  s_22891737236574::t_f4ff308e3b81a5 1-23
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/mapper/SvcServiceRepairItemMergeMapper.java
+  s_22891737236574::t_4ff7fa47ef8bdf 1-18
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/ConfirmSettleCalculator.java
+  s_22891737236574::t_bc3033e4c2d21b 1-226
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceProxyService.java
+  s_22891737236574::t_2ee395128a2890 80,88,92,129-152,156,315,331,346,356,374-397,402-462,1007,1086,1122,1137-1152,1162,1246-1313,1610,1648-1658,1660-1674,1683-1692,1716-1720,1724-1941,1969-1972,2010-2034,2139-2825
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceRepairItemMergeServiceImpl.java
+  s_22891737236574::t_a058a0fc256e70 1-163
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/TempSettleCalculator.java
+  s_22891737236574::t_965c742afb2d15 1-386
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/RepairInformationItemInput.java
+  s_22891737236574::t_85f0b819359d76 32-37,152-167
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/GetSvcServiceProxyPdfOutput.java
+  s_22891737236574::t_0063dca76de971 102-104,108-112,482-497
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/GetSvcServiceProxyPdfVat.java
+  s_22891737236574::t_c17e52a9b5eb6a 15-17,49-56
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_proxy/RepairInformationItemOutput.java
+  s_22891737236574::t_18a075b952f0c1 35-43,370-393
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/temp_settle/GetTempSettleInfoOutput.java
+  s_22891737236574::t_64997a4a30a842 1-39
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/temp_settle/TempSettleInfoInput.java
+  s_22891737236574::t_9ecc9ad80e1d05 1-15
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/temp_settle/TempSettleInput.java
+  s_22891737236574::t_46230fbcf1f15f 1-33
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/util/SettlementKey.java
+  s_22891737236574::t_5f1eb3c985ca71 1-54
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/util/TempProxyDiscountCache.java
+  s_22891737236574::t_9ad32c571c5ba4 1-106
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceMergeDetailMapper.xml
+  s_22891737236574::t_dc5a0bfc754430 1-37
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceRepairItemMergeMapper.xml
+  s_22891737236574::t_0bcfa9c7a78d21 1-20
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceRepairItemViewMapper.xml
+  s_22891737236574::t_0102b1de033b88 12-13,37-38
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/ConfirmSettleLogicTest.java
+  s_22891737236574::t_497ca0318316d9 1-415
+C03-svc-reception/svc-core-reception/src/test/java/svc/core/reception/service/TempSettleLogicTest.java
+  s_22891737236574::t_6ba906bc2f8cda 1-525
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/entity/SvcStatementView.java
+  s_22891737236574::t_be5a5ff93a06b2 261-263,638-645
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_22891737236574::t_138125e3330651 9,11-16,20-21,23,91,97-148
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/GetSvcStatementKrEmCalculator.java
+  s_22891737236574::t_c2cbbcc6956129 1-214
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementInvoiceService.java
+  s_22891737236574::t_ea8d92192f1ad8 10,27-29,32-33,48,58-60,97-98,140,149-150,157-166,169-179,194-198,202,222,244-305
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementPayRecordService.java
+  s_22891737236574::t_51c174fe27b2ce 88
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/SvcStatementService.java
+  s_22891737236574::t_36436ac3182780 19,67,72,86-96,119,128-129,551-552,607-608,695-735,752,775-788,790-869,871-878,880-889,901-1013,1015,1017,1019-1035,1037,1039-1049,1051-1059,1061-1069,1073-1246
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/DynamicQuerySvcStatementOutput.java
+  s_22891737236574::t_0f522457cfaad3 54-60,88-90,259-266,395-405
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_22891737236574::t_3901c2290c1074 13-18,49-56,129-134,199-214
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/GetSvcStatementAdditionalItem.java
+  s_22891737236574::t_d64aab6efddda5 42-45,121-127
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/GetSvcStatementOrderItem.java
+  s_22891737236574::t_fb519adec4bd51 29-31,138-145
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/GetSvcStatementOrderPart.java
+  s_22891737236574::t_2cba52b6ca1bd9 31-33,128-135
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/GetSvcStatementOutput.java
+  s_22891737236574::t_97c66a5cd8ec43 40-45,94-96,163-170,395-402,522-537
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/GetSvcStatementRepairItem.java
+  s_22891737236574::t_517cc5061697d6 29-34,76-91
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/GetSvcStatementInvoiceOutput.java
+  s_22891737236574::t_53121b97392ad5 8,104-115
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement_invoice/SvcStatementInvoiceModel.java
+  s_22891737236574::t_60741d08a02280 136-138,601-608
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_22891737236574::t_d2f263f207b43e 16,95-104,119-120,187-195,202-205,473,475-483,496,855-856,858-860,863-869,871-873
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/KrEmStatementHandlerHelper.java
+  s_22891737236574::t_c1443f3f93cfdf 1-952
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceExcelService.java
+  s_22891737236574::t_cb3e486f36178d 172-174
+C06-svc-delivery/svc-core-delivery/src/main/resources/mybatis/mapper/svc/core/delivery/SvcStatementViewMapper.xml
+  s_22891737236574::t_34ee2ff4073805 24,76-77,83,117-118
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/kr/KrInvoiceForward.ftl
+  s_22891737236574::t_17c8f6c4a4f145 1858-1862,1981-1985
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/kr/KrInvoiceNegative.ftl
+  s_22891737236574::t_7e4e0b3caf9289 1879-1883,2002-2006
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/GetSvcStatementKrEmCalculatorVatMergeTest.java
+  s_22891737236574::t_d0b872fe444aee 1-103
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceKrEmPriceContextTest.java
+  s_22891737236574::t_4d18ba9b8f29a9 1-321
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceRedInvoiceSecurityTest.java
+  s_22891737236574::t_625827bfc0e9ff 1-275
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementInvoiceServiceTest.java
+  s_22891737236574::t_5339a2efa7909c 1-277
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/service/SvcStatementServiceKrEmDirectReadTest.java
+  s_22891737236574::t_09f076c664086b 1-178
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImplKrModelTest.java
+  s_22891737236574::t_c4a913fd8abce3 3-8,10-25,28-37,39-40,42,45-48,51-52,62,66-83,85,89,116-117,128,131-132,134-135,137,139-149,231-234,236-237,240-248,250-936,938-940
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/GenTwoScenariosTest.java
+  s_22891737236574::t_35f244ed949d1d 1-794
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceForwardTest.java
+  s_22891737236574::t_f3ccb9642a53e9 714-756
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceGenerateTest.java
+  s_22891737236574::t_7b2d426e988f37 506-630
+C06-svc-delivery/svc-core-delivery/src/test/java/svc/core/delivery/strategy/statement/invoice/KrInvoiceNegativeTest.java
+  s_22891737236574::t_29e70223d2b10e 392-477
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.de-DE.properties
+  s_22891737236574::t_8468cd59fae146 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.en-US.properties
+  s_22891737236574::t_77f9e738926f3a 18-19
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.es-ES.properties
+  s_22891737236574::t_cd14e741c2396a 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.es-MX.properties
+  s_22891737236574::t_69c7615e882fa1 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.fr-FR.properties
+  s_22891737236574::t_d8f28b3c235b85 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.hu-HU.properties
+  s_22891737236574::t_64cdb8af6061d5 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.id-ID.properties
+  s_22891737236574::t_804cf3f700359b 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.ko-KR.properties
+  s_22891737236574::t_4abfdc8443fe71 18
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.nb-NO.properties
+  s_22891737236574::t_9f7786a52f82e6 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.nl-NL.properties
+  s_22891737236574::t_6e259f7fab5f45 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.ru-RU.properties
+  s_22891737236574::t_92544b370927d0 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.sv-SE.properties
+  s_22891737236574::t_0ac97828eca34f 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.th-TH.properties
+  s_22891737236574::t_45d50f348f5ab9 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.uz-UZ.properties
+  s_22891737236574::t_2f96da1c1aba4f 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.cs-CZ.properties
+  s_22891737236574::t_07ade6c301bd87 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.de-DE.properties
+  s_22891737236574::t_00793197c97632 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.en-US.properties
+  s_22891737236574::t_ae91a10eb80e1e 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-ES.properties
+  s_22891737236574::t_f2bb5b69a30f7a 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.es-MX.properties
+  s_22891737236574::t_a084ac72f1e283 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.fr-FR.properties
+  s_22891737236574::t_673947f35a5d8c 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.hu-HU.properties
+  s_22891737236574::t_f046d286edb974 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.id-ID.properties
+  s_22891737236574::t_090a02e924b8c1 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.ko-KR.properties
+  s_22891737236574::t_257b81b0ec81a6 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nb-NO.properties
+  s_22891737236574::t_e5cf511b8b3c1a 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.nl-NL.properties
+  s_22891737236574::t_c926170931bf1e 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.ru-RU.properties
+  s_22891737236574::t_dd71fc7cea884c 33-41
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.sk-SK.properties
+  s_22891737236574::t_b3f4617a881abb 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.sv-SE.properties
+  s_22891737236574::t_929bb8279174db 33-40
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.th-TH.properties
+  s_22891737236574::t_a1526bb9d29d51 33-41
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/reception/error/reception-common-error.uz-UZ.properties
+  s_22891737236574::t_5fd1aa2178e98d 33-40
+D03-deploy/svc-standard-api/src/main/resources/sql/2407-DDL.sql
+  s_22891737236574::t_564ae4161b7fc4 1687
+D03-deploy/svc-standard-api/src/main/resources/sql/2607-insurance-company.sql
+  s_22891737236574::t_af09490d35580d 1-22
+doc/八月需求/5.8-PRD-vs-代码对比.md
+  s_22891737236574::t_9846802ab52395 1-194
+doc/八月需求/5.8-反向PRD-代码实现-v2.md
+  s_22891737236574::t_2e664a3f97b8b5 1-558
+doc/八月需求/5.8-反向PRD-代码实现-v3.md
+  s_22891737236574::t_c3991ef20f3785 1-472
+doc/八月需求/5.8-反向PRD-代码实现.md
+  s_22891737236574::t_a8fe1a1f2537ec 1-499
+doc/八月需求/5.8-开发文档.md
+  s_22891737236574::t_26e0ea3bcce74c 1-315
+doc/八月需求/PRD-할인-소계-口径确认.md
+  s_22891737236574::t_af5a6ed383d6bc 1-18
+doc/八月需求/韩国开票需求梳理与疑问清单.md.txt
+  s_22891737236574::t_8d8f9703f44e00 1-29
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/error/ConfigCommonError.java
+  s_f852ee1194bce8::t_acc117d1f0b170 20-21
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.zh-CN.properties
+  s_f852ee1194bce8::t_3adb78ecf2eb41 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7da1932be62cd4db8cd8ba05570f68e8a42f02b6",
+  "prompts": {},
+  "sessions": {
+    "s_22891737236574": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1e92b51a-928a-45ce-ba4f-baa2b8b5788c",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    },
+    "s_f852ee1194bce8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-accf0fda49cbebac8",
+        "model": "unknown"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

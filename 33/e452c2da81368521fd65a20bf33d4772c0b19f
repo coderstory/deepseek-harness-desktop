@@ -1,0 +1,25 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordQueryHelper.java
+  s_25fcf6356443e6::t_e979e2d2351e36 210-212
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/data/svc_maintenance_record/ExportMaintenanceRecordModel.java
+  s_25fcf6356443e6::t_13b1969d4f38af 182,186
+  s_25fcf6356443e6::t_371b23ba696e49 60
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordQueryDetailExportTest.java
+  s_25fcf6356443e6::t_f7ea859c8e1e96 285
+  s_25fcf6356443e6::t_352ae2c895fc9e 276
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "33e452c2da81368521fd65a20bf33d4772c0b19f",
+  "prompts": {},
+  "sessions": {
+    "s_25fcf6356443e6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "778572bf-8778-4532-a3e0-3d550af3d1b5",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/utils/MaintenanceRecordValidatorTest.java
+  s_25fcf6356443e6::t_4e8d230e28d6df 17
+  s_25fcf6356443e6::t_518bdd223986ae 19
+  s_25fcf6356443e6::t_0365dbad0aa0ed 178-186
+  s_25fcf6356443e6::t_3e1c28c9a9758a 366-369,375
+  s_25fcf6356443e6::t_510b50359d725c 636-648
+  s_25fcf6356443e6::t_ffd5d7b020b1d1 379-381,389
+  s_25fcf6356443e6::t_babd465a7102cf 253-365,370-374,376-378,382-388,390-410
+  s_25fcf6356443e6::t_d9435cda002098 411-434
+  s_25fcf6356443e6::t_26a64fdb037549 224
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_25fcf6356443e6::t_addea64053b330 460,467,480-483,486-488
+  s_25fcf6356443e6::t_3cb83e92bcff9b 358-416,419-459,461-466,468-479,484-485,489-508
+  s_25fcf6356443e6::t_d0630f0ed27984 417-418
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_25fcf6356443e6::t_a87bfaee0092f0 476
+  s_25fcf6356443e6::t_f9d13cffa60419 342
+  s_25fcf6356443e6::t_575849283a4411 260,263-269
+  s_25fcf6356443e6::t_aae9b6103c04a7 507-541
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e54097604949c0aa635110d8e6c9df1b8b6cd7d4",
+  "prompts": {},
+  "sessions": {
+    "s_25fcf6356443e6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "778572bf-8778-4532-a3e0-3d550af3d1b5",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

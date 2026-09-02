@@ -1,0 +1,19 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_82840f4c97ff22::t_b46fd7664d2603 404-405
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "659538421e6ca7e4555895e6d74312183e8f56fa",
+  "prompts": {},
+  "sessions": {
+    "s_82840f4c97ff22": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5c2a577e-3511-4144-acef-cd0acbf5654c",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
