@@ -1,0 +1,19 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/TechnicalSupportClient.java
+  s_aef1e15cb08db9::t_6526b2e8d1171b 25-27,29,31,35-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0c32d2651ab2eb996e124cf8f294ad1143985289",
+  "prompts": {},
+  "sessions": {
+    "s_aef1e15cb08db9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a9efe020c2cee2382",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
