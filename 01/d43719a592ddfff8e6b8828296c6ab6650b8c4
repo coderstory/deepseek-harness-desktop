@@ -1,0 +1,19 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppStoreQueryHelper.java
+  s_fe44adde32356c::t_71a98e2df4b086 70,111,137
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "01d43719a592ddfff8e6b8828296c6ab6650b8c4",
+  "prompts": {},
+  "sessions": {
+    "s_fe44adde32356c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "11963be1-3895-493b-8c97-502cc98c1b5c",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
