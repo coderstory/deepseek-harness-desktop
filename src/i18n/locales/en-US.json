@@ -111,6 +111,8 @@
   "ui.iframe_error": "Cannot load the DeepSeek Harness interface.",
   "ui.ensure_running": "Please make sure the service is running at {{url}}.",
   "ui.language": "Language",
+  "ui.languages.zh": "Chinese",
+  "ui.languages.en": "English",
   "ui.connection_status": "Connection",
   "ui.running": "Running",
   "ui.stopped": "Stopped",

@@ -111,6 +111,8 @@
   "ui.iframe_error": "无法加载 DeepSeek Harness 界面。",
   "ui.ensure_running": "请确认服务正在 {{url}} 运行。",
   "ui.language": "语言",
+  "ui.languages.zh": "中文",
+  "ui.languages.en": "English",
   "ui.connection_status": "连接状态",
   "ui.running": "运行中",
   "ui.stopped": "已停止",

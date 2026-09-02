@@ -366,8 +366,8 @@ export function ConfigDebug() {
             </Select.Trigger>
             <Select.Popover className="rounded-md">
               <ListBox>
-                <ListBox.Item className="rounded-md min-h-8!" id="zh-CN" textValue="中文">中文</ListBox.Item>
-                <ListBox.Item className="rounded-md min-h-8!" id="en-US" textValue="English">English</ListBox.Item>
+                <ListBox.Item className="rounded-md min-h-8!" id="zh-CN" textValue={t('ui.languages.zh')}>{t('ui.languages.zh')}</ListBox.Item>
+                <ListBox.Item className="rounded-md min-h-8!" id="en-US" textValue={t('ui.languages.en')}>{t('ui.languages.en')}</ListBox.Item>
               </ListBox>
             </Select.Popover>
           </Select>
