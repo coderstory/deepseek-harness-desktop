@@ -1,0 +1,20 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/Potd2Helper.java
+  s_935047ac72392c::t_8f52a268033563 133-136,138
+  s_935047ac72392c::t_71a8b27a0bed0e 164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5fce7f6b68c065a5276fe675c6c75f258cd053a1",
+  "prompts": {},
+  "sessions": {
+    "s_935047ac72392c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f153fc54-05b8-4518-978f-377759afd4ef",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
