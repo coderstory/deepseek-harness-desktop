@@ -1,0 +1,37 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_fe44adde32356c::t_2c73d1b30850fd 1049-1050
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/csc/impl/TechMdmCSCHandler.java
+  s_fe44adde32356c::t_e766c3294b3079 38
+  s_fe44adde32356c::t_b325404ed9b51e 59
+  s_fe44adde32356c::t_469b18d597a436 18
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/mapper/SvcServiceProxyViewMapper.java
+  s_fe44adde32356c::t_85dafcecbf08d5 8
+  s_fe44adde32356c::t_88b5fd14ad96e6 21-23
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetCSCInput.java
+  s_fe44adde32356c::t_f3f30f78b6485f 56-57,60-61
+  s_fe44adde32356c::t_f2e16df3f6e911 15-17
+  s_fe44adde32356c::t_d69df493f8e921 4,7
+  s_fe44adde32356c::t_98199d4d7d2ecc 8
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetTaOrderInput.java
+  s_fe44adde32356c::t_e475e057a93f05 6-7,15-17,25-32
+C00-svc-base/svc-core-base/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceProxyViewMapper.xml
+  s_fe44adde32356c::t_acc6d2d2697ce6 391-396
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/TechnicalSupportClient.java
+  s_fe44adde32356c::t_426c7b5a4e1589 25-27,29,31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ef0b3cc9b4ee650b8433bacbc6e66805bbfa9909",
+  "prompts": {},
+  "sessions": {
+    "s_fe44adde32356c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "11963be1-3895-493b-8c97-502cc98c1b5c",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

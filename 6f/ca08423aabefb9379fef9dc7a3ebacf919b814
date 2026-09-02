@@ -1,0 +1,24 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_25fcf6356443e6::t_eed0860fe0d35d 1093-1095,1101-1114,1122-1134
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppStoreQueryHelper.java
+  s_25fcf6356443e6::t_c4e46116551031 52,70,137
+  s_25fcf6356443e6::t_899ec36a7c6b05 4
+  s_25fcf6356443e6::t_aa3699da036525 111
+  s_25fcf6356443e6::t_0a233d3e74bdfe 32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6fca08423aabefb9379fef9dc7a3ebacf919b814",
+  "prompts": {},
+  "sessions": {
+    "s_25fcf6356443e6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "778572bf-8778-4532-a3e0-3d550af3d1b5",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

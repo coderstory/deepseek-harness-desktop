@@ -1,0 +1,149 @@
+doc/20260527.md
+  s_22891737236574::t_b1ecd72394109b 1-50
+doc/7月需求/4.5.2-PIPA短信-Nacos配置.md
+  s_22891737236574::t_f75b5d7f30b959 1-264
+doc/7月需求/4.5.3-PIPA查询-Nacos配置.md
+  s_22891737236574::t_fb046f6128700a 1-232
+doc/7月需求/4.5.3-PIPA查询-实施总结.md
+  s_22891737236574::t_9f66b2eedd7f27 1-186
+doc/7月需求/PIPA-4.5.7-Nacos清理通知.md
+  s_22891737236574::t_c04adc9a8ed771 1-44
+doc/7月需求/pipa-bindid接口改造-前端.md
+  s_22891737236574::t_84ee3ec64c85d0 1-180
+doc/7月需求/pipa-sync-job-sequence.mmd
+  s_22891737236574::t_bbe5f60d629053 1-24
+doc/KNOW-ISSUES.md
+  s_22891737236574::t_4c6ac5132f9daa 1-27
+doc/modules/01-C01-svc-config.md
+  s_22891737236574::t_013e5a389a8d4e 1-318
+doc/modules/02-C09-svc-pdi.md
+  s_22891737236574::t_7801a2767171b7 1-145
+doc/modules/03-C12-svc-estimate.md
+  s_22891737236574::t_1d3c3f0307f664 1-146
+doc/modules/04-C02-svc-appointment.md
+  s_22891737236574::t_3b7fa40a860076 1-139
+doc/modules/05-C03-svc-reception.md
+  s_22891737236574::t_c43dcc6542973f 1-293
+doc/modules/06-C04-svc-maintain.md
+  s_22891737236574::t_6ab1c2575a65ec 1-148
+doc/modules/07-C06-svc-delivery.md
+  s_22891737236574::t_c9815715d66e30 1-273
+doc/modules/08-C11-svc-ams.md
+  s_22891737236574::t_ba39b10bab4174 1-88
+doc/modules/09-C10-svc-inc.md
+  s_22891737236574::t_7c3319355f07fe 1-109
+doc/rules/rules.md
+  s_22891737236574::t_a6445043d81266 1-248
+doc/scripts/gen_sql_supplement.py
+  s_22891737236574::t_7e27d45eab395c 1-150
+doc/scripts/strip_md_references.py
+  s_22891737236574::t_0ca2f218d1cf77 1-133
+doc/specification/20260522-5api-standardization.md
+  s_22891737236574::t_e191b3b1343237 1-92
+doc/sql/feature/20260423-南非去lcms
+  s_22891737236574::t_f67b55453e4878 1-13
+doc/sql/feature/20260515-em-印尼
+  s_22891737236574::t_dd9aa9282cffd4 1-419
+doc/sql/feature/20260515-eu-印尼
+  s_22891737236574::t_2c59be106f3ae4 1-185
+doc/sql/feature/20260515-eu-对接新potd
+  s_22891737236574::t_7d7446b414ec4a 1-185
+doc/sql/feature/20260516-迁移godp的pdi
+  s_22891737236574::t_f48f4f2c95a19d 1-9
+doc/sql/feature/20260702-接入新potd流程改造
+  s_22891737236574::t_e4e789f08e62c8 1-31
+doc/sql/feature/20260706-radar
+  s_22891737236574::t_7376d736fa10fa 1-26
+doc/sql/feature/20260710-pipa-drop-pushcount.sql
+  s_22891737236574::t_1433390eb44a4e 1-31
+doc/sql/feature/20260710-pipa-submit-job.sql
+  s_22891737236574::t_15824d71c1d876 1-36
+doc/sql/feature/20260727-repeat-repair.sql
+  s_22891737236574::t_093a004413304f 1-5
+doc/sql/feature/20260810-eu极氪pdi改造
+  s_22891737236574::t_cf1ded6a3968d0 1-12
+doc/sql/feature/done/20250708-otd
+  s_22891737236574::t_900731dc2d4565 1-237
+doc/sql/feature/done/20250826-euem-pdi+预约
+  s_22891737236574::t_d7ca4f6bc90b3f 1-76
+doc/sql/feature/done/20250930-za.nacos
+  s_22891737236574::t_37dd497d056078 1-19
+doc/sql/feature/done/20250930-za.sql
+  s_22891737236574::t_a8284469bd42d9 1-1019
+doc/sql/feature/done/20251010-同步abpUsers
+  s_22891737236574::t_07db5dfc92e591 1-66
+doc/sql/feature/done/20251012-tenant-test
+  s_22891737236574::t_94f5758ed38b21 1-24
+doc/sql/feature/done/20251021-权益中心
+  s_22891737236574::t_fc386e1f97d11b 1-75
+doc/sql/feature/done/20251120-uz
+  s_22891737236574::t_e6a12f054abe1a 1-94
+doc/sql/feature/done/20251218-appointment
+  s_22891737236574::t_27ca26605b9995 1-3
+doc/sql/feature/done/20251230-eu12英国
+  s_22891737236574::t_aaef16afa9da20 1-330
+doc/sql/feature/done/20260101
+  s_22891737236574::t_f0cce083115e60 1-12
+doc/sql/feature/done/20260120-墨西哥em
+  s_22891737236574::t_7e7ab0e7d152c6 1-362
+doc/sql/feature/done/20260310-eusql.sql
+  s_22891737236574::t_a2a872e98bf889 1-2659
+doc/sql/feature/done/20260310-欧洲五国
+  s_22891737236574::t_9630fd1f4b76af 1-71
+doc/sql/feature/done/20260331-SapEU.sql
+  s_22891737236574::t_b039708205635c 1-12
+doc/sql/feature/done/20260403-eu估价单状态
+  s_22891737236574::t_8429ba98ea00b8 1-23
+doc/sql/feature/done/20260407-车机预约
+  s_22891737236574::t_f501edf6178672 1-23
+doc/sql/feature/done/20260416Token改造.md
+  s_22891737236574::t_aa1d1088a7253e 1-23
+doc/standards/business-conventions.md
+  s_22891737236574::t_41e67ecea879ac 1-28
+doc/standards/naming-conventions.md
+  s_22891737236574::t_668e7fa1142119 1-43
+doc/standards/project-structure.md
+  s_22891737236574::t_64c470ecb621d8 1-40
+doc/standards/technical-specifications.md
+  s_22891737236574::t_21af5ac00f01a5 1-59
+doc/test-reports/4-5-3/README.md
+  s_22891737236574::t_36c54eca812d4e 1-205
+doc/test-reports/integration/checklist-template.md
+  s_22891737236574::t_45390b6a894518 1-90
+doc/test-reports/integration/db_migration/add_kr_fields.sql
+  s_22891737236574::t_7c5fbd266458c4 1-7
+doc/test-reports/integration/fixture.sql
+  s_22891737236574::t_51aca5022332a9 1-114
+doc/test-reports/integration/scenarios/kr-invoice-e2e.yaml
+  s_22891737236574::t_7b4b81abb04bb2 1-240
+doc/test-reports/integration/templates/kr-invoice-e2e-template.yaml
+  s_22891737236574::t_39b453da902f9e 1-183
+doc/test-reports/pipa-pc-hmac-uat/test-pc-hmac.js
+  s_22891737236574::t_289310bf0e5787 1-338
+doc/test-reports/pipa-svc-pipa-14-7/2026-07-10-135050-query-pipa-status-baseline.md
+  s_22891737236574::t_f7dabbb58cd25d 1-116
+doc/test-reports/pipa-svc-pipa-sync-job/2026-07-10-T1-test-report.md
+  s_22891737236574::t_06a805fe20f17b 1-61
+doc/test-reports/query-privacy-policies-v1.3/2026-07-10-T1-test-report.md
+  s_22891737236574::t_968a1ef85df505 1-36
+doc/test-reports/submit-pipa-consent/2026-07-10-TIER1.md
+  s_22891737236574::t_b2497af0fb7498 1-116
+doc/xstartup-cookbook.md
+  s_22891737236574::t_d46fb657a0e233 1-432
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3ed8e50e9c845318249e9d1dc81b9865b7ef1992",
+  "prompts": {},
+  "sessions": {
+    "s_22891737236574": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1e92b51a-928a-45ce-ba4f-baa2b8b5788c",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}

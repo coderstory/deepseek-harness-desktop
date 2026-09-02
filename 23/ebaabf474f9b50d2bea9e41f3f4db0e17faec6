@@ -1,0 +1,35 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarVinOrPlateHelper.java
+  s_25fcf6356443e6::t_a84dad1cd99bb6 88-102,104,108,112,116,120,122-128,130
+  s_25fcf6356443e6::t_02ca4eedc81555 14-16
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_25fcf6356443e6::t_3c2e02a20a5720 380,385-386,391-392
+  s_25fcf6356443e6::t_dc49e286cd79a3 339
+  s_25fcf6356443e6::t_b46755c09e6d4a 379,381-384,387-390,393-401
+  s_25fcf6356443e6::t_3f7c4a68b18fc7 464-465,473
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarHelper.java
+  s_25fcf6356443e6::t_2729377eaee1af 111,113-122,124-126,128-129,131-132,138-141,145,148,150,164-178,180
+  s_25fcf6356443e6::t_75daab8fb27c78 112,123,127,130,133-137,142-144,146-147,149,151-163,179,181-182
+  s_25fcf6356443e6::t_91de59f203b692 110
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordBoundaryTest.java
+  s_25fcf6356443e6::t_da992b2ed435d3 218-228
+C09-svc-pdi/svc-core-pdi/src/test/java/svc/core/pdi/service/SvcMaintenanceRecordImportTest.java
+  s_25fcf6356443e6::t_e913a194158d8e 291
+  s_25fcf6356443e6::t_4af351d909610d 208
+  s_25fcf6356443e6::t_f177a69bc318ba 302
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "23ebaabf474f9b50d2bea9e41f3f4db0e17faec6",
+  "prompts": {},
+  "sessions": {
+    "s_25fcf6356443e6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "778572bf-8778-4532-a3e0-3d550af3d1b5",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
