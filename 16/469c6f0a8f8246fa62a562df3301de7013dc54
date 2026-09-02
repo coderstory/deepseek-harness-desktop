@@ -1,0 +1,40 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/mapper/SvcServiceRepairItemMergeMapper.java
+  s_a5f41217c3cf14::t_535ac11d5e3411 18-22
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceRepairItemMergeServiceImpl.java
+  s_a5f41217c3cf14::t_4b3cf2c757ea0f 163-187
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_a5f41217c3cf14::t_692bbbba6211b1 94-99,111-114,116-119
+  s_a5f41217c3cf14::t_e03e10e6a7ca01 340-341,344,372-377,379-412,414-417
+  s_a5f41217c3cf14::t_3035c129661b93 5,10,12-13,18-35,41
+  s_a5f41217c3cf14::t_93e153f8e4847e 522-523,531-532,540-541,546,551-552,563
+  s_a5f41217c3cf14::t_ca718dbfcc9592 599,607-608,611
+  s_a5f41217c3cf14::t_bc900665910585 421
+  s_a5f41217c3cf14::t_e97e2cc0c1eee5 300-303
+  s_a5f41217c3cf14::t_a3edd70fea4c5c 228-299,304-339,342-343,345-371,378,413,418-420,422-521,524-530,533-539,542-545,547-550,553-562,564-598,600-606,609-610,612-645
+  s_a5f41217c3cf14::t_fde289cd75ea47 36
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/helper/StatementHelper.java
+  s_a5f41217c3cf14::t_59c27724ffa00a 99-125
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/SvcServiceRepairItemMergeService.java
+  s_a5f41217c3cf14::t_a949890c8f73aa 26-28
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceRepairItemMergeMapper.xml
+  s_a5f41217c3cf14::t_d9302e367862ea 20-39
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/service/data/svc_statement/ExportDynamicQuerySvcStatementOutput.java
+  s_a5f41217c3cf14::t_6ffb8b623506b3 45-50
+  s_a5f41217c3cf14::t_cc2872d105211e 197-212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "16469c6f0a8f8246fa62a562df3301de7013dc54",
+  "prompts": {},
+  "sessions": {
+    "s_a5f41217c3cf14": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "72c084e0-77ca-4bc0-b0d4-cc637723a9e7",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

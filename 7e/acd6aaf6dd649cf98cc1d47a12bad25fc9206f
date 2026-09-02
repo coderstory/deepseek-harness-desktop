@@ -1,0 +1,20 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcInsuranceCompanyService.java
+  s_f0ef0463d6a693::t_4a6f834201ffc0 45
+  s_f0ef0463d6a693::t_85b3f626eba71b 137-138,140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "7eacd6aaf6dd649cf98cc1d47a12bad25fc9206f",
+  "prompts": {},
+  "sessions": {
+    "s_f0ef0463d6a693": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "53db6b51-64f9-4933-8be0-2b0b80b26fce",
+        "model": "glm-5.2"
+      },
+      "human_author": "裘人杰 <renjie.qiu@geely.com>"
+    }
+  }
+}

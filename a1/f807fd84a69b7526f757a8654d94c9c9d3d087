@@ -1,0 +1,20 @@
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_25fcf6356443e6::t_61588fb55cac3a 1103-1104,1106-1108,1112,1116,1119-1121,1125-1128,1145-1275
+  s_25fcf6356443e6::t_61997884b6311e 1276
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a1f807fd84a69b7526f757a8654d94c9c9d3d087",
+  "prompts": {},
+  "sessions": {
+    "s_25fcf6356443e6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "778572bf-8778-4532-a3e0-3d550af3d1b5",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
