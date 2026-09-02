@@ -449,10 +449,11 @@ export function ConfigPlugin() {
                         <span className="flex items-center gap-1">
                           <If cond={busy?.id === plugin.id && busy.action === 'update'} then={<Spinner size="sm" color="current" />} />
                           {t('plugins.upgrade')}
-                          {/* TODO: hash 会超出长度 */}
-                          {/* <If cond={plugin.latestVersion != null && plugin.error == null}>
-                            <span className="font-mono text-[10px] opacity-80">{plugin.latestVersion}</span>
-                          </If> */}
+                          <If cond={plugin.latestVersion != null && plugin.error == null}>
+                            <span className="font-mono text-[10px] opacity-80 max-w-[80px] truncate">
+                              {plugin.latestVersion!.length >= 40 ? `${plugin.latestVersion!.slice(0, 8)}…` : plugin.latestVersion}
+                            </span>
+                          </If>
                         </span>
                       </Chip>
                     </If>
