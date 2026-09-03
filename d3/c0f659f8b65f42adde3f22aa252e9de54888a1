@@ -1,0 +1,56 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetCSCTreeData.java
+  s_d47da69d8b3f96::t_53b1feff537c1f 1-24
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetTaOrderOutput.java
+  s_fe44adde32356c::t_902023ddea5717 36-41
+  s_fe44adde32356c::t_72c61f4384c6a6 130-147
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/TsSingleResult.java
+  s_d47da69d8b3f96::t_52bde30d798187 1-54
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/TechnicalSupportHelper.java
+  s_d47da69d8b3f96::t_922bc32a444ec1 36-37,41-42
+  s_fe44adde32356c::t_d760e1aecddcae 85,89
+  s_fe44adde32356c::t_240407034d7c89 8
+  s_d47da69d8b3f96::t_44a204620383a7 111-113
+  s_d47da69d8b3f96::t_4634e650f4e9e0 9
+  s_fe44adde32356c::t_35d30cde8928f2 61,65
+  s_d47da69d8b3f96::t_7327ddfae31c13 109-110,114-115
+  s_fe44adde32356c::t_42a5ac56c8c3e8 135,139
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/CampaignRepairPackageModel.java
+  s_fe44adde32356c::t_c9b9c41a9c680a 35-52
+  s_fe44adde32356c::t_6174a97f9a1afe 125-178
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/csc/impl/TechMdmCSCHandler.java
+  s_d47da69d8b3f96::t_bb0801ce7968a3 3,8,10-11,19,23,25-26,52-55,84-210
+  s_d47da69d8b3f96::t_cd8d8997818eec 211
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetCSCOutput.java
+  s_d47da69d8b3f96::t_14b00744fa44ff 3,18,23,26,39
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/dto/TsResult.java
+  s_fe44adde32356c::t_e038ec1aa1adc4 1-56
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetCSCOutput1.java
+  s_d47da69d8b3f96::t_2103c12e706c35 7-11,14-15,17-18,20-21,23-24,26-27,30-31,34-35,38-39,42,46,50-51,54-55
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetCreateTechInquiryInfoOutput.java
+  s_d47da69d8b3f96::t_04f9976b96aa29 42-49
+  s_d47da69d8b3f96::t_e322ac4d9df035 16-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d3c0f659f8b65f42adde3f22aa252e9de54888a1",
+  "prompts": {},
+  "sessions": {
+    "s_d47da69d8b3f96": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a5969704-e567-461a-8b9e-1f403b021a8b",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_fe44adde32356c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "11963be1-3895-493b-8c97-502cc98c1b5c",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
