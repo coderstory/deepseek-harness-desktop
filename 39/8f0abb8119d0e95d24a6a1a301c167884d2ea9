@@ -1,0 +1,21 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/Potd2Helper.java
+  s_935047ac72392c::t_8f52a268033563 132-133,135-136,139
+  s_935047ac72392c::t_a7512bfa535a9e 134
+  s_935047ac72392c::t_d798b4a2a0c373 164-169
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "398f0abb8119d0e95d24a6a1a301c167884d2ea9",
+  "prompts": {},
+  "sessions": {
+    "s_935047ac72392c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f153fc54-05b8-4518-978f-377759afd4ef",
+        "model": "unknown"
+      },
+      "human_author": null
+    }
+  }
+}
