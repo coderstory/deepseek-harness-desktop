@@ -17,6 +17,16 @@ export default defineConfig(async () => ({
     tailwindcss(),
   ],
 
+  // 多页入口：主窗口（index.html）与桌宠外置窗口（pet.html，独立透明窗口）。
+  build: {
+    rollupOptions: {
+      input: {
+        main: '/index.html',
+        pet: '/pet.html',
+      },
+    },
+  },
+
   resolve: {
     alias: {
       '@': '/src',
@@ -44,8 +54,12 @@ export default defineConfig(async () => ({
     },
   },
 
-  // vitest 只跑工作区包与根 test（不含 source/dsh-automation 参考克隆）。
+  // Vitest 只跑工作区包、应用自有状态机与根 test（不含 source/* 参考子模块）。
   test: {
-    include: ['packages/**/*.{test,spec}.?(c|m)[jt]s?(x)', 'test/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
+    include: [
+      'packages/**/*.{test,spec}.?(c|m)[jt]s?(x)',
+      'src/**/*.{test,spec}.?(c|m)[jt]s?(x)',
+      'test/**/*.{test,spec}.?(c|m)[jt]s?(x)',
+    ],
   },
 }))

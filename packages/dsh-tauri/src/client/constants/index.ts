@@ -4,6 +4,21 @@ export const SRC_HOST = 'dsh-desktop'
 /** iframe → 宿主事件的 source。 */
 export const SRC_BRIDGE = 'dsh-nav-bridge'
 
+// ── dsh-tauri invoke 桥（iframe → 宿主 → invoke() → 回传）─────────────
+// iframe 内的 dsh 界面 / 插件无法直接访问 `@tauri-apps/api`（`__TAURI_INTERNALS__`
+// 只在顶层 webview）。本桥让客户端经 postMessage 把 command 上报到宿主（主
+// webview）监听器，由宿主调用 Tauri `invoke` 并把结果回传给 iframe。
+/** iframe → 宿主：invoke 请求的 source。 */
+export const SRC_INVOKE = 'dsh-tauri-invoke'
+/** 宿主 → iframe：invoke 应答的 source。 */
+export const SRC_INVOKE_REPLY = 'dsh-desktop-invoke'
+/** invoke 请求消息类型。 */
+export const TYPE_INVOKE = 'dsh://tauri:invoke'
+/** invoke 应答消息类型。 */
+export const TYPE_INVOKE_REPLY = 'dsh://tauri:reply'
+/** 单次 invoke 等待宿主应答的最长毫秒数（超时按失败处理）。 */
+export const INVOKE_TIMEOUT_MS = 15000
+
 /** 宿主命令类型。 */
 export const CMD_TOGGLE = 'dsh://sidebar:toggle'
 export const CMD_PREV = 'dsh://page:prev'

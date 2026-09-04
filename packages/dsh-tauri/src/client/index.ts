@@ -19,8 +19,10 @@ export const inject = PLUGIN_INJECT
 export * from './apis'
 export { apply } from './apply'
 export * from './controller'
+export { invokeBridgedTauri } from './service/invoke'
 export * from './storage'
 export * from './store'
+
 export type * from './types'
 
 export type { ClientContext } from './types'

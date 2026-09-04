@@ -67,6 +67,16 @@ pub struct Setting {
     /// 备份是否包含凭据文件（`.credentials.yaml`）。
     #[serde(default)]
     pub backup_include_credentials: bool,
+    /// 桌宠能力是否永久启用；临时隐藏不能改动此字段。
+    #[serde(default)]
+    pub pet_enabled: bool,
+    /// 当前选中的桌宠模型包（`x.x.x.sprites/` 目录名或用户导入的 .zip 包名）；
+    /// `None` 或空串对外统一映射到内置默认宠物。
+    #[serde(default)]
+    pub active_pet: Option<String>,
+    /// 桌宠精灵图的显示宽度（逻辑像素）；`None` = 沿用窗口侧默认值。
+    #[serde(default)]
+    pub pet_size: Option<f64>,
 }
 
 pub const ZOOM_FACTOR_MIN: f64 = 0.5;
@@ -123,8 +133,7 @@ pub fn normalize_zoom_factor(value: f64) -> f64 {
 pub fn normalize_backup_retention(retention_count: u32) -> u32 {
     if retention_count == 0 || retention_count > 50 {
         default_backup_retention_count()
-    }
-    else {
+    } else {
         retention_count
     }
 }
@@ -164,6 +173,9 @@ impl Default for Setting {
             close_action: default_close_action(),
             backup_retention_count: default_backup_retention_count(),
             backup_include_credentials: false,
+            pet_enabled: false,
+            active_pet: None,
+            pet_size: None,
         }
     }
 }
@@ -251,11 +263,14 @@ fn emit_setting(app_handle: &AppHandle, value: &serde_json::Value) {
 fn preserve_persisted_fields(mut replacement: Setting, current: &Setting) -> Setting {
     replacement.zoom_factor = normalize_zoom_factor(current.zoom_factor);
     replacement.close_action = normalize_close_action(&current.close_action);
+    replacement.pet_enabled = current.pet_enabled;
+    replacement.active_pet.clone_from(&current.active_pet);
+    replacement.pet_size = current.pet_size;
     replacement
 }
 
-/// 兼容旧调用方的整对象写入，但始终保留锁内读到的最新缩放与关窗动作，避免
-/// 长流程用陈旧 `Setting` 覆盖刚刚由快捷键 / 设置界面写入的值（丢更新）。
+/// 兼容旧调用方的整对象写入，但始终保留锁内读到的最新缩放、关窗动作与桌宠
+/// 持久字段，避免长流程用陈旧 `Setting` 覆盖精确更新路径刚写入的值（丢更新）。
 pub fn set_store_dat_setting(app_handle: &AppHandle, mut setting: Setting) {
     let value = {
         let _guard = setting_write_lock()
@@ -371,17 +386,27 @@ mod tests {
         let mut stale = Setting::default();
         stale.zoom_factor = 0.8;
         stale.close_action = "quit".to_string();
+        stale.pet_enabled = false;
+        stale.active_pet = Some("chat:stale".to_string());
+        stale.pet_size = Some(80.0);
 
         let mut current = Setting::default();
         current.zoom_factor = 1.6;
         current.close_action = "tray".to_string();
+        current.pet_enabled = true;
+        current.active_pet = Some("codex:latest".to_string());
+        current.pet_size = Some(140.0);
 
         let merged = preserve_persisted_fields(stale, &current);
 
         assert_eq!(merged.zoom_factor, 1.6);
+        assert_eq!(merged.close_action, "tray");
+        assert!(merged.pet_enabled);
+        assert_eq!(merged.active_pet.as_deref(), Some("codex:latest"));
         assert_eq!(
-            merged.close_action, "tray",
-            "整对象写入不得用陈旧值覆盖锁内读到的最新关窗动作"
+            merged.pet_size,
+            Some(140.0),
+            "整对象写入不得覆盖最新桌宠字段"
         );
     }
 
@@ -460,5 +485,21 @@ mod tests {
             "quit",
             "写入 store 再读回后关闭行为应保持不变"
         );
+    }
+
+    #[test]
+    fn pet_defaults_closed_and_legacy_enabled_value_survives() {
+        assert!(!Setting::default().pet_enabled, "新安装必须默认关闭桌宠");
+
+        let legacy: Setting = serde_json::from_value(serde_json::json!({
+            "installed": true,
+            "port": 3080,
+            "auto_start": true,
+            "language": "zh-CN",
+            "pet_enabled": true,
+            "pet_visible": false
+        }))
+        .expect("legacy setting should deserialize");
+        assert!(legacy.pet_enabled, "旧版临时隐藏字段不得关闭永久启用状态");
     }
 }

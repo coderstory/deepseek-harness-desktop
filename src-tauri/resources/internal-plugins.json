@@ -49,6 +49,13 @@
     "repoUrl": "https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-session"
   },
   {
+    "id": "dsh-tauri-pet",
+    "spec": "dsh-tauri-pet",
+    "name": "DSH Tauri Pet",
+    "description": "Persistent animated desktop pets with conversation activity states, bubbles, and Chat/Codex pet libraries.",
+    "repoUrl": "https://github.com/dsh-tauri-desk/deepseek-harness-desktop/tree/main/packages/dsh-tauri-pet"
+  },
+  {
     "id": "dsh-tauri-rightclick",
     "spec": "dsh-tauri-rightclick",
     "name": "DSH Tauri Rightclick Menu",
