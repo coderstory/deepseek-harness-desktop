@@ -41,24 +41,50 @@ impl HarnessLifecycle {
     /// 当前持有的 Harness 根进程意外退出时通知前端的专用事件。
     pub const PROCESS_EXITED_EVENT: &'static str = "harness-process-exited";
 
-    // ==================== URL 槽位 ====================
+    // ==================== URL 槽位（含 generation 防过期覆盖）====================
 
-    /// 写入新解析到的 dsh token URL；返回写入前槽位里的旧值（用于日志/测试）。
-    pub fn set_url(url: String) -> Option<String> {
+    /// 写入新解析到的 dsh token URL；只有当 `generation` 仍是当前代时才写入，
+    /// 旧 `spawn_output_readers` 线程（restart 后被废弃）传过期 generation 进来
+    /// 时**忽略** —— 防止旧进程的 stdout 行覆盖新进程的 URL。
+    ///
+    /// 返回写入前的旧值（同代时为 Some(prev)，过期时为 None）。
+    /// 注意：是否实际写入由 `prev.is_some() || 写入后 get_url == url` 共同判定；
+    /// 旧 URL = 新 URL（同 URL 重写）也会被算作"已写入"。调用方用
+    /// [`Self::current_generation`] 在锁外再校验一次以决定是否需要 emit 事件。
+    pub fn set_url(url: String, generation: u64) -> Option<String> {
         let mut guard = harness_url_slot().lock().ok()?;
-        guard.replace(url)
+        if guard.generation != generation {
+            log::warn!(
+                target: "dsh",
+                "[harness] ignoring stale URL from generation={generation} (current={}): {url}",
+                guard.generation,
+            );
+            return None;
+        }
+        guard.url.replace(url)
     }
 
-    /// 清空当前 token URL（在新进程 spawn 前调用，避免仍指向已死进程的 URL）。
-    pub fn clear_url() {
-        if let Ok(mut guard) = harness_url_slot().lock() {
-            *guard = None;
-        }
+    /// 清空当前 token URL **并 bump generation**：让所有持有旧 generation 的
+    /// 输出线程被作废。新进程 spawn 前调用，避免 iframe 仍指向已死进程的 URL。
+    /// 返回 bump 后的新 generation（spawn_output_readers 要把它带回写入路径）。
+    pub fn bump_generation() -> u64 {
+        let mut guard = harness_url_slot().lock().unwrap_or_else(|e| e.into_inner());
+        guard.generation = guard.generation.wrapping_add(1);
+        guard.url = None;
+        guard.generation
     }
 
     /// 读取当前持有的 dsh token URL；前端 iframe 拿这个地址直接访问。
     pub fn get_url() -> Option<String> {
-        harness_url_slot().lock().ok().and_then(|g| g.clone())
+        harness_url_slot().lock().ok().and_then(|g| g.url.clone())
+    }
+
+    /// 读取当前 generation（spawn_output_readers 在 spawn 时记下，set_url 时回传）。
+    pub fn current_generation() -> u64 {
+        harness_url_slot()
+            .lock()
+            .map(|g| g.generation)
+            .unwrap_or_else(|e| e.into_inner().generation)
     }
 
     /// 通过 Tauri 事件向前端推送 URL 变更（供 `spawn_output_readers` 调用）。
@@ -132,18 +158,25 @@ impl HarnessLifecycle {
     }
 }
 
-/// 当前持有的 dsh 实例的本地访问地址（含 token）。
+/// 当前持有的 dsh 实例的本地访问地址（含 token）+ generation 代号。
 ///
 /// 启动新进程时由 [`crate::service::workflow::utils::spawn_output_readers`]
 /// 从 stdout 写入；停进程时 [`crate::service::workflow::launch::launch`] /
-/// `restart` 清空（避免 iframe 仍指向已死进程的 token URL）。前端通过
+/// `restart` 调 [`HarnessLifecycle::bump_generation`] 同时清 URL + bump 代号，
+/// 让所有旧线程的过期 stdout 写入被丢弃。前端通过
 /// [`HarnessLifecycle::URL_EVENT`] 实时接收；`get_runtime_info` /
 /// [`HarnessLifecycle::get_url`] 也读这个槽位，确保 fallback 路径
 /// （重启早期 / 健康检查未通过）也能拿到最新地址。
-static HARNESS_URL: OnceLock<Mutex<Option<String>>> = OnceLock::new();
+#[derive(Default)]
+struct UrlSlot {
+    url: Option<String>,
+    generation: u64,
+}
 
-fn harness_url_slot() -> &'static Mutex<Option<String>> {
-    HARNESS_URL.get_or_init(|| Mutex::new(None))
+static HARNESS_URL: OnceLock<Mutex<UrlSlot>> = OnceLock::new();
+
+fn harness_url_slot() -> &'static Mutex<UrlSlot> {
+    HARNESS_URL.get_or_init(|| Mutex::new(UrlSlot::default()))
 }
 
 /// Tauri 事件 payload：`harness-url-detected` 推送给前端。
@@ -156,39 +189,89 @@ pub struct HarnessUrlPayload {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::sync::Mutex;
+
+    /// 进程内全局测试互斥锁：HARNESS_URL 是跨测试共享的状态，
+    /// 必须串行执行避免相邻测试读到对方的 URL / 清掉对方的 URL。
+    /// `cargo test` 默认多线程运行，没这个锁的话同一时间会有多个测试操作同一槽位。
+    static TEST_LOCK: Mutex<()> = Mutex::new(());
+
+    fn lock() -> std::sync::MutexGuard<'static, ()> {
+        TEST_LOCK.lock().unwrap_or_else(|e| e.into_inner())
+    }
 
     #[test]
     fn harness_url_round_trip() {
-        HarnessLifecycle::clear_url();
+        let _guard = lock();
+        let gen = HarnessLifecycle::bump_generation();
         assert_eq!(HarnessLifecycle::get_url(), None);
-        let prev = HarnessLifecycle::set_url("http://127.0.0.1:3080/?token=abc".to_string());
+        let prev =
+            HarnessLifecycle::set_url("http://127.0.0.1:3080/?token=abc".to_string(), gen);
         assert_eq!(prev, None);
         assert_eq!(
             HarnessLifecycle::get_url().as_deref(),
             Some("http://127.0.0.1:3080/?token=abc")
         );
-        HarnessLifecycle::clear_url();
+        HarnessLifecycle::bump_generation();
         assert_eq!(HarnessLifecycle::get_url(), None);
     }
 
     #[test]
     fn harness_url_replaces_previous() {
-        HarnessLifecycle::clear_url();
-        HarnessLifecycle::set_url("http://127.0.0.1:3080/?token=old".to_string());
-        let prev = HarnessLifecycle::set_url("http://127.0.0.1:3081/?token=new".to_string());
+        let _guard = lock();
+        let gen = HarnessLifecycle::bump_generation();
+        HarnessLifecycle::set_url("http://127.0.0.1:3080/?token=old".to_string(), gen);
+        let prev =
+            HarnessLifecycle::set_url("http://127.0.0.1:3081/?token=new".to_string(), gen);
         assert_eq!(prev.as_deref(), Some("http://127.0.0.1:3080/?token=old"));
         assert_eq!(
             HarnessLifecycle::get_url().as_deref(),
             Some("http://127.0.0.1:3081/?token=new")
         );
-        HarnessLifecycle::clear_url();
+        HarnessLifecycle::bump_generation();
     }
 
     #[test]
     fn clear_after_set_resets_to_none() {
-        HarnessLifecycle::clear_url();
-        HarnessLifecycle::set_url("http://127.0.0.1:3080/?token=x".to_string());
-        HarnessLifecycle::clear_url();
+        let _guard = lock();
+        let gen = HarnessLifecycle::bump_generation();
+        HarnessLifecycle::set_url("http://127.0.0.1:3080/?token=x".to_string(), gen);
+        HarnessLifecycle::bump_generation();
         assert_eq!(HarnessLifecycle::get_url(), None);
+    }
+
+    #[test]
+    fn stale_generation_is_ignored() {
+        let _guard = lock();
+        let old_gen = HarnessLifecycle::bump_generation();
+        let new_gen = HarnessLifecycle::bump_generation();
+        // 旧 generation 的写入必须被丢弃（restart 后旧线程还在输出）
+        let prev = HarnessLifecycle::set_url(
+            "http://127.0.0.1:3080/?token=stale".to_string(),
+            old_gen,
+        );
+        assert_eq!(prev, None, "stale generation must not be accepted");
+        assert_eq!(HarnessLifecycle::get_url(), None);
+        // 同 generation 的写入生效
+        let prev = HarnessLifecycle::set_url(
+            "http://127.0.0.1:3081/?token=fresh".to_string(),
+            new_gen,
+        );
+        assert_eq!(prev, None);
+        assert_eq!(
+            HarnessLifecycle::get_url().as_deref(),
+            Some("http://127.0.0.1:3081/?token=fresh")
+        );
+        HarnessLifecycle::bump_generation();
+    }
+
+    #[test]
+    fn generation_monotonically_increases() {
+        let _guard = lock();
+        let g1 = HarnessLifecycle::bump_generation();
+        let g2 = HarnessLifecycle::bump_generation();
+        let g3 = HarnessLifecycle::bump_generation();
+        assert!(g2 > g1);
+        assert!(g3 > g2);
     }
 }
