@@ -146,14 +146,19 @@ fn dsh_binary_version(binary: &std::path::Path) -> Option<String> {
 /// 核心切换槽位的外层 package.json 可能没有 `dependencies` 清单（源码构建
 /// alpha 尤其如此），因此不能只读取活动核心登记版本；必须读取入口所属的
 /// `@deepseek-ai/dsh/package.json`，避免 alpha 因版本读空而漏传参数。
+///
+/// 版本号读不到（alpha 源码构建 / 包清单异常）时 best-effort 传 `--no-open`：
+/// dsh 0.1.0-rc.8 起都支持，老核心（commander 严格模式）若 panic 会从 launch
+/// 日志中暴露（`dsh-web.log` 首行）。权衡：alpha 用户场景多、最新版本必支持；
+/// 老核心忽略未知 flag 是 commander 默认行为。
 fn web_supports_no_open_flag(
     app_handle: &tauri::AppHandle,
     dsh_binary_path: &std::path::Path,
 ) -> bool {
-    dsh_binary_version(dsh_binary_path)
-        .or_else(|| crate::service::core::active_version(app_handle))
-        .map(|version| version_supports_no_open(&version))
-        .unwrap_or(false)
+    match dsh_binary_version(dsh_binary_path).or_else(|| crate::service::core::active_version(app_handle)) {
+        Some(version) => version_supports_no_open(&version),
+        None => true,
+    }
 }
 
 /// 检测并启动 Harness 服务
@@ -533,6 +538,10 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
 
     log::info!("Starting Harness process");
 
+    // 新 dsh 子进程会输出新的 token URL；先清空旧槽位，避免前端 iframe 短暂
+    // 指向已死进程的 token（alpha 鉴权失败即 Loading plugins 卡死）。
+    super::lifecycle::HarnessLifecycle::clear_url();
+
     // dsh 的 Loader 在插件 dispose 时会把组合后的整棵 entry 树回写进
     // `cordis.yml`（dsh-app-boot：plugin self-disposing persists the current
     // tree）。上一轮被杀/崩溃的 dsh 若在「新进程 prepareProfile 重置之后、
@@ -675,7 +684,7 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
                 .arg("--profile")
                 .arg(active_profile.as_str())
                 .arg("--port")
-                .arg(&setting.port.to_string());
+                .arg(setting.port.to_string());
             if no_open {
                 cmd.arg("--no-open");
             }
@@ -774,7 +783,7 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
             );
             // 记录 PID+端口供下次启动清扫崩溃残留的孤儿实例（见 sweep_orphan_harness）
             persist_harness_pid(&app_handle, pid, setting.port);
-            spawn_output_readers(stdout, stderr, log_path);
+            spawn_output_readers(stdout, stderr, log_path, &app_handle);
             Ok(())
         }
         Err(e) => {
