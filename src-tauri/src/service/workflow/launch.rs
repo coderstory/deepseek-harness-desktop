@@ -264,14 +264,6 @@ fn is_duplicate_loader_exit(exit_code: u32, stderr: &str) -> bool {
 
 /// 启动 Harness 服务进程
 pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
-    // bump generation 必须放在 launch 函数**最开头** ——任何 `return Err(...)` 之前。
-    // 这样：启动早期失败（NODE_NOT_FOUND / HARNESS_NOT_FOUND / transition lock
-    // 失败 / spawn 失败）时旧的 token URL 也立即清空，前端 `get_runtime_info`
-    // 走端口 fallback 而不是看到已死进程的 URL。CodeRabbit reviewable comment
-    // (PR #353, lines +27 to +29 of bridge/system_os.rs)：明确要求所有 Harness
-    // 清理路径都要清掉 cached URL。
-    let url_generation = super::lifecycle::HarnessLifecycle::bump_generation();
-
     let mut setting = config::get_store_dat_setting(&app_handle);
     let node_binary_path = config::get_node_binary_path(&app_handle);
     // 活动核心的 dsh 入口（本地核心优先，未检测到走预打包）
@@ -280,11 +272,15 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
     log::debug!("Checking Node.js path: {:?}", node_binary_path);
     if !node_binary_path.exists() {
         log::error!("Node.js not installed");
+        // 清空 stale token URL（CodeRabbit 注释要求：startup 失败路径也要清掉
+        // cached URL）。早期失败没有并发 race，可以直接 bump_generation。
+        super::lifecycle::HarnessLifecycle::bump_generation();
         return Err("NODE_NOT_FOUND: Node.js not installed".to_string());
     }
     log::debug!("Checking Harness path: {:?}", dsh_binary_path);
     if !dsh_binary_path.exists() {
         log::error!("Harness not installed");
+        super::lifecycle::HarnessLifecycle::bump_generation();
         return Err("HARNESS_NOT_FOUND: Harness not installed".to_string());
     }
 
@@ -297,6 +293,15 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
         log::info!("Owned Harness process is already running, skipping launch");
         return Ok(());
     }
+
+    // 关于 bump_generation() 必须在 has_owned_process() 检查**之后**：
+    // 并发 launch()（典型如 auto_start + 前端 boot 抢起同一 dsh）各自都会
+    // 走到这里；谁先拿到 transition 锁并 spawn dsh，谁的 stdout reader 会拿到
+    // url_generation=N；后到的 launch 命中 "skipping launch" 直接返回 Ok，
+    // 不能 bump 到 N+1——否则 dsh stdout 解析时 current_generation 已经比
+    // 它捕获的 generation 大，set_url 被作废丢弃，token URL 永远进不了 slot，
+    // 前端 `proxy_health_check` 拿不到 token、health 卡 401。
+    let url_generation = super::lifecycle::HarnessLifecycle::bump_generation();
     if LAUNCH_GUARD
         .compare_exchange(false, true, Ordering::SeqCst, Ordering::SeqCst)
         .is_err()
