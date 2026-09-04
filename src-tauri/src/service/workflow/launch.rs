@@ -264,6 +264,14 @@ fn is_duplicate_loader_exit(exit_code: u32, stderr: &str) -> bool {
 
 /// 启动 Harness 服务进程
 pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
+    // bump generation 必须放在 launch 函数**最开头** ——任何 `return Err(...)` 之前。
+    // 这样：启动早期失败（NODE_NOT_FOUND / HARNESS_NOT_FOUND / transition lock
+    // 失败 / spawn 失败）时旧的 token URL 也立即清空，前端 `get_runtime_info`
+    // 走端口 fallback 而不是看到已死进程的 URL。CodeRabbit reviewable comment
+    // (PR #353, lines +27 to +29 of bridge/system_os.rs)：明确要求所有 Harness
+    // 清理路径都要清掉 cached URL。
+    let url_generation = super::lifecycle::HarnessLifecycle::bump_generation();
+
     let mut setting = config::get_store_dat_setting(&app_handle);
     let node_binary_path = config::get_node_binary_path(&app_handle);
     // 活动核心的 dsh 入口（本地核心优先，未检测到走预打包）
@@ -538,10 +546,8 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
 
     log::info!("Starting Harness process");
 
-    // bump generation：清空旧 token URL 槽位 + 让所有持有旧 generation 的
-    // 输出线程被作废（restart 后旧线程若仍输出 `dsh web: ...`，写入会被丢弃）。
-    // spawn_output_readers 把这个 generation 带回 stdout 解析路径。
-    let url_generation = super::lifecycle::HarnessLifecycle::bump_generation();
+    // generation 已在函数最开头 bump（见上）；spawn_output_readers 把它带回
+    // stdout 解析路径，旧线程若仍输出 `dsh web: ...`，写入会被丢弃。
 
     // dsh 的 Loader 在插件 dispose 时会把组合后的整棵 entry 树回写进
     // `cordis.yml`（dsh-app-boot：plugin self-disposing persists the current
