@@ -843,8 +843,10 @@ export const harness = defineStore({
       }
     },
 
-    /** 从快照还原并继续检测：优先用单插件快照还原问题插件（优先级高于卸载）；
-     * 仅对传入的（确有快照的）插件还原，单项失败不阻断其它项。还原成功后重启并重新检测。 */
+    /**
+     * 从快照还原并继续检测：优先用单插件快照还原问题插件（优先级高于卸载）；
+     * 仅对传入的（确有快照的）插件还原，单项失败不阻断其它项。还原成功后重启并重新检测。
+     */
     async restoreAndRedetect(ids: readonly string[]) {
       if (this.recovery.busy || ids.length === 0)
         return
