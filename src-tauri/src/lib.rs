@@ -43,7 +43,7 @@ pub fn run() {
             // RunEvent::Reopen，这里重新显示主窗口，否则窗口会一直隐藏在托盘。
             #[cfg(target_os = "macos")]
             tauri::RunEvent::Reopen { .. } => {
-                crate::utils::show_main_window(&app_handle);
+                crate::utils::show_main_window(app_handle);
             }
             // 正常退出请求发生在窗口销毁之前；此时主动保存一次主窗口几何，
             // 避免 Windows 最后一个移动/缩放事件尚未写入就退出而丢失尺寸。
@@ -56,7 +56,7 @@ pub fn run() {
             tauri::RunEvent::Exit => {
                 let setting = config::get_store_dat_setting(app_handle);
                 if setting.installed {
-                    service::workflow::stop_on_exit(app_handle.clone(), setting.port);
+                    service::workflow::HarnessLifecycle::stop_on_exit(app_handle.clone(), setting.port);
                 }
             }
             _ => {}

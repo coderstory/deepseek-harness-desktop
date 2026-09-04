@@ -336,8 +336,8 @@ pub async fn open_installer(app_handle: &AppHandle, path: String) -> Result<(), 
     // 仅在确有持有进程时才停（stop 在无持有进程时也会短暂等待端口释放，白耗
     // 约 0.8s）；停止失败只告警不阻断——它是避免端口冲突的辅助手段，打开失败
     // 另有 UPDATE_OPEN 的错误提示。
-    if workflow::has_owned_process() {
-        if let Err(e) = workflow::stop(app_handle.clone()).await {
+    if workflow::HarnessLifecycle::has_owned_process() {
+        if let Err(e) = workflow::HarnessLifecycle::shutdown(app_handle.clone()).await {
             log::warn!("Failed to stop Harness before opening installer: {}", e);
         }
     }

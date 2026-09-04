@@ -47,8 +47,8 @@ pub fn setup(app_handle: tauri::AppHandle) {
     }
 
     // 启动前清扫上次崩溃残留的孤儿 Harness（端口/PID 双重确认，见
-    // workflow::sweep_orphan_harness），避免新实例一路漂移端口
-    crate::service::workflow::sweep_orphan_harness(&app_handle);
+    // workflow::HarnessLifecycle::sweep_orphan_harness），避免新实例一路漂移端口
+    crate::service::workflow::HarnessLifecycle::sweep_orphan_harness(&app_handle);
 
     // 旧版 AppData data/dsh → 官方 $DSH_HOME（~/.dsh）数据迁移。
     // 必须在 sweep 之后（先杀掉占用文件句柄的残留 dsh 进程）、scheduler/
@@ -83,7 +83,7 @@ pub fn setup(app_handle: tauri::AppHandle) {
             log::debug!("auto_start disabled, skipping startup");
             return;
         }
-        if let Err(e) = crate::service::workflow::start(app_for_start).await {
+        if let Err(e) = crate::service::workflow::HarnessLifecycle::start(app_for_start).await {
             log::error!("start failed: {}", e);
         }
     });

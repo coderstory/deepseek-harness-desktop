@@ -181,14 +181,14 @@ async fn run_single_plugin_command(
     // 记录停服结果：停服失败意味着服务可能仍在运行、插件目录可能被写入，
     // 此时创建快照会捕获不一致状态，因此停服失败时跳过快照（不终止升级）。
     let mut stopped = true;
-    if workflow::has_owned_process() {
+    if workflow::HarnessLifecycle::has_owned_process() {
         let _ = window.emit(
             PREINSTALL_LOG_EVENT,
             PreinstallLogPayload {
                 line: format!("[harness] 正在停止运行中的服务（{action}插件需要短暂重启）…"),
             },
         );
-        stopped = match workflow::stop(app_handle.clone()).await {
+        stopped = match workflow::HarnessLifecycle::shutdown(app_handle.clone()).await {
             Ok(()) => true,
             Err(e) => {
                 log::warn!("failed to stop harness before plugin {action}: {e}");
