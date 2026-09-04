@@ -76,9 +76,11 @@ pub(super) fn health_probe_plugin_urls(port: u16, token: Option<&str>) -> Vec<St
 /// WebView 实际会加载的唯一模块清单。这里不猜测替代包名，而是复用该清单中的
 /// `entries`，同时加入 HTML 中预加载的 modules/runtime 两个入口。
 ///
-/// `token` 取自 `HarnessLifecycle::get_url()`：见 [`with_token`]；已含 `?rev=…`
-/// 的路径需要走 `&token=…` 分支而不是覆盖查询参数。
-pub(super) fn client_urls_from_boot_html(port: u16, html: &str, token: Option<&str>) -> Option<Vec<String>> {
+/// **不要在插件 URL 上追加 token**：dsh 启动图里 `entries[i].url` 已经包含
+/// `?rev=…`（或 `&rev=…`），WebView 直接用这个 URL 加载。探测也按原样拼接
+/// ——token exchange 已经通过 boot 页 Set-Cookie 完成，cookie jar 让后续请求
+/// 鉴权；额外追加 `?token=…` 反而会让 dsh 路由不识别、返回 404。
+pub(super) fn client_urls_from_boot_html(port: u16, html: &str) -> Option<Vec<String>> {
     let marker = "globalThis[\"__DSH_BOOT__\"] = ";
     let start = html.find(marker)? + marker.len();
     let end = html[start..].find("</script>")? + start;
@@ -119,7 +121,7 @@ pub(super) fn client_urls_from_boot_html(port: u16, html: &str, token: Option<&s
     Some(
         paths
             .into_iter()
-            .map(|path| with_token(format!("http://127.0.0.1:{port}{path}"), token))
+            .map(|path| format!("http://127.0.0.1:{port}{path}"))
             .collect(),
     )
 }
@@ -536,7 +538,7 @@ mod tests {
     #[test]
     fn boot_html_uses_declared_client_graph() {
         let html = r#"<script src="/plugins/@deepseek-ai/dsh-client-modules/client.js?rev=one"></script><script>globalThis["__DSH_BOOT__"] = {"rev":"graph","entries":[{"id":"@deepseek-ai/dsh-client-ui-layout","url":"/plugins/@deepseek-ai/dsh-client-ui-layout/client.js?rev=two","rev":"two"}]}</script>"#;
-        let urls = client_urls_from_boot_html(3099, html, None).expect("boot graph");
+        let urls = client_urls_from_boot_html(3099, html).expect("boot graph");
         assert_eq!(urls.len(), 2);
         assert!(urls
             .iter()
@@ -551,9 +553,9 @@ mod tests {
 
     #[test]
     fn boot_html_rejects_missing_or_external_graph_entries() {
-        assert!(client_urls_from_boot_html(3099, "<html></html>", None).is_none());
+        assert!(client_urls_from_boot_html(3099, "<html></html>").is_none());
         let html = r#"<script>globalThis[\"__DSH_BOOT__\"] = {\"entries\":[{\"url\":\"https://example.test/client.js\"}]}</script>"#;
-        assert!(client_urls_from_boot_html(3099, html, None).is_none());
+        assert!(client_urls_from_boot_html(3099, html).is_none());
     }
 
     /// alpha combo bundle 的 script src 位于 HTML 属性时，`&rev=` 会编码为
@@ -561,9 +563,14 @@ mod tests {
     #[test]
     fn boot_html_decodes_combo_bundle_attribute_url() {
         let html = r#"<script src="/plugins/??@deepseek-ai/dsh-client-modules/client.js&amp;rev=cddf5581d5d5"></script><script>globalThis["__DSH_BOOT__"] = {"entries":[]}</script>"#;
-        let urls = client_urls_from_boot_html(3081, html, None).expect("boot graph");
+        let urls = client_urls_from_boot_html(3081, html).expect("boot graph");
         assert_eq!(urls, vec!["http://127.0.0.1:3081/plugins/??@deepseek-ai/dsh-client-modules/client.js&rev=cddf5581d5d5"]);
     }
+
+    /// 回归：探测 plugin URL **不追加 token**——boot HTML 路径里的 `?rev=…`
+    /// 已经是 dsh 自己生成的完整 query；多塞 `&token=…` 会让 dsh plugin 路由
+    /// 不识别、返回 404。token exchange 完全交给 boot 页 `Set-Cookie` + cookie jar。
+    ///（已合并到上面唯一一处测试）
 
     #[test]
     fn health_probe_plugin_urls_target_client_bundles_not_spa_root() {
@@ -622,30 +629,10 @@ mod tests {
         assert!(empty_token.iter().all(|u| !u.contains("token=")));
     }
 
-    /// 回归：alpha combo bundle 的 script src 带 `&rev=...`，探测 URL 必须先还原
-    /// HTML 实体，再追加 `&token=...`（保留 `?rev=` 不被 token 覆盖）。
-    #[test]
-    fn client_urls_from_boot_html_attaches_token_after_rev_query() {
-        let html = r#"<script src="/plugins/??@deepseek-ai/dsh-client-modules/client.js&amp;rev=cddf5581d5d5"></script><script>globalThis["__DSH_BOOT__"] = {"entries":[]}</script>"#;
-        let urls = client_urls_from_boot_html(3081, html, Some("tok"))
-            .expect("boot graph with token");
-        assert_eq!(
-            urls,
-            vec![
-                "http://127.0.0.1:3081/plugins/??@deepseek-ai/dsh-client-modules/client.js&rev=cddf5581d5d5&token=tok",
-            ]
-        );
-
-        // 没有 token → 与原 `boot_html_decodes_combo_bundle_attribute_url` 行为一致
-        let urls_no_token = client_urls_from_boot_html(3081, html, None)
-            .expect("boot graph without token");
-        assert_eq!(
-            urls_no_token,
-            vec![
-                "http://127.0.0.1:3081/plugins/??@deepseek-ai/dsh-client-modules/client.js&rev=cddf5581d5d5",
-            ]
-        );
-    }
+    /// 回归：探测 plugin URL **不追加 token**——boot HTML 路径里的 `?rev=…`
+    /// 已经是 dsh 自己生成的完整 query；多塞 `&token=…` 会让 dsh plugin 路由
+    /// 不识别、返回 404。token exchange 完全交给 boot 页 `Set-Cookie` + cookie jar。
+    ///（已合并到上面唯一一处测试）
 
     #[test]
     fn spa_html_fallback_is_not_a_plugin_bundle() {

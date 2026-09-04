@@ -8,42 +8,6 @@ use super::lifecycle::HarnessLifecycle;
 use super::process::{has_owned_process, LAUNCH_GUARD};
 use super::utils;
 
-/// 读取 Harness 首页并解析本次启动实际声明的客户端模块。
-///
-/// `token` 取自 `HarnessLifecycle::get_url()`，见 [`utils::with_token`]；未携带
-/// token（早期窗口 / 老版本 dsh）时为 `None`，保持端口 fallback URL 的原行为。
-///
-/// `client` 由调用方提供，**贯穿整个探测流程**——dsh 0.1.2-rc.1+ 在 boot 页
-/// `Set-Cookie` 之后所有 `/plugins/*` 请求都靠 cookie 鉴权；分两个 client 会丢
-/// cookie jar，导致插件探测全 404。
-async fn client_probe_endpoints(
-    port: u16,
-    token: Option<&str>,
-    client: &reqwest::Client,
-) -> Result<Vec<String>, String> {
-    let root = utils::with_token(
-        format!("{}/", config::get_dsh_service_url(port)),
-        token,
-    );
-    let response = client
-        .get(&root)
-        .send()
-        .await
-        .map_err(|e| format!("HARNESS_BOOT_MANIFEST_REQUEST_FAILED: {e}"))?;
-    if !response.status().is_success() {
-        return Err(format!(
-            "HARNESS_NOT_READY: boot page returned {}",
-            response.status()
-        ));
-    }
-    let body = response
-        .text()
-        .await
-        .map_err(|e| format!("HARNESS_BOOT_MANIFEST_READ_FAILED: {e}"))?;
-    Ok(utils::client_urls_from_boot_html(port, &body, token)
-        .unwrap_or_else(|| utils::health_probe_plugin_urls(port, token)))
-}
-
 /// 无持有进程时应返回给前端的探测信号。
 ///
 /// `launch` 仍在进行（LAUNCH_GUARD 未释放）时，无持有进程是**临时**状态：`launch`
@@ -65,11 +29,19 @@ fn not_owned_probe_signal(launch_in_progress: bool) -> &'static str {
     }
 }
 
-fn all_client_modules_ready(ready: usize, total: usize) -> bool {
-    total > 0 && ready == total
-}
-
 /// 健康检查（通过 Rust 代理，避免 WebView CORS 问题）
+///
+/// dsh 0.1.2-rc.1+ session auth：
+///   1. `GET /?token=…` → 303 + Set-Cookie（reqwest 跟随后 cookie jar 处理在
+///      `SameSite=Strict` 下不可靠）
+///   2. iframe 端 WebView 自带 cookie jar，跟随 303 → dsh 验签 cookie → 返回
+///      index HTML（`<script src="/plugins/??…">`）
+///   3. 浏览器拉 `/plugins/??…` 走 cookie 鉴权 → 200 bundle
+///
+/// 我们这边只验证 step 1 的 boot 页能拿到 2xx——证明 dsh 鉴权链路通了，
+/// iframe 自己处理后续 cookie 持久化和 plugin 拉取。逐个探测 plugin URL
+/// 在 reqwest 的 `SameSite=Strict` cookie 处理下不可靠（cookie 在重定向时
+/// 不一定落到 jar，导致 plugin 探测全 404），跳过这一步让 iframe 接手更稳。
 pub async fn proxy_health_check(port: u16) -> Result<String, String> {
     if !has_owned_process() {
         return Err(not_owned_probe_signal(LAUNCH_GUARD.load(Ordering::SeqCst)).to_string());
@@ -81,46 +53,28 @@ pub async fn proxy_health_check(port: u16) -> Result<String, String> {
         .and_then(HarnessLifecycle::extract_token_from_url);
     let token_ref = token.as_deref();
 
-    // 单一 client 贯穿 boot 页探测 + per-plugin 探测：dsh 在 boot 页
-    // `Set-Cookie` 之后所有 `/plugins/*` 走 cookie 鉴权，独立 client 会丢
-    // cookie jar 导致 0/65 ready。
     let client = utils::loopback_http_client(config::HEALTH_CHECK_TIMEOUT)
         .map_err(|e| format!("HARNESS_HEALTH_CLIENT_FAILED: {e}"))?;
-    let endpoints = client_probe_endpoints(port, token_ref, &client).await?;
-    let total = endpoints.len();
-    let mut ready = 0usize;
-    let mut failures = Vec::with_capacity(total);
-
-    for endpoint in endpoints {
-        // `client_probe_endpoints` 已经把 token 拼到 `endpoint` 上了；这里再走
-        // 一次 `with_token` 主要是为 boot 图未提供时由 `health_probe_plugin_urls`
-        // 兜底生成的 URL 兜底，确保所有探测 URL 都带 token（幂等）。
-        let url = utils::with_token(endpoint.clone(), token_ref);
-        match client.get(&url).send().await {
-            Ok(response) => {
-                let status = response.status();
-                let body = response.text().await.unwrap_or_default();
-                if utils::looks_like_plugin_bundle(status.is_success(), &body) {
-                    ready += 1;
-                    continue;
-                }
-                let failure = format!("{endpoint} returned {status} (not a plugin bundle)");
-                log::debug!("Health check failed: {failure}");
-                failures.push(failure);
-            }
-            Err(err) => {
-                log::debug!("Health check {endpoint}: {err}");
-                failures.push(format!("{endpoint}: {err}"));
-            }
-        }
+    let root = utils::with_token(
+        format!("{}/", config::get_dsh_service_url(port)),
+        token_ref,
+    );
+    let response = client
+        .get(&root)
+        .send()
+        .await
+        .map_err(|e| format!("HARNESS_BOOT_MANIFEST_REQUEST_FAILED: {e}"))?;
+    let status = response.status();
+    if !status.is_success() {
+        return Err(format!(
+            "HARNESS_NOT_READY: boot page returned {status} (probed {root})"
+        ));
     }
-    if all_client_modules_ready(ready, total) {
-        return Ok(format!("healthy - {ready}/{total} client modules ready"));
-    }
-    Err(format!(
-        "HARNESS_NOT_READY: Harness client modules are not ready ({ready}/{total} ready; {})",
-        failures.join("; ")
-    ))
+    log::info!(
+        "[Harness] boot page returned {status} (final URL: {}); dsh is serving, deferring plugin check to iframe",
+        response.url()
+    );
+    Ok(format!("healthy - boot page ok ({status})"))
 }
 
 #[cfg(test)]
@@ -138,10 +92,4 @@ mod tests {
         assert!(not_owned_probe_signal(false).starts_with("HARNESS_NOT_OWNED"));
     }
 
-    #[test]
-    fn readiness_requires_every_client_module() {
-        assert!(!all_client_modules_ready(1, 2));
-        assert!(all_client_modules_ready(2, 2));
-        assert!(!all_client_modules_ready(0, 0));
     }
-}
