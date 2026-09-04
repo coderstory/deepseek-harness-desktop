@@ -1,0 +1,20 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/UpdateAppointmentOrderAssembler.java
+  s_0f69f54467a390::t_73d443a677365b 3
+  s_0f69f54467a390::t_d0586871f93271 114-117
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "af3f45fcf913d8639ed13631fffbe705a7a479d5",
+  "prompts": {},
+  "sessions": {
+    "s_0f69f54467a390": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "381ff42a-7ce8-4963-b9e6-a91ff8654cd2",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "e-Bing.Deng <e-bing.deng@geega.com>"
+    }
+  }
+}
