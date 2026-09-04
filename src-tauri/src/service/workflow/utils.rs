@@ -1,9 +1,12 @@
 use std::io::{BufRead, BufReader, Read, Write};
 use std::net::{IpAddr, Ipv4Addr, SocketAddr, TcpListener};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::sync::{Mutex, OnceLock};
 use std::thread;
 use std::time::Duration;
+
+use regex::Regex;
+use tauri::AppHandle;
 
 const DSH_MAX_LOG_BYTES: u64 = 5 * 1024 * 1024;
 const DSH_MAX_BACKUPS: usize = 3;
@@ -157,34 +160,48 @@ pub fn is_port_in_use(port: u16) -> bool {
     TcpListener::bind(addr).is_err()
 }
 
-/// 在独立线程中读取子进程的输出，同时写入日志文件
+/// 在独立线程中读取子进程的输出，同时写入日志文件 + 解析 token URL。
 ///
 /// # 参数
 /// - `stdout`: 子进程的标准输出
 /// - `stderr`: 子进程的标准错误输出
 /// - `log_path`: 前端日志面板读取的日志文件
-pub fn spawn_output_readers<R1, R2>(stdout: Option<R1>, stderr: Option<R2>, log_path: PathBuf)
-where
+/// - `app_handle`: 用于在 stdout 解析到 `dsh web: <URL>?token=...` 时通过
+///   Tauri 事件 `harness-url-detected` 推送给前端，并把 URL 写入
+///   [`super::lifecycle::HarnessLifecycle`] 的槽位（前端 iframe 拿这个 URL 访问）。
+pub fn spawn_output_readers<R1, R2>(
+    stdout: Option<R1>,
+    stderr: Option<R2>,
+    log_path: PathBuf,
+    app_handle: &AppHandle,
+) where
     R1: Read + Send + 'static,
     R2: Read + Send + 'static,
 {
     // 在独立线程中读取 stdout
     if let Some(stdout) = stdout {
         let log_path = log_path.clone();
+        let app_handle = app_handle.clone();
         thread::spawn(move || {
-            drain_subprocess_output(BufReader::new(stdout), log_path, log::Level::Info);
+            drain_subprocess_output(
+                BufReader::new(stdout),
+                log_path,
+                log::Level::Info,
+                Some(app_handle),
+            );
         });
     }
 
-    // 在独立线程中读取 stderr
+    // 在独立线程中读取 stderr（stderr 不解析 URL）
     if let Some(stderr) = stderr {
+        let log_path = log_path.clone();
         thread::spawn(move || {
-            drain_subprocess_output(BufReader::new(stderr), log_path, log::Level::Warn);
+            drain_subprocess_output(BufReader::new(stderr), log_path, log::Level::Warn, None);
         });
     }
 }
 
-/// 逐行读取子进程输出并写入日志。
+/// 逐行读取子进程输出并写入日志；stdout 额外解析 `dsh web: <URL>` 行。
 ///
 /// 任何一行是非法 UTF-8 时**必须**用 lossy 替换继续读下去，不能中断：管道
 /// 读端一旦被关闭，dsh 主进程下一次写 stderr 就会收到 EPIPE，Node 以退出码 1
@@ -196,6 +213,7 @@ fn drain_subprocess_output<R: Read + Send + 'static>(
     mut reader: BufReader<R>,
     log_path: PathBuf,
     level: log::Level,
+    app_handle: Option<AppHandle>,
 ) {
     loop {
         let mut bytes = Vec::new();
@@ -206,6 +224,21 @@ fn drain_subprocess_output<R: Read + Send + 'static>(
                 let bytes = bytes.strip_suffix(b"\n").unwrap_or(&bytes);
                 let bytes = bytes.strip_suffix(b"\r").unwrap_or(bytes);
                 let line = String::from_utf8_lossy(bytes);
+                // stdout 才解析 URL（dsh 启动成功后的 `dsh web: http://...?token=...`）；
+                // stderr 不应被误判（plugin 子进程等输出也含 `http://...`）。
+                if level == log::Level::Info {
+                    if let Some(handle) = app_handle.as_ref() {
+                        if let Some(url) = extract_harness_url(&line) {
+                            let prev =
+                                super::lifecycle::HarnessLifecycle::set_url(url.clone());
+                            super::lifecycle::HarnessLifecycle::emit_url_changed(handle, &url);
+                            log::info!(
+                                target: "dsh",
+                                "[harness] detected live service URL (replaces prev={prev:?}): {url}"
+                            );
+                        }
+                    }
+                }
                 match level {
                     log::Level::Warn => log::warn!(target: "dsh", "{}", line),
                     _ => log::info!(target: "dsh", "{}", line),
@@ -218,6 +251,40 @@ fn drain_subprocess_output<R: Read + Send + 'static>(
             }
         }
     }
+}
+
+/// 从 dsh stdout 一行里抓出 `dsh web: <URL>` 中的 URL 部分。
+///
+/// 匹配上游 [`packages/bundle/web-app/src/index.ts: announceReady`] 的输出格式：
+/// ```text
+/// dsh web: http://127.0.0.1:PORT/?token=BASE64URL
+/// dsh web: http://127.0.0.1:PORT/?token=... (LAN: http://10.0.0.5:PORT/?token=...)
+/// ```
+///
+/// LAN 段与 loopback 段共享同一 token（同一进程同一连接），所以只取第一段 URL。
+fn extract_harness_url(line: &str) -> Option<String> {
+    let captures = harness_url_re().captures(line)?;
+    let raw = captures.get(1)?.as_str();
+    // 按空白切，丢弃尾随的 `(LAN: ...)` 段
+    let url = raw.split_whitespace().next()?.to_string();
+    // 去尾随标点（行逗号 /分号），保留路径+查询
+    let url = url.trim_end_matches([',', ';']).to_string();
+    if url.is_empty() {
+        None
+    }
+    else {
+        Some(url)
+    }
+}
+
+fn harness_url_re() -> &'static Regex {
+    static RE: OnceLock<Regex> = OnceLock::new();
+    RE.get_or_init(|| {
+        Regex::new(
+            r"dsh web:\s*(https?://(?:127\.0\.0\.1|localhost|0\.0\.0\.0):\d+(?:[/?][^\s,;]*)?)",
+        )
+        .expect("HARNESS_URL_RE compiles")
+    })
 }
 
 /// `log::Level` 的小写名称（内部日志用词与旧实现一致）。
@@ -264,9 +331,9 @@ fn append_log(log_path: &PathBuf, line: &str) {
 }
 
 /// 轮转日志文件名：`dsh-web.log`（index 0）、`dsh-web.log.1`、`dsh-web.log.2`……
-fn indexed_log_path(log_path: &PathBuf, index: usize) -> PathBuf {
+fn indexed_log_path(log_path: &Path, index: usize) -> PathBuf {
     if index == 0 {
-        return log_path.clone();
+        return log_path.to_path_buf();
     }
     let mut name = log_path.file_name().unwrap_or_default().to_os_string();
     name.push(format!(".{}", index));
@@ -278,13 +345,13 @@ fn indexed_log_path(log_path: &PathBuf, index: usize) -> PathBuf {
 /// 把当前 `dsh-web.log` 依次后退为 `.1`、`.2`……，超过保留上限的最老文件
 /// 直接删除，再以空文件重新记录本次启动日志。这样磁盘上始终只保留最近
 /// `keep` 次 dsh 启动的日志，避免单文件随多次启动无限增长。
-pub fn rotate_service_log(log_path: &PathBuf, keep: usize) {
+pub fn rotate_service_log(log_path: &Path, keep: usize) {
     if keep == 0 {
         let _ = std::fs::remove_file(log_path);
         return;
     }
     // 1) 删除超过保留上限的最老文件（它会被顶上来的文件覆盖且无处安放）
-    let _ = std::fs::remove_file(&indexed_log_path(log_path, keep - 1));
+    let _ = std::fs::remove_file(indexed_log_path(log_path, keep - 1));
     // 2) 从次老到次新依次后移，为本次启动腾出位置
     for i in (1..keep).rev() {
         let from = indexed_log_path(log_path, i);
@@ -332,6 +399,7 @@ mod tests {
             std::io::BufReader::new(std::io::Cursor::new(data)),
             log.clone(),
             log::Level::Warn,
+            None,
         );
 
         let content = fs::read_to_string(&log).unwrap();
@@ -368,6 +436,7 @@ mod tests {
             std::io::BufReader::new(std::io::Cursor::new(b"a\r\nb\n".to_vec())),
             log.clone(),
             log::Level::Info,
+            None,
         );
 
         let content = fs::read_to_string(&log).unwrap();
@@ -483,5 +552,78 @@ mod tests {
         rotate_service_log(&log, 0);
         assert!(!log.exists());
         let _ = fs::remove_dir_all(&dir);
+    }
+
+    /// 解析基本 token URL（dsh web 上游典型形式）。
+    #[test]
+    fn extract_url_basic_token() {
+        let line = "dsh web: http://127.0.0.1:3080/?token=cWgdW8At73c5vQnJ2dPHPJ9kLQYTrLvtYZSzvVDKyWA";
+        assert_eq!(
+            extract_harness_url(line).as_deref(),
+            Some("http://127.0.0.1:3080/?token=cWgdW8At73c5vQnJ2dPHPJ9kLQYTrLvtYZSzvVDKyWA"),
+        );
+    }
+
+    /// 解析带 LAN 段的输出（dsh web 输出包含 `(LAN: ...)` 段，与 loopback 共享 token）。
+    #[test]
+    fn extract_url_strips_lan_suffix() {
+        let line = "dsh web: http://127.0.0.1:3080/?token=xyz (LAN: http://10.0.0.5:3080/?token=xyz)";
+        let url = extract_harness_url(line).expect("parses line with LAN suffix");
+        assert!(url.starts_with("http://127.0.0.1:3080"));
+        assert!(url.contains("?token=xyz"));
+        assert!(!url.contains("LAN"), "LAN suffix should be stripped: {url}");
+    }
+
+    /// 解析不带 token 的旧版本输出（dsh 0.1.0-rc.7 及更早不输出 token）。
+    #[test]
+    fn extract_url_without_token() {
+        let line = "dsh web: http://127.0.0.1:3081/";
+        assert_eq!(
+            extract_harness_url(line).as_deref(),
+            Some("http://127.0.0.1:3081/"),
+        );
+    }
+
+    /// 行尾标点（逗号 / 分号）必须剥离，避免把噪声写进 token URL。
+    #[test]
+    fn extract_url_strips_trailing_punctuation() {
+        assert_eq!(
+            extract_harness_url("dsh web: http://127.0.0.1:3080/?token=abc,").as_deref(),
+            Some("http://127.0.0.1:3080/?token=abc"),
+        );
+        assert_eq!(
+            extract_harness_url("dsh web: http://127.0.0.1:3080/?token=abc;").as_deref(),
+            Some("http://127.0.0.1:3080/?token=abc"),
+        );
+    }
+
+    /// 非 `dsh web:` 前缀的行（含 http 的日志 / 第三方插件输出）不被误判。
+    #[test]
+    fn extract_url_ignores_non_dsh_lines() {
+        assert!(extract_harness_url("http://127.0.0.1:3080/?token=abc").is_none());
+        assert!(extract_harness_url("loading http://example.com").is_none());
+        assert!(extract_harness_url("[bundled] provider registered at /path").is_none());
+        assert!(extract_harness_url("dsh web: opening the default browser; pass --no-open to disable").is_none());
+    }
+
+    /// localhost / 0.0.0.0 也被允许（dsh `--bind` 选项可能输出非 loopback 形式）。
+    #[test]
+    fn extract_url_accepts_localhost_and_all_interfaces() {
+        assert_eq!(
+            extract_harness_url("dsh web: http://localhost:3080/?token=abc").as_deref(),
+            Some("http://localhost:3080/?token=abc"),
+        );
+        assert_eq!(
+            extract_harness_url("dsh web: http://0.0.0.0:3080/?token=abc").as_deref(),
+            Some("http://0.0.0.0:3080/?token=abc"),
+        );
+    }
+
+    /// 正则一旦编译失败会让整个进程无法启动，单元测试覆盖此不变量。
+    #[test]
+    fn regex_compiles() {
+        let re = harness_url_re();
+        assert!(re.is_match("dsh web: http://127.0.0.1:3080/"));
+        assert!(!re.is_match("not a dsh web line"));
     }
 }
