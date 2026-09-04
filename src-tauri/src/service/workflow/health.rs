@@ -12,9 +12,15 @@ use super::utils;
 ///
 /// `token` 取自 `HarnessLifecycle::get_url()`，见 [`utils::with_token`]；未携带
 /// token（早期窗口 / 老版本 dsh）时为 `None`，保持端口 fallback URL 的原行为。
-async fn client_probe_endpoints(port: u16, token: Option<&str>) -> Result<Vec<String>, String> {
-    let client = utils::loopback_http_client(config::HEALTH_CHECK_TIMEOUT)
-        .map_err(|e| format!("HARNESS_HEALTH_CLIENT_FAILED: {e}"))?;
+///
+/// `client` 由调用方提供，**贯穿整个探测流程**——dsh 0.1.2-rc.1+ 在 boot 页
+/// `Set-Cookie` 之后所有 `/plugins/*` 请求都靠 cookie 鉴权；分两个 client 会丢
+/// cookie jar，导致插件探测全 404。
+async fn client_probe_endpoints(
+    port: u16,
+    token: Option<&str>,
+    client: &reqwest::Client,
+) -> Result<Vec<String>, String> {
     let root = utils::with_token(
         format!("{}/", config::get_dsh_service_url(port)),
         token,
@@ -75,9 +81,12 @@ pub async fn proxy_health_check(port: u16) -> Result<String, String> {
         .and_then(HarnessLifecycle::extract_token_from_url);
     let token_ref = token.as_deref();
 
+    // 单一 client 贯穿 boot 页探测 + per-plugin 探测：dsh 在 boot 页
+    // `Set-Cookie` 之后所有 `/plugins/*` 走 cookie 鉴权，独立 client 会丢
+    // cookie jar 导致 0/65 ready。
     let client = utils::loopback_http_client(config::HEALTH_CHECK_TIMEOUT)
         .map_err(|e| format!("HARNESS_HEALTH_CLIENT_FAILED: {e}"))?;
-    let endpoints = client_probe_endpoints(port, token_ref).await?;
+    let endpoints = client_probe_endpoints(port, token_ref, &client).await?;
     let total = endpoints.len();
     let mut ready = 0usize;
     let mut failures = Vec::with_capacity(total);
