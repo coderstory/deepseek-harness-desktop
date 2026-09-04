@@ -1,0 +1,101 @@
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/constant/GlobalParamsConfig.java
+  s_cca1f2f71dc74c::t_51ac805435b9f4 125-126,130-134
+C00-svc-base/svc-core-base/pom.xml
+  s_c74ed98b2398d1::t_bb00e0470fc24d 8,211-217
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/UcdCarHelper.java
+  s_1283219b3f89ed::t_897ff3708ba081 321-510
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/Potd2Client.java
+  s_fb0312f27fb968::t_4d436686d9dc8b 26-27,45-51,54,58,62,66,70-77,82-86
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/data/mdm_standard_hour/QueryMdmStandardHourInput.java
+  s_70fc6fca65797e::t_67db416b089b54 20-22,66-73
+C01-svc-config/svc-core-config/src/main/resources/mybatis/mapper/svc/core/config/MdmStandardHourMapper.xml
+  s_70fc6fca65797e::t_f844e2dd9f1f8f 51-55,101-106,133,144-278
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/DmsOutWorkOrderService.java
+  s_663097a95c4058::t_02201a0a1d31a7 11,20-21
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item/QuerySvcServiceRepairItemInput.java
+  s_5748d523819fc8::t_18cc35d1ae7e73 14-18,40-49,52-53
+C03-svc-reception/svc-cloud-reception/src/main/java/svc/cloud/reception/service/data/svc_service_repair_item/QuerySvcServiceRepairItemOutput.java
+  s_5748d523819fc8::t_6d9f0c1e94e30c 31-33,93-100
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_5748d523819fc8::t_98ea2c13cb78fe 38-49
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/DmsOutWorkOrderServiceImpl.java
+  s_663097a95c4058::t_f71bd31f935163 5,19,83,556,977,1031,1044,1103,1117,1135,1148,1200,1297,1343,1365,1626,1825-1844
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceRepairItemServiceImpl.java
+  s_5748d523819fc8::t_001927e108a844 48,50-54
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/strategy/serviceproxy/AbstractServiceProxyHandler.java
+  s_cca1f2f71dc74c::t_f810d9b7e53522 11-12,17,19-20,34,56,91-98,101-102,131-146,172-196,228-234,239,264-266,276-278,284-285,292-329,332,389-412,483-484,921-989
+C03-svc-reception/svc-core-reception/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceRepairItemViewMapper.xml
+  s_5748d523819fc8::t_7d0f27a23207de 12-13,37-38,72-73,78-84,88-89,174
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/StandardHourService.java
+  s_663097a95c4058::t_3f75a83f1558cb 17,32-33
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/standard_hour/StandardHourInput.java
+  s_70fc6fca65797e::t_23e8af585c4f8c 20-22,46-53
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/StandardHourServiceImpl.java
+  s_663097a95c4058::t_a0ca8296c4596c 7,36,53,227,275,317-336
+D03-deploy/svc-standard-api/pom.xml
+  s_c74ed98b2398d1::t_288d8136b18166 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d8ca24293e2a2ad54c9627ee78b798d60b7e62a2",
+  "prompts": {},
+  "sessions": {
+    "s_1283219b3f89ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be1e52f-a913-4fe9-8b5b-c2cdb1596ce0",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_5748d523819fc8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0a4361bc-6e09-4c5c-80c9-fc71edbe4a1b",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_663097a95c4058": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "83ee1ce7-7075-4f89-a84e-e9707b82c8ee",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_70fc6fca65797e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c3426b13-6d90-426f-aefe-821333dbecb1",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_c74ed98b2398d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "399100be-cf30-4ce7-81cd-a0b7975c82e7",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_cca1f2f71dc74c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2672cbf9-b6f8-44a3-b2f0-360d91561894",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_fb0312f27fb968": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e90bac7a-b0da-4dde-a2d5-9711b3f1d4ff",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}
