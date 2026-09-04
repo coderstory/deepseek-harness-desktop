@@ -20,8 +20,15 @@ fn dsh_log_lock() -> &'static Mutex<()> {
 /// 生命周期探测访问的是本机 dsh，不能继承 `HTTP_PROXY` / `ALL_PROXY`：部分代理
 /// 不尊重回环地址直连，或应用进程没有 `NO_PROXY`，会把健康检查转发到外部代理，
 /// 造成端口已经监听但持续误报未就绪。
+///
+/// 启用 `cookie_store(true)`：dsh 0.1.2-rc.1+ 在 `GET /?token=…` 上 303 重定向
+/// 到 `/` 并通过 `Set-Cookie` 签发持久会话 cookie；后续重定向请求必须带这个
+/// cookie，否则 dsh 返回 401 Unauthorized。reqwest 默认不持久化 cookie——
+/// 客户端只走通第一次带 token 的 303，重定向到 `/` 时 cookie 丢了，导致健康
+/// 检查永远拿不到 ready。
 pub(super) fn loopback_http_client(timeout: Duration) -> Result<reqwest::Client, reqwest::Error> {
     reqwest::Client::builder()
+        .cookie_store(true)
         .no_proxy()
         .timeout(timeout)
         .build()
