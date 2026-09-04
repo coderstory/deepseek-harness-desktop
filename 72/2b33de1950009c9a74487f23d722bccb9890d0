@@ -1,0 +1,173 @@
+C01-svc-config/svc-core-config/src/main/java/svc/core/config/service/SvcInsuranceCompanyService.java
+  s_3a784f6afa949c::t_6b9fa83b0fc74d 113
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/cache/MolitAuthCache.java
+  s_3a784f6afa949c::t_5f391f71d583e7 18
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServiceMolitService.java
+  s_3a784f6afa949c::t_d6873a2f0aca91 42,66-72,235-243,661-663
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/data/svc_service_pick_up_task/RepairInformationItemInput.java
+  s_3a784f6afa949c::t_2855cecbe34dbd 29,34,158-173
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/helper/ExportSvcStatementExtHelper.java
+  s_3a784f6afa949c::t_e1be175107347d 251-280
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.de-DE.properties
+  s_3a784f6afa949c::t_8e8b383547422a 17
+D03-deploy/svc-standard-api/src/main/resources/i18n/svc/core/config/error/config-common-error.en-US.properties
+  s_3a784f6afa949c::t_5bd17f59100aad 18-19
+doc/20260527.md
+  s_3a784f6afa949c::t_2e9a45a893516e 1-50
+doc/7月需求/4.5.2-PIPA短信-Nacos配置.md
+  s_3a784f6afa949c::t_69b51c34b7105b 1-264
+doc/7月需求/4.5.3-PIPA查询-Nacos配置.md
+  s_3a784f6afa949c::t_fe734409e47bb0 1-232
+doc/7月需求/4.5.3-PIPA查询-实施总结.md
+  s_3a784f6afa949c::t_afdc3f2c590775 1-186
+doc/7月需求/PIPA-4.5.7-Nacos清理通知.md
+  s_3a784f6afa949c::t_eea72e6587a17d 1-44
+doc/7月需求/pipa-bindid接口改造-前端.md
+  s_3a784f6afa949c::t_3b588a1c10f5e6 1-180
+doc/7月需求/pipa-sync-job-sequence.mmd
+  s_3a784f6afa949c::t_656d262e4a4f79 1-24
+doc/KNOW-ISSUES.md
+  s_3a784f6afa949c::t_8154c18f2722fc 1-27
+doc/modules/01-C01-svc-config.md
+  s_3a784f6afa949c::t_c3dfc64ca23130 1-318
+doc/modules/02-C09-svc-pdi.md
+  s_3a784f6afa949c::t_fe141b471d9820 1-145
+doc/modules/03-C12-svc-estimate.md
+  s_3a784f6afa949c::t_988374fac085a5 1-146
+doc/modules/04-C02-svc-appointment.md
+  s_3a784f6afa949c::t_a5dbecee17ab60 1-139
+doc/modules/05-C03-svc-reception.md
+  s_3a784f6afa949c::t_f68c7650340c37 1-293
+doc/modules/06-C04-svc-maintain.md
+  s_3a784f6afa949c::t_ee8a548fcca37a 1-148
+doc/modules/07-C06-svc-delivery.md
+  s_3a784f6afa949c::t_a9f24c40685ab7 1-273
+doc/modules/08-C11-svc-ams.md
+  s_3a784f6afa949c::t_69b1032cf8b500 1-88
+doc/modules/09-C10-svc-inc.md
+  s_3a784f6afa949c::t_020087eb836d95 1-109
+doc/rules/rules.md
+  s_3a784f6afa949c::t_ab7898fb2e6ea3 1-248
+doc/scripts/gen_sql_supplement.py
+  s_3a784f6afa949c::t_d356cf8823eea3 1-150
+doc/scripts/strip_md_references.py
+  s_3a784f6afa949c::t_1211e9324c8728 1-133
+doc/specification/20260522-5api-standardization.md
+  s_3a784f6afa949c::t_325605d2589506 1-92
+doc/sql/feature/20260423-南非去lcms
+  s_3a784f6afa949c::t_3e256476a9729f 1-13
+doc/sql/feature/20260515-em-印尼
+  s_3a784f6afa949c::t_57e14b8c1126ab 1-419
+doc/sql/feature/20260515-eu-印尼
+  s_3a784f6afa949c::t_0ac6981a31552f 1-185
+doc/sql/feature/20260515-eu-对接新potd
+  s_3a784f6afa949c::t_b78b1157bbfb0e 1-185
+doc/sql/feature/20260516-迁移godp的pdi
+  s_3a784f6afa949c::t_5b430463be9af5 1-9
+doc/sql/feature/20260702-接入新potd流程改造
+  s_3a784f6afa949c::t_207ee21bfcecab 1-31
+doc/sql/feature/20260706-radar
+  s_3a784f6afa949c::t_e7c1d0616c83a5 1-26
+doc/sql/feature/20260710-pipa-drop-pushcount.sql
+  s_3a784f6afa949c::t_6227fa8ef22599 1-31
+doc/sql/feature/20260710-pipa-submit-job.sql
+  s_3a784f6afa949c::t_77c6964068ec39 1-36
+doc/sql/feature/20260727-repeat-repair.sql
+  s_3a784f6afa949c::t_7fae9b872cb04f 1-5
+doc/sql/feature/20260810-eu极氪pdi改造
+  s_3a784f6afa949c::t_e1ebc3d3ac3ec8 1-12
+doc/sql/feature/done/20250708-otd
+  s_3a784f6afa949c::t_60114f06ca416d 1-237
+doc/sql/feature/done/20250826-euem-pdi+预约
+  s_3a784f6afa949c::t_03fa40634bae41 1-76
+doc/sql/feature/done/20250930-za.nacos
+  s_3a784f6afa949c::t_0c3d1f0c825ed7 1-19
+doc/sql/feature/done/20250930-za.sql
+  s_3a784f6afa949c::t_9b05eb613e1247 1-1019
+doc/sql/feature/done/20251010-同步abpUsers
+  s_3a784f6afa949c::t_2b39fc4c985e9e 1-66
+doc/sql/feature/done/20251012-tenant-test
+  s_3a784f6afa949c::t_f81bbeef433640 1-24
+doc/sql/feature/done/20251021-权益中心
+  s_3a784f6afa949c::t_4a03f915243d26 1-75
+doc/sql/feature/done/20251120-uz
+  s_3a784f6afa949c::t_ce0da3f4525486 1-94
+doc/sql/feature/done/20251218-appointment
+  s_3a784f6afa949c::t_ab04023004925a 1-3
+doc/sql/feature/done/20251230-eu12英国
+  s_3a784f6afa949c::t_08cdd3fb1115e1 1-330
+doc/sql/feature/done/20260101
+  s_3a784f6afa949c::t_510825d4b9e16d 1-12
+doc/sql/feature/done/20260120-墨西哥em
+  s_3a784f6afa949c::t_3444ac0618835d 1-362
+doc/sql/feature/done/20260310-eusql.sql
+  s_3a784f6afa949c::t_ad09336cb6aef4 1-2659
+doc/sql/feature/done/20260310-欧洲五国
+  s_3a784f6afa949c::t_ba9e9eef6b7a1c 1-71
+doc/sql/feature/done/20260331-SapEU.sql
+  s_3a784f6afa949c::t_7fccace2aa61f0 1-12
+doc/sql/feature/done/20260403-eu估价单状态
+  s_3a784f6afa949c::t_5027d0103826ef 1-23
+doc/sql/feature/done/20260407-车机预约
+  s_3a784f6afa949c::t_4f23ef22a40655 1-23
+doc/sql/feature/done/20260416Token改造.md
+  s_3a784f6afa949c::t_c99711cf1d6e33 1-23
+doc/standards/business-conventions.md
+  s_3a784f6afa949c::t_323bb73b4c605d 1-28
+doc/standards/naming-conventions.md
+  s_3a784f6afa949c::t_676e266745915b 1-43
+doc/standards/project-structure.md
+  s_3a784f6afa949c::t_ee17359e557313 1-40
+doc/standards/technical-specifications.md
+  s_3a784f6afa949c::t_14bbea0fd29092 1-59
+doc/test-reports/4-5-3/README.md
+  s_3a784f6afa949c::t_466b97eccd380c 1-205
+doc/test-reports/integration/checklist-template.md
+  s_3a784f6afa949c::t_aedb6f7f9349ae 1-90
+doc/test-reports/integration/db_migration/add_kr_fields.sql
+  s_3a784f6afa949c::t_f9a1765cf1bd4e 1-7
+doc/test-reports/integration/fixture.sql
+  s_3a784f6afa949c::t_e39d4c7e6830e1 1-114
+doc/test-reports/integration/scenarios/kr-invoice-e2e.yaml
+  s_3a784f6afa949c::t_2b5c7a0a0b13ec 1-240
+doc/test-reports/integration/templates/kr-invoice-e2e-template.yaml
+  s_3a784f6afa949c::t_4e0145e3e57bfb 1-183
+doc/test-reports/pipa-pc-hmac-uat/test-pc-hmac.js
+  s_3a784f6afa949c::t_327f05df599b3e 1-338
+doc/test-reports/pipa-svc-pipa-14-7/2026-07-10-135050-query-pipa-status-baseline.md
+  s_3a784f6afa949c::t_e69d9342de389a 1-116
+doc/test-reports/pipa-svc-pipa-sync-job/2026-07-10-T1-test-report.md
+  s_3a784f6afa949c::t_b033edb00a6d6e 1-61
+doc/test-reports/query-privacy-policies-v1.3/2026-07-10-T1-test-report.md
+  s_3a784f6afa949c::t_b1bc51591e3d3c 1-36
+doc/test-reports/submit-pipa-consent/2026-07-10-TIER1.md
+  s_3a784f6afa949c::t_4f277716cb23b9 1-116
+doc/xstartup-cookbook.md
+  s_3a784f6afa949c::t_d56c7edc3345d7 1-432
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/error/ReceptionCommonError.java
+  s_5748d523819fc8::t_76beb29d91b694 40-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "722b33de1950009c9a74487f23d722bccb9890d0",
+  "prompts": {},
+  "sessions": {
+    "s_3a784f6afa949c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8bbc9757-10cf-4312-a045-db219f67a64f",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    },
+    "s_5748d523819fc8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0a4361bc-6e09-4c5c-80c9-fc71edbe4a1b",
+        "model": "unknown"
+      },
+      "human_author": "e-Guoping.Shen1 <e-Guoping.Shen1@geely.com>"
+    }
+  }
+}
