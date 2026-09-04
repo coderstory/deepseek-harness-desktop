@@ -601,8 +601,8 @@ pub async fn restore(app_handle: &AppHandle, id: &str) -> Result<(), String> {
 
     // 操作锁 + 停止服务（与安装/卸载一致，还原期间避免资源竞争）
     let _guard = acquire_operation_lock().await;
-    if crate::service::workflow::has_owned_process() {
-        if let Err(e) = crate::service::workflow::stop(app_handle.clone()).await {
+    if crate::service::workflow::HarnessLifecycle::has_owned_process() {
+        if let Err(e) = crate::service::workflow::HarnessLifecycle::shutdown(app_handle.clone()).await {
             log::warn!("failed to stop harness before plugin restore: {e}");
         }
     }

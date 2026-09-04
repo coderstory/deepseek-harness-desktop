@@ -346,19 +346,19 @@ pub async fn check_dsh_update(
 /// 启动 Harness 服务
 #[tauri::command]
 pub async fn launch_harness(app_handle: AppHandle) -> Result<(), String> {
-    workflow::launch(app_handle).await
+    workflow::HarnessLifecycle::launch(app_handle).await
 }
 
 /// 停止 Harness 服务
 #[tauri::command]
 pub async fn shutdown_harness(app_handle: AppHandle) -> Result<(), String> {
-    workflow::stop(app_handle).await
+    workflow::HarnessLifecycle::shutdown(app_handle).await
 }
 
 /// 重启 Harness 服务
 #[tauri::command]
 pub async fn restart_harness(app_handle: AppHandle) -> Result<(), String> {
-    workflow::restart(app_handle).await
+    workflow::HarnessLifecycle::restart(app_handle).await
 }
 
 /// 获取当前 Harness 服务状态

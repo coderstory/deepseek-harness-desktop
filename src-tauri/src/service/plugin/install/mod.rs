@@ -182,7 +182,7 @@ async fn install_with_cancel(
     // 记录停服结果：停服失败意味着服务可能仍在运行、插件目录可能被写入，
     // 此时创建快照会捕获不一致状态，因此停服失败时跳过快照（不终止安装）。
     let mut stopped = true;
-    if workflow::has_owned_process() {
+    if workflow::HarnessLifecycle::has_owned_process() {
         // 停服务会让用户感到"重启"，先在日志面板讲清缘由（issue #48）
         let _ = window.emit(
             PREINSTALL_LOG_EVENT,
@@ -191,7 +191,7 @@ async fn install_with_cancel(
             },
         );
         log::info!("Stopping running harness service before installing plugins");
-        stopped = match workflow::stop(app_handle.clone()).await {
+        stopped = match workflow::HarnessLifecycle::shutdown(app_handle.clone()).await {
             Ok(()) => true,
             Err(e) => {
                 log::warn!("failed to stop harness before plugin install: {e}");

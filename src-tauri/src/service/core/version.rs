@@ -307,12 +307,12 @@ pub async fn list(app_handle: &AppHandle) -> Vec<HarnessCore> {
 
 /// 停止并清扫旧核心进程，确保核心来源变更时不会继续使用旧入口。
 async fn stop_harness_for_core_switch(app_handle: &AppHandle) -> Result<(), String> {
-    if workflow::has_owned_process() {
-        workflow::stop(app_handle.clone()).await?;
+    if workflow::HarnessLifecycle::has_owned_process() {
+        workflow::HarnessLifecycle::shutdown(app_handle.clone()).await?;
     }
     let handle = app_handle.clone();
     tauri::async_runtime::spawn_blocking(move || {
-        workflow::terminate_stale_harness_processes(&handle);
+        workflow::HarnessLifecycle::terminate_stale_harness_processes(&handle);
     })
     .await
     .map_err(|e| format!("CORE_SWITCH_STOP_FAILED: {e}"))?;
@@ -324,7 +324,7 @@ async fn stop_harness_for_core_switch(app_handle: &AppHandle) -> Result<(), Stri
 /// `id` 取值：`local` | `app`（无 tag 记录的旧激活行）| `app-<tag>`。
 pub async fn set_active(app_handle: &AppHandle, id: &str) -> Result<HarnessCore, String> {
     let transition_guard = if id == "app" || id == "local" {
-        Some(workflow::acquire_core_transition().await?)
+        Some(workflow::HarnessLifecycle::acquire_core_transition().await?)
     } else {
         None
     };
@@ -371,7 +371,7 @@ pub async fn set_active(app_handle: &AppHandle, id: &str) -> Result<HarnessCore,
 async fn switch_app_version(app_handle: &AppHandle, tag: &str) -> Result<(), String> {
     // 从切换开始到目录互换完成持续持有与 launch 共用的转换锁，避免两个切换
     // 重叠，也避免 launch 在状态检查后插入并从旧的 dependencies/dsh 加载 DLL。
-    let _transition_guard = workflow::acquire_core_transition().await?;
+    let _transition_guard = workflow::HarnessLifecycle::acquire_core_transition().await?;
     let deps = dependencies_dir(app_handle);
     let active_dir = config::get_dsh_install_path(app_handle);
     fs_guard::validate_id(tag)?;
@@ -388,8 +388,8 @@ async fn switch_app_version(app_handle: &AppHandle, tag: &str) -> Result<(), Str
     }
 
     // 切换前停止运行中的服务，避免目录被进程句柄锁定
-    if workflow::has_owned_process() {
-        workflow::stop(app_handle.clone()).await.map_err(|e| {
+    if workflow::HarnessLifecycle::has_owned_process() {
+        workflow::HarnessLifecycle::shutdown(app_handle.clone()).await.map_err(|e| {
             format!(
                 "CORE_SWITCH_STOP_FAILED: failed to stop harness before core switch at {}: {e}",
                 active_dir.display()
@@ -404,7 +404,7 @@ async fn switch_app_version(app_handle: &AppHandle, tag: &str) -> Result<(), Str
     {
         let handle = app_handle.clone();
         tauri::async_runtime::spawn_blocking(move || {
-            workflow::terminate_stale_harness_processes(&handle);
+            workflow::HarnessLifecycle::terminate_stale_harness_processes(&handle);
         })
         .await
         .map_err(|e| format!("CORE_SWITCH_STOP_FAILED: {e}"))?;
@@ -534,8 +534,8 @@ pub async fn remove_version(app_handle: &AppHandle, id: &str) -> Result<(), Stri
         .ok_or_else(|| format!("CORE_VERSION_NOT_FOUND: {tag}"))?;
 
     // 停止服务避免句柄锁定（被删目录可能是上一份激活副本，句柄未释放）
-    if workflow::has_owned_process() {
-        if let Err(e) = workflow::stop(app_handle.clone()).await {
+    if workflow::HarnessLifecycle::has_owned_process() {
+        if let Err(e) = workflow::HarnessLifecycle::shutdown(app_handle.clone()).await {
             log::warn!("failed to stop harness before core removal: {e}");
         }
     }

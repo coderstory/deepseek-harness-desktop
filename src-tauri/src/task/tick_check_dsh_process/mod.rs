@@ -1,7 +1,4 @@
-use crate::service::workflow::{
-    status::{self, Status},
-    utils,
-};
+use crate::service::workflow::{status::{self, Status}, HarnessLifecycle};
 use tauri::AppHandle;
 
 /// 检测 dsh 进程状态并更新
@@ -14,7 +11,7 @@ pub async fn trigger(app_handle: AppHandle) -> Result<(), Box<dyn std::error::Er
     // 只有本应用仍持有启动 PID 时才接受 HTTP 健康结果，避免把同端口的
     // 其他本地 Web 服务误识别成 Harness。
     let is_dsh_running =
-        crate::service::workflow::has_owned_process() && utils::is_dsh_running(port).await;
+        crate::service::workflow::HarnessLifecycle::has_owned_process() && HarnessLifecycle::is_dsh_running(port).await;
     log::trace!("DSH status check: dsh_running={}", is_dsh_running);
 
     // 只有当当前状态为运行中时，才更新状态
@@ -25,7 +22,7 @@ pub async fn trigger(app_handle: AppHandle) -> Result<(), Box<dyn std::error::Er
 
     // 反向回收：不再持有 dsh 进程（退出监视线程可能因崩溃等未复位）而状态仍
     // 停在 Running 时兜底回落 Stopped，避免前端长期显示错误的「运行中」。
-    if !crate::service::workflow::has_owned_process() && current_status == Status::Running {
+    if !crate::service::workflow::HarnessLifecycle::has_owned_process() && current_status == Status::Running {
         log::warn!("DSH status check: no owned process yet status Running; resetting to Stopped");
         status::set_status(Status::Stopped);
         status::emit_status(&app_handle);

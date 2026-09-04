@@ -11,11 +11,9 @@ use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, Mutex, OnceLock};
 use tauri::{AppHandle, Emitter};
 
+use super::lifecycle::HarnessLifecycle;
 use super::status;
 use super::sweep::harness_pid_path;
-
-/// 当前持有的 Harness 根进程意外退出时通知前端的专用事件。
-pub(super) const HARNESS_PROCESS_EXITED_EVENT: &str = "harness-process-exited";
 
 /// Harness 根进程退出事件载荷。退出码在 Unix 被信号终止或系统查询失败时为空。
 #[derive(Clone, Debug, serde::Serialize, PartialEq)]
@@ -186,7 +184,7 @@ pub(super) fn on_owned_process_exit(
         pid: owned.pid,
         exit_code,
     };
-    if let Err(error) = app_handle.emit(HARNESS_PROCESS_EXITED_EVENT, payload) {
+    if let Err(error) = app_handle.emit(HarnessLifecycle::PROCESS_EXITED_EVENT, payload) {
         log::warn!("Failed to emit Harness process exit event: {error}");
     }
     Some(owned)
@@ -301,12 +299,12 @@ fn command_line_has_argument(cmdline: &str, argument: &str) -> bool {
         let before_is_boundary = cmdline[..start]
             .chars()
             .next_back()
-            .map_or(true, char::is_whitespace);
+            .is_none_or(char::is_whitespace);
         let end = start + matched.len();
         let after_is_boundary = cmdline[end..]
             .chars()
             .next()
-            .map_or(true, char::is_whitespace);
+            .is_none_or(char::is_whitespace);
         before_is_boundary && after_is_boundary
     })
 }
@@ -322,7 +320,7 @@ fn command_line_has_argument_after(cmdline: &str, preceding: &str, argument: &st
         let end = start + matched.len();
         let rest = cmdline[end..].trim_start_matches(char::is_whitespace);
         rest.strip_prefix(argument)
-            .is_some_and(|tail| tail.chars().next().map_or(true, char::is_whitespace))
+            .is_some_and(|tail| tail.chars().next().is_none_or(char::is_whitespace))
     })
 }
 
