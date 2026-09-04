@@ -1,0 +1,24 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/RommelClient.java
+  s_9157f7d2adb1f2::t_aece4adef58ac1 36-42
+  s_9157f7d2adb1f2::t_fb6bb515578e24 69,74-75,77-81
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/GodpClient.java
+  s_9157f7d2adb1f2::t_29b4b9d2b7cef7 98,100-104,129,131-135
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/GbopHelper.java
+  s_9157f7d2adb1f2::t_0192524861d947 46-47,74-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "b778b7870af5555430d9c3cea399e998ab941657",
+  "prompts": {},
+  "sessions": {
+    "s_9157f7d2adb1f2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2cb2f356-421e-4597-a578-a095b31d174c",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
