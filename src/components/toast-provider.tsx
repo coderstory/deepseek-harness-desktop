@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Toast } from '@heroui/react'
-import { placements, activeQueues } from '@/utils/toast'
+import { activeQueues, placements } from '@/utils/toast'
 
 export function ToastProvider({ children }: { children?: ReactNode }) {
   return (

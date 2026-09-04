@@ -20,12 +20,12 @@ export const queues = Object.fromEntries(
 ) as Record<Placement, ToastQueue>
 
 const linuxQueues = Object.fromEntries(
-  placements.map(p => [p, new ToastQueue({ maxVisibleToasts: 3 ,wrapUpdate: (fn) => fn() })]),
+  placements.map(p => [p, new ToastQueue({ maxVisibleToasts: 3, wrapUpdate: fn => fn() })]),
 ) as Record<Placement, ToastQueue>
 
 export const activeQueues = navigator.platform.toLowerCase().includes('linux')
-    ? linuxQueues
-    : queues
+  ? linuxQueues
+  : queues
 
 const placementsKeys = new Map<string, Placement>()
 
