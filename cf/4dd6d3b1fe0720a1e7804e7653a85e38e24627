@@ -1,0 +1,20 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/TechnicalSupportHelper.java
+  s_c95713c792e1a9::t_a25552c3f42bbe 147-150,160-163,176-183
+  s_c95713c792e1a9::t_fa300aa512f3fd 184-185
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "cf4dd6d3b1fe0720a1e7804e7653a85e38e24627",
+  "prompts": {},
+  "sessions": {
+    "s_c95713c792e1a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "67ccf433-7dd7-49e4-a12a-d435078641b0",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

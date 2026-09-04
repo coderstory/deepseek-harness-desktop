@@ -1,0 +1,25 @@
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/utils/MaintenanceRecordValidator.java
+  s_d47da69d8b3f96::t_9d7c323d96880c 13
+  s_d47da69d8b3f96::t_16360eb02dc712 242-253
+  s_d47da69d8b3f96::t_1f98ab9c9aa6fd 119
+C09-svc-pdi/svc-core-pdi/src/main/java/svc/core/pdi/service/SvcMaintenanceRecordService.java
+  s_d47da69d8b3f96::t_554c6c77d38b3b 448-450
+  s_d47da69d8b3f96::t_88ebf78a47c4ee 491-493
+  s_d47da69d8b3f96::t_9aabd97ff53c76 455-457,459
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "d91cab0b8eed81be71a13ea5a6f03d2efc4df5a2",
+  "prompts": {},
+  "sessions": {
+    "s_d47da69d8b3f96": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a5969704-e567-461a-8b9e-1f403b021a8b",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
