@@ -79,6 +79,20 @@ impl HarnessLifecycle {
         harness_url_slot().lock().ok().and_then(|g| g.url.clone())
     }
 
+    /// 从含 token 的 dsh URL 里抽出 `token=…` 的值。缺失或空 token 返回 `None`，
+    /// 调用方回退到无 token 的探测路径（兼容老版本 dsh / 槽位未填充的早期窗口）。
+    pub fn extract_token_from_url(url: &str) -> Option<String> {
+        let query = url.split_once('?')?.1;
+        for pair in query.split('&') {
+            if let Some(v) = pair.strip_prefix("token=") {
+                if !v.is_empty() {
+                    return Some(v.to_string());
+                }
+            }
+        }
+        None
+    }
+
     /// 读取当前 generation（spawn_output_readers 在 spawn 时记下，set_url 时回传）。
     pub fn current_generation() -> u64 {
         harness_url_slot()
@@ -153,8 +167,12 @@ impl HarnessLifecycle {
     /// HTTP 探测判断 dsh 是否在某端口上真的就绪（与 `proxy_health_check` 不同：
     /// 这只检测 TCP 端口是否有响应，不验证 client modules）。后台 tick 任务
     /// 用它辅助区分「持有 PID 但进程崩了」与「仍在启动中」。
-    pub async fn is_dsh_running(port: u16) -> bool {
-        utils::is_dsh_running(port).await
+    ///
+    /// `token` 取自 [`HarnessLifecycle::get_url`]：dsh 0.1.2-rc.1+ 在 stdout 输出
+    /// 的 URL 里带 `?token=…`，探测必须带上；老版本 dsh 或槽位未填充时回退到
+    /// `None`（与原行为一致）。
+    pub async fn is_dsh_running(port: u16, token: Option<&str>) -> bool {
+        utils::is_dsh_running(port, token).await
     }
 }
 
@@ -273,5 +291,37 @@ mod tests {
         let g3 = HarnessLifecycle::bump_generation();
         assert!(g2 > g1);
         assert!(g3 > g2);
+    }
+
+    /// 回归：dsh 0.1.2-rc.1+ 在 stdout 输出的 URL 里带 `?token=…`；老版本（< 0.1.2-rc.1）
+    /// 只输出端口 URL，本函数对它们返回 `None`，调用方回退到无 token 的探测（与之前
+    /// 行为一致）。空 token 也必须返回 `None`，避免 `with_token` 退化成 `?token=`。
+    #[test]
+fn extract_token_handles_present_absent_and_paired_query() {
+        // 基本 token
+        assert_eq!(
+            HarnessLifecycle::extract_token_from_url("http://127.0.0.1:3080/?token=abc"),
+            Some("abc".to_string()),
+        );
+        // 老版本 dsh：没有 token
+        assert_eq!(
+            HarnessLifecycle::extract_token_from_url("http://127.0.0.1:3080/"),
+            None,
+        );
+        // 与其他参数并列
+        assert_eq!(
+            HarnessLifecycle::extract_token_from_url("http://127.0.0.1:3080/?rev=v1&token=xyz&other=o"),
+            Some("xyz".to_string()),
+        );
+        // 空 token → None（与 `with_token` 的 None 行为保持一致）
+        assert_eq!(
+            HarnessLifecycle::extract_token_from_url("http://127.0.0.1:3080/?token="),
+            None,
+        );
+        // token 在中段（非首参）
+        assert_eq!(
+            HarnessLifecycle::extract_token_from_url("http://127.0.0.1:3080/?a=1&token=middle&b=2"),
+            Some("middle".to_string()),
+        );
     }
 }

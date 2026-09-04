@@ -27,15 +27,39 @@ pub(super) fn loopback_http_client(timeout: Duration) -> Result<reqwest::Client,
         .build()
 }
 
+/// 把 dsh token 追加到本地探测 URL：已含 `?` 的路径用 `&`，否则用 `?`。
+/// `None` 或空 token 直接原样返回，避免在早期窗口（stdout 还没解析到
+/// `dsh web: <URL>?token=…`）给本来通过的请求多塞一个空查询参数，
+/// 也避免对老版本 dsh（无 token）错误地注入 `?token=`。
+pub(super) fn with_token(mut url: String, token: Option<&str>) -> String {
+    let Some(t) = token.filter(|t| !t.is_empty()) else {
+        return url;
+    };
+    let sep = if url.contains('?') { '&' } else { '?' };
+    url.push(sep);
+    url.push_str("token=");
+    url.push_str(t);
+    url
+}
+
 /// 旧版客户端插件 bundle 探测地址。
 ///
 /// SPA `/` 在 webServer 绑定后立刻 200，此时连接桥与 Loader 图往往还没就绪；
 /// WebView 若在这个窗口加载，会永久停在官方 boot 页 “Loading plugins…”。
 /// 旧版没有可读取的启动图时，保留这两个稳定入口作为兼容兜底。
-pub(super) fn health_probe_plugin_urls(port: u16) -> Vec<String> {
+///
+/// `token` 取自 `HarnessLifecycle::get_url()`：dsh 0.1.2-rc.1+ 引入 URL-scoped
+/// session auth，没有 token 的探测会被服务端 401；老版本 dsh 不带 token，传 `None`。
+pub(super) fn health_probe_plugin_urls(port: u16, token: Option<&str>) -> Vec<String> {
     vec![
-        format!("http://127.0.0.1:{port}/plugins/@deepseek-ai/dsh-client-ui-layout/client.js"),
-        format!("http://127.0.0.1:{port}/plugins/@deepseek-ai/dsh-client-runtime/client.js"),
+        with_token(
+            format!("http://127.0.0.1:{port}/plugins/@deepseek-ai/dsh-client-ui-layout/client.js"),
+            token,
+        ),
+        with_token(
+            format!("http://127.0.0.1:{port}/plugins/@deepseek-ai/dsh-client-runtime/client.js"),
+            token,
+        ),
     ]
 }
 
@@ -44,7 +68,10 @@ pub(super) fn health_probe_plugin_urls(port: u16) -> Vec<String> {
 /// alpha 版不再保证桌面端旧适配器中的功能包名称存在，首页注入的启动图才是
 /// WebView 实际会加载的唯一模块清单。这里不猜测替代包名，而是复用该清单中的
 /// `entries`，同时加入 HTML 中预加载的 modules/runtime 两个入口。
-pub(super) fn client_urls_from_boot_html(port: u16, html: &str) -> Option<Vec<String>> {
+///
+/// `token` 取自 `HarnessLifecycle::get_url()`：见 [`with_token`]；已含 `?rev=…`
+/// 的路径需要走 `&token=…` 分支而不是覆盖查询参数。
+pub(super) fn client_urls_from_boot_html(port: u16, html: &str, token: Option<&str>) -> Option<Vec<String>> {
     let marker = "globalThis[\"__DSH_BOOT__\"] = ";
     let start = html.find(marker)? + marker.len();
     let end = html[start..].find("</script>")? + start;
@@ -85,7 +112,7 @@ pub(super) fn client_urls_from_boot_html(port: u16, html: &str) -> Option<Vec<St
     Some(
         paths
             .into_iter()
-            .map(|path| format!("http://127.0.0.1:{port}{path}"))
+            .map(|path| with_token(format!("http://127.0.0.1:{port}{path}"), token))
             .collect(),
     )
 }
@@ -130,7 +157,10 @@ pub(super) fn looks_like_plugin_bundle(ok_status: bool, body: &str) -> bool {
 }
 
 /// 检查 Harness 是否真正在运行（探测指定端口，随配置端口联动）
-pub async fn is_dsh_running(port: u16) -> bool {
+///
+/// `token` 取自 `HarnessLifecycle::get_url()`：见 [`with_token`]；老版本 dsh 或
+/// 槽位未填充时传 `None`，行为与无 token 一致。
+pub async fn is_dsh_running(port: u16, token: Option<&str>) -> bool {
     let client = loopback_http_client(Duration::from_secs(2)).ok(); // 将 Result 转为 Option
 
     // 如果 client 创建失败，直接返回 false
@@ -139,7 +169,10 @@ pub async fn is_dsh_running(port: u16) -> bool {
         None => return false,
     };
 
-    let url = format!("{}/", crate::config::get_dsh_service_url(port));
+    let url = with_token(
+        format!("{}/", crate::config::get_dsh_service_url(port)),
+        token,
+    );
 
     // 发送请求并判断是否就绪
     let check_status = async {
@@ -496,7 +529,7 @@ mod tests {
     #[test]
     fn boot_html_uses_declared_client_graph() {
         let html = r#"<script src="/plugins/@deepseek-ai/dsh-client-modules/client.js?rev=one"></script><script>globalThis["__DSH_BOOT__"] = {"rev":"graph","entries":[{"id":"@deepseek-ai/dsh-client-ui-layout","url":"/plugins/@deepseek-ai/dsh-client-ui-layout/client.js?rev=two","rev":"two"}]}</script>"#;
-        let urls = client_urls_from_boot_html(3099, html).expect("boot graph");
+        let urls = client_urls_from_boot_html(3099, html, None).expect("boot graph");
         assert_eq!(urls.len(), 2);
         assert!(urls
             .iter()
@@ -511,9 +544,9 @@ mod tests {
 
     #[test]
     fn boot_html_rejects_missing_or_external_graph_entries() {
-        assert!(client_urls_from_boot_html(3099, "<html></html>").is_none());
+        assert!(client_urls_from_boot_html(3099, "<html></html>", None).is_none());
         let html = r#"<script>globalThis[\"__DSH_BOOT__\"] = {\"entries\":[{\"url\":\"https://example.test/client.js\"}]}</script>"#;
-        assert!(client_urls_from_boot_html(3099, html).is_none());
+        assert!(client_urls_from_boot_html(3099, html, None).is_none());
     }
 
     /// alpha combo bundle 的 script src 位于 HTML 属性时，`&rev=` 会编码为
@@ -521,13 +554,13 @@ mod tests {
     #[test]
     fn boot_html_decodes_combo_bundle_attribute_url() {
         let html = r#"<script src="/plugins/??@deepseek-ai/dsh-client-modules/client.js&amp;rev=cddf5581d5d5"></script><script>globalThis["__DSH_BOOT__"] = {"entries":[]}</script>"#;
-        let urls = client_urls_from_boot_html(3081, html).expect("boot graph");
+        let urls = client_urls_from_boot_html(3081, html, None).expect("boot graph");
         assert_eq!(urls, vec!["http://127.0.0.1:3081/plugins/??@deepseek-ai/dsh-client-modules/client.js&rev=cddf5581d5d5"]);
     }
 
     #[test]
     fn health_probe_plugin_urls_target_client_bundles_not_spa_root() {
-        let urls = health_probe_plugin_urls(3080);
+        let urls = health_probe_plugin_urls(3080, None);
         assert!(urls.iter().all(|u| u.contains("/plugins/")));
         assert!(urls
             .iter()
@@ -535,6 +568,76 @@ mod tests {
         assert!(urls
             .iter()
             .any(|u| u.contains("dsh-client-ui-layout/client.js")));
+    }
+
+    /// 回归：dsh 0.1.2-rc.1+ 引入 URL-scoped session auth 后，health 探测
+    /// 必须把 `HarnessLifecycle::get_url()` 拿到的 token 拼到所有 probe URL 上；
+    /// 没有 token（None）或空 token（Some("")）时保持原样，避免给本来会通过的请求
+    /// 多塞一个空查询参数。
+    #[test]
+    fn with_token_appends_when_absent_and_amperands_when_present() {
+        // 无查询参数 → `?token=`
+        assert_eq!(
+            with_token("http://127.0.0.1:3080/".to_string(), Some("abc")),
+            "http://127.0.0.1:3080/?token=abc",
+        );
+        // 已有查询参数（?rev=...）→ `&token=`
+        assert_eq!(
+            with_token(
+                "http://127.0.0.1:3080/plugins/x/client.js?rev=v1".to_string(),
+                Some("abc"),
+            ),
+            "http://127.0.0.1:3080/plugins/x/client.js?rev=v1&token=abc",
+        );
+        // None → 原样返回
+        assert_eq!(
+            with_token("http://127.0.0.1:3080/".to_string(), None),
+            "http://127.0.0.1:3080/",
+        );
+        // Some("") → 原样返回（防止空 token 退化成 `?token=` 让 dsh 鉴权失败）
+        assert_eq!(
+            with_token("http://127.0.0.1:3080/".to_string(), Some("")),
+            "http://127.0.0.1:3080/",
+        );
+    }
+
+    /// 回归：`health_probe_plugin_urls` 加上 `Option<&str>` token 参数后，
+    /// `Some(_)` 给所有 URL 拼 `?token=`、`None` / `Some("")` 保持原样。
+    #[test]
+    fn health_probe_plugin_urls_attaches_token() {
+        let with_token = health_probe_plugin_urls(3080, Some("xyz"));
+        assert!(with_token.iter().all(|u| u.contains("?token=xyz")));
+
+        let without_token = health_probe_plugin_urls(3080, None);
+        assert!(without_token.iter().all(|u| !u.contains("token=")));
+
+        let empty_token = health_probe_plugin_urls(3080, Some(""));
+        assert!(empty_token.iter().all(|u| !u.contains("token=")));
+    }
+
+    /// 回归：alpha combo bundle 的 script src 带 `&rev=...`，探测 URL 必须先还原
+    /// HTML 实体，再追加 `&token=...`（保留 `?rev=` 不被 token 覆盖）。
+    #[test]
+    fn client_urls_from_boot_html_attaches_token_after_rev_query() {
+        let html = r#"<script src="/plugins/??@deepseek-ai/dsh-client-modules/client.js&amp;rev=cddf5581d5d5"></script><script>globalThis["__DSH_BOOT__"] = {"entries":[]}</script>"#;
+        let urls = client_urls_from_boot_html(3081, html, Some("tok"))
+            .expect("boot graph with token");
+        assert_eq!(
+            urls,
+            vec![
+                "http://127.0.0.1:3081/plugins/??@deepseek-ai/dsh-client-modules/client.js&rev=cddf5581d5d5&token=tok",
+            ]
+        );
+
+        // 没有 token → 与原 `boot_html_decodes_combo_bundle_attribute_url` 行为一致
+        let urls_no_token = client_urls_from_boot_html(3081, html, None)
+            .expect("boot graph without token");
+        assert_eq!(
+            urls_no_token,
+            vec![
+                "http://127.0.0.1:3081/plugins/??@deepseek-ai/dsh-client-modules/client.js&rev=cddf5581d5d5",
+            ]
+        );
     }
 
     #[test]

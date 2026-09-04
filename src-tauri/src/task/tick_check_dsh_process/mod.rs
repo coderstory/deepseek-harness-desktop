@@ -10,8 +10,15 @@ pub async fn trigger(app_handle: AppHandle) -> Result<(), Box<dyn std::error::Er
     let port = crate::config::get_store_dat_setting(&app_handle).port;
     // 只有本应用仍持有启动 PID 时才接受 HTTP 健康结果，避免把同端口的
     // 其他本地 Web 服务误识别成 Harness。
-    let is_dsh_running =
-        crate::service::workflow::HarnessLifecycle::has_owned_process() && HarnessLifecycle::is_dsh_running(port).await;
+    //
+    // token 取自 `HarnessLifecycle::get_url()`：dsh 0.1.2-rc.1+ 在 stdout 输出
+    // 的 URL 里带 `?token=…`，探测必须带上；老版本或槽位未填充时回退到 None
+    // （与原行为一致）。
+    let token = HarnessLifecycle::get_url()
+        .as_deref()
+        .and_then(HarnessLifecycle::extract_token_from_url);
+    let is_dsh_running = crate::service::workflow::HarnessLifecycle::has_owned_process()
+        && HarnessLifecycle::is_dsh_running(port, token.as_deref()).await;
     log::trace!("DSH status check: dsh_running={}", is_dsh_running);
 
     // 只有当当前状态为运行中时，才更新状态

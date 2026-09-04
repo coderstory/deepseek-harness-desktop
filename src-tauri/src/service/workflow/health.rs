@@ -4,16 +4,23 @@ use std::sync::atomic::Ordering;
 
 use crate::config;
 
+use super::lifecycle::HarnessLifecycle;
 use super::process::{has_owned_process, LAUNCH_GUARD};
 use super::utils;
 
 /// 读取 Harness 首页并解析本次启动实际声明的客户端模块。
-async fn client_probe_endpoints(port: u16) -> Result<Vec<String>, String> {
+///
+/// `token` 取自 `HarnessLifecycle::get_url()`，见 [`utils::with_token`]；未携带
+/// token（早期窗口 / 老版本 dsh）时为 `None`，保持端口 fallback URL 的原行为。
+async fn client_probe_endpoints(port: u16, token: Option<&str>) -> Result<Vec<String>, String> {
     let client = utils::loopback_http_client(config::HEALTH_CHECK_TIMEOUT)
         .map_err(|e| format!("HARNESS_HEALTH_CLIENT_FAILED: {e}"))?;
-    let root = format!("{}/", config::get_dsh_service_url(port));
+    let root = utils::with_token(
+        format!("{}/", config::get_dsh_service_url(port)),
+        token,
+    );
     let response = client
-        .get(root)
+        .get(&root)
         .send()
         .await
         .map_err(|e| format!("HARNESS_BOOT_MANIFEST_REQUEST_FAILED: {e}"))?;
@@ -27,8 +34,8 @@ async fn client_probe_endpoints(port: u16) -> Result<Vec<String>, String> {
         .text()
         .await
         .map_err(|e| format!("HARNESS_BOOT_MANIFEST_READ_FAILED: {e}"))?;
-    Ok(utils::client_urls_from_boot_html(port, &body)
-        .unwrap_or_else(|| utils::health_probe_plugin_urls(port)))
+    Ok(utils::client_urls_from_boot_html(port, &body, token)
+        .unwrap_or_else(|| utils::health_probe_plugin_urls(port, token)))
 }
 
 /// 无持有进程时应返回给前端的探测信号。
@@ -61,15 +68,26 @@ pub async fn proxy_health_check(port: u16) -> Result<String, String> {
     if !has_owned_process() {
         return Err(not_owned_probe_signal(LAUNCH_GUARD.load(Ordering::SeqCst)).to_string());
     }
+    // dsh 0.1.2-rc.1+ 在 stdout 输出的 URL 里带 `?token=…`，探测必须带上；
+    // 老版本 dsh 或槽位未填充时为 `None`，回退到端口 fallback URL（与之前行为一致）。
+    let token = HarnessLifecycle::get_url()
+        .as_deref()
+        .and_then(HarnessLifecycle::extract_token_from_url);
+    let token_ref = token.as_deref();
+
     let client = utils::loopback_http_client(config::HEALTH_CHECK_TIMEOUT)
         .map_err(|e| format!("HARNESS_HEALTH_CLIENT_FAILED: {e}"))?;
-    let endpoints = client_probe_endpoints(port).await?;
+    let endpoints = client_probe_endpoints(port, token_ref).await?;
     let total = endpoints.len();
     let mut ready = 0usize;
     let mut failures = Vec::with_capacity(total);
 
     for endpoint in endpoints {
-        match client.get(&endpoint).send().await {
+        // `client_probe_endpoints` 已经把 token 拼到 `endpoint` 上了；这里再走
+        // 一次 `with_token` 主要是为 boot 图未提供时由 `health_probe_plugin_urls`
+        // 兜底生成的 URL 兜底，确保所有探测 URL 都带 token（幂等）。
+        let url = utils::with_token(endpoint.clone(), token_ref);
+        match client.get(&url).send().await {
             Ok(response) => {
                 let status = response.status();
                 let body = response.text().await.unwrap_or_default();
