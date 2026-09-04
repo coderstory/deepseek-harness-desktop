@@ -1,0 +1,23 @@
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_fe44adde32356c::t_6a5339532b4a40 4
+  s_fe44adde32356c::t_a5d4d02a52e536 1050-1052
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetTaOrderInput.java
+  s_fe44adde32356c::t_6439245202a687 13-14
+  s_fe44adde32356c::t_49908de1df5506 24,28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ad962436d7b391e0b0813a887984b04d56b5b01b",
+  "prompts": {},
+  "sessions": {
+    "s_fe44adde32356c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "11963be1-3895-493b-8c97-502cc98c1b5c",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppointmentQueryAssembler.java
+  s_d47da69d8b3f96::t_e798a658786fa2 110,115-117
+C10-svc-inc/svc-cloud-inc/src/main/java/svc/cloud/inc/service/data/app_consumer/AppointmentPageOutput.java
+  s_d47da69d8b3f96::t_a27b925bcc7d0e 46-47,49-50
+  s_d47da69d8b3f96::t_0eef1b02c4e7e7 95,99
+  s_d47da69d8b3f96::t_ae04fea47c7eb0 31-32
+  s_d47da69d8b3f96::t_4382dddef586e6 135,139,143,147
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "bfce26ace374e57346cdf63da3c1429f33321710",
+  "prompts": {},
+  "sessions": {
+    "s_d47da69d8b3f96": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a5969704-e567-461a-8b9e-1f403b021a8b",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}

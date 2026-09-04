@@ -1,0 +1,97 @@
+C00-svc-base/svc-cloud-base/src/main/java/svc/cloud/base/dict/PermissionDict.java
+  s_56357b97e171ce::t_4c737a384aa9b5 268
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/helper/TechnicalSupportHelper.java
+  s_d47da69d8b3f96::t_6f338e50b9d4ef 7-9,18,33,36-37,41-42,58,61,65,85,89,109-115,135,139,145-157
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/CampaignRepairPackageModel.java
+  s_fe44adde32356c::t_2b2fd51439133f 35-52,125-178
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetCSCOutput.java
+  s_d47da69d8b3f96::t_f1380262a74c4e 3,18,23,26,39
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetCSCOutput1.java
+  s_d47da69d8b3f96::t_15f5db1c5f413f 7-11,14-15,17-18,20-21,23-24,26-27,30-31,34-35,38-39,42,46,50-51,54-55
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetCreateTechInquiryInfoOutput.java
+  s_f9a5a53ef1c35f::t_be0b8237c6c83a 16-18,42-49
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetTaOrderInput.java
+  s_fe44adde32356c::t_287142be1929c0 13-15,23-30
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/service/data/technical_support/GetTaOrderOutput.java
+  s_fe44adde32356c::t_2f6c4dd19d298a 36-41,130-147
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/strategy/csc/impl/TechMdmCSCHandler.java
+  s_d47da69d8b3f96::t_7561fc0aa1a8c2 3,8,10-11,19,23,25-26,52-55,84-211
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/TechnicalSupportClient.java
+  s_aef1e15cb08db9::t_5e7549541611b2 25-27,29,31,35-36
+C00-svc-base/svc-core-base/src/main/java/svc/core/reception/mapper/SvcServiceProxyViewMapper.java
+  s_fe44adde32356c::t_b0b88f1bf02313 8,21-23
+C00-svc-base/svc-core-base/src/main/resources/mybatis/mapper/svc/core/reception/SvcServiceProxyViewMapper.xml
+  s_fe44adde32356c::t_9b60db493b2d5b 391-396
+C03-svc-reception/svc-core-reception/src/main/java/svc/core/reception/service/SvcServicePickUpTaskService.java
+  s_fe44adde32356c::t_de44b5f70730aa 4,1116-1118
+C06-svc-delivery/svc-core-delivery/src/main/java/svc/core/delivery/strategy/statement/impl/EmStatementHandlerImpl.java
+  s_7ffc5ac7fd20d1::t_5866f22435ac0e 503,506-509,512,631,640,678-847
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/em/InvoiceTmpForward.ftl
+  s_64b33ca253c3d4::t_97c82b57e18cd2 1988,2376,2983,3438,3893,4642
+C06-svc-delivery/svc-core-delivery/src/main/resources/templates/em/InvoiceTmpNegative.ftl
+  s_64b33ca253c3d4::t_759326614010be 1984,2373,2977,3429,3883,4627
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3872acacc380f134e62670a8902014f4b9ff76ae",
+  "prompts": {},
+  "sessions": {
+    "s_56357b97e171ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a17b7eb9-528c-45e6-8e32-378067973bba",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_64b33ca253c3d4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5a6eb940-e014-4479-82a4-9a26970c6b6e",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_7ffc5ac7fd20d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22a188c5-35b9-4ae1-81ad-6a856ad68410",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_aef1e15cb08db9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a9efe020c2cee2382",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_d47da69d8b3f96": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a5969704-e567-461a-8b9e-1f403b021a8b",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_f9a5a53ef1c35f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-aee59cd1a2bb7aed1",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    },
+    "s_fe44adde32356c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "11963be1-3895-493b-8c97-502cc98c1b5c",
+        "model": "unknown"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
