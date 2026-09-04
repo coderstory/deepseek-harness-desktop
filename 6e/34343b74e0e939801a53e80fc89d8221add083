@@ -1,0 +1,24 @@
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/GodpClient.java
+  s_ed90645f287325::t_c38cef1068c322 113-114,145-146
+  s_ed90645f287325::t_9ee2308e081001 31-37
+  s_ed90645f287325::t_18ba5f815a4a38 10,20
+  s_ed90645f287325::t_2bc5319ce10014 63
+C00-svc-base/svc-core-base/src/main/java/svc/core/base/util/RommelClient.java
+  s_ed90645f287325::t_30946126ecd48d 78-79,83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6e34343b74e0e939801a53e80fc89d8221add083",
+  "prompts": {},
+  "sessions": {
+    "s_ed90645f287325": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f3f1d962-26a7-4889-9699-cd197a03d559",
+        "model": "glm-5.2"
+      },
+      "human_author": "yunfei.qian <e-Yunfei.Qian@geely.com>"
+    }
+  }
+}
