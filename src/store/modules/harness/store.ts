@@ -280,8 +280,35 @@ export const harness = defineStore({
         this.listenPluginRecovery(),
         this.listenInternalPhase(),
         this.listenProcessExit(),
+        this.listenHarnessUrl(),
       ])
       await this.boot()
+    },
+
+    /**
+     * 订阅 dsh stdout 解析出的「带 token 的本地访问地址」事件。
+     *
+     * 后端 `spawn_output_readers` 解析 `dsh web: http://127.0.0.1:PORT/?token=XXX`
+     * 这一行后，通过 `harness-url-detected` 推送给前端。前端收到时立刻用
+     * 含 token 的 URL 替换之前 `get_runtime_info` 拿到的 fallback URL（不含
+     * token），避免 alpha 浏览器会话鉴权失败导致 iframe 永远停在
+     * "Loading plugins…"。重启、核心切换等所有走 `HarnessLifecycle::launch`
+     * 的路径都会重新推送一次。
+     */
+    async listenHarnessUrl() {
+      try {
+        await listen<{ url: string }>('harness-url-detected', (event) => {
+          const url = event.payload?.url
+          if (typeof url !== 'string' || url === '')
+            return
+          this.serviceUrl = url
+          this.iframeSrc = generateTimestampedUrl(url)
+          console.warn('[Harness] live service URL updated:', url)
+        })
+      }
+      catch (err) {
+        console.error('[Harness] failed to listen harness-url-detected:', err)
+      }
     },
 
     /** 订阅当前持有的 Harness 根进程退出事件，及时撤下失效 iframe。 */
