@@ -169,11 +169,16 @@ pub fn is_port_in_use(port: u16) -> bool {
 /// - `app_handle`: 用于在 stdout 解析到 `dsh web: <URL>?token=...` 时通过
 ///   Tauri 事件 `harness-url-detected` 推送给前端，并把 URL 写入
 ///   [`super::lifecycle::HarnessLifecycle`] 的槽位（前端 iframe 拿这个 URL 访问）。
+/// - `generation`: 本次启动的 generation 代号（[`HarnessLifecycle::bump_generation`]
+///   的返回值）。输出线程解析到的 URL 在写回槽位时回传此代号；若此时用户已
+///   重启 dsh（generation 已被 bump），写入被丢弃，避免旧进程的 stdout 行
+///   覆盖新进程的 URL。
 pub fn spawn_output_readers<R1, R2>(
     stdout: Option<R1>,
     stderr: Option<R2>,
     log_path: PathBuf,
     app_handle: &AppHandle,
+    generation: u64,
 ) where
     R1: Read + Send + 'static,
     R2: Read + Send + 'static,
@@ -188,6 +193,7 @@ pub fn spawn_output_readers<R1, R2>(
                 log_path,
                 log::Level::Info,
                 Some(app_handle),
+                generation,
             );
         });
     }
@@ -196,7 +202,7 @@ pub fn spawn_output_readers<R1, R2>(
     if let Some(stderr) = stderr {
         let log_path = log_path.clone();
         thread::spawn(move || {
-            drain_subprocess_output(BufReader::new(stderr), log_path, log::Level::Warn, None);
+            drain_subprocess_output(BufReader::new(stderr), log_path, log::Level::Warn, None, generation);
         });
     }
 }
@@ -214,6 +220,7 @@ fn drain_subprocess_output<R: Read + Send + 'static>(
     log_path: PathBuf,
     level: log::Level,
     app_handle: Option<AppHandle>,
+    generation: u64,
 ) {
     loop {
         let mut bytes = Vec::new();
@@ -229,13 +236,21 @@ fn drain_subprocess_output<R: Read + Send + 'static>(
                 if level == log::Level::Info {
                     if let Some(handle) = app_handle.as_ref() {
                         if let Some(url) = extract_harness_url(&line) {
-                            let prev =
-                                super::lifecycle::HarnessLifecycle::set_url(url.clone());
-                            super::lifecycle::HarnessLifecycle::emit_url_changed(handle, &url);
-                            log::info!(
-                                target: "dsh",
-                                "[harness] detected live service URL (replaces prev={prev:?}): {url}"
+                            let prev = super::lifecycle::HarnessLifecycle::set_url(
+                                url.clone(),
+                                generation,
                             );
+                            // 区分"同代写入"（prev = Some(_) 或 None + URL 已落槽）
+                            // 与"过期写入"（prev = None 但 current_generation 变了）。
+                            // 用 `current_generation()` 在锁外再校验一次，避免锁嵌套
+                            // 与跨线程的 race（process::stop 可能正在并发 bump）。
+                            if super::lifecycle::HarnessLifecycle::current_generation() == generation {
+                                super::lifecycle::HarnessLifecycle::emit_url_changed(handle, &url);
+                                log::info!(
+                                    target: "dsh",
+                                    "[harness] detected live service URL (gen={generation}, prev={prev:?}): {url}"
+                                );
+                            }
                         }
                     }
                 }
@@ -400,6 +415,7 @@ mod tests {
             log.clone(),
             log::Level::Warn,
             None,
+            0,
         );
 
         let content = fs::read_to_string(&log).unwrap();
@@ -437,6 +453,7 @@ mod tests {
             log.clone(),
             log::Level::Info,
             None,
+            0,
         );
 
         let content = fs::read_to_string(&log).unwrap();

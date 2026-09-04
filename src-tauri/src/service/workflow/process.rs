@@ -180,6 +180,8 @@ pub(super) fn on_owned_process_exit(
 
     status::set_status(status::Status::Stopped);
     status::emit_status(app_handle);
+    // 进程已退出：token URL 已无效，bump generation 让前端 iframe 撤掉旧地址。
+    HarnessLifecycle::bump_generation();
     let payload = HarnessProcessExitedPayload {
         pid: owned.pid,
         exit_code,
@@ -462,6 +464,10 @@ pub async fn stop(app_handle: tauri::AppHandle) -> Result<(), String> {
     // 清理孤儿清扫标记：正常停止的实例不应被下次启动当作残留
     let _ = fs::remove_file(harness_pid_path(&app_handle));
 
+    // 清空 URL 槽位 + bump generation：让所有正在写的 stdout 输出线程作废，
+    // 避免旧进程的 stdout 行（管道 close 前的缓冲数据）覆盖之后的 URL。
+    HarnessLifecycle::bump_generation();
+
     // 给系统一点时间释放端口 (重要！)
     tokio::time::sleep(std::time::Duration::from_millis(800)).await;
 
@@ -477,6 +483,8 @@ pub fn stop_on_exit(app_handle: tauri::AppHandle, _port: u16) {
     terminate_owned_process();
     // 正常退出路径同样清理清扫标记（崩溃路径才需要下次启动清扫）
     let _ = fs::remove_file(harness_pid_path(&app_handle));
+    // 清空 URL 槽位 + bump generation（同 `stop`）：进程已死、token URL 已无效。
+    HarnessLifecycle::bump_generation();
 }
 
 #[cfg(test)]

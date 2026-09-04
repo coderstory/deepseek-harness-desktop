@@ -538,9 +538,10 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
 
     log::info!("Starting Harness process");
 
-    // 新 dsh 子进程会输出新的 token URL；先清空旧槽位，避免前端 iframe 短暂
-    // 指向已死进程的 token（alpha 鉴权失败即 Loading plugins 卡死）。
-    super::lifecycle::HarnessLifecycle::clear_url();
+    // bump generation：清空旧 token URL 槽位 + 让所有持有旧 generation 的
+    // 输出线程被作废（restart 后旧线程若仍输出 `dsh web: ...`，写入会被丢弃）。
+    // spawn_output_readers 把这个 generation 带回 stdout 解析路径。
+    let url_generation = super::lifecycle::HarnessLifecycle::bump_generation();
 
     // dsh 的 Loader 在插件 dispose 时会把组合后的整棵 entry 树回写进
     // `cordis.yml`（dsh-app-boot：plugin self-disposing persists the current
@@ -783,7 +784,7 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
             );
             // 记录 PID+端口供下次启动清扫崩溃残留的孤儿实例（见 sweep_orphan_harness）
             persist_harness_pid(&app_handle, pid, setting.port);
-            spawn_output_readers(stdout, stderr, log_path, &app_handle);
+            spawn_output_readers(stdout, stderr, log_path, &app_handle, url_generation);
             Ok(())
         }
         Err(e) => {
