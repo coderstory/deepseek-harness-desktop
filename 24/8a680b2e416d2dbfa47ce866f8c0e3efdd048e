@@ -1,0 +1,26 @@
+C02-svc-appointment/svc-core-appointment/src/main/java/svc/core/appointment/helper/AppStoreQueryHelper.java
+  s_d47da69d8b3f96::t_b3c8a52337ae5e 145-159
+C10-svc-inc/svc-core-inc/src/main/java/svc/core/inc/service/AppConsumerAppointmentServiceImpl.java
+  s_d47da69d8b3f96::t_af714f0cf9b8c6 923-926,933-934,938-951
+  s_d47da69d8b3f96::t_08e77efa66e0b5 1134-1135,1141-1142
+  s_d47da69d8b3f96::t_b7235e7712235b 1810-1812,1814-1818,1821-1822
+  s_d47da69d8b3f96::t_6d2fb5f036c25a 1110
+  s_d47da69d8b3f96::t_c905f8dc867f2c 1862
+  s_d47da69d8b3f96::t_865291c92bfd59 1116-1117
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "248a680b2e416d2dbfa47ce866f8c0e3efdd048e",
+  "prompts": {},
+  "sessions": {
+    "s_d47da69d8b3f96": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a5969704-e567-461a-8b9e-1f403b021a8b",
+        "model": "glm-5.2"
+      },
+      "human_author": "e-Junchao.Sun <e-Junchao.Sun@geely.com>"
+    }
+  }
+}
