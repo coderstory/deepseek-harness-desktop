@@ -629,20 +629,32 @@ pub fn resolve_update(
     match record_tag.and_then(parse_version_from_tag) {
         Some(record_version) if record_behind_latest(&record_version) => UpdateCheck::HealUpToDate,
         Some(_) => UpdateCheck::UpdateAvailable,
-        None => match legacy_tags
-            .iter()
-            .find(|(_, commit)| Some(commit.as_str()) == record_commit)
-        {
-            Some((tag, _)) => match parse_version_from_tag(tag) {
+        None => {
+            // 收集所有反查命中 record_commit 的 tag（不仅首条）：同一个 git commit
+            // 可能被多个 tag 指向（stable / latest 别名、不同命名规范的同源 tag），
+            // `.find()` 只取首个会在 alias 场景错过 latest.tag 的对齐。
+            let matches: Vec<&(String, String)> = legacy_tags
+                .iter()
+                .filter(|(_, commit)| Some(commit.as_str()) == record_commit)
+                .collect();
+            match matches.as_slice() {
+            // 唯一命中且 tag 与最新 release 同名 → 同一发布（API 限流 commit 兜底
+            // 造成的 tag 差异）。原逻辑此分支一律按「同版本热修」处理会误报更新。
+            [(tag, _)] if tag.as_str() == latest.tag.as_str() => UpdateCheck::UpToDate,
+            // 唯一命中但 tag 与最新 release 不一致 → 同版本热修或滞后记录。
+            [(tag, _)] => match parse_version_from_tag(tag) {
                 Some(record_version) if record_behind_latest(&record_version) => {
                     UpdateCheck::HealUpToDate
                 }
                 // 反查到的版本与最新版本相同（或解析失败）→ 视为同版本热修
                 _ => UpdateCheck::UpdateAvailable,
             },
+            // 多 tag 共指同一 commit → 模糊，按更新提示以免漏报。
+            _ if matches.len() > 1 => UpdateCheck::UpdateAvailable,
             // 无法考证记录对应的版本 → 以实际安装文件为准，修正记录
-            None => UpdateCheck::HealUpToDate,
-        },
+            _ => UpdateCheck::HealUpToDate,
+            }
+        }
     }
 }
 
@@ -1179,5 +1191,74 @@ mod tests {
             &[],
         );
         assert_eq!(decision, UpdateCheck::HealUpToDate);
+    }
+
+    #[test]
+    fn resolve_legacy_tag_match_latest_tag_is_up_to_date() {
+        // 回归：record_tag 缺失 + record_commit 为完整 SHA（API 正常时安装写入），
+        // 本次检查 API 限流 → latest.commit 兜底成 build-id。两种 commit 形态互不相等，
+        // `record_matches_latest_release` 提前判定为不匹配；进入 legacy_tags 反查后
+        // 必须再对齐一次 tag（同名即同一发布），不再盲目按「同版本热修」误报更新。
+        let latest = latest(
+            "dsh-0.1.2-rc.1-33729514615",
+            "33729514615", // 限流兜底
+        );
+        let tags = vec![(
+            "dsh-0.1.2-rc.1-33729514615".to_string(),
+            "abc123def4567890abcdef1234567890abcdef12".to_string(),
+        )];
+        let decision = resolve_update(
+            Some("abc123def4567890abcdef1234567890abcdef12"),
+            None,
+            Some("0.1.2-rc.1"),
+            &latest,
+            &tags,
+        );
+        assert_eq!(decision, UpdateCheck::UpToDate);
+    }
+
+    #[test]
+    fn resolve_legacy_tag_match_not_first_in_list_is_up_to_date() {
+        // 顺序无关：legacy_tags 把匹配项放在末尾，前面的非匹配项不能让 `.find()`
+        // 提前截走、必须仍然识别为同一发布。多 tag 同 commit 的 alias 场景同样
+        // 适用：filter() 会把所有命中都纳入判断。
+        let latest = latest(
+            "dsh-0.1.2-rc.1-33729514615",
+            "33729514615",
+        );
+        let tags = vec![
+            ("unrelated/v0.0.1".to_string(), "fff000fff000fff000fff000fff000fff000f0000".to_string()),
+            ("dsh-0.1.2-rc.1-33729514615".to_string(), "abc123def4567890abcdef1234567890abcdef12".to_string()),
+        ];
+        let decision = resolve_update(
+            Some("abc123def4567890abcdef1234567890abcdef12"),
+            None,
+            Some("0.1.2-rc.1"),
+            &latest,
+            &tags,
+        );
+        assert_eq!(decision, UpdateCheck::UpToDate);
+    }
+
+    #[test]
+    fn resolve_legacy_tag_multiple_matches_is_update_available() {
+        // 防御：同一 commit 被多个 tag 指向（stable / latest 别名、不同命名规范的
+        // 同源 tag），反查不唯一 → 模糊场景，按更新提示以免漏报。
+        let latest = latest(
+            "dsh-0.1.2-rc.1-33729514615",
+            "33729514615",
+        );
+        let tags = vec![
+            ("dsh-0.1.2-rc.1-stable".to_string(), "abc123def4567890abcdef1234567890abcdef12".to_string()),
+            ("dsh-0.1.2-rc.1-33729514615".to_string(), "abc123def4567890abcdef1234567890abcdef12".to_string()),
+        ];
+        let decision = resolve_update(
+            Some("abc123def4567890abcdef1234567890abcdef12"),
+            None,
+            Some("0.1.2-rc.1"),
+            &latest,
+            &tags,
+        );
+        assert_eq!(decision, UpdateCheck::UpdateAvailable);
     }
 }
