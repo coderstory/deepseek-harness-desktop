@@ -22,6 +22,11 @@ pub async fn proxy_health_check(app_handle: AppHandle) -> Result<String, String>
 pub async fn get_runtime_info(app_handle: AppHandle) -> Result<config::RuntimeInfo, String> {
     let port = config::get_store_dat_setting(&app_handle).port;
     let mut info = config::runtime_info(&app_handle, port);
+    // 优先用 dsh stdout 解析出的含 token URL（alpha 浏览器会话鉴权必需），
+    // 启动早期 / 健康检查未通过的窗口才回落端口推导的 fallback。
+    if let Some(url) = crate::service::workflow::url_slot::get() {
+        info.service_url = url;
+    }
     info.dsh_version = core::active_version(&app_handle).or(info.dsh_version);
     Ok(info)
 }
