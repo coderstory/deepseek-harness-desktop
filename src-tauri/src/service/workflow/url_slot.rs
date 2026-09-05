@@ -33,9 +33,13 @@ pub fn try_set(url: String, generation: u64) -> bool {
     true
 }
 
-/// 当前 URL（启动早期 / 健康检查未通过的窗口可能为 None）。
-pub fn get() -> Option<String> {
-    lock().0.clone()
+/// 原子读取 `(url, generation)`。给 [`crate::config::runtime_info`] 用——保证返回给
+/// 前端的 fallback URL 与其 generation 来自同一快照，避免 `current_generation()`
+/// 单独读取时被 `bump_generation` 撕开而误把端口 fallback 标成新 generation 的
+/// token URL。
+pub fn snapshot() -> (Option<String>, u64) {
+    let g = &*lock();
+    (g.0.clone(), g.1)
 }
 
 #[cfg(test)]
@@ -55,9 +59,9 @@ mod tests {
         let _g = lock();
         let g = bump_generation();
         assert!(try_set("http://127.0.0.1:3080/?token=a".into(), g));
-        assert_eq!(get().as_deref(), Some("http://127.0.0.1:3080/?token=a"));
+        assert_eq!(snapshot().0.as_deref(), Some("http://127.0.0.1:3080/?token=a"));
         bump_generation();
-        assert!(get().is_none());
+        assert!(snapshot().0.is_none());
     }
 
     #[test]
@@ -67,9 +71,9 @@ mod tests {
         assert!(try_set("http://127.0.0.1:3080/?token=old".into(), g_old));
         let g_new = bump_generation();
         assert!(!try_set("http://127.0.0.1:3080/?token=stale".into(), g_old));
-        assert!(get().is_none());
+        assert!(snapshot().0.is_none());
         assert!(try_set("http://127.0.0.1:3080/?token=fresh".into(), g_new));
-        assert_eq!(get().as_deref(), Some("http://127.0.0.1:3080/?token=fresh"));
+        assert_eq!(snapshot().0.as_deref(), Some("http://127.0.0.1:3080/?token=fresh"));
     }
 
     #[test]
@@ -78,6 +82,6 @@ mod tests {
         let g = bump_generation();
         assert!(try_set("http://127.0.0.1:3080/?token=v1".into(), g));
         assert!(try_set("http://127.0.0.1:3080/?token=v2".into(), g));
-        assert_eq!(get().as_deref(), Some("http://127.0.0.1:3080/?token=v2"));
+        assert_eq!(snapshot().0.as_deref(), Some("http://127.0.0.1:3080/?token=v2"));
     }
 }
