@@ -16,6 +16,10 @@ pub const URL_EVENT: &str = "harness-url-detected";
 #[serde(rename_all = "camelCase")]
 pub struct UrlPayload {
     pub url: String,
+    /// 与 url_slot::bump_generation 同时返回的代号。前端用它丢弃 race 下的
+    /// 迟到事件：emit 已入 IPC 队列、bump_generation 已发生、事件才送达的场景
+    /// （后端 try_set 已经按 generation 拦过一次，这里是双保险）。
+    pub generation: u64,
 }
 
 fn re() -> &'static Regex {
@@ -41,7 +45,10 @@ pub fn emit_url_changed(app_handle: &AppHandle, url: &str, generation: u64) {
     if !super::url_slot::try_set(url.to_string(), generation) {
         return;
     }
-    let _ = app_handle.emit(URL_EVENT, UrlPayload { url: url.to_string() });
+    let _ = app_handle.emit(URL_EVENT, UrlPayload {
+        url: url.to_string(),
+        generation,
+    });
 }
 
 #[cfg(test)]
