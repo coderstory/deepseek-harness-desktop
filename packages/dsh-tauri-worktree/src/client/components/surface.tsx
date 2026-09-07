@@ -20,13 +20,16 @@ export function WorktreeSurface({ sessionId }: SurfaceBarProps): ReactElement | 
     return null
 
   const creating = state.phase === 'creating'
+  const deleting = state.phase === 'deleting'
   const failed = state.phase === 'error'
   const bound = state.mode === 'worktree'
   const label = creating
     ? state.loadingLabel || text('progressCreating')
-    : failed
-      ? `${text('progressError')}${state.error ? `: ${state.error}` : ''}`
-      : text('surfaceWorktree')
+    : deleting
+      ? text('progressDeleting')
+      : failed
+        ? `${text('progressError')}${state.error ? `: ${state.error}` : ''}`
+        : text('surfaceWorktree')
 
   return (
     <div className={worktreeStyles.surface}>
@@ -44,7 +47,7 @@ export function WorktreeSurface({ sessionId }: SurfaceBarProps): ReactElement | 
           )}
         </div>
         <span className={worktreeStyles.spacer} />
-        {bound && (
+        {bound && !deleting && (
           <>
             <button type="button" className={worktreeStyles.action} onClick={() => patchSession(sessionId, { checkoutOpen: true })}>
               {text('surfaceCheckout')}

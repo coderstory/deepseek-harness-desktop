@@ -12,6 +12,16 @@
 //!   browser-session 层（`authorizeIndex` 直接放行 index、`requestRejection` 不再
 //!   校验 cookie），Host/Origin 信任边界仍由 `isTrustedApiRequest` 保留。
 //!
+//! 锚点兼容两种核心布局（issue #358）：
+//! - pkg 打包核心（deepseek-harness-pkg）：`startup.js` 的 action 在
+//!   `const options = program.opts();` 之后有 `const allowLan =
+//!   process.env.DSH_PKG_ALLOW_LAN === "1";` 一行（pkg 构建注入的 0.0.0.0 护栏）；
+//! - npm 全局原版核心（`npm i -g @deepseek-ai/dsh`）：没有 allowLan 行，`opts()`
+//!   之后直接是 `--host`/`--port` 校验。
+//!
+//! 因此 action 锚点只匹配 `const options = program.opts();` 这一行，注入
+//! `--skip-auth` 处理并把 allowLan 等后续行原样保留；两种布局都能命中。
+//!
 //! 普通用户运行 `dsh web`（不带 `--skip-auth`）时鉴权行为与上游一致；旧核心无
 //! 上述锚点时 `patch_dsh` 安全跳过，不改变旧版行为。
 
@@ -24,9 +34,8 @@ const WEB_STARTUP_REL: &str = "node_modules/@deepseek-ai/dsh-web-app/lib/startup
 const STARTUP_OPTION_ANCHOR: &str =
     ".option(\"--no-open\", \"do not open the Web UI in the default browser\")";
 const STARTUP_OPTION_REPLACEMENT: &str = ".option(\"--no-open\", \"do not open the Web UI in the default browser\")\n\t\t.option(\"--skip-auth\", \"skip the browser-session token/cookie exchange; keeps the Host/Origin trust fence (for embedded UIs)\")";
-const STARTUP_ACTION_ANCHOR: &str =
-    "\t\tconst options = program.opts();\n\t\tconst allowLan = process.env.DSH_PKG_ALLOW_LAN === \"1\";";
-const STARTUP_ACTION_REPLACEMENT: &str = "\t\tconst options = program.opts();\n\t\t/* dsh-tauri-desktop: alpha embedded auth --skip-auth flag */\n\t\tif (options.skipAuth) process.env.DSH_SKIP_AUTH = \"1\";\n\t\tconst allowLan = process.env.DSH_PKG_ALLOW_LAN === \"1\";";
+const STARTUP_ACTION_ANCHOR: &str = "\t\tconst options = program.opts();";
+const STARTUP_ACTION_REPLACEMENT: &str = "\t\tconst options = program.opts();\n\t\t/* dsh-tauri-desktop: alpha embedded auth --skip-auth flag */\n\t\tif (options.skipAuth) process.env.DSH_SKIP_AUTH = \"1\";";
 
 // ── dsh-client-connection/lib/index.js ────────────────────────────────────────
 const CONNECTION_INDEX_JS: &str =
@@ -119,6 +128,17 @@ mod tests {
         source
     }
 
+    /// pkg 打包核心（deepseek-harness-pkg）布局：`opts()` 之后紧跟 pkg 注入的
+    /// allowLan 护栏行（issue #358 中 dev 核心正是此布局，补丁必须保留该行）。
+    fn startup_fixture_pkg_layout() -> String {
+        let mut source = startup_fixture();
+        source = source.replace(
+            STARTUP_ACTION_ANCHOR,
+            "\t\tconst options = program.opts();\n\t\tconst allowLan = process.env.DSH_PKG_ALLOW_LAN === \"1\";",
+        );
+        source
+    }
+
     #[test]
     fn connection_patch_keeps_trust_fence_and_gates_browser_session() {
         let PatchOutcome::Patched(patched) = patch_connection(&connection_fixture()) else {
@@ -149,6 +169,40 @@ mod tests {
             .contains("\t\tif (options.skipAuth) process.env.DSH_SKIP_AUTH = \"1\";"));
     }
 
+    /// 回归（issue #358）：npm 全局原版核心的 startup.js 在 `opts()` 之后**没有**
+    /// allowLan 行，旧锚点（要求两行紧邻）导致 AnchorMissing、`--skip-auth` 未注入，
+    /// boot page 返回 401。现在锚点只匹配 `opts()` 单行，npm 布局必须可打补丁。
+    #[test]
+    fn startup_patch_applies_to_npm_original_layout_without_allow_lan() {
+        let fixture = startup_fixture();
+        // npm 原版无 allowLan 行
+        assert!(!fixture.contains("DSH_PKG_ALLOW_LAN"));
+
+        let PatchOutcome::Patched(patched) = patch_startup(&fixture) else {
+            panic!("expected startup patch on npm original layout");
+        };
+        assert!(patched.contains(PATCH_MARKER));
+        assert!(patched
+            .contains("\t\tif (options.skipAuth) process.env.DSH_SKIP_AUTH = \"1\";"));
+    }
+
+    /// 回归（issue #358）：pkg 打包核心的 allowLan 行必须在打补丁后原样保留，
+    /// 不能因锚点放宽而被吞掉。
+    #[test]
+    fn startup_patch_preserves_pkg_allow_lan_line() {
+        let fixture = startup_fixture_pkg_layout();
+        assert!(fixture.contains("DSH_PKG_ALLOW_LAN"));
+
+        let PatchOutcome::Patched(patched) = patch_startup(&fixture) else {
+            panic!("expected startup patch on pkg layout");
+        };
+        assert!(patched.contains(PATCH_MARKER));
+        assert!(patched
+            .contains("\t\tconst allowLan = process.env.DSH_PKG_ALLOW_LAN === \"1\";"));
+        assert!(patched
+            .contains("\t\tif (options.skipAuth) process.env.DSH_SKIP_AUTH = \"1\";"));
+    }
+
     #[test]
     fn patches_are_idempotent() {
         let PatchOutcome::Patched(startup) = patch_startup(&startup_fixture()) else {
@@ -170,9 +224,10 @@ mod tests {
         );
         assert_eq!(patch_startup("no web command here"), PatchOutcome::AnchorMissing);
 
+        // `opts()` 行本身不存在（旧核心/上游布局彻底变化）→ 跳过
         let partial = startup_fixture().replace(
             STARTUP_ACTION_ANCHOR,
-            "\t\tconst options = program.opts();\n\t\tconst allowLan = 0;",
+            "\t\tconst options = program.parse();",
         );
         assert_eq!(patch_startup(&partial), PatchOutcome::AnchorMissing);
 

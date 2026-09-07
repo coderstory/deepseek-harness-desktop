@@ -6,8 +6,8 @@ export const RIGHTCLICK_API_PREFIX = '/api/dsh-rightclick-menu'
 
 /** 用系统默认浏览器打开外链（POST，同源 JSON）。 */
 export const OPEN_URL_ROUTE = `${RIGHTCLICK_API_PREFIX}/open-url`
-/** 宿主 openPath RPC（资源管理器打开目录；绕过 better-sidebar 对 workspaces.openPath 的包装）。 */
-export const HOST_OPEN_PATH_ENDPOINT = '/api/host.openPath'
+/** 在系统文件管理器中打开目录（POST，同源 JSON；插件自家 node half 注册，不依赖核心 Remote）。 */
+export const OPEN_PATH_ROUTE = `${RIGHTCLICK_API_PREFIX}/open-path`
 
 /** css-render style id。 */
 export const RIGHTCLICK_STYLE_ID = 'dsh-tauri-rightclick-styles'

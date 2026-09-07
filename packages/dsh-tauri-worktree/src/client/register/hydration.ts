@@ -14,7 +14,7 @@
 import type { ClientContext } from 'dsh-tauri/client'
 import type { SessionListSnapshot, WorkspaceListSnapshot, WorktreeHydrationSessionsRuntime } from '../types'
 import { createLifecycleController } from 'dsh-tauri/client'
-import { HANDOFF_WINDOW_MS, HYDRATION_MAX_RETRIES, HYDRATION_RETRY_DELAY_MS } from '../constants'
+import { DISCARD_MAX_POLLS, DISCARD_POLL_DELAY_MS, HANDOFF_WINDOW_MS, HYDRATION_MAX_RETRIES, HYDRATION_RETRY_DELAY_MS } from '../constants'
 import { openWorktreeSession } from '../service/handoff'
 import { attachWorktreeSession, discardWorktree, fetchStatus, patchSession, selectSessionState, worktreeStore } from '../store'
 
@@ -47,7 +47,36 @@ export function installWorktreeHydration(ctx: ClientContext): () => void {
   const handedOff = new Set<string>()
   // 已绑定过 Session source 的会话（bindSessionEvents 去重）。
   const subscribedSessions = new Set<string>()
-  controller.add(() => retryAttempts.clear())
+  const discardPolls = new Map<string, { jobId: string, attempts: number }>()
+  controller.add(() => {
+    retryAttempts.clear()
+    discardPolls.clear()
+  })
+
+  const scheduleDiscardPoll = (sessionId: string, jobId: string, attempts: number): void => {
+    if (controller.isDisposed() || attempts >= DISCARD_MAX_POLLS)
+      return
+    const current = discardPolls.get(sessionId)
+    if (current?.jobId === jobId && current.attempts >= attempts)
+      return
+    discardPolls.set(sessionId, { jobId, attempts })
+    controller.timeout(() => {
+      if (controller.isDisposed())
+        return
+      void fetchStatus(sessionId, jobId)
+        .then((status) => {
+          if (controller.isDisposed())
+            return
+          if (status.mode === 'deleting' && status.jobId) {
+            scheduleDiscardPoll(sessionId, status.jobId, attempts + 1)
+            return
+          }
+          discardPolls.delete(sessionId)
+          reconcileSession(sessionId, true)
+        })
+        .catch(() => scheduleDiscardPoll(sessionId, jobId, attempts + 1))
+    }, DISCARD_POLL_DELAY_MS)
+  }
 
   /**
    * 捕获插件安装基线：等第一个非空列表快照（应用启动时列表 RPC 可能尚未返回，
@@ -113,6 +142,18 @@ export function installWorktreeHydration(ctx: ClientContext): () => void {
       .then((status) => {
         if (controller.isDisposed())
           return
+        if (status.mode === 'deleting' || status.mode === 'failed') {
+          patchSession(sessionId, {
+            mode: 'worktree',
+            phase: status.mode === 'deleting' ? 'deleting' : 'error',
+            error: status.error ?? '',
+            worktreeKey: previous.worktreeKey,
+            worktreePath: previous.worktreePath,
+          })
+          if (status.mode === 'deleting' && status.jobId)
+            scheduleDiscardPoll(sessionId, status.jobId, 0)
+          return
+        }
         if (status.mode === 'worktree') {
           patchSession(sessionId, {
             mode: 'worktree',
@@ -221,6 +262,31 @@ export function installWorktreeHydration(ctx: ClientContext): () => void {
     for (const sessionId of snapshot.ids) reconcileSession(sessionId)
   }
 
+  const pollArchivedDiscard = (sessionId: string, jobId: string, attempts = 0): void => {
+    if (controller.isDisposed())
+      return
+    if (attempts >= DISCARD_MAX_POLLS) {
+      cleanedArchives.delete(sessionId)
+      return
+    }
+    controller.timeout(() => {
+      void fetchStatus(sessionId, jobId)
+        .then((status) => {
+          if (controller.isDisposed())
+            return
+          if (status.mode === 'deleting' && status.jobId) {
+            pollArchivedDiscard(sessionId, status.jobId, attempts + 1)
+            return
+          }
+          // local: the cleanup settled while polling. worktree: the Host lost
+          // the job (restart) — clear the guard so the next snapshot retries.
+          if (status.mode !== 'local')
+            cleanedArchives.delete(sessionId)
+        })
+        .catch(() => cleanedArchives.delete(sessionId))
+    }, DISCARD_POLL_DELAY_MS)
+  }
+
   // 原生侧栏「归档」只隐藏会话。若该会话绑定工作树，归档集合变化后补做
   // worktree/owned branch/ledger 清理；会话日志仍由 DSH 归档持久化保留。
   const cleanupArchivedWorktrees = (): void => {
@@ -233,7 +299,12 @@ export function installWorktreeHydration(ctx: ClientContext): () => void {
         .then((status) => {
           if (controller.isDisposed() || status.mode !== 'worktree')
             return
-          return discardWorktree(sessionId, status.worktreeKey ?? '')
+          return discardWorktree(sessionId, status.worktreeKey ?? '').then((result) => {
+            if (!result.ok)
+              cleanedArchives.delete(sessionId)
+            else if (result.jobId)
+              pollArchivedDiscard(sessionId, result.jobId)
+          })
         })
         .catch(() => {
           // 网络/Host 暂不可用时允许下次快照重试。

@@ -142,6 +142,31 @@ fn plugin_git_binary(_app_handle: &AppHandle) -> Option<PathBuf> {
     }
 }
 
+/// 当前环境是否实际可用的 git（供 git 托管插件安装前的预检）。
+///
+/// 背景：Windows 空白环境由桌面端安装 MinGit 并在子进程 PATH 注入其目录，因此
+/// `git_runtime_ready` 在 Windows 有完整判定；而 Linux/macOS 完全依赖系统 git，
+/// 不在自动配置范围（`config::git_runtime_ready` 非 Windows 恒真）。一旦系统缺
+/// git，`pnpm spawn git` 直接 `ENOENT`，用户只看到裸错误 + 误导性的 allowBuilds
+/// 提示（issue #369）。这里实际探测 git 可执行能否运行，供安装 git 托管插件前
+/// 给用户可读的失败原因；无法解析二进制 / 启动失败都视为不可用。
+pub(crate) fn git_available(app_handle: &AppHandle) -> bool {
+    let Some(git) = plugin_git_binary(app_handle) else {
+        return false;
+    };
+    let mut cmd = std::process::Command::new(&git);
+    cmd.arg("--version");
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        // CREATE_NO_WINDOW：GUI 进程下禁止闪现控制台窗口
+        cmd.creation_flags(0x0800_0000);
+    }
+    cmd.output()
+        .map(|output| output.status.success())
+        .unwrap_or(false)
+}
+
 /// 运行 `git config <scope> --get-regexp '^url\.'`，判断该作用域的配置里是否存在
 /// 把 GitHub HTTP(S) 改写为 SSH 的 insteadOf 规则。无匹配（git 返回 1）或命令
 /// 失败都视为不存在。

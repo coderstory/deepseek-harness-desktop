@@ -1,11 +1,8 @@
 import type { GitOptions, OperationResult } from '../types/index.js'
-import { execFile } from 'node:child_process'
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
-import { promisify } from 'node:util'
 import { basename, join, resolve } from 'pathe'
-
-const execFileAsync = promisify(execFile)
+import { simpleGit } from 'simple-git'
 
 function errorMessage(error: unknown): string {
   if (error && typeof error === 'object') {
@@ -17,13 +14,20 @@ function errorMessage(error: unknown): string {
 
 export async function git(args: string[], cwd: string, options: GitOptions = {}): Promise<OperationResult<{ out: string }>> {
   try {
-    const { stdout } = await execFileAsync('git', args, {
-      cwd,
-      timeout: options.timeout ?? 30_000,
-      maxBuffer: 8 * 1024 * 1024,
-      signal: options.signal,
+    const client = simpleGit({
+      baseDir: cwd,
+      abort: options.signal,
+      // Omit the timeout when the caller does not set one. simple-git exposes an
+      // inactivity timeout (reset by output), rather than the old wall-clock timeout.
+      ...(options.timeout === undefined ? {} : { timeout: { block: options.timeout } }),
+      // simple-git 3.36's public SimpleGitOptions narrows spawnOptions to uid/gid,
+      // although spawnOptionsPlugin forwards the full Node SpawnOptions at runtime.
+      // Keep Git subprocesses hidden on Windows without falling back to execFile.
+      spawnOptions: { windowsHide: true } as unknown as { uid?: number, gid?: number },
+      trimmed: true,
     })
-    return { ok: true, out: String(stdout).trim() }
+    const out = await client.raw(args)
+    return { ok: true, out }
   }
   catch (error) {
     return { ok: false, error: errorMessage(error) }
@@ -31,7 +35,7 @@ export async function git(args: string[], cwd: string, options: GitOptions = {})
 }
 
 /**
- * 把补丁以临时文件形式喂给 `git apply`。async execFile 不支持 stdin 的 `input` 选项，
+ * 把补丁以临时文件形式喂给 `git apply`。simple-git 的 raw 命令不提供 stdin 输入，
  * 而 binary patch（`--binary`）是 ASCII(base85) 编码，UTF-8 写盘无损；临时文件放在系统
  * 临时目录，避免污染目标仓库的工作区状态。
  * @param {string} cwd

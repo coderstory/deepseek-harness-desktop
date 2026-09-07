@@ -124,6 +124,7 @@ async fn install_with_cancel(
         presets.iter().map(|p| (p.id.as_str(), p)).collect();
 
     let mut specs = Vec::with_capacity(ids.len());
+    let mut needs_git = false;
     for id in ids {
         let preset = preset_map
             .get(id.as_str())
@@ -150,7 +151,26 @@ async fn install_with_cancel(
             preset,
             bundled_dir_of(app_handle, preset),
         )?);
+        // 规范化后 `git+...` 前缀即 git 托管依赖：pnpm 安装时需要实际可用的 git
+        // （见下方预检）；npm 包名（如 `dshmarket`）与 `link:` 本地依赖无需 git。
+        if raw.starts_with("git+") {
+            needs_git = true;
+        }
         specs.push(shell_quote_spec(&raw));
+    }
+
+    // git 托管插件安装前预检（issue #369）：Linux/macOS 完全依赖系统 git（不在
+    // 空白 Windows 自动配置范围，`config::git_runtime_ready` 非 Windows 恒真），
+    // 系统缺 git 时 `pnpm spawn git` 直接 ENOENT，用户只看到裸错误 + 误导性的
+    // allowBuilds 提示。启动子进程前实际探测 git 可执行能否运行，缺失时给出
+    // 可读失败原因与修复指引，而不是等 pnpm 装到一半才失败。
+    if needs_git && !env::git_available(app_handle) {
+        return Err(
+            "GIT_NOT_FOUND: selected plugins include git-hosted dependencies, but no usable git \
+             was found on this system. Install git (e.g. Debian/Ubuntu: `sudo apt install git`; \
+             macOS: `brew install git`) or uncheck those plugins and retry."
+                .to_string(),
+        );
     }
 
     // 确保 pnpm/dsh shim 存在

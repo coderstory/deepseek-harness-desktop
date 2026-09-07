@@ -39,7 +39,7 @@ dsh plugin --profile web remove dsh-tauri-rightclick
 - 通过会话行的无障碍语义定位目标，通过 `sessions` 和 `workspaces` 公开服务执行业务；无法确认目标时保留浏览器默认菜单。
 - 常规操作继续使用 Harness 公开服务；打开 URL 通过插件宿主路由交给系统默认浏览器。
 - 插件卸载后不留下补丁。
-- 与 dsh-better-sidebar 共存：better-sidebar 会包装宿主的 `workspaces.openPath` 把所有路径导向侧边栏编辑器。为避免目录被当文件打开（`xxx is a directory`），本插件“在资源管理器中打开”直接调用宿主 RPC `host.openPath`（`POST /api/host.openPath`），目录始终交给系统文件管理器；URL 不会传入文件路径接口，而由插件宿主路由交给系统默认浏览器。
+- 与 dsh-better-sidebar 共存：better-sidebar 会包装宿主的 `workspaces.openPath` 把所有路径导向侧边栏编辑器。为避免目录被当文件打开（`xxx is a directory`），本插件“在资源管理器中打开”走**插件自家宿主路由** `POST /api/dsh-rightclick-menu/open-path`（node half 注册，宿主侧在系统文件管理器中打开目录），不依赖核心 Remote 服务，旧核心（0.1.2-rc.1 前）与新核心均可用；URL 不会传入文件路径接口，而由插件宿主路由交给系统默认浏览器。
 
 ## 扩展协议
 
@@ -63,6 +63,7 @@ const dispose = menu.register({
 | 路由 | 方法 | 说明 |
 | --- | --- | --- |
 | `/api/dsh-rightclick-menu/open-url` | POST | 系统默认浏览器打开外链（同源 JSON；body: `{ url }`，仅 http/https） |
+| `/api/dsh-rightclick-menu/open-path` | POST | 系统文件管理器打开本地目录（同源 JSON；body: `{ path }`，拒绝 URL） |
 
 ## 为什么不在会话菜单提供“置顶会话”
 

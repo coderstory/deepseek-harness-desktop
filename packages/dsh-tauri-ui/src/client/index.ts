@@ -40,7 +40,7 @@ import { installSettingsLocale } from './locales'
 import { installSettingsSections } from './register/sections'
 import { registerSettingsSidebar } from './register/sidebar'
 import { registerSettingsTrigger } from './register/trigger'
-import { mountSettingsStyles } from './styles'
+import { mountSettingsStyles, mountTurnNavigationStyles } from './styles'
 
 /** 插件显示名（诊断元数据）。 */
 export const name = SETTINGS_UI_PLUGIN
@@ -78,6 +78,13 @@ export function apply(ctx: ClientContext): void {
   ctx.effect(
     () => mountSettingsStyles(),
     'dsh-tauri-ui: settings styles',
+  )
+  // The core turn rail is rendered inside a clipped conversation column. Keep
+  // its semantic nav visible in the 56px sidebar rail by patching only the
+  // stable bilingual aria label; core-owned children and scrolling stay intact.
+  ctx.effect(
+    () => mountTurnNavigationStyles(),
+    'dsh-tauri-ui: turn navigation styles',
   )
   installSettingsLocale(ctx)
   // 设置分区投影：引用清理也走 effect（插件卸载后 slotsRef 复位，避免跨实例残留）。

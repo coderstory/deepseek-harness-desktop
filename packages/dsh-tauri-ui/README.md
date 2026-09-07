@@ -6,6 +6,7 @@
 
 - 在 `sidebar.settings` 注册设置触发器。
 - 在 `shell.overlay` 渲染桌面化设置侧边栏。
+- 通过稳定的中英文 `aria-label` 选择器修补核心 `轮次导航`（`Turn navigation`），在侧栏缩小/窄栏时仍固定在视口内常驻可见，并保留核心导航项与内部滚动。
 - 通过 `settings.section` 展示官方设置分区。
 - 设置打开期间持续隐藏并禁用宿主内容列及异步挂载的 Better Sidebar，关闭时精确恢复原状态。
 - 提供中英文的返回应用、搜索设置等文案。

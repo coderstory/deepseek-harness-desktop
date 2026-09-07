@@ -7,6 +7,7 @@
  */
 
 import type { HostContext, PluginConfig } from '../types/index.js'
+import { randomUUID } from 'node:crypto'
 import { existsSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { routeHandler, withConnectionAuth } from 'dsh-tauri'
@@ -14,13 +15,75 @@ import { join } from 'pathe'
 import { WORKTREE_API_PREFIX } from '../../shared/constants.js'
 import { gitToplevel } from '../service/git.js'
 import { checkoutToLocalAndHandback, inheritSessionIntoWorktree } from '../service/handoff.js'
-import { discardWorktree, ensureWorktree, worktreeKey } from '../service/operation.js'
+import { discardWorktree, ensureWorktree, worktreeKey, worktreePath } from '../service/operation.js'
 import { findSession, resolveProjectPath } from '../service/session.js'
 import { loadBinding } from '../storage/index.js'
 
 /** 构建路由列表。 */
+interface DiscardJob {
+  jobId: string
+  sessionId: string
+  worktreeKey: string
+  worktreePath?: string
+  state: 'deleting' | 'completed' | 'failed'
+  error?: string
+}
+
+const DISCARD_RETRY_ATTEMPTS = 3
+const DISCARD_RETRY_DELAY_MS = 2_000
+const DISCARD_JOB_RETENTION = 64
+
 export function buildRoutes(ctx: HostContext, config: PluginConfig): any[] {
   const worktreesRoot = config.worktreesRoot || join(homedir(), '.dsh')
+  const discardJobs = new Map<string, DiscardJob>()
+  const discardInFlight = new Map<string, Promise<DiscardJob>>()
+
+  const discardKey = (sessionId: string, worktreeHashDirname: string): string => `${sessionId}:${worktreeHashDirname}`
+  // Keep the job map bounded: oldest settled jobs disappear first so status
+  // polling of active/failed jobs keeps working during long sessions.
+  const pruneDiscardJobs = (): void => {
+    if (discardJobs.size < DISCARD_JOB_RETENTION)
+      return
+    for (const [id, item] of discardJobs) {
+      if (discardJobs.size < DISCARD_JOB_RETENTION)
+        break
+      if (item.state === 'completed')
+        discardJobs.delete(id)
+    }
+  }
+  const runDiscard = (job: DiscardJob, key: string, worktreeHashDirname: string): Promise<DiscardJob> => {
+    const existing = discardInFlight.get(key)
+    if (existing)
+      return existing
+    const promise = (async (): Promise<DiscardJob> => {
+      let lastError = ''
+      for (let attempt = 0; attempt < DISCARD_RETRY_ATTEMPTS; attempt += 1) {
+        const result = await discardWorktree(ctx, worktreesRoot, {
+          sessionId: job.sessionId,
+          worktree_hash_dirname: worktreeHashDirname,
+        })
+        if (result.ok) {
+          const updated: DiscardJob = { ...job, state: 'completed' }
+          discardJobs.set(job.jobId, updated)
+          return updated
+        }
+        lastError = result.error
+        if (attempt + 1 < DISCARD_RETRY_ATTEMPTS)
+          await new Promise(resolve => setTimeout(resolve, DISCARD_RETRY_DELAY_MS))
+      }
+      const updated: DiscardJob = { ...job, state: 'failed', error: lastError }
+      discardJobs.set(job.jobId, updated)
+      return updated
+    })().catch((error: unknown) => {
+      const updated: DiscardJob = { ...job, state: 'failed', error: error instanceof Error ? error.message : String(error) }
+      discardJobs.set(job.jobId, updated)
+      return updated
+    }).finally(() => {
+      discardInFlight.delete(key)
+    })
+    discardInFlight.set(key, promise)
+    return promise
+  }
 
   const routes = [
     {
@@ -29,6 +92,23 @@ export function buildRoutes(ctx: HostContext, config: PluginConfig): any[] {
       handler: routeHandler(async (body, req) => {
         const url = new URL(req.url ?? '/', 'http://localhost')
         const sessionId = String(url.searchParams.get('sessionId') ?? body.sessionId ?? '')
+        const jobId = String(url.searchParams.get('jobId') ?? body.jobId ?? '')
+        const job = jobId
+          ? discardJobs.get(jobId)
+          : [...discardJobs.values()].reverse().find(item => item.sessionId === sessionId)
+        if (jobId && job && job.sessionId !== sessionId)
+          return [404, { error: '未找到工作树删除任务' }]
+        if (job?.state === 'deleting' || job?.state === 'failed') {
+          return [200, {
+            mode: job.state,
+            jobId: job.jobId,
+            worktreeKey: job.worktreeKey,
+            worktreePath: job.worktreePath,
+            error: job.error,
+          }]
+        }
+        if (job?.state === 'completed')
+          return [200, { mode: 'local', jobId: job.jobId }]
         const binding = await loadBinding(worktreesRoot, sessionId)
         const activeBinding = binding && existsSync(binding.worktreePath) ? binding : null
         const session = findSession(ctx, sessionId)
@@ -140,13 +220,36 @@ export function buildRoutes(ctx: HostContext, config: PluginConfig): any[] {
       kind: 'exact',
       path: `${WORKTREE_API_PREFIX}/discard`,
       handler: routeHandler(async (body) => {
-        const r = await discardWorktree(ctx, worktreesRoot, {
-          sessionId: String(body.sessionId ?? ''),
-          worktree_hash_dirname: String(body.worktreeHashDirname ?? ''),
-        })
-        if (!r.ok)
-          return [400, { error: r.error }]
-        return [200, { ok: true }]
+        const sessionId = String(body.sessionId ?? '')
+        const worktreeHashDirname = String(body.worktreeHashDirname ?? '')
+        const key = discardKey(sessionId, worktreeHashDirname)
+        const existing = discardInFlight.get(key)
+        if (existing) {
+          const job = [...discardJobs.values()].find(item => item.sessionId === sessionId && item.worktreeKey === worktreeHashDirname && item.state === 'deleting')
+          if (job)
+            return [200, { ok: true, jobId: job.jobId }]
+        }
+        const completed = [...discardJobs.values()].find(item => item.sessionId === sessionId && item.worktreeKey === worktreeHashDirname && item.state === 'completed')
+        if (completed)
+          return [200, { ok: true, jobId: completed.jobId }]
+        const binding = await loadBinding(worktreesRoot, sessionId)
+        // Idempotent re-discard: a binding-less session whose deterministic
+        // worktree path is already gone was fully cleaned earlier (possibly in
+        // a previous plugin lifetime). Report success instead of a phantom job.
+        const [hash, dirname] = worktreeHashDirname.split('/')
+        if (!binding && hash && dirname && !existsSync(worktreePath(worktreesRoot, hash, dirname)))
+          return [200, { ok: true }]
+        const job: DiscardJob = {
+          jobId: randomUUID(),
+          sessionId,
+          worktreeKey: worktreeHashDirname,
+          worktreePath: binding?.worktreePath,
+          state: 'deleting',
+        }
+        pruneDiscardJobs()
+        discardJobs.set(job.jobId, job)
+        void runDiscard(job, key, worktreeHashDirname)
+        return [200, { ok: true, jobId: job.jobId }]
       }, { mutate: true }),
     },
   ]

@@ -50,6 +50,8 @@ const DICT_ZH = {
   untitled: '未命名会话',
   requestFailed: '请求失败 ({status})',
   requestTimeout: '请求超时，请检查会话插件是否已加载最新版本',
+  openDirectory: '打开目录',
+  openFailed: '打开目录失败: {reason}',
 } as const satisfies Record<LocaleKey, string>
 
 /** en 字典，与 zh 键集完全一致（locale 运行时强制双语平衡）。 */
@@ -92,6 +94,8 @@ const DICT_EN: Record<LocaleKey, string> = {
   untitled: 'Untitled session',
   requestFailed: 'Request failed ({status})',
   requestTimeout: 'Request timed out. Check that the session plugin is up to date.',
+  openDirectory: 'Open directory',
+  openFailed: 'Failed to open directory: {reason}',
 }
 
 /** 活跃语言 id（module 级缓存，apply 时初始化并由订阅推进）。 */

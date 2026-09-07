@@ -19,10 +19,27 @@ export interface JsonRequestOptions {
 }
 
 function defaultErrorMessage(status: number, body: unknown): string {
-  const text = body && typeof body === 'object' && 'error' in body
-    ? String((body as { error?: unknown }).error ?? '')
-    : ''
+  const text = typeof body === 'string'
+    ? body
+    : body && typeof body === 'object' && 'error' in body
+      ? String((body as { error?: unknown }).error ?? '')
+      : ''
   return text ? `请求失败 (${status}): ${text}` : `请求失败 (${status})`
+}
+
+/**
+ * JSON 响应优先解码；旧宿主/未注册路由返回的纯文本错误体原样保留，交给
+ * onResponseError 归一化成可读错误，而不是让 JSON.parse 抛 SyntaxError。
+ */
+export function parseJsonResponse(text: string): unknown {
+  if (text.length === 0)
+    return undefined
+  try {
+    return JSON.parse(text)
+  }
+  catch {
+    return text
+  }
 }
 
 function withJsonContentType(headersInit: HeadersInit | undefined, body: unknown): Headers {
@@ -57,7 +74,7 @@ export async function requestJson<T>(
       ...init,
       headers: withJsonContentType(init.headers, init.body),
       ...(timeoutEnabled ? { timeout: timeoutMs } : {}),
-      parseResponse: text => (text.length > 0 ? JSON.parse(text) : undefined),
+      parseResponse: parseJsonResponse,
       onResponseError: ({ response }) => {
         throw new Error((options.errorMessage ?? defaultErrorMessage)(response.status, response._data))
       },

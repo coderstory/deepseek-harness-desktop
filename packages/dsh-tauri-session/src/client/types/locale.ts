@@ -38,4 +38,6 @@ export type LocaleKey
     | 'untitled'
     | 'requestFailed'
     | 'requestTimeout'
+    | 'openDirectory'
+    | 'openFailed'
     | 'close'

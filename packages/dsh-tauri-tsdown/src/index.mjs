@@ -35,7 +35,7 @@ export const dshExternal = [
 ]
 
 /**
- * 需要内联进 client bundle 的依赖（UnJS 工具库）。
+ * 需要内联进 client bundle 的依赖（UnJS 工具库 + date-fns）。
  *
  * client bundle 在 DSH Web ModuleLoader（dsh-client-modules）的 factory 里运行，
  * 其模块表只认识平台种子词（react / @deepseek-ai/*）与已加载的链接模块
@@ -45,8 +45,9 @@ export const dshExternal = [
  * "missed the module table"（build-time externals drift）。
  * 因此 client entry 必须把它们内联；host entry 保持 external（Node 运行时按
  * 插件 dependencies 解析）。子路径（unstorage/drivers/*）一并覆盖。
+ * date-fns 仅作为构建期 devDependency，并按实际使用导出 tree-shake 后内联。
  */
-const dshClientInline = [/^(unstorage|hookable|ofetch|pathe)([/-].*)?$/]
+const dshClientInline = [/^(unstorage|hookable|ofetch|pathe|date-fns)([/-].*)?$/]
 
 export function defineDshConfig(options = {}) {
   const common = {

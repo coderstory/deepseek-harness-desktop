@@ -20,8 +20,9 @@ import type { MenuEntry } from '@deepseek-ai/dsh-client-ui-primitives'
  */
 import type { ReactElement } from 'react'
 import type { ArchivePanelProps, ArchiveSort } from '../types'
-import { Button, Input, Menu, Modal } from '@deepseek-ai/dsh-client-ui-primitives'
+import { Button, Input, Menu, Modal, Toast } from '@deepseek-ai/dsh-client-ui-primitives'
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react'
+import { postOpenSessionDir } from '../apis'
 import { SESSION_CLASSES as K } from '../constants'
 import { text, useLocale } from '../locales'
 import {
@@ -50,6 +51,7 @@ export function ArchivePanel(props: ArchivePanelProps): ReactElement | null {
   useLocale()
   const [confirm, setConfirm] = useState<DeleteConfirm>(null)
   const [openGroupMenu, setOpenGroupMenu] = useState<string | null>(null)
+  const [openPathError, setOpenPathError] = useState<string | null>(null)
 
   const sessions = useSyncExternalStore(props.sessionsRuntime.list.subscribe, props.sessionsRuntime.list.getSnapshot)
   const workspaces = useSyncExternalStore(props.workspacesRuntime.list.subscribe, props.workspacesRuntime.list.getSnapshot)
@@ -126,6 +128,19 @@ export function ArchivePanel(props: ArchivePanelProps): ReactElement | null {
         await refreshSessions()
         await resyncWorkspaces()
       })
+    }
+  }
+
+  /** 在系统文件管理器中打开单个归档会话的数据目录（$DSH_HOME/sessions/...，宿主解析）。 */
+  async function handleOpenSessionDirectory(sessionId: string): Promise<void> {
+    if (!sessionId)
+      return
+    try {
+      await postOpenSessionDir(sessionId)
+      setOpenPathError(null)
+    }
+    catch (error) {
+      setOpenPathError(error instanceof Error ? error.message : String(error))
     }
   }
 
@@ -247,7 +262,15 @@ export function ArchivePanel(props: ArchivePanelProps): ReactElement | null {
               {group.rows.map(row => (
                 <li key={row.sessionId} className={K.row}>
                   <div className={K.rowMain}>
-                    <span className={K.rowTitle}>{row.title}</span>
+                    <button
+                      type="button"
+                      className={K.rowTitle}
+                      title={text('openDirectory')}
+                      aria-label={`${text('openDirectory')}: ${row.title}`}
+                      onClick={() => void handleOpenSessionDirectory(row.sessionId)}
+                    >
+                      {row.title}
+                    </button>
                     <span className={K.rowTime}>{formatTime(row)}</span>
                   </div>
                   <div className={K.rowActions}>
@@ -302,6 +325,16 @@ export function ArchivePanel(props: ArchivePanelProps): ReactElement | null {
         footer={footer}
         closeLabel={text('close')}
       />
+
+      {openPathError
+        ? (
+            <Toast
+              key={openPathError}
+              text={text('openFailed', { reason: openPathError })}
+              onDone={() => setOpenPathError(null)}
+            />
+          )
+        : null}
     </div>
   )
 }

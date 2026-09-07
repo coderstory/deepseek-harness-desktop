@@ -27,6 +27,9 @@ export const SESSION_SWITCH_MAX_ATTEMPTS = 30
 /** hydration 失败/未知状态的重试间隔与上限（1.5s × 30 ≈ 45s，成功后立即停止）。 */
 export const HYDRATION_RETRY_DELAY_MS = 1500
 export const HYDRATION_MAX_RETRIES = 30
+/** Discard job polling cadence and retry limit. */
+export const DISCARD_POLL_DELAY_MS = 500
+export const DISCARD_MAX_POLLS = 120
 
 /**
  * create_worktree 自动交接的时效窗口：只有「本次运行期间新出现」且出现不超过该时长的

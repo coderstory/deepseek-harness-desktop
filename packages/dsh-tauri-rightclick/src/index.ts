@@ -1,16 +1,19 @@
 /**
- * dsh-tauri-rightclick 宿主侧（node half）：系统浏览器开链。
+ * dsh-tauri-rightclick 宿主侧（node half）：系统浏览器开链 + 文件管理器打开目录。
  *
  * 客户端（src/client/）负责右键菜单的 DOM 交互；本 half 只提供宿主能力：
  *   - POST /api/dsh-rightclick-menu/open-url 用系统默认浏览器打开 http/https 外链
- *     （Harness 的 host.openPath 只接受文件系统路径，URL 必须走这里）。
+ *     （原生文件系统打开能力不接受 URL，URL 必须走这里）；
+ *   - POST /api/dsh-rightclick-menu/open-path 在系统文件管理器中打开本地目录
+ *     （不依赖核心 Remote 服务，新旧核心均可用）。
  *
  * 路由只接受同源 JSON POST（isSameOriginJsonRequest 校验）。
  */
 
 import type { HostContext, HostRoute } from './types.js'
-import { isSameOriginJsonRequest, openUrl, readJsonBody, respond, safeWebUrl, withConnectionAuth } from 'dsh-tauri'
+import { isSameOriginJsonRequest, openDirectory, openUrl, readJsonBody, respond, safeWebUrl, withConnectionAuth } from 'dsh-tauri'
 import {
+  OPEN_PATH_ROUTE,
   OPEN_URL_ROUTE,
   RIGHTCLICK_API_PREFIX,
   RIGHTCLICK_PLUGIN_NAME,
@@ -71,11 +74,54 @@ export function buildRoutes(ctx: HostContext): HostRoute[] {
         })
       },
     },
+    {
+      kind: 'exact',
+      path: OPEN_PATH_ROUTE,
+      handler: async (request, response) => {
+        if (request.method !== 'POST')
+          return respond(response, 405, { ok: false, error: 'method-not-allowed' })
+        const validation = isSameOriginJsonRequest(request)
+        if (!validation.ok)
+          return respond(response, validation.status, { ok: false, error: validation.error })
+        let body
+        try {
+          body = await readJsonBody(request)
+        }
+        catch {
+          return respond(response, 400, { ok: false, error: 'bad-request' })
+        }
+        const path = safeOpenPath(body?.path)
+        if (!path)
+          return respond(response, 400, { ok: false, error: 'invalid-path' })
+        return withMutationLock(async () => {
+          try {
+            if (!openDirectory(path)) {
+              respond(response, 400, { ok: false, error: 'not-a-directory' })
+              return
+            }
+            respond(response, 200, { ok: true })
+          }
+          catch (error) {
+            ctx.logger?.warn?.(`[${RIGHTCLICK_PLUGIN_NAME}] failed to open directory ${path}:`, error)
+            respond(response, 500, { ok: false, error: 'open-path-failed' })
+          }
+        })
+      },
+    },
   ]
   return routes.map(route => ({
     ...route,
     handler: withConnectionAuth(ctx.connection, route.handler, 'dsh-tauri-rightclick'),
   }))
+}
+
+/** 校验“在资源管理器中打开”的目录参数：必须是非空本地路径，且不能是 URL。 */
+function safeOpenPath(value: unknown): string | null {
+  if (typeof value !== 'string' || !value.trim())
+    return null
+  if (/^[a-z][a-z\d+.-]*:\/\//i.test(value))
+    return null
+  return value
 }
 
 /**

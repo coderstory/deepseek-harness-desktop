@@ -305,6 +305,27 @@ pub async fn list(app_handle: &AppHandle) -> Vec<HarnessCore> {
     rows
 }
 
+/// 已装核心列表中是否包含给定 semver 版本（含 active 和非 active 槽位）。
+///
+/// `check_dsh_update` 用它跳过「最新版本的核心已下载但未激活」场景的 toast：
+/// 只要最新 release 的 semver 已存在于某个已装槽位就不提示，避免用户白点
+/// 一次「立即更新」做无意义的整包重下。版本号按字符串相等比较（dsh 的版本
+/// 字符串已是 semver，build-id 不参与版本号识别——同 semver 的不同 build-id
+/// 在用户视角下都算「同版本」）。
+pub async fn has_installed_version(app_handle: &AppHandle, version: &str) -> bool {
+    // 双路径：「激活版本」快速匹配 + 「磁盘扫描」确认非激活槽位也包含此版本。
+    // 仅靠 `list().present` 不够：若 version_tags 里有某版本、磁盘上没有对应
+    // 槽位，`present` 会是 false，但实际激活的核心可能就是那个版本（`installed_version`
+    // 读自激活槽位的 `package.json`，与 version_tags 不同步时尤为常见）。
+    if config::get_dsh_version(app_handle).as_deref() == Some(version) {
+        return true;
+    }
+    list(app_handle)
+        .await
+        .into_iter()
+        .any(|c| c.present && c.version == version)
+}
+
 /// 停止并清扫旧核心进程，确保核心来源变更时不会继续使用旧入口。
 async fn stop_harness_for_core_switch(app_handle: &AppHandle) -> Result<(), String> {
     if workflow::has_owned_process() {

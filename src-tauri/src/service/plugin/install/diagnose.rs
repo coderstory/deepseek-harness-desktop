@@ -97,6 +97,14 @@ pub(super) fn network_error_hint(output: &str) -> Option<&'static str> {
 pub(super) fn git_transport_hint(output: &str) -> Option<&'static str> {
     const SIGNALS: &[(&str, &str)] = &[
         (
+            "spawn git enoent",
+            "Git is not installed or not on PATH (pnpm could not spawn git: ENOENT). Install git (e.g. Debian/Ubuntu: `sudo apt install git`; macOS: `brew install git`) or uncheck git-hosted plugins and retry.",
+        ),
+        (
+            "command failed with enoent: git",
+            "Git is not installed or not on PATH (pnpm could not run git: ENOENT). Install git (e.g. Debian/Ubuntu: `sudo apt install git`; macOS: `brew install git`) or uncheck git-hosted plugins and retry.",
+        ),
+        (
             "host key verification failed",
             "git fell back to SSH and could not verify GitHub's host key (no known_hosts entry; the process ran non-interactively). Make sure GitHub is reachable over HTTPS.",
         ),
@@ -148,6 +156,15 @@ mod tests {
             git_transport_hint("ssh: connect to host github.com port 22: Connection refused")
                 .is_some()
         );
+    }
+
+    #[test]
+    fn git_transport_hint_detects_enoent_missing_git() {
+        // issue #369：Linux 无系统 git 时 pnpm spawn git 直接 ENOENT
+        let out = "[ENOENT] Command failed with ENOENT: git ls-remote 'git+ssh://git@github.com/omdsh-dev/DSH-better-sidebar.git' HEAD\nspawn git ENOENT\n";
+        assert!(git_transport_hint(out).is_some());
+        // 单独一行也命中
+        assert!(git_transport_hint("spawn git ENOENT").is_some());
     }
 
     #[test]

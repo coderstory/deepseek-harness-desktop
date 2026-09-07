@@ -1,10 +1,24 @@
-//! 原生剪贴板图片读取（Linux/WebKitGTK 贴图回退）。
+//! 原生剪贴板读写（Linux/WebKitGTK 贴图回退 + Wayland 安全文本写入）。
 //!
+//! ## 读取（图片）
 //! WebKitGTK 不通过 Web API（`ClipboardEvent.clipboardData.items/files`）暴露
 //! `image/*` 剪贴板条目，导致桌面端内嵌的 dsh iframe 中输入框「贴图」无效
 //! （浏览器里却正常）。本命令在 Rust 侧用 `arboard` 读取系统剪贴板图片、编码为
 //! PNG data URL 返回；注入到 iframe 的桥脚本（`desktop::paste::PASTE_SHIM_JS`）
 //! 拿到该 data URL 后重新派发 `paste` 事件，让 dsh 聊天框按正常贴图路径处理。
+//!
+//! ## 写入（文本）
+//! 前端的「复制日志 / 复制服务地址」等操作统一走本模块的写入命令，而不是
+//! `tauri-plugin-clipboard-manager`：后者在**应用启动时**就在主线程上创建并持有
+//! 一个长生命周期 `arboard::Clipboard`（`init()` 内 `Clipboard::new()`），在
+//! Linux Wayland 会话里一旦合成器不支持 `ext-data-control`/`wlr-data-control`
+//! （`arboard` 只会打印「Falling back to the X11 clipboard protocol」警告并回退），
+//! 该持有实例要么进入脆弱状态、要么在交互式 `set_text` 时阻塞/崩溃（用户反馈
+//! 「复制运行日志软件崩溃」）。这里的实现改为**每次操作**在 `spawn_blocking`
+//! 中**惰性新建**一个短期 `arboard::Clipboard`，用完即弃：
+//! - 不阻塞异步运行时与 UI（Linux 上创建 / 写入需连显示服务器）；
+//! - 不复用跨操作的长生命周期句柄，规避 Wayland 回退后的挂死 / 崩溃；
+//! - Wayland 不支持时 `arboard` 自动回退 X11，仍是尽力而为，不抛出。
 
 use base64::{engine::general_purpose::STANDARD, Engine};
 
@@ -76,4 +90,24 @@ pub async fn read_clipboard_image(
         .map_err(|e| format!("CLIPBOARD_IMAGE_TASK: {e}"))??;
 
     Ok(result)
+}
+
+/// 把纯文本写入系统剪贴板。
+///
+/// 实现与 [`read_clipboard_image`] 一致：在 `spawn_blocking` 里**惰性新建**短期
+/// `arboard::Clipboard` 完成 `set_text`，用完即弃。避免重复 `tauri-plugin-clipboard-manager`
+/// 在启动时持有单例 `arboard::Clipboard` 所造成的 Linux Wayland 崩溃/挂死
+/// （详见本模块头注释）。Wayland 合成器不支持 data-control 时 `arboard` 自行回退
+/// X11；仅当两者都不可用才返回 `Err`（前缀 `CLIPBOARD_TEXT_`），由前端提示复制失败。
+#[tauri::command]
+pub async fn write_clipboard_text(text: String) -> Result<(), String> {
+    tokio::task::spawn_blocking(move || -> Result<(), String> {
+        let mut clipboard =
+            arboard::Clipboard::new().map_err(|e| format!("CLIPBOARD_TEXT_ACCESS: {e}"))?;
+        clipboard
+            .set_text(text)
+            .map_err(|e| format!("CLIPBOARD_TEXT_WRITE: {e}"))
+    })
+    .await
+    .map_err(|e| format!("CLIPBOARD_TEXT_TASK: {e}"))?
 }

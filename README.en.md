@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/hairyf/deepseek-harness-desktop">
+  <a href="https://github.com/dsh-tauri-desk/deepseek-harness-desktop">
     <img src="public/favicon.svg" width="96" alt="DeepSeek Harness Desktop" />
   </a>
 </p>
@@ -12,18 +12,18 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/hairyf/deepseek-harness-desktop/releases">
-    <img src="https://img.shields.io/github/v/release/hairyf/deepseek-harness-desktop?style=flat-square&label=release&color=4D6BFE" alt="Release" />
+  <a href="https://github.com/dsh-tauri-desk/deepseek-harness-desktop/releases">
+    <img src="https://img.shields.io/github/v/release/dsh-tauri-desk/deepseek-harness-desktop?style=flat-square&label=release&color=4D6BFE" alt="Release" />
   </a>
-  <img src="https://img.shields.io/github/downloads/hairyf/deepseek-harness-desktop/total?style=flat-square&label=downloads&color=4D6BFE" alt="Downloads" />
-  <img src="https://img.shields.io/github/stars/hairyf/deepseek-harness-desktop?style=flat-square&label=stars&color=4D6BFE" alt="Stars" />
-  <img src="https://img.shields.io/github/license/hairyf/deepseek-harness-desktop?style=flat-square&label=license&color=4D6BFE" alt="MIT License" />
+  <img src="https://img.shields.io/github/downloads/dsh-tauri-desk/deepseek-harness-desktop/total?style=flat-square&label=downloads&color=4D6BFE" alt="Downloads" />
+  <img src="https://img.shields.io/github/stars/dsh-tauri-desk/deepseek-harness-desktop?style=flat-square&label=stars&color=4D6BFE" alt="Stars" />
+  <img src="https://img.shields.io/github/license/dsh-tauri-desk/deepseek-harness-desktop?style=flat-square&label=license&color=4D6BFE" alt="MIT License" />
   <img src="https://img.shields.io/badge/Windows%20%7C%20macOS%20%7C%20Linux-black?style=flat-square" alt="Windows | macOS | Linux" />
-  <img src="https://img.shields.io/badge/dsh-0.1.2--alpha-4D6BFE?style=flat-square" alt="dsh 0.1.2-alpha" />
+  <img src="https://img.shields.io/badge/dsh-0.1.2--rc.1-4D6BFE?style=flat-square" alt="dsh 0.1.2-rc.1" />
 </p>
 
 <p align="center">
-  <samp><strong>English</strong> · <a href="https://dshtauri.mintlify.site">Docs</a> · <a href="./README.md">中文</a></samp>
+  <samp><strong>English</strong> · <a href="https://dshtauri.mintlifysite.com">Docs</a> · <a href="./README.md">中文</a></samp>
 </p>
 
 <p align="center">
@@ -55,6 +55,7 @@
 - ⌨️ **CLI integration** — Install automatically registers the `dsh` command, ready in a new terminal; does not overwrite your existing shell config.
 - 🧭 **Launch wizard** — On first launch, choose recommended plugins, or re-select them later in config.
 - 🚀 **Self-update** — In-app updates; no need to re-download.
+- 🐾 **Desktop pets** — Manage Pets and Codex sources, download preset pets, import Codex `.zip` packs, and show activity states from conversations.
 
 ## Presets
 
@@ -65,7 +66,7 @@ Plugins offered in the first-run wizard; select what you need and install on dem
 - [DSH Better Sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) — a VSCode-like right sidebar, isolated per session (Recommended)
 - [DSH Notification](https://github.com/omdsh-dev/dsh-notification) — desktop notifications when a turn completes
 
-> Want to add new presets? Modify [preset-plugins.json](https://github.com/hairyf/deepseek-harness-desktop/blob/main/src-tauri/resources/preset-plugins.json) and submit a PR — once approved, it will be added as a preset in a future version.
+> Want to add new presets? Modify [preset-plugins.json](https://github.com/dsh-tauri-desk/deepseek-harness-desktop/blob/main/src-tauri/resources/preset-plugins.json) and submit a PR — once approved, it will be added as a preset in a future version.
 
 ## Built-in plugins
 
@@ -76,13 +77,15 @@ First-party plugins bundled with the installer:
 - [DSH Tauri Worktree](https://github.com/dsh-tauri-desk/dsh-tauri-worktree) — creates an isolated Git worktree per session, with checkout to a local branch or archive-and-abandon flows
 - [DSH Tauri Panel](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-panel) — sidebar shell: compact logo row, a panel area (New Session + third-party panel items via `sidebar.panel.action`), and the `panel.protocol` service
 - [DSH Tauri Panel Extension](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-panel-extension) — Skills and MCP management with skill repository import
+- [DSH Tauri Panel Scheduler](https://github.com/dsh-tauri-desk/deepseek-harness-desktop/tree/main/packages/dsh-tauri-panel-scheduler) — creates daily, interval, weekday, and weekly scheduled tasks; runs them in independent Agent sessions and retains run history
 - [DSH Tauri Session](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-session) — replaces workspace deletion with archiving and adds an Archived Chats settings page with search, sorting, grouping, project filtering, and unarchive support
-- [DSH Tauri Rightclick](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-rightclick) — native-style right-click context menus for sessions, workspaces, conversation text, links, and inputs (derived from [DSH Session Context Menu](https://github.com/baihejiangnan/dsh-session-context-menu)) 
+- [DSH Tauri Pet](https://github.com/dsh-tauri-desk/deepseek-harness-desktop/tree/main/packages/dsh-tauri-pet) — manages Chat / Codex pets, preset downloads, resource-pack imports, and conversation activity states
+- [DSH Tauri Rightclick](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-rightclick) — native-style right-click context menus for sessions, workspaces, conversation text, links, and inputs
 - More plugins coming soon...
 
 ## Quick Start
 
-Download the installer for your platform from [Releases](https://github.com/hairyf/deepseek-harness-desktop/releases), install, and launch.
+Download the installer for your platform from [Releases](https://github.com/dsh-tauri-desk/deepseek-harness-desktop/releases), install, and launch.
 
 **macOS (Homebrew):** you can also install it in one command via Homebrew:
 

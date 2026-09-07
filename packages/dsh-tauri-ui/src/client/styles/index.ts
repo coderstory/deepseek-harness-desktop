@@ -1,6 +1,10 @@
 /** Settings UI styles generated as css-render nodes. */
 import { CssRender } from 'dsh-tauri/client'
-import { SETTINGS_STYLE_ID } from '../constants'
+import {
+  SETTINGS_STYLE_ID,
+  TURN_NAVIGATION_NARROW_SELECTOR,
+  TURN_NAVIGATION_STYLE_ID,
+} from '../constants'
 
 const cssr = CssRender()
 const { c } = cssr
@@ -78,19 +82,26 @@ const settingsStyle = c([
   }, [
     c('&:hover', { background: 'var(--dsw-alias-interactive-bg-hover)' }),
   ]),
+  // 搜索框 = 官方 input 样式值（与 dsh-tauri-panel-scheduler 的 K.input 一致，
+  // 复刻 ModelsSection.zGbnIq_input；令牌化，浅/深色自动适配）。
   c('.dsh-tu-settingsSearch', {
-    width: '100%',
-    height: '36px',
     boxSizing: 'border-box',
-    padding: '0 10px',
-    borderRadius: '10px',
-    border: '1px solid var(--dsw-alias-border-weak, rgba(127,127,127,0.25))',
-    background: 'var(--dsw-alias-interactive-bg-hover, rgba(127,127,127,0.08))',
+    border: '.5px solid var(--dsw-alias-border-l4)',
+    width: '100%',
+    height: '32px',
+    font: 'inherit',
+    background: 'var(--dsw-alias-bg-layer-1)',
     color: 'var(--dsw-alias-label-primary)',
-    fontFamily: 'inherit',
+    borderRadius: '8px',
+    padding: '0 10px',
     fontSize: '14px',
+    lineHeight: '22px',
     outline: 'none',
-  }),
+  }, [
+    c('&:focus', { borderColor: 'var(--dsw-alias-brand-primary)' }),
+    c('&::placeholder', { color: 'var(--dsw-alias-label-dimmed)' }),
+    c('&:disabled', { opacity: '.6', cursor: 'default' }),
+  ]),
   c('.dsh-tu-settingsNav', {
     display: 'flex',
     flexDirection: 'column',
@@ -167,6 +178,26 @@ const settingsStyle = c([
   }),
 ])
 
+const turnNavigationStyle = c([
+  // The core rail is inside the conversation column. That column is clipped,
+  // and the core height can resolve to 0 when the available composer band is
+  // tight. Only apply the viewport anchor while the shell reports a collapsed
+  // sidebar; the core's inner scroller and mark geometry remain untouched.
+  c(TURN_NAVIGATION_NARROW_SELECTOR, {
+    position: 'fixed',
+    top: 'max(32px, calc((100dvh - var(--dsh-composer-height, 152px)) / 2))',
+    right: 'max(8px, env(safe-area-inset-right, 0px))',
+    zIndex: 30,
+    width: '28px',
+    height: 'min(var(--turn-natural-height, 32px), max(32px, calc(100dvh - var(--dsh-composer-height, 152px) - 32px)), 420px)',
+    maxHeight: 'calc(100dvh - 32px)',
+    minHeight: '32px',
+    visibility: 'visible',
+    opacity: 1,
+    transform: 'translateY(-50%)',
+  }),
+])
+
 export function mountSettingsStyles(): () => void {
   if (typeof document === 'undefined')
     return () => {}
@@ -174,4 +205,13 @@ export function mountSettingsStyles(): () => void {
     return () => {}
   settingsStyle.mount({ id: SETTINGS_STYLE_ID, head: true })
   return () => settingsStyle.unmount({ id: SETTINGS_STYLE_ID })
+}
+
+export function mountTurnNavigationStyles(): () => void {
+  if (typeof document === 'undefined')
+    return () => {}
+  if (cssr.find(TURN_NAVIGATION_STYLE_ID) !== null)
+    return () => {}
+  turnNavigationStyle.mount({ id: TURN_NAVIGATION_STYLE_ID, head: true })
+  return () => turnNavigationStyle.unmount({ id: TURN_NAVIGATION_STYLE_ID })
 }

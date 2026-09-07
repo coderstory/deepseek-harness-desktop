@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@config "../../tailwind.config.js";
+@import "@heroui/styles";
+
+/* 桌宠窗口 toast 微调（仅本 webview 生效）：
+   - 整体下移一点，避免贴顶挤占宠物视野；
+   - 宽度收窄约 10%（toast.css 默认 w-[calc(100vw-2rem)]）。 */
+.toast-region--top-end {
+  top: 2.5rem;
+}
+
+.toast-region {
+  width: calc(90vw - 2rem);
+}
+
+/* Toast 正文最多两行（-webkit-line-clamp）：思考片段/命令超长时截断省略。 */
+[data-slot='toast-description'] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
+
+/* 透明背景兜底：在 @layer base 之外且加 `!important`，压住 @heroui/styles
+   或 Tailwind preflight 可能注入的 body 深色背景，让 macOS WKWebView 在
+   transparent 窗口下不画任何底色（系统桌面透出）。html / #root 一并压，
+   规避某些 WebView 把 html 当 body 备份上色。 */
+html,
+body,
+#root {
+  background-color: transparent !important;
+}

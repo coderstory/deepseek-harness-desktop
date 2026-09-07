@@ -1,0 +1,12 @@
+[submodule "source/dsh-pet"]
+	path = source/dsh-pet
+	url = https://github.com/PC2005-cloud/dsh-pet
+[submodule "source/dsh-plugin-codex-pets"]
+	path = source/dsh-plugin-codex-pets
+	url = https://github.com/Skylarking/dsh-plugin-codex-pets
+[submodule "source/BongoCat"]
+	path = source/BongoCat
+	url = https://github.com/ayangweb/BongoCat
+[submodule "source/dsh-dafeiyu"]
+	path = source/dsh-dafeiyu
+	url = https://github.com/QCYTSN/dsh-dafeiyu

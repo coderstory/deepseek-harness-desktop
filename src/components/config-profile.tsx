@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { If } from 'react-if-lite'
 import { store } from '@/store'
+import { silence } from '@/utils/silence'
 import { toast } from '@/utils/toast'
 import { useDshProfiles } from '../hooks/use-dsh-profiles'
 import { ConfigBackup } from './config-backup'
@@ -94,7 +95,8 @@ export function ConfigProfile() {
         ),
       })
     }
-    catch {
+    catch (e) {
+      silence(e, 'profile activate: dialog cancelled')
       return
     }
     try {
@@ -160,7 +162,8 @@ export function ConfigProfile() {
         confirmText: t('profiles.remove_confirm'),
       })
     }
-    catch {
+    catch (e) {
+      silence(e, 'profile remove: dialog cancelled')
       return
     }
     try {

@@ -5,7 +5,7 @@
  * Checkout）集中在本插件 client/types/。
  */
 
-import type { WorktreeCheckout, WorktreeCreate, WorktreeStatus } from '../types'
+import type { WorktreeCheckout, WorktreeCreate, WorktreeDiscard, WorktreeStatus } from '../types'
 import { createJsonClient } from 'dsh-tauri/client'
 import { WORKTREE_API_PREFIX } from '../../shared/constants'
 
@@ -13,8 +13,9 @@ import { WORKTREE_API_PREFIX } from '../../shared/constants'
 export const worktreeApi = createJsonClient(WORKTREE_API_PREFIX)
 
 /** 查询某会话的工作树状态（GET，sessionId 走查询串）。 */
-export function fetchStatus(sessionId: string): Promise<WorktreeStatus> {
-  return worktreeApi.request(`/status?sessionId=${encodeURIComponent(sessionId)}`)
+export function fetchStatus(sessionId: string, jobId?: string): Promise<WorktreeStatus> {
+  const query = `?sessionId=${encodeURIComponent(sessionId)}${jobId ? `&jobId=${encodeURIComponent(jobId)}` : ''}`
+  return worktreeApi.request(`/status${query}`)
 }
 
 /** 为预分配的新会话创建工作树；项目路径从当前源会话解析。inherit 打开时宿主用源会话事件建好完整会话。 */
@@ -40,6 +41,6 @@ export function checkoutWorktree(
 export function discardWorktree(
   sessionId: string,
   worktreeHashDirname: string,
-): Promise<{ ok: boolean }> {
+): Promise<WorktreeDiscard> {
   return worktreeApi.post('/discard', { sessionId, worktreeHashDirname })
 }

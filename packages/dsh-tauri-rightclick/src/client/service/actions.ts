@@ -10,29 +10,12 @@ import type {
 } from '../types'
 import { requestJson } from 'dsh-tauri/client'
 import { confirmDialog } from '../components/confirm-dialog'
-import { HOST_OPEN_PATH_ENDPOINT, OPEN_URL_ROUTE } from '../constants'
+import { OPEN_URL_ROUTE } from '../constants'
 import { externalUrl, isWorkspaceAction, officialAction } from '../dom/locate'
 import { text } from '../locales'
 import { toast } from '../utils/dialog'
 
-/**
- * 资源管理器打开目录：直接调用宿主 RPC host.openPath（HTTP 端点
- *  /api/host.openPath），绕过 better-sidebar 对 workspaces.openPath 的包装——
- *  否则目录会被侧边栏编辑器当文件打开（`xxx is a directory`）。
- */
-export async function openInExplorer(path: string): Promise<void> {
-  const full = await requestJson<{ result?: { ok?: boolean, error?: { message?: string } } }>(HOST_OPEN_PATH_ENDPOINT, '', {
-    method: 'POST',
-    body: JSON.stringify({
-      type: 'client-request',
-      rpcId: crypto.randomUUID(),
-      method: 'host.openPath',
-      payload: { path },
-    }),
-  })
-  if (!full.result?.ok)
-    throw new Error(text('openFailed', { reason: full.result?.error?.message || text('unknownError') }))
-}
+export { openInExplorer } from './open-path'
 
 /** 用系统默认浏览器打开外链（插件宿主路由，只收 http/https）。 */
 export async function openExternalUrl(value: string): Promise<void> {

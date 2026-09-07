@@ -19,12 +19,17 @@ export const inject = PLUGIN_INJECT
 export * from './apis'
 export { apply } from './apply'
 export * from './controller'
+export { invokeBridgedTauri } from './service/invoke'
 export * from './storage'
 export * from './store'
+
 export type * from './types'
 
 export type { ClientContext } from './types'
 export { compat, resolveStartSession } from './utils/compat'
 export { CssRender } from 'css-render'
+
+/** 仅构建期 tree-shake 内联所用导出；date-fns 不进入 release production 资源闭包。 */
+export { differenceInDays, differenceInHours, differenceInMinutes, format } from 'date-fns'
 
 export { createHooks } from 'hookable'

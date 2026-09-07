@@ -12,6 +12,16 @@
   -webkit-app-region: drag;
 }
 
+/* Toast 正文最多两行：超长描述（思考片段/命令）截断省略，避免单条气泡膨胀
+   挤压其他 toast。主窗口与宠物窗口的渲染路径（HeroUI 默认渲染与自定义渲染）
+   都带 data-slot="toast-description"，一处选择器同时覆盖两端。 */
+[data-slot='toast-description'] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 /* 主题变量：默认深色，html[data-theme="light"] 切换到浅色。
    取值与官方 dsw alias token（design-platform.css）逐项一致 */
 :root {

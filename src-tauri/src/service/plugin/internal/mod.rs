@@ -15,7 +15,7 @@
 
 use std::collections::{HashMap, HashSet};
 use std::future::Future;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use tauri::{AppHandle, Emitter};
 
 use super::cancel::terminate_owned_install;
@@ -26,7 +26,7 @@ use super::process::{new_process_owner, ProcessOwner};
 use crate::config;
 
 use manifest::{
-    dedupe_profile_bundles, dep_matches_spec, internal_plugin_entry_is_ready,
+    dedupe_profile_bundles, dep_matches_spec, internal_plugin_entry_is_ready, is_local_link_dep,
     remove_duplicate_bundle_entries_from_patch, remove_internal_plugins_from_manifest,
     remove_stale_plugin_entry, write_profile_manifest,
 };
@@ -528,18 +528,49 @@ async fn ensure_inner(
     }
 
     let mut need: Vec<(String, String, PathBuf)> = Vec::new();
+    // 本分支要「直接卸载」的孤儿内置插件（安装包名）：其捆绑目录已不存在且仍以
+    // `link:`/`file:` 本地依赖形式安装在 profile 里。见下方 bundle 缺失分支的说明。
+    let mut orphans: Vec<String> = Vec::new();
     for preset in internal {
         let Some(bundled) = bundled_plugin_dir(app_handle, &preset.id) else {
             // 未找到内置插件目录：release 说明构建期 build:plugins 未打包（发布
             // 缺陷，由 build:plugins 响亮失败）；debug 自动发现 packages/* 中非私有
             // 且含 dsh 对象的包，未命中时跳过（「找不到则不装」）。
-            log::warn!(
-                "INTERNAL_PLUGIN_BUNDLE_MISSING: {}（release 需构建期 build:plugins；debug 无匹配的 packages/* 包）",
-                preset.id
-            );
+            //
+            // debug 下这是「切换 git 分支导致某内置插件源码消失」的典型场景：上一
+            // 分支把它以 `link:<packages/<id>>` 装进 profile，当前分支不再有该目录，
+            // 悬空链接指向不存在的源。此时重装无从谈起（无源），且残留悬空链接会让
+            // loader 无法解析。因此只要它仍以本地链接（`link:`/`file:`）形式安装在
+            // profile 里，就直接卸载该插件；registry/git 等非本地依赖（用户独立安装
+            // 的同名包）绝不误卸。
+            let name = installed_name(preset).to_string();
+            let is_orphan = dependencies
+                .get(&name)
+                .is_some_and(|spec| is_local_link_dep(spec));
+            if is_orphan {
+                log::warn!(
+                    "INTERNAL_PLUGIN_BUNDLE_MISSING_UNINSTALLING: {name}（link 指向的捆绑目录已不存在，卸载悬空内置插件）"
+                );
+                orphans.push(name);
+            } else {
+                log::warn!(
+                    "INTERNAL_PLUGIN_BUNDLE_MISSING: {}（release 需构建期 build:plugins；debug 无匹配的 packages/* 包）",
+                    preset.id
+                );
+            }
             continue;
         };
         let name = installed_name(preset).to_string();
+        // 捆绑目录被解析到但源 package.json 不可读（悬空源/资源被清理）：pnpm 对指向
+        // 不存在目录的 `link:` 依赖会静默 exit 0（日志特征 `Installing a dependency
+        // from a non-existent directory`），重装必然再次假成功，形成启动死循环。这类
+        // 是「应用资源缺失」而非「路径变更」：直接给出精确错误，阻断本轮重装。
+        if !bundled.join("package.json").is_file() {
+            return Err(format!(
+                "INTERNAL_PLUGIN_SOURCE_MISSING: 内置插件 {name} 的捆绑源目录 {} 缺失或不可读（应用资源目录可能被移动/删除或盘符变更）。pnpm 会静默跳过安装（exit 0 无产物），导致服务启动时 loader 抛 ERR_MODULE_NOT_FOUND。请重新安装应用或恢复应用资源目录后重试。",
+                bundled.display()
+            ));
+        }
         let expected = bundled_dep_spec(&bundled);
         // ① 依赖声明：未声明，或声明的值不再指向当前捆绑目录（路径变更/被改
         // 写）→ 重装；② 依赖真实性：node_modules 链接/拷贝须真实存在（用户
@@ -560,6 +591,24 @@ async fn ensure_inner(
             need.push((preset.id.clone(), name, entry));
         }
     }
+    // 卸载孤儿内置插件：best-effort、离线精准，不依赖 node/pnpm（其源目录已
+    // 不存在，走 `dsh plugin remove` 也没有可安装的本地链接可删）。与弃用插件
+    // 自动卸载同一模式：任何失败只记告警，绝不阻断本轮其余重装或整体启动。
+    if !orphans.is_empty() {
+        log::info!("Uninstalling orphaned internal preset plugins: {orphans:?}");
+        for name in &orphans {
+            if !super::recovery::is_actionable_plugin_ref(name) {
+                log::warn!("INTERNAL_PLUGIN_ORPHAN_SKIPPED: {name}（核心/官方包不执行孤儿卸载）");
+                continue;
+            }
+            if let Err(e) = super::uninstall_recovery(app_handle, name) {
+                log::warn!("INTERNAL_PLUGIN_ORPHAN_UNINSTALL_FAILED: {name}: {e}");
+            }
+        }
+    }
+    // 无论本轮是否需要重装，都清理旧版 dsh 生成的 profile-local fallback。
+    // 否则本轮 no-op 后，用户稍后从市场安装插件仍会把同一批 junction 交给 pnpm。
+    remove_legacy_profile_module_fallback(&profile)?;
     if need.is_empty() {
         return Ok(());
     }
@@ -615,15 +664,109 @@ async fn ensure_inner(
     }
     // 复用常规安装编排（环境准备/补齐 pnpm/`dsh plugin add file:<dir>`）；
     // 启动阶段无持有进程，install 内部不会停服务。失败同样交给调用方告警。
-    if let Err(e) = install_internal(app_handle, &ids, cancel, owner).await {
+    let install_result = install_internal(app_handle, &ids, cancel, owner).await;
+    if let Err(e) = install_result {
+        // 即使 pnpm 失败也清掉旧 fallback，下一次重试必须从干净入口开始。
+        let _ = remove_legacy_profile_module_fallback(&profile);
         return Err(format!("INTERNAL_PLUGIN_INSTALL_FAILED: {e}"));
     }
+
     Ok(())
+}
+
+/// 清理旧版 profile-local fallback，避免 pnpm 管理跨目录 junction。
+fn remove_legacy_profile_module_fallback(profile: &Path) -> Result<(), String> {
+    let node_modules = profile.join("node_modules");
+    if node_modules.is_dir() {
+        remove_legacy_fallback_links(&node_modules)?;
+    }
+
+    let fallback = profile.join(".dsh-module-fallback");
+    if fallback.is_dir() {
+        std::fs::remove_dir_all(&fallback).map_err(|e| {
+            format!(
+                "INTERNAL_PLUGIN_FALLBACK_REMOVE_FAILED: {}: {e}",
+                fallback.display()
+            )
+        })?;
+        log::info!(
+            "Removed legacy profile-local module fallback: {}",
+            fallback.display()
+        );
+    }
+    Ok(())
+}
+
+/// 递归删除旧 fallback 中的 junction，先处理链接本身，不跟随到资源目录。
+fn remove_legacy_fallback_links(root: &Path) -> Result<(), String> {
+    let entries = std::fs::read_dir(root).map_err(|e| {
+        format!(
+            "INTERNAL_PLUGIN_FALLBACK_READ_FAILED: {}: {e}",
+            root.display()
+        )
+    })?;
+    for entry in entries {
+        let entry = entry.map_err(|e| {
+            format!(
+                "INTERNAL_PLUGIN_FALLBACK_ENTRY_FAILED: {}: {e}",
+                root.display()
+            )
+        })?;
+        let path = entry.path();
+        let metadata = std::fs::symlink_metadata(&path).map_err(|e| {
+            format!(
+                "INTERNAL_PLUGIN_FALLBACK_STAT_FAILED: {}: {e}",
+                path.display()
+            )
+        })?;
+        if metadata.file_type().is_symlink() {
+            if std::fs::read_link(&path)
+                .ok()
+                .is_some_and(|target| is_legacy_profile_fallback_target(&target))
+            {
+                remove_stale_plugin_entry(&path).map_err(|e| {
+                    format!(
+                        "INTERNAL_PLUGIN_FALLBACK_LINK_REMOVE_FAILED: {}: {e}",
+                        path.display()
+                    )
+                })?;
+            }
+        } else if metadata.is_dir() {
+            remove_legacy_fallback_links(&path)?;
+        }
+    }
+    Ok(())
+}
+
+/// 判断 junction 目标是否属于旧版 profile-local fallback。
+fn is_legacy_profile_fallback_target(target: &Path) -> bool {
+    target
+        .components()
+        .any(|component| component.as_os_str() == ".dsh-module-fallback")
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn legacy_fallback_target_detection_is_path_component_aware() {
+        let base = Path::new("home").join("test").join(".dsh").join("profiles").join("web");
+        assert!(is_legacy_profile_fallback_target(
+            &base
+                .join(".dsh-module-fallback")
+                .join("node_modules")
+                .join("anymatch"),
+        ));
+        assert!(!is_legacy_profile_fallback_target(
+            &base.join("node_modules").join("anymatch"),
+        ));
+        assert!(!is_legacy_profile_fallback_target(
+            &base
+                .join(".dsh-module-fallback-old")
+                .join("anymatch"),
+        ));
+    }
 
     #[tokio::test]
     async fn coordinator_coalesces_waiters_and_releases_for_retry() {

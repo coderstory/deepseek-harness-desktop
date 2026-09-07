@@ -50,18 +50,13 @@ function PluginRow({ plugin, checked, toUninstall, disabled, onToggle, onOpenRep
 }) {
   const { t } = useTranslation()
 
-  // 已安装且未被取消勾选 → 保持「已安装」样式；已安装但取消勾选 → 待卸载样式
-  const labelClass = toUninstall
-    ? 'text-muted line-through'
-    : plugin.installed
-      ? 'text-success'
-      : 'text-ink'
+
 
   return (
     <Item
       left={(
         <>
-          <Label className={`min-w-0 truncate text-sm font-medium ${labelClass}`}>
+          <Label className={`min-w-0 truncate text-sm font-medium`}>
             {plugin.name}
           </Label>
           <If cond={plugin.recommended && !plugin.installed && !toUninstall}>
@@ -222,7 +217,7 @@ export function PreinstallSetup() {
     <div className="flex h-full w-full items-center justify-center bg-canvas">
       <div className="flex w-[min(560px,88vw)] flex-col gap-5">
         <header className="flex flex-col items-center gap-1.5 text-center">
-          <Typography type="h4">{t('preinstall.title')}</Typography>
+          <Typography type="h4" className="!text-ink">{t('preinstall.title')}</Typography>
           <Typography color="muted" type="body-sm" className="max-w-[440px]">{t('preinstall.subtitle')}</Typography>
         </header>
 
@@ -288,11 +283,13 @@ export function PreinstallSetup() {
                     <p className="text-center text-xs text-muted">{t('preinstall.can_uncheck_hint')}</p>
                   </If>
 
-                  {/* 操作区：跳过 / 确定（无变更时主按钮蜕变为「跳过」） */}
+                  {/* 操作区：有变更 → 弱「跳过」+ 主「确认」；无变更 → 主按钮独占「跳过」，避免重复入口 */}
                   <div className="flex items-center justify-end gap-2">
-                    <Button className="h-8 rounded-md" size="sm" variant="tertiary" onPress={handleSkip} isDisabled={installing}>
-                      {t('preinstall.skip')}
-                    </Button>
+                    <If cond={hasChanges}>
+                      <Button className="h-8 rounded-md" size="sm" variant="tertiary" onPress={handleSkip} isDisabled={installing}>
+                        {t('preinstall.skip')}
+                      </Button>
+                    </If>
                     <If cond={!hasChanges}>
                       <Then>
                         <Button

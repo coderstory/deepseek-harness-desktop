@@ -9,6 +9,7 @@ import { If } from 'react-if-lite'
 import { tv } from 'tailwind-variants'
 import { useStore } from 'valtio-define'
 import { store } from '@/store'
+import { silence } from '@/utils/silence'
 import { toast } from '@/utils/toast'
 import { useDshPlugins } from '../hooks/use-dsh-plugins'
 import { Ellipsis as TextEllipsis } from './ellipsis'
@@ -158,8 +159,8 @@ export function ConfigPlugin() {
     try {
       await upgrade.mutateAsync(id)
     }
-    catch {
-      // 错误提示已由 mutation 的 onError 处理
+    catch (e) {
+      silence(e, 'plugin upgrade: error already shown by mutation onError')
     }
     finally {
       setBusy(null)
@@ -184,15 +185,16 @@ export function ConfigPlugin() {
         confirmText: t('plugins.uninstall'),
       })
     }
-    catch {
+    catch (e) {
+      silence(e, 'plugin remove: dialog cancelled')
       return
     }
     setBusy({ id, action: 'remove' })
     try {
       await remove.mutateAsync(id)
     }
-    catch {
-      // 错误提示已由 mutation 的 onError 处理
+    catch (e) {
+      silence(e, 'plugin remove: error already shown by mutation onError')
     }
     finally {
       setBusy(null)
@@ -209,8 +211,8 @@ export function ConfigPlugin() {
     try {
       await disable.mutateAsync(id)
     }
-    catch {
-      // 错误提示已由 mutation 的 onError 处理
+    catch (e) {
+      silence(e, 'plugin disable: error already shown by mutation onError')
     }
     finally {
       setBusy(null)
@@ -226,8 +228,8 @@ export function ConfigPlugin() {
     try {
       await enable.mutateAsync(id)
     }
-    catch {
-      // 错误提示已由 mutation 的 onError 处理
+    catch (e) {
+      silence(e, 'plugin enable: error already shown by mutation onError')
     }
     finally {
       setBusy(null)
@@ -253,7 +255,8 @@ export function ConfigPlugin() {
           confirmText: t('plugins.snapshot_overwrite_confirm'),
         })
       }
-      catch {
+      catch (e) {
+        silence(e, 'plugin snapshot: dialog cancelled')
         return
       }
     }
@@ -261,8 +264,8 @@ export function ConfigPlugin() {
     try {
       await snapshot.mutateAsync(id)
     }
-    catch {
-      // 错误提示已由 mutation 的 onError 处理
+    catch (e) {
+      silence(e, 'plugin snapshot: error already shown by mutation onError')
     }
     finally {
       setBusy(null)
@@ -284,7 +287,8 @@ export function ConfigPlugin() {
         confirmText: t('plugins.restore'),
       })
     }
-    catch {
+    catch (e) {
+      silence(e, 'plugin restore: dialog cancelled')
       return
     }
     setBusy({ id, action: 'restore' })
@@ -303,8 +307,8 @@ export function ConfigPlugin() {
         },
       })
     }
-    catch {
-      // 错误提示已由 mutation 的 onError 处理
+    catch (e) {
+      silence(e, 'plugin restore: error already shown by mutation onError')
     }
     finally {
       setBusy(null)
@@ -326,15 +330,16 @@ export function ConfigPlugin() {
         confirmText: t('plugins.snapshot_delete_confirm'),
       })
     }
-    catch {
+    catch (e) {
+      silence(e, 'plugin delete-snapshot: dialog cancelled')
       return
     }
     setBusy({ id, action: 'delete-snapshot' })
     try {
       await deleteSnapshot.mutateAsync(id)
     }
-    catch {
-      // 错误提示已由 mutation 的 onError 处理
+    catch (e) {
+      silence(e, 'plugin delete-snapshot: error already shown by mutation onError')
     }
     finally {
       setBusy(null)
@@ -449,10 +454,11 @@ export function ConfigPlugin() {
                         <span className="flex items-center gap-1">
                           <If cond={busy?.id === plugin.id && busy.action === 'update'} then={<Spinner size="sm" color="current" />} />
                           {t('plugins.upgrade')}
-                          {/* TODO: hash 会超出长度 */}
-                          {/* <If cond={plugin.latestVersion != null && plugin.error == null}>
-                            <span className="font-mono text-[10px] opacity-80">{plugin.latestVersion}</span>
-                          </If> */}
+                          <If cond={plugin.latestVersion != null && plugin.error == null}>
+                            <span className="font-mono text-[10px] opacity-80 max-w-[80px] truncate">
+                              {plugin.latestVersion && plugin.latestVersion.length >= 40 ? `${plugin.latestVersion.slice(0, 8)}…` : plugin.latestVersion}
+                            </span>
+                          </If>
                         </span>
                       </Chip>
                     </If>

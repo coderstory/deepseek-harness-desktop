@@ -1,7 +1,7 @@
 /** types/worktree.ts — 工作树领域类型（会话状态 / RPC 载荷）。 */
 
 /** 工作树处理阶段（会话处理状态与日志展示的三阶段）。 */
-export type WorktreePhase = 'idle' | 'creating' | 'created' | 'thinking' | 'error'
+export type WorktreePhase = 'idle' | 'creating' | 'created' | 'thinking' | 'deleting' | 'error'
 
 /** 某会话绑定的工作树状态。 */
 export interface WorktreeSessionState {
@@ -39,8 +39,16 @@ export interface WorktreeUiState {
   bySession: Record<string, WorktreeSessionState>
 }
 
+export interface WorktreeDiscard {
+  ok: boolean
+  jobId?: string
+  error?: string
+}
+
 export interface WorktreeStatus {
-  mode: 'local' | 'worktree'
+  mode: 'local' | 'worktree' | 'deleting' | 'failed'
+  jobId?: string
+  error?: string
   worktreeKey?: string
   worktreePath?: string
   projectPath?: string

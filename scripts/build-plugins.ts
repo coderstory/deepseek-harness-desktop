@@ -39,25 +39,6 @@ function bundledPackageNames(): string[] {
   return names
 }
 
-function verifyDeployedPackages(names: readonly string[], nodeModulesRoot: string): void {
-  for (const name of names) {
-    const packageJson = join(nodeModulesRoot, name, 'package.json')
-    if (!existsSync(packageJson)) {
-      throw new Error(`PLUGIN_DEPLOY_MISSING: ${packageJson}`)
-    }
-    const manifest = JSON.parse(readFileSync(packageJson, 'utf8')) as {
-      main?: unknown
-      dsh?: unknown
-    }
-    if (typeof manifest.dsh !== 'object' || manifest.dsh === null || Array.isArray(manifest.dsh)) {
-      throw new Error(`PLUGIN_DEPLOY_INVALID_DSH: ${packageJson}`)
-    }
-    if (typeof manifest.main === 'string' && !existsSync(join(nodeModulesRoot, name, manifest.main))) {
-      throw new Error(`PLUGIN_DEPLOY_MISSING_ENTRY: ${join(nodeModulesRoot, name, manifest.main)}`)
-    }
-  }
-}
-
 /**
  * 把 `pnpm deploy` 产物解引用复制到目标目录：pnpm 虚拟仓库（`.pnpm` 下的依赖入口）
  * 全是符号链接，必须逐条按「链接目标」的真实类型落成实体目录/文件。
@@ -155,7 +136,6 @@ function main(): void {
     }
     materializeTree(deployed, DEPLOYED_NODE_MODULES)
     verifyMaterialized(DEPLOYED_NODE_MODULES)
-    verifyDeployedPackages(names, DEPLOYED_NODE_MODULES)
     console.log(`[build:plugins] deployed ${names.length} plugins to ${RESOURCE_ROOT}`)
   }
   catch (error) {

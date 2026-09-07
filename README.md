@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/hairyf/deepseek-harness-desktop">
+  <a href="https://github.com/dsh-tauri-desk/deepseek-harness-desktop">
     <img src="public/favicon.svg" width="96" alt="DeepSeek Harness Desktop" />
   </a>
 </p>
@@ -12,18 +12,18 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/hairyf/deepseek-harness-desktop/releases">
-    <img src="https://img.shields.io/github/v/release/hairyf/deepseek-harness-desktop?style=flat-square&label=release&color=4D6BFE" alt="Release" />
+  <a href="https://github.com/dsh-tauri-desk/deepseek-harness-desktop/releases">
+    <img src="https://img.shields.io/github/v/release/dsh-tauri-desk/deepseek-harness-desktop?style=flat-square&label=release&color=4D6BFE" alt="Release" />
   </a>
-  <img src="https://img.shields.io/github/downloads/hairyf/deepseek-harness-desktop/total?style=flat-square&label=downloads&color=4D6BFE" alt="Downloads" />
-  <img src="https://img.shields.io/github/stars/hairyf/deepseek-harness-desktop?style=flat-square&label=stars&color=4D6BFE" alt="Stars" />
-  <img src="https://img.shields.io/github/license/hairyf/deepseek-harness-desktop?style=flat-square&label=license&color=4D6BFE" alt="MIT License" />
+  <img src="https://img.shields.io/github/downloads/dsh-tauri-desk/deepseek-harness-desktop/total?style=flat-square&label=downloads&color=4D6BFE" alt="Downloads" />
+  <img src="https://img.shields.io/github/stars/dsh-tauri-desk/deepseek-harness-desktop?style=flat-square&label=stars&color=4D6BFE" alt="Stars" />
+  <img src="https://img.shields.io/github/license/dsh-tauri-desk/deepseek-harness-desktop?style=flat-square&label=license&color=4D6BFE" alt="MIT License" />
   <img src="https://img.shields.io/badge/Windows%20%7C%20macOS%20%7C%20Linux-black?style=flat-square" alt="Windows | macOS | Linux" />
-  <img src="https://img.shields.io/badge/dsh-0.1.2--alpha-4D6BFE?style=flat-square" alt="dsh 0.1.2-alpha" />
+  <img src="https://img.shields.io/badge/dsh-0.1.2--rc.1-4D6BFE?style=flat-square" alt="dsh 0.1.2-rc.1" />
 </p>
 
 <p align="center">
-  <samp><a href="./README.en.md">English</a> · <a href="https://dshtauri.mintlify.site">文档</a> · <strong>中文</strong></samp>
+  <samp><a href="./README.en.md">English</a> · <a href="https://dshtauri.mintlifysite.com">文档</a> · <strong>中文</strong></samp>
 </p>
 
 <p align="center">
@@ -49,7 +49,8 @@
 - 🪶 **原生轻量** — Tauri 2 外壳（非 Electron）：更小的安装包、更低的内存占用、原生窗口。
 - ⌨️ **命令行集成** — 安装自动注册 `dsh` 命令，新开终端即用；不覆盖你已有 shell 配置。
 - 🧭 **启动引导** — 首次启动可选推荐插件，也可在配置中重新选择。
-- 🚀 **自更新** — 应用内更新，不需要在重新下载；
+- 🚀 **自更新** — 应用内更新，不需要重新下载；
+- 🐾 **桌宠** — 提供 Pets / Codex 双来源桌宠管理，可下载预设宠物、导入 Codex `.zip` 资源包，并根据会话活动显示状态气泡。
 
 ## 预设插件
 
@@ -60,7 +61,7 @@
 - [DSH Better Sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) — 类 VSCode 右侧栏，按会话隔离（推荐）
 - [DSH Notification](https://github.com/omdsh-dev/dsh-notification) — 回合完成时的桌面通知
 
-<!-- > 你想收录新的插件作为预设？修改 [preset-plugins.json](https://github.com/hairyf/deepseek-harness-desktop/blob/main/src-tauri/resources/preset-plugins.json) 并提交 PR，通过后将在将来版本新增为预设插件。 -->
+<!-- > 你想收录新的插件作为预设？修改 [preset-plugins.json](https://github.com/dsh-tauri-desk/deepseek-harness-desktop/blob/main/src-tauri/resources/preset-plugins.json) 并提交 PR，通过后将在将来版本新增为预设插件。 -->
 
 > 为避免不稳定的预设插件导致软件异常，如需新增插件，请在 [dsh-tauri-plugins/issues](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/issues) 提起请求
 
@@ -73,13 +74,15 @@
 - [DSH Tauri Worktree](https://github.com/dsh-tauri-desk/dsh-tauri-worktree) — 为每个会话创建隔离的 Git Worktree，并支持检出到本地分支或归档放弃
 - [DSH Tauri Panel](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-panel) — 侧栏外壳、面板协议
 - [DSH Tauri Panel Extension](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-panel-extension) — Skills/MCP 管理与导入技能仓库
+- [DSH Tauri Panel Scheduler](https://github.com/dsh-tauri-desk/deepseek-harness-desktop/tree/main/packages/dsh-tauri-panel-scheduler) — 创建每天、间隔、工作日或每周的定时任务；在独立 Agent 会话中执行，并保留执行记录
 - [DSH Tauri Session](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-session) — 将删除工作区改为归档，并提供支持搜索、排序、分组、项目筛选和取消归档的「已归档聊天」设置页
-- [DSH Tauri Rightclick](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-rightclick) — 为会话、工作区、正文、链接和输入框补充常用操作（源自于 [DSH Session Context Menu](https://github.com/baihejiangnan/dsh-session-context-menu)）
+- [DSH Tauri Pet](https://github.com/dsh-tauri-desk/deepseek-harness-desktop/tree/main/packages/dsh-tauri-pet) — 管理 Chat / Codex 桌宠、预设宠物下载、资源包导入和会话活动状态
+- [DSH Tauri Rightclick](https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-rightclick) — 为会话、工作区、正文、链接和输入框补充常用操作
 - 更多即将引入的插件...
 
 ## 快速开始
 
-从 [Releases](https://github.com/hairyf/deepseek-harness-desktop/releases) 下载对应平台安装包，安装后启动即可。
+从 [Releases](https://github.com/dsh-tauri-desk/deepseek-harness-desktop/releases) 下载对应平台安装包，安装后启动即可。
 
 **macOS（Homebrew）：** 也可通过 Homebrew 一键安装：
 
@@ -100,7 +103,8 @@ brew install dsh-tauri-desk/desktop/deepseek-harness
 <table>
   <tr>
     <td align="center"><strong>QQ 群</strong><br /><img src="./docs/images/community/qq-qrcode.jpg" width="360" alt="QQ 群二维码" /></td>
-    <td align="center"><strong>微信群</strong><br /><img src="./docs/images/community/wx-qrcode.png" width="360" alt="微信群二维码" /></td>
+    <td align="center"><strong>微信群(已满,请先加我微信) -> </strong><br /><img src="./docs/images/community/wx-qrcode.png" width="360" alt="微信群二维码" /></td>
+    <td align="center"><strong>个人微信</strong><br /><img src="https://github.com/user-attachments/assets/c1d6e493-b608-4a6d-b387-dfcaa37ccfdc" width="360" alt="微信群二维码" /></td>
   </tr>
 </table>
 

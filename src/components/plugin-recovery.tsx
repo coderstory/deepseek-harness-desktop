@@ -1,4 +1,4 @@
-import { CircleExclamation } from '@gravity-ui/icons'
+import { CircleExclamation, ShieldCheck } from '@gravity-ui/icons'
 import { Button, Chip, Description, Spinner } from '@heroui/react'
 import { invoke } from '@tauri-apps/api/core'
 import { useEffect, useState } from 'react'
@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { If } from 'react-if-lite'
 import { useStore } from 'valtio-define'
 import { store } from '@/store'
+import { silence } from '@/utils/silence'
 
 /** 插件异常修复界面最多自动提示的次数（与 store 的 MAX_RECOVERY_ATTEMPTS 一致） */
 const MAX_RECOVERY_ATTEMPTS = 3
@@ -50,7 +51,8 @@ export function PluginRecovery({ fullScreen = false }: { fullScreen?: boolean })
         const r = await invoke<{ exists: boolean }>('get_plugin_backup', { id })
         return r.exists ? id : null
       }
-      catch {
+      catch (e) {
+        silence(e, 'plugin recovery: backup check failed, will retry')
         return null
       }
     }))
@@ -162,6 +164,12 @@ export function PluginRecovery({ fullScreen = false }: { fullScreen?: boolean })
             </Button>
             <Button className="rounded-md" variant="tertiary" onPress={() => store.harness.restart()}>
               {t('recovery.restart')}
+            </Button>
+            <Button className="rounded-md" variant="ghost" onPress={() => store.harness.enterSafeMode()}>
+              <span className="flex items-center gap-1">
+                <ShieldCheck className="size-4" />
+                {t('buttons.safe_mode')}
+              </span>
             </Button>
             <Button className="rounded-md" variant="ghost" onPress={() => store.harness.dismissRecovery()}>
               {t('recovery.dismiss')}

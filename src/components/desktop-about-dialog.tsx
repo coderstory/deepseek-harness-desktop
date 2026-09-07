@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useStore } from 'valtio-define'
 import { store } from '@/store'
+import { silence } from '@/utils/silence'
 import { Info } from './info'
 
 export interface DesktopAboutDialogProps extends PropsWithOverlays {}
@@ -83,7 +84,8 @@ function formatDate(iso: string): string {
       return iso
     return d.toLocaleDateString()
   }
-  catch {
+  catch (e) {
+    silence(e, 'about dialog: date parsing failed, falling back to raw ISO')
     return iso
   }
 }

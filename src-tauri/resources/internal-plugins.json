@@ -35,11 +35,25 @@
     "repoUrl": "https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-panel-extension"
   },
   {
+    "id": "dsh-tauri-panel-scheduler",
+    "spec": "dsh-tauri-panel-scheduler",
+    "name": "DSH Tauri Panel Scheduler",
+    "description": "Scheduled tasks for the DeepSeek Harness desktop panel: create daily/interval/workday/weekly automations, run them in fresh sessions on schedule, and review run history.",
+    "repoUrl": "https://github.com/dsh-tauri-desk/deepseek-harness-desktop/tree/main/packages/dsh-tauri-panel-scheduler"
+  },
+  {
     "id": "dsh-tauri-session",
     "spec": "dsh-tauri-session",
     "name": "DSH Tauri Session",
     "description": "Session archive for the desktop: rewrites the workspace browser's 'delete workspace' action into 'archive workspace', and adds an 'Archived chats' settings page with search, sort, grouping, project filter and unarchive.",
     "repoUrl": "https://github.com/dsh-tauri-desk/dsh-tauri-plugins/tree/main/packages/dsh-tauri-session"
+  },
+  {
+    "id": "dsh-tauri-pet",
+    "spec": "dsh-tauri-pet",
+    "name": "DSH Tauri Pet",
+    "description": "Persistent animated desktop pets with conversation activity states, bubbles, and Chat/Codex pet libraries.",
+    "repoUrl": "https://github.com/dsh-tauri-desk/deepseek-harness-desktop/tree/main/packages/dsh-tauri-pet"
   },
   {
     "id": "dsh-tauri-rightclick",

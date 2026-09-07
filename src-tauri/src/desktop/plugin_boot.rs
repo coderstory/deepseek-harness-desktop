@@ -21,6 +21,9 @@ mod tests {
         assert!(PLUGIN_BOOT_RELOAD_JS.contains("pagehide"));
         assert!(PLUGIN_BOOT_RELOAD_JS.contains("dsh://plugin-boot:stalled"));
         assert!(PLUGIN_BOOT_RELOAD_JS.contains("dsh://plugin-boot:ready"));
+        assert!(PLUGIN_BOOT_RELOAD_JS.contains("dsh://plugin-boot:failed"));
+        assert!(PLUGIN_BOOT_RELOAD_JS.contains("bootFailureText"));
+        assert!(PLUGIN_BOOT_RELOAD_JS.contains("Failed to load plugins"));
         assert!(!PLUGIN_BOOT_RELOAD_JS.contains("body.innerText"));
         assert!(!PLUGIN_BOOT_RELOAD_JS.contains("location.reload"));
     }

@@ -89,6 +89,8 @@ pub const STORE_DAT_DEV_FILE: &str = ".store.dev.dat";
 pub const STORE_SETTING_KEY: &str = "setting";
 /// Store 中记录主窗口几何（位置/大小/最大化）的键
 pub const STORE_WINDOW_STATE_KEY: &str = "window_state";
+/// Store 中记录桌宠（外置透明宠物窗口）几何（位置/大小）的键
+pub const STORE_PET_WINDOW_STATE_KEY: &str = "pet_window_state";
 
 /// 健康检查超时
 pub const HEALTH_CHECK_TIMEOUT: Duration = Duration::from_secs(5);

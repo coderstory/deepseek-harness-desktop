@@ -26,6 +26,7 @@ export type LocaleKey
     | 'progressViewLogs'
     | 'progressThinking'
     | 'progressError'
+    | 'progressDeleting'
     | 'branchPlaceholder'
     | 'logEmpty'
     | 'sessionWorkingTreeBadge'

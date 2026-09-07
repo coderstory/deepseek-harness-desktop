@@ -2,7 +2,7 @@ import type {
   WorktreeSessionState,
   WorktreeUiState,
 } from '../types'
-import { createExternalStore, createLocalStorage } from 'dsh-tauri/client'
+import { createExternalStore, createLifecycleController, createLocalStorage } from 'dsh-tauri/client'
 /**
  * store/index.ts — dsh-tauri-worktree 的共享客户端状态（per-session 工作树状态 + 偏好）。
  *
@@ -18,7 +18,8 @@ import { createExternalStore, createLocalStorage } from 'dsh-tauri/client'
  */
 import { useSyncExternalStore } from 'react'
 import { WORKTREE_PLUGIN_NAME } from '../../shared/constants'
-import { checkoutWorktree, discardWorktree } from '../apis'
+import { checkoutWorktree, discardWorktree, fetchStatus } from '../apis'
+import { DISCARD_MAX_POLLS, DISCARD_POLL_DELAY_MS } from '../constants'
 
 /** 偏好存储（unstorage localStorage driver，base 由 driver 拼 `base:` 前缀防串扰，兼容旧 key）。 */
 const prefsStorage = createLocalStorage(WORKTREE_PLUGIN_NAME)
@@ -150,28 +151,113 @@ export async function applyCheckout(
   }
 }
 
-/** 放弃更改（弹窗确认后调用）。 */
-export async function applyDiscard(
+/** Reconcile the optimistic state after a Host discard job settles. */
+async function pollDiscardJob(
   sessionId: string,
-  worktreeHashDirname: string,
+  jobId: string,
+  controller: ReturnType<typeof createLifecycleController>,
 ): Promise<{ ok: boolean, error?: string }> {
-  try {
-    await discardWorktree(sessionId, worktreeHashDirname)
+  let lastError = ''
+  for (let attempt = 0; attempt < DISCARD_MAX_POLLS; attempt++) {
+    if (controller.isDisposed())
+      return { ok: false, error: 'Discard operation was cancelled.' }
+
+    const status = await new Promise<Awaited<ReturnType<typeof fetchStatus>>>((resolve, reject) => {
+      controller.timeout(() => {
+        fetchStatus(sessionId, jobId).then(resolve).catch(reject)
+      }, DISCARD_POLL_DELAY_MS)
+    }).catch((error: unknown) => {
+      lastError = errMessage(error)
+      return undefined
+    })
+    if (!status)
+      continue
+    if (status.mode === 'deleting')
+      continue
+    if (status.mode === 'failed') {
+      const error = status.error ?? 'Failed to delete worktree.'
+      patchSession(sessionId, { phase: 'error', error })
+      return { ok: false, error }
+    }
+    if (status.mode !== 'local') {
+      const error = 'Worktree deletion did not complete.'
+      patchSession(sessionId, { phase: 'error', error })
+      return { ok: false, error }
+    }
     patchSession(sessionId, {
       mode: 'local',
       phase: 'idle',
       loadingLabel: '',
       log: [],
       worktreeKey: '',
+      worktreePath: '',
       abandonOpen: false,
       error: '',
     })
     return { ok: true }
   }
-  catch (error) {
-    patchSession(sessionId, { error: errMessage(error) })
-    return { ok: false, error: errMessage(error) }
-  }
+  const error = lastError || 'Timed out waiting for worktree deletion.'
+  patchSession(sessionId, { phase: 'error', error })
+  return { ok: false, error }
 }
 
-export type { WorktreeCheckout, WorktreeCreate, WorktreeStatus, WorktreeUiState } from '../types'
+const discardInFlight = new Map<string, Promise<{ ok: boolean, error?: string }>>()
+
+/** 放弃更改：立即乐观标记删除，并在后台轮询 Host job。 */
+export async function applyDiscard(
+  sessionId: string,
+  worktreeHashDirname: string,
+): Promise<{ ok: boolean, error?: string }> {
+  const key = `${sessionId}:${worktreeHashDirname}`
+  const existing = discardInFlight.get(key)
+  if (existing)
+    return existing
+
+  const controller = createLifecycleController()
+  const operation = (async (): Promise<{ ok: boolean, error?: string }> => {
+    patchSession(sessionId, { phase: 'deleting', abandonOpen: false, error: '' })
+    try {
+      const result = await discardWorktree(sessionId, worktreeHashDirname)
+      if (!result.ok) {
+        const error = result.error ?? 'Failed to start worktree deletion.'
+        patchSession(sessionId, { phase: 'error', error })
+        controller.dispose()
+        discardInFlight.delete(key)
+        return { ok: false, error }
+      }
+      if (!result.jobId) {
+        patchSession(sessionId, {
+          mode: 'local',
+          phase: 'idle',
+          loadingLabel: '',
+          log: [],
+          worktreeKey: '',
+          worktreePath: '',
+          error: '',
+        })
+        controller.dispose()
+        discardInFlight.delete(key)
+        return { ok: true }
+      }
+
+      // Resolve the UI action as soon as the job is accepted. Keep the in-flight
+      // entry until polling settles so repeated clicks cannot enqueue another job.
+      void pollDiscardJob(sessionId, result.jobId, controller).finally(() => {
+        controller.dispose()
+        discardInFlight.delete(key)
+      })
+      return { ok: true }
+    }
+    catch (error) {
+      const message = errMessage(error)
+      patchSession(sessionId, { phase: 'error', error: message })
+      controller.dispose()
+      discardInFlight.delete(key)
+      return { ok: false, error: message }
+    }
+  })()
+  discardInFlight.set(key, operation)
+  return operation
+}
+
+export type { WorktreeCheckout, WorktreeCreate, WorktreeDiscard, WorktreeStatus, WorktreeUiState } from '../types'

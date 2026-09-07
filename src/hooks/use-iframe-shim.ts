@@ -43,7 +43,9 @@ interface ClipboardImageRequest {
 
 interface PluginBootMessage {
   source?: 'dsh-plugin-boot-bridge'
-  type?: 'dsh://plugin-boot:stalled' | 'dsh://plugin-boot:ready'
+  type?: 'dsh://plugin-boot:stalled' | 'dsh://plugin-boot:ready' | 'dsh://plugin-boot:failed'
+  /** failed 消息携带官方失败页文本（如 web boot: 1 entry did not activate） */
+  detail?: string
 }
 
 export function useIframeShim(iframeRef: RefObject<HTMLIFrameElement | null>) {
@@ -161,6 +163,10 @@ export function useIframeShim(iframeRef: RefObject<HTMLIFrameElement | null>) {
     }
     if (data.type === 'dsh://plugin-boot:stalled') {
       void store.harness.recoverIframeBoot()
+      return
+    }
+    if (data.type === 'dsh://plugin-boot:failed') {
+      void store.harness.handleIframeBootFailure(data.detail)
     }
   }
 

@@ -55,11 +55,28 @@
     return root.querySelector('main, nav, [role="main"], button, input, textarea, form, iframe, [contenteditable="true"], [data-dsh-app-shell]') !== null
   }
 
-  function send(type) {
+  // 官方 boot 失败页：HARNESS wordmark + “Failed to load plugins” 标题 + 错误明细。
+  // 失败页与 splash 同构（#root 下单一 [data-dsh-boot] 根节点），但移除了 Loading
+  // plugins 提示且不含应用特征元素——isOfficialSplash/isApplicationShell 均判否，
+  // 若不加此分支会走 disarmSplash 静默路径，宿主错误界面永不出现。
+  function bootFailureText() {
+    var root = rootNode()
+    if (!root || root.childElementCount !== 1) return null
+    var boot = root.querySelector('[data-dsh-boot]')
+    if (!boot || boot.parentElement !== root) return null
+    if (!hasExactText(boot, 'Failed to load plugins')) return null
+    var text = normalizedText(boot)
+    var at = text.indexOf('Failed to load plugins')
+    // 去掉 HARNESS wordmark 前缀，只上报错误段落
+    return at >= 0 ? text.slice(at) : text
+  }
+
+  function send(type, detail) {
     try {
       window.parent.postMessage({
         source: 'dsh-plugin-boot-bridge',
         type: type,
+        detail: detail,
       }, '*')
     }
     catch (_) {}
@@ -84,6 +101,14 @@
 
   function evaluate() {
     if (stopped) return
+    var failure = bootFailureText()
+    if (failure !== null) {
+      // 失败页已渲染：立即上报错误文本并停止观察（与 ready/stalled 同一桥通道，
+      // 宿主据此展示壳层错误界面，不再等 stalled 超时兜底）。
+      send('dsh://plugin-boot:failed', failure)
+      stop()
+      return
+    }
     if (isApplicationShell()) {
       if (sawSplash) send('dsh://plugin-boot:ready')
       stop()

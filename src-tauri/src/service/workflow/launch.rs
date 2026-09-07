@@ -31,17 +31,16 @@ use super::utils::{is_port_in_use, rotate_service_log, spawn_output_readers};
 use super::win_inspector;
 
 #[cfg(windows)]
-type SpawnResult = std::io::Result<(
-    Option<std::fs::File>,
-    Option<std::fs::File>,
-    u32,
-)>;
+type SpawnResult = std::io::Result<(Option<std::fs::File>, Option<std::fs::File>, u32)>;
 #[cfg(unix)]
-type SpawnResult = Result<(
-    Option<std::process::ChildStdout>,
-    Option<std::process::ChildStderr>,
-    u32,
-), String>;
+type SpawnResult = Result<
+    (
+        Option<std::process::ChildStdout>,
+        Option<std::process::ChildStderr>,
+        u32,
+    ),
+    String,
+>;
 
 /// 端口释放等待上限：刚结束/清扫过上个会话的残留 dsh 进程后，TCP 端口释放
 /// 存在短暂滞后（taskkill 返回 ≠ 端口已可复用）。等待窗口内端口回落为空闲则
@@ -352,6 +351,11 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
     fs::create_dir_all(&dsh_home)
         .map_err(|e| format!("DSH_HOME_MKDIR_FAILED: create dsh home failed: {e}"))?;
 
+    // 首装档案引导重试：desktop::setup 的引导若失败（磁盘/权限抖动），在真正
+    // spawn dsh 前再补一次；幂等，已就绪时直接跳过。最佳努力：失败只告警，
+    // 不阻断启动（回落 web 档案的老行为）。
+    crate::service::profile::ensure_first_run_desktop_profile(&app_handle);
+
     // Linux 起步前探测 inotify 监视上限：harness 服务（dsh web）用 chokidar 递归
     // 监视 profile 目录，上限过低会在启动一瞬间抛 ENOSPC 直接退出（issue #116）。
     // 进程无法自我调高该参数，这里只做告警（启动日志 + 读取 run logs 中的环境信息），
@@ -421,6 +425,15 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
     // （启动失败场景由前端 recovery 对话框兜底，见 service::plugin::recovery）。
     if let Err(e) = crate::service::plugin::ensure_preset_plugins(&app_handle).await {
         log::warn!("ensure preset plugins failed: {e}");
+    }
+    // 预打包核心运行时自愈：把 app 内置插件与 profile 插件入口链接进活动核心的
+    // node_modules（dsh 的 loader 以核心根为裸包解析根），并核验/修复 sharp/koffi
+    // 原生可选依赖。只作用于 CoreSource::App，本地核心由用户自行管理。dsh 在缺失
+    // 这些入口或原生依赖时无法启动，因此失败直接阻断本次 launch（前端展示可恢复
+    // 错误），而不是带着必然失败的核心继续 spawn。
+    if let Err(e) = crate::service::core::prepare_active_runtime(&app_handle).await {
+        log::error!("prepare active core runtime failed: {e}");
+        return Err(e);
     }
     let mut envs: HashMap<String, String> = HashMap::new();
     envs.insert(
@@ -547,8 +560,6 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
                 dsh_binary_path.as_os_str().to_os_string(),
                 OsString::from("--profile"),
                 OsString::from(active_profile.as_str()),
-                OsString::from("--host"),
-                OsString::from("127.0.0.1"),
                 OsString::from("--port"),
                 OsString::from(setting.port.to_string()),
             ];
@@ -663,8 +674,6 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
             cmd.arg(&dsh_binary_path)
                 .arg("--profile")
                 .arg(active_profile.as_str())
-                .arg("--host")
-                .arg("127.0.0.1")
                 .arg("--port")
                 .arg(&setting.port.to_string());
             if no_open {
@@ -711,8 +720,6 @@ pub async fn launch(app_handle: tauri::AppHandle) -> Result<(), String> {
                                         cmd.arg(&dsh_binary_path)
                                             .arg("--profile")
                                             .arg(active_profile.as_str())
-                                            .arg("--host")
-                                            .arg("127.0.0.1")
                                             .arg("--port")
                                             .arg(setting.port.to_string());
                                         if no_open {

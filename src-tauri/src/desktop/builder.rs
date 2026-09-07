@@ -67,6 +67,11 @@ pub fn setup(app_handle: tauri::AppHandle) {
         log::warn!("pnpm modules metadata self-heal skipped: {e}");
     }
 
+    // 首装档案引导：桌面端首次安装时，在任何 dsh 启动/插件操作之前新建独立的
+    // Desktop 档案并切换（与 CLI 用户既有插件/补丁隔离，见 service::profile）。
+    // 必须先于 scheduler/auto_start：引导失败时它们回落 web 档案的老行为。
+    crate::service::profile::ensure_first_run_desktop_profile(&app_handle);
+
     // 启动进程监控（tick 检测 dsh 服务状态）
     crate::service::scheduler::start(&app_handle);
 
@@ -511,6 +516,7 @@ pub fn handler() -> impl Fn(Invoke<Wry>) -> bool + Send + Sync + 'static {
         crate::bridge::launch_harness,
         crate::bridge::shutdown_harness,
         crate::bridge::restart_harness,
+        crate::bridge::enter_safe_mode,
         crate::bridge::get_dsh_status,
         crate::bridge::get_preinstall_plugins,
         crate::bridge::get_preinstall_pending,
@@ -575,20 +581,52 @@ pub fn handler() -> impl Fn(Invoke<Wry>) -> bool + Send + Sync + 'static {
         crate::bridge::get_desktop_about,
         crate::bridge::open_external_url,
         crate::bridge::read_clipboard_image,
+        crate::bridge::write_clipboard_text,
         crate::desktop::notification::show_native_notification,
         crate::bridge::log_frontend,
+        crate::bridge::get_pet_status,
+        crate::bridge::set_pet_enabled,
+        crate::bridge::set_active_pet,
+        crate::bridge::set_pet_size,
+        crate::bridge::push_pet_session,
+        crate::bridge::move_pet_window,
+        crate::bridge::show_pet,
+        crate::bridge::hide_pet,
+        crate::bridge::list_pets,
+        crate::bridge::import_pet,
+        crate::bridge::get_pet_asset,
+        crate::bridge::preset_pet::get_preset_pet_config,
+        crate::bridge::preset_pet::get_preset_pet_assets,
+        crate::bridge::list_preset_pets,
+        crate::bridge::download_preset_pet,
+        crate::bridge::get_preset_download_progress,
+        crate::desktop::pet_mouse::start_pet_mouse_stream,
     ]
 }
 
 // configure tauri builder
 pub fn builder() -> tauri::Builder<tauri::Wry> {
     let builder = tauri::Builder::default()
+        .manage(crate::desktop::pet_mouse::PetMouseStreamState::default())
+        .register_asynchronous_uri_scheme_protocol("dsh-pet", |context, request, responder| {
+            let app = context.app_handle().clone();
+            let label = context.webview_label().to_owned();
+            std::thread::spawn(move || {
+                responder.respond(crate::bridge::preset_pet::preset_pet_asset_response(&app, &label, request));
+            });
+        })
         .setup(|app| {
             let app_handle = app.handle().clone();
+            // 首装检测必须最先执行：窗口几何恢复/退出保存等任何 store 写入都会
+            // 创建 store 文件，判定晚于它们会把首装误判为升级（见
+            // config::detect_first_install 的时序说明）。
+            crate::config::detect_first_install(&app_handle);
             build_main_window(&app_handle)?;
             #[cfg(target_os = "macos")]
             install_macos_menu(&app_handle)?;
             tray(&app_handle)?;
+            // 桌宠窗口：按「是否启用」设置惰性创建/显示（幂等）。
+            crate::desktop::pet::init_pet_window(&app_handle);
             setup(app_handle.clone());
             Ok(())
         })
@@ -613,6 +651,11 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
         // 点击关闭按钮时按设置决定：隐藏到托盘驻留，还是完整退出程序
         .on_window_event(|window, event| match event {
             tauri::WindowEvent::CloseRequested { api, .. } => {
+                if window.label() == crate::desktop::pet::PET_WINDOW_LABEL {
+                    api.prevent_close();
+                    let _ = window.hide();
+                    return;
+                }
                 // get_store_dat_setting 内部已归一化，取值只可能是 tray 或 quit
                 let close_action =
                     crate::config::get_store_dat_setting(&window.app_handle()).close_action;
@@ -652,11 +695,24 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
                 let _ = window.hide();
             }
             // 移动/缩放主窗口时记录几何，重启后据此恢复（见 config::window_state）
-            tauri::WindowEvent::Moved(_) => {
-                crate::config::save_geometry(window);
+            tauri::WindowEvent::Moved(_) => match window.label() {
+                label if label == crate::desktop::pet::PET_WINDOW_LABEL => {
+                    crate::desktop::pet::save_pet_window_geometry(window);
+                }
+                _ => crate::config::save_geometry(window),
+            },
+            tauri::WindowEvent::ScaleFactorChanged { .. } => {
+                if window.label() == crate::desktop::pet::PET_WINDOW_LABEL {
+                    crate::desktop::pet::apply_pet_size(&window.app_handle());
+                }
             }
             tauri::WindowEvent::Resized(_) => {
-                crate::config::save_geometry(window);
+                match window.label() {
+                    label if label == crate::desktop::pet::PET_WINDOW_LABEL => {
+                        crate::desktop::pet::save_pet_window_geometry(window);
+                    }
+                    _ => crate::config::save_geometry(window),
+                }
                 #[cfg(target_os = "macos")]
                 sync_macos_fullscreen_menu(window);
                 // 退出全屏后补做全屏期间被推迟的 Accessory 切换
@@ -694,6 +750,4 @@ pub fn builder() -> tauri::Builder<tauri::Wry> {
         .plugin(tauri_plugin_fs::init())
         // Simple Store plugin
         .plugin(tauri_plugin_store::Builder::new().build())
-        // Clipboard plugin
-        .plugin(tauri_plugin_clipboard_manager::init())
 }

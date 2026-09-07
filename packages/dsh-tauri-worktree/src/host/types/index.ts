@@ -1,5 +1,10 @@
 export type HostContext = any
 
+/** Optional host capability for terminating processes that still hold a worktree cwd. */
+export interface WorktreeProcessController {
+  stopSessionProcesses?: (sessionId: string, worktreePath: string) => Promise<void>
+}
+
 export type JsonBody = Record<string, unknown>
 
 export interface PluginConfig {
@@ -59,7 +64,7 @@ export interface PendingHandoff {
   binding: Binding
 }
 
-export type OperationResult<T extends object = Record<string, never>>
+export type OperationResult<T extends object = object>
   = | ({ ok: true } & T)
     | { ok: false, error: string }
 

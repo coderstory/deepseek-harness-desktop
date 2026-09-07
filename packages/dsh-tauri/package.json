@@ -64,6 +64,7 @@
     "@deepseek-ai/dsh-client-ui-renderer": "catalog:dsh",
     "@deepseek-ai/dsh-client-ui-slots": "catalog:dsh",
     "css-render": "catalog:ui",
+    "date-fns": "catalog:utils",
     "dsh-tauri-tsdown": "workspace:*",
     "tsdown": "catalog:cli"
   }

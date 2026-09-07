@@ -56,7 +56,8 @@
   "dependencies": {
     "dsh-tauri": "workspace:*",
     "hookable": "catalog:utils",
-    "pathe": "catalog:utils"
+    "pathe": "catalog:utils",
+    "simple-git": "catalog:utils"
   },
   "devDependencies": {
     "dsh-tauri-tsdown": "workspace:*",

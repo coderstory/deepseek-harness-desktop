@@ -17,6 +17,11 @@ static PLUGIN_REF_PATTERNS: LazyLock<Vec<Regex>> = LazyLock::new(|| {
         r#"profile bundle\s+["']?([^"'\n]+)["']?\s+declares no dsh\.bundle"#,
         // plugin(s) failed to load: <pkg>
         r#"plugins? failed to load:\s*([A-Za-z0-9@/_.\-]+)"#,
+        // 启动卡在等待服务：<pkg>: pending (waiting for service: <svc>)
+        // （对齐 dsh-desktop harness-runtime.ts 的 extractPluginReferences pending 行；
+        //  形如 `dsh-tauri-rightclick: pending (waiting for service: remote.session)`，
+        //  此前因含冒号括号不被 is_package_name 接受而漏检）
+        r#"([A-Za-z0-9@/_.\-]+):\s*pending\s*\(waiting for service:[^)]*\)"#,
     ]
     .iter()
     .map(|p| Regex::new(p).expect("static plugin ref pattern"))
@@ -168,6 +173,30 @@ foo bar
         assert!(refs.contains(&"@scope/another".to_string()));
         // 非包名行不应被当作插件引用
         assert!(!refs.iter().any(|r| r.contains("unknown")));
+    }
+
+    #[test]
+    fn extract_refs_from_pending_service_line() {
+        // 用户报告的真实失败行：含冒号括号，旧逻辑 is_package_name 无法接受
+        let log = "Failed to load plugins\nweb boot: 1 entry did not activate\ndsh-tauri-rightclick: pending (waiting for service: remote.session)\n";
+        let refs = extract_plugin_refs(log);
+        assert_eq!(refs, vec!["dsh-tauri-rightclick"]);
+    }
+
+    #[test]
+    fn extract_refs_from_pending_service_line_with_scope() {
+        let log = "@scope/dsh-plugin-x: pending (waiting for service: uiRenderer)\n";
+        let refs = extract_plugin_refs(log);
+        assert_eq!(refs, vec!["@scope/dsh-plugin-x"]);
+    }
+
+    #[test]
+    fn extract_refs_rejects_malformed_pending_line() {
+        // 缺 waiting for service 结构 → 不命中（防普通文本误报）
+        let log = "dsh-tauri-rightclick: pending (waiting for nothing)\n";
+        assert!(extract_plugin_refs(log).is_empty());
+        let log2 = "some package: pending without parentheses\n";
+        assert!(extract_plugin_refs(log2).is_empty());
     }
 
     #[test]

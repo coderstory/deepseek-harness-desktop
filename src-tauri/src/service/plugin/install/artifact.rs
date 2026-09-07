@@ -42,7 +42,11 @@ pub(super) fn verify_installed_products(
     if missing.is_empty() {
         return Ok(());
     }
-    let detail = silent_install_failure_detail(&missing, command_output);
+    let detail = if let Some(source_detail) = bundled_source_missing_detail(app_handle, &missing) {
+        source_detail
+    } else {
+        silent_install_failure_detail(&missing, command_output)
+    };
     log::error!("{detail}");
     for (id, _) in &missing {
         if let Err(e) = errors::record(app_handle, id, "install", &detail) {
@@ -73,6 +77,47 @@ fn silent_install_failure_detail(missing: &[(String, PathBuf)], command_output: 
     format!(
         "PREINSTALL_SILENT_FAIL: dsh plugin exited with code 0, but no install artifact was created for [{ids}]. Expected package manifests: [{manifests}]. {output_hint} Retry the installation; if it repeats, include the preinstall log and these paths in the bug report."
     )
+}
+
+/// 当缺失产物来自「内置插件源目录缺失」时，返回精确、可操作的诊断；否则 None。
+///
+/// 内置插件以 `link:<捆绑目录绝对路径>` 形式安装（见 [`super::spec::preset_spec_for_install`]），
+/// 当应用安装目录被移动 / 盘符变更 / 资源目录被清理时，pnpm 对指向不存在目录的
+/// `link:` 依赖会**静默以 exit 0 成功**（日志特征 `Installing a dependency from a
+/// non-existent directory`），留下悬空 junction 而 `package.json` 不可读——这正是
+/// `PREINSTALL_SILENT_FAIL` 最常见的根因（表现为应用启动后 loader 抛
+/// `ERR_MODULE_NOT_FOUND`，见 issue 启动失败日志链）。此时如实报告缺失的源目录与
+/// 修复指引（重装应用 / 恢复资源），而不是让用户盲目重试。
+fn bundled_source_missing_detail(
+    app_handle: &AppHandle,
+    missing: &[(String, PathBuf)],
+) -> Option<String> {
+    let resolve = |id: &str| super::bundled_plugin_dir(app_handle, id);
+    bundled_source_missing_detail_with(missing, &resolve)
+}
+
+/// [`bundled_source_missing_detail`] 的纯函数形态：`resolve` 把插件 id 解析为内置
+/// 捆绑源目录（None 表示该 id 非内置插件 / 源目录不可解析）。便于无 AppHandle 单测。
+fn bundled_source_missing_detail_with(
+    missing: &[(String, PathBuf)],
+    resolve: &dyn Fn(&str) -> Option<PathBuf>,
+) -> Option<String> {
+    let mut source_missing: Vec<String> = Vec::new();
+    for (id, _) in missing {
+        let Some(dir) = resolve(id) else {
+            continue;
+        };
+        if !dir.join("package.json").is_file() {
+            source_missing.push(format!("{id}（{}）", dir.display()));
+        }
+    }
+    if source_missing.is_empty() {
+        return None;
+    }
+    Some(format!(
+        "BUNDLED_PLUGIN_SOURCE_MISSING: 应用资源中的内置插件源目录缺失或不可读，pnpm 静默跳过安装（exit 0 无产物），导致以下内置插件未落盘: {}. 这些源目录随应用安装包分发；若应用安装目录被移动/删除、盘符变更或资源目录被清理，会触发此问题。请重新安装应用或恢复应用资源目录后重试。",
+        source_missing.join("; ")
+    ))
 }
 
 /// 解析插件包声明的主入口（与 cordis 加载器实际读取的字段一致）：
@@ -313,6 +358,73 @@ mod tests {
 
         assert!(detail.contains("Review the preinstall log above"));
         assert!(!detail.contains("produced no output"));
+    }
+
+    /// 内置插件源目录缺失：诊断应精确报出 BUNDLED_PLUGIN_SOURCE_MISSING 与源路径、
+    /// 修复指引，而不是笼统的 silent-fail 文案。
+    #[test]
+    fn bundled_source_missing_reports_actionable_detail() {
+        let missing = vec![
+            (
+                "dsh-tauri".to_string(),
+                PathBuf::from("C:\\Users\\t\\.dsh\\profiles\\safe\\node_modules\\dsh-tauri\\package.json"),
+            ),
+            (
+                "dsh-tauri-ui".to_string(),
+                PathBuf::from("C:\\Users\\t\\.dsh\\profiles\\safe\\node_modules\\dsh-tauri-ui\\package.json"),
+            ),
+        ];
+        // 两个内置插件都解析到源目录，但源目录下 package.json 均不可读（缺失源）
+        let resolve = |id: &str| {
+            Some(PathBuf::from(format!(
+                "E:\\Deepseek Harness Desktop\\resources\\node_modules\\{id}"
+            )))
+        };
+
+        let detail = bundled_source_missing_detail_with(&missing, &resolve).expect("diagnosed");
+
+        assert!(detail.starts_with("BUNDLED_PLUGIN_SOURCE_MISSING:"));
+        assert!(detail.contains("dsh-tauri"));
+        assert!(detail.contains("dsh-tauri-ui"));
+        // 源目录按平台原生分隔符展示（Windows 反斜杠 / Unix 正斜杠）
+        assert!(detail.contains("Deepseek Harness Desktop"));
+        assert!(detail.contains("resources"));
+        assert!(detail.contains("node_modules"));
+        assert!(detail.contains("重新安装应用"));
+    }
+
+    /// 源目录可解析且 package.json 可读（真实存在）时，不属于「源缺失」，返回 None，
+    /// 回落通用 silent-fail 诊断。
+    #[test]
+    fn bundled_source_present_falls_back_to_generic_detail() {
+        let root = std::env::temp_dir().join(format!(
+            "dsh-source-present-test-{}",
+            std::process::id()
+        ));
+        let dir = root.join("dsh-tauri");
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(dir.join("package.json"), r#"{"name":"dsh-tauri"}"#).unwrap();
+
+        let missing = vec![(
+            "dsh-tauri".to_string(),
+            root.join("node_modules/dsh-tauri/package.json"),
+        )];
+        let resolve = |_: &str| Some(dir.clone());
+
+        assert!(bundled_source_missing_detail_with(&missing, &resolve).is_none());
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    /// 缺失插件不是内置插件（resolve 返回 None）时，不误报源缺失，回落通用诊断。
+    #[test]
+    fn non_internal_missing_plugin_falls_back_to_generic_detail() {
+        let missing = vec![(
+            "dshmarket".to_string(),
+            PathBuf::from("/tmp/profile/node_modules/dshmarket/package.json"),
+        )];
+        let resolve = |_: &str| None;
+
+        assert!(bundled_source_missing_detail_with(&missing, &resolve).is_none());
     }
 
     /// 构造独立的临时插件包目录（含 `package.json`），供入口解析用例使用。

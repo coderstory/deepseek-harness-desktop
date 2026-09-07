@@ -178,7 +178,21 @@ const archiveStyle = c([
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-  }),
+    padding: 0,
+    border: 'none',
+    background: 'none',
+    fontFamily: 'inherit',
+    textAlign: 'left',
+    cursor: 'default',
+    maxWidth: '100%',
+  }, [
+    c('&:hover', {
+      cursor: 'pointer',
+      textDecoration: 'underline',
+      textUnderlineOffset: '2px',
+      textDecorationColor: 'var(--dsw-alias-label-secondary, currentColor)',
+    }),
+  ]),
   c(`.${K.rowTime}`, {
     fontSize: '13px',
     lineHeight: '20px',
