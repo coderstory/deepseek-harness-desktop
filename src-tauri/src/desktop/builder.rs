@@ -601,6 +601,7 @@ pub fn handler() -> impl Fn(Invoke<Wry>) -> bool + Send + Sync + 'static {
         crate::bridge::download_preset_pet,
         crate::bridge::get_preset_download_progress,
         crate::desktop::pet_mouse::start_pet_mouse_stream,
+        crate::desktop::pet_mouse::query_pet_cursor_position,
     ]
 }
 

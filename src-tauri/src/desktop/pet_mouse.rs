@@ -35,13 +35,17 @@ use serde::Serialize;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, Mutex};
 use std::thread;
-use std::time::Duration;
-use tauri::{Emitter, State, WebviewWindow};
+use std::time::{Duration, Instant};
+use tauri::{AppHandle, Emitter, Manager, State, WebviewWindow};
 
 /// 全局鼠标事件名（与前端 `@tauri-apps/api/event` 的 listen 保持一致）。
 pub const PET_MOUSE_MOVE_EVENT: &str = "device-mouse-move";
 /// 节流间隔（16ms ≈ 60FPS）：光标自身刷新率远超此频率，超出部分无意义。
 const THROTTLE_INTERVAL: Duration = Duration::from_millis(16);
+/// 心跳间隔（150ms）：CGEventTap 不为静止光标发 MouseMoved，且前端穿透状态
+/// 完全依赖 device-mouse-move 翻转 setIgnoreCursorEvents；心跳保证最坏情况下
+/// 用户在 hitbox 内静止点击也能在 ~150ms 内恢复交互（避免首击被吞）。
+const HEARTBEAT_INTERVAL: Duration = Duration::from_millis(150);
 
 /// macOS CGEventTap 只订阅的鼠标事件类型。**显式排除** KeyDown / KeyUp /
 /// FlagsChanged，彻底切断 rdev 0.5.3 触发 `TSMGetInputSourceProperty`
@@ -63,8 +67,8 @@ pub struct PetMouseStreamState {
 }
 
 /// 物理像素的光标位置（CGEvent 坐标为虚拟屏幕全局坐标，副屏可含负值）。
-#[derive(Serialize, Clone, Copy, PartialEq)]
-struct MouseCursorPos {
+#[derive(Debug, Serialize, Clone, Copy, PartialEq)]
+pub struct MouseCursorPos {
     x: f64,
     y: f64,
 }
@@ -88,21 +92,42 @@ pub fn start_pet_mouse_stream(window: WebviewWindow, state: State<'_, PetMouseSt
         }
     });
 
-    // 节流线程：16ms 轮询最新坐标，变化才 emit（鼠标静止零事件）。
+    // 节流线程：16ms 轮询最新坐标；位置变化即 emit，光标静止时按 HEARTBEAT_INTERVAL
+    // 周期重发最近一次坐标（CGEventTap 静止不发 MouseMoved → 前端 setIgnoreCursorEvents
+    // 永不翻转 → 首次点击被吞）。心跳把恢复时延收敛到 ~150ms。
     let emitter = window.clone();
     thread::spawn(move || {
         let mut last_sent: Option<MouseCursorPos> = None;
+        let mut last_emit = Instant::now();
         loop {
             let current = latest.lock().expect("pet mouse store poisoned").take();
+            let now = Instant::now();
             if let Some(pos) = current {
                 if last_sent != Some(pos) {
                     last_sent = Some(pos);
+                    last_emit = now;
+                    let _ = emitter.emit(PET_MOUSE_MOVE_EVENT, pos);
+                }
+            } else if let Some(pos) = last_sent {
+                if now.duration_since(last_emit) >= HEARTBEAT_INTERVAL {
+                    last_emit = now;
                     let _ = emitter.emit(PET_MOUSE_MOVE_EVENT, pos);
                 }
             }
             thread::sleep(THROTTLE_INTERVAL);
         }
     });
+}
+
+/// 查询当前系统光标位置（物理像素、全局虚拟屏幕坐标）。前端 mount 时主动
+/// 调用一次以初始化穿透状态——避免必须等 CGEventTap 第一次 MouseMoved 才
+/// 同步：窗口刚显示时光标若已停在 hitbox 内（极常见），无此命令则恢复依赖
+/// 心跳链，最坏 150ms 延迟且首批点击可能仍落在穿透层。
+#[tauri::command]
+pub fn query_pet_cursor_position(app: AppHandle) -> Option<MouseCursorPos> {
+    app.cursor_position()
+        .ok()
+        .map(|pos| MouseCursorPos { x: pos.x, y: pos.y })
 }
 
 /// 平台分发：macOS 走 CGEventTap，其它平台走 rdev。
@@ -200,5 +225,28 @@ mod tests {
     #[test]
     fn macos_mouse_events_include_mouse_moved() {
         assert!(mask_codes().contains(&(CGEventType::MouseMoved as u32)));
+    }
+}
+
+#[cfg(test)]
+mod stream_tests {
+    use super::*;
+
+    /// 心跳间隔必须显著大于节流间隔但足够短，保证静止光标下穿透状态机能
+    /// 在人类可感阈值内恢复。改大/改小都得相应调整前端使用方式。
+    #[test]
+    fn heartbeat_interval_is_longer_than_throttle() {
+        assert!(HEARTBEAT_INTERVAL > THROTTLE_INTERVAL);
+        assert!(HEARTBEAT_INTERVAL <= Duration::from_millis(500));
+    }
+
+    /// 心跳实现依赖的 `MouseCursorPos` 必须 PartialEq 才能用于"是否变化"判定。
+    #[test]
+    fn cursor_pos_supports_partial_eq() {
+        let a = MouseCursorPos { x: 1.0, y: 2.0 };
+        let b = MouseCursorPos { x: 1.0, y: 2.0 };
+        let c = MouseCursorPos { x: 1.0, y: 3.0 };
+        assert_eq!(a, b);
+        assert_ne!(a, c);
     }
 }
