@@ -27,10 +27,19 @@
   body,
   #root {
     min-height: 100%;
-    background: transparent;
   }
 
   body {
     overflow: hidden;
   }
+}
+
+/* 透明背景兜底：在 @layer base 之外且加 `!important`，压住 @heroui/styles
+   或 Tailwind preflight 可能注入的 body 深色背景，让 macOS WKWebView 在
+   transparent 窗口下不画任何底色（系统桌面透出）。html / #root 一并压，
+   规避某些 WebView 把 html 当 body 备份上色。 */
+html,
+body,
+#root {
+  background-color: transparent !important;
 }

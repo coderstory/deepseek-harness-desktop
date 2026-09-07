@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- color-scheme：告知浏览器 / WebView 此页面声明了 light 与 dark 两套色系，
+         让 WKWebView / WebView2 不要把 body 默认渲染成系统色（macOS 暗色模式下
+         默认画深色背景，Tauri 的 transparent 窗口因此被画成黑色）。同时给
+         form 控件、滚动条等 UA 元素提供正确的暗色样式。 -->
+    <meta name="color-scheme" content="light dark" />
     <title>Deepseek Harness Pet</title>
   </head>
   <body>
